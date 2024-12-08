@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Subscription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="email"] {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #45579f;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #6b79b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Subscribe to Price Increase Stock Alerts</h1>
+        <form id="subscription-form">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="response-message" style="color: green; display: none;"></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('subscription-form');
+        const responseMessage = document.getElementById('response-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent form submission refresh
+            const email = document.getElementById('email').value;
+
+            try {
+                const response = await fetch('/subscribe-pe-10-in', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email }),
+                });
+
+                const result = await response.json();
+                responseMessage.style.display = 'block';
+                responseMessage.textContent = result.message;
+
+                if (response.ok) {
+                    responseMessage.style.color = 'green';
+                } else {
+                    responseMessage.style.color = 'red';
+                }
+            } catch (error) {
+                responseMessage.style.display = 'block';
+                responseMessage.style.color = 'red';
+                responseMessage.textContent = 'An error occurred. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>
