@@ -6,7 +6,14 @@ import json
 app = Flask(__name__)
 
 # Path to the JSON file
-JSON_FILE = 'email_list.json'
+JSON_FILE = 'https://raw.githubusercontent.com/Toasterfire-come/Stock-Scanner-Project/refs/heads/main/json/10_de_pe_subs.json?token=GHSAT0AAAAAAC3JEC3P5WTROS37K44QZMZKZ2WI3YQ'
+
+response =  requests.get(JSON_FILE)
+if response.status_code == 200:
+    email_data  =  json.loads(response.text)
+    print(email_data)
+else:
+    print(f"Failed to fetch the file: {response.status_code}")
 
 # Ensure the JSON file exists
 if not os.path.exists(JSON_FILE):
