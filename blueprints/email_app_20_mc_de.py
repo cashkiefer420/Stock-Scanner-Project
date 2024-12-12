@@ -26,7 +26,7 @@ def is_valid_email(email):
     return re.match(regex, email)
 
 # Route to handle email subscription
-@app.route('/subscribe-pe-20-de', methods=['POST'])
+@app.route('/subscribe-mc-20-de', methods=['POST'])
 def subscribe_email():
     try:
         # Get email from the request
