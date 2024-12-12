@@ -16,7 +16,7 @@ logging.info("Stock data retrieval started")
 
 # Path to your sample tickers JSON file
 ticker_file_path = 'https://raw.githubusercontent.com/Toasterfire-come/Stock-Scanner-Project/refs/heads/main/json/Sample_tickers.json?token=GHSAT0AAAAAAC3JEC3OLXRRBOYVQU33357AZ2Z6CEA'
-json_export_path = 'stock_data_export.json'
+json_export_path = 'https://raw.githubusercontent.com/Toasterfire-come/Stock-Scanner-Project/refs/heads/main/json/stock_data_export.json?token=GHSAT0AAAAAAC3JEC3OCU3VHJYPKXEAGY42Z2Z6RBQ'
 
 # Blocking event for graceful shutdown
 shutdown_event = Event()
