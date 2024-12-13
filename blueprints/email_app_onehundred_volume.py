@@ -6,7 +6,7 @@ import json
 app = Flask(__name__)
 
 # Path to the JSON file
-JSON_FILE = 'https://raw.githubusercontent.com/Toasterfire-come/Stock-Scanner-Project/refs/heads/main/json/10_de_pe_subs.json?token=GHSAT0AAAAAAC3JEC3P5WTROS37K44QZMZKZ2WI3YQ'
+JSON_FILE = 'https://raw.githubusercontent.com/Toasterfire-come/Stock-Scanner-Project/refs/heads/main/json/100_volume.json?token=GHSAT0AAAAAAC3OVFJNCUTVCDJDC4P366KAZ24XMRQ'
 
 response =  requests.get(JSON_FILE)
 if response.status_code == 200:
