@@ -1,4 +1,3 @@
-
 from flask import Flask, request, jsonify
 import re
 import os
@@ -6,18 +5,12 @@ import json
 
 app = Flask(__name__)
 
-# Path to the JSON file
-JSON_FILE = 'https://raw.githubusercontent.com/Toasterfire-come/Stock-Scanner-Project/refs/heads/main/json/10_in_pe_subs.json?token=GHSAT0AAAAAAC3OVFJNB225UMRM3O4WAFKCZ24XOVA'
+# Path to the JSON file in your local Git repository
+JSON_FILE = '/path/to/your/local/repository/json/10_in_pe_subs.json'
 
-response =  requests.get(JSON_FILE)
-if response.status_code == 200:
-    email_data  =  json.loads(response.text)
-    print(email_data)
-else:
-    print(f"Failed to fetch the file: {response.status_code}")
-
-# Ensure the JSON file exists
+# Ensure the JSON file exists locally
 if not os.path.exists(JSON_FILE):
+    # If the file doesn't exist, create it with an empty structure
     with open(JSON_FILE, 'w') as file:
         json.dump({"emails": []}, file, indent=4)
 
@@ -52,15 +45,15 @@ def subscribe_email():
         # Add email to the list
         email_data["emails"].append(email)
 
-        # Save the updated email list
+        # Save the updated list back to the file
         with open(JSON_FILE, 'w') as file:
             json.dump(email_data, file, indent=4)
 
-        return jsonify({"message": "Subscription successful!"}), 200
+        return jsonify({"message": "Subscription successful"}), 200
 
     except Exception as e:
-        return jsonify({"message": "An error occurred", "error": str(e)}), 500
+        print(f"Error: {e}")
+        return jsonify({"message": "An error occurred"}), 500
 
-# Run the Flask app
 if __name__ == '__main__':
     app.run(debug=True)
