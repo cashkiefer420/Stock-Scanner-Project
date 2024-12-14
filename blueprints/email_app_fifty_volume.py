@@ -6,7 +6,7 @@ import json
 app = Flask(__name__)
 
 # Path to the JSON file in your local Git repository
-JSON_FILE = 'json/75_price_in.json'
+JSON_FILE = 'json/50_volume.json'
 
 # Ensure the JSON file exists locally
 if not os.path.exists(JSON_FILE):
