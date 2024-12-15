@@ -119,7 +119,6 @@ def fetch_price(ticker):
         logging.exception(f"Error fetching data for {ticker}:")
         return {'Ticker': ticker, 'Current Price': 'N/A'}
 
-
 # Load existing JSON data
 def load_existing_data():
     try:
