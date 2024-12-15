@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Data Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .results {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .result-item {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Data Search</h1>
+        <input type="text" id="searchQuery" placeholder="Enter Ticker or Company Name">
+        <button onclick="searchStock()">Search</button>
+
+        <div class="results" id="resultsContainer"></div>
+    </div>
+
+    <script>
+        async function searchStock() {
+            const query = document.getElementById('searchQuery').value.trim();
+            if (!query) {
+                alert("Please enter a search query.");
+                return;
+            }
+
+            const url = `/get_stock?query=${encodeURIComponent(query)}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.error) {
+                    document.getElementById('resultsContainer').innerHTML = `<p style="color: red;">${data.error}</p>`;
+                } else {
+                    displayStockData(data);
+                }
+            } catch (error) {
+                document.getElementById('resultsContainer').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+
+        function displayStockData(stockData) {
+            let resultHTML = `<h3>Stock Information</h3>`;
+            for (const [key, value] of Object.entries(stockData)) {
+                resultHTML += `<div class="result-item"><strong>${key}:</strong> ${value}</div>`;
+            }
+            document.getElementById('resultsContainer').innerHTML = resultHTML;
+        }
+    </script>
+</body>
+</html>
 
