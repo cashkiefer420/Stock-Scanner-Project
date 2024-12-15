@@ -1,34 +1,35 @@
 import json
 import os
+import time
 
 # Define the filters as separate conditions for each JSON file
 filters = [
-    {"file_name": "Filtered_pe_10_in.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) > 10},
-    {"file_name": "Filtered_pe_20_in.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) > 20},
-    {"file_name": "Filtered_pe_30_in.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) > 30},
-    {"file_name": "Filtered_pe_10_de.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) < -10},
-    {"file_name": "Filtered_pe_20_de.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) < -20},
-    {"file_name": "Filtered_pe_30_de.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) < -30},
-    {"file_name": "Filtered_market_cap_10_in.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) > 10},
-    {"file_name": "Filtered_market_cap_20_in.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) > 20},
-    {"file_name": "Filtered_market_cap_30_in.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) > 30},
-    {"file_name": "Filtered_market_cap_10_de.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) < -10},
-    {"file_name": "Filtered_market_cap_20_de.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) < -20},
-    {"file_name": "Filtered_market_cap_30_de.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) < -30},
-    {"file_name": "Filtered_volume_10.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 10000000},
-    {"file_name": "Filtered_volume_20.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 20000000},
-    {"file_name": "Filtered_volume_50.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 50000000},
-    {"file_name": "Filtered_volume_100.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 100000000},
-    {"file_name": "Filtered_volume_150.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 150000000},
-    {"file_name": "Filtered_volume_2x.json", "condition": lambda ticker: ticker.get("DVAV (Day Volume Over Average Volume)", 0) > 2},
-    {"file_name": "Filtered_volume_3x.json", "condition": lambda ticker: ticker.get("DVAV (Day Volume Over Average Volume)", 0) > 3},
-    {"file_name": "Filtered_volume_5x.json", "condition": lambda ticker: ticker.get("DVAV (Day Volume Over Average Volume)", 0) > 5},
-    {"file_name": "Filtered_price_20_in.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) > 20},
-    {"file_name": "Filtered_price_50_in.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) > 50},
-    {"file_name": "Filtered_price_75_in.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) > 75},
-    {"file_name": "Filtered_price_10_de.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) < -10},
-    {"file_name": "Filtered_price_15_de.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) < -20},
-    {"file_name": "Filtered_price_20_de.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) < -30},
+    {"file_name": "Filtered_pe_10_in.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) > 10, "field": "P/E Change (3mo)"},
+    {"file_name": "Filtered_pe_20_in.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) > 20, "field": "P/E Change (3mo)"},
+    {"file_name": "Filtered_pe_30_in.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) > 30, "field": "P/E Change (3mo)"},
+    {"file_name": "Filtered_pe_10_de.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) < -10, "field": "P/E Change (3mo)"},
+    {"file_name": "Filtered_pe_20_de.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) < -20, "field": "P/E Change (3mo)"},
+    {"file_name": "Filtered_pe_30_de.json", "condition": lambda ticker: ticker.get("P/E Change (3mo)", 0) < -30, "field": "P/E Change (3mo)"},
+    {"file_name": "Filtered_market_cap_10_in.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) > 10, "field": "Market Cap Change (3 Mon)"},
+    {"file_name": "Filtered_market_cap_20_in.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) > 20, "field": "Market Cap Change (3 Mon)"},
+    {"file_name": "Filtered_market_cap_30_in.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) > 30, "field": "Market Cap Change (3 Mon)"},
+    {"file_name": "Filtered_market_cap_10_de.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) < -10, "field": "Market Cap Change (3 Mon)"},
+    {"file_name": "Filtered_market_cap_20_de.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) < -20, "field": "Market Cap Change (3 Mon)"},
+    {"file_name": "Filtered_market_cap_30_de.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) < -30, "field": "Market Cap Change (3 Mon)"},
+    {"file_name": "Filtered_volume_10.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 10000000, "field": "Volume Today"},
+    {"file_name": "Filtered_volume_20.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 20000000, "field": "Volume Today"},
+    {"file_name": "Filtered_volume_50.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 50000000, "field": "Volume Today"},
+    {"file_name": "Filtered_volume_100.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 100000000, "field": "Volume Today"},
+    {"file_name": "Filtered_volume_150.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 150000000, "field": "Volume Today"},
+    {"file_name": "Filtered_volume_2x.json", "condition": lambda ticker: ticker.get("DVAV (Day Volume Over Average Volume)", 0) > 2, "field": "DVAV (Day Volume Over Average Volume)"},
+    {"file_name": "Filtered_volume_3x.json", "condition": lambda ticker: ticker.get("DVAV (Day Volume Over Average Volume)", 0) > 3, "field": "DVAV (Day Volume Over Average Volume)"},
+    {"file_name": "Filtered_volume_5x.json", "condition": lambda ticker: ticker.get("DVAV (Day Volume Over Average Volume)", 0) > 5, "field": "DVAV (Day Volume Over Average Volume)"},
+    {"file_name": "Filtered_price_20_in.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) > 20, "field": "Price Change Today"},
+    {"file_name": "Filtered_price_50_in.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) > 50, "field": "Price Change Today"},
+    {"file_name": "Filtered_price_75_in.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) > 75, "field": "Price Change Today"},
+    {"file_name": "Filtered_price_10_de.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) < -10, "field": "Price Change Today"},
+    {"file_name": "Filtered_price_15_de.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) < -20, "field": "Price Change Today"},
+    {"file_name": "Filtered_price_20_de.json", "condition": lambda ticker: ticker.get("Price Change Today", 0) < -30, "field": "Price Change Today"},
 ]
 
 # Define the output directory
@@ -39,19 +40,27 @@ if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
 # Load the JSON data from a file
-with open('data.json', 'r') as file:
-    data = json.load(file)
+def process_data():
+    with open('data.json', 'r') as file:
+        data = json.load(file)
 
-# Apply each filter and save to the corresponding file in the /json directory
-for filter_item in filters:
-    filtered_data = {}
-    for item in data:
-        if filter_item["condition"](item):  # Apply the condition for this filter
-            filtered_data[item["ticker"]] = item
+    # Apply each filter and save to the corresponding file in the /json directory
+    for filter_item in filters:
+        filtered_data = {}
+        for item in data:
+            if filter_item["condition"](item):  # Apply the condition for this filter
+                # Ensure the filtered field is added to the output
+                item[filter_item["field"]] = item.get(filter_item["field"], None)  # Ensure the field is included
+                filtered_data[item["ticker"]] = item
 
-    # Save the filtered data to the new JSON file in the /json folder
-    file_path = os.path.join(output_directory, filter_item["file_name"])
-    with open(file_path, 'w') as outfile:
-        json.dump(filtered_data, outfile, indent=4)
+        # Save the filtered data to the new JSON file in the /json folder
+        file_path = os.path.join(output_directory, filter_item["file_name"])
+        with open(file_path, 'w') as outfile:
+            json.dump(filtered_data, outfile, indent=4)
 
-    print(f"Filtered tickers have been saved to {file_path}.")
+        print(f"Filtered tickers have been saved to {file_path}.")
+
+# Run the process every 5 minutes (300 seconds)
+while True:
+    process_data()
+    time.sleep(300)  # Sleep for 5 minutes
