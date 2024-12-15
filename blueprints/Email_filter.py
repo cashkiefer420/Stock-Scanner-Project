@@ -16,7 +16,7 @@ filters = [
     {"file_name": "Filtered_market_cap_10_de.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) < -10, "field": "Market Cap Change (3 Mon)"},
     {"file_name": "Filtered_market_cap_20_de.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) < -20, "field": "Market Cap Change (3 Mon)"},
     {"file_name": "Filtered_market_cap_30_de.json", "condition": lambda ticker: ticker.get("Market Cap Change (3 Mon)", 0) < -30, "field": "Market Cap Change (3 Mon)"},
-    {"file_name": "Filtered_volume_10.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 10000000, "field": "Volume Today"},
+    {"file_name": "Filtered_volume_10.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 10000000, "field": "Volume Today", "extra_condition": lambda ticker: ticker.get("Average Volume", 0) < 8000000 and ticker.get("Price", 0) < 100},
     {"file_name": "Filtered_volume_20.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 20000000, "field": "Volume Today"},
     {"file_name": "Filtered_volume_50.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 50000000, "field": "Volume Today"},
     {"file_name": "Filtered_volume_100.json", "condition": lambda ticker: ticker.get("Volume Today", 0) > 100000000, "field": "Volume Today"},
@@ -48,10 +48,46 @@ def process_data():
     for filter_item in filters:
         filtered_data = {}
         for item in data:
-            if filter_item["condition"](item):  # Apply the condition for this filter
-                # Ensure the filtered field is added to the output
-                item[filter_item["field"]] = item.get(filter_item["field"], None)  # Ensure the field is included
-                filtered_data[item["ticker"]] = item
+            # Check for the "Filtered_volume_10.json" specific conditions
+            if filter_item["file_name"] == "Filtered_volume_10.json":
+                average_volume = item.get("Average Volume", 0)
+                current_price = item.get("Price", 0)
+                current_volume = item.get("Volume Today", 0)
+                # Apply the additional condition only for the "Filtered_volume_10.json" filter
+                if average_volume < 8000000 and current_price < 100 and current_volume > 10000000:
+                    if filter_item["condition"](item):
+                        item[filter_item["field"]] = item.get(filter_item["field"], None)
+                        filtered_data[item["ticker"]] = item
+            if filter_item["file_name"] == "Filtered_volume_20.json":
+                # Apply the additional condition only for the "Filtered_volume_10.json" filter
+                if average_volume < 12000000 and current_price < 100 and current_volume > 20000000 and average_volume > 5000000:
+                    if filter_item["condition"](item):
+                        item[filter_item["field"]] = item.get(filter_item["field"], None)
+                        filtered_data[item["ticker"]] = item
+            if filter_item["file_name"] == "Filtered_volume_50.json":
+                # Apply the additional condition only for the "Filtered_volume_10.json" filter
+                if average_volume < 35000000 and current_price < 150 and current_volume > 50000000 and average_volume > 15000000:
+                    if filter_item["condition"](item):
+                        item[filter_item["field"]] = item.get(filter_item["field"], None)
+                        filtered_data[item["ticker"]] = item
+            if filter_item["file_name"] == "Filtered_volume_100.json":
+                # Apply the additional condition only for the "Filtered_volume_10.json" filter
+                if average_volume < 80000000 and current_price < 150 and current_volume > 100000000 and average_volume > 30000000:
+                    if filter_item["condition"](item):
+                        item[filter_item["field"]] = item.get(filter_item["field"], None)
+                        filtered_data[item["ticker"]] = item
+            if filter_item["file_name"] == "Filtered_volume_150.json":
+                # Apply the additional condition only for the "Filtered_volume_10.json" filter
+                if average_volume < 100000000 and current_price < 150 and current_volume > 150000000 and average_volume > 50000000:
+                    if filter_item["condition"](item):
+                        item[filter_item["field"]] = item.get(filter_item["field"], None)
+                        filtered_data[item["ticker"]] = item
+                        
+            else:
+                # Apply the regular condition for all other filters
+                if filter_item["condition"](item):
+                    item[filter_item["field"]] = item.get(filter_item["field"], None)
+                    filtered_data[item["ticker"]] = item
 
         # Save the filtered data to the new JSON file in the /json folder
         file_path = os.path.join(output_directory, filter_item["file_name"])
