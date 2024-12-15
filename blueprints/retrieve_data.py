@@ -101,7 +101,6 @@ def fetch_price(ticker):
             'Days Range': day_range,
             'Shares Available': shares_outstanding,
             'Volume Today': volume_today,
-            'Day Volume': volume_today,
             'Avg Volume (3 mon)': avg_volume,
             'DVAV (Day Volume Over Average Volume)': dvav,
             'Market Cap': market_cap,
