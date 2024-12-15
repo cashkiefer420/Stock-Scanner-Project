@@ -32,6 +32,14 @@
         .result-item {
             margin-bottom: 15px;
         }
+        .loading {
+            font-size: 18px;
+            font-weight: bold;
+            color: blue;
+        }
+        .error {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -51,29 +59,37 @@
                 return;
             }
 
-            const url = `/get_stock?query=${encodeURIComponent(query)}`;
+            // Show loading state
+            document.getElementById('resultsContainer').innerHTML = `<p class="loading">Loading...</p>`;
+
+            const url = `/Fetch_data_ticker?query=${encodeURIComponent(query)}`;  // Changed path
             try {
                 const response = await fetch(url);
                 const data = await response.json();
 
                 if (data.error) {
-                    document.getElementById('resultsContainer').innerHTML = `<p style="color: red;">${data.error}</p>`;
+                    document.getElementById('resultsContainer').innerHTML = `<p class="error">${data.error}</p>`;
+                } else if (Object.keys(data).length === 0) {
+                    document.getElementById('resultsContainer').innerHTML = `<p class="error">No data found for "${query}".</p>`;
                 } else {
                     displayStockData(data);
                 }
             } catch (error) {
-                document.getElementById('resultsContainer').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+                document.getElementById('resultsContainer').innerHTML = `<p class="error">Error: ${error.message}</p>`;
             }
         }
 
         function displayStockData(stockData) {
             let resultHTML = `<h3>Stock Information</h3>`;
-            for (const [key, value] of Object.entries(stockData)) {
-                resultHTML += `<div class="result-item"><strong>${key}:</strong> ${value}</div>`;
+            if (typeof stockData !== 'object' || Object.keys(stockData).length === 0) {
+                resultHTML += `<p class="error">No valid stock data found.</p>`;
+            } else {
+                for (const [key, value] of Object.entries(stockData)) {
+                    resultHTML += `<div class="result-item"><strong>${key}:</strong> ${value}</div>`;
+                }
             }
             document.getElementById('resultsContainer').innerHTML = resultHTML;
         }
     </script>
 </body>
 </html>
-
