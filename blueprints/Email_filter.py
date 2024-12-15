@@ -48,8 +48,8 @@ def process_data():
     for filter_item in filters:
         filtered_data = {}
         for item in data:
-            average_volume = item.get("Average Volume", 0)
-            current_price = item.get("Price", 0)
+            average_volume = item.get("Avg Volume (3 mon)", 0)
+            current_price = item.get("Current Price", 0)
             current_volume = item.get("Volume Today", 0)
 
             # Check for specific volume-based conditions
