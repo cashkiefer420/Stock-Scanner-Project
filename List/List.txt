@@ -1,4 +1,16 @@
-Price Change Today
-Pe Change in Three Months
-Volume Today
-Market Cap Three Months
+Current Price
+Previous Close
+Previous Open
+Bid (Buy price Currently)
+Ask (Sell Price Currently)
+Days Range
+Volume 
+Avg Volume (3 mon)
+Market Cap
+Beta
+P/E ratio
+Earnings Per Share
+Earnings Date
+Dividend Yeild
+Ex-Dividend Date
+One Year Target
