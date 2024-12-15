@@ -74,10 +74,10 @@ def export_all_stock_data():
     output = split_json(input_json)
 
     # Define output file paths
-    price_change_file_path = 'json/price_change_today.json'
-    volume_change_file_path = 'json/volume_change_3mo.json'
-    pe_change_file_path = 'json/pe_change_3mo.json'
-    market_cap_change_file_path = 'json/market_cap_change_3mo.json'
+    price_change_file_path = 'json/Split_price.json'
+    volume_change_file_path = 'json/Split_volume.json'
+    pe_change_file_path = 'json/Split_pe.json'
+    market_cap_change_file_path = 'json/Split_mc.json'
 
     # Save each result type to its own file
     save_json(output['Price Change Today'], price_change_file_path)
