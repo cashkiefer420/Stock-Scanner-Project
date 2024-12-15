@@ -1,14 +1,23 @@
 Current Price
+Price Change Today
+Price Change Week
+Price Change Month
+Price Change Year
 Previous Close
 Previous Open
 Bid (Buy price Currently)
 Ask (Sell Price Currently)
 Days Range
+Shares Avalable
 Volume 
+Day Volume
 Avg Volume (3 mon)
+DVAV (Day Volume Over Average Volume)
 Market Cap
+Market Cap Change (3 Mon)
 Beta
 P/E ratio
+P/E Change  (3 Mon)
 Earnings Per Share
 Earnings Date
 Dividend Yeild
