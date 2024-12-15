@@ -6,7 +6,16 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 from threading import Event
 
-# Set up logging with log rotation
+# Paths to JSON files
+TICKER_FILE_PATH = 'json/Sample_tickers.json'
+EXPORT_FILE_PATH = 'json/stock_data_export.json'
+
+# Ensure the JSON file exists locally
+if not os.path.exists(TICKER_FILE_PATH):
+    with open(TICKER_FILE_PATH, 'w') as file:
+        json.dump({"tickers": []}, file, indent=4)
+
+# Logging setup with rotation
 from logging.handlers import RotatingFileHandler
 log_format = '%(asctime)s - %(levelname)s - %(message)s'
 handler = RotatingFileHandler('stock_data.log', maxBytes=1_000_000, backupCount=3)
@@ -14,21 +23,15 @@ logging.basicConfig(level=logging.INFO, format=log_format, handlers=[handler])
 
 logging.info("Stock data retrieval started")
 
-# Path to your sample tickers JSON file
-ticker_file_path = 'https://raw.githubusercontent.com/Toasterfire-come/Stock-Scanner-Project/refs/heads/main/json/Sample_tickers.json?token=GHSAT0AAAAAAC3JEC3OLXRRBOYVQU33357AZ2Z6CEA'
-json_export_path = 'https://raw.githubusercontent.com/Toasterfire-come/Stock-Scanner-Project/refs/heads/main/json/stock_data_export.json?token=GHSAT0AAAAAAC3JEC3OCU3VHJYPKXEAGY42Z2Z6RBQ'
-
 # Blocking event for graceful shutdown
 shutdown_event = Event()
 
 # Load tickers from the JSON file
-def load_tickers_from_file():
+def load_tickers():
     try:
-        if not os.path.exists(ticker_file_path):
-            logging.error(f"File not found: {ticker_file_path}")
-            return []
-        with open(ticker_file_path, 'r') as f:
-            return json.load(f)
+        with open(TICKER_FILE_PATH, 'r') as file:
+            data = json.load(file)
+            return data.get("tickers", [])
     except Exception as e:
         logging.exception("Error loading tickers from file:")
         return []
@@ -85,9 +88,9 @@ def fetch_price(ticker):
 # Load existing JSON data
 def load_existing_data():
     try:
-        if os.path.exists(json_export_path):
-            with open(json_export_path, 'r') as f:
-                return json.load(f)
+        if os.path.exists(EXPORT_FILE_PATH):
+            with open(EXPORT_FILE_PATH, 'r') as file:
+                return json.load(file)
         return []
     except Exception as e:
         logging.exception("Error loading existing JSON data:")
@@ -108,7 +111,7 @@ def update_json_data(new_data, existing_data):
 
 # Export all stock data
 def export_all_stock_data():
-    stock_list = load_tickers_from_file()
+    stock_list = load_tickers()
     if not stock_list:
         logging.error("No tickers found to process.")
         return
@@ -124,7 +127,7 @@ def export_all_stock_data():
 
     if data_changed:
         try:
-            with open(json_export_path, 'w') as json_file:
+            with open(EXPORT_FILE_PATH, 'w') as json_file:
                 json.dump(updated_data, json_file, indent=4)
             logging.info("Stock data exported to stock_data_export.json")
         except Exception as e:
