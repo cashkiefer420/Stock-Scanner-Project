@@ -6,7 +6,7 @@ import time
 required_fields = [
     'Ticker', 
     'Price Change Today', 
-    'Avg Volume (3 mon)', 
+    'Volume Today', 
     'DVAV (Day Volume Over Average Volume)', 
     'P/E Change (3 Mon)', 
     'Market Cap Change (3 Mon)'
@@ -48,7 +48,7 @@ def filter_and_update_data():
                 updated_item = {
                     'Ticker': new_item.get('Ticker'),
                     'Price Change Today': new_item.get('Price Change Today'),
-                    'Avg Volume (3 mon)': new_item.get('Avg Volume (3 mon)'),
+                    'Volume Today': new_item.get('Avg Volume (3 mon)'),
                     'DVAV (Day Volume Over Average Volume)': new_item.get('DVAV (Day Volume Over Average Volume)'),
                     'P/E Change (3 Mon)': new_item.get('P/E Change (3 Mon)'),
                     'Market Cap Change (3 Mon)': new_item.get('Market Cap Change (3 Mon)')
