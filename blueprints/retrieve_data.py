@@ -39,7 +39,7 @@ def load_tickers():
 # Calculate percentage change
 def calculate_percent_change(new, old):
     try:
-        return round(((new - old) / old) * 100, 4) if old != 'N/A' else 'N/A'
+        return round(((new - old) / old) * 100, 4) if old != 'N/A' and old != 0 else 'N/A'
     except (TypeError, ZeroDivisionError):
         return 'N/A'
 
@@ -47,7 +47,7 @@ def calculate_percent_change(new, old):
 def fetch_price(ticker):
     try:
         stock = yf.Ticker(ticker)
-        hist_data = stock.history(period="1mo")
+        hist_data = stock.history(period="3mo")
         if hist_data.empty:
             return {'Ticker': ticker, 'Current Price': 'N/A'}
 
@@ -59,6 +59,7 @@ def fetch_price(ticker):
         avg_volume = stock.info.get('averageVolume', 'N/A')
         market_cap = stock.info.get('marketCap', 'N/A')
         shares_outstanding = stock.info.get('sharesOutstanding', 'N/A')
+        trailing_pe = stock.info.get('trailingPE', 'N/A')
 
         # Calculate percent gains
         start_of_week = datetime.today() - timedelta(days=datetime.today().weekday())
@@ -68,6 +69,20 @@ def fetch_price(ticker):
         start_of_year = datetime(datetime.now().year, 1, 1)
         year_data = stock.history(start=start_of_year)
         percent_gain_year = calculate_percent_change(current_price, year_data['Close'].iloc[0]) if not year_data.empty else 'N/A'
+
+        # Historical market cap and P/E ratio calculations
+        three_months_ago = datetime.today() - timedelta(days=90)
+        three_month_data = stock.history(start=three_months_ago)
+        
+        if not three_month_data.empty:
+            three_month_close = three_month_data['Close'].iloc[0]
+            three_month_market_cap = three_month_close * shares_outstanding if shares_outstanding != 'N/A' else 'N/A'
+
+            percent_market_cap_change = calculate_percent_change(market_cap, three_month_market_cap) if three_month_market_cap != 'N/A' else 'N/A'
+            percent_pe_change = calculate_percent_change(trailing_pe, stock.info.get('trailingPE', 'N/A'))
+        else:
+            percent_market_cap_change = 'N/A'
+            percent_pe_change = 'N/A'
 
         return {
             'Ticker': ticker,
@@ -79,7 +94,9 @@ def fetch_price(ticker):
             'Market Cap': market_cap,
             'Shares Outstanding': shares_outstanding,
             'Percent Gain This Week': percent_gain_week,
-            'Percent Gain This Year': percent_gain_year
+            'Percent Gain This Year': percent_gain_year,
+            'Percent Market Cap Change (3mo)': percent_market_cap_change,
+            'Percent P/E Change (3mo)': percent_pe_change
         }
     except Exception as e:
         logging.exception(f"Error fetching data for {ticker}:")
