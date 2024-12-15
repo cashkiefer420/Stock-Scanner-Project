@@ -1,120 +1,74 @@
 import json
-import threading
+import schedule
 import time
 
-# Function to calculate price change
-def calculate_price_change(current_price, previous_close):
-    return ((current_price - previous_close) / previous_close) * 100
+# Define the fields to keep
+required_fields = [
+    'Ticker', 
+    'Price Change Today', 
+    'Avg Volume (3 mon)', 
+    'DVAV (Day Volume Over Average Volume)', 
+    'P/E Change (3 Mon)', 
+    'Market Cap Change (3 Mon)'
+]
 
-# Function to calculate volume change
-def calculate_volume_change(current_volume, volume_three_months_ago):
-    return ((current_volume - volume_three_months_ago) / volume_three_months_ago) * 100
-
-# Function to calculate P/E change
-def calculate_pe_change(pe_current, pe_three_months_ago):
-    return ((pe_current - pe_three_months_ago) / pe_three_months_ago) * 100
-
-# Function to calculate market cap change
-def calculate_market_cap_change(market_cap_current, market_cap_three_months_ago):
-    return ((market_cap_current - market_cap_three_months_ago) / market_cap_three_months_ago) * 100
-
-# Function to process and split the stock data
-def split_json(input_json):
-    ticker = input_json.get('ticker')
-    current_price = input_json.get('Current Price')
-    previous_close = input_json.get('Previous Close')
-    current_volume = input_json.get('Volume Today')
-    volume_three_months_ago = input_json.get('Volume Three Months Ago')
-    pe_current = input_json.get('P/E Ratio')
-    pe_three_months_ago = input_json.get('P/E Ratio Three Months Ago')
-    market_cap_current = input_json.get('Market Cap')
-    market_cap_three_months_ago = input_json.get('Market Cap Three Months Ago')
-
-    # Calculating the required changes
-    price_change_today = calculate_price_change(current_price, previous_close)
-    volume_change_three_months = calculate_volume_change(current_volume, volume_three_months_ago)
-    pe_change_three_months = calculate_pe_change(pe_current, pe_three_months_ago)
-    market_cap_change_three_months = calculate_market_cap_change(market_cap_current, market_cap_three_months_ago)
-    
-    # Prepare the output JSONs with only the changed data
-    return {
-        'Price Change Today': {
-            'ticker': ticker,
-            'Price Change Today (%)': price_change_today
-        },
-        'Volume Change Today': {
-            'ticker': ticker,
-            'Volume Change (3mo) (%)': volume_change_three_months
-        },
-        'P/E Change (3mo)': {
-            'ticker': ticker,
-            'P/E Change (3mo) (%)': pe_change_three_months
-        },
-        'Market Cap Change (3mo)': {
-            'ticker': ticker,
-            'Market Cap Change (3mo) (%)': market_cap_change_three_months
-        }
-    }
-
-# Function to update the existing JSON by merging the updated data and keeping the rest
-def update_json(input_file_path, updated_data):
-    # Read the existing JSON from the file
-    with open(input_file_path, 'r') as f:
-        existing_data = json.load(f)
-    
-    # Update only the changed fields while keeping the other data intact
-    for key in updated_data:
-        if key in existing_data:
-            existing_data[key].update(updated_data[key])
-        else:
-            existing_data[key] = updated_data[key]
-
-    # Write the updated data back to the JSON file
-    with open(input_file_path, 'w') as f:
-        json.dump(existing_data, f, indent=4)
-
-# Function to export all stock data
-def export_all_stock_data():
-    input_file_path = 'json/stock_data_export.json'
-
-    # Read the input JSON from the file
-    with open(input_file_path, 'r') as f:
-        input_json = json.load(f)
-
-    # Process the input and get the calculated results
-    output = split_json(input_json)
-
-    # Update the existing JSON with the calculated changes
-    update_json(input_file_path, output)
-
-    # Define output file paths
-    price_change_file_path = 'json/Split_price.json'
-    volume_change_file_path = 'json/Split_volume.json'
-    pe_change_file_path = 'json/Split_pe.json'
-    market_cap_change_file_path = 'json/Split_mc.json'
-
-    # Save each result type to its own file
-    save_json(output['Price Change Today'], price_change_file_path)
-    save_json(output['Volume Change Today'], volume_change_file_path)
-    save_json(output['P/E Change (3mo)'], pe_change_file_path)
-    save_json(output['Market Cap Change (3mo)'], market_cap_change_file_path)
-
-# Function to save data to a JSON file
-def save_json(data, file_path):
-    with open(file_path, 'w') as f:
-        json.dump(data, f, indent=4)
-
-# Function for the main execution loop
-def main():
-    # Event for graceful shutdown
-    shutdown_event = threading.Event()
-
+def filter_and_update_data():
     try:
-        while not shutdown_event.is_set():
-            export_all_stock_data()
-            shutdown_event.wait(180)  # Block for 180 seconds or until shutdown_event is set
-    except KeyboardInterrupt:
-        shutdown_event.set()
+        # Open the stock data JSON file and load the data
+        with open('/json/stock_data_export.json', 'r') as file:
+            new_data = json.load(file)
 
-if __name__ == '__main__':
-    main()
+        # If there's no data, just return and do nothing
+        if not new_data:
+            print("No new data found, skipping update.")
+            return
+
+        # Load the previously saved data if exists, otherwise initialize as empty list
+        try:
+            with open('json/Split_data.json', 'r') as file:
+                existing_data = json.load(file)
+        except FileNotFoundError:
+            existing_data = []
+
+        # Iterate through the new data and update existing data where necessary
+        updated_data = []
+
+        for new_item in new_data:
+            updated_item = None
+            for existing_item in existing_data:
+                if existing_item.get('Ticker') == new_item.get('Ticker'):
+                    updated_item = existing_item.copy()
+                    for field in required_fields:
+                        if new_item.get(field) != existing_item.get(field):
+                            updated_item[field] = new_item.get(field)
+                    break
+            
+            # If no existing data was found, add the new item
+            if not updated_item:
+                updated_item = {
+                    'Ticker': new_item.get('Ticker'),
+                    'Price Change Today': new_item.get('Price Change Today'),
+                    'Avg Volume (3 mon)': new_item.get('Avg Volume (3 mon)'),
+                    'DVAV (Day Volume Over Average Volume)': new_item.get('DVAV (Day Volume Over Average Volume)'),
+                    'P/E Change (3 Mon)': new_item.get('P/E Change (3 Mon)'),
+                    'Market Cap Change (3 Mon)': new_item.get('Market Cap Change (3 Mon)')
+                }
+
+            updated_data.append(updated_item)
+
+        # Save the updated data back to Split_data.json
+        with open('json/Split_data.json', 'w') as file:
+            json.dump(updated_data, file, indent=4)
+
+        print("Data successfully filtered and saved.")
+    
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+# Function to run the process every 3 minutes
+schedule.every(3).minutes.do(filter_and_update_data)
+
+# Keep the script running to repeat the task every 3 minutes
+while True:
+    schedule.run_pending()
+    time.sleep(1)
