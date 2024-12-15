@@ -52,7 +52,7 @@ def get_stock_metrics(search_query, filepath):
 
     return response
 
-@app.route('/get_stock', methods=['GET'])
+@app.route('/Fetch_data_ticker', methods=['GET'])
 def get_stock():
     search_query = request.args.get('query', '').strip()
     filepath = "json/stock_data_export.json"
