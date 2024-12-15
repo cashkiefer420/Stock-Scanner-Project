@@ -2,6 +2,10 @@ from flask import Flask, request, jsonify
 import re
 import os
 import json
+import smtplib
+from jinja2 import Template
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 app = Flask(__name__)
 
@@ -54,6 +58,69 @@ def subscribe_email():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"message": "An error occurred"}), 500
+
+# Load the stock information data
+with open('json/Filtered_price_10_de.json') as f:
+    stock_info = json.load(f)
+
+# Load the email list data
+with open('json/10_price_de.json') as f:
+    email_data = json.load(f)
+
+# HTML email template for stock movement
+html_template = """
+<html>
+  <body>
+    <h1>Stock <strong>{{ stock_symbol }}</strong> Down Ten Percent Notification</h1>
+    <p>Dear Investor,</p>
+    <p>The stock <strong>{{ stock_symbol }}</strong> has experienced a price movement.</p>
+    <p>Current Price: ${{ current_price }}</p>
+    <p>Percentage Change: {{ percentage_change }}%</p>
+    <p>Volume Today: {{ Volume_today }}%</p>
+    <p>Best Regards,<br>Retail Trade Scanner</p>
+  </body>
+</html>
+"""
+
+# SMTP server configuration (example with Gmail)
+SMTP_SERVER = 'smtp.ionos.com'
+SMTP_PORT = 587
+SENDER_EMAIL = 'noreply.rts@retailtradescanner.com'
+SENDER_PASSWORD = 'pIqvin-persi2-pibsij'
+
+# Initialize the SMTP server
+server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+server.starttls()
+server.login(SENDER_EMAIL, SENDER_PASSWORD)
+
+# Prepare the template
+template = Template(html_template)
+
+# Loop through each email address
+for recipient in email_data["emails"]:
+    # Fill in the template with stock movement data
+    filled_html = template.render(
+        stock_symbol=stock_info["ticker"],
+        current_price=stock_info["Current Price"],
+        percentage_change=stock_info["percentage_change"]
+        Volume_Today=stock_info["Volume today"],
+    )
+
+    # Create the email message
+    msg = MIMEMultipart()
+    msg['From'] = SENDER_EMAIL
+    msg['To'] = recipient
+    msg['Subject'] = f'Stock Movement Notification for {stock_info["stock_symbol"]}'
+
+    # Attach the HTML content to the email
+    msg.attach(MIMEText(filled_html, 'html'))
+
+    # Send the email
+    server.sendmail(SENDER_EMAIL, recipient, msg.as_string())
+
+# Close the SMTP server connection
+server.quit()
+
 
 if __name__ == '__main__':
     app.run(debug=True)
