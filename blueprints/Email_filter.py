@@ -51,7 +51,7 @@ def process_data():
             average_volume = item.get("Avg Volume (3 mon)", 0)
             current_price = item.get("Current Price", 0)
             current_volume = item.get("Volume Today", 0)
-
+            
             # Check for specific volume-based conditions
             if filter_item["file_name"] == "Filtered_volume_10.json" and average_volume < 8000000 and current_price < 100 and current_volume > 10000000:
                 if filter_item["condition"](item):
