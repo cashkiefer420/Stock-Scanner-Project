@@ -1,146 +1,161 @@
-import yfinance as yf
-import json
-from datetime import datetime, timedelta
-import logging
+from flask import Flask, request, jsonify
 import os
-from concurrent.futures import ThreadPoolExecutor
-from threading import Event
+import json
+import re
+import smtplib
+from jinja2 import Template
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from datetime import datetime
+import time
+import threading
+
+app = Flask(__name__)
+
+# SMTP Configuration
+SMTP_SERVER = 'smtp.ionos.com'
+SMTP_PORT = 587
+SENDER_EMAIL = 'noreply.rts@retailtradescanner.com'
+SENDER_PASSWORD = 'pIqvin-persi2-pibsij'
 
 # Paths to JSON files
-TICKER_FILE_PATH = 'json/Sample_tickers.json'
-EXPORT_FILE_PATH = 'json/stock_data_export.json'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+JSON_FILE = os.path.join(BASE_DIR, 'json', '50_price_in.json')
+STOCK_INFO_FILE = os.path.join(BASE_DIR, 'json', 'Filtered_price_50_in.json')
+USED_TICKERS_FILE = os.path.join(BASE_DIR, 'json', 'ut_price_50_in.json')
 
-# Ensure the JSON file exists locally
-if not os.path.exists(TICKER_FILE_PATH):
-    with open(TICKER_FILE_PATH, 'w') as file:
-        json.dump({"tickers": []}, file, indent=4)
+# Ensure JSON files exist
+for file in [JSON_FILE, USED_TICKERS_FILE]:
+    if not os.path.exists(file):
+        with open(file, 'w') as f:
+            json.dump({"emails": [], "used_tickers": []}, f, indent=4)
 
-# Logging setup with rotation
-from logging.handlers import RotatingFileHandler
-log_format = '%(asctime)s - %(levelname)s - %(message)s'
-handler = RotatingFileHandler('stock_data.log', maxBytes=1_000_000, backupCount=3)
-logging.basicConfig(level=logging.INFO, format=log_format, handlers=[handler])
+# Email validation
+def is_valid_email(email):
+    regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return re.match(regex, email)
 
-logging.info("Stock data retrieval started")
-
-# Blocking event for graceful shutdown
-shutdown_event = Event()
-
-# Load tickers from the JSON file
-def load_tickers():
+# Route to handle email subscription
+@app.route('/subscribe-price-50-in', methods=['POST'])
+def subscribe_email():
     try:
-        with open(TICKER_FILE_PATH, 'r') as file:
-            data = json.load(file)
-            return data.get("tickers", [])
+        data = request.get_json()
+        email = data.get("email")
+
+        if not email:
+            return jsonify({"message": "Email is required"}), 400
+        if not is_valid_email(email):
+            return jsonify({"message": "Invalid email format"}), 400
+
+        with open(JSON_FILE, 'r') as file:
+            email_data = json.load(file)
+
+        if email in email_data["emails"]:
+            return jsonify({"message": "Email already subscribed"}), 400
+
+        email_data["emails"].append(email)
+        with open(JSON_FILE, 'w') as file:
+            json.dump(email_data, file, indent=4)
+
+        return jsonify({"message": "Subscription successful"}), 200
     except Exception as e:
-        logging.exception("Error loading tickers from file:")
-        return []
+  
+        return jsonify({"message": "An error occurred"}), 500
 
-# Calculate percentage change
-def calculate_percent_change(new, old):
+def send_stock_notifications():
     try:
-        return round(((new - old) / old) * 100, 4) if old != 'N/A' else 'N/A'
-    except (TypeError, ZeroDivisionError):
-        return 'N/A'
+        # Load email data
+        with open(JSON_FILE, 'r') as f:
+            email_data = json.load(f)
 
-# Fetch historical data efficiently
-def fetch_price(ticker):
-    try:
-        stock = yf.Ticker(ticker)
-        hist_data = stock.history(period="1mo")
-        if hist_data.empty:
-            return {'Ticker': ticker, 'Current Price': 'N/A'}
+        # Load used tickers
+        with open(USED_TICKERS_FILE, 'r') as f:
+            used_tickers_data = json.load(f)
 
-        current_price = hist_data['Close'].iloc[-1]
-        prev_close = hist_data['Close'].iloc[-2] if len(hist_data) > 1 else 'N/A'
-        prev_open = hist_data['Open'].iloc[0]
+        # Load stock data
+        with open(STOCK_INFO_FILE, 'r') as f:
+            stock_data = json.load(f)
 
-        volume_today = hist_data['Volume'].iloc[-1]
-        avg_volume = stock.info.get('averageVolume', 'N/A')
-        market_cap = stock.info.get('marketCap', 'N/A')
-        shares_outstanding = stock.info.get('sharesOutstanding', 'N/A')
+        # Email template
+        html_template = """
+        <html>
+          <body>
+            <h1>Stock <strong>{{ stock_symbol }}</strong> Increase Fifty Percent Notification</h1>
+            <p>Dear Investor,</p>
+            <p>The stock <strong>{{ stock_symbol }}</strong> has experienced a price movement.</p>
+            <p>Current Price: ${{ current_price }}</p>
+            <p>Percentage Change: {{ percentage_change }}%</p>
+            <p>Volume Today: {{ Volume_today }}</p>
+            <p>Best Regards,<br>Retail Trade Scanner</p>
+          </body>
+        </html>
+        """
 
-        # Calculate percent gains
-        start_of_week = datetime.today() - timedelta(days=datetime.today().weekday())
-        week_data = stock.history(start=start_of_week)
-        percent_gain_week = calculate_percent_change(current_price, week_data['Close'].iloc[0]) if not week_data.empty else 'N/A'
+        # Initialize SMTP server
+        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+        server.starttls()
+        server.login(SENDER_EMAIL, SENDER_PASSWORD)
 
-        start_of_year = datetime(datetime.now().year, 1, 1)
-        year_data = stock.history(start=start_of_year)
-        percent_gain_year = calculate_percent_change(current_price, year_data['Close'].iloc[0]) if not year_data.empty else 'N/A'
+        # Prepare template
+        template = Template(html_template)
 
-        return {
-            'Ticker': ticker,
-            'Current Price': round(current_price, 4),
-            'Previous Open': round(prev_open, 4),
-            'Previous Close': round(prev_close, 4) if prev_close != 'N/A' else 'N/A',
-            'Volume Today': volume_today,
-            'Average Volume': avg_volume,
-            'Market Cap': market_cap,
-            'Shares Outstanding': shares_outstanding,
-            'Percent Gain This Week': percent_gain_week,
-            'Percent Gain This Year': percent_gain_year
-        }
+        for ticker_info in stock_data.get("stocks", []):
+            ticker = ticker_info.get("ticker", "Unknown")
+
+            # Skip if the ticker is already used
+            if ticker in used_tickers_data["used_tickers"]:
+                continue
+
+            filled_html = template.render(
+                stock_symbol=ticker,
+                current_price=ticker_info.get("Current Price", "N/A"),
+                percentage_change=ticker_info.get("percentage_change", "N/A"),
+                Volume_today=ticker_info.get("Volume today", "N/A"),
+            )
+
+            for recipient in email_data["emails"]:
+                msg = MIMEMultipart()
+                msg['From'] = SENDER_EMAIL
+                msg['To'] = recipient
+                msg['Subject'] = f'Stock Movement Notification for {ticker}'
+
+                msg.attach(MIMEText(filled_html, 'html'))
+                server.sendmail(SENDER_EMAIL, recipient, msg.as_string())
+
+            # Mark ticker as used
+            used_tickers_data["used_tickers"].append(ticker)
+
+        # Save updated used tickers
+        with open(USED_TICKERS_FILE, 'w') as f:
+            json.dump(used_tickers_data, f, indent=4)
+
+        server.quit()
     except Exception as e:
-        logging.exception(f"Error fetching data for {ticker}:")
-        return {'Ticker': ticker, 'Current Price': 'N/A'}
 
-# Load existing JSON data
-def load_existing_data():
-    try:
-        if os.path.exists(EXPORT_FILE_PATH):
-            with open(EXPORT_FILE_PATH, 'r') as file:
-                return json.load(file)
-        return []
-    except Exception as e:
-        logging.exception("Error loading existing JSON data:")
-        return []
 
-# Compare and update data
-def update_json_data(new_data, existing_data):
-    updated = False
-    existing_data_dict = {entry['Ticker']: entry for entry in existing_data}
+def periodic_check():
+    """Check every 5 minutes for new stock data and send notifications."""
+    while True:
+       
+        send_stock_notifications()
+        time.sleep(300)  # Wait for 5 minutes
 
-    for new_entry in new_data:
-        ticker = new_entry['Ticker']
-        if ticker not in existing_data_dict or existing_data_dict[ticker] != new_entry:
-            existing_data_dict[ticker] = new_entry
-            updated = True
+def reset_used_tickers():
+    """Reset the used tickers file at midnight."""
+    while True:
+        now = datetime.now()
+        if now.hour == 0 and now.minute == 0:
+            with open(USED_TICKERS_FILE, 'w') as f:
+                json.dump({"used_tickers": []}, f, indent=4)
+        
+        time.sleep(60)  # Check the time every minute
 
-    return list(existing_data_dict.values()), updated
+# Start background threads
+reset_thread = threading.Thread(target=reset_used_tickers, daemon=True)
+reset_thread.start()
 
-# Export all stock data
-def export_all_stock_data():
-    stock_list = load_tickers()
-    if not stock_list:
-        logging.error("No tickers found to process.")
-        return
-
-    existing_data = load_existing_data()
-    result = []
-
-    with ThreadPoolExecutor() as executor:
-        for stock_data in executor.map(fetch_price, stock_list):
-            result.append(stock_data)
-
-    updated_data, data_changed = update_json_data(result, existing_data)
-
-    if data_changed:
-        try:
-            with open(EXPORT_FILE_PATH, 'w') as json_file:
-                json.dump(updated_data, json_file, indent=4)
-            logging.info("Stock data exported to stock_data_export.json")
-        except Exception as e:
-            logging.exception("Error exporting stock data:")
-    else:
-        logging.info("No changes detected. JSON file not updated.")
+check_thread = threading.Thread(target=periodic_check, daemon=True)
+check_thread.start()
 
 if __name__ == '__main__':
-    try:
-        while not shutdown_event.is_set():
-            export_all_stock_data()
-            logging.info("Waiting for the next cycle (3 minutes)...")
-            shutdown_event.wait(180)  # Block for 180 seconds or until shutdown_event is set
-    except KeyboardInterrupt:
-        logging.info("Shutdown signal received. Exiting...")
-        shutdown_event.set()
+    app.run(debug=True)
