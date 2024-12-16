@@ -80,7 +80,7 @@ def send_stock_notifications():
         html_template = """
         <html>
           <body>
-            <h1>Stock <strong>{{ stock_symbol }}</strong> Incresase Twenty Percent Notification</h1>
+            <h1>Stock <strong>{{ stock_symbol }}</strong> Increase Twenty Percent Notification</h1>
             <p>Dear Investor,</p>
             <p>The stock <strong>{{ stock_symbol }}</strong> has experienced a price movement.</p>
             <p>Current Price: ${{ current_price }}</p>
