@@ -22,7 +22,7 @@ SENDER_PASSWORD = 'pIqvin-persi2-pibsij'
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_FILE = os.path.join(BASE_DIR, 'json', '10_price_de.json')
 STOCK_INFO_FILE = os.path.join(BASE_DIR, 'json', 'Filtered_price_10_de.json')
-USED_TICKERS_FILE = os.path.join(BASE_DIR, 'json', 'used_tickers.json')
+USED_TICKERS_FILE = os.path.join(BASE_DIR, 'json', 'ut_price_10_de.json')
 
 # Ensure JSON files exist
 for file in [JSON_FILE, USED_TICKERS_FILE]:
