@@ -82,7 +82,7 @@ def send_stock_notifications():
           <body>
             <h1>Stock <strong>{{ stock_symbol }}</strong> Market Cap Decrease Ten Percent Notification</h1>
             <p>Dear Investor,</p>
-            <p>The stock <strong>{{ stock_symbol }}</strong> has experienced a price movement.</p>
+            <p>The stock <strong>{{ stock_symbol }}</strong> has experienced a market cap movement.</p>
             <p>Current Price: ${{ current_price }}</p>
             <p>Market Cap: {{ market_cap }}%</p>
             <p>Market Cap Change: {{ percent_market_cap_change }}%</p>
