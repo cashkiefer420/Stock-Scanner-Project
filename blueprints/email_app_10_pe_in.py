@@ -82,10 +82,10 @@ def send_stock_notifications():
           <body>
             <h1>Stock <strong>{{ stock_symbol }}</strong> P/E Increase Ten Percent Notification</h1>
             <p>Dear Investor,</p>
-            <p>The stock <strong>{{ stock_symbol }}</strong> has experienced a market cap movement.</p>
+            <p>The stock <strong>{{ stock_symbol }}</strong> has experienced a P/E movement.</p>
             <p>Current Price: ${{ current_price }}</p>
-            <p>P/E Change: {{ percent_market_cap_change }}%</p>
-            <p>P/E Ratio: {{ percent_market_cap_change }}%</p>
+            <p>P/E Change: {{ pe_change }}%</p>
+            <p>P/E Ratio: {{ pe }}%</p>
             <p>Best Regards,<br>Retail Trade Scanner</p>
           </body>
         </html>
