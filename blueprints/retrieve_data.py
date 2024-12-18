@@ -44,6 +44,7 @@ def fetch_price(ticker):
         if hist_data.empty:
             return {'Ticker': ticker, 'Current Price': 'N/A'}
 
+        company_name  = stock.info.get('longName', 'N/A')
         current_price = hist_data['Close'].iloc[-1]
         prev_close = hist_data['Close'].iloc[-2] if len(hist_data) > 1 else 'N/A'
         prev_open = hist_data['Open'].iloc[0]
@@ -89,6 +90,7 @@ def fetch_price(ticker):
 
         return {
             'Ticker': ticker,
+            'Company Name': company_name,
             'Current Price': round(current_price, 4),
             'Price Change Today': calculate_percent_change(current_price, prev_close),
             'Price Change Week': percent_gain_week,
