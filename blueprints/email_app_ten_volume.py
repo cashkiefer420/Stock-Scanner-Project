@@ -80,12 +80,13 @@ def send_stock_notifications():
         html_template = """
         <html>
           <body>
-            <h1>Stock <strong>{{ stock_symbol }}</strong> Down Ten Percent Notification</h1>
+            <h1>Stock <strong>{{ stock_symbol }}</strong> Ten Million Volume Notification</h1>
             <p>Dear Investor,</p>
-            <p>The stock <strong>{{ stock_symbol }}</strong> has experienced a price movement.</p>
+            <p>The stock <strong>{{ stock_symbol }}</strong> is experiencing large volume.</p>
             <p>Current Price: ${{ current_price }}</p>
-            <p>Percentage Change: {{ percentage_change }}%</p>
             <p>Volume Today: {{ Volume_today }}</p>
+            <p>DVAV - Daily Volume Over Average Volume: {{ DVAV }}</p>
+            <p>Average Volume: {{ AV }}</p>
             <p>Best Regards,<br>Retail Trade Scanner</p>
           </body>
         </html>
@@ -109,7 +110,8 @@ def send_stock_notifications():
             filled_html = template.render(
                 stock_symbol=ticker,
                 current_price=ticker_info.get("Current Price", "N/A"),
-                percentage_change=ticker_info.get("percentage_change", "N/A"),
+                DVAV=ticker_info.get("Avg Volume (3 mon)", "N/A"),
+                AV=ticker_info.get("DVAV (Day Volume Over Average Volume)", "N/A"),
                 Volume_today=ticker_info.get("Volume today", "N/A"),
             )
 
