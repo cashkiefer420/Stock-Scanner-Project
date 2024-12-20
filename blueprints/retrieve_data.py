@@ -7,8 +7,8 @@ from concurrent.futures import ThreadPoolExecutor
 from threading import Event
 
 # Paths to JSON files
-TICKER_FILE_PATH = './json/stock_data_export.json'
-EXPORT_FILE_PATH = './json/stock_data_export.json'
+TICKER_FILE_PATH = '/home/ec2-user/Stock-Scanner-Project/json/Sample_tickers.json'
+EXPORT_FILE_PATH = '/home/ec2-user/Stock-Scanner-Project/json/stock_data_export.json'
 
 # Ensure the JSON file exists locally
 if not os.path.exists(TICKER_FILE_PATH):
