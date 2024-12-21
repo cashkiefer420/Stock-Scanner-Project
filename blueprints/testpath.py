@@ -1,18 +1,20 @@
 import json
-from pathlib import path
+import os 
 
-base_dir = Path(__file__).resolve()
-while base_dir.name != "Stock-Scanner-Project"  and base_dir.parent !=base_dir:
-    base_dir = base_dir.parent
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
-if base_dir.name != "Stock-Scanner-Project":
-    raise FileNotFoundError("Base directory 'Stock-Scanner-Project' not found!")
+while os.path.basename(current_dir) != "Stock-Scanner-Project":
+    current_dir = os.path.dirname(current_dir)
+    if current_dir == "/":
+        raise FileNotFoundError("Base directory 'Stock-Scanner-Project' not found!")
+
+base_dir = current_dir
 
 # Define the absolute path to the JSON file
-json_file_path = base_dir / "json" / "Sample_ticker.json"
+file_path = os.path.join(base_dir, "json", "Sample_ticker.json")
 
-print(json_file_path)
+print("Base directory:", base_dir)
 
-print("JSON file Found successfully!")
+print("Full file path:", file_path)
 
 
