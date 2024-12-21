@@ -1,21 +1,19 @@
 import json
+from pathlib import path
+
+base_dir = Path(__file__).resolve()
+while base_dir.name != "Stock-Scanner-Project"  and base_dir.parent !=base_dir:
+    base_dir = base_dir.parent
+
+if base_dir.name != "Stock-Scanner-Project":
+    raise FileNotFoundError("Base directory 'Stock-Scanner-Project' not found!")
 
 # Define the absolute path to the JSON file
-json_file_path = "/home/ec2-user/Stock-Scanner-Project/json/Sample_tickers.json"
+json_file_path = base_dir / "json" / "Sample_ticker.json"
 
-try:
-    # Open and read the JSON file
-    with open(json_file_path, "r") as file:
-        data = json.load(file)  # Load existing data into a Python dictionary
+print(json_file_path)
 
-    # Modify the JSON data (example: adding a new ticker)
-    data["new_ticker"] = "XYZ"
-
-    # Write the updated data back to the JSON file
-    with open(json_file_path, "w") as file:
-        json.dump(data, file, indent=4)
-
-    print("JSON file updated successfully!")
+print("JSON file Found successfully!")
 
 except FileNotFoundError:
     print(f"Error: File not found at {json_file_path}")
