@@ -1,32 +1,35 @@
 import yfinance as yf
 import json
-from datetime import datetime, timedelta
 import logging
 import os
 from concurrent.futures import ThreadPoolExecutor
 from threading import Event
 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+while os.path.basename(current_dir) != "Stock-Scanner-Project":
+    current_dir = os.path.dirname(current_dir)
+    if current_dir == "/":
+        raise FileNotFoundError("Base directory 'Stock-Scanner-Project' not found!")
+base_dir = current_dir
 # Define the absolute path to the JSON file
-TICKER_FILE_PATH = '/home/ec2-user/Stock-Scanner-Project/json/Sample_tickers.json'
-EXPORT_FILE_PATH = '/home/ec2-user/Stock-Scanner-Project/json/stock_data_export.json'
+TICKER_FILE_PATH = os.path.join(base_dir, "json", "Sample_ticker.json")
+EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
 
-# Ensure the JSON file exists locally
 if not os.path.exists(TICKER_FILE_PATH):
-    with open(TICKER_FILE_PATH, 'w') as file:
-        json.dump({"tickers": []}, file, indent=4)
+os.makedirs(os.path.dirname(TICKER_FILE_PATH), exist_ok=True)
+with open(TICKER_FILE_PATH, 'w') as file:
+json.dump({"tickers": []}, file, indent=4)
 
-# Logging setup with rotation
-from logging.handlers import RotatingFileHandler
+
 log_format = '%(asctime)s - %(levelname)s - %(message)s'
-handler = RotatingFileHandler('stock_data.log', maxBytes=1_000_000, backupCount=3)
-logging.basicConfig(level=logging.INFO, format=log_format, handlers=[handler])
+logging.basicConfig(level=logging.INFO, format=log_format, filename='/home/ec2-user/stock_data.log', filemode='a')
 
 logging.info("Stock data retrieval started")
 
-# Blocking event for graceful shutdown
+Blocking event for graceful shutdown
 shutdown_event = Event()
 
-# Load tickers from the JSON file
+
 def load_tickers():
     try:
         with open(TICKER_FILE_PATH, 'r') as file:
@@ -121,63 +124,34 @@ def fetch_price(ticker):
     except Exception as e:
         logging.exception(f"Error fetching data for {ticker}:")
         return {'Ticker': ticker, 'Current Price': 'N/A'}
-
-# Load existing JSON data
-def load_existing_data():
-    try:
-        if os.path.exists(EXPORT_FILE_PATH):
-            with open(EXPORT_FILE_PATH, 'r') as file:
-                return json.load(file)
-        return []
-    except Exception as e:
-        logging.exception("Error loading existing JSON data:")
-        return []
-
-# Compare and update data
-def update_json_data(new_data, existing_data):
-    updated = False
-    existing_data_dict = {entry['Ticker']: entry for entry in existing_data}
-
-    for new_entry in new_data:
-        ticker = new_entry['Ticker']
-        if ticker not in existing_data_dict or existing_data_dict[ticker] != new_entry:
-            existing_data_dict[ticker] = new_entry
-            updated = True
-
-    return list(existing_data_dict.values()), updated
-
-# Export all stock data
+        
 def export_all_stock_data():
-    stock_list = load_tickers()
-    if not stock_list:
-        logging.error("No tickers found to process.")
-        return
+stock_list = load_tickers()
+if not stock_list:
+logging.error("No tickers found to process.")
+return
 
-    existing_data = load_existing_data()
-    result = []
+result = []
 
-    with ThreadPoolExecutor() as executor:
-        for stock_data in executor.map(fetch_price, stock_list):
-            result.append(stock_data)
+with ThreadPoolExecutor() as executor:
+    for stock_data in executor.map(fetch_price, stock_list):
+        result.append(stock_data)
 
-    updated_data, data_changed = update_json_data(result, existing_data)
-
-    if data_changed:
-        try:
-            with open(EXPORT_FILE_PATH, 'w') as json_file:
-                json.dump(updated_data, json_file, indent=4)
-            logging.info("Stock data exported to stock_data_export.json")
-        except Exception as e:
-            logging.exception("Error exporting stock data:")
-    else:
-        logging.info("No changes detected. JSON file not updated.")
-
-if __name__ == '__main__':
-    try:
-        while not shutdown_event.is_set():
-            export_all_stock_data()
-            logging.info("Waiting for the next cycle (3 minutes)...")
-            shutdown_event.wait(180)  # Block for 180 seconds or until shutdown_event is set
-    except KeyboardInterrupt:
-        logging.info("Shutdown signal received. Exiting...")
-        shutdown_event.set()
+# Remove existing file and write new data
+try:
+    if os.path.exists(EXPORT_FILE_PATH):
+        os.remove(EXPORT_FILE_PATH)
+    with open(EXPORT_FILE_PATH, 'w') as json_file:
+        json.dump(result, json_file, indent=4)
+    logging.info("Stock data exported to stock_data_export.json")
+except Exception as e:
+    logging.exception("Error exporting stock data:")
+if name == 'main':
+try:
+while not shutdown_event.is_set():
+export_all_stock_data()
+logging.info("Waiting for the next cycle (3 minutes)...")
+shutdown_event.wait(180) # Block for 180 seconds or until shutdown_event is set
+except KeyboardInterrupt:
+logging.info("Shutdown signal received. Exiting...")
+shutdown_event.set()
