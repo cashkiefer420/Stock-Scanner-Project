@@ -32,6 +32,7 @@ def load_tickers():
         with open(TICKER_FILE_PATH, 'r') as file:
             data = json.load(file)
             return data.get("tickers", [])
+            print("found tickers")
     except Exception as e:
         logging.exception("Error loading tickers from file:")
         return []
@@ -39,6 +40,7 @@ def load_tickers():
 # Calculate percentage change
 def fetch_price(ticker):
     try:
+        print("getting info")
         stock = yf.Ticker(ticker)
         hist_data = stock.history(period="3mo")
         if hist_data.empty:
