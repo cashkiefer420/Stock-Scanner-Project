@@ -24,4 +24,11 @@ def load_tickers():
         with open(TICKER_FILE_PATH, 'r') as file:
             data = json.load(file)
             return data.get("tickers", [])
-            Print("tickers"
+            Print("tickers")
+    except FileNotFoundError:
+        logging.error(f"Ticker File MIA")
+        return []
+    except json.JSONDecodeError:
+        logging.error("Json Error")
+        return []
+        
