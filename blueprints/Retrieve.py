@@ -25,4 +25,3 @@ def load_tickers():
             data = json.load(file)
             return data.get("tickers", [])
             Print("tickers"
-
