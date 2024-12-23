@@ -19,6 +19,6 @@ base_dir = current_dir
 TICKER_FILE_PATH = os.path.join(base_dir, "json", "Sample_ticker.json")
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
 
-with open(TICKER_FILE_PATH), 'r') as file:
+with open(TICKER_FILE_PATH, 'r') as file:
     content = file.read()
     print(content)
