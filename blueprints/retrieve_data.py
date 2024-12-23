@@ -4,29 +4,33 @@ import logging
 import os
 from concurrent.futures import ThreadPoolExecutor
 from threading import Event
+from datetime import datetime, timedelta
 
+# Base directory setup
 current_dir = os.path.dirname(os.path.abspath(__file__))
 while os.path.basename(current_dir) != "Stock-Scanner-Project":
     current_dir = os.path.dirname(current_dir)
     if current_dir == "/":
         raise FileNotFoundError("Base directory 'Stock-Scanner-Project' not found!")
 base_dir = current_dir
-# Define the absolute path to the JSON file
+
+# Define paths
 TICKER_FILE_PATH = os.path.join(base_dir, "json", "Sample_ticker.json")
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
 
-if not os.path.exists(TICKER_FILE_PATH):
+# Ensure the JSON directory exists
 os.makedirs(os.path.dirname(TICKER_FILE_PATH), exist_ok=True)
-with open(TICKER_FILE_PATH, 'w') as file:
-json.dump({"tickers": []}, file, indent=4)
+if not os.path.exists(TICKER_FILE_PATH):
+    with open(TICKER_FILE_PATH, 'w') as file:
+        json.dump({"tickers": []}, file, indent=4)
 
-
+# Logging setup
 log_format = '%(asctime)s - %(levelname)s - %(message)s'
 logging.basicConfig(level=logging.INFO, format=log_format, filename='/home/ec2-user/stock_data.log', filemode='a')
 
 logging.info("Stock data retrieval started")
 
-Blocking event for graceful shutdown
+# Shutdown event for graceful exit
 shutdown_event = Event()
 
 
@@ -35,7 +39,6 @@ def load_tickers():
         with open(TICKER_FILE_PATH, 'r') as file:
             data = json.load(file)
             return data.get("tickers", [])
-            print("found tickers")
     except Exception as e:
         logging.exception("Error loading tickers from file:")
         return []
@@ -43,7 +46,6 @@ def load_tickers():
 # Calculate percentage change
 def fetch_price(ticker):
     try:
-        print("getting info")
         stock = yf.Ticker(ticker)
         hist_data = stock.history(period="3mo")
         if hist_data.empty:
@@ -124,34 +126,35 @@ def fetch_price(ticker):
     except Exception as e:
         logging.exception(f"Error fetching data for {ticker}:")
         return {'Ticker': ticker, 'Current Price': 'N/A'}
-        
+
 def export_all_stock_data():
-stock_list = load_tickers()
-if not stock_list:
-logging.error("No tickers found to process.")
-return
+    """Fetch and export stock data for all tickers."""
+    stock_list = load_tickers()
+    if not stock_list:
+        logging.error("No tickers found to process.")
+        return
 
-result = []
+    result = []
+    with ThreadPoolExecutor() as executor:
+        for stock_data in executor.map(fetch_price, stock_list):
+            result.append(stock_data)
 
-with ThreadPoolExecutor() as executor:
-    for stock_data in executor.map(fetch_price, stock_list):
-        result.append(stock_data)
+    # Write results to the JSON file
+    try:
+        os.makedirs(os.path.dirname(EXPORT_FILE_PATH), exist_ok=True)
+        with open(EXPORT_FILE_PATH, 'w') as json_file:
+            json.dump(result, json_file, indent=4)
+        logging.info("Stock data exported to stock_data_export.json")
+    except Exception as e:
+        logging.exception("Error exporting stock data:")
 
-# Remove existing file and write new data
-try:
-    if os.path.exists(EXPORT_FILE_PATH):
-        os.remove(EXPORT_FILE_PATH)
-    with open(EXPORT_FILE_PATH, 'w') as json_file:
-        json.dump(result, json_file, indent=4)
-    logging.info("Stock data exported to stock_data_export.json")
-except Exception as e:
-    logging.exception("Error exporting stock data:")
-if name == 'main':
-try:
-while not shutdown_event.is_set():
-export_all_stock_data()
-logging.info("Waiting for the next cycle (3 minutes)...")
-shutdown_event.wait(180) # Block for 180 seconds or until shutdown_event is set
-except KeyboardInterrupt:
-logging.info("Shutdown signal received. Exiting...")
-shutdown_event.set()
+
+if __name__ == '__main__':
+    try:
+        while not shutdown_event.is_set():
+            export_all_stock_data()
+            logging.info("Waiting for the next cycle (3 minutes)...")
+            shutdown_event.wait(180)  # Block for 180 seconds or until shutdown_event is set
+    except KeyboardInterrupt:
+        logging.info("Shutdown signal received. Exiting...")
+        shutdown_event.set()
