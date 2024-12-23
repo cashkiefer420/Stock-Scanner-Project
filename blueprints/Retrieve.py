@@ -19,17 +19,6 @@ base_dir = current_dir
 TICKER_FILE_PATH = os.path.join(base_dir, "json", "Sample_ticker.json")
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
 
-def load_tickers():
-    try:
-        with open(TICKER_FILE_PATH, 'r') as file:
-            data = json.load(file)
-            return data.get("tickers", [])
-    except FileNotFoundError:
-        logging.error(f"Ticker File MIA")
-        return []
-    except json.JSONDecodeError:
-        logging.error("Json Error")
-        return []
-
-tickers = load_tickers()
-print(tickers)
+with open(TICKER_FILE_PATH), 'r') as file:
+    content = file.read()
+    print(content)
