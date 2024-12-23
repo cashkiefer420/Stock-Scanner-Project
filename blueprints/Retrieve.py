@@ -16,8 +16,8 @@ while os.path.basename(current_dir) != "Stock-Scanner-Project":
 base_dir = current_dir
 
 # Define the absolute path to the JSON file
-TICKER_FILE_PATH = os.path.join(base_dir, "json", "Sample_ticker.json")
-EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
+TICKER_FILE_PATH = ./Stock-Scanner-Project/json/Sample_tickers.json
+EXPORT_FILE_PATH = ./Stock-Scanner-Project/json/stock_data_export.json
 
 with open(TICKER_FILE_PATH, 'r') as file:
     content = file.read()
