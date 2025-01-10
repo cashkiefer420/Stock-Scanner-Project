@@ -1,0 +1,222 @@
+[
+    {
+        "Ticker": "AAPL",
+        "Current Price": 243.36,
+        "Price Change Today": -0.2,
+        "Market Cap": 3678581030912,
+        "Market Cap Change (3 Mon)": 9.9,
+        "P/E Ratio": 40.026318,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "40202700",
+        "Avg Volume (3 mon)": 44012600
+    },
+    {
+        "Ticker": "NVDA",
+        "Current Price": 144.47,
+        "Price Change Today": 4.45,
+        "Market Cap": 3538070274048,
+        "Market Cap Change (3 Mon)": 13.12,
+        "P/E Ratio": 57.102768,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "228535600",
+        "Avg Volume (3 mon)": 219256354
+    },
+    {
+        "Ticker": "MSFT",
+        "Current Price": 423.35,
+        "Price Change Today": 1.14,
+        "Market Cap": 3147556454400,
+        "Market Cap Change (3 Mon)": 3.37,
+        "P/E Ratio": 34.958714,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "16640200",
+        "Avg Volume (3 mon)": 20773782
+    },
+    {
+        "Ticker": "GOOGL",
+        "Current Price": 191.79,
+        "Price Change Today": 1.25,
+        "Market Cap": 2355123716096,
+        "Market Cap Change (3 Mon)": 147.59,
+        "P/E Ratio": 25.436338,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "18582000",
+        "Avg Volume (3 mon)": 27478127
+    },
+    {
+        "Ticker": "AMZN",
+        "Current Price": 224.19,
+        "Price Change Today": 1.8,
+        "Market Cap": 2357357969408,
+        "Market Cap Change (3 Mon)": 24.0,
+        "P/E Ratio": 47.801704,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "27485000",
+        "Avg Volume (3 mon)": 37601704
+    },
+    {
+        "Ticker": "META",
+        "Current Price": 604.63,
+        "Price Change Today": 0.9,
+        "Market Cap": 1526382329856,
+        "Market Cap Change (3 Mon)": 19.83,
+        "P/E Ratio": 28.574198,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "11418600",
+        "Avg Volume (3 mon)": 11991590
+    },
+    {
+        "Ticker": "TSM",
+        "Current Price": 208.61,
+        "Price Change Today": 3.49,
+        "Market Cap": 1081966133248,
+        "Market Cap Change (3 Mon)": 13.42,
+        "P/E Ratio": 34.030994,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "10219400",
+        "Avg Volume (3 mon)": 13418522
+    },
+    {
+        "Ticker": "BRK-B",
+        "Current Price": 453.56,
+        "Price Change Today": 0.55,
+        "Market Cap": 978682707968,
+        "Market Cap Change (3 Mon)": 62.45,
+        "P/E Ratio": 9.166532,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "2884600",
+        "Avg Volume (3 mon)": 3843829
+    },
+    {
+        "Ticker": "TSLA",
+        "Current Price": 410.44,
+        "Price Change Today": 8.22,
+        "Market Cap": 1317537054720,
+        "Market Cap Change (3 Mon)": 70.43,
+        "P/E Ratio": 112.44931,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "94818400",
+        "Avg Volume (3 mon)": 92934400
+    },
+    {
+        "Ticker": "LLY",
+        "Current Price": 781.98,
+        "Price Change Today": 0.5,
+        "Market Cap": 703247089664,
+        "Market Cap Change (3 Mon)": -12.96,
+        "P/E Ratio": 83.99355,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "1799100",
+        "Avg Volume (3 mon)": 3728130
+    },
+    {
+        "Ticker": "AVGO",
+        "Current Price": 232.55,
+        "Price Change Today": 0.25,
+        "Market Cap": 1090045607936,
+        "Market Cap Change (3 Mon)": 33.18,
+        "P/E Ratio": 181.67969,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "24927700",
+        "Avg Volume (3 mon)": 28084053
+    },
+    {
+        "Ticker": "WMT",
+        "Current Price": 90.78,
+        "Price Change Today": 0.87,
+        "Market Cap": 729271173120,
+        "Market Cap Change (3 Mon)": 15.02,
+        "P/E Ratio": 37.512394,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "10815200",
+        "Avg Volume (3 mon)": 15600738
+    },
+    {
+        "Ticker": "JPM",
+        "Current Price": 243.28,
+        "Price Change Today": 1.37,
+        "Market Cap": 684915949568,
+        "Market Cap Change (3 Mon)": 15.34,
+        "P/E Ratio": 13.53059,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "9460700",
+        "Avg Volume (3 mon)": 8634253
+    },
+    {
+        "Ticker": "V",
+        "Current Price": 314.91,
+        "Price Change Today": 0.16,
+        "Market Cap": 609813790720,
+        "Market Cap Change (3 Mon)": 28.79,
+        "P/E Ratio": 32.364853,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "4271300",
+        "Avg Volume (3 mon)": 5954769
+    },
+    {
+        "Ticker": "UNH",
+        "Current Price": 513.0,
+        "Price Change Today": 1.68,
+        "Market Cap": 472105713664,
+        "Market Cap Change (3 Mon)": -11.75,
+        "P/E Ratio": 33.333332,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "3019500",
+        "Avg Volume (3 mon)": 4530775
+    },
+    {
+        "Ticker": "SPY",
+        "Current Price": 591.95,
+        "Price Change Today": 1.25,
+        "Market Cap": "N/A",
+        "Market Cap Change (3 Mon)": "N/A",
+        "P/E Ratio": 27.469532,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "37838500",
+        "Avg Volume (3 mon)": 45659980
+    },
+    {
+        "Ticker": "XOM",
+        "Current Price": 107.86,
+        "Price Change Today": 0.51,
+        "Market Cap": 474054393856,
+        "Market Cap Change (3 Mon)": -13.97,
+        "P/E Ratio": 13.448877,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "14230000",
+        "Avg Volume (3 mon)": 14492041
+    },
+    {
+        "Ticker": "NVO",
+        "Current Price": 87.65,
+        "Price Change Today": 0.15,
+        "Market Cap": 393742221312,
+        "Market Cap Change (3 Mon)": -0.69,
+        "P/E Ratio": 29.711864,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "3763100",
+        "Avg Volume (3 mon)": 6248050
+    },
+    {
+        "Ticker": "ORCL",
+        "Current Price": 166.32,
+        "Price Change Today": 0.17,
+        "Market Cap": 465190420480,
+        "Market Cap Change (3 Mon)": -1.93,
+        "P/E Ratio": 40.665035,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "5876000",
+        "Avg Volume (3 mon)": 7528587
+    },
+    {
+        "Ticker": "MA",
+        "Current Price": 521.36,
+        "Price Change Today": -0.2,
+        "Market Cap": 478520344576,
+        "Market Cap Change (3 Mon)": 7.08,
+        "P/E Ratio": 39.377644,
+        "P/E Change (3 Mon)": "N/A",
+        "Volume Today": "1627500",
+        "Avg Volume (3 mon)": 2492543
+    }
+]
