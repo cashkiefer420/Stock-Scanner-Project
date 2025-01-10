@@ -12,6 +12,12 @@ output_directory = os.path.join(base_dir, "json")
 if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
+def safe_float(value):
+    try:
+        return float(value)
+    except (ValueError, TypeError):
+        return  0
+
 # Define the filters as separate conditions for each JSON file
 filters = [
     {"file_name": os.path.join(output_directory, "Filtered_pe_10_in.json"), "condition": lambda ticker: float(ticker.get("P/E Change (3mo)", 0)) > 10, "field": "P/E Change (3mo)"},
