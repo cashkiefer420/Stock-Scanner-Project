@@ -91,7 +91,7 @@ def process_data():
                 # Apply the regular condition for all other filters
                 if filter_item["condition"](item):
                     item[filter_item["field"]] = item.get(filter_item["field"], None)
-                    filtered_data[item["ticker"]] = item
+                    filtered_data[item["Ticker"]] = item
 
         # Save the filtered data to the new JSON file in the /json folder
         file_path = os.path.join(output_directory, filter_item["file_name"])
