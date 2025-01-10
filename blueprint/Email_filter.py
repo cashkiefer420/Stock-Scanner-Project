@@ -42,6 +42,12 @@ filters = [
     {"file_name": os.path.join(output_directory, "Filtered_price_20_de.json"), "condition": lambda ticker: ticker.get("Price Change Today", 0) < -30, "field": "Price Change Today"},
 ]
 
+def ensure_filtered_files():
+    for filter_item in filters:
+        if not os.path.exists(filter_item["file_name"]):
+            with open(filter_item["file_name"], 'w') as file:
+                json.dump({}, file)
+            
 # Load the JSON data from a file
 def process_data():
     with open(Stock_data_export, 'r') as file:
