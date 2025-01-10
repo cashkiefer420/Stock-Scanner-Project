@@ -44,7 +44,7 @@ filters = [
 
 # Load the JSON data from a file
 def process_data():
-    with open('Stock_data_export', 'r') as file:
+    with open(Stock_data_export, 'r') as file:
         data = json.load(file)
 
     # Apply each filter and save to the corresponding file in the /json directory
