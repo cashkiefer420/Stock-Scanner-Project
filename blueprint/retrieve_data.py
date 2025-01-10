@@ -8,7 +8,7 @@ from threading import Event
 from datetime import datetime, timedelta
 
 # Base directory setup
-base_dir = r"C:\Users\Carter\Downloads\Stock-Scanner-Project-main\Stock-Scanner-Project-main"
+base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
 TICKER_FILE_PATH = os.path.join(base_dir, "json", "processed_tickers.json")
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
 PE_FILE_PATH = os.path.join(base_dir, "json", "PE_num.json")
