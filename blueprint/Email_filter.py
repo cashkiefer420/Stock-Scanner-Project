@@ -13,13 +13,14 @@ if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
 def safe_float(value):
-    if value  == "N/A":
-        return 0
+    # Check if the value is a string and contains a non-numeric value
+    if isinstance(value, str) and not value.replace('.', '', 1).isdigit():
+        return 0  # Return 0 if the value is a non-numeric string
+    
     try:
-        return float(value)
-    except:
-        if value == "N/A":
-            return 0
+        return float(value)  # Try to convert the value to float
+    except (ValueError, TypeError):
+        return 0  # Return 0 if conversion fails
 
 # Define the filters as separate conditions for each JSON file
 filters = [
