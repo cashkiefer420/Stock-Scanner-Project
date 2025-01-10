@@ -15,8 +15,10 @@ if not os.path.exists(output_directory):
 def safe_float(value):
     try:
         return float(value)
-    except (ValueError, TypeError):
-        return  0
+    except:
+        if float(value) is "N/A":
+            return 0
+    
 
 # Define the filters as separate conditions for each JSON file
 filters = [
