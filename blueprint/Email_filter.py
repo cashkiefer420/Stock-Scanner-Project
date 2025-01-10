@@ -4,7 +4,7 @@ import time
 
 # Base directory for the project
 base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
-
+Stock_data_export = os.path.join(base_dir, "json", "stock_data_export.json")
 # Define the /json output directory
 output_directory = os.path.join(base_dir, "json")
 
