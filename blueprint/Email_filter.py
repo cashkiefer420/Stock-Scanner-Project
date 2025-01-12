@@ -1,6 +1,8 @@
 import json
 import os
 import time
+import pytz
+from datetime import datetime
 
 # Base directory for the project
 base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
@@ -11,6 +13,9 @@ output_directory = os.path.join(base_dir, "json")
 # Create the /json directory if it doesn't exist
 if not os.path.exists(output_directory):
     os.makedirs(output_directory)
+
+# Time zone for New York City
+new_york_tz = pytz.timezone("America/New_York")
 
 def safe_float(value):
     # Check if the value is a string and contains a non-numeric value
@@ -52,12 +57,20 @@ filters = [
     {"file_name": os.path.join(output_directory, "Filtered_price_20_de.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) < -30, "field": "Price Change Today"},
 ]
 
-def ensure_filtered_files():
-    for filter_item in filters:
-        if not os.path.exists(filter_item["file_name"]):
-            with open(filter_item["file_name"], 'w') as file:
+def reset_filtered_files():
+    """Wipes all filtered JSON files at midnight New York time."""
+    current_time = datetime.now(new_york_tz)
+    
+    # Check if it's midnight (00:00) in New York time
+    if current_time.hour == 0 and current_time.minute == 0:
+        print("It's midnight in New York. Wiping filtered files...")
+        for filter_item in filters:
+            file_path = filter_item["file_name"]
+            # Wipe the file content (create empty JSON object)
+            with open(file_path, 'w') as file:
                 json.dump({}, file)
-            
+        print("Filtered files wiped.")
+
 # Load the JSON data from a file
 def process_data():
     with open(Stock_data_export, 'r') as file:
@@ -70,30 +83,30 @@ def process_data():
             average_volume = item.get("Avg Volume (3 mon)", 0)
             current_price = item.get("Current Price", 0)
             current_volume = item.get("Volume Today", 0)
-            
-            # Check for specific volume-based conditions
-            if filter_item["file_name"] == "Filtered_volume_10.json" and average_volume < 8000000 and current_price < 100 and current_volume > 10000000:
-                if filter_item["condition"](item):
+
+            # Check for specific volume-based conditions and ensure all conditions are met
+            if filter_item["file_name"] == "Filtered_volume_10.json":
+                if average_volume < 8000000 and current_price < 100 and current_volume > 10000000 and filter_item["condition"](item):
                     item[filter_item["field"]] = item.get(filter_item["field"], None)
                     filtered_data[item["ticker"]] = item
 
-            elif filter_item["file_name"] == "Filtered_volume_20.json" and average_volume < 12000000 and current_price < 100 and current_volume > 20000000 and average_volume > 5000000:
-                if filter_item["condition"](item):
+            elif filter_item["file_name"] == "Filtered_volume_20.json":
+                if average_volume < 12000000 and current_price < 100 and current_volume > 20000000 and average_volume > 5000000 and filter_item["condition"](item):
                     item[filter_item["field"]] = item.get(filter_item["field"], None)
                     filtered_data[item["ticker"]] = item
 
-            elif filter_item["file_name"] == "Filtered_volume_50.json" and average_volume < 35000000 and current_price < 150 and current_volume > 50000000 and average_volume > 15000000:
-                if filter_item["condition"](item):
+            elif filter_item["file_name"] == "Filtered_volume_50.json":
+                if average_volume < 35000000 and current_price < 150 and current_volume > 50000000 and average_volume > 15000000 and filter_item["condition"](item):
                     item[filter_item["field"]] = item.get(filter_item["field"], None)
                     filtered_data[item["ticker"]] = item
 
-            elif filter_item["file_name"] == "Filtered_volume_100.json" and average_volume < 80000000 and current_price < 150 and current_volume > 100000000 and average_volume > 30000000:
-                if filter_item["condition"](item):
+            elif filter_item["file_name"] == "Filtered_volume_100.json":
+                if average_volume < 80000000 and current_price < 150 and current_volume > 100000000 and average_volume > 30000000 and filter_item["condition"](item):
                     item[filter_item["field"]] = item.get(filter_item["field"], None)
                     filtered_data[item["ticker"]] = item
 
-            elif filter_item["file_name"] == "Filtered_volume_150.json" and average_volume < 100000000 and current_price < 150 and current_volume > 150000000 and average_volume > 50000000:
-                if filter_item["condition"](item):
+            elif filter_item["file_name"] == "Filtered_volume_150.json":
+                if average_volume < 100000000 and current_price < 150 and current_volume > 150000000 and average_volume > 50000000 and filter_item["condition"](item):
                     item[filter_item["field"]] = item.get(filter_item["field"], None)
                     filtered_data[item["ticker"]] = item
 
@@ -112,5 +125,6 @@ def process_data():
 
 # Run the process every 5 minutes (300 seconds)
 while True:
+    reset_filtered_files()  # Check if it's midnight and reset files
     process_data()
     time.sleep(300)  # Sleep for 5 minutes
