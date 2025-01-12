@@ -181,7 +181,8 @@ def fetch_price(ticker):
             add_market_cap_to_file(ticker, market_cap)
 
         # Check if the company is an ETF
-        is_etf = "ETF" in company_name.upper()
+        quote_type = stock.info.get('quoteType', 'N/A')
+        is_etf = (quote_type == 'ETF', 'N/A')
 
         # Prepare the return data
         result = {
