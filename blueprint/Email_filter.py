@@ -41,11 +41,11 @@ filters = [
     {"file_name": os.path.join(output_directory, "Filtered_market_cap_10_de.json"), "condition": lambda ticker: float(ticker.get("Market Cap Change (3 Mon)", 0)) < -10, "field": "Market Cap Change (3 Mon)"},
     {"file_name": os.path.join(output_directory, "Filtered_market_cap_20_de.json"), "condition": lambda ticker: float(ticker.get("Market Cap Change (3 Mon)", 0)) < -20, "field": "Market Cap Change (3 Mon)"},
     {"file_name": os.path.join(output_directory, "Filtered_market_cap_30_de.json"), "condition": lambda ticker: float(ticker.get("Market Cap Change (3 Mon)", 0)) < -30, "field": "Market Cap Change (3 Mon)"},
-    {"file_name": os.path.join(output_directory, "Filtered_volume_10.json"), "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 10000000, "field": "Volume Today"},
-    {"file_name": os.path.join(output_directory, "Filtered_volume_20.json"), "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 20000000, "field": "Volume Today"},
-    {"file_name": os.path.join(output_directory, "Filtered_volume_50.json"), "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 50000000, "field": "Volume Today"},
-    {"file_name": os.path.join(output_directory, "Filtered_volume_100.json"), "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 100000000, "field": "Volume Today"},
-    {"file_name": os.path.join(output_directory, "Filtered_volume_150.json"), "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 150000000, "field": "Volume Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_volume_2.5x.json"), "condition": lambda ticker: float(ticker.get("DVAV (Day Volume Over Average Volume", 0)) > 2.5, "field": "Volume Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_volume_1.125x.json"), "condition": lambda ticker: float(ticker.get("DVAV (Day Volume Over Average Volume", 0)) > 1.125, "field": "Volume Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_volume_1.25x.json"), "condition": lambda ticker: float(ticker.get("DVAV (Day Volume Over Average Volume", 0)) > 1.25, "field": "Volume Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_volume_1.5x.json"), "condition": lambda ticker: float(ticker.get("DVAV (Day Volume Over Average Volume", 0)) > 1.5, "field": "Volume Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_volume_1.75x.json"), "condition": lambda ticker: float(ticker.get("DVAV (Day Volume Over Average Volume", 0)) > 1.75, "field": "Volume Today"},
     {"file_name": os.path.join(output_directory, "Filtered_volume_2x.json"), "condition": lambda ticker: float(ticker.get("DVAV (Day Volume Over Average Volume)", 0)) > 2, "field": "DVAV (Day Volume Over Average Volume)"},
     {"file_name": os.path.join(output_directory, "Filtered_volume_3x.json"), "condition": lambda ticker: float(ticker.get("DVAV (Day Volume Over Average Volume)", 0)) > 3, "field": "DVAV (Day Volume Over Average Volume)"},
     {"file_name": os.path.join(output_directory, "Filtered_volume_5x.json"), "condition": lambda ticker: float(ticker.get("DVAV (Day Volume Over Average Volume)", 0)) > 5, "field": "DVAV (Day Volume Over Average Volume)"},
@@ -55,18 +55,6 @@ filters = [
     {"file_name": os.path.join(output_directory, "Filtered_price_10_de.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) < -10, "field": "Price Change Today"},
     {"file_name": os.path.join(output_directory, "Filtered_price_15_de.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) < -20, "field": "Price Change Today"},
     {"file_name": os.path.join(output_directory, "Filtered_price_20_de.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) < -30, "field": "Price Change Today"},
-    {"file_name": os.path.join(output_directory, "Filtered_volume_10.json"), 
-     "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 10000000, "field": "Volume Today"},
-    {"file_name": os.path.join(output_directory, "Filtered_volume_20.json"), 
-     "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 20000000, "field": "Volume Today"},
-    {"file_name": os.path.join(output_directory, "Filtered_volume_50.json"), 
-     "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 50000000, "field": "Volume Today"},
-    {"file_name": os.path.join(output_directory, "Filtered_volume_100.json"), 
-     "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 100000000, "field": "Volume Today"},
-    {"file_name": os.path.join(output_directory, "Filtered_volume_150.json"), 
-     "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 150000000, "field": "Volume Today"},
-]
-
 ]
 
 def reset_filtered_files():
@@ -92,39 +80,16 @@ def process_data():
     for filter_item in filters:
         filtered_data = {}
         for item in data:
+            # Retrieve values for Avg Volume, Current Price, Volume Today, DVAV, P/E Change, and Market Cap Change
             average_volume = item.get("Avg Volume (3 mon)", 0)
             current_price = item.get("Current Price", 0)
             current_volume = item.get("Volume Today", 0)
-
-            # Check for specific volume-based conditions and ensure all conditions are met
-            if filter_item["file_name"] == "Filtered_volume_10.json":
-                if average_volume < 8000000 and current_price < 100 and current_volume > 10000000 and filter_item["condition"](item):
-                    item[filter_item["field"]] = item.get(filter_item["field"], None)
-                    filtered_data[item["ticker"]] = item
-
-            elif filter_item["file_name"] == "Filtered_volume_20.json":
-                if average_volume < 12000000 and current_price < 100 and current_volume > 20000000 and average_volume > 5000000 and filter_item["condition"](item):
-                    item[filter_item["field"]] = item.get(filter_item["field"], None)
-                    filtered_data[item["ticker"]] = item
-
-            elif filter_item["file_name"] == "Filtered_volume_50.json":
-                if average_volume < 35000000 and current_price < 150 and current_volume > 50000000 and average_volume > 15000000 and filter_item["condition"](item):
-                    item[filter_item["field"]] = item.get(filter_item["field"], None)
-                    filtered_data[item["ticker"]] = item
-
-            elif filter_item["file_name"] == "Filtered_volume_100.json":
-                if average_volume < 80000000 and current_price < 150 and current_volume > 100000000 and average_volume > 30000000 and filter_item["condition"](item):
-                    item[filter_item["field"]] = item.get(filter_item["field"], None)
-                    filtered_data[item["ticker"]] = item
-
-            elif filter_item["file_name"] == "Filtered_volume_150.json":
-                if average_volume < 100000000 and current_price < 150 and current_volume > 150000000 and average_volume > 50000000 and filter_item["condition"](item):
-                    item[filter_item["field"]] = item.get(filter_item["field"], None)
-                    filtered_data[item["ticker"]] = item
-
-            else:
+            dvav = item.get("DVAV (Day Volume Over Average Volume)", 0)
+            pe_change = item.get("P/E Change (3mo)", 0)
+            market_cap_change = item.get("Market Cap Change (3 Mon)", 0)
+            
                 # Apply the regular condition for all other filters
-                if filter_item["condition"](item):
+            if filter_item["condition"](item):
                     item[filter_item["field"]] = item.get(filter_item["field"], None)
                     filtered_data[item["Ticker"]] = item
 
