@@ -1,0 +1,23 @@
+{
+    "NVDA": {
+        "Ticker": "NVDA",
+        "Company Name": "NVIDIA Corporation",
+        "Current Price": 135.91,
+        "Price Change Today": -3.0,
+        "Price Change Week": -9.05,
+        "Price Change Month": 0.83,
+        "Price Change Year": -1.74,
+        "Bid Ask Spread": "135.76 - 136.1",
+        "Days Range": "134.22 - 137.675",
+        "Volume Today": "207114200",
+        "Avg Volume (3 mon)": 218944581,
+        "DVAV (Day Volume Over Average Volume)": 0.946,
+        "P/E Ratio": 53.719368,
+        "P/E Change (3 Mon)": -2.61,
+        "Shares Available": 24490000384,
+        "Market Cap": 3328436076544,
+        "Market Cap Change (3 Mon)": 0.0,
+        "Dividend Yield": 0.00029999999,
+        "One Year Target": 172.7985
+    }
+}
