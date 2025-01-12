@@ -180,7 +180,11 @@ def fetch_price(ticker):
         if market_cap != 'N/A':
             add_market_cap_to_file(ticker, market_cap)
 
-        return {
+        # Check if the company is an ETF
+        is_etf = "ETF" in company_name.upper()
+
+        # Prepare the return data
+        result = {
             'Ticker': ticker,
             'Company Name': company_name,
             'Current Price': round(current_price, 4),
@@ -190,21 +194,28 @@ def fetch_price(ticker):
             'Price Change Year': percent_gain_year,
             'Bid Ask Spread': bid_ask_spread,
             'Days Range': day_range,
-            'Shares Available': shares_outstanding,
             'Volume Today': volume_today,
             'Avg Volume (3 mon)': avg_volume,
             'DVAV (Day Volume Over Average Volume)': dvav,
-            'Market Cap': market_cap,
-            'Market Cap Change (3 Mon)': percent_market_cap_change,
             'P/E Ratio': trailing_pe,
             'P/E Change (3 Mon)': pe_change_3mo,
-            'Dividend Yield': dividend_yield,
-            'One Year Target': one_year_target,
         }
+
+        # Exclude certain fields if it's an ETF
+        if not is_etf:
+            result.update({
+                'Shares Available': shares_outstanding,
+                'Market Cap': market_cap,
+                'Market Cap Change (3 Mon)': percent_market_cap_change,
+                'Dividend Yield': dividend_yield,
+                'One Year Target': one_year_target,
+            })
+
+        return result
+
     except Exception as e:
         logging.exception(f"Error fetching data for {ticker}:")
         return {'Ticker': ticker, 'Current Price': 'N/A'}
-
 def load_tickers():
     """Load ticker symbols from the JSON file."""
     try:
