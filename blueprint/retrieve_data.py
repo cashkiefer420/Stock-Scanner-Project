@@ -182,7 +182,7 @@ def fetch_price(ticker):
 
         # Check if the company is an ETF
         quote_type = stock.info.get('quoteType', 'N/A')
-        is_etf = (quote_type == 'ETF', 'N/A')
+        is_etf = (quote_type == 'ETF')
 
         # Prepare the return data
         result = {
