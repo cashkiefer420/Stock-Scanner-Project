@@ -55,6 +55,18 @@ filters = [
     {"file_name": os.path.join(output_directory, "Filtered_price_10_de.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) < -10, "field": "Price Change Today"},
     {"file_name": os.path.join(output_directory, "Filtered_price_15_de.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) < -20, "field": "Price Change Today"},
     {"file_name": os.path.join(output_directory, "Filtered_price_20_de.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) < -30, "field": "Price Change Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_volume_10.json"), 
+     "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 10000000, "field": "Volume Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_volume_20.json"), 
+     "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 20000000, "field": "Volume Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_volume_50.json"), 
+     "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 50000000, "field": "Volume Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_volume_100.json"), 
+     "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 100000000, "field": "Volume Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_volume_150.json"), 
+     "condition": lambda ticker: float(ticker.get("Volume Today", 0)) > 150000000, "field": "Volume Today"},
+]
+
 ]
 
 def reset_filtered_files():
@@ -128,3 +140,4 @@ while True:
     reset_filtered_files()  # Check if it's midnight and reset files
     process_data()
     time.sleep(300)  # Sleep for 5 minutes
+    
