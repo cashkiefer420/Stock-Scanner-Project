@@ -98,8 +98,7 @@ def process_data():
         with open(file_path, 'w') as outfile:
             json.dump(filtered_data, outfile, indent=4)
 
-        print(f"Filtered tickers have been saved to {file_path}.")
-
+        
 # Run the process every 5 minutes (300 seconds)
 while True:
     reset_filtered_files()  # Check if it's midnight and reset files
