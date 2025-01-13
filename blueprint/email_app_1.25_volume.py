@@ -20,9 +20,9 @@ SENDER_PASSWORD = 'pIqvin-persi2-pibsij'
 
 # Paths to JSON files
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON_FILE = os.path.join(BASE_DIR, 'json', '50_volume.json')
-STOCK_INFO_FILE = os.path.join(BASE_DIR, 'json', 'Filtered_volume_50.json')
-USED_TICKERS_FILE = os.path.join(BASE_DIR, 'json', 'ut_volume_50.json')
+JSON_FILE = os.path.join(BASE_DIR, 'json', '1.25_volume.json')
+STOCK_INFO_FILE = os.path.join(BASE_DIR, 'json', 'Filtered_volume_1.25.json')
+USED_TICKERS_FILE = os.path.join(BASE_DIR, 'json', 'ut_volume_1.25.json')
 
 # Ensure JSON files exist
 for file in [JSON_FILE, USED_TICKERS_FILE]:
@@ -36,7 +36,7 @@ def is_valid_email(email):
     return re.match(regex, email)
 
 # Route to handle email subscription
-@app.route('/subscribe-volume-50-td', methods=['POST'])
+@app.route('/subscribe-volume-1.25-td', methods=['POST'])
 def subscribe_email():
     try:
         data = request.get_json()
@@ -80,7 +80,7 @@ def send_stock_notifications():
         html_template = """
         <html>
           <body>
-            <h1>Stock <strong>{{ stock_symbol }}</strong> Fifty Million Volume Notification</h1>
+            <h1>Stock <strong>{{ stock_symbol }}</strong> 1.25 High Volume Notification</h1>
             <p>Dear Investor,</p>
             <p>The stock <strong>{{ stock_symbol }}</strong> is experiencing large volume.</p>
             <p>Current Price: ${{ current_price }}</p>
