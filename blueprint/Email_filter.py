@@ -76,7 +76,9 @@ def process_data():
     with open(Stock_data_export, 'r') as file:
         data = json.load(file)
 
+    
     # Apply each filter and save to the corresponding file in the /json directory
+    print("Filtering Data")
     for filter_item in filters:
         filtered_data = {}
         for item in data:
@@ -104,4 +106,4 @@ while True:
     reset_filtered_files()  # Check if it's midnight and reset files
     process_data()
     time.sleep(300)  # Sleep for 5 minutes
-    
+    Print("Sleeping")
