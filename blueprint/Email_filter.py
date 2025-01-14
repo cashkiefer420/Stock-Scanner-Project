@@ -99,7 +99,8 @@ def process_data():
         file_path = os.path.join(output_directory, filter_item["file_name"])
         with open(file_path, 'w') as outfile:
             json.dump(filtered_data, outfile, indent=4)
-            Print("Sleeping")
+        print("Sleeping")
+        
 
         
 # Run the process every 5 minutes (300 seconds)
