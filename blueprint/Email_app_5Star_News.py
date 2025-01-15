@@ -20,9 +20,8 @@ SENDER_PASSWORD = 'pIqvin-persi2-pibsij'
 
 # Paths to JSON files
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON_FILE = os.path.join(BASE_DIR, 'json', '1.125_volume.json')
-STOCK_INFO_FILE = os.path.join(BASE_DIR, 'json', 'Filtered_volume_1.125.json')
-USED_TICKERS_FILE = os.path.join(BASE_DIR, 'json', 'ut_volume_1.125.json')
+JSON_FILE = os.path.join(BASE_DIR, 'json', 'level_5_news.json')
+USED_TICKERS_FILE = os.path.join(BASE_DIR, 'json', 'ut_news_5.json')
 
 # Ensure JSON files exist
 for file in [JSON_FILE, USED_TICKERS_FILE]:
@@ -36,7 +35,7 @@ def is_valid_email(email):
     return re.match(regex, email)
 
 # Route to handle email subscription
-@app.route('/subscribe-volume-1.125-td', methods=['POST'])
+@app.route('/subscribe-news-5', methods=['POST'])
 def subscribe_email():
     try:
         data = request.get_json()
@@ -80,13 +79,13 @@ def send_stock_notifications():
         html_template = """
         <html>
           <body>
-            <h1>Stock <strong>{{ stock_symbol }}</strong> 1.125 High Volume Notification</h1>
+            <h1>Stock <strong>{{ stock_symbol }}</strong> currently has five star news.</h1>
             <p>Dear Investor,</p>
             <p>The stock <strong>{{ stock_symbol }}</strong> is experiencing large volume.</p>
             <p>Current Price: ${{ current_price }}</p>
-            <p>Volume Today: {{ Volume_today }}</p>
-            <p>DVAV - Daily Volume Over Average Volume: {{ DVAV }}</p>
-            <p>Average Volume: {{ AV }}</p>
+            <p>News Grade: {{ NG }}</p>
+            <p>News Score: {{ NS }}</p>
+            <p>News Title: {{ NT }}</p>
             <p>Best Regards,<br>Retail Trade Scanner</p>
           </body>
         </html>
@@ -109,10 +108,10 @@ def send_stock_notifications():
 
             filled_html = template.render(
                 stock_symbol=ticker,
-                current_price=ticker_info.get("Current Price", "N/A"),
-                DVAV=ticker_info.get("Avg Volume (3 mon)", "N/A"),
-                AV=ticker_info.get("DVAV (Day Volume Over Average Volume)", "N/A"),
-                Volume_today=ticker_info.get("Volume today", "N/A"),
+                current_price=ticker_info.get("price", "N/A"),
+                NG=ticker_info.get("grade", "N/A"),
+                NS=ticker_info.get("score", "N/A"),
+                NT=ticker_info.get("title", "N/A"),
             )
 
             for recipient in email_data["emails"]:
