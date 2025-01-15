@@ -22,7 +22,8 @@ def fetch_ticker_price(ticker):
 
 def process_and_filter_articles():
     """
-    Add current price to the main export, and filter articles into separate JSON files for level 1 and 5.
+    Add current price and score to the main export, 
+    and filter articles into separate JSON files for level 1 and 5.
     """
     if not os.path.exists(EXPORT_FILE_PATH):
         print(f"Export file not found at {EXPORT_FILE_PATH}")
@@ -38,6 +39,7 @@ def process_and_filter_articles():
         grade = article.get("grade")
         title = article.get("title", "")
         ticker = article.get("ticker", "")  # Assuming the ticker is part of the article data
+        score = article.get("score", None)  # Assuming the score is part of the article data
 
         # Fetch and add price if ticker exists
         if ticker:
@@ -45,6 +47,9 @@ def process_and_filter_articles():
             article["price"] = price
         else:
             article["price"] = None
+
+        # Include the score in the output
+        article["score"] = score
 
         # Sort articles into level 1 or 5
         if grade == 1:
@@ -61,10 +66,10 @@ def process_and_filter_articles():
         json.dump(level_5_articles, file, indent=4)
     print(f"Level 5 articles saved to {LEVEL_5_EXPORT_PATH}")
 
-    # Overwrite the main export with updated articles (including prices)
+    # Overwrite the main export with updated articles (including prices and scores)
     with open(EXPORT_FILE_PATH, "w") as file:
         json.dump(articles, file, indent=4)
-    print(f"Updated articles (with prices) saved to {EXPORT_FILE_PATH}")
+    print(f"Updated articles (with prices and scores) saved to {EXPORT_FILE_PATH}")
 
 if __name__ == "__main__":
     process_and_filter_articles()
