@@ -8,6 +8,17 @@ EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
 LEVEL_1_EXPORT_PATH = os.path.join(base_dir, "json", "level_1_news.json")
 LEVEL_5_EXPORT_PATH = os.path.join(base_dir, "json", "level_5_news.json")
 
+def ensure_serializable(data):
+    """Convert non-serializable values to serializable format."""
+    if isinstance(data, (list, tuple)):
+        return [ensure_serializable(item) for item in data]
+    elif isinstance(data, dict):
+        return {key: ensure_serializable(value) for key, value in data.items()}
+    elif isinstance(data, (int, float, str)) or data is None:
+        return data
+    else:
+        return str(data)
+
 def fetch_ticker_price(ticker):
     """
     Fetch the current price of a stock using yfinance.
