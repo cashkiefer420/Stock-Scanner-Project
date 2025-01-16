@@ -107,6 +107,12 @@ def fetch_price(ticker):
         bid = stock.info.get('bid', 'N/A')
         ask = stock.info.get('ask', 'N/A')
         day_range = f"{stock.info.get('dayLow', 'N/A')} - {stock.info.get('dayHigh', 'N/A')}"
+        
+        volume_over_shares = (
+            round(volume_today / shares_outstanding, 4)
+            if volume_today != 'N/A' and shares_outstanding not in [0, 'N/A']
+            else 'N/A'
+        )
 
         # Calculate bid-ask spread
         bid_ask_spread = f"{bid} - {ask}" if bid != 'N/A' and ask != 'N/A' else 'N/A'
@@ -197,6 +203,7 @@ def fetch_price(ticker):
                 'Market Cap Change (3 Mon)': percent_market_cap_change,
                 'Dividend Yield': dividend_yield,
                 'One Year Target': one_year_target,
+                'Volume Today Over Shares Available': volume_over_shares
             })
 
         return result
