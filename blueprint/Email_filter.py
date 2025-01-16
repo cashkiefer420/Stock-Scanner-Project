@@ -55,6 +55,9 @@ filters = [
     {"file_name": os.path.join(output_directory, "Filtered_price_10_de.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) < -10, "field": "Price Change Today"},
     {"file_name": os.path.join(output_directory, "Filtered_price_15_de.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) < -20, "field": "Price Change Today"},
     {"file_name": os.path.join(output_directory, "Filtered_price_20_de.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) < -30, "field": "Price Change Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_DVSA_50.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) > 50, "field": "Price Change Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_DVSA_100.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) > 100, "field": "Price Change Today"},
+    {"file_name": os.path.join(output_directory, "Filtered_DVSA_150.json"), "condition": lambda ticker: float(ticker.get("Price Change Today", 0)) > 150, "field": "Price Change Today"},
 ]
 
 def reset_filtered_files():
