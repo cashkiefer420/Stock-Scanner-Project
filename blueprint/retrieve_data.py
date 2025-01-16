@@ -121,30 +121,16 @@ def fetch_price(ticker):
                 ticker_data = pe_data.get(ticker, {})
 
                 # Check for data exactly 90 days ago
-                if formatted_date_90_days_ago in ticker_data:
-                    three_month_close = ticker_data[formatted_date_90_days_ago].get("PE", 'N/A')
-                else:
-                    # Use the oldest recorded data as a fallback
-                    oldest_date = min(ticker_data.keys(), default=None)
-                    if oldest_date:
-                        three_month_close = ticker_data[oldest_date].get("PE", 'N/A')
-                    else:
-                        three_month_close = 'N/A'
-
+                three_month_close = ticker_data.get(formatted_date_90_days_ago, {}).get("PE", 'N/A')
         except Exception as e:
             logging.warning(f"Error retrieving P/E data for {ticker}: {e}")
             three_month_close = 'N/A'
 
-        # Check if valid data was retrieved
-        if three_month_close != 'N/A' and trailing_pe != 'N/A':
-            try:
-                # Calculate percent change in P/E ratio
-                pe_change_3mo = calculate_percent_change(trailing_pe, float(three_month_close))
-            except Exception as e:
-                logging.warning(f"Error calculating P/E change for {ticker}: {e}")
-                pe_change_3mo = 'N/A'
-        else:
-            pe_change_3mo = 'N/A'
+        pe_change_3mo = (
+            calculate_percent_change(trailing_pe, float(three_month_close))
+            if three_month_close != 'N/A' and trailing_pe != 'N/A'
+            else 'N/A'
+        )
 
         # Add P/E ratio to the file
         add_pe_to_file(ticker, trailing_pe)
@@ -155,7 +141,8 @@ def fetch_price(ticker):
                 market_cap,
                 (current_price * shares_outstanding) if current_price != 'N/A' else 'N/A',
             )
-            if market_cap != 'N/A' and shares_outstanding != 'N/A' else 'N/A'
+            if market_cap != 'N/A' and shares_outstanding != 'N/A'
+            else 'N/A'
         )
 
         # Weekly and yearly percentage changes
@@ -184,7 +171,7 @@ def fetch_price(ticker):
         quote_type = stock.info.get('quoteType', 'N/A')
         is_etf = (quote_type == 'ETF')
 
-        # Prepare the return data
+        # Base result data
         result = {
             'Ticker': ticker,
             'Company Name': company_name,
@@ -202,7 +189,7 @@ def fetch_price(ticker):
             'P/E Change (3 Mon)': pe_change_3mo,
         }
 
-        # Exclude certain fields if it's an ETF
+        # Additional data for non-ETFs
         if not is_etf:
             result.update({
                 'Shares Available': shares_outstanding,
@@ -217,6 +204,7 @@ def fetch_price(ticker):
     except Exception as e:
         logging.exception(f"Error fetching data for {ticker}:")
         return {'Ticker': ticker, 'Current Price': 'N/A'}
+        
 def load_tickers():
     """Load ticker symbols from the JSON file."""
     try:
