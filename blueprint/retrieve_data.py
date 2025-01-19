@@ -118,7 +118,11 @@ def fetch_price(ticker):
         bid_ask_spread = f"{bid} - {ask}" if bid != 'N/A' and ask != 'N/A' else 'N/A'
 
         # Calculate percent change in P/E over the past three months
-      
+        dvsa = (
+            round(volume_today / shares_outstanding, 4)
+            if volume_today not in [0, 'N/A'] and shares_outstanding not in [0, 'N/A']
+            else 'N/A'
+            )
 
         if trailing_pe == 'N/A':
             logging.warning(f"[API] P/E ratio missing from Yahoo Finance for {ticker}.")
@@ -219,7 +223,8 @@ def fetch_price(ticker):
                 'Market Cap Change (3 Mon)': percent_market_cap_change,
                 'Dividend Yield': dividend_yield,
                 'One Year Target': one_year_target,
-                'Volume Today Over Shares Available': volume_over_shares
+                'Volume Today Over Shares Available': volume_over_shares,
+                'DVSA (Volume Today Over Shares Available)': dvsa,
             })
 
         return result
