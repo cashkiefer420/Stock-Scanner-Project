@@ -181,7 +181,11 @@ def fetch_price(ticker):
         )
 
         # DVAV (Day Volume Over Average Volume)
-        dvav = round(volume_today / avg_volume, 4) if avg_volume not in [0, 'N/A'] else 'N/A'
+        dvsa = (
+            round(volume_today / shares_outstanding, 4)
+            if volume_today not in [0, 'N/A'] and shares_outstanding not in [0, 'N/A']
+            else 'N/A'
+            )
 
         # Add Market Cap to the file
         if market_cap != 'N/A':
