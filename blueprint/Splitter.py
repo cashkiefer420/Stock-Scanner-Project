@@ -26,7 +26,7 @@ def extract_important_info(data):
         "P/E Change (3 Mon)": data.get("P/E Change (3 Mon)"),
         "Volume Today": data.get("Volume Today"),
         "Avg Volume (3 mon)": data.get("Avg Volume (3 mon)"),
-        "Volume Today Over Shares Available": data.get("Volume Today Over Shares Available")
+        "DVSA (Volume Today Over Shares Available)": data.get("DVSA (Volume Today Over Shares Available)")
     }
     return important_info
 
