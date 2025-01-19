@@ -19,7 +19,8 @@
         "Market Cap Change (3 Mon)": 0.0,
         "Dividend Yield": 0.0043,
         "One Year Target": 247.6305,
-        "Volume Today Over Shares Available": 0.0045
+        "Volume Today Over Shares Available": 0.0045,
+        "DVSA (Volume Today Over Shares Available)": 0.0045
     },
     {
         "Ticker": "NVDA",
@@ -41,7 +42,8 @@
         "Market Cap Change (3 Mon)": 0.0,
         "Dividend Yield": 0.00029999999,
         "One Year Target": 173.08151,
-        "Volume Today Over Shares Available": 0.0082
+        "Volume Today Over Shares Available": 0.0082,
+        "DVSA (Volume Today Over Shares Available)": 0.0082
     },
     {
         "Ticker": "MSFT",
@@ -63,7 +65,8 @@
         "Market Cap Change (3 Mon)": -0.0,
         "Dividend Yield": 0.0077,
         "One Year Target": 508.4636,
-        "Volume Today Over Shares Available": 0.0035
+        "Volume Today Over Shares Available": 0.0035,
+        "DVSA (Volume Today Over Shares Available)": 0.0035
     },
     {
         "Ticker": "GOOGL",
@@ -85,7 +88,8 @@
         "Market Cap Change (3 Mon)": 110.25,
         "Dividend Yield": 0.0041,
         "One Year Target": 213.19089,
-        "Volume Today Over Shares Available": 0.0047
+        "Volume Today Over Shares Available": 0.0047,
+        "DVSA (Volume Today Over Shares Available)": 0.0047
     },
     {
         "Ticker": "AMZN",
@@ -107,7 +111,8 @@
         "Market Cap Change (3 Mon)": -0.0,
         "Dividend Yield": "N/A",
         "One Year Target": 245.42381,
-        "Volume Today Over Shares Available": 0.004
+        "Volume Today Over Shares Available": 0.004,
+        "DVSA (Volume Today Over Shares Available)": 0.004
     },
     {
         "Ticker": "META",
@@ -129,7 +134,8 @@
         "Market Cap Change (3 Mon)": 15.8,
         "Dividend Yield": 0.0033000002,
         "One Year Target": 665.1997,
-        "Volume Today Over Shares Available": 0.0079
+        "Volume Today Over Shares Available": 0.0079,
+        "DVSA (Volume Today Over Shares Available)": 0.0079
     },
     {
         "Ticker": "TSM",
@@ -139,7 +145,7 @@
         "Price Change Week": 5.04,
         "Price Change Month": 5.67,
         "Price Change Year": 4.92,
-        "Bid Ask Spread": "210.95 - 210.89",
+        "Bid Ask Spread": "210.95 - 210.99",
         "Days Range": "211.06 - 215.68",
         "Volume Today": "21559000",
         "Avg Volume (3 mon)": 13517150,
@@ -151,7 +157,8 @@
         "Market Cap Change (3 Mon)": -0.0,
         "Dividend Yield": 0.0134000005,
         "One Year Target": 241.23932,
-        "Volume Today Over Shares Available": 0.0042
+        "Volume Today Over Shares Available": 0.0042,
+        "DVSA (Volume Today Over Shares Available)": 0.0042
     },
     {
         "Ticker": "BRK-B",
@@ -161,7 +168,7 @@
         "Price Change Week": 5.42,
         "Price Change Month": 0.68,
         "Price Change Year": 3.74,
-        "Bid Ask Spread": "467.55 - 468.2",
+        "Bid Ask Spread": "467.95 - 468.2",
         "Days Range": "462.4547 - 470.18",
         "Volume Today": "6435000",
         "Avg Volume (3 mon)": 4034837,
@@ -173,7 +180,8 @@
         "Market Cap Change (3 Mon)": 62.4,
         "Dividend Yield": "N/A",
         "One Year Target": 497.66666,
-        "Volume Today Over Shares Available": 0.0048
+        "Volume Today Over Shares Available": 0.0048,
+        "DVSA (Volume Today Over Shares Available)": 0.0048
     },
     {
         "Ticker": "TSLA",
@@ -195,7 +203,8 @@
         "Market Cap Change (3 Mon)": -0.0,
         "Dividend Yield": "N/A",
         "One Year Target": 309.0283,
-        "Volume Today Over Shares Available": 0.0294
+        "Volume Today Over Shares Available": 0.0294,
+        "DVSA (Volume Today Over Shares Available)": 0.0294
     },
     {
         "Ticker": "LLY",
@@ -205,7 +214,7 @@
         "Price Change Week": -9.0,
         "Price Change Month": -20.81,
         "Price Change Year": -6.73,
-        "Bid Ask Spread": "727.0 - 728.66",
+        "Bid Ask Spread": "728.05 - 728.45",
         "Days Range": "725.01 - 755.28",
         "Volume Today": "5498500",
         "Avg Volume (3 mon)": 4158285,
@@ -217,7 +226,8 @@
         "Market Cap Change (3 Mon)": -0.0,
         "Dividend Yield": 0.0083,
         "One Year Target": 977.4704,
-        "Volume Today Over Shares Available": 0.0061
+        "Volume Today Over Shares Available": 0.0061,
+        "DVSA (Volume Today Over Shares Available)": 0.0061
     },
     {
         "Ticker": "AVGO",
@@ -239,7 +249,8 @@
         "Market Cap Change (3 Mon)": 0.0,
         "Dividend Yield": 0.0117,
         "One Year Target": 242.07605,
-        "Volume Today Over Shares Available": 0.0066
+        "Volume Today Over Shares Available": 0.0066,
+        "DVSA (Volume Today Over Shares Available)": 0.0066
     },
     {
         "Ticker": "WMT",
@@ -249,7 +260,7 @@
         "Price Change Week": 0.45,
         "Price Change Month": 13.32,
         "Price Change Year": 2.16,
-        "Bid Ask Spread": "92.0 - 92.0",
+        "Bid Ask Spread": "92.02 - 92.05",
         "Days Range": "91.05 - 92.26",
         "Volume Today": "15706100",
         "Avg Volume (3 mon)": 16101395,
@@ -261,7 +272,8 @@
         "Market Cap Change (3 Mon)": 0.0,
         "Dividend Yield": 0.0099,
         "One Year Target": 98.46838,
-        "Volume Today Over Shares Available": 0.002
+        "Volume Today Over Shares Available": 0.002,
+        "DVSA (Volume Today Over Shares Available)": 0.002
     },
     {
         "Ticker": "JPM",
@@ -271,7 +283,7 @@
         "Price Change Week": 6.12,
         "Price Change Month": 15.59,
         "Price Change Year": 8.54,
-        "Bid Ask Spread": "259.85 - 260.0",
+        "Bid Ask Spread": "259.85 - 260.04",
         "Days Range": "252.14 - 260.62",
         "Volume Today": "17630700",
         "Avg Volume (3 mon)": 9222806,
@@ -282,8 +294,9 @@
         "Market Cap": 725026013184,
         "Market Cap Change (3 Mon)": -0.0,
         "Dividend Yield": 0.0202,
-        "One Year Target": 263.0057,
-        "Volume Today Over Shares Available": 0.0063
+        "One Year Target": 264.0057,
+        "Volume Today Over Shares Available": 0.0063,
+        "DVSA (Volume Today Over Shares Available)": 0.0063
     },
     {
         "Ticker": "V",
@@ -293,7 +306,7 @@
         "Price Change Week": 4.14,
         "Price Change Month": 10.19,
         "Price Change Year": 1.66,
-        "Bid Ask Spread": "319.3 - 319.43",
+        "Bid Ask Spread": "319.62 - 319.98",
         "Days Range": "316.71 - 320.58",
         "Volume Today": "5746200",
         "Avg Volume (3 mon)": 6028606,
@@ -305,7 +318,8 @@
         "Market Cap Change (3 Mon)": 11.97,
         "Dividend Yield": 0.0074,
         "One Year Target": 338.5311,
-        "Volume Today Over Shares Available": 0.0033
+        "Volume Today Over Shares Available": 0.0033,
+        "DVSA (Volume Today Over Shares Available)": 0.0033
     },
     {
         "Ticker": "UNH",
@@ -315,7 +329,7 @@
         "Price Change Week": -5.8,
         "Price Change Month": -10.16,
         "Price Change Year": 1.04,
-        "Bid Ask Spread": "510.46 - 511.0",
+        "Bid Ask Spread": "509.8 - 511.0",
         "Days Range": "503.39 - 521.82",
         "Volume Today": "7462900",
         "Avg Volume (3 mon)": 4755818,
@@ -327,7 +341,8 @@
         "Market Cap Change (3 Mon)": -0.0,
         "Dividend Yield": 0.0155,
         "One Year Target": 635.89307,
-        "Volume Today Over Shares Available": 0.0081
+        "Volume Today Over Shares Available": 0.0081,
+        "DVSA (Volume Today Over Shares Available)": 0.0081
     },
     {
         "Ticker": "SPY",
@@ -337,7 +352,7 @@
         "Price Change Week": 2.78,
         "Price Change Month": 2.57,
         "Price Change Year": 2.21,
-        "Bid Ask Spread": "597.58 - 597.62",
+        "Bid Ask Spread": "597.68 - 597.7",
         "Days Range": "595.61 - 599.3599",
         "Volume Today": "58026200",
         "Avg Volume (3 mon)": 47694908,
@@ -353,7 +368,7 @@
         "Price Change Week": 2.77,
         "Price Change Month": -5.64,
         "Price Change Year": 4.67,
-        "Bid Ask Spread": "112.35 - 112.38",
+        "Bid Ask Spread": "112.35 - 112.6",
         "Days Range": "110.84 - 112.8651",
         "Volume Today": "19229100",
         "Avg Volume (3 mon)": 15048893,
@@ -365,7 +380,8 @@
         "Market Cap Change (3 Mon)": 0.0,
         "Dividend Yield": 0.0353,
         "One Year Target": 129.59386,
-        "Volume Today Over Shares Available": 0.0044
+        "Volume Today Over Shares Available": 0.0044,
+        "DVSA (Volume Today Over Shares Available)": 0.0044
     },
     {
         "Ticker": "NVO",
@@ -387,7 +403,8 @@
         "Market Cap Change (3 Mon)": 33.25,
         "Dividend Yield": 0.0184,
         "One Year Target": 110.95882,
-        "Volume Today Over Shares Available": 0.0063
+        "Volume Today Over Shares Available": 0.0063,
+        "DVSA (Volume Today Over Shares Available)": 0.0063
     },
     {
         "Ticker": "ORCL",
@@ -397,7 +414,7 @@
         "Price Change Week": 4.62,
         "Price Change Month": -7.59,
         "Price Change Year": -2.77,
-        "Bid Ask Spread": "161.03 - 161.29",
+        "Bid Ask Spread": "161.03 - 161.3",
         "Days Range": "160.55 - 163.16",
         "Volume Today": "11593700",
         "Avg Volume (3 mon)": 7985673,
@@ -409,7 +426,8 @@
         "Market Cap Change (3 Mon)": -0.0,
         "Dividend Yield": 0.0083,
         "One Year Target": 196.55232,
-        "Volume Today Over Shares Available": 0.0041
+        "Volume Today Over Shares Available": 0.0041,
+        "DVSA (Volume Today Over Shares Available)": 0.0041
     },
     {
         "Ticker": "MA",
@@ -419,7 +437,7 @@
         "Price Change Week": 3.92,
         "Price Change Month": 1.77,
         "Price Change Year": 0.59,
-        "Bid Ask Spread": "525.1 - 525.3",
+        "Bid Ask Spread": "524.26 - 524.65",
         "Days Range": "521.01 - 528.13",
         "Volume Today": "2374000",
         "Avg Volume (3 mon)": 2582731,
@@ -431,6 +449,7 @@
         "Market Cap Change (3 Mon)": 0.78,
         "Dividend Yield": 0.0058,
         "One Year Target": 569.1206,
-        "Volume Today Over Shares Available": 0.0026
+        "Volume Today Over Shares Available": 0.0026,
+        "DVSA (Volume Today Over Shares Available)": 0.0026
     }
 ]

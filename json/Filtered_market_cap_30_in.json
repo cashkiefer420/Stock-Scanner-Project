@@ -19,7 +19,8 @@
         "Market Cap Change (3 Mon)": 110.25,
         "Dividend Yield": 0.0041,
         "One Year Target": 213.19089,
-        "Volume Today Over Shares Available": 0.0047
+        "Volume Today Over Shares Available": 0.0047,
+        "DVSA (Volume Today Over Shares Available)": 0.0047
     },
     "BRK-B": {
         "Ticker": "BRK-B",
@@ -29,7 +30,7 @@
         "Price Change Week": 5.42,
         "Price Change Month": 0.68,
         "Price Change Year": 3.74,
-        "Bid Ask Spread": "467.55 - 468.2",
+        "Bid Ask Spread": "467.95 - 468.2",
         "Days Range": "462.4547 - 470.18",
         "Volume Today": "6435000",
         "Avg Volume (3 mon)": 4034837,
@@ -41,7 +42,8 @@
         "Market Cap Change (3 Mon)": 62.4,
         "Dividend Yield": "N/A",
         "One Year Target": 497.66666,
-        "Volume Today Over Shares Available": 0.0048
+        "Volume Today Over Shares Available": 0.0048,
+        "DVSA (Volume Today Over Shares Available)": 0.0048
     },
     "NVO": {
         "Ticker": "NVO",
@@ -63,6 +65,7 @@
         "Market Cap Change (3 Mon)": 33.25,
         "Dividend Yield": 0.0184,
         "One Year Target": 110.95882,
-        "Volume Today Over Shares Available": 0.0063
+        "Volume Today Over Shares Available": 0.0063,
+        "DVSA (Volume Today Over Shares Available)": 0.0063
     }
 }
