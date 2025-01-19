@@ -118,25 +118,41 @@ def fetch_price(ticker):
         bid_ask_spread = f"{bid} - {ask}" if bid != 'N/A' and ask != 'N/A' else 'N/A'
 
         # Calculate percent change in P/E over the past three months
-        three_months_ago = datetime.today() - timedelta(days=90)
-        formatted_date_90_days_ago = three_months_ago.strftime("%m/%d/%y")
+      
+
+        if trailing_pe == 'N/A':
+            logging.warning(f"[API] P/E ratio missing from Yahoo Finance for {ticker}.")
+
+        # Calculate date 90 days ago
+        target_date = datetime.now() - timedelta(days=90)
+
+        closest_pe = 'N/A'
 
         try:
             with open(PE_FILE_PATH, 'r') as pe_file:
                 pe_data = json.load(pe_file)
                 ticker_data = pe_data.get(ticker, {})
 
-                # Check for data exactly 90 days ago
-                three_month_close = ticker_data.get(formatted_date_90_days_ago, {}).get("PE", 'N/A')
-        except Exception as e:
-            logging.warning(f"Error retrieving P/E data for {ticker}: {e}")
-            three_month_close = 'N/A'
+                if not ticker_data:
+                    logging.warning(f"[JSON] No historical P/E data found for {ticker}.")
+                else:
+                    # Convert date strings to datetime objects
+                    sorted_dates = sorted(
+                        (datetime.strptime(d, "%m/%d/%y"), d) for d in ticker_data.keys()
+                    )
 
-        pe_change_3mo = (
-            calculate_percent_change(trailing_pe, float(three_month_close))
-            if three_month_close != 'N/A' and trailing_pe != 'N/A'
-            else 'N/A'
-        )
+                    # Find the closest date to 90 days ago
+                    closest_date = min(sorted_dates, key=lambda x: abs(x[0] - target_date))[1]
+                    closest_pe = float(ticker_data[closest_date].get("PE", 'N/A')) if ticker_data[closest_date].get("PE", 'N/A') != 'N/A' else 'N/A'
+
+                    if closest_pe == 'N/A':
+                        logging.warning(f"[JSON] Closest available P/E data is still missing for {ticker}.")
+
+        except Exception as e:
+            logging.exception(f"[JSON] Error retrieving P/E data for {ticker}:")
+
+        # Calculate P/E change using closest available data
+        pe_change_3mo = calculate_percent_change(trailing_pe, closest_pe) if closest_pe != 'N/A' and trailing_pe != 'N/A' else 'N/A'
 
         # Add P/E ratio to the file
         add_pe_to_file(ticker, trailing_pe)
