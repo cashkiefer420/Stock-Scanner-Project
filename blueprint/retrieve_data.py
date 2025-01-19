@@ -102,48 +102,116 @@ def fetch_price(ticker):
         market_cap = stock.info.get('marketCap', 'N/A')
         shares_outstanding = stock.info.get('sharesOutstanding', 'N/A')
         trailing_pe = stock.info.get('trailingPE', 'N/A')
+        dividend_yield = stock.info.get('dividendYield', 'N/A')
+        one_year_target = stock.info.get('targetMeanPrice', 'N/A')
+        bid = stock.info.get('bid', 'N/A')
+        ask = stock.info.get('ask', 'N/A')
+        day_range = f"{stock.info.get('dayLow', 'N/A')} - {stock.info.get('dayHigh', 'N/A')}"
         
-        # Fetch P/E change over the past three months or use the oldest available data
-        oldest_pe = 'N/A'
-        pe_change_3mo = 'N/A'
-        
+        volume_over_shares = (
+            round(volume_today / shares_outstanding, 4)
+            if volume_today != 'N/A' and shares_outstanding not in [0, 'N/A']
+            else 'N/A'
+        )
+
+        # Calculate bid-ask spread
+        bid_ask_spread = f"{bid} - {ask}" if bid != 'N/A' and ask != 'N/A' else 'N/A'
+
+        # Calculate percent change in P/E over the past three months
+        three_months_ago = datetime.today() - timedelta(days=90)
+        formatted_date_90_days_ago = three_months_ago.strftime("%m/%d/%y")
+
         try:
             with open(PE_FILE_PATH, 'r') as pe_file:
                 pe_data = json.load(pe_file)
                 ticker_data = pe_data.get(ticker, {})
 
-                if ticker_data:
-                    # Convert date strings to datetime objects and sort them
-                    sorted_dates = sorted(ticker_data.keys(), key=lambda d: datetime.strptime(d, "%m/%d/%y"))
-
-                    # Get the oldest available P/E data
-                    oldest_date = sorted_dates[0]
-                    oldest_pe = float(ticker_data[oldest_date].get("PE", 'N/A')) if ticker_data[oldest_date].get("PE", 'N/A') != 'N/A' else 'N/A'
-
-                    # Calculate P/E change using the oldest available data
-                    if oldest_pe != 'N/A' and trailing_pe != 'N/A':
-                        pe_change_3mo = calculate_percent_change(trailing_pe, oldest_pe)
-
+                # Check for data exactly 90 days ago
+                three_month_close = ticker_data.get(formatted_date_90_days_ago, {}).get("PE", 'N/A')
         except Exception as e:
             logging.warning(f"Error retrieving P/E data for {ticker}: {e}")
+            three_month_close = 'N/A'
+
+        pe_change_3mo = (
+            calculate_percent_change(trailing_pe, float(three_month_close))
+            if three_month_close != 'N/A' and trailing_pe != 'N/A'
+            else 'N/A'
+        )
 
         # Add P/E ratio to the file
         add_pe_to_file(ticker, trailing_pe)
 
-        # Other calculations remain unchanged...
+        # Calculate market cap change
+        percent_market_cap_change = (
+            calculate_percent_change(
+                market_cap,
+                (current_price * shares_outstanding) if current_price != 'N/A' else 'N/A',
+            )
+            if market_cap != 'N/A' and shares_outstanding != 'N/A'
+            else 'N/A'
+        )
+
+        # Weekly and yearly percentage changes
+        start_of_week = datetime.today() - timedelta(days=datetime.today().weekday())
+        week_data = stock.history(start=start_of_week)
+        percent_gain_week = (
+            calculate_percent_change(current_price, week_data['Close'].iloc[0])
+            if not week_data.empty else 'N/A'
+        )
+
+        start_of_year = datetime(datetime.now().year, 1, 1)
+        year_data = stock.history(start=start_of_year)
+        percent_gain_year = (
+            calculate_percent_change(current_price, year_data['Close'].iloc[0])
+            if not year_data.empty else 'N/A'
+        )
+
+        # DVAV (Day Volume Over Average Volume)
+        dvav = round(volume_today / avg_volume, 4) if avg_volume not in [0, 'N/A'] else 'N/A'
+
+        # Add Market Cap to the file
+        if market_cap != 'N/A':
+            add_market_cap_to_file(ticker, market_cap)
+
+        # Check if the company is an ETF
+        quote_type = stock.info.get('quoteType', 'N/A')
+        is_etf = (quote_type == 'ETF')
+
+        # Base result data
         result = {
             'Ticker': ticker,
             'Company Name': company_name,
             'Current Price': round(current_price, 4),
+            'Price Change Today': calculate_percent_change(current_price, hist_data['Close'].iloc[-2]),
+            'Price Change Week': percent_gain_week,
+            'Price Change Month': calculate_percent_change(current_price, hist_data['Close'].iloc[0]),
+            'Price Change Year': percent_gain_year,
+            'Bid Ask Spread': bid_ask_spread,
+            'Days Range': day_range,
+            'Volume Today': volume_today,
+            'Avg Volume (3 mon)': avg_volume,
+            'DVAV (Day Volume Over Average Volume)': dvav,
             'P/E Ratio': trailing_pe,
-            'P/E Change (Using Oldest Data)': pe_change_3mo,
+            'P/E Change (3 Mon)': pe_change_3mo,
         }
+
+        # Additional data for non-ETFs
+        if not is_etf:
+            result.update({
+                'Shares Available': shares_outstanding,
+                'Market Cap': market_cap,
+                'Market Cap Change (3 Mon)': percent_market_cap_change,
+                'Dividend Yield': dividend_yield,
+                'One Year Target': one_year_target,
+                'Volume Today Over Shares Available': volume_over_shares
+            })
 
         return result
 
     except Exception as e:
         logging.exception(f"Error fetching data for {ticker}:")
         return {'Ticker': ticker, 'Current Price': 'N/A'}
+        
 def load_tickers():
     """Load ticker symbols from the JSON file."""
     try:
