@@ -6,7 +6,7 @@ from datetime import datetime
 
 # Base directory for the project
 base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
-Stock_data_export = os.path.join(base_dir, "json", "stock_data_export.json")
+Stock_data_export = os.path.join(base_dir, "json", "Split_data.json")
 # Define the /json output directory
 output_directory = os.path.join(base_dir, "json")
 
