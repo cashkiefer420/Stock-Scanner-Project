@@ -20,19 +20,24 @@ SENDER_PASSWORD = 'pIqvin-persi2-pibsij'
 
 # Paths to JSON files
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON_FILE = os.path.join(BASE_DIR, 'json', '10_price_de.json')
-STOCK_INFO_FILE = os.path.join(BASE_DIR, 'json', 'Filtered_price_10_de.json')
-USED_TICKERS_FILE = os.path.join(BASE_DIR, 'json', 'ut_price_10_de.json')
+JSON_FOLDER = os.path.join(BASE_DIR, 'json')
+JSON_FILE = os.path.join(JSON_FOLDER, '10_price_de.json')
+STOCK_INFO_FILE = os.path.join(JSON_FOLDER, 'Filtered_price_10_de.json')
+USED_TICKERS_FILE = os.path.join(JSON_FOLDER, 'ut_price_10_de.json')
 
-# Ensure JSON files exist with correct structure
-for file, default_data in [
-    (JSON_FILE, {"emails": []}),
-    (USED_TICKERS_FILE, {"used_tickers": []}),
-    (STOCK_INFO_FILE, {"stocks": []})
-]:
-    if not os.path.exists(file):
-        with open(file, 'w') as f:
+# Ensure the JSON folder exists
+if not os.path.exists(JSON_FOLDER):
+    os.makedirs(JSON_FOLDER)
+
+# Ensure JSON files exist with correct initial structure
+def ensure_json_file(filepath, default_data):
+    if not os.path.exists(filepath):
+        with open(filepath, 'w') as f:
             json.dump(default_data, f, indent=4)
+
+ensure_json_file(JSON_FILE, {"emails": []})
+ensure_json_file(USED_TICKERS_FILE, {"used_tickers": []})
+ensure_json_file(STOCK_INFO_FILE, {"stocks": []})
 
 # Email validation function
 def is_valid_email(email):
@@ -68,7 +73,12 @@ def subscribe_email():
 # Function to send stock notifications
 def send_stock_notifications():
     try:
-        # Load email and stock data
+        # Ensure all JSON files exist
+        ensure_json_file(JSON_FILE, {"emails": []})
+        ensure_json_file(USED_TICKERS_FILE, {"used_tickers": []})
+        ensure_json_file(STOCK_INFO_FILE, {"stocks": []})
+
+        # Load data
         with open(JSON_FILE, 'r') as f:
             email_data = json.load(f)
         with open(USED_TICKERS_FILE, 'r') as f:
