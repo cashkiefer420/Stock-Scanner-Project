@@ -4,13 +4,48 @@ import yfinance as yf
 from datetime import datetime
 
 # Base directory and file paths
-base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
-EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
-LEVEL_1_EXPORT_PATH = os.path.join(base_dir, "json", "level_1_news.json")
-LEVEL_5_EXPORT_PATH = os.path.join(base_dir, "json", "level_5_news.json")
+BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
+JSON_DIR = os.path.join(BASE_DIR, "json")
+EXPORT_FILE_PATH = os.path.join(JSON_DIR, "news.json")
+LEVEL_1_EXPORT_PATH = os.path.join(JSON_DIR, "level_1_news.json")
+LEVEL_5_EXPORT_PATH = os.path.join(JSON_DIR, "level_5_news.json")
+LOG_FILE_PATH = os.path.join(BASE_DIR, "news_processing.log")
+
+# Ensure the json directory exists
+os.makedirs(JSON_DIR, exist_ok=True)
 
 # Get today's date in YYYY-MM-DD format
 TODAY_DATE = datetime.today().strftime("%Y-%m-%d")
+
+def log_message(message):
+    """Logs messages to a log file with timestamps."""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    log_entry = f"[{timestamp}] {message}\n"
+    
+    with open(LOG_FILE_PATH, "a") as log_file:
+        log_file.write(log_entry)
+    
+    print(log_entry.strip())  # Also print to console
+
+def ensure_json_file(filepath, default_data):
+    """Ensure the given JSON file exists and is initialized with default data if missing or corrupted."""
+    if not os.path.exists(filepath):
+        with open(filepath, "w") as f:
+            json.dump(default_data, f, indent=4)
+        log_message(f"Created missing file: {filepath}")
+    else:
+        try:
+            with open(filepath, "r") as f:
+                json.load(f)  # Try loading JSON to check if it's valid
+        except (json.JSONDecodeError, IOError):
+            log_message(f"Error reading {filepath}. Resetting with default data.")
+            with open(filepath, "w") as f:
+                json.dump(default_data, f, indent=4)
+
+# Ensure all required JSON files exist
+ensure_json_file(EXPORT_FILE_PATH, [])
+ensure_json_file(LEVEL_1_EXPORT_PATH, [])
+ensure_json_file(LEVEL_5_EXPORT_PATH, [])
 
 def ensure_serializable(data):
     """Convert non-serializable values to serializable format."""
@@ -27,24 +62,24 @@ def fetch_ticker_price(ticker):
     """Fetch the current price of a stock using yfinance."""
     try:
         stock = yf.Ticker(ticker)
-        price = stock.history(period="1d")["Close"].iloc[-1]
-        return round(price, 2)
+        history = stock.history(period="1d")
+        if history.empty:
+            raise ValueError("No price data available")
+        return round(history["Close"].iloc[-1], 2)
     except Exception as e:
-        print(f"Error fetching price for {ticker}: {e}")
+        log_message(f"Error fetching price for {ticker}: {e}")
         return None
 
 def process_and_filter_articles():
     """Process only today's articles, add stock prices, and filter into level 1 and 5 JSON files."""
     
-    articles = []
-
-    # Load the main JSON file if it exists
-    if os.path.exists(EXPORT_FILE_PATH):
-        try:
-            with open(EXPORT_FILE_PATH, "r") as file:
-                articles = json.load(file)
-        except json.JSONDecodeError:
-            print(f"Error decoding JSON from {EXPORT_FILE_PATH}. Proceeding with an empty list.")
+    # Load existing articles
+    try:
+        with open(EXPORT_FILE_PATH, "r") as file:
+            articles = json.load(file)
+    except json.JSONDecodeError:
+        log_message(f"Error decoding JSON from {EXPORT_FILE_PATH}. Resetting with empty list.")
+        articles = []
 
     filtered_articles = []
     level_1_articles = []
@@ -73,6 +108,9 @@ def process_and_filter_articles():
         elif grade == 5:
             level_5_articles.append(article)
 
+    if filtered_articles:
+        log_message(f"Found {len(filtered_articles)} new articles for {TODAY_DATE}.")
+    
     # Ensure all data is serializable before writing to JSON files
     serializable_articles = ensure_serializable(filtered_articles)
     serializable_level_1 = ensure_serializable(level_1_articles)
@@ -81,15 +119,15 @@ def process_and_filter_articles():
     # Write to respective JSON files
     with open(LEVEL_1_EXPORT_PATH, "w") as file:
         json.dump(serializable_level_1, file, indent=4)
-    print(f"Level 1 articles saved to {LEVEL_1_EXPORT_PATH}")
+    log_message(f"Level 1 articles saved: {len(level_1_articles)}")
 
     with open(LEVEL_5_EXPORT_PATH, "w") as file:
         json.dump(serializable_level_5, file, indent=4)
-    print(f"Level 5 articles saved to {LEVEL_5_EXPORT_PATH}")
+    log_message(f"Level 5 articles saved: {len(level_5_articles)}")
 
     with open(EXPORT_FILE_PATH, "w") as file:
         json.dump(serializable_articles, file, indent=4)
-    print(f"Updated articles (only today's) saved to {EXPORT_FILE_PATH}")
+    log_message(f"Updated total articles (only today's) saved: {len(serializable_articles)}")
 
 if __name__ == "__main__":
     process_and_filter_articles()
