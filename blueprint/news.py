@@ -17,9 +17,6 @@ os.makedirs(JSON_DIR, exist_ok=True)
 # Get today's date in YYYY-MM-DD format
 TODAY_DATE = datetime.today().strftime("%Y-%m-%d")
 
-# List of tickers to track (can be expanded)
-TRACKED_TICKERS = ["AAPL", "TSLA", "AMZN", "GOOGL", "MSFT", "NVDA", "META"]
-
 def log_message(message):
     """Logs messages to a log file with timestamps."""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -61,53 +58,38 @@ def ensure_serializable(data):
     else:
         return str(data)  # Convert non-serializable objects to strings
 
-def fetch_ticker_price(ticker):
-    """Fetch the current price of a stock using yfinance."""
+def fetch_market_news():
+    """Fetch general stock market news from Yahoo Finance."""
     try:
-        stock = yf.Ticker(ticker)
-        history = stock.history(period="1d")
-        if history.empty:
-            raise ValueError("No price data available")
-        return round(history["Close"].iloc[-1], 2)
-    except Exception as e:
-        log_message(f"Error fetching price for {ticker}: {e}")
-        return None
-
-def fetch_news_articles():
-    """Fetch recent news articles for tracked tickers from Yahoo Finance."""
-    all_articles = []
-
-    for ticker in TRACKED_TICKERS:
-        try:
-            stock = yf.Ticker(ticker)
-            news = stock.news  # Fetch news articles
-            
-            for article in news:
-                article_date = datetime.utcfromtimestamp(article["providerPublishTime"]).strftime("%Y-%m-%d")
-
-                if article_date == TODAY_DATE:
-                    all_articles.append({
-                        "date": article_date,
-                        "ticker": ticker,
-                        "headline": article.get("title", "No Title"),
-                        "link": article.get("link", ""),
-                        "grade": 1 if "buy" in article.get("title", "").lower() else 5,  # Basic grading logic
-                        "score": None  # Placeholder for potential scoring logic
-                    })
+        market_news = yf.Ticker("^GSPC").news  # Fetch general market news (S&P 500 proxy)
+        news_articles = []
         
-        except Exception as e:
-            log_message(f"Error fetching news for {ticker}: {e}")
+        for article in market_news:
+            article_date = datetime.utcfromtimestamp(article["providerPublishTime"]).strftime("%Y-%m-%d")
+            
+            if article_date == TODAY_DATE:  # Only include today's news
+                news_articles.append({
+                    "date": article_date,
+                    "headline": article.get("title", "No Title"),
+                    "link": article.get("link", ""),
+                    "grade": 1 if "buy" in article.get("title", "").lower() else 5,  # Basic grading logic
+                    "score": None  # Placeholder for potential scoring logic
+                })
+        
+        return news_articles
 
-    return all_articles
+    except Exception as e:
+        log_message(f"Error fetching market news: {e}")
+        return []
 
 def process_and_filter_articles():
-    """Fetch today's news, add stock prices, and filter into level 1 and 5 JSON files."""
+    """Fetch today's market news, process it, and filter into level 1 and 5 JSON files."""
     
     # Fetch fresh news articles
-    news_articles = fetch_news_articles()
+    news_articles = fetch_market_news()
 
     if not news_articles:
-        log_message("No news articles found for today.")
+        log_message("No market news articles found for today.")
         return
     
     log_message(f"Fetched {len(news_articles)} articles.")
@@ -125,9 +107,6 @@ def process_and_filter_articles():
     level_5_articles = []
 
     for article in news_articles:
-        ticker = article["ticker"]
-        article["price"] = fetch_ticker_price(ticker) if ticker else None
-
         filtered_articles.append(article)
 
         # Sort articles into level 1 or 5
