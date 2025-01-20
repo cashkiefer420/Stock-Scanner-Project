@@ -1,1 +1,25 @@
-{}
+{
+    "AAPL": {
+        "Ticker": "AAPL",
+        "Company Name": "Apple Inc.",
+        "Current Price": 229.98,
+        "Price Change Today": -12,
+        "Price Change Week": -1.89,
+        "Price Change Month": -2.03,
+        "Price Change Year": -5.69,
+        "Bid Ask Spread": "220.21 - 230.16",
+        "Days Range": "228.48 - 232.29",
+        "Volume Today": "68247100",
+        "Avg Volume (3 mon)": 45900529,
+        "DVAV (Day Volume Over Average Volume)": 1.4868,
+        "P/E Ratio": 37.88797,
+        "P/E Change (3 Mon)": -5.08,
+        "Shares Available": 15037899776,
+        "Market Cap": 3458416246784,
+        "Market Cap Change (3 Mon)": 0.0,
+        "Dividend Yield": 0.0043,
+        "One Year Target": 247.6305,
+        "Volume Today Over Shares Available": 0.0045,
+        "DVSA (Volume Today Over Shares Available)": 0.0045
+    }
+}
