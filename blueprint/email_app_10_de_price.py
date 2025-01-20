@@ -24,13 +24,17 @@ JSON_FILE = os.path.join(BASE_DIR, 'json', '10_price_de.json')
 STOCK_INFO_FILE = os.path.join(BASE_DIR, 'json', 'Filtered_price_10_de.json')
 USED_TICKERS_FILE = os.path.join(BASE_DIR, 'json', 'ut_price_10_de.json')
 
-# Ensure JSON files exist
-for file in [JSON_FILE, USED_TICKERS_FILE]:
+# Ensure JSON files exist with correct structure
+for file, default_data in [
+    (JSON_FILE, {"emails": []}),
+    (USED_TICKERS_FILE, {"used_tickers": []}),
+    (STOCK_INFO_FILE, {"stocks": []})
+]:
     if not os.path.exists(file):
         with open(file, 'w') as f:
-            json.dump({"emails": [], "used_tickers": []}, f, indent=4)
+            json.dump(default_data, f, indent=4)
 
-# Email validation
+# Email validation function
 def is_valid_email(email):
     regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
     return re.match(regex, email)
@@ -59,20 +63,16 @@ def subscribe_email():
 
         return jsonify({"message": "Subscription successful"}), 200
     except Exception as e:
-  
-        return jsonify({"message": "An error occurred"}), 500
+        return jsonify({"message": f"An error occurred: {str(e)}"}), 500
 
+# Function to send stock notifications
 def send_stock_notifications():
     try:
-        # Load email data
+        # Load email and stock data
         with open(JSON_FILE, 'r') as f:
             email_data = json.load(f)
-
-        # Load used tickers
         with open(USED_TICKERS_FILE, 'r') as f:
             used_tickers_data = json.load(f)
-
-        # Load stock data
         with open(STOCK_INFO_FILE, 'r') as f:
             stock_data = json.load(f)
 
@@ -82,10 +82,10 @@ def send_stock_notifications():
           <body>
             <h1>Stock <strong>{{ stock_symbol }}</strong> Down Ten Percent Notification</h1>
             <p>Dear Investor,</p>
-            <p>The stock <strong>{{ stock_symbol }}</strong> has experienced a price movement.</p>
-            <p>Current Price: ${{ current_price }}</p>
-            <p>Percentage Change: {{ percentage_change }}%</p>
-            <p>Volume Today: {{ Volume_today }}</p>
+            <p>The stock <strong>{{ stock_symbol }}</strong> has dropped significantly.</p>
+            <p><strong>Current Price:</strong> ${{ current_price }}</p>
+            <p><strong>Percentage Change:</strong> {{ percentage_change }}%</p>
+            <p><strong>Volume Today:</strong> {{ volume_today }}</p>
             <p>Best Regards,<br>Retail Trade Scanner</p>
           </body>
         </html>
@@ -100,17 +100,18 @@ def send_stock_notifications():
         template = Template(html_template)
 
         for ticker_info in stock_data.get("stocks", []):
-            ticker = ticker_info.get("ticker", "Unknown")
+            ticker = ticker_info.get("Ticker", "Unknown")
+            percentage_change = ticker_info.get("Price Change Today", 0)
 
-            # Skip if the ticker is already used
-            if ticker in used_tickers_data["used_tickers"]:
+            # Ensure percentage change is significant
+            if ticker in used_tickers_data["used_tickers"] or percentage_change < -10:
                 continue
 
             filled_html = template.render(
                 stock_symbol=ticker,
                 current_price=ticker_info.get("Current Price", "N/A"),
-                percentage_change=ticker_info.get("percentage_change", "N/A"),
-                Volume_today=ticker_info.get("Volume today", "N/A"),
+                percentage_change=percentage_change,
+                volume_today=ticker_info.get("Volume Today", "N/A"),
             )
 
             for recipient in email_data["emails"]:
@@ -131,23 +132,24 @@ def send_stock_notifications():
 
         server.quit()
     except Exception as e:
+        print(f"Error sending notifications: {str(e)}")
 
-
+# Periodic function to check and send notifications every 5 minutes
 def periodic_check():
-    """Check every 5 minutes for new stock data and send notifications."""
     while True:
-       
-        send_stock_notifications()
+        try:
+            send_stock_notifications()
+        except Exception as e:
+            print(f"Error in periodic check: {str(e)}")
         time.sleep(300)  # Wait for 5 minutes
 
+# Reset used tickers at midnight
 def reset_used_tickers():
-    """Reset the used tickers file at midnight."""
     while True:
         now = datetime.now()
         if now.hour == 0 and now.minute == 0:
             with open(USED_TICKERS_FILE, 'w') as f:
                 json.dump({"used_tickers": []}, f, indent=4)
-        
         time.sleep(60)  # Check the time every minute
 
 # Start background threads
