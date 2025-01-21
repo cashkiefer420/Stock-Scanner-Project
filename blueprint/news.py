@@ -1,6 +1,6 @@
 import json
 import os
-import yfinance as yf
+import requests
 from datetime import datetime
 
 # Base directory and file paths
@@ -9,7 +9,11 @@ JSON_DIR = os.path.join(BASE_DIR, "json")
 EXPORT_FILE_PATH = os.path.join(JSON_DIR, "news.json")
 LEVEL_1_EXPORT_PATH = os.path.join(JSON_DIR, "level_1_news.json")
 LEVEL_5_EXPORT_PATH = os.path.join(JSON_DIR, "level_5_news.json")
-LOG_FILE_PATH = os.path.join(BASE_DIR, "news_processing.log")
+TICKER_FILE_PATH = os.path.join(JSON_DIR, "processed_tickers.json")  # Ticker file path
+
+# NewsCatcher API Key (replace with your actual API key)
+NEWSCATCHER_API_KEY = "your_newscatcher_api_key_here"
+NEWSCATCHER_URL = "https://api.newscatcherapi.com/v2/search"
 
 # Ensure the json directory exists
 os.makedirs(JSON_DIR, exist_ok=True)
@@ -17,15 +21,38 @@ os.makedirs(JSON_DIR, exist_ok=True)
 # Get today's date in YYYY-MM-DD format
 TODAY_DATE = datetime.today().strftime("%Y-%m-%d")
 
+# Keyword-based filtering logic
+keywords = {
+    1: ["bankruptcy", "fraud", "lawsuit", "default", "collapse", "crash", "scandal", "layoff", "downturn", "depression",
+        "crisis", "recession", "plummet", "failure", "losses", "penalty", "investigation", "misconduct", "closure", "downfall"],
+    2: ["loss", "decline", "debt", "risk", "penalty", "diminish", "drop", "cut", "weak", "uncertain",
+        "fine", "volatile", "downgrade", "slowdown", "struggle", "pressure", "shortfall", "disruption", "negative", "warning"],
+    3: ["neutral", "stable", "moderate", "average", "steady", "unchanged", "flat", "balanced", "constant", "status quo",
+        "midpoint", "middle", "unmoved", "normal", "equilibrium", "regular", "unaffected", "unchallenged", "intermediate", "consistent"],
+    4: ["growth", "profit", "increase", "success", "expansion", "improvement", "gain", "progress", "advance", "upturn",
+        "positive", "strength", "opportunity", "recover", "stable growth", "resilience", "rise", "achievement", "promising", "favorable"],
+    5: ["record-breaking", "booming", "outstanding", "surge", "innovative", "exceptional", "unprecedented", "thriving", "remarkable", "breakthrough",
+        "leading", "flourishing", "highly successful", "groundbreaking", "top-performing", "skyrocketing", "phenomenal", "milestone", "extraordinary", "peak performance"]
+}
+
+# Scoring system for keyword levels
+scores = {1: -2, 2: -1, 3: 0, 4: 1, 5: 2}
+
+# Grading brackets based on the score
+brackets = {
+    1: (-float('inf'), -20),
+    2: (-19, -5),
+    3: (-5, 5),
+    4: (5, 19),
+    5: (20, float('inf'))
+}
+
 def log_message(message):
-    """Logs messages to a log file with timestamps."""
+    """Logs messages to the console with timestamps."""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log_entry = f"[{timestamp}] {message}\n"
+    log_entry = f"[{timestamp}] {message}"
     
-    with open(LOG_FILE_PATH, "a") as log_file:
-        log_file.write(log_entry)
-    
-    print(log_entry.strip())  # Also print to console
+    print(log_entry)  # Print to console only
 
 def ensure_json_file(filepath, default_data):
     """Ensure the given JSON file exists and is initialized with default data if missing or corrupted."""
@@ -46,95 +73,100 @@ def ensure_json_file(filepath, default_data):
 ensure_json_file(EXPORT_FILE_PATH, [])
 ensure_json_file(LEVEL_1_EXPORT_PATH, [])
 ensure_json_file(LEVEL_5_EXPORT_PATH, [])
+ensure_json_file(TICKER_FILE_PATH, {"tickers": []})
 
-def ensure_serializable(data):
-    """Convert non-serializable values to serializable format."""
-    if isinstance(data, (list, tuple)):
-        return [ensure_serializable(item) for item in data]
-    elif isinstance(data, dict):
-        return {key: ensure_serializable(value) for key, value in data.items()}
-    elif isinstance(data, (int, float, str)) or data is None:
-        return data
-    else:
-        return str(data)  # Convert non-serializable objects to strings
-
-def fetch_market_news():
-    """Fetch general stock market news from Yahoo Finance."""
+def load_tickers():
+    """Load stock tickers from processed_tickers.json."""
     try:
-        market_news = yf.Ticker("^GSPC").news  # Fetch general market news (S&P 500 proxy)
-        news_articles = []
-        
-        for article in market_news:
-            article_date = datetime.utcfromtimestamp(article["providerPublishTime"]).strftime("%Y-%m-%d")
-            
-            if article_date == TODAY_DATE:  # Only include today's news
-                news_articles.append({
-                    "date": article_date,
-                    "headline": article.get("title", "No Title"),
-                    "link": article.get("link", ""),
-                    "grade": 1 if "buy" in article.get("title", "").lower() else 5,  # Basic grading logic
-                    "score": None  # Placeholder for potential scoring logic
-                })
-        
-        return news_articles
-
-    except Exception as e:
-        log_message(f"Error fetching market news: {e}")
+        with open(TICKER_FILE_PATH, "r") as file:
+            data = json.load(file)
+            return data.get("tickers", [])
+    except json.JSONDecodeError:
+        log_message(f"Error decoding JSON from {TICKER_FILE_PATH}. Resetting with empty list.")
         return []
 
-def process_and_filter_articles():
-    """Fetch today's market news, process it, and filter into level 1 and 5 JSON files."""
-    
-    # Fetch fresh news articles
-    news_articles = fetch_market_news()
+def analyze_sentiment(title):
+    """Analyze the sentiment of the headline based on keyword occurrences."""
+    score = 0
+    for level, words in keywords.items():
+        if any(word in title.lower() for word in words):
+            score += scores[level]
+    return score
 
+def determine_grade(score):
+    """Determine the grade based on the score and predefined brackets."""
+    for grade, (low, high) in brackets.items():
+        if low <= score <= high:
+            return grade
+    return 3  # Default to neutral if no match
+
+def fetch_stock_news():
+    """Fetch news for stocks listed in processed_tickers.json using NewsCatcher API."""
+    tickers = load_tickers()
+    if not tickers:
+        log_message("No tickers found in processed_tickers.json.")
+        return []
+
+    news_articles = []
+    headers = {
+        "x-api-key": NEWSCATCHER_API_KEY
+    }
+
+    for ticker in tickers:
+        params = {
+            "query": ticker,
+            "lang": "en",
+            "sort_by": "published",
+            "page_size": 50  # Fetch up to 50 articles per ticker
+        }
+
+        try:
+            response = requests.get(NEWSCATCHER_URL, headers=headers, params=params)
+            response.raise_for_status()
+            data = response.json()
+
+            if data.get("status") == "ok":
+                for article in data.get("articles", []):
+                    article_date = article["published_date"].split("T")[0]
+
+                    if article_date == TODAY_DATE:
+                        score = analyze_sentiment(article["title"])
+                        grade = determine_grade(score)
+
+                        news_articles.append({
+                            "date": article_date,
+                            "headline": article.get("title", "No Title"),
+                            "link": article.get("link", ""),
+                            "ticker": ticker,
+                            "grade": grade,
+                            "score": score
+                        })
+
+        except requests.RequestException as e:
+            log_message(f"Error fetching news for {ticker}: {e}")
+
+    return news_articles
+
+def process_and_filter_articles():
+    """Fetch stock-specific news, process it, and filter into level 1 and 5 JSON files."""
+    news_articles = fetch_stock_news()
+    
     if not news_articles:
-        log_message("No market news articles found for today.")
+        log_message("No stock news articles found for today.")
         return
     
     log_message(f"Fetched {len(news_articles)} articles.")
 
-    # Load existing articles (if any)
-    try:
-        with open(EXPORT_FILE_PATH, "r") as file:
-            existing_articles = json.load(file)
-    except json.JSONDecodeError:
-        log_message(f"Error decoding JSON from {EXPORT_FILE_PATH}. Resetting with empty list.")
-        existing_articles = []
+    level_1_articles = [a for a in news_articles if a["grade"] == 1]
+    level_5_articles = [a for a in news_articles if a["grade"] == 5]
 
-    filtered_articles = []
-    level_1_articles = []
-    level_5_articles = []
-
-    for article in news_articles:
-        filtered_articles.append(article)
-
-        # Sort articles into level 1 or 5
-        if article["grade"] == 1:
-            level_1_articles.append(article)
-        elif article["grade"] == 5:
-            level_5_articles.append(article)
-
-    # Merge with existing articles (avoid duplicates)
-    updated_articles = existing_articles + filtered_articles
-
-    # Ensure all data is serializable before writing to JSON files
-    serializable_articles = ensure_serializable(updated_articles)
-    serializable_level_1 = ensure_serializable(level_1_articles)
-    serializable_level_5 = ensure_serializable(level_5_articles)
-
-    # Write to respective JSON files
     with open(LEVEL_1_EXPORT_PATH, "w") as file:
-        json.dump(serializable_level_1, file, indent=4)
+        json.dump(level_1_articles, file, indent=4)
     log_message(f"Level 1 articles saved: {len(level_1_articles)}")
 
     with open(LEVEL_5_EXPORT_PATH, "w") as file:
-        json.dump(serializable_level_5, file, indent=4)
+        json.dump(level_5_articles, file, indent=4)
     log_message(f"Level 5 articles saved: {len(level_5_articles)}")
-
-    with open(EXPORT_FILE_PATH, "w") as file:
-        json.dump(serializable_articles, file, indent=4)
-    log_message(f"Updated total articles saved: {len(serializable_articles)}")
 
 if __name__ == "__main__":
     process_and_filter_articles()
