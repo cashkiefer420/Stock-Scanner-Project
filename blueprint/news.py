@@ -3,52 +3,46 @@ import os
 import requests
 from datetime import datetime
 
-# Base directory and file paths
+# 🔹 API Key (Replace with your actual API Key)
+NEWS_API_KEY = "c246a255265745ec9c42318fdc6195cd"
+
+# 🔹 File paths
 BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
 JSON_DIR = os.path.join(BASE_DIR, "json")
+TICKER_FILE_PATH = os.path.join(JSON_DIR, "processed_tickers.json")
 EXPORT_FILE_PATH = os.path.join(JSON_DIR, "news.json")
 LEVEL_1_EXPORT_PATH = os.path.join(JSON_DIR, "level_1_news.json")
 LEVEL_5_EXPORT_PATH = os.path.join(JSON_DIR, "level_5_news.json")
-TICKER_FILE_PATH = os.path.join(JSON_DIR, "processed_tickers.json")  # Ticker file path
 
-# NewsCatcher API Key (replace with your actual API key)
-NEWSCATCHER_API_KEY = "your_newscatcher_api_key_here"
-NEWSCATCHER_URL = "https://api.newscatcherapi.com/v2/search"
-
-# Ensure the json directory exists
+# 🔹 Ensure the json directory exists
 os.makedirs(JSON_DIR, exist_ok=True)
 
-# Get today's date in YYYY-MM-DD format
+# 🔹 Get today's date in YYYY-MM-DD format
 TODAY_DATE = datetime.today().strftime("%Y-%m-%d")
 
-## Keyword-based filtering logic with corporate press release terminology
+# 🔹 Keywords for sentiment grading
 keywords = {
-    # 🚨 **Negative/Red Flags** (Major concerns, risks, corporate failures)
     1: ["bankruptcy", "fraud", "lawsuit", "default", "collapse", "crash", "scandal", "layoff", "downsizing",
         "crisis", "recession", "plummet", "failure", "penalty", "investigation", "misconduct", "SEC probe",
         "restructuring", "foreclosure", "recall", "delisting", "governance issue", "audit concern", "legal action"],
 
-    # ⚠ **Mildly Negative** (Financial concerns, risks, & cautious language)
     2: ["headwinds", "margin pressure", "earnings miss", "revenue decline", "cost-cutting", "restructuring",
         "soft demand", "uncertain outlook", "challenging environment", "adjusted guidance", "regulatory scrutiny",
         "shortfall", "market volatility", "lower-than-expected", "slower growth", "deleveraging", "impairment charge",
         "litigation risk", "negative forecast", "supply chain issues", "cybersecurity breach"],
 
-    # ⚖ **Neutral/Corporate-Speak** (Standard PR phrases & neutral terms)
     3: ["positioned for growth", "long-term strategy", "strategic realignment", "ongoing evaluation",
         "enhancing shareholder value", "business as usual", "steady performance", "prudent approach",
         "balanced portfolio", "disciplined execution", "corporate governance", "operational efficiency",
         "risk management", "neutral impact", "macro environment", "stable conditions", "cautious optimism",
         "maintaining our commitment", "status quo", "aligned with industry trends"],
 
-    # ✅ **Positive Growth/Expansion** (Good financial health & expansion news)
     4: ["record revenue", "strong quarter", "exceeding expectations", "impressive results", "robust earnings",
         "growth trajectory", "market leader", "scaling operations", "expansion strategy", "customer growth",
         "acquisition success", "milestone achievement", "sustained performance", "bullish outlook",
         "industry-leading", "positive momentum", "product launch", "strategic investment", "partnership growth",
         "new market entry"],
 
-    # 🚀 **High-Impact/Exceptional** (Major milestones, disruptive innovation, or outstanding success)
     5: ["breakthrough innovation", "disruptive technology", "record-breaking profits", "all-time high",
         "groundbreaking development", "unprecedented demand", "exceptional performance", "dominant market position",
         "trailblazing", "transformational growth", "skyrocketing stock", "outpacing competitors",
@@ -56,139 +50,116 @@ keywords = {
         "best quarter ever", "leadership in innovation"]
 }
 
-# Scoring system for keyword levels
-scores = {1: -2, 2: -1, 3: 0, 4: 1, 5: 2}
+# 🔹 List of press release sources (Benzinga Removed)
+press_release_sources = [
+    "prnewswire.com", "businesswire.com", "globenewswire.com", "newswire.com",
+    "marketwatch.com/press-release"
+]
 
-# Grading brackets based on the score
-brackets = {
-    1: (-float('inf'), -20),
-    2: (-19, -5),
-    3: (-5, 5),
-    4: (5, 19),
-    5: (20, float('inf'))
+# 🔹 Source credibility scores
+news_source_scores = {
+    "reuters.com": 5,
+    "wsj.com": 5,
+    "nytimes.com": 5,
+    "bloomberg.com": 5,
+    "ft.com": 5,
+    "cnbc.com": 4,
+    "forbes.com": 4,
+    "marketwatch.com": 4,
+    "seekingalpha.com": 3,
+    "investopedia.com": 3,
+    "thestreet.com": 3
 }
 
-def log_message(message):
-    """Logs messages to the console with timestamps."""
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log_entry = f"[{timestamp}] {message}"
-    
-    print(log_entry)  # Print to console only
-
-def ensure_json_file(filepath, default_data):
-    """Ensure the given JSON file exists and is initialized with default data if missing or corrupted."""
-    if not os.path.exists(filepath):
-        with open(filepath, "w") as f:
-            json.dump(default_data, f, indent=4)
-        log_message(f"Created missing file: {filepath}")
-    else:
-        try:
-            with open(filepath, "r") as f:
-                json.load(f)  # Try loading JSON to check if it's valid
-        except (json.JSONDecodeError, IOError):
-            log_message(f"Error reading {filepath}. Resetting with default data.")
-            with open(filepath, "w") as f:
-                json.dump(default_data, f, indent=4)
-
-# Ensure all required JSON files exist
-ensure_json_file(EXPORT_FILE_PATH, [])
-ensure_json_file(LEVEL_1_EXPORT_PATH, [])
-ensure_json_file(LEVEL_5_EXPORT_PATH, [])
-ensure_json_file(TICKER_FILE_PATH, {"tickers": []})
-
+# 🔹 Load tickers from JSON file
 def load_tickers():
-    """Load stock tickers from processed_tickers.json."""
-    try:
+    """Load stock tickers from the processed_tickers.json file."""
+    if os.path.exists(TICKER_FILE_PATH):
         with open(TICKER_FILE_PATH, "r") as file:
             data = json.load(file)
             return data.get("tickers", [])
-    except json.JSONDecodeError:
-        log_message(f"Error decoding JSON from {TICKER_FILE_PATH}. Resetting with empty list.")
-        return []
+    return []
 
-def analyze_sentiment(title):
-    """Analyze the sentiment of the headline based on keyword occurrences."""
-    score = 0
-    for level, words in keywords.items():
-        if any(word in title.lower() for word in words):
-            score += scores[level]
-    return score
-
-def determine_grade(score):
-    """Determine the grade based on the score and predefined brackets."""
-    for grade, (low, high) in brackets.items():
-        if low <= score <= high:
-            return grade
-    return 3  # Default to neutral if no match
-
-def fetch_stock_news():
-    """Fetch news for stocks listed in processed_tickers.json using NewsCatcher API."""
+# 🔹 Fetch news from NewsAPI
+def fetch_news():
+    """Fetch latest news for given stock tickers from NewsAPI.org, filtering for US & English."""
     tickers = load_tickers()
-    if not tickers:
-        log_message("No tickers found in processed_tickers.json.")
-        return []
+    all_articles = []
 
-    news_articles = []
-    headers = {
-        "x-api-key": NEWSCATCHER_API_KEY
-    }
+    if not tickers:
+        print("No tickers found in the file.")
+        return []
 
     for ticker in tickers:
-        params = {
-            "query": ticker,
-            "lang": "en",
-            "sort_by": "published",
-            "page_size": 50  # Fetch up to 50 articles per ticker
-        }
+        print(f"Fetching news for {ticker}...")
+        url = f"https://newsapi.org/v2/everything?q={ticker}&language=en&apiKey={NEWS_API_KEY}"
 
         try:
-            response = requests.get(NEWSCATCHER_URL, headers=headers, params=params)
-            response.raise_for_status()
+            response = requests.get(url)
             data = response.json()
 
-            if data.get("status") == "ok":
-                for article in data.get("articles", []):
-                    article_date = article["published_date"].split("T")[0]
-
-                    if article_date == TODAY_DATE:
-                        score = analyze_sentiment(article["title"])
-                        grade = determine_grade(score)
-
-                        news_articles.append({
-                            "date": article_date,
-                            "headline": article.get("title", "No Title"),
-                            "link": article.get("link", ""),
+            if "articles" in data:
+                for article in data["articles"]:
+                    if is_press_release(article) or has_high_reputation(article):
+                        all_articles.append({
                             "ticker": ticker,
-                            "grade": grade,
-                            "score": score
+                            "date": article["publishedAt"][:10],  # Extract YYYY-MM-DD
+                            "headline": article["title"],
+                            "link": article["url"],
+                            "content": article.get("description", ""),
+                            "grade": assign_grade(article.get("description", "")),  # Rate description
+                            "source": article["source"]["name"],
+                            "credibility": get_source_score(article)
                         })
+        except Exception as e:
+            print(f"Error fetching news for {ticker}: {e}")
 
-        except requests.RequestException as e:
-            log_message(f"Error fetching news for {ticker}: {e}")
+    return all_articles
 
-    return news_articles
+# 🔹 Check if an article is a press release
+def is_press_release(article):
+    """Determine if an article is likely a press release based on source and URL."""
+    url = article.get("url", "").lower()
+    source = article.get("source", {}).get("name", "").lower()
 
-def process_and_filter_articles():
-    """Fetch stock-specific news, process it, and filter into level 1 and 5 JSON files."""
-    news_articles = fetch_stock_news()
-    
-    if not news_articles:
-        log_message("No stock news articles found for today.")
-        return
-    
-    log_message(f"Fetched {len(news_articles)} articles.")
+    if any(domain in url for domain in press_release_sources):
+        return True
+    if "press-release" in url:
+        return True
+    if "newswire" in url or "prnewswire" in source or "businesswire" in source:
+        return True
 
-    level_1_articles = [a for a in news_articles if a["grade"] == 1]
-    level_5_articles = [a for a in news_articles if a["grade"] == 5]
+    return False
 
-    with open(LEVEL_1_EXPORT_PATH, "w") as file:
-        json.dump(level_1_articles, file, indent=4)
-    log_message(f"Level 1 articles saved: {len(level_1_articles)}")
+# 🔹 Check if a source has a high reputation
+def has_high_reputation(article):
+    """Checks if the news source is reputable."""
+    url = article.get("url", "").lower()
+    return any(domain in url for domain in news_source_scores.keys())
 
-    with open(LEVEL_5_EXPORT_PATH, "w") as file:
-        json.dump(level_5_articles, file, indent=4)
-    log_message(f"Level 5 articles saved: {len(level_5_articles)}")
+# 🔹 Get credibility score for a news source
+def get_source_score(article):
+    """Assigns a credibility score based on the news source."""
+    url = article.get("url", "").lower()
+    for domain, score in news_source_scores.items():
+        if domain in url:
+            return score
+    return 1  # Default low score
 
+# 🔹 Assign grades based on description content
+def assign_grade(description):
+    """Assigns a grade to an article based on its description content"""
+    if not description:
+        return 3  # Neutral if no description
+
+    desc_lower = description.lower()
+
+    for grade, words in keywords.items():
+        if any(word in desc_lower for word in words):
+            return grade
+
+    return 3  # Default to neutral
+
+# 🔹 Run script
 if __name__ == "__main__":
-    process_and_filter_articles()
-    
+    process_news()
