@@ -21,18 +21,39 @@ os.makedirs(JSON_DIR, exist_ok=True)
 # Get today's date in YYYY-MM-DD format
 TODAY_DATE = datetime.today().strftime("%Y-%m-%d")
 
-# Keyword-based filtering logic
+## Keyword-based filtering logic with corporate press release terminology
 keywords = {
-    1: ["bankruptcy", "fraud", "lawsuit", "default", "collapse", "crash", "scandal", "layoff", "downturn", "depression",
-        "crisis", "recession", "plummet", "failure", "losses", "penalty", "investigation", "misconduct", "closure", "downfall"],
-    2: ["loss", "decline", "debt", "risk", "penalty", "diminish", "drop", "cut", "weak", "uncertain",
-        "fine", "volatile", "downgrade", "slowdown", "struggle", "pressure", "shortfall", "disruption", "negative", "warning"],
-    3: ["neutral", "stable", "moderate", "average", "steady", "unchanged", "flat", "balanced", "constant", "status quo",
-        "midpoint", "middle", "unmoved", "normal", "equilibrium", "regular", "unaffected", "unchallenged", "intermediate", "consistent"],
-    4: ["growth", "profit", "increase", "success", "expansion", "improvement", "gain", "progress", "advance", "upturn",
-        "positive", "strength", "opportunity", "recover", "stable growth", "resilience", "rise", "achievement", "promising", "favorable"],
-    5: ["record-breaking", "booming", "outstanding", "surge", "innovative", "exceptional", "unprecedented", "thriving", "remarkable", "breakthrough",
-        "leading", "flourishing", "highly successful", "groundbreaking", "top-performing", "skyrocketing", "phenomenal", "milestone", "extraordinary", "peak performance"]
+    # 🚨 **Negative/Red Flags** (Major concerns, risks, corporate failures)
+    1: ["bankruptcy", "fraud", "lawsuit", "default", "collapse", "crash", "scandal", "layoff", "downsizing",
+        "crisis", "recession", "plummet", "failure", "penalty", "investigation", "misconduct", "SEC probe",
+        "restructuring", "foreclosure", "recall", "delisting", "governance issue", "audit concern", "legal action"],
+
+    # ⚠ **Mildly Negative** (Financial concerns, risks, & cautious language)
+    2: ["headwinds", "margin pressure", "earnings miss", "revenue decline", "cost-cutting", "restructuring",
+        "soft demand", "uncertain outlook", "challenging environment", "adjusted guidance", "regulatory scrutiny",
+        "shortfall", "market volatility", "lower-than-expected", "slower growth", "deleveraging", "impairment charge",
+        "litigation risk", "negative forecast", "supply chain issues", "cybersecurity breach"],
+
+    # ⚖ **Neutral/Corporate-Speak** (Standard PR phrases & neutral terms)
+    3: ["positioned for growth", "long-term strategy", "strategic realignment", "ongoing evaluation",
+        "enhancing shareholder value", "business as usual", "steady performance", "prudent approach",
+        "balanced portfolio", "disciplined execution", "corporate governance", "operational efficiency",
+        "risk management", "neutral impact", "macro environment", "stable conditions", "cautious optimism",
+        "maintaining our commitment", "status quo", "aligned with industry trends"],
+
+    # ✅ **Positive Growth/Expansion** (Good financial health & expansion news)
+    4: ["record revenue", "strong quarter", "exceeding expectations", "impressive results", "robust earnings",
+        "growth trajectory", "market leader", "scaling operations", "expansion strategy", "customer growth",
+        "acquisition success", "milestone achievement", "sustained performance", "bullish outlook",
+        "industry-leading", "positive momentum", "product launch", "strategic investment", "partnership growth",
+        "new market entry"],
+
+    # 🚀 **High-Impact/Exceptional** (Major milestones, disruptive innovation, or outstanding success)
+    5: ["breakthrough innovation", "disruptive technology", "record-breaking profits", "all-time high",
+        "groundbreaking development", "unprecedented demand", "exceptional performance", "dominant market position",
+        "trailblazing", "transformational growth", "skyrocketing stock", "outpacing competitors",
+        "highest earnings ever", "industry-shifting", "game-changer", "phenomenal success", "category-defining",
+        "best quarter ever", "leadership in innovation"]
 }
 
 # Scoring system for keyword levels
@@ -170,3 +191,4 @@ def process_and_filter_articles():
 
 if __name__ == "__main__":
     process_and_filter_articles()
+    
