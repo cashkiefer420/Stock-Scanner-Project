@@ -1,10 +1,7 @@
 import json
 import os
-import requests
+import yfinance as yf
 from datetime import datetime
-
-# 🔹 API Key (Replace with your actual API Key)
-NEWS_API_KEY = "c246a255265745ec9c42318fdc6195cd"
 
 # 🔹 File paths
 BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
@@ -50,27 +47,6 @@ keywords = {
         "best quarter ever", "leadership in innovation"]
 }
 
-# 🔹 List of press release sources (Benzinga Removed)
-press_release_sources = [
-    "prnewswire.com", "businesswire.com", "globenewswire.com", "newswire.com",
-    "marketwatch.com/press-release"
-]
-
-# 🔹 Source credibility scores
-news_source_scores = {
-    "reuters.com": 5,
-    "wsj.com": 5,
-    "nytimes.com": 5,
-    "bloomberg.com": 5,
-    "ft.com": 5,
-    "cnbc.com": 4,
-    "forbes.com": 4,
-    "marketwatch.com": 4,
-    "seekingalpha.com": 3,
-    "investopedia.com": 3,
-    "thestreet.com": 3
-}
-
 # 🔹 Load tickers from JSON file
 def load_tickers():
     """Load stock tickers from the processed_tickers.json file."""
@@ -80,9 +56,54 @@ def load_tickers():
             return data.get("tickers", [])
     return []
 
-# 🔹 Fetch news from NewsAPI
+# 🔹 Fetch news from yfinance
+def fetch_yfinance_news(ticker):
+    """Fetch latest news for a ticker from Yahoo Finance using yfinance API."""
+    stock = yf.Ticker(ticker)
+    news_articles = stock.news  # Fetch the latest news articles
+
+    # Create a list to store article information
+    articles = []
+    for article in news_articles:
+        # Extract the article information and assign a grade based on the description
+        grade = assign_grade(article.get("summary", ""))  # Assign sentiment grade
+        articles.append({
+            "headline": article.get("title", ""),
+            "link": article.get("link", ""),
+            "ticker": ticker,
+            "date": TODAY_DATE,  # Use today's date
+            "content": article.get("summary", ""),  # Using summary as content
+            "grade": grade  # Include the sentiment grade
+        })
+    
+    return articles
+
+# 🔹 Assign grades based on description content
+def assign_grade(description):
+    """Assigns a grade to an article based on its description content"""
+    if not description:
+        return 3  # Neutral if no description
+
+    desc_lower = description.lower()
+    grade_count = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}  # Keep count of matched words for each grade
+
+    # Count the applicable words for each grade
+    for grade, words in keywords.items():
+        grade_count[grade] = sum(word in desc_lower for word in words)
+
+    # Determine if one grade has the most applicable words
+    max_grade = max(grade_count, key=grade_count.get)  # Grade with the most applicable words
+
+    # If grade 1 or 5 has the most words, discount all grades
+    if max_grade in [1, 5]:
+        return 3  # Neutral grade for all words discounted
+
+    # Return the grade with the highest count of applicable words
+    return max_grade
+
+# 🔹 Fetch news for all tickers
 def fetch_news():
-    """Fetch latest news for given stock tickers from NewsAPI.org, filtering for US & English."""
+    """Fetch latest news for given stock tickers from Yahoo Finance using yfinance."""
     tickers = load_tickers()
     all_articles = []
 
@@ -92,74 +113,18 @@ def fetch_news():
 
     for ticker in tickers:
         print(f"Fetching news for {ticker}...")
-        url = f"https://newsapi.org/v2/everything?q={ticker}&language=en&apiKey={NEWS_API_KEY}"
-
         try:
-            response = requests.get(url)
-            data = response.json()
-
-            if "articles" in data:
-                for article in data["articles"]:
-                    if is_press_release(article) or has_high_reputation(article):
-                        all_articles.append({
-                            "ticker": ticker,
-                            "date": article["publishedAt"][:10],  # Extract YYYY-MM-DD
-                            "headline": article["title"],
-                            "link": article["url"],
-                            "content": article.get("description", ""),
-                            "grade": assign_grade(article.get("description", "")),  # Rate description
-                            "source": article["source"]["name"],
-                            "credibility": get_source_score(article)
-                        })
+            articles = fetch_yfinance_news(ticker)
+            all_articles.extend(articles)
         except Exception as e:
             print(f"Error fetching news for {ticker}: {e}")
 
     return all_articles
 
-# 🔹 Check if an article is a press release
-def is_press_release(article):
-    """Determine if an article is likely a press release based on source and URL."""
-    url = article.get("url", "").lower()
-    source = article.get("source", {}).get("name", "").lower()
-
-    if any(domain in url for domain in press_release_sources):
-        return True
-    if "press-release" in url:
-        return True
-    if "newswire" in url or "prnewswire" in source or "businesswire" in source:
-        return True
-
-    return False
-
-# 🔹 Check if a source has a high reputation
-def has_high_reputation(article):
-    """Checks if the news source is reputable."""
-    url = article.get("url", "").lower()
-    return any(domain in url for domain in news_source_scores.keys())
-
-# 🔹 Get credibility score for a news source
-def get_source_score(article):
-    """Assigns a credibility score based on the news source."""
-    url = article.get("url", "").lower()
-    for domain, score in news_source_scores.items():
-        if domain in url:
-            return score
-    return 1  # Default low score
-
-# 🔹 Assign grades based on description content
-def assign_grade(description):
-    """Assigns a grade to an article based on its description content"""
-    if not description:
-        return 3  # Neutral if no description
-
-    desc_lower = description.lower()
-
-    for grade, words in keywords.items():
-        if any(word in desc_lower for word in words):
-            return grade
-
-    return 3  # Default to neutral
-
 # 🔹 Run script
 if __name__ == "__main__":
-    process_news()
+    articles = fetch_news()
+
+    # Export the fetched news with scores (grades) as needed
+    with open(EXPORT_FILE_PATH, "w") as file:
+        json.dump(articles, file, indent=4)
