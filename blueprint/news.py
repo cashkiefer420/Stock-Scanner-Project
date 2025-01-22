@@ -57,27 +57,34 @@ def load_tickers():
     return []
 
 # 🔹 Fetch news from yfinance
+# 🔹 Fetch news from yfinance
 def fetch_yfinance_news(ticker):
     """Fetch latest news for a ticker from Yahoo Finance using yfinance API."""
     stock = yf.Ticker(ticker)
-    news_articles = stock.news  # Fetch the latest news articles
 
-    # Create a list to store article information
+    # Ensure news exists
+    news_articles = stock.news if hasattr(stock, 'news') and stock.news else []
+
     articles = []
     for article in news_articles:
-        # Extract the article information and assign a grade based on the description
-        grade = assign_grade(article.get("summary", ""))  # Assign sentiment grade
-        articles.append({
-            "headline": article.get("title", ""),
-            "link": article.get("link", ""),
-            "ticker": ticker,
-            "date": TODAY_DATE,  # Use today's date
-            "content": article.get("summary", ""),  # Using summary as content
-            "grade": grade  # Include the sentiment grade
-        })
-    
-    return articles
+        # Extract data safely
+        headline = article.get("title", "N/A")  # Get title or default to "N/A"
+        link = article.get("link", "N/A")  # Get link or default
+        content = article.get("summary", "N/A")  # Some articles may not have summaries
+        date = datetime.fromtimestamp(article.get("providerPublishTime", 0)).strftime("%Y-%m-%d") if "providerPublishTime" in article else TODAY_DATE
+        grade = assign_grade(content)  # Assign sentiment grade
 
+        # Append structured news article
+        articles.append({
+            "ticker": ticker,
+            "headline": headline,
+            "link": link,
+            "date": date,
+            "content": content,
+            "grade": grade
+        })
+
+    return articles
 # 🔹 Assign grades based on description content
 def assign_grade(description):
     """Assigns a grade to an article based on its description content"""
