@@ -1,6 +1,6 @@
+import scrapy
 import json
 import os
-import yfinance as yf
 from datetime import datetime
 
 # 🔹 File paths
@@ -8,14 +8,9 @@ BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
 JSON_DIR = os.path.join(BASE_DIR, "json")
 TICKER_FILE_PATH = os.path.join(JSON_DIR, "processed_tickers.json")
 EXPORT_FILE_PATH = os.path.join(JSON_DIR, "news.json")
-LEVEL_1_EXPORT_PATH = os.path.join(JSON_DIR, "level_1_news.json")
-LEVEL_5_EXPORT_PATH = os.path.join(JSON_DIR, "level_5_news.json")
 
 # 🔹 Ensure the json directory exists
 os.makedirs(JSON_DIR, exist_ok=True)
-
-# 🔹 Get today's date in YYYY-MM-DD format
-TODAY_DATE = datetime.today().strftime("%Y-%m-%d")
 
 # 🔹 Keywords for sentiment grading
 keywords = {
@@ -56,82 +51,70 @@ def load_tickers():
             return data.get("tickers", [])
     return []
 
-# 🔹 Fetch news from yfinance
-# 🔹 Fetch news from yfinance
-def fetch_yfinance_news(ticker):
-    """Fetch latest news for a ticker from Yahoo Finance using yfinance API."""
-    stock = yf.Ticker(ticker)
+# 🔹 Assign grades based on article content
+def assign_grade(content):
+    """Assigns a grade to an article based on its first two paragraphs"""
+    if not content:
+        return 3  # Neutral if no content
 
-    # Ensure news exists
-    news_articles = stock.news if hasattr(stock, 'news') and stock.news else []
+    desc_lower = content.lower()
+    grade_count = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
 
-    articles = []
-    for article in news_articles:
-        # Extract data safely
-        headline = article.get("title", "N/A")  # Get title or default to "N/A"
-        link = article.get("link", "N/A")  # Get link or default
-        content = article.get("summary", "N/A")  # Some articles may not have summaries
-        date = datetime.fromtimestamp(article.get("providerPublishTime", 0)).strftime("%Y-%m-%d") if "providerPublishTime" in article else TODAY_DATE
-        grade = assign_grade(content)  # Assign sentiment grade
+    for grade, words in keywords.items():
+        grade_count[grade] = sum(word in desc_lower for word in words)
 
-        # Append structured news article
-        articles.append({
+    max_grade = max(grade_count, key=grade_count.get)
+
+    if max_grade in [1, 5]:
+        return 3  # Neutral if extreme bias
+
+    return max_grade
+
+# 🔹 Scrapy Spider for Yahoo Finance News
+class YFinanceSpider(scrapy.Spider):
+    name = "yfinance_news"
+    allowed_domains = ["finance.yahoo.com"]
+    
+    def start_requests(self):
+        """Start requests by searching Yahoo Finance for each ticker."""
+        tickers = load_tickers()
+        base_url = "https://finance.yahoo.com/quote/{}/news"
+        
+        for ticker in tickers:
+            yield scrapy.Request(url=base_url.format(ticker), callback=self.parse, meta={'ticker': ticker})
+
+    def parse(self, response):
+        """Parse the Yahoo Finance news page for links and headlines."""
+        ticker = response.meta['ticker']
+        
+        for article in response.css('li.js-stream-content'):
+            headline = article.css('h3 a::text').get()
+            link = article.css('h3 a::attr(href)').get()
+            date = datetime.today().strftime("%Y-%m-%d")
+            
+            if link:
+                # Follow the article link to extract more details
+                yield response.follow(url=link, callback=self.parse_article, meta={'ticker': ticker, 'headline': headline, 'link': link, 'date': date})
+
+    def parse_article(self, response):
+        """Extract the first two paragraphs from the article and grade it."""
+        ticker = response.meta['ticker']
+        headline = response.meta['headline']
+        link = response.meta['link']
+        date = response.meta['date']
+        
+        paragraphs = response.css('p::text').getall()
+        content = " ".join(paragraphs[:2])  # First two paragraphs
+        
+        grade = assign_grade(content)
+        
+        article_data = {
             "ticker": ticker,
             "headline": headline,
             "link": link,
             "date": date,
             "content": content,
             "grade": grade
-        })
+        }
 
-    return articles
-# 🔹 Assign grades based on description content
-def assign_grade(description):
-    """Assigns a grade to an article based on its description content"""
-    if not description:
-        return 3  # Neutral if no description
-
-    desc_lower = description.lower()
-    grade_count = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}  # Keep count of matched words for each grade
-
-    # Count the applicable words for each grade
-    for grade, words in keywords.items():
-        grade_count[grade] = sum(word in desc_lower for word in words)
-
-    # Determine if one grade has the most applicable words
-    max_grade = max(grade_count, key=grade_count.get)  # Grade with the most applicable words
-
-    # If grade 1 or 5 has the most words, discount all grades
-    if max_grade in [1, 5]:
-        return 3  # Neutral grade for all words discounted
-
-    # Return the grade with the highest count of applicable words
-    return max_grade
-
-# 🔹 Fetch news for all tickers
-def fetch_news():
-    """Fetch latest news for given stock tickers from Yahoo Finance using yfinance."""
-    tickers = load_tickers()
-    all_articles = []
-
-    if not tickers:
-        print("No tickers found in the file.")
-        return []
-
-    for ticker in tickers:
-        print(f"Fetching news for {ticker}...")
-        try:
-            articles = fetch_yfinance_news(ticker)
-            all_articles.extend(articles)
-        except Exception as e:
-            print(f"Error fetching news for {ticker}: {e}")
-
-    return all_articles
-
-# 🔹 Run script
-if __name__ == "__main__":
-    articles = fetch_news()
-
-    # Export the fetched news with scores (grades) as needed
-    with open(EXPORT_FILE_PATH, "w") as file:
-        json.dump(articles, file, indent=4)
+        yield article_data  # Scrapy will collect and store this data
