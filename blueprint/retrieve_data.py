@@ -6,6 +6,14 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from threading import Event
 from datetime import datetime, timedelta
+import requests_cache
+
+session = requests_cache.CachedSession('yfinance.cache')
+session.headers['User-agent'] = 'my-program/1.0'
+ticker = yf.Ticker('MSFT', session=session)
+
+# The scraped response will be stored in the cache
+ticker.actions
 
 # Base directory setup
 base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
