@@ -32,8 +32,11 @@ class YahooFinanceNewsSpider(scrapy.Spider):
         tickers = load_tickers()
         today_date = datetime.today().strftime("%Y-%m-%d")
         found_articles = []
+        total_articles = 0  # Counter for total articles searched
 
         for article in response.css("li.js-stream-content"):
+            total_articles += 1  # Increment count for each article checked
+            
             headline = article.css("h3 a::text").get()
             link = article.css("h3 a::attr(href)").get()
             first_paragraph = article.css("p::text").get()  # Extracts the first paragraph
@@ -56,6 +59,10 @@ class YahooFinanceNewsSpider(scrapy.Spider):
                     "first_paragraph": first_paragraph,  # Add first paragraph
                     "date": article_date  # Store article's actual date
                 })
+
+        # 🔹 Log summary of search results
+        self.logger.info(f"Total articles searched: {total_articles}")
+        self.logger.info(f"Total articles found with matching tickers: {len(found_articles)}")
 
         # 🔹 If no articles match the tickers **AND** today's date, log "Not Found"
         if not found_articles:
