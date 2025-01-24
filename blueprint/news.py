@@ -1,17 +1,12 @@
-import scrapy
 import json
 import os
-from datetime import datetime
 import time
+from datetime import datetime
 
 # 🔹 File paths
 BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
 JSON_DIR = os.path.join(BASE_DIR, "json")
-TICKER_FILE_PATH = os.path.join(JSON_DIR, "processed_tickers.json")
 EXPORT_FILE_PATH = os.path.join(JSON_DIR, "news.json")
-
-# 🔹 Ensure the json directory exists
-os.makedirs(JSON_DIR, exist_ok=True)
 
 # 🔹 Keywords for sentiment grading
 keywords = {
@@ -38,15 +33,6 @@ keywords = {
         "unprecedented demand", "buying opportunity", "rapid expansion", "leading the market", "outperforming expectations"]
 }
 
-# 🔹 Load tickers from JSON file
-def load_tickers():
-    """Load stock tickers from the processed_tickers.json file."""
-    if os.path.exists(TICKER_FILE_PATH):
-        with open(TICKER_FILE_PATH, "r") as file:
-            data = json.load(file)
-            return set(data.get("tickers", []))  # Convert to set for faster lookup
-    return set()
-
 # 🔹 Assign grades based on article content
 def assign_grade(content):
     """Assigns a grade to an article based on its first two paragraphs"""
@@ -56,76 +42,47 @@ def assign_grade(content):
     desc_lower = content.lower()
     grade_count = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
 
+    # Check each keyword category and count its occurrences in the content
     for grade, words in keywords.items():
         grade_count[grade] = sum(word in desc_lower for word in words)
 
+    # Determine the highest grade based on the word occurrences
     max_grade = max(grade_count, key=grade_count.get)
 
+    # If extreme bias is detected (either very positive or very negative), return neutral (grade 3)
     if max_grade in [1, 5]:
-        return 3  # Neutral if extreme bias
+        return 3
 
     return max_grade
 
-# 🔹 Scrapy Spider for Yahoo Finance Stock Market News
-class YahooFinanceNewsSpider(scrapy.Spider):
-    name = "yahoo_finance_news"
-    allowed_domains = ["finance.yahoo.com"]
-    start_urls = ["https://finance.yahoo.com/topic/stock-market-news/"]
-
-    def parse(self, response):
-        """Parse the stock market news page and check for tickers listed under articles."""
-        tickers = load_tickers()
-        today_date = datetime.today().strftime("%Y-%m-%d")
-        found_articles = []
-
-        for article in response.css("li.js-stream-content"):
-            headline = article.css("h3 a::text").get()
-            link = article.css("h3 a::attr(href)").get()
-            first_paragraph = article.css("p::text").get()  # Extracts the first paragraph
-            article_date = article.css("time::attr(datetime)").get()
-
-            # Convert article date to YYYY-MM-DD format
-            if article_date:
-                article_date = article_date.split("T")[0]  # Extract just the date part
-
-            # Extract tickers explicitly listed under the article (blue tags)
-            tagged_tickers = article.css("a span::text").getall()
-            matched_tickers = [ticker for ticker in tickers if ticker in tagged_tickers]
-
-            # ✅ Only include articles that match today's date
-            if matched_tickers and article_date == today_date:
-                found_articles.append({
-                    "tickers": matched_tickers,  # Store matched tickers
-                    "headline": headline,
-                    "link": response.urljoin(link),
-                    "first_paragraph": first_paragraph,  # Add first paragraph
-                    "date": article_date  # Store article's actual date
-                })
-
-        # 🔹 If no articles match the tickers **AND** today's date, log "Not Found"
-        if not found_articles:
-            self.logger.info("Not Found")
-            yield {"status": "Not Found"}
-        else:
-            for article in found_articles:
-                yield article
-
-# 🔹 Grade articles based on first two paragraphs and update the JSON file
-def grade_articles():
-    """Grading the articles and appending grades to each."""
+# 🔹 Load existing articles from JSON file
+def load_articles():
+    """Load articles from the existing news.json file."""
     if os.path.exists(EXPORT_FILE_PATH):
         with open(EXPORT_FILE_PATH, "r") as file:
-            articles = json.load(file)
+            return json.load(file)
+    return []
 
-        for article in articles:
-            # Use the first two paragraphs as the excerpt
-            content = article.get('first_paragraph', "")
-            grade = assign_grade(content)
-            article['grade'] = grade  # Assign the grade to the article
+# 🔹 Save updated articles to JSON file
+def save_articles(articles):
+    """Save the updated articles with grades to the news.json file."""
+    with open(EXPORT_FILE_PATH, "w") as file:
+        json.dump(articles, file, indent=4)
 
-        with open(EXPORT_FILE_PATH, "w") as file:
-            json.dump(articles, file, indent=4)
-        print("Articles graded and saved.")
+# 🔹 Grade the articles
+def grade_articles():
+    """Grading the articles and appending grades to each."""
+    articles = load_articles()
+
+    for article in articles:
+        # Use the first two paragraphs as the excerpt
+        content = article.get('content', "")
+        excerpt = " ".join(content.split("\n")[:2])  # Use the first two paragraphs as an excerpt
+
+        grade = assign_grade(excerpt)
+        article['grade'] = grade  # Assign the grade to the article
+
+    save_articles(articles)  # Save the articles with the grades
 
 # 🔹 Continuous grading loop every 3 minutes
 def continuously_grade():
