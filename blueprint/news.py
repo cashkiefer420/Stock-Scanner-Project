@@ -25,7 +25,7 @@ def load_tickers():
 # 🔹 Function to fetch all Yahoo Finance stock market news
 def fetch_news():
     """Fetches Yahoo Finance stock market news and extracts all articles."""
-    url = "https://finance.yahoo.com/topic/stock-market-news/" , "https://finance.yahoo.com/topic/latest-news/" , "https://finance.yahoo.com/topic/earnings/"
+    url = "https://finance.yahoo.com/topic/stock-market-news/" : "https://finance.yahoo.com/topic/latest-news/" : "https://finance.yahoo.com/topic/earnings/"
     headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers)
 
