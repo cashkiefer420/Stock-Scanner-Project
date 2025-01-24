@@ -23,7 +23,7 @@ def load_tickers():
 
 # 🔹 Scrapy Spider for Yahoo Finance Stock Market News
 class YahooFinanceNewsSpider(scrapy.Spider):
-    name = "yahoo_finance_news"
+    name = "yfinance_news"
     allowed_domains = ["finance.yahoo.com"]
     start_urls = ["https://finance.yahoo.com/topic/stock-market-news/"]
 
