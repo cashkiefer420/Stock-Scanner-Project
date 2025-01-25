@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import json
 import os
 from datetime import datetime
+import time
 
 # 🔹 File paths
 BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
@@ -13,6 +14,31 @@ EXPORT_FILE_PATH = os.path.join(JSON_DIR, "news.json")
 # 🔹 Ensure the json directory exists
 os.makedirs(JSON_DIR, exist_ok=True)
 
+# 🔹 Keywords for sentiment grading
+keywords = {
+    1: ["sell", "underperform", "bearish", "collapse", "bankruptcy", "fraud", "lawsuit", "default", "crash", "failure",
+        "penalty", "investigation", "misconduct", "SEC probe", "restructuring", "foreclosure", "delisting", "audit concern",
+        "legal action", "crisis", "recession", "plummet", "scandal", "layoff", "downsizing", "market volatility", "negative forecast"],
+
+    2: ["headwinds", "margin pressure", "earnings miss", "revenue decline", "cost-cutting", "restructuring", "soft demand",
+        "uncertain outlook", "challenging environment", "adjusted guidance", "regulatory scrutiny", "shortfall", "slower growth",
+        "deleveraging", "impairment charge", "litigation risk", "supply chain issues", "cybersecurity breach", "lower-than-expected",
+        "negative impact", "difficult conditions"],
+
+    3: ["neutral", "hold", "positioned for growth", "market share", "sector performance", "target price", "analyst rating",
+        "investor confidence", "strategic investment", "market opportunity", "portfolio", "dividend yield", "long-term strategy",
+        "strategic partnership", "steady performance", "stable outlook", "value investment", "balanced portfolio", "evaluating options"],
+
+    4: ["buy", "outperform", "strong buy", "bullish", "positive momentum", "impressive results", "growth trajectory",
+        "market leader", "scaling operations", "expansion strategy", "customer growth", "sustained performance", "product launch",
+        "strategic investment", "positive earnings surprise", "bullish outlook", "strong growth", "acquisition success", "positive sentiment"],
+
+    5: ["buy now", "breakthrough innovation", "disruptive technology", "record-breaking profits", "all-time high", "exceptional performance",
+        "dominant market position", "trailblazing", "transformational growth", "skyrocketing stock", "outpacing competitors", "highest earnings ever",
+        "industry-shifting", "game-changer", "phenomenal success", "category-defining", "best quarter ever", "leadership in innovation",
+        "unprecedented demand", "buying opportunity", "rapid expansion", "leading the market", "outperforming expectations"]
+}
+
 # 🔹 Load tickers from JSON file
 def load_tickers():
     """Load stock tickers from the processed_tickers.json file."""
@@ -22,29 +48,56 @@ def load_tickers():
             return set(data.get("tickers", []))  # Convert to set for faster lookup
     return set()
 
+# 🔹 Assign grades and scores based on article content
+def assign_grade(content):
+    """Assigns a grade and score to an article based on its first paragraph"""
+    if not content:
+        return 3, 0  # Neutral if no content, score = 0
+
+    desc_lower = content.lower()
+    grade_count = {grade: sum(word in desc_lower for word in words) for grade, words in keywords.items()}
+
+    max_grade = max(grade_count, key=grade_count.get)
+    score = grade_count[max_grade]
+
+    if max_grade in [1, 5]:  # Adjust for extreme bias
+        return 3, score  # Neutral grade, but keep score
+
+    return max_grade, score
+
 # 🔹 Function to fetch all Yahoo Finance stock market news
 def fetch_news():
-    """Fetches Yahoo Finance stock market news and extracts all articles."""
-    url = "https://finance.yahoo.com/topic/stock-market-news/" : "https://finance.yahoo.com/topic/latest-news/" : "https://finance.yahoo.com/topic/earnings/"
+    """Fetches Yahoo Finance stock market news from multiple sources."""
+    urls = [
+        "https://finance.yahoo.com/topic/stock-market-news/",
+        "https://finance.yahoo.com/topic/latest-news/",
+        "https://finance.yahoo.com/topic/earnings/",
+        "https://finance.yahoo.com/topic/morning-brief/"
+    ]
+    
     headers = {"User-Agent": "Mozilla/5.0"}
-    response = requests.get(url, headers=headers)
+    all_articles = []
 
-    if response.status_code != 200:
-        print(f"❌ Failed to fetch Yahoo Finance news. Status Code: {response.status_code}")
-        return []
+    for url in urls:
+        response = requests.get(url, headers=headers)
+        if response.status_code != 200:
+            print(f"❌ Failed to fetch Yahoo Finance news from {url}. Status Code: {response.status_code}")
+            continue
 
-    soup = BeautifulSoup(response.text, "html.parser")
-    articles = soup.select("li.stream-item")  # Select all news articles
-    print(f"🔍 Total articles fetched: {len(articles)}")  # Log total articles found
+        soup = BeautifulSoup(response.text, "html.parser")
+        articles = soup.select("li.stream-item")  # Select all news articles
+        print(f"🔍 {len(articles)} articles fetched from {url}")
 
-    return articles
+        all_articles.extend(articles)
 
-# 🔹 Function to extract and filter articles based on tickers
+    return all_articles
+
+# 🔹 Extract, filter, and grade articles
 def extract_articles():
-    """Extracts stock news articles and filters based on tickers."""
+    """Extracts stock news articles, filters based on tickers, and assigns grades & scores."""
     tickers = load_tickers()
     today_date = datetime.today().strftime("%Y-%m-%d")
-    all_articles = []  # Stores all articles before filtering
+    all_articles = []  # Stores all extracted articles before filtering
 
     # 🔹 Fetch all articles first
     articles = fetch_news()
@@ -63,12 +116,17 @@ def extract_articles():
         # Extract tickers from blue tags under the article
         tagged_tickers = [span.text for span in article.select("a span")]
 
+        # 🔹 Assign grade & score immediately
+        grade, score = assign_grade(first_paragraph)
+
         all_articles.append({
             "tickers": tagged_tickers,
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
-            "date": article_date
+            "date": article_date,
+            "grade": grade,  # ✅ Added grade
+            "score": score   # ✅ Added score
         })
 
     print(f"📌 Total articles before filtering: {len(all_articles)}")
