@@ -1,1 +1,1234 @@
-
+[
+    {
+        "tickers": [],
+        "headline": "javier milei\u2019s free-market shock therapy to transform argentina\u2019s economy gets huge endorsement as sudden growth rebound seen",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/javier-milei-free-market-shock-201329301.html",
+        "first_paragraph": "moody's upgraded argentina one notch to caa3 from ca and boosted its outlook to positive from stable.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "risk becomes a safe haven in volatile debt market",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/risk-becomes-safe-haven-volatile-200000035.html",
+        "first_paragraph": "(bloomberg) -- in today\u2019s topsy-turvy credit world, risky bonds are outperforming safe ones in periods of volatility. the reason? an increasing focus on interest income, or carry in industry parlance.most read from bloombergwhat happened to hanging out on the street?vienna embraces heat pumps to ditch russian gasbillionaire developer caruso slams la leadership over wildfireshow sanctuary cities are preparing for another showdown with trumphoboken path station will close for almost a month on jan",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "prediction market kalshi enters sports betting ahead of super bowl, days after naming donald trump jr. as an advisor",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/prediction-market-kalshi-enters-sports-184005438.html",
+        "first_paragraph": "\u201ctoday, on the heels of our explosive growth, kalshi takes its next big step: sports.\u201d",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "insurers are dropping hoas, threatening the condo market",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/insurers-are-dropping-hoas-threatening-the-condo-market-124429337.html",
+        "first_paragraph": "insurance problems are driving up the costs of condo living and putting ownership dreams out of reach.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^gspc "
+        ],
+        "headline": "stocks are jumping on earnings wins by the most since 2018",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/stocks-jumping-earnings-wins-most-120000868.html",
+        "first_paragraph": "(bloomberg) -- with uncertainty swirling around the outlook for inflation and interest rates, there\u2019s been one dependable catalyst keeping wall street\u2019s spirits lifted: corporate america\u2019s bottom line.most read from bloombergwhat happened to hanging out on the street?vienna embraces heat pumps to ditch russian gasbillionaire developer caruso slams la leadership over wildfireshow sanctuary cities are preparing for another showdown with trumphoboken path station will close for almost a month on ja",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "20 housing markets where homes will skyrocket in value before the end of 2025",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/20-housing-markets-where-homes-130036770.html",
+        "first_paragraph": "the new year ramps up expectations and preparations, but if you're in the market to buy a new house, what will 2025 have in store for your budget? the u.s. housing market is filled with potential...",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "money market account rates today, january 25, 2025 (best account provides 4.75% apy)",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/personal-finance/banking/article/money-market-account-rates-today-saturday-january-25-2025-110016767.html",
+        "first_paragraph": "if you\u2019re searching for today\u2019s best money market account rates, we\u2019ve narrowed down some of the top offers. learn more about money market account rates today.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "how trump has shifted the narrative around tariffs and sent stocks to new records",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/trump-shifted-narrative-around-tariffs-035848761.html",
+        "first_paragraph": "a whirlwind week of announcements, executive orders, and commentary from the president turned the prevailing market narrative on its head.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "existing home sales hit a multidecade low. why are economists upbeat about the housing market?",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/existing-home-sales-hit-multidecade-233546378.html",
+        "first_paragraph": "existing-home sales were higher in december, but still came in at their lowest levels since 1995. economists see positive trends that could continue into 2025.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "txn ",
+            "adi "
+        ],
+        "headline": "texas instruments stock leads analog chip shares lower",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/texas-instruments-stock-leads-analog-231050070.html",
+        "first_paragraph": "texas instruments shares tumbled friday, leading other analog chipmaker stocks lower after the company\u2019s disappointing profit forecast raised worries that a recovery for analog chips could be slower than anticipated.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^gspc "
+        ],
+        "headline": "s&p 500 sees best start for a president since 1985: markets wrap",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/asian-shares-ride-wall-street-224004019.html",
+        "first_paragraph": "(bloomberg) -- a relentless rally in stocks took a breather near all-time highs, but the market still notched its best start to a presidential term since ronald reagan was sworn in to power in 1985.most read from bloombergwhat happened to hanging out on the street?vienna embraces heat pumps to ditch russian gasbillionaire developer caruso slams la leadership over wildfireshow sanctuary cities are preparing for another showdown with trumphoboken path station will close for almost a month on jan.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "housing market rewind: home sales drop in 2024 to level not seen since the '90s",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/housing-market-rewind-home-sales-220633314.html",
+        "first_paragraph": "high mortgage rates and home prices made 2024 the slowest year for home sales since 1995.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "emerging market currencies get relief rally from softening trump threats",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/emerging-market-currencies-relief-trump-042342343.html",
+        "first_paragraph": "(bloomberg) -- emerging-market currencies climbed during the first week of donald trump\u2019s second term, helped by a softer-than-expected rollout of us tariffs and the absence of new levies on chinese imports. most read from bloombergwhat happened to hanging out on the street?vienna embraces heat pumps to ditch russian gasbillionaire developer caruso slams la leadership over wildfireshow sanctuary cities are preparing for another showdown with trumphoboken path station will close for almost a mont",
+        "date": null
+    },
+    {
+        "tickers": [
+            "meta "
+        ],
+        "headline": "analysts hike meta stock price target as mark zuckerberg touts ai spending",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/analysts-hike-meta-stock-price-205000681.html",
+        "first_paragraph": "this story incorporates reporting frombusiness insider, thestreet on msn.com and investor\u2019s business daily on msn.com.analysts have updated their outlooks on meta platforms stock following an announcement from ceo mark zuckerberg emphasizing the company\u2019s intensified focus on artificial intelligence. piper sandler analyst thomas champion maintained a buy rating for meta, holding firm on a $670 price target. champion\u2019s position reflects confidence in meta\u2019s strategic direction, emphasizing the co",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "wall street banks prepare to sell up to $3 billion in x loans next week, sources say",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/wall-street-banks-set-sell-203129010.html",
+        "first_paragraph": "new york (reuters) -wall street banks are getting ready to sell up to $3 billion of debt holdings in x, the social-media platform controlled by elon musk, two people with knowledge of the matter said on friday.  morgan stanley bankers have contacted investors ahead of a planned sale next week, the sources said.  banks expect to get 90 to 95 cents on the dollar, according to the wall street journal, which first reported preparations for the sale.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "ai optimism has lifted this nuclear stock 100% this month. what's next?",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/ai-optimism-lifted-nuclear-stock-202600300.html",
+        "first_paragraph": "oklo shares surged to another record high friday as investors continue to bid up nuclear energy companies on expectations of growing energy demand to support ai infrastructure. monitor these important chart levels.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "lng exporter venture global stock closes below ipo price in debut",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/lng-exporter-venture-global-stock-201841959.html",
+        "first_paragraph": "shares of liquefied natural gas exporter venture global finished friday's first day of trading below their initial public offering price of $25 per share.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "covenant logistics group optimistic about freight market in 2025",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/covenant-logistics-group-optimistic-freight-193350941.html",
+        "first_paragraph": "covenant logistics group officials are optimistic about the trucking market, expecting more freight by mid-2025. the post covenant logistics group optimistic about freight market in 2025 appeared first on freightwaves.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "midd "
+        ],
+        "headline": "middleby (midd) stock trades up, here is why",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/middleby-midd-stock-trades-why-191201892.html",
+        "first_paragraph": "shares of kitchen product manufacturer middleby (nyse:midd) jumped 15.1% in the afternoon session after the wall street journal reported that activist garden investments built a ~5% stake in the company and plans to push for changes. this move is noteworthy given that activist investors often bring about significant changes in targeted companies, focusing on improving asset monetization, expense efficiency, and stock buybacks.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "vz "
+        ],
+        "headline": "verizon outperforms earnings expectations \u2014 and the stock climbs",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/verizon-outperforms-earnings-expectations-stock-180000070.html",
+        "first_paragraph": "this story incorporates reporting frombenzinga.com, barron\u2019s on msn.com and marketwatch on msn.com.verizon\u2019s stock price rose following the release of their latest earnings report, which outperformed analysts\u2019 expectations. the company\u2019s q4 results showed a notable increase in mobile and broadband subscriptions, with postpaid phone net additions reaching 568,000, up from 449,000 the previous year. additionally, total broadband net additions hit 408,000, compared to 350,000 a year earlier.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "twlo "
+        ],
+        "headline": "twilio stock soars on strong outlook as ai demand booms",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/twilio-stock-soars-strong-outlook-173113206.html",
+        "first_paragraph": "twilio shares skyrocketed friday on the cloud communications software maker's strong outlook amid growing demand for its ai tools.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "nvo ",
+            "lly "
+        ],
+        "headline": "novo nordisk stock surges 7% after ozempic maker\u2019s latest weight-loss drug shows promise",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/novo-nordisk-stock-surges-7-171705759.html",
+        "first_paragraph": "the new treatment targets gut hormone glp-1 but also mimics amylin, a hormone released by the pancreas that suppresses hunger.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "txn "
+        ],
+        "headline": "why texas instruments (txn) stock is falling today",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-texas-instruments-txn-stock-170843391.html",
+        "first_paragraph": "shares of analog chip manufacturer texas instruments (nasdaq:txn) fell 5.9% in the morning session after the company reported underwhelming fourth-quarter results, with earnings guidance for the next quarter falling short of wall street's expectations. adding to the negative was the fact that inventory levels increased, contributing to weaknesses in japan and europe, especially in the auto, and industrial markets. these weaknesses were partly offset by continued strength in china's auto and smar",
+        "date": null
+    },
+    {
+        "tickers": [
+            "ddd ",
+            "daii.sg "
+        ],
+        "headline": "why 3d systems (ddd) stock is up today",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-3d-systems-ddd-stock-170346696.html",
+        "first_paragraph": "shares of 3d printing company 3d systems (nyse:ddd) jumped 23% in the morning session after the company announced a deal with daimler trucks and buses to improve the production of spare parts using additive manufacturing. through this partnership, daimler will use 3d systems' expertise in additive manufacturing to produce hard-to-find components like fuse box covers. these parts often face sourcing delays during vehicle production, causing bottlenecks in the supply chain.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "cvlg "
+        ],
+        "headline": "covenant logistics (cvlg) stock trades down, here is why",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/covenant-logistics-cvlg-stock-trades-170346993.html",
+        "first_paragraph": "shares of freight and logistics provider covenant logistics (nasdaq:cvlg) fell 7.6% in the morning session after the company reported weak fourth quarter results. its revenue missed significantly, and its freight revenue fell short of wall street's estimates. the company's ceo called out a \"challenging general freight environment\" and added that in the dedicated segment, \"profitability fell short of our expectations due to greater-than-anticipated temporary customer shutdowns and volume reductio",
+        "date": null
+    },
+    {
+        "tickers": [
+            "vz ",
+            "axp "
+        ],
+        "headline": "top stock movers now: american express, cf industries, verizon, and more",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/top-stock-movers-now-american-165425161.html",
+        "first_paragraph": "u.s. equities were little changed at midday after a strong week that saw the s&p 500 set a record high.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "allurion stock triples on plan to test gastric balloon with obesity drugs",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/allurion-stock-triples-plan-test-162502844.html",
+        "first_paragraph": "allurion technologies shares soared 200% friday as it planned to test its gastric balloon with the key ingredient in popular weight-loss drugs to see if the combination improves patients' muscle mass.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "amzn ",
+            "nvda "
+        ],
+        "headline": "stock prices look expensive and inflated: billionaire investor ray dalio",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/stock-prices-look-expensive-and-inflated-billionaire-investor-ray-dalio-160240482.html",
+        "first_paragraph": "bridgewater associates founder ray dalio strikes a cautious tone on today's stock valuations, especially for the mag 7.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "eric "
+        ],
+        "headline": "ericsson stock sinks on warning us tariffs would significantly hurt business",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/ericsson-stock-sinks-warning-us-155430203.html",
+        "first_paragraph": "u.s.-traded shares of sweden's ericsson slumped 11% friday when the telecom equipment manufacturer warned possible trump administration tariffs would significantly hurt its business.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "wall street enters darker age with most stock trading hidden",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/wall-street-enters-darker-age-110003632.html",
+        "first_paragraph": "(bloomberg) -- here\u2019s a surprising new fact about the world\u2019s largest and most-liquid public equity market: most of the activity on it isn\u2019t public anymore.most read from bloombergwhat happened to hanging out on the street?vienna embraces heat pumps to ditch russian gasbillionaire developer caruso slams la leadership over wildfireshow sanctuary cities are preparing for another showdown with trumphoboken path station will close for almost a month on jan. 30for the first time on record, the majori",
+        "date": null
+    },
+    {
+        "tickers": [
+            "tfin "
+        ],
+        "headline": "a disconnect: ebitda at triumph payments is all-time high, but triumph financial\u2019s stock plummets on earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/disconnect-ebitda-triumph-payments-time-153942055.html",
+        "first_paragraph": "trucking-focused bank triumph financial had a solid ebitda performance at its payments unit, but a lower bottom line. the post a disconnect: ebitda at triumph payments is all-time high, but triumph financial\u2019s stock plummets on earnings appeared first on freightwaves.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "blk "
+        ],
+        "headline": "texas asks wall street firms for details about dei efforts",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/texas-asks-wall-street-firms-210000518.html",
+        "first_paragraph": "(bloomberg) -- texas and nine other republican-led states are ratcheting up pressure on wall street\u2019s diversity programs, asking firms about their policies on hiring and supplier selections as the trump administration moves to gut dei.most read from bloombergwhat happened to hanging out on the street?vienna embraces heat pumps to ditch russian gasbillionaire developer caruso slams la leadership over wildfireshow sanctuary cities are preparing for another showdown with trumphoboken path station w",
+        "date": null
+    },
+    {
+        "tickers": [
+            "nvo "
+        ],
+        "headline": "novo nordisk stock jumps on early stage weight-loss drug trial results",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/novo-nordisk-stock-jumps-early-144109392.html",
+        "first_paragraph": "novo nordisk's u.s.-listed shares are surging 9% friday morning after the danish drugmaker reported early stage results for its amycretin weight-loss drug.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "nvo "
+        ],
+        "headline": "an ozempic alternative shows promising weight loss results \u2014 and novo nordisk stock surges 12%",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/novo-nordisk-stock-surges-12-140000362.html",
+        "first_paragraph": "novo nordisk (nvo) stock jumped 12% in pre-market trading friday after it released promising results of an early-stage weight loss drug trial.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^ixic ",
+            "es=f "
+        ],
+        "headline": "stock market today: stocks stall but cap winning week as trump's remarks rattle wall street",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/live/stock-market-today-stocks-stall-but-cap-winning-week-as-trumps-remarks-rattle-wall-street-143105116.html",
+        "first_paragraph": "wall street stocks are on track for weekly wins as markets ride the trump roller-coaster.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "50 waterfront cities where homes are a total steal",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/50-waterfront-cities-where-homes-170002634.html",
+        "first_paragraph": "there's just something about oceans and other water bodies that seem to invoke a sense of calm and peace. if you're like many americans, then you probably also get a thrill out of watching majestic...",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "the most livable city in every state and what it will cost you",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/most-livable-city-every-state-110105712.html",
+        "first_paragraph": "when we think about which city in the u.s. we'd like to live in, our minds may turn to what the city has to offer in terms of livability. is there low crime? does it have clean air? is transportation...",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "elon musk\u2019s favorite crypto: how much you\u2019d have if you invested $1k 6 years ago",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/bought-1k-elon-musk-favorite-140042419.html",
+        "first_paragraph": "among cryptocurrency's many proponents, none stand out more than elon musk. musk's fascination with the crypto market and blockchain technology has been on full display in recent years, and he's not...",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "los angeles is getting \u2018good rain\u2019 yet faces risk of landslides",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/los-angeles-getting-good-rain-143634596.html",
+        "first_paragraph": "(bloomberg) -- southern california is finally getting some much-needed rain that will assist firefighters still battling several blazes, though wet weather also brings the risk of landslides.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "10 things the middle class won\u2019t be able to afford in less than a decade",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/10-things-middle-class-won-160004493.html",
+        "first_paragraph": "in a world where the financial landscape is constantly shifting, the american middle class often finds itself in a precarious position. find out: renting vs. owning a home: which will be cheaper in...",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "41 states that won\u2019t tax social security benefits in 2025",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/41-states-won-t-tax-120052096.html",
+        "first_paragraph": "social security plays a big role in many americans' retirement security. in fact, 40% of americans ages 65 and older rely on social security for at least half their income, according to the aarp. but...",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "9 states that will tax social security benefits in 2025",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/9-states-tax-social-security-140225289.html",
+        "first_paragraph": "recently, gobankingrates reported on the 41 states in america that won\u2019t tax social security benefits in 2025. missouri and kansas elected to stop taxing social security benefits in 2024, as did kansas shortly thereafter, leaving only nine states in the union that will still tax benefits in 2025.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "8 things you must do when your savings reach $1,000",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/8-things-must-savings-reach-130135399.html",
+        "first_paragraph": "building your savings takes time -- and $1,000 is an amazing benchmark. it's a sign that you are on the right track toward financial stability. for you: 3 things you must do when your savings reach...",
+        "date": null
+    },
+    {
+        "tickers": [
+            "tgt ",
+            "tsco "
+        ],
+        "headline": "not all companies are backing away from dei in the new trump era",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/not-all-companies-are-backing-away-from-dei-in-the-new-trump-era-140137635.html",
+        "first_paragraph": "costco did something this past week that is unusual for a company operating in the new trump era \u2014 successfully push back against a challenge to its diversity efforts. it is not the only one trying to do so.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "ndaq ",
+            "gap "
+        ],
+        "headline": "the biggest investing and life lessons i learned at davos 2025",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-biggest-investing-and-life-lessons-i-learned-at-davos-2025-133018770.html",
+        "first_paragraph": "some words of investing wisdom from davos 2025.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "currency volatility set to wipe out emerging-market carry trades",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/currency-volatility-set-wipe-emerging-133000816.html",
+        "first_paragraph": "(bloomberg) -- emerging market investors are turning increasingly wary of carry trades as the threat of tariffs from the donald trump administration and the prospect of further dollar gains squeeze returns.most read from bloombergwhat happened to hanging out on the street?vienna embraces heat pumps to ditch russian gasbillionaire developer caruso slams la leadership over wildfireshow sanctuary cities are preparing for another showdown with trumphoboken path station will close for almost a month",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "4 things that could get more expensive for retirees in 2025 under trump",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/4-things-could-more-expensive-160139863.html",
+        "first_paragraph": "retirees might want to consider stocking up on items now while there are deals before things could wind up costing a lot more. president-elect donald trump has promised to enact a strict tariff policy...",
+        "date": null
+    },
+    {
+        "tickers": [
+            "trns "
+        ],
+        "headline": "transcat (trns) reports q4: everything you need to know ahead of earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/transcat-trns-reports-q4-everything-130154390.html",
+        "first_paragraph": "measurement equipment distributor transcat (nasdaq:trns) will be reporting earnings tomorrow afternoon. here\u2019s what to look for.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "cr "
+        ],
+        "headline": "earnings to watch: crane (cr) reports q4 results tomorrow",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/earnings-watch-crane-cr-reports-130113821.html",
+        "first_paragraph": "industrial conglomerate crane (nyse:cr) will be reporting results tomorrow after market hours. here\u2019s what investors should know.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "t ",
+            "nke "
+        ],
+        "headline": "at&t (t) q4 earnings report preview: what to look for",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/t-t-q4-earnings-report-130112184.html",
+        "first_paragraph": "telecommunications conglomerate at&t (nyse:t) will be reporting earnings tomorrow before market open. here\u2019s what investors should know.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "sanm ",
+            "osis "
+        ],
+        "headline": "sanmina (sanm) reports earnings tomorrow: what to expect",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/sanmina-sanm-reports-earnings-tomorrow-130109705.html",
+        "first_paragraph": "electronics manufacturing services company sanmina (nasdaq:sanm) will be announcing earnings results tomorrow after the bell. here\u2019s what to look for.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^gspc ",
+            "goog "
+        ],
+        "headline": "tech\u2019s $15 trillion rally hinges on high-stakes earnings stretch",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tech-15-trillion-rally-hinges-130000990.html",
+        "first_paragraph": "(bloomberg) -- investors are heading into yet another pivotal big tech earnings cycle with the companies\u2019 shares near record highs and valuations stretched. a key distinction this time: the group\u2019s profit growth is projected to come in at the slowest pace in almost two years.most read from bloombergwhat happened to hanging out on the street?vienna embraces heat pumps to ditch russian gasbillionaire developer caruso slams la leadership over wildfireshow sanctuary cities are preparing for another",
+        "date": null
+    },
+    {
+        "tickers": [
+            "aapl ",
+            "^ixic "
+        ],
+        "headline": "big tech earnings, a key fed meeting, and trump's first full week in office: what to know this week",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/big-tech-earnings-a-key-fed-meeting-and-trumps-first-full-week-in-office-what-to-know-this-week-123505201.html",
+        "first_paragraph": "after president trump dominated the market narrative in his first week in office, a fed meeting, a check on the health of the us economy big tech earnings will also be in focus for investors in the week ahead,",
+        "date": null
+    },
+    {
+        "tickers": [
+            "deo "
+        ],
+        "headline": "diageo says it has no intention to sell guinness or stake in moet hennessy",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/diageo-says-no-intention-sell-120412486.html",
+        "first_paragraph": "on friday, bloomberg news reported that the company was exploring options for guinness, a star performer in diageo's portfolio, as well as reviewing its investment in moet hennessy.  the report said that guinness could be valued at more than $10 billion.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "the minimum salary you need to buy a home in all 50 states",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/minimum-salary-buy-home-2024-160009406.html",
+        "first_paragraph": "as the overall cost of living becomes more pricey and wages don't keep up with skyrocketing home prices, many would-be buyers may feel frustrated at having their homeownership dreams sidelined....",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "$2 million in retirement savings: here\u2019s how much you could withdraw per year",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/2-million-retirement-savings-much-120036511.html",
+        "first_paragraph": "you've done it, you reached millionaire status and saved $2 million in your retirement savings. no matter your cumulative retirement plans or other investment decisions, you've successfully reached...",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "trump\u2019s real estate empire: how much his properties are actually worth",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/trump-most-valuable-real-estate-160052985.html",
+        "first_paragraph": "president donald trump is rich by many definitions, and richer by his own, but given his reluctance to disclose his tax returns and other pertinent financial information through the years, finding the...",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "morgan freeman may have scored a 3,000% return on tesla stock: 'i'm a huge fan of elon musk'",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/morgan-freeman-may-scored-3-113801959.html",
+        "first_paragraph": "hollywood icon morgan freeman said in a 2016 interview that he owned tesla stock. a $10,000 holding then would be worth over $300,000 now.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "here\u2019s what could happen to your money in trump\u2019s first 40 days in office",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/could-happen-money-trump-first-130109864.html",
+        "first_paragraph": "as president-elect donald trump takes office again, many americans are curious about how it will affect their personal finances. his administration could bring a host of economic changes, particularly...",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "money market account rates today, january 26, 2025 (best account provides 4.75% apy)",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/personal-finance/banking/article/money-market-account-rates-today-sunday-january-26-2025-110016720.html",
+        "first_paragraph": "if you\u2019re searching for today\u2019s best money market account rates, we\u2019ve narrowed down some of the top offers. learn more about money market account rates today.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "mortgage and refinance rates today, january 26, 2025: rates could stay high this year",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-rates-today-sunday-january-26-2025-110013487.html",
+        "first_paragraph": "these are today's mortgage and refinance rates. interest rates are up, and they could stay relatively high for the rest of the year. lock in your rate today.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "cd rates today, january 26, 2025 (up to 4.30% apy)",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/personal-finance/banking/article/cd-rates-today-sunday-january-26-2025-110007478.html",
+        "first_paragraph": "if you\u2019re searching for today\u2019s best cd rates, we\u2019ve narrowed down some of the top offers. learn more about cd rates today.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "savings interest rates today, january 26, 2025 (best accounts offering 4.75% apy)",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/personal-finance/banking/article/savings-interest-rates-today-sunday-january-26-2025-110002474.html",
+        "first_paragraph": "if you\u2019re searching for today\u2019s best savings interest rates, we\u2019ve narrowed down some of the top offers. learn more about savings interest rates today.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "america\u2019s $3 billion habit: meat sticks",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/america-3-billion-habit-meat-103000416.html",
+        "first_paragraph": "the snack\u2019s popularity has brought a proliferation of new flavors and high-end options. for some fans, that\u2019s a problem.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "china boosts index investments in latest bid to revive market",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/china-boosts-index-investments-latest-102847864.html",
+        "first_paragraph": "(bloomberg) -- china announced new measures to promote the development of index investment products, its latest effort to shore up the ailing equity market as it embraces a turbulent external economic environment. most read from bloombergwhat happened to hanging out on the street?vienna embraces heat pumps to ditch russian gasbillionaire developer caruso slams la leadership over wildfireshow sanctuary cities are preparing for another showdown with trumphoboken path station will close for almost",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "the economy's strong. why are more americans barely making credit card payments?",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/economys-strong-why-more-americans-100414905.html",
+        "first_paragraph": "despite a strong economy, the share of americans making only the minimum credit card payment hit a 12-year high and delinquenices are rising.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "uncomfortable conversations: borrowing money from family can be awkward. here's advice.",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/uncomfortable-conversations-borrowing-money-family-100343906.html",
+        "first_paragraph": "you are short on money and need a loan. should you go to a family member?",
+        "date": null
+    },
+    {
+        "tickers": [
+            "tsla ",
+            "aapl "
+        ],
+        "headline": "what to expect in the markets this week",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/expect-markets-week-100000403.html",
+        "first_paragraph": "coming up: federal reserve interest rate decision, jerome powell comments, pce inflation, u.s. gdp, earnings from tesla, meta, microsoft, apple",
+        "date": null
+    },
+    {
+        "tickers": [
+            "sbux "
+        ],
+        "headline": "what analysts think of starbucks stock ahead of earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/analysts-think-starbucks-stock-ahead-100000236.html",
+        "first_paragraph": "starbucks is expected to report fiscal first-quarter results after the market closes tuesday, with analysts calling for revenue and earnings declines year-over-year.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "ba "
+        ],
+        "headline": "what analysts think of boeing stock ahead of earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/analysts-think-boeing-stock-ahead-100000601.html",
+        "first_paragraph": "boeing is set to report fourth-quarter results before the market opens tuesday, with analysts expecting the plane maker to have continued burning through cash as it worked to increase production.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "mdiby "
+        ],
+        "headline": "mediobanca board to review mps\u00a013.3 billion euro bid on tuesday, source says",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/mediobanca-board-review-mps-13-084228841.html",
+        "first_paragraph": "mediobanca's board will meet on tuesday to discuss a bid for the italian merchant bank by state-backed monte dei paschi di siena (mps), a person close to the situation said.  on friday, mps joined the consolidation wave sweeping italian banking with a 13.3 billion euro ($13.96 billion) all-share offer to buy mediobanca, which was welcomed by the italian government, but puzzled analysts and investors.  in a letter sent to staff on saturday and seen by reuters, mediobanca's chief executive alberto nagel said the mps offer had not been agreed with the bank and that the board would express its views, with the aim of protecting the interests of all stakeholders, particularly employees.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "vz "
+        ],
+        "headline": "verizon outperforms earnings expectations \u2014 and the stock climbs",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/verizon-outperforms-earnings-expectations-stock-180000070.html",
+        "first_paragraph": "this story incorporates reporting frombenzinga.com, barron\u2019s on msn.com and marketwatch on msn.com.verizon\u2019s stock price rose following the release of their latest earnings report, which outperformed analysts\u2019 expectations. the company\u2019s q4 results showed a notable increase in mobile and broadband subscriptions, with postpaid phone net additions reaching 568,000, up from 449,000 the previous year. additionally, total broadband net additions hit 408,000, compared to 350,000 a year earlier.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "tfin "
+        ],
+        "headline": "a disconnect: ebitda at triumph payments is all-time high, but triumph financial\u2019s stock plummets on earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/disconnect-ebitda-triumph-payments-time-153942055.html",
+        "first_paragraph": "trucking-focused bank triumph financial had a solid ebitda performance at its payments unit, but a lower bottom line. the post a disconnect: ebitda at triumph payments is all-time high, but triumph financial\u2019s stock plummets on earnings appeared first on freightwaves.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "airlines are flying high with record earnings as they bounce back from the pandemic",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/airlines-flying-high-record-earnings-122204390.html",
+        "first_paragraph": "american, delta, united, and alaska all announced record results as the biggest airlines continue to recover from the pandemic downturn.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "wall st slips with mixed data and earnings ahead of fed week",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/futures-dip-trump-policy-uncertainty-112626228.html",
+        "first_paragraph": "wall street's main indexes closed lower on friday as investors stepped back while they digested a mixed bag of economic data and earnings reports and prepared for a week filled with economic releases and a federal reserve meeting.  the technology sector was the biggest drag on the market as megacap stocks, including artificial intelligence chip leader nvidia, reversed a sharp rally earlier in the week.  the housing market data was hotter than expected, while an s&p global survey showed business activity slowing to a nine-month low in january as prices rose.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "zi "
+        ],
+        "headline": "zoominfo (zi): buy, sell, or hold post q3 earnings?",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/zoominfo-zi-buy-sell-hold-090933146.html",
+        "first_paragraph": "over the past six months, zoominfo\u2019s stock price fell to $9.95. shareholders have lost 9.9% of their capital, which is disappointing considering the s&p 500 has climbed by 12.6%. this may have investors wondering how to approach the situation.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "chh "
+        ],
+        "headline": "choice hotels (chh): buy, sell, or hold post q3 earnings?",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/choice-hotels-chh-buy-sell-090619232.html",
+        "first_paragraph": "over the past six months, choice hotels has been a great trade, beating the s&p 500 by 7.4%. its stock price has climbed to $146.35, representing a healthy 20% increase. this was partly due to its solid quarterly results, and the performance may have investors wondering how to approach the situation.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "avo ",
+            "fdp "
+        ],
+        "headline": "perishable food stocks q3 earnings review: mission produce (nasdaq:avo) shines",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/perishable-food-stocks-q3-earnings-090421641.html",
+        "first_paragraph": "as the craze of earnings season draws to a close, here\u2019s a look back at some of the most exciting (and some less so) results from q3. today, we are looking at perishable food stocks, starting with mission produce (nasdaq:avo).",
+        "date": null
+    },
+    {
+        "tickers": [
+            "zumz "
+        ],
+        "headline": "zumiez (zumz): buy, sell, or hold post q3 earnings?",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/zumiez-zumz-buy-sell-hold-090329072.html",
+        "first_paragraph": "shareholders of zumiez would probably like to forget the past six months even happened. the stock dropped 28.7% and now trades at $16.40. this may have investors wondering how to approach the situation.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "hbi ",
+            "sfix "
+        ],
+        "headline": "q3 earnings highs and lows: hanesbrands (nyse:hbi) vs the rest of the apparel and accessories stocks",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/q3-earnings-highs-lows-hanesbrands-090224330.html",
+        "first_paragraph": "as the craze of earnings season draws to a close, here\u2019s a look back at some of the most exciting (and some less so) results from q3. today, we are looking at apparel and accessories stocks, starting with hanesbrands (nyse:hbi).",
+        "date": null
+    },
+    {
+        "tickers": [
+            "qcom ",
+            "nvda "
+        ],
+        "headline": "unpacking q3 earnings: qualcomm (nasdaq:qcom) in the context of other processors and graphics chips stocks",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/unpacking-q3-earnings-qualcomm-nasdaq-090156138.html",
+        "first_paragraph": "earnings results often indicate what direction a company will take in the months ahead. with q3 behind us, let\u2019s have a look at qualcomm (nasdaq:qcom) and its peers.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "plow ",
+            "cmi "
+        ],
+        "headline": "q3 earnings roundup: douglas dynamics (nyse:plow) and the rest of the heavy transportation equipment segment",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/q3-earnings-roundup-douglas-dynamics-090143779.html",
+        "first_paragraph": "as the craze of earnings season draws to a close, here\u2019s a look back at some of the most exciting (and some less so) results from q3. today, we are looking at heavy transportation equipment stocks, starting with douglas dynamics (nyse:plow).",
+        "date": null
+    },
+    {
+        "tickers": [
+            "mrvl ",
+            "ipgp "
+        ],
+        "headline": "unpacking q3 earnings: kla corporation (nasdaq:klac) in the context of other semiconductor manufacturing stocks",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/unpacking-q3-earnings-kla-corporation-090136699.html",
+        "first_paragraph": "looking back on semiconductor manufacturing stocks\u2019 q3 earnings, we examine this quarter\u2019s best and worst performers, including kla corporation (nasdaq:klac) and its peers.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^gspc "
+        ],
+        "headline": "analysis-european earnings may keep the mood sweet as tariff fears grow",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/analysis-european-earnings-may-keep-060638271.html",
+        "first_paragraph": "european companies are set to deliver a third straight quarter of profit growth, which may help to maintain newfound investor enthusiasm for the region despite political and economic turmoil and concerns over u.s. president donald trump's tariffs threat.  european stocks are trading at record highs, having outperformed wall street in the opening weeks of 2025, yet valuations are still rock bottom in comparison.  investor cash has poured into the european market at the second-fastest pace in 25 years in january, according to bank of america, even before trump assumed the presidency and the first european company earnings began to trickle in.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "watch these ge aerospace price levels as stock surges after strong earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/watch-ge-aerospace-price-levels-035858791.html",
+        "first_paragraph": "ge aerospace shares jumped thursday after the company reported better-than-expected fourth-quarter results and issued an upbeat revenue outlook. monitor these key chart levels.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "covenant logistics group q4 earnings: first look",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/covenant-logistics-group-q4-earnings-224552128.html",
+        "first_paragraph": "covenant logistics group reported 3% quarterly growth in freight revenue, \u201cdespite a challenging general freight environment,\u201d chairman and ceo david r. parker said. the post covenant logistics group q4 earnings: first look appeared first on freightwaves.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "isrg "
+        ],
+        "headline": "intuitive surgical's earnings top estimates as it boosts sales of surgical robots",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/intuitive-surgicals-earnings-top-estimates-215928906.html",
+        "first_paragraph": "intuitive surgical reported fourth-quarter earnings that topped analysts\u2019 expectations as it boosted sales of its surgical robots.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "txn "
+        ],
+        "headline": "texas instruments stock slides as earnings forecast underwhelms",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/texas-instruments-stock-slides-earnings-212808898.html",
+        "first_paragraph": "texas instruments reported fourth-quarter profits that topped analysts' estimates, but its earnings outlook fell short of expectations, sending shares lower after the bell thursday.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "goog ",
+            "aapl "
+        ],
+        "headline": "big tech earnings are coming, and trump will be top of mind for investors",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/big-tech-earnings-are-coming-and-trump-will-be-top-of-mind-for-investors-154048872.html",
+        "first_paragraph": "big tech earnings season is coming, and trump will be top of mind.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "5 ways to maximize side hustle earnings in 2025",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/5-ways-maximize-side-hustle-130021412.html",
+        "first_paragraph": "a side hustle can be a fantastic way to earn money and pull in extra income. whether you want to invest just a few hours a week or have plans to build your side gig into a larger operation or...",
+        "date": null
+    },
+    {
+        "tickers": [
+            "ea "
+        ],
+        "headline": "ea shares plunge on earnings warning after weak soccer, \u2018dragon age\u2019 games",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/ea-says-bookings-slid-weakness-105122049.html",
+        "first_paragraph": "(bloomberg) -- shares of electronic arts inc. plunged 18% thursday morning, the biggest decline since 2008, after the gaming company warned its financial results would be weaker than expected due to poor sales results of two titles released over the holidays.most read from bloombergwhat happened to hanging out on the street?vienna embraces heat pumps to ditch russian gasbillionaire developer caruso slams la leadership over wildfireshow sanctuary cities are preparing for another showdown with tru",
+        "date": null
+    },
+    {
+        "tickers": [
+            "vz "
+        ],
+        "headline": "verizon earnings: what to look for from vz",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/verizon-earnings-look-vz-130055456.html",
+        "first_paragraph": "telecommunications giant verizon (nyse:vz) will be announcing earnings results tomorrow before market open. here\u2019s what you need to know.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^gspc "
+        ],
+        "headline": "s&p 500 notches closing record with focus on trump comments, earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/futures-subdued-previous-sessions-jump-105551548.html",
+        "first_paragraph": "(reuters) -the benchmark s&p 500 rose to a record closing high on thursday, as investors assessed a mixed bag of corporate earnings and digested comments from president donald trump, including a call for cuts in interest rates and oil prices.  at the world economic forum in davos, switzerland, trump demanded that opec lower oil prices and that central banks reduce interest rates, while he warned global business leaders they will face tariffs for products made outside of the u.s.  while investors have been cautiously monitoring trump's comments about tariffs, they \"like the idea of interest rates coming down, of oil prices coming down,\" said lindsey bell, chief strategist at 248 ventures.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "victoria's secret (vsco): buy, sell, or hold post q3 earnings?",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/victorias-secret-vsco-buy-sell-090900643.html",
+        "first_paragraph": "the past six months have been a windfall for victoria's secret\u2019s shareholders. the company\u2019s stock price has jumped 112%, hitting $38.60 per share. this was partly due to its solid quarterly results, and the run-up might have investors contemplating their next move.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "udmy "
+        ],
+        "headline": "udemy (udmy): buy, sell, or hold post q3 earnings?",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/udemy-udmy-buy-sell-hold-090704146.html",
+        "first_paragraph": "over the past six months, udemy\u2019s shares (currently trading at $7.44) have posted a disappointing 14.2% loss, well below the s&p 500\u2019s 9.2% gain. this may have investors wondering how to approach the situation.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "tpc "
+        ],
+        "headline": "tutor perini (tpc): buy, sell, or hold post q3 earnings?",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tutor-perini-tpc-buy-sell-090530909.html",
+        "first_paragraph": "tutor perini currently trades at $27.19 per share and has shown little upside over the past six months, posting a middling return of 3.1%. the stock also fell short of the s&p 500\u2019s 9.2% gain during that period.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "skx ",
+            "gco "
+        ],
+        "headline": "unpacking q3 earnings: skechers (nyse:skx) in the context of other footwear stocks",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/unpacking-q3-earnings-skechers-nyse-090507467.html",
+        "first_paragraph": "quarterly earnings results are a good time to check in on a company\u2019s progress, especially compared to its peers in the same sector. today we are looking at skechers (nyse:skx) and the best and worst performers in the footwear industry.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "ter ",
+            "mrvl "
+        ],
+        "headline": "q3 earnings highlights: teradyne (nasdaq:ter) vs the rest of the semiconductor manufacturing stocks",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/q3-earnings-highlights-teradyne-nasdaq-090226755.html",
+        "first_paragraph": "the end of an earnings season can be a great time to discover new stocks and assess how companies are handling the current business environment. let\u2019s take a look at how teradyne (nasdaq:ter) and the rest of the semiconductor manufacturing stocks fared in q3.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "swbi ",
+            "yeti "
+        ],
+        "headline": "q3 earnings highs and lows: ruger (nyse:rgr) vs the rest of the leisure products stocks",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/q3-earnings-highs-lows-ruger-090220259.html",
+        "first_paragraph": "as the q3 earnings season comes to a close, it\u2019s time to take stock of this quarter\u2019s best and worst performers in the leisure products industry, including ruger (nyse:rgr) and its peers.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "ftdr ",
+            "matw "
+        ],
+        "headline": "q3 earnings highs and lows: frontdoor (nasdaq:ftdr) vs the rest of the specialized consumer services stocks",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/q3-earnings-highs-lows-frontdoor-090158468.html",
+        "first_paragraph": "looking back on specialized consumer services stocks\u2019 q3 earnings, we examine this quarter\u2019s best and worst performers, including frontdoor (nasdaq:ftdr) and its peers.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "amsc ",
+            "run "
+        ],
+        "headline": "reflecting on renewable energy stocks\u2019 q3 earnings: evgo (nasdaq:evgo)",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/reflecting-renewable-energy-stocks-q3-090128171.html",
+        "first_paragraph": "wrapping up q3 earnings, we look at the numbers and key takeaways for the renewable energy stocks, including evgo (nasdaq:evgo) and its peers.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "s&p 500 closes on the brink of record highs amid strong earnings and bullishness for trump's agenda",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/p-500-closes-brink-record-051902651.html",
+        "first_paragraph": "the s&p 500 climbed to 6,100 for the first time during wednesday's session. traders cheered strong earnings and an ai initiative trump announced on tuesday.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "s&p 500 nears record high as traders take in strong earnings results",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/p-500-nears-record-high-231019825.html",
+        "first_paragraph": "of the s&p 500 companies that have reported earnings so far, 79% have beat estimates, according to factset data.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "hxl "
+        ],
+        "headline": "hexcel (nyse:hxl) reports sales below analyst estimates in q4 earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/hexcel-nyse-hxl-reports-sales-213817791.html",
+        "first_paragraph": "aerospace and defense company hexcel (nyse:hxl) fell short of the market\u2019s revenue expectations in q4 cy2024 as sales rose 3.6% year on year to $473.8 million. the company\u2019s full-year revenue guidance of $2 billion at the midpoint came in 0.7% below analysts\u2019 estimates. its non-gaap profit of $0.52 per share was in line with analysts\u2019 consensus estimates.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "nflx ",
+            "amzn "
+        ],
+        "headline": "amazon\u2019s \u2018flywheel\u2019 created a $2.4 trillion company\u2014netflix\u2019s blowout earnings show how the streaming company is replicating the tactic",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/amazon-flywheel-created-2-4-205043594.html",
+        "first_paragraph": "more subscribers equal more revenue, which leads to more content investments, which lead to more engagement, which leads to more subscribers once again. and that\u2019s before the ad business really starts clicking.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "the 10-year treasury yield is making the market nervous: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-10-year-treasury-yield-is-making-the-market-nervous-morning-brief-110025630.html",
+        "first_paragraph": "the 10-year treasury yield's recent rise has tipped stocks into a bundle of nerves despite the market doing just fine.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "nvda ",
+            "rgti "
+        ],
+        "headline": "nvidia\u2019s 'ai godfather' forces a reset on the tech world\u2019s next big bet: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/nvidias-ai-godfather-forces-a-reset-on-the-tech-worlds-next-big-bet-morning-brief-110049143.html",
+        "first_paragraph": "the money-making potential for quantum computing is so far away, wall street isn't sure what to make of it.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "msft ",
+            "nvda "
+        ],
+        "headline": "why nvidia rug pull doesn't faze us stock market bulls: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-nvidia-rug-pull-doesnt-faze-us-stock-market-bulls-morning-brief-105820262.html",
+        "first_paragraph": "nvidia's 6% loss tuesday was especially painful for the company given it followed a splashy ces event with big announcements. but the market has good reason to shake off its swings.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^dji ",
+            "^gspc "
+        ],
+        "headline": "the 'most important variable' to watch in markets right now: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-most-important-variable-to-watch-in-markets-right-now-morning-brief-110051069.html",
+        "first_paragraph": "the direction of interest rates remains a key point of focus for investors as 2025 trading begins.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "avgo ",
+            "amzn "
+        ],
+        "headline": "3 problems for the stock price of nvidia rival amd",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/3-problems-for-the-stock-price-of-nvidia-rival-amd-133029633.html",
+        "first_paragraph": "amd's stock has hit the skids. will it come out of hibernation soon?",
+        "date": null
+    },
+    {
+        "tickers": [
+            "tsla "
+        ],
+        "headline": "tesla's 'day job' still matters even if its 2025 story is about something more: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/teslas-day-job-still-matters-even-if-its-2025-story-is-about-something-more-morning-brief-110031051.html",
+        "first_paragraph": "tesla stock fell 6% monday after its quarterly deliveries disappointed investors \u2014 and showed a year-over-year decline. a reminder that the company's job of selling cars still matters.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^dji ",
+            "^gspc "
+        ],
+        "headline": "the dow's losing streak showed its big weakness: chart of the week",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-dows-losing-streak-showed-its-big-weakness-chart-of-the-week-110018974.html",
+        "first_paragraph": "with its 0.04% gain thursday, the dow finally broke its 10-day losing streak, the worst since the 70s. but this week\u2019s performance was yet another reminder of why the historically important index is now more historical than important.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^gspc "
+        ],
+        "headline": "the sharp reaction to the fed could be an ominous sign for markets in 2025: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-sharp-reaction-to-the-fed-could-be-an-ominous-sign-for-markets-in-2025-morning-brief-110023947.html",
+        "first_paragraph": "fed chair jay powell did nothing particularly surprising on wednesday, but markets reacted sharply. the strong reaction does not portend smooth sailing in the year ahead as the uncertainty powell referenced arrives.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "why powell says inflation is still on track: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-powell-says-inflation-is-still-on-track-morning-brief-110006964.html",
+        "first_paragraph": "fed chair powell tried to make sense of contradictory storylines and conflicting data, delivering a final watchword: caution.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "goog ",
+            "amzn "
+        ],
+        "headline": "big tech is dominating the market once again \u2014 and that's probably just fine: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/big-tech-is-dominating-the-market-once-again--and-thats-probably-just-fine-morning-brief-110040629.html",
+        "first_paragraph": "december is shaping up to be a tale of two markets.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^gspc "
+        ],
+        "headline": "what could go wrong with wall street's 2025 consensus: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/what-could-go-wrong-with-wall-streets-2025-consensus-morning-brief-110048062.html",
+        "first_paragraph": "a consensus has emerged about the 2025 stock market outlook. but while there's only one bear, the bear-case has some agreement about at least a few of the potential risks. a big one? europe. but it's also an upside.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "cat ",
+            "pltr "
+        ],
+        "headline": "nvidia, gm, walmart, palantir, tesla, meta, and others battle this yahoo finance awards season",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/nvidia-gm-walmart-palantir-tesla-meta-and-others-battle-this-yahoo-finance-awards-season-110036402.html",
+        "first_paragraph": "which companies really delivered the goods for investors in 2024?",
+        "date": null
+    },
+    {
+        "tickers": [
+            "meta ",
+            "shop "
+        ],
+        "headline": "why a dramatic jump in small business optimism is about more than small business: chart of the week",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-a-dramatic-jump-in-small-business-optimism-is-about-more-than-small-business-chart-of-the-week-110031552.html",
+        "first_paragraph": "the nfib's small business optimism index confirmed the obvious: small business owners are feeling good. and that has real-world implications for some of the market's biggest stocks.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "the fed can't just be 'data dependent' in 2025 \u2014 it needs to be 'policy dependent'",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-fed-cant-just-be-data-dependent-in-2025--it-needs-to-be-policy-dependent-110046215.html",
+        "first_paragraph": "fed chair jay powell has taken great pains to avoid politics. but with myriad potential government policies that could affect inflation, the central banker will be forced to once again pay attention not just to the data, but to politics and fiscal policy.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "gm ",
+            "uber "
+        ],
+        "headline": "what cruise's self-driving end means for tesla and waymo: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/what-cruises-self-driving-end-means-for-tesla-and-waymo-morning-brief-110053822.html",
+        "first_paragraph": "cruise's demise pokes another hole in the commercial fantasy of a robotaxi fleet.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "iwm ",
+            "vffsx "
+        ],
+        "headline": "an 'unfamiliar' era for investors has arrived after a 20-year 'regime': morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/an-unfamiliar-era-for-investors-has-arrived-after-a-20-year-regime-morning-brief-110401297.html",
+        "first_paragraph": "as another cpi reading is set to show the continued challenge of reeling in inflation, rsm chief economist joe brusuelas says that things are different now \u2014 and explains what that means.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "the fed's 'final 5-pound' issue with inflation points to gradual rate cuts: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-feds-final-5-pound-issue-with-inflation-points-to-gradual-rate-cuts-morning-brief-110005302.html",
+        "first_paragraph": "getting inflation down to 2% remains the fed's key objective. but it also seems to be anticipating possible ways the cure might become another poison \u2014 and making sure it doesn't happen.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "vz ",
+            "t "
+        ],
+        "headline": "why apple has little to do with these 2 rocking telecom stocks",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-apple-has-little-to-do-with-these-2-rocking-telecom-stocks-133019524.html",
+        "first_paragraph": "go figure, two of america's largest telecom stocks have been rocking.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^gspc "
+        ],
+        "headline": "the hidden genius in two of wall street's 2025 calls: chart of the week",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-hidden-genius-in-two-of-wall-streets-2025-calls-chart-of-the-week-110035953.html",
+        "first_paragraph": "wall street\u2019s 2025 stock market forecasts are coming in, and two calls in particular stand out on our leaderboard: 6,666 and 7,007. there's a good reason why they don't end in a zero.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "btc ",
+            "mstr "
+        ],
+        "headline": "the 4 groups of bitcoin people to know: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-4-groups-of-bitcoin-people-to-know-morning-brief-110002773.html",
+        "first_paragraph": "as bitcoin surfs the $100,000 mark, here's a handy guide to some of the crypto industry's players and their perspectives \u2014 even more important as the white house goes crypto.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^gspc "
+        ],
+        "headline": "wall street is betting on a strong us economy in 2025: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/wall-street-is-betting-on-a-strong-us-economy-in-2025-morning-brief-110022378.html",
+        "first_paragraph": "so far, most equity strategy teams see the stock market rising in 2025, buttressed by another strong year of economic growth. that may favor value stocks this time \u2014 instead of yet another year of big tech domination.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "stla ",
+            "intc "
+        ],
+        "headline": "pat gelsinger and carlos tavares had the same big problem: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/pat-gelsinger-and-carlos-tavares-had-the-same-big-problem-morning-brief-110020970.html",
+        "first_paragraph": "so far, 2024 is pacing to have a record number of ceos out of a job. this week, two big ones \u2014 from intel and stellantis \u2014 illustrated a key point: it's hard to keep your job when your stock is down big.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "gap ",
+            "nvda "
+        ],
+        "headline": "tesla's elon musk may not be the only one cashing in on humanoid robots",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/teslas-elon-musk-may-not-be-the-only-one-cashing-in-on-humanoid-robots-133048663.html",
+        "first_paragraph": "the race to cash in on humanoid robots is well underway.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "btc-usd "
+        ],
+        "headline": "talking bitcoin at thanksgiving is different this time",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/talking-bitcoin-at-thanksgiving-is-different-this-time-110006525.html",
+        "first_paragraph": "the annual tradition of talking crypto at the thanksgiving table has a new wrinkle for 2024.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "qqq ",
+            "^gspc "
+        ],
+        "headline": "wall street still doesn't know what to make of donald trump: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/wall-street-still-doesnt-know-what-to-make-of-donald-trump-morning-brief-110024108.html",
+        "first_paragraph": "wall street's debate over what parts of donald trump's proposed policies will actually be enacted in 2025 have led to a choppy few weeks of trading action.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "wmt ",
+            "swk "
+        ],
+        "headline": "the world's biggest business leaders talk 'tariff man' trump",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-worlds-biggest-business-leaders-talk-tariff-man-trump-133023414.html",
+        "first_paragraph": "leaders are not only bracing for fresh trump tariffs, they are putting in plans to act.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "mstr ",
+            "gbtc "
+        ],
+        "headline": "bitcoin isn\u2019t 'frothy' even with this rally \u2014 the 'kimchi premium' helps explain why",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/bitcoin-isnt-frothy-even-with-this-rally--the-kimchi-premium-helps-explain-why-110059272.html",
+        "first_paragraph": "bitcoin may be at a record high, recapturing public attention as it crests six figures. but despite coinbase climbing the app store and google trends showing higher interest in \"buy bitcoin,\" key sentiment metrics are showing things are fairly calm.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "btc-usd ",
+            "btc "
+        ],
+        "headline": "bitcoin is doing the thing it needs to do: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/bitcoin-is-doing-the-thing-it-needs-to-do-morning-brief-110032985.html",
+        "first_paragraph": "bitcoin has continued its massive gains,  rising around the $100,000 mark in the weeks since the election based on expectations of improved regulatory treatment. but for the cryptocurrency, this rise just might be its own catalyst.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "soxx ",
+            "qcom "
+        ],
+        "headline": "why nvidia earnings could be a sink-or-swim moment for this bull market",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-nvidia-earnings-could-be-a-sink-or-swim-moment-for-this-bull-market-110052006.html",
+        "first_paragraph": "the market rally has been broadening away from big tech and nvidia, its leader. but at the same time, the chip company is still critical to the health of the bull market.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "qqq ",
+            "^gspc "
+        ],
+        "headline": "wall street strategists aren't relying on ai to drive the stock market rally anymore: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/wall-street-strategists-arent-relying-on-ai-to-drive-the-stock-market-rally-anymore-morning-brief-110048376.html",
+        "first_paragraph": "ai prospects are no longer the key reason why wall street strategists see the bull market rally reaching new highs.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "bac ",
+            "apo "
+        ],
+        "headline": "the trump-biden stock market rally, decoded",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-trump-biden-stock-market-rally-decoded-133100164.html",
+        "first_paragraph": "here's how investors are thinking about stocks post-election.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "^gspc "
+        ],
+        "headline": "chart of the week: strong forecasts, weak conviction",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/chart-of-the-week-strong-forecasts-weak-conviction-110035315.html",
+        "first_paragraph": "we\u2019re less than two weeks removed from donald trump\u2019s second presidential election win, and investors, economists, and citizens alike are still trying to figure out what it all means.",
+        "date": null
+    },
+    {
+        "tickers": [],
+        "headline": "wall street ponders a potential debt reckoning from trump spending plans: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/wall-street-ponders-a-potential-debt-reckoning-from-trump-spending-plans-morning-brief-110042119.html",
+        "first_paragraph": "the incoming trump administration's plans, if enacted, would involve a large increase in the us government's debt. for years, this hasn't been a problem for markets. but once again, wall street is asking if this time will be different.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "tsla "
+        ],
+        "headline": "the 'doge' jokes are easy, but musk's new side hustle is tesla's biggest advantage yet: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-doge-jokes-are-easy-but-musks-new-side-hustle-is-teslas-biggest-advantage-yet-morning-brief-110020117.html",
+        "first_paragraph": "taking musk's government efficiency department as a joke underestimates what he might do with this newfound power.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "tsla ",
+            "coin "
+        ],
+        "headline": "the fomo market is back: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-fomo-market-is-back-morning-brief-110001801.html",
+        "first_paragraph": "the recent surge in stocks is absolutely explained by the trump trade. but it's not the only thing going on: there are other reasons why the fomo trade is back.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "nvda ",
+            "amd "
+        ],
+        "headline": "trump presidency likely won't be a problem for nvidia's stock",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/trump-presidency-likely-wont-be-a-problem-for-nvidias-stock-133020558.html",
+        "first_paragraph": "nvidia after trump takes the white house may look just like nvidia before trump took the white house.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "tsla "
+        ],
+        "headline": "elon musk\u2019s latest government bet pays off: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/elon-musks-latest-government-bet-pays-off-morning-brief-110010280.html",
+        "first_paragraph": "elon musk, long skilled at using the government to help his businesses, sees his latest bet pay off as trump wins. the president-elect, long an ev opponent, makes for an odd match. but there are some good reasons it's not.",
+        "date": null
+    },
+    {
+        "tickers": [
+            "spy ",
+            "^gspc "
+        ],
+        "headline": "the one word that's popping up everywhere this earnings season: morning brief",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/the-one-word-thats-popping-up-everywhere-this-earnings-season-morning-brief-110048733.html",
+        "first_paragraph": "the s&p 500's earnings season is 80% done and the word \"bottom\" keeps popping up. it could mean a two-year tough stretch for manufacturing may be over soon.",
+        "date": null
+    }
+]
