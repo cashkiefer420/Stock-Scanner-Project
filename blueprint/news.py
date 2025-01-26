@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import json
 import os
 from datetime import datetime
-import time
+import yfinance as yf
 
 # 🔹 File paths
 BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
@@ -14,67 +14,36 @@ EXPORT_FILE_PATH = os.path.join(JSON_DIR, "news.json")
 # 🔹 Ensure the json directory exists
 os.makedirs(JSON_DIR, exist_ok=True)
 
-# 🔹 Keywords for sentiment grading
-keywords = {
-    1: ["sell", "underperform", "bearish", "collapse", "bankruptcy", "fraud", "lawsuit", "default", "crash", "failure",
-        "penalty", "investigation", "misconduct", "SEC probe", "restructuring", "foreclosure", "delisting", "audit concern",
-        "legal action", "crisis", "recession", "plummet", "scandal", "layoff", "downsizing", "market volatility", "negative forecast"],
-
-    2: ["headwinds", "margin pressure", "earnings miss", "revenue decline", "cost-cutting", "restructuring", "soft demand",
-        "uncertain outlook", "challenging environment", "adjusted guidance", "regulatory scrutiny", "shortfall", "slower growth",
-        "deleveraging", "impairment charge", "litigation risk", "supply chain issues", "cybersecurity breach", "lower-than-expected",
-        "negative impact", "difficult conditions"],
-
-    3: ["neutral", "hold", "positioned for growth", "market share", "sector performance", "target price", "analyst rating",
-        "investor confidence", "strategic investment", "market opportunity", "portfolio", "dividend yield", "long-term strategy",
-        "strategic partnership", "steady performance", "stable outlook", "value investment", "balanced portfolio", "evaluating options"],
-
-    4: ["buy", "outperform", "strong buy", "bullish", "positive momentum", "impressive results", "growth trajectory",
-        "market leader", "scaling operations", "expansion strategy", "customer growth", "sustained performance", "product launch",
-        "strategic investment", "positive earnings surprise", "bullish outlook", "strong growth", "acquisition success", "positive sentiment"],
-
-    5: ["buy now", "breakthrough innovation", "disruptive technology", "record-breaking profits", "all-time high", "exceptional performance",
-        "dominant market position", "trailblazing", "transformational growth", "skyrocketing stock", "outpacing competitors", "highest earnings ever",
-        "industry-shifting", "game-changer", "phenomenal success", "category-defining", "best quarter ever", "leadership in innovation",
-        "unprecedented demand", "buying opportunity", "rapid expansion", "leading the market", "outperforming expectations"]
-}
-
-# 🔹 Load tickers from JSON file
+# 🔹 Load tickers and fetch company names
 def load_tickers():
-    """Load stock tickers from the processed_tickers.json file."""
-    if os.path.exists(TICKER_FILE_PATH):
-        with open(TICKER_FILE_PATH, "r") as file:
-            data = json.load(file)
-            return set(data.get("tickers", []))  # Convert to set for faster lookup
-    return set()
+    """Load stock tickers and fetch their corresponding company names from Yahoo Finance."""
+    if not os.path.exists(TICKER_FILE_PATH):
+        return {}
 
-# 🔹 Assign grades and scores based on article content
-def assign_grade(content):
-    """Assigns a grade and score to an article based on its first paragraph"""
-    if not content:
-        return 3, 0  # Neutral if no content, score = 0
+    with open(TICKER_FILE_PATH, "r") as file:
+        tickers = json.load(file).get("tickers", [])
 
-    desc_lower = content.lower()
-    grade_count = {grade: sum(word in desc_lower for word in words) for grade, words in keywords.items()}
+    ticker_dict = {}
+    for ticker in tickers:
+        try:
+            stock = yf.Ticker(ticker)
+            company_name = stock.info.get("shortName", "").lower()  # Get company name in lowercase
+            ticker_dict[ticker.lower()] = company_name  # Store both ticker & name in lowercase
+        except Exception as e:
+            print(f"⚠️ Could not fetch data for {ticker}: {e}")
 
-    max_grade = max(grade_count, key=grade_count.get)
-    score = grade_count[max_grade]
+    return ticker_dict
 
-    if max_grade in [1, 5]:  # Adjust for extreme bias
-        return 3, score  # Neutral grade, but keep score
-
-    return max_grade, score
-
-# 🔹 Function to fetch all Yahoo Finance stock market news
+# 🔹 Function to fetch Yahoo Finance stock market news
 def fetch_news():
-    """Fetches Yahoo Finance stock market news from multiple sources."""
+    """Fetch Yahoo Finance stock market news from multiple sources."""
     urls = [
         "https://finance.yahoo.com/topic/stock-market-news/",
         "https://finance.yahoo.com/topic/latest-news/",
         "https://finance.yahoo.com/topic/earnings/",
         "https://finance.yahoo.com/topic/morning-brief/"
     ]
-    
+
     headers = {"User-Agent": "Mozilla/5.0"}
     all_articles = []
 
@@ -94,47 +63,49 @@ def fetch_news():
 
 # 🔹 Extract, filter, and grade articles
 def extract_articles():
-    """Extracts stock news articles, filters based on tickers, and assigns grades & scores."""
-    tickers = load_tickers()
+    """Extracts stock news articles, filters based on tickers & company names, and assigns grades & scores."""
+    ticker_dict = load_tickers()
     today_date = datetime.today().strftime("%Y-%m-%d")
-    all_articles = []  # Stores all extracted articles before filtering
+    all_articles = []
 
     # 🔹 Fetch all articles first
     articles = fetch_news()
 
     for article in articles:
-        headline_tag = article.select_one("h3")  # Extract headline
-        link_tag = article.select_one("a.subtle-link")  # Extract link
-        paragraph_tag = article.select_one("p")  # Extract first paragraph
-        time_tag = article.select_one("time")  # Extract article date
+        headline_tag = article.select_one("h3")
+        link_tag = article.select_one("a.subtle-link")
+        paragraph_tag = article.select_one("p")
+        time_tag = article.select_one("time")
 
-        headline = headline_tag.text.strip() if headline_tag else None
+        headline = headline_tag.text.strip().lower() if headline_tag else None
         link = f"https://finance.yahoo.com{link_tag['href']}" if link_tag and 'href' in link_tag.attrs else None
-        first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
+        first_paragraph = paragraph_tag.text.strip().lower() if paragraph_tag else None
         article_date = time_tag["datetime"].split("T")[0] if time_tag and "datetime" in time_tag.attrs else None
 
-        # Extract tickers from blue tags under the article
-        tagged_tickers = [span.text for span in article.select("a span")]
-
-        # 🔹 Assign grade & score immediately
-        grade, score = assign_grade(first_paragraph)
+        # Extract tickers from article labels
+        tagged_tickers = [span.text.lower() for span in article.select("a span")]
 
         all_articles.append({
             "tickers": tagged_tickers,
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
-            "date": article_date,
-            "grade": grade,  # ✅ Added grade
-            "score": score   # ✅ Added score
+            "date": article_date
         })
 
     print(f"📌 Total articles before filtering: {len(all_articles)}")
 
-    # 🔹 Now filter out articles that don't match any tickers
-    filtered_articles = [article for article in all_articles if any(ticker in tickers for ticker in article["tickers"])]
+    # 🔹 Filter articles based on ticker or company name appearing in title or summary
+    filtered_articles = [
+        article for article in all_articles
+        if any(
+            ticker in (article["headline"] or "") or ticker in (article["first_paragraph"] or "") or
+            company in (article["headline"] or "") or company in (article["first_paragraph"] or "")
+            for ticker, company in ticker_dict.items()
+        )
+    ]
 
-    print(f"✅ Total articles matching tickers: {len(filtered_articles)}")
+    print(f"✅ Total articles matching tickers or company names: {len(filtered_articles)}")
 
     return filtered_articles
 
