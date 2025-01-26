@@ -3,47 +3,67 @@ from bs4 import BeautifulSoup
 import json
 import os
 from datetime import datetime
-import yfinance as yf
 
 # 🔹 File paths
 BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
 JSON_DIR = os.path.join(BASE_DIR, "json")
-TICKER_FILE_PATH = os.path.join(JSON_DIR, "processed_tickers.json")
 EXPORT_FILE_PATH = os.path.join(JSON_DIR, "news.json")
 
 # 🔹 Ensure the json directory exists
 os.makedirs(JSON_DIR, exist_ok=True)
 
-# 🔹 Load tickers and fetch company names
-def load_tickers():
-    """Load stock tickers and fetch their corresponding company names from Yahoo Finance."""
-    if not os.path.exists(TICKER_FILE_PATH):
-        return {}
+# 🔹 Keywords for sentiment grading
+keywords = {
+    1: ["sell", "underperform", "bearish", "collapse", "bankruptcy", "fraud", "lawsuit", "default", "crash", "failure",
+        "penalty", "investigation", "misconduct", "SEC probe", "restructuring", "foreclosure", "delisting", "audit concern",
+        "legal action", "crisis", "recession", "plummet", "scandal", "layoff", "downsizing", "market volatility", "negative forecast"],
 
-    with open(TICKER_FILE_PATH, "r") as file:
-        tickers = json.load(file).get("tickers", [])
+    2: ["headwinds", "margin pressure", "earnings miss", "revenue decline", "cost-cutting", "restructuring", "soft demand",
+        "uncertain outlook", "challenging environment", "adjusted guidance", "regulatory scrutiny", "shortfall", "slower growth",
+        "deleveraging", "impairment charge", "litigation risk", "supply chain issues", "cybersecurity breach", "lower-than-expected",
+        "negative impact", "difficult conditions"],
 
-    ticker_dict = {}
-    for ticker in tickers:
-        try:
-            stock = yf.Ticker(ticker)
-            company_name = stock.info.get("shortName", "").lower()  # Get company name in lowercase
-            ticker_dict[ticker.lower()] = company_name  # Store both ticker & name in lowercase
-        except Exception as e:
-            print(f"⚠️ Could not fetch data for {ticker}: {e}")
+    3: ["neutral", "hold", "positioned for growth", "market share", "sector performance", "target price", "analyst rating",
+        "investor confidence", "strategic investment", "market opportunity", "portfolio", "dividend yield", "long-term strategy",
+        "strategic partnership", "steady performance", "stable outlook", "value investment", "balanced portfolio", "evaluating options"],
 
-    return ticker_dict
+    4: ["buy", "outperform", "strong buy", "bullish", "positive momentum", "impressive results", "growth trajectory",
+        "market leader", "scaling operations", "expansion strategy", "customer growth", "sustained performance", "product launch",
+        "strategic investment", "positive earnings surprise", "bullish outlook", "strong growth", "acquisition success", "positive sentiment"],
 
-# 🔹 Function to fetch Yahoo Finance stock market news
+    5: ["buy now", "breakthrough innovation", "disruptive technology", "record-breaking profits", "all-time high", "exceptional performance",
+        "dominant market position", "trailblazing", "transformational growth", "skyrocketing stock", "outpacing competitors", "highest earnings ever",
+        "industry-shifting", "game-changer", "phenomenal success", "category-defining", "best quarter ever", "leadership in innovation",
+        "unprecedented demand", "buying opportunity", "rapid expansion", "leading the market", "outperforming expectations"]
+}
+
+# 🔹 Assign grades and scores based on article content
+def assign_grade(content):
+    """Assigns a grade and score to an article based on its first paragraph"""
+    if not content:
+        return 3, 0  # Neutral if no content, score = 0
+
+    desc_lower = content.lower()
+    grade_count = {grade: sum(word in desc_lower for word in words) for grade, words in keywords.items()}
+
+    max_grade = max(grade_count, key=grade_count.get)
+    score = grade_count[max_grade]
+
+    if max_grade in [1, 5]:  # Adjust for extreme bias
+        return 3, score  # Neutral grade, but keep score
+
+    return max_grade, score
+
+# 🔹 Function to fetch all Yahoo Finance stock market news
 def fetch_news():
-    """Fetch Yahoo Finance stock market news from multiple sources."""
+    """Fetches Yahoo Finance stock market news from multiple sources."""
     urls = [
         "https://finance.yahoo.com/topic/stock-market-news/",
         "https://finance.yahoo.com/topic/latest-news/",
         "https://finance.yahoo.com/topic/earnings/",
         "https://finance.yahoo.com/topic/morning-brief/"
     ]
-
+    
     headers = {"User-Agent": "Mozilla/5.0"}
     all_articles = []
 
@@ -61,53 +81,41 @@ def fetch_news():
 
     return all_articles
 
-# 🔹 Extract, filter, and grade articles
+# 🔹 Extract, grade, and store articles
 def extract_articles():
-    """Extracts stock news articles, filters based on tickers & company names, and assigns grades & scores."""
-    ticker_dict = load_tickers()
+    """Extracts stock news articles, assigns grades & scores."""
     today_date = datetime.today().strftime("%Y-%m-%d")
-    all_articles = []
+    extracted_articles = []
 
     # 🔹 Fetch all articles first
     articles = fetch_news()
 
     for article in articles:
-        headline_tag = article.select_one("h3")
-        link_tag = article.select_one("a.subtle-link")
-        paragraph_tag = article.select_one("p")
-        time_tag = article.select_one("time")
+        headline_tag = article.select_one("h3")  # Extract headline
+        link_tag = article.select_one("a.subtle-link")  # Extract link
+        paragraph_tag = article.select_one("p")  # Extract first paragraph
+        time_tag = article.select_one("time")  # Extract article date
 
-        headline = headline_tag.text.strip().lower() if headline_tag else None
+        headline = headline_tag.text.strip() if headline_tag else None
         link = f"https://finance.yahoo.com{link_tag['href']}" if link_tag and 'href' in link_tag.attrs else None
-        first_paragraph = paragraph_tag.text.strip().lower() if paragraph_tag else None
-        article_date = time_tag["datetime"].split("T")[0] if time_tag and "datetime" in time_tag.attrs else None
+        first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
+        article_date = time_tag["datetime"].split("T")[0] if time_tag and "datetime" in time_tag.attrs else today_date
 
-        # Extract tickers from article labels
-        tagged_tickers = [span.text.lower() for span in article.select("a span")]
+        # 🔹 Assign grade & score immediately
+        grade, score = assign_grade(first_paragraph)
 
-        all_articles.append({
-            "tickers": tagged_tickers,
+        extracted_articles.append({
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
-            "date": article_date
+            "date": article_date,
+            "grade": grade,  # ✅ Added grade
+            "score": score   # ✅ Added score
         })
 
-    print(f"📌 Total articles before filtering: {len(all_articles)}")
+    print(f"✅ Extracted {len(extracted_articles)} articles.")
 
-    # 🔹 Filter articles based on ticker or company name appearing in title or summary
-    filtered_articles = [
-        article for article in all_articles
-        if any(
-            ticker in (article["headline"] or "") or ticker in (article["first_paragraph"] or "") or
-            company in (article["headline"] or "") or company in (article["first_paragraph"] or "")
-            for ticker, company in ticker_dict.items()
-        )
-    ]
-
-    print(f"✅ Total articles matching tickers or company names: {len(filtered_articles)}")
-
-    return filtered_articles
+    return extracted_articles
 
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":
@@ -118,4 +126,4 @@ if __name__ == "__main__":
             json.dump(extracted_articles, json_file, indent=4)
         print(f"✅ Saved {len(extracted_articles)} articles to {EXPORT_FILE_PATH}")
     else:
-        print("❌ No matching articles found today.")
+        print("❌ No articles found today.")
