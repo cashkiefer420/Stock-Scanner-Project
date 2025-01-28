@@ -172,14 +172,3 @@ if __name__ == "__main__":
     else:
         print("❌ No matching articles found today.")
 
-
-# 🔹 Run the scraper and save results
-if __name__ == "__main__":
-    extracted_articles = extract_articles()
-
-    if extracted_articles:
-        with open(EXPORT_FILE_PATH, "w") as json_file:
-            json.dump(extracted_articles, json_file, indent=4)
-        print(f"✅ Saved {len(extracted_articles)} articles to {EXPORT_FILE_PATH}")
-    else:
-        print("❌ No matching articles found today.")
