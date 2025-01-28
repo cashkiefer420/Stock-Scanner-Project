@@ -11,7 +11,7 @@ nltk.download('vader_lexicon')
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 }
-response = requests.get(url, headers=headers)
+response = requests.get(urls, headers=headers)
 # 🔹 Function to decode non-word characters like \u2019 to readable characters
 def clean_text(text):
     if text:
@@ -40,13 +40,13 @@ def assign_grade(text):
 
 # 🔹 Fetch the latest articles from Yahoo Finance
 def fetch_news():
-    url = [
+    urls = [
         "https://finance.yahoo.com/topic/stock-market-news/",
         "https://finance.yahoo.com/topic/latest-news/",
         "https://finance.yahoo.com/topic/earnings/",
         "https://finance.yahoo.com/topic/morning-brief/"
     ]
-    response = requests.get(url)
+    response = requests.get(urls)
     soup = BeautifulSoup(response.text, 'html.parser')
 
     # Example: Assuming articles are in <li> elements with class 'js-stream-content'
