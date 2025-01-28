@@ -8,13 +8,6 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 # Ensure NLTK resources are available
 nltk.download('vader_lexicon')
 
-
-# 🔹 Function to decode non-word characters like \u2019 to readable characters
-def clean_text(text):
-    if text:
-        return text.encode('utf-8').decode('unicode_escape')
-    return text
-
 # 🔹 Function to analyze sentiment and assign a grade & score
 def assign_grade(text):
     analyzer = SentimentIntensityAnalyzer()
