@@ -86,7 +86,6 @@ def extract_articles():
         grade, score = assign_grade(first_paragraph)
 
         all_articles.append({
-            "tickers": tagged_tickers,
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
