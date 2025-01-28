@@ -8,6 +8,10 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 # Ensure NLTK resources are available
 nltk.download('vader_lexicon')
 
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+}
+response = requests.get(url, headers=headers)
 # 🔹 Function to decode non-word characters like \u2019 to readable characters
 def clean_text(text):
     if text:
