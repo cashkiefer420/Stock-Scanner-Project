@@ -10,13 +10,22 @@ nltk.download('vader_lexicon')
 
 # 🔹 Function to analyze sentiment and assign a grade & score
 def assign_grade(text):
+    if not text:
+        return "N/A", 0  # Return default values if text is None
+    
+    try:
+        text = text.encode('utf-8', 'ignore').decode('utf-8')  # Remove problematic characters
+    except Exception as e:
+        print(f"❌ Encoding error: {e}")
+        return "N/A", 0  # Return default grade and score
+
     analyzer = SentimentIntensityAnalyzer()
     sentiment = analyzer.polarity_scores(text)
     compound_score = sentiment['compound']  # Overall sentiment score
 
-    # Assign a grade and score based on sentiment strength
+    # Assign grade based on compound score
     if compound_score >= 0.6:
-        grade, score = 'A', int((compound_score + 1) * 50)  # Scale from 0 to 100
+        grade, score = 'A', int((compound_score + 1) * 50)  
     elif 0.3 <= compound_score < 0.6:
         grade, score = 'B', int((compound_score + 1) * 45)
     elif 0.1 <= compound_score < 0.3:
@@ -24,10 +33,9 @@ def assign_grade(text):
     elif -0.1 <= compound_score < 0.1:
         grade, score = 'D', int((compound_score + 1) * 35)
     else:
-        grade, score = 'F', int((compound_score + 1) * 30)  # Lower scores for negative sentiment
+        grade, score = 'F', int((compound_score + 1) * 30)
 
     return grade, score
-
 # 🔹 Fetch the latest articles from Yahoo Finance
 def fetch_news():
     """Fetches Yahoo Finance stock market news from multiple sources."""
