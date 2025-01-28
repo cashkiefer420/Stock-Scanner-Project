@@ -40,7 +40,12 @@ def assign_grade(text):
 
 # 🔹 Fetch the latest articles from Yahoo Finance
 def fetch_news():
-    url = "https://finance.yahoo.com"
+    url = [
+        "https://finance.yahoo.com/topic/stock-market-news/",
+        "https://finance.yahoo.com/topic/latest-news/",
+        "https://finance.yahoo.com/topic/earnings/",
+        "https://finance.yahoo.com/topic/morning-brief/"
+    ]
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
