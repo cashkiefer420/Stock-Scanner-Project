@@ -8,13 +8,18 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 # Ensure NLTK resources are available
 nltk.download('vader_lexicon')
 
+# Define user-agent headers to prevent blocking
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+}
+
 urls = [
-        "https://finance.yahoo.com/topic/stock-market-news/",
-        "https://finance.yahoo.com/topic/latest-news/",
-        "https://finance.yahoo.com/topic/earnings/",
-        "https://finance.yahoo.com/topic/morning-brief/"
-    ]
-response = requests.get(urls, headers=headers)
+    "https://finance.yahoo.com/topic/stock-market-news/",
+    "https://finance.yahoo.com/topic/latest-news/",
+    "https://finance.yahoo.com/topic/earnings/",
+    "https://finance.yahoo.com/topic/morning-brief/"
+]
+
 # 🔹 Function to decode non-word characters like \u2019 to readable characters
 def clean_text(text):
     if text:
@@ -43,13 +48,14 @@ def assign_grade(text):
 
 # 🔹 Fetch the latest articles from Yahoo Finance
 def fetch_news():
+    articles = []
+    for url in urls:
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-    response = requests.get(urls)
-    soup = BeautifulSoup(response.text, 'html.parser')
+        # Example: Assuming articles are in <h3> elements
+        articles += soup.find_all("h3")
 
-    # Example: Assuming articles are in <li> elements with class 'js-stream-content'
-    articles = soup.find_all("li", class_="js-stream-content")
-    
     return articles
 
 # 🔹 Function to extract articles and process them
@@ -62,29 +68,21 @@ def extract_articles():
     articles = fetch_news()
 
     for article in articles:
-        headline_tag = article.select_one("h3")  # Assuming the headline is in <h3>
-        link_tag = article.select_one("a.subtle-link")  # Link in <a> with class 'subtle-link'
-        paragraph_tag = article.select_one("p")  # Summary paragraph in <p>
-        time_tag = article.select_one("time")  # Article time in <time>
-
-        # Clean the headline text
+        headline_tag = article.select_one("a")  # Assuming the headline is in <a>
+        link = f"https://finance.yahoo.com{headline_tag['href']}" if headline_tag and 'href' in headline_tag.attrs else None
         headline = clean_text(headline_tag.text.strip()) if headline_tag else None
-        link = f"https://finance.yahoo.com{link_tag['href']}" if link_tag and 'href' in link_tag.attrs else None
-        first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
-        article_date = time_tag["datetime"].split("T")[0] if time_tag and "datetime" in time_tag.attrs else today_date
 
         # 🔹 Skip articles with missing crucial information
-        if not headline or not link or not first_paragraph or not article_date:
+        if not headline or not link:
             continue
 
         # 🔹 Assign grade & score based on sentiment analysis
-        grade, score = assign_grade(first_paragraph)
+        grade, score = assign_grade(headline)
 
         extracted_articles.append({
             "headline": headline,
             "link": link,
-            "first_paragraph": first_paragraph,
-            "date": article_date,
+            "date": today_date,
             "grade": grade,
             "score": score
         })
