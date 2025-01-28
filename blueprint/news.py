@@ -8,17 +8,6 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 # Ensure NLTK resources are available
 nltk.download('vader_lexicon')
 
-# Define user-agent headers to prevent blocking
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-}
-
-urls = [
-    "https://finance.yahoo.com/topic/stock-market-news/",
-    "https://finance.yahoo.com/topic/latest-news/",
-    "https://finance.yahoo.com/topic/earnings/",
-    "https://finance.yahoo.com/topic/morning-brief/"
-]
 
 # 🔹 Function to decode non-word characters like \u2019 to readable characters
 def clean_text(text):
@@ -48,50 +37,72 @@ def assign_grade(text):
 
 # 🔹 Fetch the latest articles from Yahoo Finance
 def fetch_news():
-    articles = []
+    """Fetches Yahoo Finance stock market news from multiple sources."""
+    urls = [
+        "https://finance.yahoo.com/topic/stock-market-news/",
+        "https://finance.yahoo.com/topic/latest-news/",
+        "https://finance.yahoo.com/topic/earnings/",
+        "https://finance.yahoo.com/topic/morning-brief/"
+    ]
+    
+    headers = {"User-Agent": "Mozilla/5.0"}
+    all_articles = []
+
     for url in urls:
         response = requests.get(url, headers=headers)
-        soup = BeautifulSoup(response.text, 'html.parser')
+        if response.status_code != 200:
+            print(f"❌ Failed to fetch Yahoo Finance news from {url}. Status Code: {response.status_code}")
+            continue
 
-        # Example: Assuming articles are in <h3> elements
-        articles += soup.find_all("h3")
+        soup = BeautifulSoup(response.text, "html.parser")
+        articles = soup.select("li.stream-item")  # Select all news articles
+        print(f"🔍 {len(articles)} articles fetched from {url}")
 
-    return articles
+        all_articles.extend(articles)
 
-# 🔹 Function to extract articles and process them
+    return all_articles
+
+# 🔹 Extract, filter, and grade articles
 def extract_articles():
-    """Extracts stock news articles, assigns grades & scores."""
+    """Extracts stock news articles, filters based on tickers, and assigns grades & scores."""
     today_date = datetime.today().strftime("%Y-%m-%d")
-    extracted_articles = []
+    all_articles = []  # Stores all extracted articles before filtering
 
     # 🔹 Fetch all articles first
     articles = fetch_news()
 
     for article in articles:
-        headline_tag = article.select_one("a")  # Assuming the headline is in <a>
-        link = f"https://finance.yahoo.com{headline_tag['href']}" if headline_tag and 'href' in headline_tag.attrs else None
-        headline = clean_text(headline_tag.text.strip()) if headline_tag else None
+        headline_tag = article.select_one("h3")  # Extract headline
+        link_tag = article.select_one("a.subtle-link")  # Extract link
+        paragraph_tag = article.select_one("p")  # Extract first paragraph
+        time_tag = article.select_one("time")  # Extract article date
 
-        # 🔹 Skip articles with missing crucial information
-        if not headline or not link:
-            continue
+        headline = headline_tag.text.strip() if headline_tag else None
+        link = f"https://finance.yahoo.com{link_tag['href']}" if link_tag and 'href' in link_tag.attrs else None
+        first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
+        article_date = time_tag["datetime"].split("T")[0] if time_tag and "datetime" in time_tag.attrs else None
 
-        # 🔹 Assign grade & score based on sentiment analysis
-        grade, score = assign_grade(headline)
+        # 🔹 Assign grade & score immediately
+        grade, score = assign_grade(first_paragraph)
 
-        extracted_articles.append({
+        all_articles.append({
+            "tickers": tagged_tickers,
             "headline": headline,
             "link": link,
-            "date": today_date,
-            "grade": grade,
-            "score": score
+            "first_paragraph": first_paragraph,
+            "date": article_date,
+            "grade": grade, 
+            "score": score  
         })
+    return filtered_articles
 
-    print(f"✅ Extracted {len(extracted_articles)} articles.")
-
-    return extracted_articles
-
-# 🔹 Call the extract function and print the result
+# 🔹 Run the scraper and save results
 if __name__ == "__main__":
-    articles = extract_articles()
-    print(json.dumps(articles, indent=4))
+    extracted_articles = extract_articles()
+
+    if extracted_articles:
+        with open(EXPORT_FILE_PATH, "w") as json_file:
+            json.dump(extracted_articles, json_file, indent=4)
+        print(f"✅ Saved {len(extracted_articles)} articles to {EXPORT_FILE_PATH}")
+    else:
+        print("❌ No matching articles found today.")
