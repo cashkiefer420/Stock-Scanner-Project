@@ -159,7 +159,7 @@ def extract_articles():
             "grade": grade, 
             "score": score  
         })
-    return filtered_articles
+    return extracted_articles
 
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":
