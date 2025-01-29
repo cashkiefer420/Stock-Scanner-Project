@@ -4,6 +4,7 @@ from datetime import datetime
 import json
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import os
 
 # Ensure NLTK resources are available
 nltk.download('vader_lexicon')
