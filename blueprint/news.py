@@ -1,13 +1,17 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import json
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import os
 
 # Ensure NLTK resources are available
 nltk.download('vader_lexicon')
+
+# 🔹 Base directory setup
+base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
+EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
 
 # 🔹 Function to analyze sentiment and assign a grade & score
 def assign_grade(text):
@@ -58,7 +62,10 @@ def fetch_news():
             continue
 
         soup = BeautifulSoup(response.text, "html.parser")
-        articles = soup.select("li.stream-item")  # Adjusted selector to be more flexible
+
+        # Updated selector for news articles
+        articles = soup.select("li.js-stream-content div")  
+
         print(f"🔍 {len(articles)} articles fetched from {url}")
 
         all_articles.extend(articles)
@@ -75,17 +82,27 @@ def extract_articles():
 
     for article in articles:
         # Ensure elements exist before accessing them
-        headline_tag = article.select_one("h3")
-        link_tag = article.select_one("a.subtle-link") 
+        headline_tag = article.select_one("h3 a")
+        link_tag = article.select_one("h3 a")
         paragraph_tag = article.select_one("p")
         meta_date_tag = article.select_one('meta[itemprop="datePublished"]')
 
-        headline = headline_tag.text.strip() if headline_tag else None
-        link = f"https://finance.yahoo.com{link_tag['href']}" if link_tag and 'href' in link_tag.attrs else None
+        if not headline_tag or not link_tag:  
+            continue  # Skip invalid articles
+
+        headline = headline_tag.text.strip()
+        link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
 
         # Use meta tag for date extraction
-        article_date = meta_date_tag["content"].split("T")[0] if meta_date_tag and "content" in meta_date_tag.attrs else datetime.today().strftime("%Y-%m-%d")
+        if meta_date_tag and "content" in meta_date_tag.attrs:
+            article_date = meta_date_tag["content"].split("T")[0]
+        else:
+            # Try fetching date from the actual article page
+            article_date = fetch_article_date(link) if link else None  
+
+        if not article_date:  
+            continue  # Skip articles without dates
 
         # 🔹 Assign grade & score immediately
         grade, score = assign_grade(first_paragraph)
@@ -94,23 +111,44 @@ def extract_articles():
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
-            "date": article_date,  # ✅ Now always has a date
+            "date": article_date,  # ✅ Now correctly extracted
             "grade": grade, 
             "score": score  
         })
     
     return all_articles  # ✅ Corrected return statement
 
-# 🔹 Define export file path
-base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
-EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
+# 🔹 Fetch date from article page if not found in meta tag
+def fetch_article_date(url):
+    """Fetches the article's publication date from its page."""
+    try:
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(url, headers=headers)
+        if response.status_code != 200:
+            return None
+
+        soup = BeautifulSoup(response.text, "html.parser")
+        meta_date = soup.select_one('meta[property="article:published_time"]')
+
+        if meta_date and "content" in meta_date.attrs:
+            return meta_date["content"].split("T")[0]
+
+    except Exception as e:
+        print(f"⚠️ Error fetching date for {url}: {e}")
+
+    return None  # Return None if date is not found
+
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":
     extracted_articles = extract_articles()
 
     if extracted_articles:
+        # Ensure directory exists before saving the file
+        os.makedirs(os.path.dirname(EXPORT_FILE_PATH), exist_ok=True)
+
         with open(EXPORT_FILE_PATH, "w") as json_file:
             json.dump(extracted_articles, json_file, indent=4)
+        
         print(f"✅ Saved {len(extracted_articles)} articles to {EXPORT_FILE_PATH}")
     else:
-        print("❌ No articles found.")
+        print("❌ No valid articles found.")
