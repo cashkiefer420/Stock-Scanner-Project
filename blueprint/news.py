@@ -57,7 +57,7 @@ def fetch_news():
             continue
 
         soup = BeautifulSoup(response.text, "html.parser")
-        articles = soup.select("li.stream-item")  # Select all news articles
+        articles = soup.select("li")  # Adjusted selector to be more flexible
         print(f"🔍 {len(articles)} articles fetched from {url}")
 
         all_articles.extend(articles)
@@ -73,20 +73,18 @@ def extract_articles():
     articles = fetch_news()
 
     for article in articles:
-        headline_tag = article.select_one("h3")  # Extract headline
-        link_tag = article.select_one("a.subtle-link")  # Extract link
-        paragraph_tag = article.select_one("p")  # Extract first paragraph
-        time_tag = article.select_one("time")  # Extract article date
+        # Ensure elements exist before accessing them
+        headline_tag = article.select_one("h3")
+        link_tag = article.select_one("a")
+        paragraph_tag = article.select_one("p")
+        meta_date_tag = article.select_one('meta[itemprop="datePublished"]')
 
         headline = headline_tag.text.strip() if headline_tag else None
         link = f"https://finance.yahoo.com{link_tag['href']}" if link_tag and 'href' in link_tag.attrs else None
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
 
-        # 🔹 Fix for missing date
-        if time_tag and "datetime" in time_tag.attrs:
-            article_date = time_tag["datetime"].split("T")[0]  # Extract date
-        else:
-            article_date = datetime.today().strftime("%Y-%m-%d")  # Use today's date as fallback
+        # Use meta tag for date extraction
+        article_date = meta_date_tag["content"].split("T")[0] if meta_date_tag and "content" in meta_date_tag.attrs else datetime.today().strftime("%Y-%m-%d")
 
         # 🔹 Assign grade & score immediately
         grade, score = assign_grade(first_paragraph)
