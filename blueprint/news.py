@@ -101,8 +101,8 @@ def extract_articles():
     return all_articles  # ✅ Corrected return statement
 
 # 🔹 Define export file path
-EXPORT_FILE_PATH = "news.json"
-
+base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
+EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":
     extracted_articles = extract_articles()
