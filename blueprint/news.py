@@ -58,7 +58,7 @@ def fetch_news():
             continue
 
         soup = BeautifulSoup(response.text, "html.parser")
-        articles = soup.select("li")  # Adjusted selector to be more flexible
+        articles = soup.select("li.stream-item")  # Adjusted selector to be more flexible
         print(f"🔍 {len(articles)} articles fetched from {url}")
 
         all_articles.extend(articles)
@@ -76,7 +76,7 @@ def extract_articles():
     for article in articles:
         # Ensure elements exist before accessing them
         headline_tag = article.select_one("h3")
-        link_tag = article.select_one("a")
+        link_tag = article.select_one("a.subtle-link") 
         paragraph_tag = article.select_one("p")
         meta_date_tag = article.select_one('meta[itemprop="datePublished"]')
 
