@@ -4,7 +4,6 @@ from datetime import datetime
 import json
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import os
 
 # Ensure NLTK resources are available
 nltk.download('vader_lexicon')
@@ -82,7 +81,12 @@ def extract_articles():
         headline = headline_tag.text.strip() if headline_tag else None
         link = f"https://finance.yahoo.com{link_tag['href']}" if link_tag and 'href' in link_tag.attrs else None
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
-        article_date = time_tag["datetime"].split("T")[0] if time_tag and "datetime" in time_tag.attrs else None
+
+        # 🔹 Fix for missing date
+        if time_tag and "datetime" in time_tag.attrs:
+            article_date = time_tag["datetime"].split("T")[0]  # Extract date
+        else:
+            article_date = datetime.today().strftime("%Y-%m-%d")  # Use today's date as fallback
 
         # 🔹 Assign grade & score immediately
         grade, score = assign_grade(first_paragraph)
@@ -91,7 +95,7 @@ def extract_articles():
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
-            "date": article_date,
+            "date": article_date,  # ✅ Now always has a date
             "grade": grade, 
             "score": score  
         })
@@ -99,8 +103,8 @@ def extract_articles():
     return all_articles  # ✅ Corrected return statement
 
 # 🔹 Define export file path
-base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
-EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
+EXPORT_FILE_PATH = "news.json"
+
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":
     extracted_articles = extract_articles()
