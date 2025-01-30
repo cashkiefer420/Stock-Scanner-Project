@@ -1,44 +1,113 @@
+import requests
+from bs4 import BeautifulSoup
+from datetime import datetime
 import json
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import os
 
-# 🔹 File paths
-BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
-JSON_DIR = os.path.join(BASE_DIR, "json")
-EXPORT_FILE_PATH = os.path.join(JSON_DIR, "news.json")
-NEW_EXPORT_FILE_PATH = os.path.join(JSON_DIR, "news2.json")
+# Ensure NLTK resources are available
+nltk.download('vader_lexicon')
 
-# 🔹 Extract and export titles and summaries
-def extract_and_export_titles_summaries():
-    """Extracts headlines and summaries from news.json and saves to news2.json."""
-    if not os.path.exists(EXPORT_FILE_PATH):
-        print("❌ Error: news.json not found!")
-        return
+# 🔹 Function to analyze sentiment and assign a grade & score
+def assign_grade(text):
+    if not text:
+        return "N/A", 0  # Return default values if text is None
+    
+    try:
+        text = text.encode('utf-8', 'ignore').decode('utf-8')  # Remove problematic characters
+    except Exception as e:
+        print(f"❌ Encoding error: {e}")
+        return "N/A", 0  # Return default grade and score
 
-    with open(EXPORT_FILE_PATH, "r") as file:
-        articles = json.load(file)
+    analyzer = SentimentIntensityAnalyzer()
+    sentiment = analyzer.polarity_scores(text)
+    compound_score = sentiment['compound']  # Overall sentiment score
 
-    if not articles:
-        print("❌ No articles found in news.json.")
-        return
+    # Assign grade based on compound score
+    if compound_score >= 0.6:
+        grade, score = 'A', int((compound_score + 1) * 50)  
+    elif 0.3 <= compound_score < 0.6:
+        grade, score = 'B', int((compound_score + 1) * 45)
+    elif 0.1 <= compound_score < 0.3:
+        grade, score = 'C', int((compound_score + 1) * 40)
+    elif -0.1 <= compound_score < 0.1:
+        grade, score = 'D', int((compound_score + 1) * 35)
+    else:
+        grade, score = 'F', int((compound_score + 1) * 30)
 
-    extracted_data = []
+    return grade, score
+
+# 🔹 Fetch the latest articles from Yahoo Finance
+def fetch_news():
+    """Fetches Yahoo Finance stock market news from multiple sources."""
+    urls = [
+        "https://finance.yahoo.com/topic/stock-market-news/",
+        "https://finance.yahoo.com/topic/latest-news/",
+        "https://finance.yahoo.com/topic/earnings/",
+        "https://finance.yahoo.com/topic/morning-brief/"
+    ]
+    
+    headers = {"User-Agent": "Mozilla/5.0"}
+    all_articles = []
+
+    for url in urls:
+        response = requests.get(url, headers=headers)
+        if response.status_code != 200:
+            print(f"❌ Failed to fetch Yahoo Finance news from {url}. Status Code: {response.status_code}")
+            continue
+
+        soup = BeautifulSoup(response.text, "html.parser")
+        articles = soup.select("li.stream-item")  # Select all news articles
+        print(f"🔍 {len(articles)} articles fetched from {url}")
+
+        all_articles.extend(articles)
+
+    return all_articles
+
+# 🔹 Extract, filter, and grade articles
+def extract_articles():
+    """Extracts stock news articles and assigns grades & scores."""
+    all_articles = []  # Stores all extracted articles
+
+    # 🔹 Fetch all articles first
+    articles = fetch_news()
 
     for article in articles:
-        title = article.get("headline")
-        summary = article.get("first_paragraph")
+        headline_tag = article.select_one("h3")  # Extract headline
+        link_tag = article.select_one("a.subtle-link")  # Extract link
+        paragraph_tag = article.select_one("p")  # Extract first paragraph
+        time_tag = article.select_one("time")  # Extract article date
 
-        if title and summary:  # 🔹 Exclude null values
-            extracted_data.append({
-                "headline": title,
-                "summary": summary
-            })
+        headline = headline_tag.text.strip() if headline_tag else None
+        link = f"https://finance.yahoo.com{link_tag['href']}" if link_tag and 'href' in link_tag.attrs else None
+        first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
+        article_date = time_tag["datetime"].split("T")[0] if time_tag and "datetime" in time_tag.attrs else None
 
-    # 🔹 Save extracted data to news2.json
-    with open(NEW_EXPORT_FILE_PATH, "w") as new_file:
-        json.dump(extracted_data, new_file, indent=4)
+        # 🔹 Assign grade & score immediately
+        grade, score = assign_grade(first_paragraph)
 
-    print(f"✅ Successfully saved {len(extracted_data)} articles to {NEW_EXPORT_FILE_PATH}")
+        all_articles.append({
+            "headline": headline,
+            "link": link,
+            "first_paragraph": first_paragraph,
+            "date": article_date,
+            "grade": grade, 
+            "score": score  
+        })
+    
+    return all_articles  # ✅ Corrected return statement
 
-# 🔹 Run the function
+# 🔹 Define export file path
+base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
+EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
+# 🔹 Run the scraper and save results
 if __name__ == "__main__":
-    extract_and_export_titles_summaries()
+    extracted_articles = extract_articles()
+
+    if extracted_articles:
+        with open(EXPORT_FILE_PATH, "w") as json_file:
+            json.dump(extracted_articles, json_file, indent=4)
+        print(f"✅ Saved {len(extracted_articles)} articles to {EXPORT_FILE_PATH}")
+    else:
+        print("❌ No articles found.")
