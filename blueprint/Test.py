@@ -96,8 +96,10 @@ def extract_articles():
             "grade": grade, 
             "score": score  
         })
+
+        false_articles.append()
         if headline == "Null" or link == "Null":  
-            continue  # Skip invalid articles
+            return false
             
     return all_articles  # ✅ Corrected return statement
 
