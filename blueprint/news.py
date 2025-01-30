@@ -108,10 +108,7 @@ def extract_articles():
             "score": score  
         })
         
-        none_articles.append()
         
-        if headline == NULL or link == NULL  :  
-            return none_articles
     
     return all_articles  # ✅ Corrected return statement
 
