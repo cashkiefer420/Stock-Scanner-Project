@@ -90,7 +90,7 @@ def extract_articles():
         if not headline_tag or not link_tag:  
             continue  # Skip invalid articles
 
-        headline = headline_tag.text.strip()
+         headline = headline_tag.text.strip() if headline_tag else None
         link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
 
@@ -107,6 +107,11 @@ def extract_articles():
             "grade": grade, 
             "score": score  
         })
+        
+        none_articles.append()
+        
+        if headline == NULL or link == NULL  :  
+            return none_articles
     
     return all_articles  # ✅ Corrected return statement
 
@@ -135,11 +140,9 @@ if __name__ == "__main__":
     extracted_articles = extract_articles()
 
     if extracted_articles:
-        # Ensure directory exists before saving the file
-        os.makedirs(os.path.dirname(EXPORT_FILE_PATH), exist_ok=True)
 
         with open(EXPORT_FILE_PATH, "w") as json_file:
-            json.dump(extracted_articles, json_file, indent=4)
+            json.dump(all_articles, json_file, indent=4)
         
         print(f"✅ Saved {len(extracted_articles)} articles to {EXPORT_FILE_PATH}")
     else:
