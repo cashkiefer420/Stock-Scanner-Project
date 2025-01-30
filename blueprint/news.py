@@ -63,8 +63,8 @@ def fetch_news():
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # Updated selector for news articles
-        articles = soup.select("li.stream-item")
+        # 🔹 Updated selector for Yahoo Finance articles
+        articles = soup.select("div.js-stream-content")  # Updated selector
 
         print(f"🔍 {len(articles)} articles fetched from {url}")
 
@@ -82,19 +82,22 @@ def extract_articles():
 
     for article in articles:
         # Ensure elements exist before accessing them
-        headline_tag = article.select_one("h3 a")
-        link_tag = article.select_one("h3 a")
-        paragraph_tag = article.select_one("p")
-        meta_date_tag = article.select_one('meta[itemprop="datePublished"]')
+        headline_tag = article.select_one("h3 a")  # Headline and link
+        paragraph_tag = article.select_one("p")  # Summary text
+        meta_date_tag = article.select_one("time")  # Date tag
 
-        if not headline_tag or not link_tag:  
+        if not headline_tag:  
             continue  # Skip invalid articles
 
-        headline = headline_tag.text.strip() if headline_tag else None
-        link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
+        headline = headline_tag.text.strip()
+        link = f"https://finance.yahoo.com{headline_tag['href']}" if 'href' in headline_tag.attrs else None
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
 
-        article_date = meta_date_tag["content"].split("T")[0] if meta_date_tag and "content" in meta_date_tag.attrs else datetime.today().strftime("%Y-%m-%d")
+        # 🔹 Extract date properly
+        if meta_date_tag and "datetime" in meta_date_tag.attrs:
+            article_date = meta_date_tag["datetime"].split("T")[0]
+        else:
+            article_date = fetch_article_date(link) if link else datetime.today().strftime("%Y-%m-%d")
 
         # 🔹 Assign grade & score immediately
         grade, score = assign_grade(first_paragraph)
@@ -103,18 +106,19 @@ def extract_articles():
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
-            "date": article_date,  # ✅ Now correctly extracted
+            "date": article_date,  # ✅ Fixed date extraction
             "grade": grade, 
             "score": score  
         })
-        
-        
     
-    return all_articles  # ✅ Corrected return statement
+    return all_articles  # ✅ Return extracted articles
 
 # 🔹 Fetch date from article page if not found in meta tag
 def fetch_article_date(url):
     """Fetches the article's publication date from its page."""
+    if not url:
+        return None
+
     try:
         headers = {"User-Agent": "Mozilla/5.0"}
         response = requests.get(url, headers=headers)
@@ -137,9 +141,11 @@ if __name__ == "__main__":
     extracted_articles = extract_articles()
 
     if extracted_articles:
+        # Ensure directory exists before saving the file
+        os.makedirs(os.path.dirname(EXPORT_FILE_PATH), exist_ok=True)
 
         with open(EXPORT_FILE_PATH, "w") as json_file:
-            json.dump(all_articles, json_file, indent=4)
+            json.dump(extracted_articles, json_file, indent=4)
         
         print(f"✅ Saved {len(extracted_articles)} articles to {EXPORT_FILE_PATH}")
     else:
