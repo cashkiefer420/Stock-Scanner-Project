@@ -64,7 +64,7 @@ def fetch_news():
         soup = BeautifulSoup(response.text, "html.parser")
 
         # Updated selector for news articles
-        articles = soup.select("li.js-stream-content div")  
+        articles = soup.select("li.stream-item")
 
         print(f"🔍 {len(articles)} articles fetched from {url}")
 
@@ -94,15 +94,7 @@ def extract_articles():
         link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
 
-        # Use meta tag for date extraction
-        if meta_date_tag and "content" in meta_date_tag.attrs:
-            article_date = meta_date_tag["content"].split("T")[0]
-        else:
-            # Try fetching date from the actual article page
-            article_date = fetch_article_date(link) if link else None  
-
-        if not article_date:  
-            continue  # Skip articles without dates
+        article_date = meta_date_tag["content"].split("T")[0] if meta_date_tag and "content" in meta_date_tag.attrs else datetime.today().strftime("%Y-%m-%d")
 
         # 🔹 Assign grade & score immediately
         grade, score = assign_grade(first_paragraph)
