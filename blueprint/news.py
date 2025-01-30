@@ -90,7 +90,7 @@ def extract_articles():
         if not headline_tag or not link_tag:  
             continue  # Skip invalid articles
 
-         headline = headline_tag.text.strip() if headline_tag else None
+        headline = headline_tag.text.strip() if headline_tag else None
         link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
 
