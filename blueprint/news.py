@@ -82,13 +82,14 @@ def extract_articles():
 
     for article in articles:
         # Ensure elements exist before accessing them
-        headline_tag = article.select_one("h3 a")  # Headline and link
+        headline_tag = article.select_one("h3")  # Headline and link
         paragraph_tag = article.select_one("p")  # Summary text
-        meta_date_tag = article.select_one("time")  # Date tag
+        meta_date_tag = article.select_one("time")
+        ticker_tag = article.select_one("data-symbol")
 
-        if not headline_tag:  
-            continue  # Skip invalid articles
+        
 
+        ticker = ticekr_tag.text.strip()
         headline = headline_tag.text.strip()
         link = f"https://finance.yahoo.com{headline_tag['href']}" if 'href' in headline_tag.attrs else None
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
