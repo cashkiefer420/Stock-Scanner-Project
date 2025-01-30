@@ -79,9 +79,7 @@ def extract_articles():
         paragraph_tag = article.select_one("p")  # Extract first paragraph
         time_tag = article.select_one('meta[itemprop="datePublished"]')
         
-        if headline_tag == "Null" or link_tag == "Null":  
-            continue  # Skip invalid articles
-        headline = headline_tag.text.strip()
+        headline = headline_tag.text.strip() if headline_tag else None
         link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
         
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
@@ -98,7 +96,9 @@ def extract_articles():
             "grade": grade, 
             "score": score  
         })
-    
+        if headline == "Null" or link == "Null":  
+            continue  # Skip invalid articles
+            
     return all_articles  # ✅ Corrected return statement
 
 # 🔹 Define export file path
