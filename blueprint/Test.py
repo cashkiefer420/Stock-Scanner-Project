@@ -79,7 +79,7 @@ def extract_articles():
         paragraph_tag = article.select_one("p")  # Extract first paragraph
         time_tag = article.select_one('meta[itemprop="datePublished"]')
         
-        if not headline_tag or not link_tag:  
+        if headline_tag is "Null" or link_tag is "Null":  
             continue  # Skip invalid articles
         headline = headline_tag.text.strip()
         link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
