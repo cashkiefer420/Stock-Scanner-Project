@@ -63,8 +63,8 @@ def fetch_news():
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # Updated selector for news articles
-        articles = soup.select("li.stream-item")
+        # 🔹 Fixed selector: Selecting anchor tags inside article blocks
+        articles = soup.select("li.js-stream-content div")
 
         print(f"🔍 {len(articles)} articles fetched from {url}")
 
@@ -82,19 +82,16 @@ def extract_articles():
 
     for article in articles:
         # Ensure elements exist before accessing them
-        headline_tag = article.select_one("h3 a")
-        link_tag = article.select_one("h3 a")
-        paragraph_tag = article.select_one("p")
-        
-
-        if not headline_tag or not link_tag:  
-            continue  # Skip invalid articles
-
+        headline_tag = article  # Article link tag (h3 > a)
+        link = f"https://finance.yahoo.com{headline_tag['href']}" if 'href' in headline_tag.attrs else None
         headline = headline_tag.text.strip()
-        link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
-        first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
 
-        
+        # 🔹 Fetch article summary (meta description)
+        first_paragraph = fetch_article_summary(link) if link else None
+
+        # 🔹 Extract date properly
+        article_date = fetch_article_date(link) if link else datetime.today().strftime("%Y-%m-%d")
+
         # 🔹 Assign grade & score immediately
         grade, score = assign_grade(first_paragraph)
 
@@ -102,23 +99,70 @@ def extract_articles():
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
+            "date": article_date,  # ✅ Fixed date extraction
             "grade": grade, 
             "score": score  
         })
     
-    return all_articles  # ✅ Corrected return statement
+    return all_articles  # ✅ Return extracted articles
 
-# 🔹 Run the scraper and save results
-if __name__ == "__main__":
-    extracted_articles = extract_articles()
+# 🔹 Fetch date from article page if not found in meta tag
+def fetch_article_date(url):
+    """Fetches the article's publication date from its page."""
+    if not url:
+        return None
 
-    if extracted_articles:
-        # Ensure directory exists before saving the file
-        os.makedirs(os.path.dirname(EXPORT_FILE_PATH), exist_ok=True)
+    try:
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(url, headers=headers)
+        if response.status_code != 200:
+            return None
 
-        with open(EXPORT_FILE_PATH, "w") as json_file:
-            json.dump(extracted_articles, json_file, indent=4)
+        soup = BeautifulSoup(response.text, "html.parser")
+        meta_date = soup.select_one('meta[property="article:published_time"]')
+
+        if meta_date and "content" in meta_date.attrs:
+            return meta_date["content"].split("T")[0]
+
+    except Exception as e:
+        print(f"⚠️ Error fetching date for {url}: {e}")
+
+    return None  # Return None if date is not found
+
+def fetch_article_date(url):
+    """Fetches the article's publication date from its page."""
+    if not url:
+        return None
+
+    try:
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(url, headers=headers)
+        if response.status_code != 200:
+            return None
+
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        # 🔹 Try extracting from meta tag first
+        meta_date = soup.select_one('meta[property="article:published_time"]')
+        if meta_date and "content" in meta_date.attrs:
+            return meta_date["content"].split("T")[0]  # Extract YYYY-MM-DD format
         
-        print(f"✅ Saved {len(extracted_articles)} articles to {EXPORT_FILE_PATH}")
-    else:
-        print("❌ No valid articles found.")
+        # 🔹 If no meta tag found, try extracting from publishing div
+        publishing_div = soup.select_one("div.publishing")
+        if publishing_div:
+            text = publishing_div.get_text(strip=True)
+            parts = text.split("•")  # Separate source name and time info
+            if len(parts) > 1:
+                raw_date = parts[-1].strip()  # Extract the last part (e.g., "19 hours ago")
+                
+                # Convert relative time to actual date
+                if "hour" in raw_date or "minute" in raw_date:
+                    return datetime.today().strftime("%Y-%m-%d")  # Today’s date
+                elif "day" in raw_date:
+                    days_ago = int(raw_date.split()[0])
+                    return (datetime.today() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
+        
+    except Exception as e:
+        print(f"⚠️ Error fetching date for {url}: {e}")
+
+    return None  # Return None if date is not found
