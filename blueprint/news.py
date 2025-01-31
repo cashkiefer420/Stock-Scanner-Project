@@ -85,7 +85,7 @@ def extract_articles():
         headline_tag = article.select_one("h3 a")
         link_tag = article.select_one("h3 a")
         paragraph_tag = article.select_one("p")
-        meta_date_tag = article.select_one('meta[itemprop="datePublished"]')
+        
 
         if not headline_tag or not link_tag:  
             continue  # Skip invalid articles
@@ -94,8 +94,7 @@ def extract_articles():
         link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
 
-        article_date = meta_date_tag["content"].split("T")[0] if meta_date_tag and "content" in meta_date_tag.attrs else datetime.today().strftime("%Y-%m-%d")
-
+        
         # 🔹 Assign grade & score immediately
         grade, score = assign_grade(first_paragraph)
 
@@ -103,32 +102,11 @@ def extract_articles():
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
-            "date": article_date,  # ✅ Now correctly extracted
             "grade": grade, 
             "score": score  
         })
     
     return all_articles  # ✅ Corrected return statement
-
-# 🔹 Fetch date from article page if not found in meta tag
-def fetch_article_date(url):
-    """Fetches the article's publication date from its page."""
-    try:
-        headers = {"User-Agent": "Mozilla/5.0"}
-        response = requests.get(url, headers=headers)
-        if response.status_code != 200:
-            return None
-
-        soup = BeautifulSoup(response.text, "html.parser")
-        meta_date = soup.select_one('meta[property="article:published_time"]')
-
-        if meta_date and "content" in meta_date.attrs:
-            return meta_date["content"].split("T")[0]
-
-    except Exception as e:
-        print(f"⚠️ Error fetching date for {url}: {e}")
-
-    return None  # Return None if date is not found
 
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":
