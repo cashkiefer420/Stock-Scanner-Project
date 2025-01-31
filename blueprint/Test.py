@@ -58,10 +58,13 @@ def fetch_news():
             continue
 
         soup = BeautifulSoup(response.text, "html.parser")
-        articles = soup.select("li.stream-item")  # Select all news articles
+        articles = soup.select("h3 a")  # Select article links
         print(f"🔍 {len(articles)} articles fetched from {url}")
 
-        all_articles.extend(articles)
+        for link in articles:
+            if link and 'href' in link.attrs:  # Safely check for href
+                article_url = f"https://finance.yahoo.com{link['href']}"
+                all_articles.append(article_url)
 
     return all_articles
 
@@ -69,39 +72,48 @@ def fetch_news():
 def extract_articles():
     """Extracts stock news articles and assigns grades & scores."""
     all_articles = []  # Stores all extracted articles
-
-    # 🔹 Fetch all articles first
     articles = fetch_news()
 
-    for article in articles:
-        headline_tag = article.select_one("h3")  # Extract headline
-        link_tag = article.select_one("a.subtle-link")  # Extract link
-        paragraph_tag = article.select_one("p")  # Extract first paragraph
-        time_tag = article.select_one('meta[itemprop="datePublished"]')
-        
-        headline = headline_tag.text.strip() if headline_tag else None
-        link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
-        
-        first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
-        article_date = time_tag["datetime"].split("T")[0] if time_tag and "datetime" in time_tag.attrs else None
+    headers = {"User-Agent": "Mozilla/5.0"}
+
+    for article_url in articles:
+        response = requests.get(article_url, headers=headers)
+        if response.status_code != 200:
+            print(f"❌ Failed to fetch article: {article_url}")
+            continue
+
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        # Extract headline (safe access)
+        headline_tag = soup.select_one("h1")
+        headline = headline_tag.text.strip() if headline_tag else "No headline available"
+
+        # Extract date (safe access)
+        time_tag = soup.select_one('time')
+        article_date = time_tag["datetime"].split("T")[0] if time_tag and time_tag.has_attr("datetime") else "Unknown date"
+
+        # Extract first paragraph (safe access)
+        paragraph_tag = soup.select_one("p")
+        first_paragraph = paragraph_tag.text.strip() if paragraph_tag else "No content available"
 
         # 🔹 Assign grade & score immediately
         grade, score = assign_grade(first_paragraph)
 
         all_articles.append({
             "headline": headline,
-            "link": link,
+            "link": article_url,
             "first_paragraph": first_paragraph,
             "date": article_date,
             "grade": grade, 
             "score": score  
         })
             
-    return all_articles  # ✅ Corrected return statement
+    return all_articles
 
 # 🔹 Define export file path
 base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
+
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":
     extracted_articles = extract_articles()
