@@ -64,7 +64,7 @@ def fetch_news():
         soup = BeautifulSoup(response.text, "html.parser")
 
         # 🔹 Fixed selector: Selecting anchor tags inside article blocks
-        articles = soup.select("li.js-stream-content h3 a")
+        articles = soup.select("li.js-stream-content div")
 
         print(f"🔍 {len(articles)} articles fetched from {url}")
 
