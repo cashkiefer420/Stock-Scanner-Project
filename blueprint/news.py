@@ -17,7 +17,7 @@ EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
 def assign_grade(text):
     if not text:
         return "N/A", 0  # Return default values if text is None
-    
+
     try:
         text = text.encode('utf-8', 'ignore').decode('utf-8')  # Remove problematic characters
     except Exception as e:
@@ -28,17 +28,17 @@ def assign_grade(text):
     sentiment = analyzer.polarity_scores(text)
     compound_score = sentiment['compound']  # Overall sentiment score
 
-    # Assign grade based on compound score
+    # Adjusted grading scale for better differentiation
     if compound_score >= 0.6:
-        grade, score = 'A', int((compound_score + 1) * 50)  
+        grade, score = 'A', int(compound_score * 100)
     elif 0.3 <= compound_score < 0.6:
-        grade, score = 'B', int((compound_score + 1) * 45)
+        grade, score = 'B', int(compound_score * 90)
     elif 0.1 <= compound_score < 0.3:
-        grade, score = 'C', int((compound_score + 1) * 40)
+        grade, score = 'C', int(compound_score * 80)
     elif -0.1 <= compound_score < 0.1:
-        grade, score = 'D', int((compound_score + 1) * 35)
+        grade, score = 'D', int(compound_score * 70)
     else:
-        grade, score = 'F', int((compound_score + 1) * 30)
+        grade, score = 'F', int(compound_score * 60)
 
     return grade, score
 
@@ -63,8 +63,8 @@ def fetch_news():
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # 🔹 Updated selector for Yahoo Finance articles
-        articles = soup.select("div.js-stream-content")  # Updated selector
+        # 🔹 Improved selector to target article links
+        articles = soup.select("div.js-stream-content a.Ov(h)")
 
         print(f"🔍 {len(articles)} articles fetched from {url}")
 
@@ -81,36 +81,34 @@ def extract_articles():
     articles = fetch_news()
 
     for article in articles:
-        # Ensure elements exist before accessing them
-        headline_tag = article.select_one("h3")  # Headline and link
-        paragraph_tag = article.select_one("p")  # Summary text
-        meta_date_tag = article.select_one("time")
-        ticker_tag = article.select_one("data-symbol")
+        try:
+            # Ensure elements exist before accessing them
+            headline_tag = article
+            if not headline_tag:  
+                continue  # Skip invalid articles
 
-        
+            headline = headline_tag.text.strip()
+            link = f"https://finance.yahoo.com{headline_tag['href']}" if 'href' in headline_tag.attrs else None
 
-        ticker = ticekr_tag.text.strip()
-        headline = headline_tag.text.strip()
-        link = f"https://finance.yahoo.com{headline_tag['href']}" if 'href' in headline_tag.attrs else None
-        first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
+            # 🔹 Extract first paragraph from the article page
+            first_paragraph = fetch_article_summary(link) if link else None
 
-        # 🔹 Extract date properly
-        if meta_date_tag and "datetime" in meta_date_tag.attrs:
-            article_date = meta_date_tag["datetime"].split("T")[0]
-        else:
+            # 🔹 Extract date properly
             article_date = fetch_article_date(link) if link else datetime.today().strftime("%Y-%m-%d")
 
-        # 🔹 Assign grade & score immediately
-        grade, score = assign_grade(first_paragraph)
+            # 🔹 Assign grade & score immediately
+            grade, score = assign_grade(first_paragraph)
 
-        all_articles.append({
-            "headline": headline,
-            "link": link,
-            "first_paragraph": first_paragraph,
-            "date": article_date,  # ✅ Fixed date extraction
-            "grade": grade, 
-            "score": score  
-        })
+            all_articles.append({
+                "headline": headline,
+                "link": link,
+                "first_paragraph": first_paragraph,
+                "date": article_date,  # ✅ Fixed date extraction
+                "grade": grade, 
+                "score": score  
+            })
+        except Exception as e:
+            print(f"⚠️ Error processing an article: {e}")
     
     return all_articles  # ✅ Return extracted articles
 
@@ -127,7 +125,9 @@ def fetch_article_date(url):
             return None
 
         soup = BeautifulSoup(response.text, "html.parser")
-        meta_date = soup.select_one('meta[property="article:published_time"]')
+        
+        # 🔹 Try multiple meta tags for better accuracy
+        meta_date = soup.select_one('meta[property="article:published_time"]') or soup.select_one('meta[name="date"]')
 
         if meta_date and "content" in meta_date.attrs:
             return meta_date["content"].split("T")[0]
@@ -136,6 +136,32 @@ def fetch_article_date(url):
         print(f"⚠️ Error fetching date for {url}: {e}")
 
     return None  # Return None if date is not found
+
+# 🔹 Fetch summary from article page
+def fetch_article_summary(url):
+    """Fetches the first paragraph of the article for sentiment analysis."""
+    if not url:
+        return None
+
+    try:
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(url, headers=headers)
+        if response.status_code != 200:
+            return None
+
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        # 🔹 Look for main article paragraph
+        paragraphs = soup.select("p")
+        for para in paragraphs:
+            text = para.get_text().strip()
+            if len(text) > 50:  # Avoid short metadata text
+                return text
+
+    except Exception as e:
+        print(f"⚠️ Error fetching summary for {url}: {e}")
+
+    return None  # Return None if no valid summary is found
 
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":
