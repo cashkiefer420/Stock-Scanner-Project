@@ -1,15 +1,103 @@
 [
     {
-        "headline": "Comcast (NASDAQ:CMCSA) Surprises With Q4 Sales",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/comcast-nasdaq-cmcsa-surprises-q4-122839686.html",
-        "first_paragraph": "Telecommunications and media company Comcast (NASDAQ:CMCSA) reported Q4 CY2024 results topping the market\u2019s revenue expectations, with sales up 2.1% year on year to $31.92 billion. Its non-GAAP profit of $0.96 per share was 11.4% above analysts\u2019 consensus estimates.",
+        "headline": "Apple (NASDAQ:AAPL) Reports Q4 In Line With Expectations",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/apple-nasdaq-aapl-reports-q4-214056372.html",
+        "first_paragraph": "iPhone and iPad maker Apple (NASDAQ:AAPL) met Wall Street\u2019s revenue expectations in Q4 CY2024, with sales up 4% year on year to $124.3 billion. Its GAAP profit of $2.40 per share was 2.5% above analysts\u2019 consensus estimates.",
         "date": null,
         "grade": "A",
         "score": 81
     },
     {
-        "headline": "Stock market today: Nasdaq, S&P 500 futures rise, Dow slips as Big Tech earnings take center stage",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/live/stock-market-today-nasdaq-sp-500-futures-rise-dow-slips-as-big-tech-earnings-take-center-stage-122236763.html",
+        "headline": "S&P 500 Gains and Losses Today: UPS Stock Drops as Shipper Trims Amazon Deliveries",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/p-500-gains-losses-today-214047548.html",
+        "first_paragraph": "The S&P 500 added 0.4% on Thursday, Jan. 30, as a report showed consumer spending continued to buoy economic growth.",
+        "date": null,
+        "grade": "B",
+        "score": 62
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Adtalem (NYSE:ATGE) Reports Upbeat Q4, Stock Soars",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/adtalem-nyse-atge-reports-upbeat-213804527.html",
+        "first_paragraph": "Vocational education company Adtalem Global Education (NYSE:ATGE) announced better-than-expected revenue in Q4 CY2024, with sales up 13.9% year on year to $447.7 million. The company\u2019s full-year revenue guidance of $1.75 billion at the midpoint came in 1.5% above analysts\u2019 estimates. Its non-GAAP profit of $1.81 per share was 32.1% above analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "A",
+        "score": 81
+    },
+    {
+        "headline": "Apple earnings top Wall Street forecasts while iPhone, China sales fall short",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/apple-earnings-top-wall-street-forecasts-while-iphone-china-sales-fall-short-213001552.html",
+        "first_paragraph": "Apple reported its Q1 2025 earnings after the bell Thursday, beating on expectations, but falling short on iPhone sales.",
+        "date": null,
+        "grade": "F",
+        "score": 16
+    },
+    {
+        "headline": "Boot Barn (NYSE:BOOT) Reports Q4 In Line With Expectations But Stock Drops",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/boot-barn-nyse-boot-reports-212837043.html",
+        "first_paragraph": "Clothing and footwear retailer Boot Barn (NYSE:BOOT) met Wall Street\u2019s revenue expectations in Q4 CY2024, with sales up 16.9% year on year to $608.2 million. The company expects next quarter\u2019s revenue to be around $455.5 million, close to analysts\u2019 estimates. Its GAAP profit of $2.43 per share was 0.8% above analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "A",
+        "score": 81
+    },
+    {
+        "headline": "Deckers (NYSE:DECK) Surprises With Q4 Sales But Stock Drops 15.8%",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/deckers-nyse-deck-surprises-q4-212605024.html",
+        "first_paragraph": "Footwear and apparel conglomerate Deckers (NYSE:DECK) reported Q4 CY2024 results topping the market\u2019s revenue expectations, with sales up 17.1% year on year to $1.83 billion. On the other hand, the company\u2019s full-year revenue guidance of $4.9 billion at the midpoint came in 0.7% below analysts\u2019 estimates. Its GAAP profit of $3 per share was 14.9% above analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "A",
+        "score": 90
+    },
+    {
+        "headline": "Intel (NASDAQ:INTC) Beats Q4 Sales Targets But Quarterly Revenue Guidance Significantly Misses Expectations",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/intel-nasdaq-intc-beats-q4-212250878.html",
+        "first_paragraph": "Computer processor maker Intel (NASDAQ:INTC) reported Q4 CY2024 results topping the market\u2019s revenue expectations, but sales fell by 7.4% year on year to $14.26 billion. On the other hand, next quarter\u2019s revenue guidance of $12.2 billion was less impressive, coming in 5.4% below analysts\u2019 estimates. Its non-GAAP profit of $0.13 per share was 8.7% above analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "A",
+        "score": 97
+    },
+    {
+        "headline": "Nvidia retail investors told us why they're unfazed by DeepSeek's market disruption and refusing to sell",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/nvidia-retail-investors-told-us-180002450.html",
+        "first_paragraph": "Retail investors bought a net $562 million of Nvidia stock on Monday, the largest single-day inflow in at least 10 years, VandaTrack said.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Atlassian (NASDAQ:TEAM) Reports Upbeat Q4, Stock Jumps 17.7%",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/atlassian-nasdaq-team-reports-upbeat-211747197.html",
+        "first_paragraph": "IT project management software company, Atlassian (NASDAQ:TEAM) reported Q4 CY2024 results topping the market\u2019s revenue expectations, with sales up 21.4% year on year to $1.29 billion. Guidance for next quarter\u2019s revenue was optimistic at $1.35 billion at the midpoint, 2.4% above analysts\u2019 estimates. Its non-GAAP profit of $0.96 per share was 27.1% above analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "A",
+        "score": 87
+    },
+    {
+        "headline": "KLA Corporation (NASDAQ:KLAC) Delivers Strong Q4 Numbers, Next Quarter\u2019s Sales Guidance is Optimistic",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/kla-corporation-nasdaq-klac-delivers-211241999.html",
+        "first_paragraph": "Semiconductor manufacturing equipment maker KLA Corporation (NASDAQ:KLAC) reported Q4 CY2024 results exceeding the market\u2019s revenue expectations, with sales up 23.7% year on year to $3.08 billion. On top of that, next quarter\u2019s revenue guidance ($3 billion at the midpoint) was surprisingly good and 3.8% above what analysts were expecting. Its non-GAAP profit of $8.20 per share was 5.7% above analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "A",
+        "score": 93
+    },
+    {
+        "headline": "Stock market today: Dow, S&P 500, Nasdaq move higher with Apple earnings in the wings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/live/stock-market-today-dow-sp-500-nasdaq-move-higher-with-apple-earnings-in-the-wings-143104726.html",
         "first_paragraph": "Investors are combing the first batch of Big Tech earnings as they wait for Apple to report.",
         "date": null,
         "grade": "D",
@@ -24,81 +112,145 @@
         "score": 0
     },
     {
-        "headline": "Allegro MicroSystems\u2019s (NASDAQ:ALGM) Q4 Sales Top Estimates But Stock Drops",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/allegro-microsystems-nasdaq-algm-q4-122213278.html",
-        "first_paragraph": "Chip designer Allegro MicroSystems (NASDAQ:ALGM) announced better-than-expected revenue in Q4 CY2024, but sales fell by 30.2% year on year to $177.9 million. Guidance for next quarter\u2019s revenue was better than expected at $185 million at the midpoint, 0.7% above analysts\u2019 estimates. Its GAAP loss of $0.04 per share was in line with analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "B",
-        "score": 70
-    },
-    {
-        "headline": "Tractor Supply (NASDAQ:TSCO) Posts Q4 Sales In Line With Estimates But Stock Drops",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tractor-supply-nasdaq-tsco-posts-121851562.html",
-        "first_paragraph": "Rural goods retailer Tractor Supply (NASDAQ:TSCO) met Wall Street\u2019s revenue expectations in Q4 CY2024, with sales up 3.1% year on year to $3.77 billion. Its GAAP profit of $0.44 per share was 3.3% below analysts\u2019 consensus estimates.",
+        "headline": "Intel (NASDAQ:INTC) Q4: Beats On Revenue But Quarterly Revenue Guidance Significantly Misses Expectations",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/intel-nasdaq-intc-q4-beats-210732720.html",
+        "first_paragraph": "Computer processor maker Intel (NASDAQ:INTC) reported Q4 CY2024 results beating Wall Street\u2019s revenue expectations, but sales fell by 7.4% year on year to $14.26 billion. On the other hand, next quarter\u2019s revenue guidance of $12.2 billion was less impressive, coming in 5.4% below analysts\u2019 estimates. Its non-GAAP loss of $0 per share was significantly below analysts\u2019 consensus estimates.",
         "date": null,
         "grade": "A",
-        "score": 81
+        "score": 89
     },
     {
-        "headline": "Norway's wealth fund sticks to investments in renewables despite market setbacks",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/norways-wealth-fund-sticks-investments-121819402.html",
-        "first_paragraph": "Norway's $1.8 trillion wealth fund, the world's largest, remains committed to investments in renewable assets despite recent market setbacks and will seek opportunities in both the listed and private markets, a senior fund official said on Thursday.  Renewable energy assets have significantly underperformed in the market in 2024, with some previous investor favourites such as Danish offshore wind developer Orsted taking big hits to their valuations.  The fund's own investments in unlisted renewable energy infrastructure, which includes stakes in offshore wind farms with Orsted and in Spanish utility Iberdrola's renewables portfolio, posted on Wednesday a negative return of -10% for 2024.",
-        "date": null,
-        "grade": "A",
-        "score": 91
-    },
-    {
-        "headline": "Hearing-Aid Maker Transforms Into Unlikely AI Stock Winner",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/swiss-hearing-aid-maker-transforms-050000058.html",
-        "first_paragraph": "(Bloomberg) -- Hearing-aid makers have become one of the stock market\u2019s less likely artificial intelligence plays.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoUS Students\u2019 Reading Scores Drop to Worst in More Than 20 YearsTexas HOA Charged With Discrimination for Banning Section 8 RentersShares of Sonova Holding AG, a Swiss hearing-aid maker,",
+        "headline": "Here\u2019s why Microsoft\u2019s stock got pummeled after it beat revenue and profit forecasts",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-microsoft-stock-got-pummeled-210451068.html",
+        "first_paragraph": "Investors grow concerned that AI expenses and a looming price war in cloud services could blow up its profits.",
         "date": null,
         "grade": "F",
-        "score": 5
+        "score": 19
     },
     {
-        "headline": "CSW (NASDAQ:CSWI) Exceeds Q4 Expectations",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/csw-nasdaq-cswi-exceeds-q4-115103019.html",
-        "first_paragraph": "Industrial products company CSW (NASDAQ:CSWI) beat Wall Street\u2019s revenue expectations in Q4 CY2024, with sales up 10.7% year on year to $193.6 million. Its non-GAAP profit of $1.48 per share was 3.2% above analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 81
-    },
-    {
-        "headline": "UPS Stock Drops as Shipping Giant Reports Weaker-Than-Expected Q4 Results",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/ups-stock-drops-shipping-giant-113118294.html",
-        "first_paragraph": "Shares of United Parcel Service sank 10% in premarket trading Thursday after the shipping giant reported worse-than-expected fourth-quarter results.",
-        "date": null,
-        "grade": "A",
-        "score": 80
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "United Parcel Service (NYSE:UPS) Reports Q4 In Line With Expectations But Stock Drops",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/united-parcel-nyse-ups-reports-111256373.html",
-        "first_paragraph": "Parcel delivery company UPS (NYSE:UPS) met Wall Street\u2019s revenue expectations in Q4 CY2024, with sales up 1.5% year on year to $25.3 billion. On the other hand, the company\u2019s full-year revenue guidance of $89 billion at the midpoint came in 6.3% below analysts\u2019 estimates. Its non-GAAP profit of $2.75 per share was 8.6% above analysts\u2019 consensus estimates.",
+        "headline": "Why Broadcom (AVGO) Stock Is Up Today",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-broadcom-avgo-stock-today-202329197.html",
+        "first_paragraph": "Shares of fabless chip and software maker Broadcom (NASDAQ:AVGO) jumped 6.3% in the afternoon session after Meta reported fourth quarter earnings and announced plans to scale up its deployment of MTIA (Meta Training and Inference Accelerator) chips, developed in partnership with Broadcom, to optimize cost. Currently used for ad and organic content workloads, these custom chips will expand to AI training tasks, including generative AI, by 2026. To get a picture of how significant these investment",
         "date": null,
         "grade": "A",
         "score": 90
     },
     {
-        "headline": "IBM Stock Jumps on Better-Than-Estimated Results, Open-Source AI Strategy",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/ibm-stock-jumps-better-estimated-110704655.html",
-        "first_paragraph": "IBM shares are jumping nearly 8% in premarket trading Thursday, a day after the company posted results that topped analysts' estimates as its artificial intelligence-enabled business surged.",
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
         "date": null,
-        "grade": "C",
-        "score": 51
+        "grade": "N/A",
+        "score": 0
     },
     {
-        "headline": "Megacap results lift S&P, Nasdaq futures higher after Fed holds rates steady",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/megacap-results-push-us-stock-110111348.html",
-        "first_paragraph": "Futures linked to the S&P and the Nasdaq rose on Thursday, a day after the Federal Reserve paused its rate-cutting cycle, driven by post-earnings gains in megacaps including Meta and Tesla. Meta Platforms rose 0.9% in premarket trading after beating estimates for fourth-quarter revenue, but forecast that sales in the first quarter might miss estimates. Tesla gained 2.1% after saying it was on track to roll out new, cheaper EV models in the first half of 2025.",
+        "headline": "Markets (and the world) on edge as Trump\u2019s tariff deadline approaches",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/markets-and-the-world-on-edge-as-trumps-tariff-deadline-approaches-201455496.html",
+        "first_paragraph": "Donald Trump's self-imposed deadline for a first round of tariffs on Canada, Mexico, and China looms in less than two days as economic observers and world leaders try to plan amid the uncertainty.",
+        "date": null,
+        "grade": "F",
+        "score": 16
+    },
+    {
+        "headline": "Coursera\u2019s (NYSE:COUR) Q4 Sales Beat Estimates But Stock Drops 12%",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/coursera-nyse-cour-q4-sales-194258575.html",
+        "first_paragraph": "Online learning platform Coursera (NYSE:COUR) reported revenue ahead of Wall Street\u2019s expectations in Q4 CY2024, with sales up 6.1% year on year to $179.2 million. On the other hand, next quarter\u2019s revenue guidance of $175 million was less impressive, coming in 1.8% below analysts\u2019 estimates. Its non-GAAP profit of $0.08 per share was 82.2% above analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "A",
+        "score": 94
+    },
+    {
+        "headline": "Private equity giant Apollo is bringing a red-hot corner of the market to the blockchain",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/private-equity-giant-apollo-bringing-185933775.html",
+        "first_paragraph": "Private credit has boomed in recent years. Apollo's tokenized fund offers a way for investors to buy in via the blockchain.",
+        "date": null,
+        "grade": "B",
+        "score": 62
+    },
+    {
+        "headline": "Watch These IBM Price Levels as Stock Soars After AI Drives Strong Earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/watch-ibm-price-levels-stock-182240269.html",
+        "first_paragraph": "IBM shares soared Thursday after the computing giant posted better-than-expected fourth-quarter earnings, boosted by the strength of its AI business. Monitor these key price levels.",
+        "date": null,
+        "grade": "A",
+        "score": 89
+    },
+    {
+        "headline": "Why Parker-Hannifin (PH) Stock Is Up Today",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-parker-hannifin-ph-stock-182159784.html",
+        "first_paragraph": "Shares of industrial machinery company Parker-Hannifin (NYSE:PH) jumped 6.2% in the morning session after the company reported strong fourth quarter results, which beat analysts' EPS expectations despite a revenue miss. Demand indicators improved, especially in the Aerospace segment, and overall order rate increased across the board. The company then reiterated its previous full-year EPS guidance, demonstrating a focus on balancing growth and profits. Overall, this was a decent quarter.",
+        "date": null,
+        "grade": "A",
+        "score": 97
+    },
+    {
+        "headline": "Why 1-800-FLOWERS (FLWS) Stock Is Nosediving",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-1-800-flowers-flws-181158861.html",
+        "first_paragraph": "Shares of e-commerce florist and gift retailer 1-800-FLOWERS (NASDAQ:FLWS) fell 17.3% in the pre-market session after the company reported weak fourth quarter results, with its revenue and EPS fallin below analysts' expectations. Adding to the bad news, the company's full-year EBITDA guidance missed Wall Street's estimates significantly. Management expressed displeasure at the results, which were marred by \"a softer than anticipated and highly promotional consumer environment, along with a pullb",
+        "date": null,
+        "grade": "F",
+        "score": 13
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "United Parcel Service (UPS) Stock Trades Down, Here Is Why",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/united-parcel-ups-stock-trades-181154551.html",
+        "first_paragraph": "Shares of parcel delivery company UPS (NYSE:UPS) fell 17.6% in the morning session after the company reported weak fourth-quarter results and provided full-year revenue guidance, which missed significantly. Adding to concerns, UPS announced an agreement with its largest customer (Amazon) to cut volume by more than 50% by the second half of 2026, which might be a headwind to future growth. On the other hand, it was encouraging to see United Parcel Service beat analysts' EPS expectations this quar",
+        "date": null,
+        "grade": "A",
+        "score": 94
+    },
+    {
+        "headline": "Why Cigna (CI) Stock Is Down Today",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-cigna-ci-stock-down-181148613.html",
+        "first_paragraph": "Shares of health insurance company Cigna (NYSE:CI) fell 8.5% in the afternoon session after the company reported underwhelming fourth quarter earnings. EPS in the quarter missed and its full-year EPS guidance missed significantly. This is due to higher-than-expected medical loss ratios. On the other hand, Cigna exceeded analysts\u2019 revenue expectations this quarter. Overall, this was a softer quarter.",
+        "date": null,
+        "grade": "D",
+        "score": 32
+    },
+    {
+        "headline": "Why Comcast (CMCSA) Stock Is Nosediving",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-comcast-cmcsa-stock-nosediving-180651774.html",
+        "first_paragraph": "Shares of telecommunications and media company Comcast (NASDAQ:CMCSA) fell 12.5% in the morning session after the company reported weak fourth-quarter results, with key demand growth indicators, including broadband and video customers, continuing to decline year on year, with the former missing expectations. On the other hand, it was encouraging to see Comcast beat analysts' EPS expectations this quarter. Overall, this was a mixed yet weaker quarter.",
+        "date": null,
+        "grade": "B",
+        "score": 64
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Why Is Lam Research (LRCX) Stock Rocketing Higher Today",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-lam-research-lrcx-stock-180651840.html",
+        "first_paragraph": "Shares of semiconductor equipment maker Lam Research (NASDAQ:LRCX) jumped 8.5% in the afternoon session after the company reported impressive fourth-quarter results and provided revenue and EPS guidance for the next quarter, which blew past analysts' expectations. This quarter's revenue and EPS outperformed Wall Street's estimates. Overall, we think this was a decent quarter, with some key metrics above expectations.",
+        "date": null,
+        "grade": "A",
+        "score": 83
+    },
+    {
+        "headline": "Thermo Fisher Stock Surges as Medical Device Maker's Results Top Estimates",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/thermo-fisher-stock-surges-medical-175524014.html",
+        "first_paragraph": "Shares of Thermo Fisher Scientific jumped Thursday after the company's fourth-quarter results topped estimates, as sales increased across all four of its divisions.",
+        "date": null,
+        "grade": "B",
+        "score": 67
+    },
+    {
+        "headline": "Caterpillar Stock Slides After Revenue Misses Projections",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/caterpillar-stock-slides-revenue-misses-173335742.html",
+        "first_paragraph": "Caterpillar shares dropped after the company\u2019s fourth-quarter revenue fell short of expectations before the opening bell Thursday.",
         "date": null,
         "grade": "C",
         "score": 51
@@ -112,28 +264,716 @@
         "score": 0
     },
     {
-        "headline": "Money market account rates today, January 30, 2025 (earn up to 4.75% APY)",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/personal-finance/banking/article/money-market-account-rates-today-thursday-january-30-2025-110034672.html",
-        "first_paragraph": "Looking for the best money market account interest rates available today? Here\u2019s where to find the highest rates. Is a good time to open a money market account?",
+        "headline": "Is Tesla Stock 'Bulletproof' Now? Here's Why Some Investors Think So",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tesla-stock-bulletproof-now-heres-171738554.html",
+        "first_paragraph": "Tech companies are all about selling the future, and few do so more determinedly than Tesla.",
         "date": null,
-        "grade": "A",
-        "score": 94
+        "grade": "D",
+        "score": 35
     },
     {
-        "headline": "Software Stocks in Vogue Again on DeepSeek\u2019s Efficiency Promise",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/software-stocks-vogue-again-deepseek-103000650.html",
-        "first_paragraph": "(Bloomberg) -- DeepSeek\u2019s claim that it has found a lower cost way to create AI models has made software stocks a hot trade.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoUS Students\u2019 Reading Scores Drop to Worst in More Than 20 YearsTexas HOA Charged With Discrimination for Banning Section 8 RentersThe sudden emergence of DeepSeek\u2019s model at fi",
+        "headline": "Top Stock Movers Now: IBM, Las Vegas Sands, UPS, and More",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/top-stock-movers-now-ibm-165509481.html",
+        "first_paragraph": "U.S. equities were mixed at midday as the market turned its focus back to corporate earnings reports.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "Comcast stock sinks as Peacock fails to add more subscribers, broadband losses disappoint",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/comcast-stock-sinks-as-peacock-fails-to-add-more-subscribers-broadband-losses-disappoint-164329954.html",
+        "first_paragraph": "Comcast stock fell double digits on Thursday after the company reported a bigger-than-expected drop in broadband customers and failed to add more subscribers to its Peacock streaming service.",
         "date": null,
         "grade": "F",
-        "score": 3
+        "score": 10
     },
     {
-        "headline": "Analysis-US stock market confronts risks as investors grapple with tech, Fed outlook",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/analysis-us-stock-market-confronts-060545082.html",
-        "first_paragraph": "Risks to the U.S. stock market are piling up as cracks emerge in the technology trade and the path for interest rates is clouded by persistent inflation worries that are being exacerbated by the potential for looming tariffs.  Mixed results from megacap companies Microsoft, Tesla and Meta Platforms on Wednesday threatened to add to volatility following ruptures earlier in the week in the artificial intelligence trade that has helped propel tech's stock market leadership.  The Federal Reserve also paused its rate-cutting cycle on Wednesday -- a decision that investors had been bracing for.",
+        "headline": "Material sciences company Dow posts Q4 loss, says it's cutting 1,500 jobs, 4% of workforce",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/material-sciences-company-dow-posts-161434045.html",
+        "first_paragraph": "Dow Inc.'s fourth-quarter profits came in well below Wall Street expectations and the material sciences company said Thursday that it is slashing 1,500 jobs globally in an effort to cut costs as sales stagnate.  Dow said the staff reductions are part of a broader plan to cut $1 billion in costs, citing \u201cpersistently weak macroeconomic conditions.\u201d  Shares of Midland, Michigan-based Dow tumbled nearly 8% in morning trading.",
+        "date": null,
+        "grade": "F",
+        "score": 22
+    },
+    {
+        "headline": "Comcast Loses More Broadband Subscribers Than Expected, and Stock Tumbles",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/comcast-loses-more-broadband-subscribers-154746943.html",
+        "first_paragraph": "Comcast's broadband customers declined more than anticipated, sending shares plunging Thursday.",
+        "date": null,
+        "grade": "C",
+        "score": 51
+    },
+    {
+        "headline": "Meta's chief AI scientist says market reaction to DeepSeek was 'woefully unjustified.' Here's why.",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/metas-chief-ai-scientist-says-152046611.html",
+        "first_paragraph": "Meta's top AI scientist, Yann LeCun, said there was a \"major misunderstanding\" about how billions in AI investment will be used.",
+        "date": null,
+        "grade": "F",
+        "score": 22
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Whirlpool Stock Sinks on Appliance Maker's Weaker-Than-Expected Results, Outlook",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/whirlpool-stock-sinks-appliance-makers-151751770.html",
+        "first_paragraph": "Whirlpool's North American sales dropped, and the home appliance maker's fourth-quarter results and guidance came up short of forecasts.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "Banks Offer to Do Deals for Free in Hectic Leveraged Loan Market",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/banks-offer-deals-free-hectic-145518314.html",
+        "first_paragraph": "(Bloomberg) -- Investment bankers who cater to private equity firms are offering to do deals for free as a global rally drives rampant demand for leveraged loans.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoHow the 2025 Catholic Jubilee Is Reshaping RomeThey\u2019re pitching a high volume o",
+        "date": null,
+        "grade": "F",
+        "score": 23
+    },
+    {
+        "headline": "Blackstone President Jon\u00a0Gray Calls the Bottom After Office-Market Rout",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/blackstone-president-jon-gray-calls-115808892.html",
+        "first_paragraph": "(Bloomberg) -- Blackstone Inc., the world\u2019s largest commercial property owner, said the worst is over for the global office market after a prolonged slump fueled by the pandemic.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoHow the 2025 Catholic Jubilee Is Reshaping Rome\u201cOffice has bott",
+        "date": null,
+        "grade": "F",
+        "score": 5
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Meta Platforms, CVS Health upgraded: Wall Street's top analyst calls",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/meta-platforms-cvs-health-upgraded-143959429.html",
+        "first_paragraph": "Meta Platforms, CVS Health upgraded: Wall Street's top analyst calls",
+        "date": null,
+        "grade": "C",
+        "score": 48
+    },
+    {
+        "headline": "Tesla stock rises after company pledges return to growth after Q4 results disappoint",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tesla-stock-rises-after-company-pledges-return-to-growth-after-q4-results-disappoint-230732196.html",
+        "first_paragraph": "Tesla's fourth quarter earnings disappointed, but the company's commitment to returning to growth in 2025 saw shares rise in extended trading on Wednesday.",
+        "date": null,
+        "grade": "A",
+        "score": 91
+    },
+    {
+        "headline": "BMO Becomes Second Canadian Bank to Launch Currency-Hedged Global Stocks",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/bmo-second-canadian-bank-launch-142003570.html",
+        "first_paragraph": "(Bloomberg) -- Bank of Montreal is stepping into a booming product category that offers exposure to popular global stocks while hedging against currency volatility, becoming the second Canadian bank to do so. Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump Paves the Way to Deputize Local Police on ImmigrationUS Students\u2019 Reading Scores Drop",
+        "date": null,
+        "grade": "F",
+        "score": 16
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "50 Worst Housing Markets in the US for Growth",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/50-worst-housing-markets-us-120009900.html",
+        "first_paragraph": "When buying a home -- be it to live in or to rent out to generate passive income -- it's important to know your local housing market conditions. Is it strong, stable and growing? Are mortgage rates...",
+        "date": null,
+        "grade": "A",
+        "score": 91
+    },
+    {
+        "headline": "Costco to raise hourly pay for most US store workers to over $30",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/costco-raise-hourly-pay-most-005921551.html",
+        "first_paragraph": "The company will increase hourly pay for its top of the scale employees over the next three years, with the pay rising by $1 to $30.20 in the first year and an extra $1 each in the subsequent two years, according to the memo.  The pay hike comes after Costco Teamsters union members said earlier this month that they voted in favor of a nationwide strike as they entered final round of talks to reach a new contract ahead of a Jan. 31 deadline.  The union, which represents more than 18,000 workers at Costco, said at the time that 85% of its members voted to authorize a strike.",
+        "date": null,
+        "grade": "B",
+        "score": 63
+    },
+    {
+        "headline": "Hegseth, Japan Defense Minister Agree to Beef Up Military Ties",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/hegseth-japan-defense-minister-agree-005418087.html",
+        "first_paragraph": "(Bloomberg) -- US Defense Secretary Pete Hegseth and his Japanese counterpart agreed during their first phone call to expand their nations\u2019 joint military presence around Japanese islands in the East China Sea, according to Japan\u2019s defense ministry.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTr",
+        "date": null,
+        "grade": "B",
+        "score": 68
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Nationwide to acquire Allstate's stop-loss insurance business in $1.25 billion deal",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/nationwide-acquire-allstates-stop-loss-004806392.html",
+        "first_paragraph": "The transaction is expected to close in the second half of 2025, Nationwide said in a statement.  Ohio-based Nationwide is a diversified insurance and financial services firm that provides a range of products, including auto, business, farm and life insurance, among others.  \"Acquiring Allstate's employer stop-loss segment will broaden Nationwide Financial's portfolio, meeting the needs of small businesses, allowing us to serve more customers,\" said Nationwide President John Carter.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "Samsung Gets Nvidia\u2019s Nod to Supply Less Advanced AI Memory",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/samsung-gets-nvidia-nod-less-233143050.html",
+        "first_paragraph": "(Bloomberg) -- Samsung Electronics Co. has obtained approval to supply its high-bandwidth memory chips to Nvidia Corp., according to people familiar with the matter.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump's Federal Funding Pause Threatens State Financials The South Korean chipmaker\u2019s",
+        "date": null,
+        "grade": "F",
+        "score": 26
+    },
+    {
+        "headline": "Google quietly announces its next flagship AI model",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/google-quietly-announces-next-flagship-225525907.html",
+        "first_paragraph": "Update: Some users on social media report that the changelog has been updated to remove mention of Gemini 2.0 Pro Experimental. The references have disappeared for this reporter as well. A Google spokesperson told TechCrunch that an \"out-of-date release note\" was \"published in error.\" The original story follows: Google took the low-key route for the launch of its next-gen flagship AI model, Gemini 2.0 Pro Experimental. Instead of a splashy announcement, the company revealed the model in a change",
+        "date": null,
+        "grade": "B",
+        "score": 64
+    },
+    {
+        "headline": "US SEC Gives Initial Approval to Combined Bitcoin, Ether ETF",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/us-sec-gives-initial-approval-233639481.html",
+        "first_paragraph": "(Bloomberg) -- The US Securities and Exchange Commission on Thursday approved part of an application for a novel exchange-traded fund that would track the two largest cryptocurrencies.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump's Federal Funding Pause Threatens State Financials The Bitwis",
+        "date": null,
+        "grade": "B",
+        "score": 63
+    },
+    {
+        "headline": "Apple CEO says DeepSeek shows 'innovation that drives efficiency'",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/apple-ceo-says-deepseek-shows-232505000.html",
+        "first_paragraph": "Apple CEO Tim Cook said DeepSeek's AI models represent \"innovation that drives efficiency\" during an earnings call Thursday while fielding questions from analysts about the iPhone maker's AI ambitions. \"In general, I think innovation that drives efficiency is a good thing. And, you know, that's what you see in that model,\" said Cook, responding to an analyst's question about how DeepSeek's AI models would impact Apple's margins. Cook went on to note that Apple leverages a hybrid model for its AI",
+        "date": null,
+        "grade": "A",
+        "score": 95
+    },
+    {
+        "headline": "Apple Forecast Cheers Investors After Mixed Holiday Results",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/apple-reports-sales-declines-china-220320347.html",
+        "first_paragraph": "(Bloomberg) -- Apple Inc. gave a reassuring revenue forecast for the current quarter, helping boost shares of the world\u2019s most valuable company after its holiday results showed jarring declines for China and the iPhone.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump's Federal Funding Pause Th",
+        "date": null,
+        "grade": "A",
+        "score": 95
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Mexico Touts New Rules to Spark More Issuance By Smaller Firms",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/mexico-touts-rules-spark-more-003004475.html",
+        "first_paragraph": "(Bloomberg) -- New rules allowing for simplified issuance of equity and debt by smaller companies in Mexico are paving the way for a revival of the local securities markets, officials from the government and the local exchanges said on Thursday. Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump",
+        "date": null,
+        "grade": "F",
+        "score": 20
+    },
+    {
+        "headline": "Top strategists say this unloved stock sector could be one of 2025's top performers",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/top-strategists-unloved-stock-sector-002917587.html",
+        "first_paragraph": "While RFK Jr. is likely to lead the Department of HHS, he will be limited in his ability to stop the continued innovation and rollout of new drugs.",
+        "date": null,
+        "grade": "C",
+        "score": 48
+    },
+    {
+        "headline": "Gold Hits Record High as Trump Tariff Threats Aid Haven Demand",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/gold-hits-record-high-trump-002704768.html",
+        "first_paragraph": "(Bloomberg) -- Gold rose to a record high as investors flocked to safety after US President Donald Trump reiterated threats to impose tariffs on Mexico and Canada.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump's Federal Funding Pause Threatens State Financials Bullion rose as much as 0.2% to",
+        "date": null,
+        "grade": "F",
+        "score": 8
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Apple quarterly revenue  increases, even as China sales decline 11%",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/apple-quarterly-revenue-increases-even-223250095.html",
+        "first_paragraph": "Apple's latest earnings were a mixed bag, with slipping iPhone sales countered by rising revenue. Reporting after the bell Thursday, the iPhone maker\u2019s overall revenue in the first quarter of 2025 beat Wall Street expectations, with a 4% bump to $124.3 billion over the same time last year. Apple reported net income of $36.33 billion, up 7.1% from $33.92 billion in the same year-ago period. The increase came even as the company missed iPhone estimates, with an 11.1% sales drop in China knocking r",
+        "date": null,
+        "grade": "F",
+        "score": 22
+    },
+    {
+        "headline": "Intel won't bring its Falcon Shores AI chip to market",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/intel-wont-bring-falcon-shores-224648452.html",
+        "first_paragraph": "Intel is effectively killing Falcon Shores, its next-generation GPU for high-performance computing and AI workloads. The move comes as Intel tries to correct course after a number of disappointing product launches and historic losses, while competitors like AMD and Nvidia gain ground. Intel co-CEO Michelle Johnston Holthaus said during the company's fourth-quarter earnings call Thursday that Intel will \"leverage Falcon Shores as an internal test chip, without bringing it to market.\" \"AI data cen",
+        "date": null,
+        "grade": "F",
+        "score": 21
+    },
+    {
+        "headline": "Samsung sees limited first-quarter earnings growth due to weak chips business",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/samsung-fourth-quarter-profit-growth-002439273.html",
+        "first_paragraph": "Samsung Electronics said on Friday it expected limited first-quarter earnings growth due to weak memory chip business conditions, as it continues to work towards providing high-end chips to Nvidia.  \"In the first quarter of 2025... overall earnings improvement may be limited due to weakness in the semiconductors business,\" Samsung said in a statement after confirming operating profit was 6.5 trillion won ($4.48 billion) in the fourth quarter, down 29% from the third quarter.  The world's largest memory chip maker expected overall memory market demand to recover from the second quarter, and warned expanding U.S. chip export controls would sharply increase the volatility of demand for high-end memory chips used for AI chipsets.",
+        "date": null,
+        "grade": "B",
+        "score": 64
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Intel Fourth-Quarter Sales Beat Estimates During Turnaround",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/intel-fourth-quarter-sales-beat-211709547.html",
+        "first_paragraph": "(Bloomberg) -- Intel Corp. reported better-than-projected fourth-quarter revenue, while the semiconductor maker cautioned that its push to become more competitive is still a work in progress.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump's Federal Funding Pause Threatens State Financials Int",
+        "date": null,
+        "grade": "F",
+        "score": 18
+    },
+    {
+        "headline": "5 things you need to know about Concora credit cards",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/personal-finance/credit-cards/article/concora-credit-card-explainer-002114701.html",
+        "first_paragraph": "Wondering if a Concora credit card is right for you or if you should take a pass? Here are five things to consider before applying.",
+        "date": null,
+        "grade": "B",
+        "score": 62
+    },
+    {
+        "headline": "Trump Tariff Vow Heaps Pressure on Canada, Mexico, China FX",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/trump-25-tariff-vows-send-210808392.html",
+        "first_paragraph": "(Bloomberg) -- Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump's Federal Funding Pause Threatens State Financials President Donald Trump\u2019s renewed pledges to slap 25% tariffs on imports from Canada and Mexico on Feb. 1 jolted foreign exchange markets late in the New York trading session, send",
+        "date": null,
+        "grade": "F",
+        "score": 16
+    },
+    {
+        "headline": "OpenAI said to be in talks to raise $40B at a $340B valuation",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/openai-said-talks-raise-40b-215512745.html",
+        "first_paragraph": "OpenAI may have billions of dollars in the bank. But it's gearing up to raise billions more, according to a report from The Wall Street Journal. Per The WSJ, OpenAI is in talks to secure up to $40 billion in a funding round that would value the startup at $340 billion. SoftBank would lead the round, pouring between $15 billion to $25 billion into the ChatGPT maker, according to The WSJ. Should OpenAI successfully close the round, it'd be a remarkable feat for the startup, which was valued at $15",
+        "date": null,
+        "grade": "A",
+        "score": 98
+    },
+    {
+        "headline": "Intel has already received $2.2B in federal grants for chip production",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/intel-already-received-2-2b-001232756.html",
+        "first_paragraph": "Semiconductor giant Intel Corporation has already received $2.2 billion in federal grants from the U.S. Department of Commerce through the U.S. CHIPS and Science Act, the company shared during its Thursday earnings call. Dave Zinsner, Intel's co-interim CEO, executive vice president and CFO, said the Silicon Valley-based company received the first tranche of $1.1 billion in federal grants at the end of 2024 and an additional $1.1 billion in January 2025. These grants are based on reaching certai",
+        "date": null,
+        "grade": "A",
+        "score": 89
+    },
+    {
+        "headline": "DeepSeek is a hot topic on earnings calls this quarter",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/deepseek-hot-topic-earnings-calls-075202354.html",
+        "first_paragraph": "Executives are increasingly fielding analyst questions about the impact of China's DeepSeek AI on their business \u2014 and they've got a range of views.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Trump Barrels Toward Tariff Showdown With Canada, Mexico, China",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/trump-barrels-toward-tariff-showdown-000324770.html",
+        "first_paragraph": "(Bloomberg) -- Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump's Federal Funding Pause Threatens State Financials President Donald Trump is poised to unleash his first wave of tariffs Saturday, sending foreign governments and businesses rushing to skirt potential duties and prepare for retali",
+        "date": null,
+        "grade": "F",
+        "score": 18
+    },
+    {
+        "headline": "Angola\u2019s Oil Sector Making A Comeback After OPEC Exit",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/angola-oil-sector-making-comeback-000000438.html",
+        "first_paragraph": "Angola's average daily oil production hit 1.134 million barrels in the first three quarters of 2024, good for a 4% increase compared to 2023 production.",
+        "date": null,
+        "grade": "A",
+        "score": 81
+    },
+    {
+        "headline": "PPG Industries misses estimates for fourth-quarter profit",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/ppg-industries-misses-estimates-fourth-234353130.html",
+        "first_paragraph": "U.S. mortgage rates rose over the year, weighing on the homebuilding industry, which had previously benefited from a scarcity of pre-owned houses for sale.  Net sales in PPG's industrial coatings segment fell to $1.58 billion during the October-December quarter, compared with $1.73 billion a year earlier, hurt by a continuing trend of year-over-year declines in industrial production in the United States and Europe.  Total net sales for the company fell 5% to $3.7 billion in the fourth quarter.",
+        "date": null,
+        "grade": "F",
+        "score": 25
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "PPG Industries: Q4 Earnings Snapshot",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/ppg-industries-q4-earnings-snapshot-234150948.html",
+        "first_paragraph": "The Pittsburgh-based company said it had a loss of $1.20 per share. Earnings, adjusted for restructuring costs and to account for discontinued operations, came to $1.61 per share. The results did not meet Wall Street expectations.",
+        "date": null,
+        "grade": "C",
+        "score": 50
+    },
+    {
+        "headline": "Colombia's Grupo Argos more than triples profit in 2024",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/colombias-grupo-argos-more-triples-233252949.html",
+        "first_paragraph": "Argos, with units in the energy, cement and airport operations, saw revenue last year grow 148% to total 2.53 trillion pesos.  Last year, Grupo Argos divested its stake in Grupo Nutresa, signed a spin-off agreement with Grupo SURA to simplify its organizational structure, and finalized the sale of a 31% stake in its subsidiary Cementos Argos to Summit Materials.  The conglomerate has called for an extraordinary shareholders' meeting on March 27 to seek approval for the spin-off with Grupo SURA.",
+        "date": null,
+        "grade": "A",
+        "score": 90
+    },
+    {
+        "headline": "DeepSeek Will Hardly Dent Magnificent Seven Stocks, Survey Shows",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/deepseek-hardly-dent-magnificent-seven-232859910.html",
+        "first_paragraph": "(Bloomberg) -- DeepSeek\u2019s emergence roiled markets earlier this week, but investors see limited scope for the Chinese artificial intelligence startup to dent the performance of the Magnificent Seven, the latest Bloomberg Markets Live Pulse survey showed. Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze",
+        "date": null,
+        "grade": "A",
+        "score": 88
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Mexican peso drops 1% as Trump reiterates tariff threat",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/mexican-peso-drops-1-trump-232817622.html",
+        "first_paragraph": "The Mexican peso fell 1% against the dollar in a volatile session on Thursday after U.S. President Donald Trump reiterated his threat to impose 25% tariffs on Mexico and Canada, two of its top trade partners.  Trump on Thursday said he would likely decide by the end of the day whether to exclude Canadian and Mexican oil imports from the tariffs that he has vowed to impose on Saturday on the countries' products.  The market is taking a defensive stance towards the Mexican currency but has still not fully priced in the tariff threats according to Alejandro Cuadrado, global head of FX and LatAm Strategy at BBVA.",
+        "date": null,
+        "grade": "F",
+        "score": 6
+    },
+    {
+        "headline": "Starbucks, Union Agree to Mediation to Help Get Talks Over Finish Line",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/starbucks-union-agree-mediation-help-231729796.html",
+        "first_paragraph": "(Bloomberg) -- Starbucks Corp. and its union have agreed to bring in an outside mediator for contract negotiations in an effort to revive stalled talks and reach a landmark deal.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump's Federal Funding Pause Threatens State Financials The company and",
+        "date": null,
+        "grade": "F",
+        "score": 26
+    },
+    {
+        "headline": "Trump tariff uncertainties push safe-haven gold to record high",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/trump-tariff-uncertainties-push-safe-231722831.html",
+        "first_paragraph": "Safe-haven demand due to geopolitical uncertainties and concerns over global economic growth amid U.S. President Donald Trump's tariff plans have hoisted gold prices to a record high, once again bringing the key $3,000 threshold onto investors' radar.  \"There's concerns that some of the (economic) growth may come down because of the policies and tariffs that the current administration is looking to implement,\" said Phillip Streible, chief market strategist at Blue Line Futures.  Trump's tariff plans are widely perceived as inflationary and with potential to trigger trade wars, driving up safe-haven demand for bullion as it is traditionally seen as a hedge against price pressures and geopolitical uncertainty.",
+        "date": null,
+        "grade": "F",
+        "score": 7
+    },
+    {
+        "headline": "Walgreens Suspends Nearly Century-Old Dividend to Save Cash",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/walgreens-sinks-suspending-dividend-conserve-220224779.html",
+        "first_paragraph": "(Bloomberg) -- Walgreens Boots Alliance Inc. is suspending the quarterly dividend it\u2019s paid for the past 92 years in a bid to conserve cash as the troubled pharmacy chain attempts to revive the business.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump's Federal Funding Pause Threatens State Fi",
+        "date": null,
+        "grade": "F",
+        "score": 10
+    },
+    {
+        "headline": "Las Vegas Sands Stock Soars as Executives Predict China Growth Will Boost Macao Revenue",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/las-vegas-sands-stock-soars-230159035.html",
+        "first_paragraph": "Shares of Las Vegas Sands soared Thursday, one day after executives at the hotel and casino operator said they are confident in their future success due to their strong assets in the important gambling market of Macao.",
+        "date": null,
+        "grade": "A",
+        "score": 96
+    },
+    {
+        "headline": "First Guaranty Bancshares: Q4 Earnings Snapshot",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/first-guaranty-bancshares-q4-earnings-230055117.html",
+        "first_paragraph": "HAMMOND, La. AP) \u2014 First Guaranty Banchshares Inc. FGBI) on Thursday reported net income of $1 million in its fourth quarter.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Gen Digital beats third-quarter revenue estimates on strong demand for cybersecurity tools",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/gen-digital-beats-third-quarter-225257028.html",
+        "first_paragraph": "Gen Digital topped Wall Street estimates for third-quarter revenue and profit on Thursday, driven by strong demand for its cybersecurity tools. A surge in digital scams and high-profile hacks is fueling demand for Gen Digital's cybersecurity solutions, as businesses adopt artificial intelligence (AI) technology and increasingly deploy robust security measures to protect their systems against evolving threats. With its advancement, AI is enabling more sophisticated and complex hacking techniques, escalating risk.",
+        "date": null,
+        "grade": "A",
+        "score": 95
+    },
+    {
+        "headline": "Everything you need to know about the Laurel Road high-yield savings account",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/personal-finance/banking/review/laurel-road-high-yield-savings-account-225040569.html",
+        "first_paragraph": "Laurel Road\u2019s high-yield savings account offers a competitive interest rate and other perks. Here\u2019s what you need to know before opening an account.",
+        "date": null,
+        "grade": "B",
+        "score": 70
+    },
+    {
+        "headline": "Google's 'Ask for Me' feature calls businesses on your behalf to inquire about services, pricing",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/googles-ask-feature-calls-businesses-212537719.html",
+        "first_paragraph": "Google is testing a new \"Ask for Me\" feature that uses AI to call local businesses on your behalf, for information about availability and pricing. The feature is available on desktop and mobile for users who have opted into the company\u2019s Search Labs experiments. The idea is to help users access information without having to actually pick up the phone and talk to someone. To start, Ask for Me can be used to inquire about services at nail salons and auto shops. If you are enrolled in Search Labs,",
+        "date": null,
+        "grade": "B",
+        "score": 63
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Atlantic Shores reaffirms commitment to New Jersey offshore wind despite Shell's write-off",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/atlantic-shores-reaffirms-commitment-jersey-224554537.html",
+        "first_paragraph": "Shell's fourth-quarter earnings included $2.2 billion in impairments, part of which was a $1 billion write-off for Atlantic Shores, with Chief Financial Officer Sinead Gorman stating that the project did not align with the company's capabilities or return goals.  Shell is now looking to monetize its stake.  Atlantic Shores had submitted a proposal in July last year to supply offshore wind energy to New Jersey as part of the state's Fourth Offshore Wind Solicitation.",
+        "date": null,
+        "grade": "C",
+        "score": 50
+    },
+    {
+        "headline": "How DeepSeek changed Silicon Valley's AI landscape",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/deepseek-changed-silicon-valleys-ai-170000985.html",
+        "first_paragraph": "Chinese AI lab DeepSeek provoked the first Silicon Valley freak-out of 2025 after releasing open versions of AI models that compete with the best technology OpenAI, Meta, and Google have to offer. DeepSeek claims to have built its models highly efficiently and quickly (though some are skeptical of these claims), and is providing these models at a fraction of the price American AI companies charge. The development has rattled not only tech giants but the highest levels of the U.S. government, whi",
+        "date": null,
+        "grade": "B",
+        "score": 60
+    },
+    {
+        "headline": "Olin: Q4 Earnings Snapshot",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/olin-q4-earnings-snapshot-224040861.html",
+        "first_paragraph": "CLAYTON, Mo. AP) \u2014 Olin Corp. OLN) on Thursday reported fourth-quarter profit of $10.7 million.",
+        "date": null,
+        "grade": "B",
+        "score": 64
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Shore Bancshares: Q4 Earnings Snapshot",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/shore-bancshares-q4-earnings-snapshot-223243610.html",
+        "first_paragraph": "EASTON, Md. AP) \u2014 Shore Bancshares Inc. SHBI) on Thursday reported net income of $13.3 million in its fourth quarter.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "Four Key Takeaways From Tesla's Latest Earnings and Elon Musk's Conference Call",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/four-key-takeaways-teslas-latest-180918121.html",
+        "first_paragraph": "Tesla's earnings report and call Wednesday shed light on the electric vehicle maker's plans for new versions of its self-driving software and its humanoid robot, Optimus.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "Comcast stock sinks as Peacock fails to add more subscribers, broadband losses disappoint",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/comcast-stock-sinks-as-peacock-fails-to-add-more-subscribers-broadband-losses-disappoint-164329954.html",
+        "first_paragraph": "Comcast stock fell double digits on Thursday after the company reported a bigger-than-expected drop in broadband customers and failed to add more subscribers to its Peacock streaming service.",
+        "date": null,
+        "grade": "F",
+        "score": 10
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "First look: Schneider Q4 earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/first-look-schneider-q4-earnings-152649428.html",
+        "first_paragraph": "Schneider National\u2019s initial take on 2025 earnings is largely in line with consensus expectations. The post First look: Schneider Q4 earnings appeared first on FreightWaves.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "Musk Exudes Optimism About Tesla Robotaxis After Earnings Miss",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tesla-buoys-investors-growth-pledge-102231972.html",
+        "first_paragraph": "(Bloomberg) -- Tesla Inc. fleshed out plans to launch a robotaxi business Elon Musk is counting on to help usher in next phase of growth, after the company posted quarterly earnings that missed estimates.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump Paves the Way to Deputize Local Police on ImmigrationHow the 2025 Catholic Jubilee Is Reshaping RomeHousing Aid Uncertain After Trump\u2019s Spending Freeze MemoTrump's Federal Funding Pause Threatens State F",
+        "date": null,
+        "grade": "F",
+        "score": 26
+    },
+    {
+        "headline": "Toddlers, trains, and fairy tales \u2014 Elon Musk's best quotes from the Tesla earnings call",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/toddlers-trains-fairy-tales-mdash-145621939.html",
+        "first_paragraph": "During Tesla's earnings call, Elon Musk mentioned Superman, telescopes, Hollywood, and inventors shouting \"Eureka!\"",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "Tesla stock rises after company pledges return to growth after Q4 results disappoint",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tesla-stock-rises-after-company-pledges-return-to-growth-after-q4-results-disappoint-230732196.html",
+        "first_paragraph": "Tesla's fourth quarter earnings disappointed, but the company's commitment to returning to growth in 2025 saw shares rise in extended trading on Wednesday.",
+        "date": null,
+        "grade": "A",
+        "score": 91
+    },
+    {
+        "headline": "Schneider National (NYSE:SNDR) Reports Sales Below Analyst Estimates In Q4 Earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/schneider-national-nyse-sndr-reports-140630483.html",
+        "first_paragraph": "Transportation company Schneider (NYSE:SNDR) fell short of the market\u2019s revenue expectations in Q4 CY2024, with sales falling 2.4% year on year to $1.34 billion. Its non-GAAP profit of $0.20 per share was in line with analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "B",
+        "score": 69
+    },
+    {
+        "headline": "Charter (CHTR) Reports Q4: Everything You Need To Know Ahead Of Earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/charter-chtr-reports-q4-everything-130225242.html",
+        "first_paragraph": "Cable, internet, and telephone services provider Charter (NASDAQ:CHTR) will be reporting earnings tomorrow before the bell. Here\u2019s what investors should know.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Parker-Hannifin (NYSE:PH) Reports Sales Below Analyst Estimates In Q4 Earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/parker-hannifin-nyse-ph-reports-130209123.html",
+        "first_paragraph": "Industrial machinery company Parker-Hannifin (NYSE:PH) fell short of the market\u2019s revenue expectations in Q4 CY2024, with sales falling 1.6% year on year to $4.74 billion. Its non-GAAP profit of $6.53 per share was 4.9% above analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "B",
+        "score": 69
+    },
+    {
+        "headline": "What To Expect From RBC Bearings\u2019s (RBC) Q4 Earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/expect-rbc-bearings-rbc-q4-130158139.html",
+        "first_paragraph": "Bearings manufacturer RBC Bearings (NYSE:RBC) will be reporting earnings tomorrow before the bell. Here\u2019s what to look for.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "Earnings To Watch: W.W. Grainger (GWW) Reports Q4 Results Tomorrow",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/earnings-watch-w-w-grainger-130155474.html",
+        "first_paragraph": "Maintenance and repair supplier W.W. Grainger (NYSE:GWW) will be announcing earnings results tomorrow before market hours. Here\u2019s what to look for.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "Badger Meter (BMI) Q4 Earnings Report Preview: What To Look For",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/badger-meter-bmi-q4-earnings-130137107.html",
+        "first_paragraph": "Water control and measure company Badger Meter (NYSE:BMI) will be reporting results tomorrow before market hours. Here\u2019s what to look for.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "ArcBest (ARCB) Q4 Earnings: What To Expect",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/arcbest-arcb-q4-earnings-expect-130104553.html",
+        "first_paragraph": "Freight Delivery Company ArcBest (NASDAQ:ARCB) will be announcing earnings results tomorrow before market open. Here\u2019s what to expect.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "What To Expect From Church & Dwight\u2019s (CHD) Q4 Earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/expect-church-dwight-chd-q4-130055418.html",
+        "first_paragraph": "Household products company Church & Dwight (NYSE:CHD) will be announcing earnings results tomorrow morning. Here\u2019s what investors should know.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
+        "date": null,
+        "grade": "N/A",
+        "score": 0
+    },
+    {
+        "headline": "What To Expect From Colgate-Palmolive\u2019s (CL) Q4 Earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/expect-colgate-palmolive-cl-q4-130049395.html",
+        "first_paragraph": "Consumer products company Colgate-Palmolive (NYSE:CL) will be reporting results tomorrow before market open. Here\u2019s what investors should know.",
+        "date": null,
+        "grade": "D",
+        "score": 35
+    },
+    {
+        "headline": "Kirby\u2019s (NYSE:KEX) Q4 Earnings Results: Revenue In Line With Expectations",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/kirby-nyse-kex-q4-earnings-125104545.html",
+        "first_paragraph": "Marine transportation service company Kirby (NYSE:KEX) met Wall Street\u2019s revenue expectations in Q4 CY2024, but sales were flat year on year at $802.3 million. Its GAAP profit of $0.74 per share was 43.1% below analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "A",
+        "score": 88
+    },
+    {
+        "headline": "Northrop Grumman (NYSE:NOC) Reports Sales Below Analyst Estimates In Q4 Earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/northrop-grumman-nyse-noc-reports-121442670.html",
+        "first_paragraph": "Security and aerospace company Northrop Grumman (NYSE:NOC) missed Wall Street\u2019s revenue expectations in Q4 CY2024, with sales flat year on year at $10.69 billion. The company\u2019s full-year revenue guidance of $42.25 billion at the midpoint came in 1.3% below analysts\u2019 estimates. Its GAAP profit of $8.66 per share was 36% above analysts\u2019 consensus estimates.",
+        "date": null,
+        "grade": "A",
+        "score": 82
+    },
+    {
+        "headline": "Indexes end up as investors weigh earnings; tariff talk a damper",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/megacap-results-push-us-stock-110111348.html",
+        "first_paragraph": "NEW YORK (Reuters) -U.S. stocks ended a volatile session higher on Thursday as investors digested a stack of key earnings reports, with upbeat comments from Tesla helping to offset a disappointing forecast from Microsoft.  Indexes briefly lost ground late in the session after U.S. President Donald Trump said the United States will put a 25% tariff on imports from Mexico and Canada, two of the U.S.'s top trading partners.  Worries about Trump's possible tariffs and their impact on the U.S. economy and inflation have kept investors on edge.",
         "date": null,
         "grade": "F",
         "score": 19
+    },
+    {
+        "headline": "Tariffs Dominate Earnings Calls With Firms Bracing for Fallout",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tariffs-dominate-earnings-calls-firms-092528639.html",
+        "first_paragraph": "(Bloomberg) -- It\u2019s early days, but there already appears to be a clear buzzword among corporate executives this earnings season: tariffs. Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoUS Students\u2019 Reading Scores Drop to Worst in More Than 20 YearsTexas HOA Charged With Discrimination for Banning Section 8 RentersThe word has been used at least",
+        "date": null,
+        "grade": "F",
+        "score": 2
+    },
+    {
+        "headline": "Hapag-Lloyd sees earnings quadruple in fourth quarter",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/hapag-lloyd-sees-earnings-quadruple-065321262.html",
+        "first_paragraph": "Hapag-Lloyd saw its earnings quadruple in the fourth quarter, contributing to a slight rise in full-year figures due to higher transport volumes combined with a stable average freight, the company said on Thursday. Earnings before interest, taxes, depreciation and amortization (EBITDA) stood at 1.3 billion euros ($1.35 billion) in the final three months of the year compared to 300 million euros in the corresponding 2023 period, according to preliminary figures. ($1 = 0.9604 euros) (Writing by Miranda Murray, Editing by Rachel More)",
+        "date": null,
+        "grade": "A",
+        "score": 85
     },
     {
         "headline": null,
@@ -152,28 +992,12 @@
         "score": 62
     },
     {
-        "headline": "2 'Big Short' traders say they're staying out of AI and looking for deals in another corner of the market",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/2-big-short-traders-theyre-042214070.html",
-        "first_paragraph": "\"We sit here and we're scouring the globe, and everyone's losing brain cells around AI,\" Porter Collins of \"The Big Short\" fame said.",
-        "date": null,
-        "grade": "D",
-        "score": 37
-    },
-    {
         "headline": "Meta earnings live updates: Wall Street watching for AI monetization, reaction to DeepSeek mania",
         "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/meta-earnings-live-updates-wall-150211198.html",
         "first_paragraph": "Meta's earnings call is today at 5 pm ET. META stock heads into the report up 15% YTD. Analysts are focused on AI monetization efforts and DeepSeek.",
         "date": null,
         "grade": "B",
         "score": 62
-    },
-    {
-        "headline": "Stock market today: Meta and Tesla gain, airlines pressured after American jet crashes near DC",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/stock-market-today-asia-shares-035959376.html",
-        "first_paragraph": "Wall Street pointed mostly higher in premarket trading Thursday while more corporate earnings poured in a day after the Federal Reserve opted to leave its benchmark lending rate alone.  Dow Jones Industrial futures ticked down 0.1%.  Major U.S. airline stocks fell after an American Airlines plane collided with an Army helicopter and fell into the Potomac River just outside of Washington late Wednesday night.",
-        "date": null,
-        "grade": "F",
-        "score": 11
     },
     {
         "headline": "Watch These Tesla Stock Price Levels After Post-Earnings Surge",
@@ -184,604 +1008,12 @@
         "score": 90
     },
     {
-        "headline": "Why Goldman Sachs says the DeepSeek plunge doesn't point to the start of a big stock market correction",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-goldman-sachs-says-deepseek-004716115.html",
-        "first_paragraph": "\"In our view this is a correction and not the start of a sustained bear market,\" Goldman Sachs said. DeepSeek sparked a $1 trillion market rout on Monday.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
         "headline": null,
         "link": null,
         "first_paragraph": null,
         "date": null,
         "grade": "N/A",
         "score": 0
-    },
-    {
-        "headline": "Watch These Royal Caribbean Price Levels as Stock Sails to Record High",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/watch-royal-caribbean-price-levels-233344775.html",
-        "first_paragraph": "Shares in Royal Caribbean hit another record high Wednesday after soaring yesterday following a better-than-expected earnings report from the cruise line operator. Monitor these important chart levels.",
-        "date": null,
-        "grade": "B",
-        "score": 65
-    },
-    {
-        "headline": "Tesla stock rises after company pledges return to growth after Q4 results disappoint",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tesla-stock-rises-after-company-pledges-return-to-growth-after-q4-results-disappoint-230732196.html",
-        "first_paragraph": "Tesla's fourth quarter earnings disappointed, but the company's commitment to returning to growth in 2025 saw shares rise in extended trading on Wednesday.",
-        "date": null,
-        "grade": "A",
-        "score": 91
-    },
-    {
-        "headline": "Ameriprise Financial's quarterly profit rises as market rally boosted its fee income",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/ameriprise-financials-quarterly-profit-rises-224127220.html",
-        "first_paragraph": "Ameriprise Financial reported a 24% rise in fourth-quarter profit on Wednesday, driven by a higher fee income as the value of its clients' assets increased due to a market rally. The U.S. markets rallied on Federal Reserve's interest rate cuts and they were further boosted by business-friendly comments from President Donald Trump, who is expected to ease regulations. Ameriprise's assets under management and administration came in at $1.52 trillion in the quarter, a 10% jump from last year.",
-        "date": null,
-        "grade": "A",
-        "score": 96
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Morning Bid: Tech, hawkish Fed pressure stocks before megacap earnings parade",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/morning-bid-tech-hawkish-fed-223707383.html",
-        "first_paragraph": "Sagging tech stocks weighed on US indexes, as Wall Street rethinks AI leadership after the arrival of DeepSeek, a Chinese disruptor claiming big results at a smaller cost.  With many Asian markets still closed for the Lunar New Year, Japan's Nikkei 225 will carry the baton after pretty much cueing off Wall Street's ups and downs all week.  The S&P 500 and Nasdaq briefly extended  losses after the Federal Open Market Committee closed out its two-day policy meeting with hawkish hold that left markets thinking rates might not come down again for a while, if at all.",
-        "date": null,
-        "grade": "C",
-        "score": 45
-    },
-    {
-        "headline": "Stocks Fall on Fed Day as Tech Mixed in Late Hours: Markets Wrap",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/asian-stocks-track-wall-street-224121960.html",
-        "first_paragraph": "(Bloomberg) -- Stocks slipped and short-dated bond yields rose, though both pared bigger moves as early concern that the Federal Reserve was growing more worried about inflation got tamped down by Chair Jerome Powell.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoUS Students\u2019 Reading Scores Drop to Worst in More Than 20 YearsTexas HOA Charged Wi",
-        "date": null,
-        "grade": "F",
-        "score": 2
-    },
-    {
-        "headline": "Teradyne\u2019s (NASDAQ:TER) Q4 Sales Top Estimates",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/teradyne-nasdaq-ter-q4-sales-221919367.html",
-        "first_paragraph": "Semiconductor testing company Teradyne (NASDAQ:TER) reported Q4 CY2024 results exceeding the market\u2019s revenue expectations, with sales up 12.3% year on year to $752.9 million. Its non-GAAP profit of $0.95 per share was 4.5% above analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 81
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Landstar (NASDAQ:LSTR) Surprises With Q4 Sales",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/landstar-nasdaq-lstr-surprises-q4-221033102.html",
-        "first_paragraph": "Freight delivery company Landstar (NASDAQ:LSTR) reported Q4 CY2024 results topping the market\u2019s revenue expectations, but sales were flat year on year at $1.21 billion. Its GAAP profit of $1.31 per share was 2.5% below analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 88
-    },
-    {
-        "headline": "Meta posts sharply higher Q4 profit, revenue, topping Wall Street's expectations",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/meta-posts-sharply-higher-q4-220504901.html",
-        "first_paragraph": "Meta Platforms Inc. posted sharply higher profit and revenue for its fourth quarter on Wednesday, thanks to higher ad revenue on its social media properties, sending its shares up in after-hours trading even as it forecast increasing expenses on its artificial intelligence efforts.  CEO Mark Zuckerberg said he expects 2025 to \u201cbe the year when a highly intelligent and personalized AI assistant reaches more than 1 billion people, and I expect Meta AI to be that leading AI assistant.\u201d  \u201cWe continue to make good progress on AI, glasses, and the future of social media,\u201d Zuckerberg said in a statement.",
-        "date": null,
-        "grade": "A",
-        "score": 98
-    },
-    {
-        "headline": "Tesla (NASDAQ:TSLA) Reports Sales Below Analyst Estimates In Q4 Earnings",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tesla-nasdaq-tsla-reports-sales-220259082.html",
-        "first_paragraph": "Electric vehicle pioneer Tesla (NASDAQ:TSLA) fell short of the market\u2019s revenue expectations in Q4 CY2024 as sales rose 2.1% year on year to $25.71 billion. Its non-GAAP profit of $0.73 per share was 5.2% below analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 81
-    },
-    {
-        "headline": "S&P 500 Gains and Losses Today: Moderna Stock Plunges After Analyst Downgrade",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/p-500-gains-losses-today-215510446.html",
-        "first_paragraph": "The S&P 500 fell 0.5% on Wednesday, Jan. 29, as the Federal Reserve held interest rates steady in a move widely expected by the financial markets.",
-        "date": null,
-        "grade": "B",
-        "score": 65
-    },
-    {
-        "headline": "Whirlpool (NYSE:WHR) Misses Q4 Sales Targets, Stock Drops 11.7%",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/whirlpool-nyse-whr-misses-q4-215349565.html",
-        "first_paragraph": "Home appliances manufacturer Whirlpool (NYSE:WHR) fell short of the market\u2019s revenue expectations in Q4 CY2024, with sales falling 18.7% year on year to $4.14 billion. The company\u2019s full-year revenue guidance of $15.8 billion at the midpoint came in 2.8% below analysts\u2019 estimates. Its GAAP loss of $7.10 per share was significantly below analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "F",
-        "score": 24
-    },
-    {
-        "headline": "Wall Street expects airlines to see sustained demand for travel this year",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/wall-street-expects-airlines-climb-215015293.html",
-        "first_paragraph": "Airlines expect a strong tailwind from travel demand in 2025, even though carriers could be hedged in by capacity issues.  United Airlines, Delta Air Lines and several other U.S.-based carriers have all given investors strong forecasts for the year.  Wall Street expects major airlines to increase revenue and profit in 2025.",
-        "date": null,
-        "grade": "A",
-        "score": 96
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "C.H. Robinson Worldwide (NASDAQ:CHRW) Misses Q4 Sales Targets",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/c-h-robinson-worldwide-nasdaq-215005409.html",
-        "first_paragraph": "Freight transportation intermediary C.H. Robinson (NASDAQ:CHRW) fell short of the market\u2019s revenue expectations in Q4 CY2024, with sales flat year on year at $4.18 billion. Its non-GAAP profit of $1.21 per share was 9.3% above analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 81
-    },
-    {
-        "headline": "Meta\u2019s (NASDAQ:META) Q4 Sales Top Estimates But Quarterly Revenue Guidance Significantly Misses Expectations",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/meta-nasdaq-meta-q4-sales-214938376.html",
-        "first_paragraph": "Social network operator Meta Platforms (NASDAQ:META) beat Wall Street\u2019s revenue expectations in Q4 CY2024, with sales up 20.6% year on year to $48.39 billion. On the other hand, next quarter\u2019s revenue guidance of $40.65 billion was less impressive, coming in 2.4% below analysts\u2019 estimates. Its GAAP profit of $8.02 per share was 18.7% above analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 94
-    },
-    {
-        "headline": "Microsoft Stock Slips as Intelligent Cloud Revenue Falls Short of Expectations",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/microsoft-stock-slips-intelligent-cloud-212418862.html",
-        "first_paragraph": "Microsoft reported fiscal second-quarter Intelligent Cloud revenue that missed analysts\u2019 expectations, dragging shares lower after the bell Wednesday.",
-        "date": null,
-        "grade": "C",
-        "score": 48
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "ServiceNow (NYSE:NOW) Reports Q4 In Line With Expectations But Stock Drops 10.5%",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/servicenow-nyse-now-reports-q4-212311280.html",
-        "first_paragraph": "Enterprise workflow software maker ServiceNow (NYSE:NOW) met Wall Street\u2019s revenue expectations in Q4 CY2024, with sales up 21.3% year on year to $2.96 billion. Its non-GAAP profit of $3.67 per share was in line with analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 81
-    },
-    {
-        "headline": "Microsoft (NASDAQ:MSFT) Beats Q4 Sales Targets",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/microsoft-nasdaq-msft-beats-q4-211618852.html",
-        "first_paragraph": "Tech giant Microsoft (NASDAQ:MSFT) reported revenue ahead of Wall Street\u2019s expectations in Q4 CY2024, with sales up 12.3% year on year to $69.63 billion. Its GAAP profit of $3.23 per share was 4% above analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 81
-    },
-    {
-        "headline": "'Key beneficiary of TikTok's mishaps:' Meta is one of Wall Street's top AI picks headed into earnings",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/key-beneficiary-tiktoks-mishaps-meta-203207891.html",
-        "first_paragraph": "Wall Street analysts see AI boosting Meta's performance this year. The tech titan could also be a big winner amid the drama swirling around TikTok.",
-        "date": null,
-        "grade": "A",
-        "score": 86
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Wall Street is growing more bullish on Tesla's AI push ahead of earnings",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/wall-street-growing-more-bullish-201015260.html",
-        "first_paragraph": "With Tesla set to release its latest quarterly earnings report, Wall Street thinks the stock can keep rising on a \"golden age\" for automation and AI.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Red River Bancshares: Q4 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/red-river-bancshares-q4-earnings-134938154.html",
-        "first_paragraph": "The holding company for Red River Bank posted revenue of $40.6 million in the period. Its revenue net of interest expense was $28.7 million, exceeding Street forecasts. For the year, the company reported profit of $34.2 million, or $4.95 per share.",
-        "date": null,
-        "grade": "A",
-        "score": 89
-    },
-    {
-        "headline": "Coursera: Q4 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/coursera-q4-earnings-snapshot-134728962.html",
-        "first_paragraph": "The average estimate of five analysts surveyed by Zacks Investment Research was for earnings of 4 cents per share. The online learning platform posted revenue of $179.2 million in the period, which also topped Street forecasts. Five analysts surveyed by Zacks expected $176.6 million.",
-        "date": null,
-        "grade": "C",
-        "score": 51
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "ScanSource: Fiscal Q2 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/scansource-fiscal-q2-earnings-snapshot-134037730.html",
-        "first_paragraph": "GREENVILLE, S.C. (AP) \u2014 ScanSource Inc. SCSC) on Thursday reported net income of $17.1 million in its fiscal second quarter. The Greenville, South Carolina-based company said it had profit of 70 cents per share.",
-        "date": null,
-        "grade": "A",
-        "score": 81
-    },
-    {
-        "headline": "Kearny: Fiscal Q2 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/kearny-fiscal-q2-earnings-snapshot-133638669.html",
-        "first_paragraph": "FAIRFIELD, N.J. (AP) \u2014 Kearny Financial Corp. KRNY) on Thursday reported earnings of $6.6 million in its fiscal second quarter. The Fairfield, New Jersey-based company said it had net income of 10 cents per share.",
-        "date": null,
-        "grade": "C",
-        "score": 51
-    },
-    {
-        "headline": "Silicom: Q4 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/silicom-q4-earnings-snapshot-133442138.html",
-        "first_paragraph": "KFAR-SAVA, Israel (AP) \u2014 Silicom Ltd. (SILC) on Thursday reported a loss of $4.4 million in its fourth quarter. The Kfar-Sava, Israel-based company said it had a loss of 76 cents per share. Losses, adjusted for stock option expense and non-recurring costs, were 58 cents per share.",
-        "date": null,
-        "grade": "F",
-        "score": 16
-    },
-    {
-        "headline": "The number of Americans filing for jobless benefits fell to 207,000 last week in a sign the labor market remains strong",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/number-americans-filing-jobless-benefits-133420104.html",
-        "first_paragraph": "The number of Americans filing for jobless benefits fell to 207,000 last week in a sign the labor market remains strong.",
-        "date": null,
-        "grade": "A",
-        "score": 86
-    },
-    {
-        "headline": "US economy grows a solid 2.3% from October to December, 2.8% for full year 2024",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/us-economy-grows-solid-2-133240906.html",
-        "first_paragraph": "US economy grows a solid 2.3% from October to December, 2.8% for full year 2024.",
-        "date": null,
-        "grade": "C",
-        "score": 46
-    },
-    {
-        "headline": "HarborOne Bancorp: Q4 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/harborone-bancorp-q4-earnings-snapshot-133131240.html",
-        "first_paragraph": "BROCKTON, Mass. AP) \u2014 HarborOne Bancorp Inc. HONE) on Thursday reported fourth-quarter net income of $8.9 million.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Bitcoin Extends Advance After Fed Meeting, Powell Commentary",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/bitcoin-extends-advance-fed-meeting-044426964.html",
-        "first_paragraph": "(Bloomberg) -- Bitcoin extended its biggest jump in more than a week following the Federal Reserve\u2019s latest monetary policy meeting and comments from Chair Jerome Powell that touched briefly upon crypto regulation.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoUS Students\u2019 Reading Scores Drop to Worst in More Than 20 YearsTexas HOA Charged With",
-        "date": null,
-        "grade": "F",
-        "score": 3
-    },
-    {
-        "headline": "Altria 'smoke-free' targets under threat from illicit vapes",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/altria-smoke-free-targets-under-133111342.html",
-        "first_paragraph": "Altria, the maker of Marlboro cigarettes, has placed under review its 2028 goals for selling alternatives to smoking on the U.S. market, saying on Thursday it may not be able to meet them because of competition from disposable vapes.  Altria estimated the U.S. e-cigarette market grew 30% in 2024, driven mostly by \"illicit disposable products\" that represent 60% or more of the category even though they lack the required regulatory authorisations.  \"We believe this dynamic compromises our ability to achieve our 2028 smoke-free volume and revenue goals,\" the company said in its full-year results statement on Thursday, adding it was re-assessing them as a result.",
-        "date": null,
-        "grade": "B",
-        "score": 65
-    },
-    {
-        "headline": "Roper Technologies projects annual revenue above estimates on stable software demand",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/roper-technologies-projects-annual-revenue-132524790.html",
-        "first_paragraph": "Roper Technologies forecast annual revenue growth above Wall Street estimates on Thursday, a sign of stable demand for its specialized software products that help customers manage critical operations. The Sarasota, Florida-based company has grown largely through acquisitions, establishing itself as a provider of software and automated solutions to a variety of sectors, including healthcare, transportation and education. Roper acquired cloud-based software providers Procare Solutions and Transact Campus in 2024.",
-        "date": null,
-        "grade": "A",
-        "score": 86
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Who Are the Israeli Hostages Released by Hamas?",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/m/3a7a19ca-2ad8-3d9c-82d9-96702f20ddc7/who-are-the-israeli-hostages.html",
-        "first_paragraph": "Hamas has agreed to release 33 Israeli hostages as part of a cease-fire agreement with Israel that has brought a pause to more than 15 months of fighting.",
-        "date": null,
-        "grade": "B",
-        "score": 63
-    },
-    {
-        "headline": "Deutsche Bank CEO Joins Dimon, Solomon in Resisting DEI Attacks",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/deutsche-bank-ceo-joins-dimon-132454188.html",
-        "first_paragraph": "(Bloomberg) -- The chief executive officer of Deutsche Bank AG joined his counterparts at JPMorgan Chase & Co. and Goldman Sachs Group Inc. in challenging critics of DEI.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoUS Students\u2019 Reading Scores Drop to Worst in More Than 20 YearsTexas HOA Charged With Discrimination for Banning Section 8 Renters",
-        "date": null,
-        "grade": "F",
-        "score": 2
-    },
-    {
-        "headline": "ECB Cuts Rates for Fifth Time as Euro-Zone Economy Flatlines",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/ecb-cuts-rates-fifth-time-132407507.html",
-        "first_paragraph": "(Bloomberg) -- The European Central Bank lowered borrowing costs for a fifth time since June, with the region\u2019s economy stalling and the 2% inflation target in reach.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoUS Students\u2019 Reading Scores Drop to Worst in More Than 20 YearsTexas HOA Charged With Discrimination for Banning Section 8 RentersOffi",
-        "date": null,
-        "grade": "F",
-        "score": 2
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Arrow Financial: Q4 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/arrow-financial-q4-earnings-snapshot-132340590.html",
-        "first_paragraph": "GLENS FALLS, N.Y. (AP) \u2014 Arrow Financial Corp. AROW) on Thursday reported fourth-quarter profit of $4.5 million. The bank, based in Glens Falls, New York, said it had earnings of 27 cents per share.",
-        "date": null,
-        "grade": "A",
-        "score": 81
-    },
-    {
-        "headline": "ECB cuts interest rates and keeps more easing on table",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/ecb-cuts-interest-rates-keeps-132034173.html",
-        "first_paragraph": "The European Central Bank cut interest rates as expected on Thursday and kept more easing on the table, sticking to its view that inflation in the euro zone is increasingly under control despite concerns about global trade.  The fifth ECB rate cut since June, which had been well telegraphed to the market, lowered the rate that the central bank pays on deposits to 2.75% from 3.0%.  The euro zone economy has remained weak, despite some signs of revival in the latest round of surveys, and inflation has hovered just above the ECB's 2% target, cementing the case for Thursday's rate cut.",
-        "date": null,
-        "grade": "F",
-        "score": 20
-    },
-    {
-        "headline": "First Merchants: Q4 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/first-merchants-q4-earnings-snapshot-131912449.html",
-        "first_paragraph": "MUNCIE, Ind. AP) \u2014 First Merchants Corp. FRME) on Thursday reported fourth-quarter net income of $64.3 million.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "European Central Bank cuts benchmark interest rate by a quarter percentage point to boost stagnating economy",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/european-central-bank-cuts-benchmark-131557255.html",
-        "first_paragraph": "European Central Bank cuts benchmark interest rate by a quarter percentage point to boost stagnating economy.",
-        "date": null,
-        "grade": "B",
-        "score": 69
-    },
-    {
-        "headline": "Sirius XM (NASDAQ:SIRI) Exceeds Q4 Expectations",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/sirius-xm-nasdaq-siri-exceeds-131501009.html",
-        "first_paragraph": "Satellite radio and media company Sirius XM (NASDAQ:SIRI) reported Q4 CY2024 results exceeding the market\u2019s revenue expectations, but sales fell by 4.3% year on year to $2.19 billion. On the other hand, the company\u2019s full-year revenue guidance of $8.5 billion at the midpoint came in 0.6% below analysts\u2019 estimates. Its GAAP profit of $0.83 per share was 17% above analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 94
-    },
-    {
-        "headline": "5 Things to Know Before the Stock Market Opens",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/5-things-know-stock-market-131121085.html",
-        "first_paragraph": "News of the day for Jan. 30, 2025",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Baker Hughes enters supply agreement with Venture Global",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/baker-hughes-enters-supply-agreement-131023039.html",
-        "first_paragraph": "The company has also signed a services frame agreement to support phase 1 and 2 of the Venture Global's Plaquemines LNG project in Louisiana.  \"As power demand surges, LNG has a critical role to play in providing a reliable, flexible fuel source that can be quickly scaled to meet rising demand,\" said Baker Hughes CEO Lorenzo Simonelli.  Arlington, Virginia-based Venture Global is the second-largest U.S. liquefied natural gas exporter and has been quickly increasing production from its second LNG plant, Plaquemines.",
-        "date": null,
-        "grade": "A",
-        "score": 91
-    },
-    {
-        "headline": "Carpenter: Fiscal Q2 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/carpenter-fiscal-q2-earnings-snapshot-130834962.html",
-        "first_paragraph": "PHILADELPHIA (AP) \u2014 Carpenter Technology Corp. CRS) on Thursday reported fiscal second-quarter earnings of $84.1 million. On a per-share basis, the Philadelphia-based company said it had profit of $1.66.",
-        "date": null,
-        "grade": "B",
-        "score": 64
-    },
-    {
-        "headline": "L3Harris forecasts upbeat annual sales on strong defense demand",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/l3harris-forecasts-upbeat-annual-sales-130819150.html",
-        "first_paragraph": "Demand for arms and military equipment has ballooned as a result of the Russia-Ukraine war and ongoing conflicts in the Middle East, benefiting defense contractors such as L3Harris.  The company also raised its cost-saving goal to $1.2 billion by the end of 2025, a year ahead of its previously disclosed timeline.  L3Harris said it had achieved $800 million in cost savings in 2024.",
-        "date": null,
-        "grade": "F",
-        "score": 7
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "\u2018Big Short\u2019 Traders Reuniting for Hedge-Fund Week Are Going Long",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/big-short-traders-reuniting-hedge-130803519.html",
-        "first_paragraph": "(Bloomberg) -- It\u2019s another sign, if one were needed, of the perilous state of the short-selling industry right now: At an event featuring some of the most famous names in the game, there was hardly a bearish view among them.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoUS Students\u2019 Reading Scores Drop to Worst in More Than 20 YearsTexas HOA Ch",
-        "date": null,
-        "grade": "F",
-        "score": 3
-    },
-    {
-        "headline": "MasterCard: Q4 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/mastercard-q4-earnings-snapshot-130737624.html",
-        "first_paragraph": "PURCHASE, N.Y. (AP) \u2014 MasterCard Inc. MA) on Thursday reported fourth-quarter net income of $3.34 billion. On a per-share basis, the Purchase, New York-based company said it had net income of $3.64.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "1-800-FLOWERS (NASDAQ:FLWS) Misses Q4 Revenue Estimates, Stock Drops 16.3%",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/1-800-flowers-nasdaq-flws-130637547.html",
-        "first_paragraph": "E-commerce florist and gift retailer 1-800-FLOWERS (NASDAQ:FLWS) fell short of the market\u2019s revenue expectations in Q4 CY2024, with sales falling 5.7% year on year to $775.5 million. Its non-GAAP profit of $1.08 per share was 9.2% below analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 87
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Sherwin-Williams forecasts annual profit below estimates on soft demand",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/sherwin-williams-forecasts-annual-profit-130522762.html",
-        "first_paragraph": "The chemical industry has also been struggling with sluggish demand recovery, resulting in lower prices, particularly in Europe due to a challenging regulatory landscape which has caused firms to reassess their strategies.  However, the Ohio-based company posted an adjusted profit of $2.09 per share for the fourth quarter ended Dec. 31, beating estimates of $2.06 per share, according to data compiled by LSEG, as it benefited from higher sales at its paint stores unit.  The company expects full-year adjusted profit in the range of $11.65 per share to $12.05 per share, far below Wall Street expectations of $12.60 per share.",
-        "date": null,
-        "grade": "A",
-        "score": 81
-    },
-    {
-        "headline": "Mastercard's profit jumps on strong holiday spending",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/mastercards-profit-jumps-resilient-consumer-130424417.html",
-        "first_paragraph": "Spending continues to be underpinned by a solid labor market and wage growth that have spurred consumer confidence, while retailers also offered discounts to attract budget-conscious shoppers during the holiday season between Thanksgiving and Christmas.  Mastercard's gross dollar volume, the value of all transactions processed on the company's platform, rose 12% in the fourth quarter.  Mastercard has a more balanced global exposure compared with its peers, with the company benefiting from continued stability in volume growth, analysts have said.",
-        "date": null,
-        "grade": "A",
-        "score": 95
-    },
-    {
-        "headline": "Homebuilder PulteGroup posts upbeat quarterly results; increases share buyback",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/homebuilder-pultegroup-posts-upbeat-quarterly-130353608.html",
-        "first_paragraph": "U.S. homebuilder PulteGroup beat Wall Street estimates for its fourth-quarter results on Thursday, as strategic promotions helped boost home sales despite high mortgage rates, sending its shares up more than 3% in premarket. The Atlanta, Georgia-based company said it used targeted sales incentives to spur consumers who have been reluctant to buy new homes, as the U.S. 30-year mortgage rates crossed 7% earlier this month, the highest since May 2024. \"Despite Federal Reserve actions to lower short-term interest rates, mortgage interest rates remained elevated in the fourth quarter, which impacted buyer demand as homebuyers continue to face affordability challenges,\" said PulteGroup CEO, Ryan M...",
-        "date": null,
-        "grade": "A",
-        "score": 90
-    },
-    {
-        "headline": "Rogers Earnings Beat Expectations But Guidance Weaker for 2025",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/rogers-earnings-beat-expectations-guidance-130343213.html",
-        "first_paragraph": "(Bloomberg) -- Rogers Communications Inc. beat analysts\u2019 fourth-quarter estimates as wireless service revenue gained and subscribers bought more expensive devices.Most Read from BloombergManhattan\u2019s Morning Commute Time Drops With New Congestion TollTrump's Federal Funding Pause Threatens State Financials Housing Aid Uncertain After Trump\u2019s Spending Freeze MemoUS Students\u2019 Reading Scores Drop to Worst in More Than 20 YearsTexas HOA Charged With Discrimination for Banning Section 8 RentersBut the",
-        "date": null,
-        "grade": "F",
-        "score": 4
-    },
-    {
-        "headline": "Sterling Bancorp: Q4 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/sterling-bancorp-q4-earnings-snapshot-130307549.html",
-        "first_paragraph": "SOUTHFIELD, Mich. AP) \u2014 Sterling Bancorp Inc. SBT) on Thursday reported net income of $1.2 million in its fourth quarter.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Parker-Hannifin (NYSE:PH) Reports Sales Below Analyst Estimates In Q4 Earnings",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/parker-hannifin-nyse-ph-reports-130209123.html",
-        "first_paragraph": "Industrial machinery company Parker-Hannifin (NYSE:PH) fell short of the market\u2019s revenue expectations in Q4 CY2024, with sales falling 1.6% year on year to $4.74 billion. Its non-GAAP profit of $6.53 per share was 4.9% above analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "B",
-        "score": 69
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "First Foundation: Q4 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/first-foundation-q4-earnings-snapshot-130117463.html",
-        "first_paragraph": "DALLAS (AP) \u2014 First Foundation Inc. FFWM) on Thursday reported a loss of $14.1 million in its fourth quarter. The bank, based in Dallas, said it had a loss of 17 cents per share.",
-        "date": null,
-        "grade": "F",
-        "score": 19
-    },
-    {
-        "headline": "Freightmate Ai raises $5M, highlights need for flexible freight forwarding tech",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/freightmate-ai-raises-5m-highlights-130008646.html",
-        "first_paragraph": "\u201cWe\u2019re partnering with over three times the number of freight forwarders that we [anticipated] by this time,\u201d said Bryan Lacaillade, co-founder and CEO of Freightmate Ai. The post Freightmate Ai raises $5M, highlights need for flexible freight forwarding tech appeared first on FreightWaves.",
-        "date": null,
-        "grade": "C",
-        "score": 51
-    },
-    {
-        "headline": "Manpower: Q4 Earnings Snapshot",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/manpower-q4-earnings-snapshot-125813479.html",
-        "first_paragraph": "MILWAUKEE (AP) \u2014 ManpowerGroup Inc. MAN) on Thursday reported fourth-quarter earnings of $22.5 million. On a per-share basis, the Milwaukee-based company said it had net income of 47 cents.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "International Paper (NYSE:IP) Misses Q4 Sales Targets",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/international-paper-nyse-ip-misses-125809911.html",
-        "first_paragraph": "Packaging and materials company International Paper (NYSE:IP) fell short of the market\u2019s revenue expectations in Q4 CY2024, with sales flat year on year at $4.58 billion. Its non-GAAP loss of $0.02 per share was $0.03 below analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "D",
-        "score": 34
-    },
-    {
-        "headline": "DeepSeek's founder said 'experience is not that important' when hiring staff in rare 2023 interview",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/deepseeks-founder-said-experience-not-125423765.html",
-        "first_paragraph": "DeepSeek's founder previously said he doesn't like recruiting experienced people from Silicon Valley as it doesn't guarantee long-term success.",
-        "date": null,
-        "grade": "F",
-        "score": 8
-    },
-    {
-        "headline": "Oshkosh (NYSE:OSK) Reports Strong Q4, Stock Soars",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/oshkosh-nyse-osk-reports-strong-125322846.html",
-        "first_paragraph": "Specialty vehicles contractor Oshkosh (NYSE:OSK) reported revenue ahead of Wall Street\u2019s expectations in Q4 CY2024, with sales up 6.3% year on year to $2.62 billion. The company\u2019s full-year revenue guidance of $10.6 billion at the midpoint came in 3.4% above analysts\u2019 estimates. Its non-GAAP profit of $2.58 per share was 18.2% above analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 81
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Kirby\u2019s (NYSE:KEX) Q4 Earnings Results: Revenue In Line With Expectations",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/kirby-nyse-kex-q4-earnings-125104545.html",
-        "first_paragraph": "Marine transportation service company Kirby (NYSE:KEX) met Wall Street\u2019s revenue expectations in Q4 CY2024, but sales were flat year on year at $802.3 million. Its GAAP profit of $0.74 per share was 43.1% below analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 88
     },
     {
         "headline": "Tesla earnings live updates: Investors seek details on self-driving initiatives, robotaxis",
@@ -794,18 +1026,10 @@
     {
         "headline": "First look: CPKC Q4 earnings improve",
         "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/first-look-cpkc-q4-earnings-002918169.html",
-        "first_paragraph": "Canadian Pacific Kansas City said fourth-quarter revenues increased to $3.9 billion from $3.8 billion a year ago, as diluted earnings per share increased to $1.28 from $1.10 in the same quarter in 2023. The Calgary, Alta.-based company (NASDAQ: CP) said after markets closed that its operating ratio decreased by 210 basis points to 59.7% from [\u2026] The post First look: CPKC Q4 earnings improve appeared first on FreightWaves.",
+        "first_paragraph": "Canadian Pacific Kansas City said fourth-quarter revenues increased to $3.9 billion from $3.8 billion a year ago, as diluted earnings per share increased to $1.28 from $1.10 in the same quarter in 2023. The Calgary, Alberta-based company (NASDAQ: CP) said after markets closed that its operating ratio decreased by 210 basis points to 59.7% from [\u2026] The post First look: CPKC Q4 earnings improve appeared first on FreightWaves.",
         "date": null,
         "grade": "A",
         "score": 90
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
     },
     {
         "headline": "Zuckerberg promises 'a pivotal year for the metaverse' as its Reality Labs division continues to bleed cash",
@@ -816,12 +1040,12 @@
         "score": 17
     },
     {
-        "headline": "Tesla stock rises after company pledges return to growth after Q4 results disappoint",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tesla-stock-rises-after-company-pledges-return-to-growth-after-q4-results-disappoint-230732196.html",
-        "first_paragraph": "Tesla's fourth quarter earnings disappointed, but the company's commitment to returning to growth in 2025 saw shares rise in extended trading on Wednesday.",
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
         "date": null,
-        "grade": "A",
-        "score": 91
+        "grade": "N/A",
+        "score": 0
     },
     {
         "headline": "Morning Bid: Tech, hawkish Fed pressure stocks before megacap earnings parade",
@@ -856,14 +1080,6 @@
         "score": 65
     },
     {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
         "headline": "Tesla (NASDAQ:TSLA) Reports Sales Below Analyst Estimates In Q4 Earnings",
         "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/tesla-nasdaq-tsla-reports-sales-220259082.html",
         "first_paragraph": "Electric vehicle pioneer Tesla (NASDAQ:TSLA) fell short of the market\u2019s revenue expectations in Q4 CY2024 as sales rose 2.1% year on year to $25.71 billion. Its non-GAAP profit of $0.73 per share was 5.2% below analysts\u2019 consensus estimates.",
@@ -880,20 +1096,20 @@
         "score": 15
     },
     {
-        "headline": "Meta earnings top expectations as company forecasts higher costs, AI investments in year ahead",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/meta-earnings-top-expectations-as-company-forecasts-higher-costs-ai-investments-in-year-ahead-214329642.html",
-        "first_paragraph": "Meta announced fourth quarter earnings on Wednesday that beat expectations, while its outlook for the year ahead showed continued investments around AI.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
         "headline": null,
         "link": null,
         "first_paragraph": null,
         "date": null,
         "grade": "N/A",
         "score": 0
+    },
+    {
+        "headline": "Meta earnings top expectations as company forecasts higher costs, AI investments in year ahead",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/meta-earnings-top-expectations-as-company-forecasts-higher-costs-ai-investments-in-year-ahead-214329642.html",
+        "first_paragraph": "Meta announced fourth quarter earnings on Wednesday that beat expectations, while its outlook for the year ahead showed continued investments around AI.",
+        "date": null,
+        "grade": "D",
+        "score": 35
     },
     {
         "headline": "Landstar Q4 earnings: First Look",
@@ -912,20 +1128,20 @@
         "score": 86
     },
     {
-        "headline": "Wall Street is growing more bullish on Tesla's AI push ahead of earnings",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/wall-street-growing-more-bullish-201015260.html",
-        "first_paragraph": "With Tesla set to release its latest quarterly earnings report, Wall Street thinks the stock can keep rising on a \"golden age\" for automation and AI.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
         "headline": null,
         "link": null,
         "first_paragraph": null,
         "date": null,
         "grade": "N/A",
         "score": 0
+    },
+    {
+        "headline": "Wall Street is growing more bullish on Tesla's AI push ahead of earnings",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/wall-street-growing-more-bullish-201015260.html",
+        "first_paragraph": "With Tesla set to release its latest quarterly earnings report, Wall Street thinks the stock can keep rising on a \"golden age\" for automation and AI.",
+        "date": null,
+        "grade": "D",
+        "score": 35
     },
     {
         "headline": "DeepSeek Whammy Shifts Focus to Big Tech Trio\u2019s Earnings Calls",
@@ -936,241 +1152,25 @@
         "score": 6
     },
     {
-        "headline": "Intel will report its Q4 earnings as company seeks permanent CEO",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/intel-will-report-its-q4-earnings-as-company-seeks-permanent-ceo-181745208.html",
-        "first_paragraph": "Intel will report its Q4 earnings after the bell Thursday.",
+        "headline": "Intel reports Q4 beats on top and bottom line, stock rises on foundry revenue outlook",
+        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/intel-reports-q4-beats-on-top-and-bottom-line-stock-rises-on-foundry-revenue-outlook-181745845.html",
+        "first_paragraph": "Intel reported its Q4 earnings after the bell on Thursday.",
         "date": null,
         "grade": "D",
         "score": 35
     },
     {
-        "headline": "Apple to report Q1 earnings a week after stock hit with multiple downgrades",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/apple-to-report-q1-earnings-a-week-after-stock-hit-with-multiple-downgrades-181558755.html",
-        "first_paragraph": "Apple will report its Q1 earnings after the bell on Thursday.",
+        "headline": null,
+        "link": null,
+        "first_paragraph": null,
         "date": null,
-        "grade": "D",
-        "score": 35
+        "grade": "N/A",
+        "score": 0
     },
     {
         "headline": "DeepSeek clouds AI picture just as Big Tech is set to report earnings",
         "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/deepseek-clouds-ai-picture-just-as-big-tech-is-set-to-report-earnings-172537597.html",
         "first_paragraph": "Big Tech earnings kick off today as Wall Street continues to digest the fallout from DeepSeek.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Why GM stock has gotten hit hard on earnings",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/why-gm-stock-has-gotten-hit-hard-on-earnings-165417351.html",
-        "first_paragraph": "GM's stock got punished amid its latest earnings report. Here's why.",
-        "date": null,
-        "grade": "F",
-        "score": 16
-    },
-    {
-        "headline": "Starbucks CEO says a turnaround is underway, with no timeline on the table",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/starbucks-ceo-says-a-turnaround-is-underway-with-no-timeline-on-the-table-154600970.html",
-        "first_paragraph": "Starbucks CEO Brian Niccol says he is just getting started saving the company.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "ASML stock rises after earnings beat as CEO says DeepSeek will drive AI chip demand higher",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/asml-stock-rises-after-earnings-beat-as-ceo-says-deepseek-will-drive-ai-chip-demand-higher-134704766.html",
-        "first_paragraph": "ASML stock rose 4.3% Wednesday after the Dutch semiconductor equipment company posted better than expected fourth quarter earnings and its CEO dismissed concerns over DeepSeek AI.",
-        "date": null,
-        "grade": "B",
-        "score": 64
-    },
-    {
-        "headline": "Norfolk Southern Corporation\u2019s (NYSE:NSC) Q4 Earnings Results: Revenue In Line With Expectations",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/norfolk-southern-corporation-nyse-nsc-131338948.html",
-        "first_paragraph": "Freight transportation company Norfolk Southern (NYSE:NSC) met Wall Street\u2019s revenue expectations in Q4 CY2024, but sales fell by 1.6% year on year to $3.02 billion. Its GAAP profit of $3.23 per share was 8.4% above analysts\u2019 consensus estimates.",
-        "date": null,
-        "grade": "A",
-        "score": 88
-    },
-    {
-        "headline": "Atlassian (TEAM) Q4 Earnings Report Preview: What To Look For",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/atlassian-team-q4-earnings-report-130644968.html",
-        "first_paragraph": "IT project management software company, Atlassian (NASDAQ:TEAM) will be reporting results tomorrow after market close. Here\u2019s what to look for.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Brunswick (BC) Q4 Earnings: What To Expect",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/brunswick-bc-q4-earnings-expect-130634040.html",
-        "first_paragraph": "Boat and marine manufacturer Brunswick (NYSE:BC) will be reporting results tomorrow morning. Here\u2019s what to expect.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Oshkosh (OSK) To Report Earnings Tomorrow: Here Is What To Expect",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/oshkosh-osk-report-earnings-tomorrow-130622536.html",
-        "first_paragraph": "Specialty vehicles contractor Oshkosh (NYSE:OSK) will be reporting results tomorrow before the bell. Here\u2019s what you need to know.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Earnings To Watch: Comcast (CMCSA) Reports Q4 Results Tomorrow",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/earnings-watch-comcast-cmcsa-reports-130617794.html",
-        "first_paragraph": "Telecommunications and media company Comcast (NASDAQ:CMCSA) will be reporting earnings tomorrow before market open. Here\u2019s what you need to know.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Earnings To Watch: Kirby (KEX) Reports Q4 Results Tomorrow",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/earnings-watch-kirby-kex-reports-130608415.html",
-        "first_paragraph": "Marine transportation service company Kirby (NYSE:KEX) will be reporting earnings tomorrow before market open. Here\u2019s what investors should know.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Northrop Grumman (NOC) Reports Q4: Everything You Need To Know Ahead Of Earnings",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/northrop-grumman-noc-reports-q4-130554226.html",
-        "first_paragraph": "Security and aerospace company Northrop Grumman (NYSE:NOC) will be reporting results tomorrow before market hours. Here\u2019s what investors should know.",
-        "date": null,
-        "grade": "B",
-        "score": 60
-    },
-    {
-        "headline": "Coursera (COUR) Q4 Earnings: What To Expect",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/coursera-cour-q4-earnings-expect-130533614.html",
-        "first_paragraph": "Online learning platform Coursera (NYSE:COUR) will be announcing earnings results tomorrow after the bell. Here\u2019s what to look for.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Dover (DOV) Q4 Earnings: What To Expect",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/dover-dov-q4-earnings-expect-130531633.html",
-        "first_paragraph": "Manufacturing company Dover (NYSE:DOV) will be announcing earnings results tomorrow before market hours. Here\u2019s what to look for.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "International Paper (IP) Reports Q4: Everything You Need To Know Ahead Of Earnings",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/international-paper-ip-reports-q4-130516288.html",
-        "first_paragraph": "Packaging and materials company International Paper (NYSE:IP) will be reporting earnings tomorrow before market hours. Here\u2019s what you need to know.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Deckers (DECK) Q4 Earnings: What To Expect",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/deckers-deck-q4-earnings-expect-130502866.html",
-        "first_paragraph": "Footwear and apparel conglomerate Deckers (NYSE:DECK) will be announcing earnings results tomorrow after the bell. Here\u2019s what you need to know.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Sherwin-Williams Earnings: What To Look For From SHW",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/sherwin-williams-earnings-look-shw-130443353.html",
-        "first_paragraph": "Paint and coating manufacturer Sherwin-Williams (NYSE:SHW) will be reporting earnings tomorrow morning. Here\u2019s what to expect.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Standex (SXI) Q4 Earnings Report Preview: What To Look For",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/standex-sxi-q4-earnings-report-130439227.html",
-        "first_paragraph": "Industrial manufacturer Standex (NYSE:SXI) will be reporting earnings tomorrow afternoon. Here\u2019s what to look for.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Trane Technologies (TT) Reports Q4: Everything You Need To Know Ahead Of Earnings",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/trane-technologies-tt-reports-q4-130435088.html",
-        "first_paragraph": "HVAC company Trane (NYSE:TT) will be reporting results tomorrow before the bell. Here\u2019s what investors should know.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Allegro MicroSystems (ALGM) Reports Earnings Tomorrow: What To Expect",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/allegro-microsystems-algm-reports-earnings-130408425.html",
-        "first_paragraph": "Chip designer Allegro MicroSystems (NASDAQ:ALGM) will be announcing earnings results tomorrow before market open. Here\u2019s what you need to know.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "Dynatrace (DT) To Report Earnings Tomorrow: Here Is What To Expect",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/dynatrace-dt-report-earnings-tomorrow-130355198.html",
-        "first_paragraph": "Application performance monitoring software provider Dynatrace (NYSE:DT) will be announcing earnings results tomorrow before the bell. Here\u2019s what you need to know.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": "What To Expect From Adtalem\u2019s (ATGE) Q4 Earnings",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/expect-adtalem-atge-q4-earnings-130351775.html",
-        "first_paragraph": "Vocational education company Adtalem Global Education (NYSE:ATGE) will be reporting earnings tomorrow after market close. Here\u2019s what investors should know.",
-        "date": null,
-        "grade": "D",
-        "score": 35
-    },
-    {
-        "headline": null,
-        "link": null,
-        "first_paragraph": null,
-        "date": null,
-        "grade": "N/A",
-        "score": 0
-    },
-    {
-        "headline": "Sirius XM Earnings: What To Look For From SIRI",
-        "link": "https://finance.yahoo.comhttps://finance.yahoo.com/news/sirius-xm-earnings-look-siri-130348840.html",
-        "first_paragraph": "Satellite radio and media company Sirius XM (NASDAQ:SIRI) will be announcing earnings results tomorrow before the bell. Here\u2019s what investors should know.",
         "date": null,
         "grade": "D",
         "score": 35
