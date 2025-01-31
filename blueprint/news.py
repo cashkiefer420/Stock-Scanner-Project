@@ -63,8 +63,8 @@ def fetch_news():
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # 🔹 Fixed selector: Selecting anchor tags inside article blocks
-        articles = soup.select("li.js-stream-content div")
+        # Updated selector for news articles
+        articles = soup.select("li.stream-item")
 
         print(f"🔍 {len(articles)} articles fetched from {url}")
 
@@ -82,15 +82,19 @@ def extract_articles():
 
     for article in articles:
         # Ensure elements exist before accessing them
-        headline_tag = article  # Article link tag (h3 > a)
-        link = f"https://finance.yahoo.com{headline_tag['href']}" if 'href' in headline_tag.attrs else None
-        headline = headline_tag.text.strip()
+        headline_tag = article.select_one("h3 a")
+        link_tag = article.select_one("h3 a")
+        paragraph_tag = article.select_one("p")
+        meta_date_tag = article.select_one('meta[itemprop="datePublished"]')
 
-        # 🔹 Fetch article summary (meta description)
-        first_paragraph = fetch_article_summary(link) if link else None
+        if not headline_tag or not link_tag:  
+            continue  # Skip invalid articles
 
-        # 🔹 Extract date properly
-        article_date = fetch_article_date(link) if link else datetime.today().strftime("%Y-%m-%d")
+         headline = headline_tag.text.strip() if headline_tag else None
+        link = f"https://finance.yahoo.com{link_tag['href']}" if 'href' in link_tag.attrs else None
+        first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
+
+        article_date = meta_date_tag["content"].split("T")[0] if meta_date_tag and "content" in meta_date_tag.attrs else datetime.today().strftime("%Y-%m-%d")
 
         # 🔹 Assign grade & score immediately
         grade, score = assign_grade(first_paragraph)
@@ -99,19 +103,21 @@ def extract_articles():
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
-            "date": article_date,  # ✅ Fixed date extraction
+            "date": article_date,  # ✅ Now correctly extracted
             "grade": grade, 
             "score": score  
         })
+        
+        none_articles.append()
+        
+        if headline == NULL or link == NULL  :  
+            return none_articles
     
-    return all_articles  # ✅ Return extracted articles
+    return all_articles  # ✅ Corrected return statement
 
 # 🔹 Fetch date from article page if not found in meta tag
 def fetch_article_date(url):
     """Fetches the article's publication date from its page."""
-    if not url:
-        return None
-
     try:
         headers = {"User-Agent": "Mozilla/5.0"}
         response = requests.get(url, headers=headers)
@@ -129,41 +135,14 @@ def fetch_article_date(url):
 
     return None  # Return None if date is not found
 
-# 🔹 Fetch article summary from its page
-def fetch_article_summary(url):
-    """Fetches the article's summary or meta description."""
-    if not url:
-        return None
-
-    try:
-        headers = {"User-Agent": "Mozilla/5.0"}
-        response = requests.get(url, headers=headers)
-        if response.status_code != 200:
-            return None
-
-        soup = BeautifulSoup(response.text, "html.parser")
-
-        # Attempt to find meta description for summary
-        meta_description = soup.select_one('meta[name="description"]')
-
-        if meta_description and "content" in meta_description.attrs:
-            return meta_description["content"]
-
-    except Exception as e:
-        print(f"⚠️ Error fetching summary for {url}: {e}")
-
-    return None  # Return None if summary is not found
-
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":
     extracted_articles = extract_articles()
 
     if extracted_articles:
-        # Ensure directory exists before saving the file
-        os.makedirs(os.path.dirname(EXPORT_FILE_PATH), exist_ok=True)
 
         with open(EXPORT_FILE_PATH, "w") as json_file:
-            json.dump(extracted_articles, json_file, indent=4)
+            json.dump(all_articles, json_file, indent=4)
         
         print(f"✅ Saved {len(extracted_articles)} articles to {EXPORT_FILE_PATH}")
     else:
