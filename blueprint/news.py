@@ -129,9 +129,8 @@ def fetch_article_date(url):
 
     return None  # Return None if date is not found
 
-# 🔹 Fetch article summary from its page
-def fetch_article_summary(url):
-    """Fetches the article's summary or meta description."""
+def fetch_article_date(url):
+    """Fetches the article's publication date from its page."""
     if not url:
         return None
 
@@ -143,28 +142,27 @@ def fetch_article_summary(url):
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # Attempt to find meta description for summary
-        meta_description = soup.select_one('meta[name="description"]')
-
-        if meta_description and "content" in meta_description.attrs:
-            return meta_description["content"]
-
-    except Exception as e:
-        print(f"⚠️ Error fetching summary for {url}: {e}")
-
-    return None  # Return None if summary is not found
-
-# 🔹 Run the scraper and save results
-if __name__ == "__main__":
-    extracted_articles = extract_articles()
-
-    if extracted_articles:
-        # Ensure directory exists before saving the file
-        os.makedirs(os.path.dirname(EXPORT_FILE_PATH), exist_ok=True)
-
-        with open(EXPORT_FILE_PATH, "w") as json_file:
-            json.dump(extracted_articles, json_file, indent=4)
+        # 🔹 Try extracting from meta tag first
+        meta_date = soup.select_one('meta[property="article:published_time"]')
+        if meta_date and "content" in meta_date.attrs:
+            return meta_date["content"].split("T")[0]  # Extract YYYY-MM-DD format
         
-        print(f"✅ Saved {len(extracted_articles)} articles to {EXPORT_FILE_PATH}")
-    else:
-        print("❌ No valid articles found.")
+        # 🔹 If no meta tag found, try extracting from publishing div
+        publishing_div = soup.select_one("div.publishing")
+        if publishing_div:
+            text = publishing_div.get_text(strip=True)
+            parts = text.split("•")  # Separate source name and time info
+            if len(parts) > 1:
+                raw_date = parts[-1].strip()  # Extract the last part (e.g., "19 hours ago")
+                
+                # Convert relative time to actual date
+                if "hour" in raw_date or "minute" in raw_date:
+                    return datetime.today().strftime("%Y-%m-%d")  # Today’s date
+                elif "day" in raw_date:
+                    days_ago = int(raw_date.split()[0])
+                    return (datetime.today() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
+        
+    except Exception as e:
+        print(f"⚠️ Error fetching date for {url}: {e}")
+
+    return None  # Return None if date is not found
