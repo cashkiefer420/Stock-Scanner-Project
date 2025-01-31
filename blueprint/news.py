@@ -103,7 +103,7 @@ def extract_articles():
             "headline": headline,
             "link": link,
             "first_paragraph": first_paragraph,
-            "date": publishing_div,  # ✅ Now correctly extracted
+            "date": article_date,  # ✅ Now correctly extracted
             "grade": grade, 
             "score": score  
         })
@@ -120,20 +120,10 @@ def fetch_article_date(url):
             return None
 
         soup = BeautifulSoup(response.text, "html.parser")
-        publishing_div = soup.select_one("div.publishing")
-        if publishing_div:
-            text = publishing_div.get_text(strip=True)
-            parts = text.split("•")  # Separate source name and time info
-            if len(parts) > 1:
-                raw_date = parts[-1].strip()  # Extract the last part (e.g., "19 hours ago")
-                
-                # Convert relative time to actual date
-                if "hour" in raw_date or "minute" in raw_date:
-                    return datetime.today().strftime("%Y-%m-%d")  # Today’s date
-                elif "day" in raw_date:
-                    days_ago = int(raw_date.split()[0])
-                    return (datetime.today() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
-        
+        meta_date = soup.select_one('meta[property="article:published_time"]')
+
+        if meta_date and "content" in meta_date.attrs:
+            return meta_date["content"].split("T")[0]
 
     except Exception as e:
         print(f"⚠️ Error fetching date for {url}: {e}")
