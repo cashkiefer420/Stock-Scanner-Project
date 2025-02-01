@@ -19,7 +19,7 @@ SENDER_EMAIL = 'noreply.rts@retailtradescanner.com'
 SENDER_PASSWORD = 'pIqvin-persi2-pibsij'
 
 # Paths to JSON files
-BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/json/"
+BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
 JSON_FILE = os.path.join(BASE_DIR, 'json', '75_price_in.json')
 STOCK_INFO_FILE = os.path.join(BASE_DIR, 'json', 'Filtered_price_75_in.json')
 USED_TICKERS_FILE = os.path.join(BASE_DIR, 'json', 'ut_price_75_in.json')
