@@ -12,6 +12,14 @@ import threading
 
 app = Flask(__name__)
 
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204
+
+@app.route('/')
+def index():
+    return render_template('Index-Price-Decrease-10.html')
+
 # SMTP Configuration
 SMTP_SERVER = 'smtp.ionos.com'
 SMTP_PORT = 587
