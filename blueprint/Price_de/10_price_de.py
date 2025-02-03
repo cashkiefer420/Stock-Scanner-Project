@@ -52,24 +52,31 @@ def is_valid_email(email):
     regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
     return re.match(regex, email)
 
-# Route to handle email subscription
 @app.route('/subscribe-price-10-de', methods=['POST'])
 def subscribe_email():
     try:
         data = request.get_json()
-        email = data.get("email")
 
-        if not email:
-            return jsonify({"message": "Email is required"}), 400
+        if not data or "email" not in data:
+            return jsonify({"message": "Invalid request format"}), 400
+
+        email = data["email"]
+        
         if not is_valid_email(email):
             return jsonify({"message": "Invalid email format"}), 400
 
-        with open(JSON_FILE, 'r') as file:
-            email_data = json.load(file)
+        # Load JSON safely
+        try:
+            with open(JSON_FILE, 'r') as file:
+                email_data = json.load(file)
+        except (json.JSONDecodeError, FileNotFoundError):
+            email_data = {"emails": []}  # Reset if empty or corrupt
 
+        # Prevent duplicate emails
         if email in email_data["emails"]:
             return jsonify({"message": "Email already subscribed"}), 400
 
+        # Add email and save back
         email_data["emails"].append(email)
         with open(JSON_FILE, 'w') as file:
             json.dump(email_data, file, indent=4)
@@ -77,7 +84,6 @@ def subscribe_email():
         return jsonify({"message": "Subscription successful"}), 200
     except Exception as e:
         return jsonify({"message": f"An error occurred: {str(e)}"}), 500
-
 # Function to send stock notifications
 def send_stock_notifications():
     try:
