@@ -65,12 +65,15 @@ def subscribe_email():
         if not is_valid_email(email):
             return jsonify({"message": "Invalid email format"}), 400
 
-        # Load JSON safely
-        try:
-            with open(JSON_FILE, 'r') as file:
-                email_data = json.load(file)
-        except (json.JSONDecodeError, FileNotFoundError):
-            email_data = {"emails": []}  # Reset if empty or corrupt
+        # Ensure JSON file exists, even if blank
+        if not os.path.exists(JSON_FILE):
+            with open(JSON_FILE, 'w') as file:
+                json.dump({"emails": []}, file, indent=4)
+
+        # Load JSON safely, even if it's blank
+        with open(JSON_FILE, 'r') as file:
+            file_content = file.read().strip()
+            email_data = json.loads(file_content) if file_content else {"emails": []}
 
         # Prevent duplicate emails
         if email in email_data["emails"]:
@@ -82,9 +85,11 @@ def subscribe_email():
             json.dump(email_data, file, indent=4)
 
         return jsonify({"message": "Subscription successful"}), 200
+
     except Exception as e:
         return jsonify({"message": f"An error occurred: {str(e)}"}), 500
-# Function to send stock notifications
+        
+        
 def send_stock_notifications():
     try:
         # Ensure all JSON files exist
