@@ -25,16 +25,16 @@ def assign_grade(text):
     compound_score = sentiment['compound']  # Overall sentiment score
 
     # Assign grade based on compound score
-    if compound_score >= 0.5:
-        grade, score = 'A', int((compound_score + 1) * 50)  
-    elif 0.2 <= compound_score < 0.5:
-        grade, score = 'B', int((compound_score + 1) * 45)
-    elif 0 <= compound_score < 0.2:
-        grade, score = 'C', int((compound_score + 1) * 40)
-    elif -0.2 <= compound_score < 0:
-        grade, score = 'D', int((compound_score + 1) * 35)
+    if compound_score >= 0.6:
+        grade, score = 'A', int((compound_score + 1) * 55)  
+    elif 0.3 <= compound_score < 0.6:
+        grade, score = 'B', int((compound_score + 1) * 50)
+    elif 0.1 <= compound_score < 0.3:
+        grade, score = 'C', int((compound_score + 1) * 45)
+    elif -0.1 <= compound_score < 0.1:
+        grade, score = 'D', int((compound_score + 1) * 40)
     else:
-        grade, score = 'F', int((compound_score + 1) * 30)
+        grade, score = 'F', int((compound_score + 1) * 35)
 
     return grade, score
 
