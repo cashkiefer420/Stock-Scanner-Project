@@ -26,15 +26,15 @@ def assign_grade(text):
 
     # Assign grade based on compound score
     if compound_score >= 0.6:
-        grade, score = 'A', int((compound_score + 1) * 50)  
+        grade, score = 'A', int((compound_score + 1) * 40)  
     elif 0.3 <= compound_score < 0.6:
-        grade, score = 'B', int((compound_score + 1) * 45)
+        grade, score = 'B', int((compound_score + 1) * 35)
     elif 0.1 <= compound_score < 0.3:
-        grade, score = 'C', int((compound_score + 1) * 40)
+        grade, score = 'C', int((compound_score + 1) * 30)
     elif -0.1 <= compound_score < 0.1:
-        grade, score = 'D', int((compound_score + 1) * 35)
+        grade, score = 'D', int((compound_score + 1) * 25)
     else:
-        grade, score = 'F', int((compound_score + 1) * 30)
+        grade, score = 'F', int((compound_score + 1) * 20)
 
     return grade, score
 
