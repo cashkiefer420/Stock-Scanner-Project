@@ -10,7 +10,7 @@ from datetime import datetime
 import time
 import threading
 
-app = Flask(__name__, static_folder= r"C:\Users\Carte\Documents\Stock-Scanner-Project-Windows\static")
+app = Flask(__name__, static_folder= r"/home/ec2-user/Stock-Scanner-Project/static")
 
 @app.route('/favicon.ico')
 def favicon():
@@ -27,7 +27,7 @@ SENDER_EMAIL = 'noreply.rts@retailtradescanner.com'
 SENDER_PASSWORD = 'pIqvin-persi2-pibsij'
 
 # Paths to JSON files
-BASE_DIR = r"C:\Users\Carte\Documents\Stock-Scanner-Project-Windows"
+BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
 JSON_FOLDER = os.path.join(BASE_DIR, 'json')
 JSON_FILE = os.path.join(JSON_FOLDER, '10_price_de.json')
 STOCK_INFO_FILE = os.path.join(JSON_FOLDER, 'Filtered_price_10_de.json')
