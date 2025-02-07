@@ -3,6 +3,7 @@ import os
 import json
 import re
 import smtplib
+import requests  # Added requests module
 from jinja2 import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -10,7 +11,7 @@ from datetime import datetime
 import time
 import threading
 
-app = Flask(__name__, static_folder= r"/home/ec2-user/Stock-Scanner-Project/static")
+app = Flask(__name__, static_folder=r"/home/ec2-user/Stock-Scanner-Project/static")
 
 @app.route('/favicon.ico')
 def favicon():
@@ -19,7 +20,7 @@ def favicon():
 @app.route('/')
 def index():
     return render_template('Index-Price-Decrease-10.html')
-    
+
 # SMTP Configuration
 SMTP_SERVER = 'smtp.ionos.com'
 SMTP_PORT = 587
@@ -65,21 +66,12 @@ def subscribe_email():
         if not is_valid_email(email):
             return jsonify({"message": "Invalid email format"}), 400
 
-        # Ensure JSON file exists, even if blank
-        if not os.path.exists(JSON_FILE):
-            with open(JSON_FILE, 'w') as file:
-                json.dump({"emails": []}, file, indent=4)
-
-        # Load JSON safely, even if it's blank
         with open(JSON_FILE, 'r') as file:
-            file_content = file.read().strip()
-            email_data = json.loads(file_content) if file_content else {"emails": []}
+            email_data = json.load(file)
 
-        # Prevent duplicate emails
         if email in email_data["emails"]:
             return jsonify({"message": "Email already subscribed"}), 400
 
-        # Add email and save back
         email_data["emails"].append(email)
         with open(JSON_FILE, 'w') as file:
             json.dump(email_data, file, indent=4)
@@ -88,16 +80,14 @@ def subscribe_email():
 
     except Exception as e:
         return jsonify({"message": f"An error occurred: {str(e)}"}), 500
-        
-        
+
+# Function to send stock notifications
 def send_stock_notifications():
     try:
-        # Ensure all JSON files exist
         ensure_json_file(JSON_FILE, {"emails": []})
         ensure_json_file(USED_TICKERS_FILE, {"used_tickers": []})
         ensure_json_file(STOCK_INFO_FILE, {"stocks": []})
 
-        # Load data
         with open(JSON_FILE, 'r') as f:
             email_data = json.load(f)
         with open(USED_TICKERS_FILE, 'r') as f:
@@ -105,7 +95,6 @@ def send_stock_notifications():
         with open(STOCK_INFO_FILE, 'r') as f:
             stock_data = json.load(f)
 
-        # Email template
         html_template = """
         <html>
           <body>
@@ -120,19 +109,16 @@ def send_stock_notifications():
         </html>
         """
 
-        # Initialize SMTP server
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.starttls()
         server.login(SENDER_EMAIL, SENDER_PASSWORD)
 
-        # Prepare template
         template = Template(html_template)
 
         for ticker_info in stock_data.get("stocks", []):
             ticker = ticker_info.get("Ticker", "Unknown")
             percentage_change = ticker_info.get("Price Change Today", 0)
 
-            # Ensure percentage change is significant
             if ticker in used_tickers_data["used_tickers"] or percentage_change < -10:
                 continue
 
@@ -152,10 +138,8 @@ def send_stock_notifications():
                 msg.attach(MIMEText(filled_html, 'html'))
                 server.sendmail(SENDER_EMAIL, recipient, msg.as_string())
 
-            # Mark ticker as used
             used_tickers_data["used_tickers"].append(ticker)
 
-        # Save updated used tickers
         with open(USED_TICKERS_FILE, 'w') as f:
             json.dump(used_tickers_data, f, indent=4)
 
@@ -181,6 +165,21 @@ def reset_used_tickers():
                 json.dump({"used_tickers": []}, f, indent=4)
         time.sleep(60)  # Check the time every minute
 
+# Function to subscribe test email programmatically
+def test_email_subscription():
+    try:
+        url = "http://127.0.0.1:5000"
+        email_data = {"email": "Carter.kiefer2010@outlook.com"}
+
+        response = requests.post(url, json=email_data)
+
+        if response.status_code == 200:
+            print("Test email successfully subscribed!")
+        else:
+            print(f"Failed to subscribe test email: {response.json()}")
+    except Exception as e:
+        print(f"Error during test email subscription: {str(e)}")
+
 # Start background threads
 reset_thread = threading.Thread(target=reset_used_tickers, daemon=True)
 reset_thread.start()
@@ -188,5 +187,7 @@ reset_thread.start()
 check_thread = threading.Thread(target=periodic_check, daemon=True)
 check_thread.start()
 
+# Run Flask app and subscribe test email
 if __name__ == '__main__':
+    test_email_subscription()  # Subscribe test email at startup
     app.run(debug=True)
