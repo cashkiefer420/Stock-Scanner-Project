@@ -168,7 +168,7 @@ def reset_used_tickers():
 # Function to subscribe test email programmatically
 def test_email_subscription():
     try:
-        url = "http://127.0.0.1:5000"
+        url = "http://127.0.0.1:5000/10_price_de"
         email_data = {"email": "Carter.kiefer2010@outlook.com"}
 
         response = requests.post(url, json=email_data)
