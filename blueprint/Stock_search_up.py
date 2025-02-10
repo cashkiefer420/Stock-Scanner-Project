@@ -1,6 +1,7 @@
 import json
-from flask import Flask, request, jsonify, render_template  # Import render_template
 import os
+from flask import Flask, request, jsonify, render_template
+import yfinance as yf  # Import Yahoo Finance for additional data
 
 app = Flask(__name__, template_folder='templates')
 
@@ -31,45 +32,40 @@ def get_stock_metrics(search_query, filepath):
         None,
     )
 
-    # Handle case when stock is not found
     if not stock:
         return {"error": "Stock or company not found"}
 
-    # Extract the ticker and company name
-    ticker = stock["Ticker"]
-    company_name = stock.get("Company Name", "N/A")
+    # Dynamically extract all available keys
+    response = {key: stock.get(key, "N/A") for key in stock}
 
-    # Include both ticker and company name in the response and add all other fields
-    response = {
-        "Ticker": ticker,
-        "Company Name": company_name,
-        "Current Price": stock.get("Current Price", "N/A"),
-        "Price Change Today": stock.get("Price Change Today", "N/A"),
-        "Price Change Week": stock.get("Price Change Week", "N/A"),
-        "Price Change Month": stock.get("Price Change Month", "N/A"),
-        "Price Change Year": stock.get("Price Change Year", "N/A"),
-        "Previous Close": stock.get("Previous Close", "N/A"),
-        "Previous Open": stock.get("Previous Open", "N/A"),
-        "Bid (Buy price Currently)": stock.get("Bid (Buy price Currently)", "N/A"),
-        "Ask (Sell Price Currently)": stock.get("Ask (Sell Price Currently)", "N/A"),
-        "Days Range": stock.get("Days Range", "N/A"),
-        "Shares Available": stock.get("Shares Available", "N/A"),
-        "Volume Today": stock.get("Volume Today", "N/A"),
-        "Avg Volume (3 mon)": stock.get("Avg Volume (3 mon)", "N/A"),
-        "DVAV (Day Volume Over Average Volume)": stock.get("DVAV (Day Volume Over Average Volume)", "N/A"),
-        "Market Cap": stock.get("Market Cap", "N/A"),
-        "Market Cap Change (3 Mon)": stock.get("Market Cap Change (3 Mon)", "N/A"),
-        "Beta": stock.get("Beta", "N/A"),
-        "P/E Ratio": stock.get("P/E Ratio", "N/A"),
-        "P/E Change (3 Mon)": stock.get("P/E Change (3 Mon)", "N/A"),
-        "Earnings Per Share": stock.get("Earnings Per Share", "N/A"),
-        "Earnings Date": stock.get("Earnings Date", "N/A"),
-        "Dividend Yield": stock.get("Dividend Yield", "N/A"),
-        "Ex-Dividend Date": stock.get("Ex-Dividend Date", "N/A"),
-        "One Year Target": stock.get("One Year Target", "N/A"),
-    }
+    # Fetch additional details from Yahoo Finance
+    ticker = stock["Ticker"]
+    yf_data = fetch_additional_data(ticker)
+    response.update(yf_data)
 
     return response
+
+# Fetch extra data from Yahoo Finance
+def fetch_additional_data(ticker):
+    try:
+        stock = yf.Ticker(ticker)
+        stock_info = stock.info
+
+        return {
+            "52 Week High": stock_info.get("fiftyTwoWeekHigh", "N/A"),
+            "52 Week Low": stock_info.get("fiftyTwoWeekLow", "N/A"),
+            "Forward P/E": stock_info.get("forwardPE", "N/A"),
+            "Trailing P/E": stock_info.get("trailingPE", "N/A"),
+            "Profit Margin": stock_info.get("profitMargins", "N/A"),
+            "Revenue": stock_info.get("totalRevenue", "N/A"),
+            "Gross Profit": stock_info.get("grossProfits", "N/A"),
+            "Operating Cash Flow": stock_info.get("operatingCashflow", "N/A"),
+            "Free Cash Flow": stock_info.get("freeCashflow", "N/A"),
+            "52 Week Change": stock_info.get("52WeekChange", "N/A"),
+        }
+    except Exception as e:
+        print(f"Error fetching Yahoo Finance data: {e}")
+        return {}
 
 @app.route('/Fetch_data_ticker', methods=['GET'])
 def get_stock():
@@ -80,13 +76,11 @@ def get_stock():
     
     stock_data = get_stock_metrics(search_query, filepath)
     
-
     return jsonify(stock_data)
 
 @app.route('/')
 def home():
     return render_template('Look.html')
-
 
 @app.route('/favicon.ico')
 def favicon():
