@@ -60,7 +60,7 @@ def send_stock_notifications():
         new_stocks = [s for s in stock_data["stocks"] if s["Ticker"] not in used_tickers]
 
         if not new_stocks:
-            print("No new stocks found.")
+            print("No new stocks to send.")
             return
 
         # Initialize SMTP server
