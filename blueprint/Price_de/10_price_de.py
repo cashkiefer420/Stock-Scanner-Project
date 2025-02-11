@@ -3,14 +3,14 @@ import os
 import json
 import re
 import smtplib
+import time
+import threading
 from jinja2 import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
-import time
-import threading
 
-app = Flask(__name__, static_folder= r"/home/ec2-user/Stock-Scanner-Project/static")
+app = Flask(__name__, static_folder=r"/home/ec2-user/Stock-Scanner-Project/static")
 
 @app.route('/favicon.ico')
 def favicon():
@@ -19,7 +19,7 @@ def favicon():
 @app.route('/')
 def index():
     return render_template('Index-Price-Decrease-10.html')
-    
+
 # SMTP Configuration
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
@@ -33,15 +33,14 @@ JSON_FILE = os.path.join(JSON_FOLDER, '10_price_de.json')
 STOCK_INFO_FILE = os.path.join(JSON_FOLDER, 'Filtered_price_10_de.json')
 USED_TICKERS_FILE = os.path.join(JSON_FOLDER, 'ut_price_10_de.json')
 
-# Ensure the JSON folder exists
-if not os.path.exists(JSON_FOLDER):
-    os.makedirs(JSON_FOLDER)
-
-# Ensure JSON files exist with correct initial structure
+# Ensure JSON folder and files exist
 def ensure_json_file(filepath, default_data):
     if not os.path.exists(filepath):
         with open(filepath, 'w') as f:
             json.dump(default_data, f, indent=4)
+
+if not os.path.exists(JSON_FOLDER):
+    os.makedirs(JSON_FOLDER)
 
 ensure_json_file(JSON_FILE, {"emails": []})
 ensure_json_file(USED_TICKERS_FILE, {"used_tickers": []})
@@ -56,30 +55,19 @@ def is_valid_email(email):
 def subscribe_email():
     try:
         data = request.get_json()
-
         if not data or "email" not in data:
             return jsonify({"message": "Invalid request format"}), 400
 
         email = data["email"]
-        
         if not is_valid_email(email):
             return jsonify({"message": "Invalid email format"}), 400
 
-        # Ensure JSON file exists, even if blank
-        if not os.path.exists(JSON_FILE):
-            with open(JSON_FILE, 'w') as file:
-                json.dump({"emails": []}, file, indent=4)
-
-        # Load JSON safely, even if it's blank
         with open(JSON_FILE, 'r') as file:
-            file_content = file.read().strip()
-            email_data = json.loads(file_content) if file_content else {"emails": []}
+            email_data = json.load(file)
 
-        # Prevent duplicate emails
         if email in email_data["emails"]:
             return jsonify({"message": "Email already subscribed"}), 400
 
-        # Add email and save back
         email_data["emails"].append(email)
         with open(JSON_FILE, 'w') as file:
             json.dump(email_data, file, indent=4)
@@ -88,16 +76,9 @@ def subscribe_email():
 
     except Exception as e:
         return jsonify({"message": f"An error occurred: {str(e)}"}), 500
-        
-        
+
 def send_stock_notifications():
     try:
-        # Ensure all JSON files exist
-        ensure_json_file(JSON_FILE, {"emails": []})
-        ensure_json_file(USED_TICKERS_FILE, {"used_tickers": []})
-        ensure_json_file(STOCK_INFO_FILE, {"stocks": []})
-
-        # Load data
         with open(JSON_FILE, 'r') as f:
             email_data = json.load(f)
         with open(USED_TICKERS_FILE, 'r') as f:
@@ -105,6 +86,13 @@ def send_stock_notifications():
         with open(STOCK_INFO_FILE, 'r') as f:
             stock_data = json.load(f)
 
+        emails = email_data.get("emails", [])
+        if not emails:
+            print(f"[{datetime.now()}] No subscribed emails found.")
+            return
+
+        new_stocks = []
+        
         # Email template
         html_template = """
         <html>
@@ -119,49 +107,51 @@ def send_stock_notifications():
           </body>
         </html>
         """
-
-        # Initialize SMTP server
-        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
-        server.starttls()
-        server.login(SENDER_EMAIL, SENDER_PASSWORD)
-
-        # Prepare template
         template = Template(html_template)
 
         for ticker_info in stock_data.get("stocks", []):
             ticker = ticker_info.get("Ticker", "Unknown")
             percentage_change = ticker_info.get("Price Change Today", 0)
 
-            # Ensure percentage change is significant
-            if ticker in used_tickers_data["used_tickers"] or percentage_change < -10:
+            if ticker in used_tickers_data["used_tickers"] or percentage_change > -10:
                 continue
 
-            filled_html = template.render(
-                stock_symbol=ticker,
-                current_price=ticker_info.get("Current Price", "N/A"),
-                percentage_change=percentage_change,
-                volume_today=ticker_info.get("Volume Today", "N/A"),
-            )
+            new_stocks.append(ticker)
 
-            for recipient in email_data["emails"]:
-                msg = MIMEMultipart()
-                msg['From'] = SENDER_EMAIL
-                msg['To'] = recipient
-                msg['Subject'] = f'Stock Movement Notification for {ticker}'
+        if not new_stocks:
+            print(f"[{datetime.now()}] No new stocks found for notification.")
+            return
 
-                msg.attach(MIMEText(filled_html, 'html'))
-                server.sendmail(SENDER_EMAIL, recipient, msg.as_string())
+        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+            server.starttls()
+            server.login(SENDER_EMAIL, SENDER_PASSWORD)
 
-            # Mark ticker as used
-            used_tickers_data["used_tickers"].append(ticker)
+            for ticker in new_stocks:
+                ticker_info = next((s for s in stock_data["stocks"] if s["Ticker"] == ticker), {})
+                filled_html = template.render(
+                    stock_symbol=ticker,
+                    current_price=ticker_info.get("Current Price", "N/A"),
+                    percentage_change=ticker_info.get("Price Change Today", "N/A"),
+                    volume_today=ticker_info.get("Volume Today", "N/A"),
+                )
 
-        # Save updated used tickers
+                for recipient in emails:
+                    msg = MIMEMultipart()
+                    msg['From'] = SENDER_EMAIL
+                    msg['To'] = recipient
+                    msg['Subject'] = f'Stock Alert: {ticker} Down 10%+'
+                    msg.attach(MIMEText(filled_html, 'html'))
+                    server.sendmail(SENDER_EMAIL, recipient, msg.as_string())
+
+                used_tickers_data["used_tickers"].append(ticker)
+
         with open(USED_TICKERS_FILE, 'w') as f:
             json.dump(used_tickers_data, f, indent=4)
 
-        server.quit()
+        print(f"[{datetime.now()}] Sent notifications for: {', '.join(new_stocks)}")
+
     except Exception as e:
-        print(f"Error sending notifications: {str(e)}")
+        print(f"[{datetime.now()}] Error sending notifications: {str(e)}")
 
 # Periodic function to check and send notifications every 5 minutes
 def periodic_check():
@@ -169,7 +159,7 @@ def periodic_check():
         try:
             send_stock_notifications()
         except Exception as e:
-            print(f"Error in periodic check: {str(e)}")
+            print(f"[{datetime.now()}] Error in periodic check: {str(e)}")
         time.sleep(300)  # Wait for 5 minutes
 
 # Reset used tickers at midnight
@@ -179,7 +169,8 @@ def reset_used_tickers():
         if now.hour == 0 and now.minute == 0:
             with open(USED_TICKERS_FILE, 'w') as f:
                 json.dump({"used_tickers": []}, f, indent=4)
-        time.sleep(60)  # Check the time every minute
+            print(f"[{datetime.now()}] Reset used tickers.")
+        time.sleep(60)  # Check every minute
 
 # Start background threads
 reset_thread = threading.Thread(target=reset_used_tickers, daemon=True)
