@@ -6,6 +6,7 @@ from jinja2 import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
+import threading
 
 # SMTP Configuration
 SMTP_SERVER = 'smtp.gmail.com'
@@ -16,19 +17,32 @@ SENDER_PASSWORD = 'sufvpztttmjjivprp'
 # Paths to JSON files
 BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
 JSON_FOLDER = os.path.join(BASE_DIR, 'json')
-EMAILS_FILE = os.path.join(JSON_FOLDER, '10_price_de.json')
-STOCKS_FILE = os.path.join(JSON_FOLDER, 'Filtered_price_10_de.json')
-USED_TICKERS_FILE = os.path.join(JSON_FOLDER, 'ut_price_10_de.json')
 
-# Ensure JSON files exist
-def ensure_json_file(filepath, default_data):
-    if not os.path.exists(filepath):
-        with open(filepath, 'w') as f:
-            json.dump(default_data, f, indent=4)
+# Ensure the JSON directory exists
+os.makedirs(JSON_FOLDER, exist_ok=True)
 
-ensure_json_file(EMAILS_FILE, {"emails": []})
-ensure_json_file(STOCKS_FILE, {"stocks": []})
-ensure_json_file(USED_TICKERS_FILE, {"used_tickers": []})
+# Files and their expected default structures
+JSON_FILES = {
+    "10_price_de.json": {"emails": []},
+    "Filtered_price_10_de.json": {"stocks": []},
+    "ut_price_10_de.json": {"used_tickers": []}
+}
+
+# Function to ensure files exist with the correct format
+def ensure_json_files():
+    for filename, default_data in JSON_FILES.items():
+        file_path = os.path.join(JSON_FOLDER, filename)
+        if not os.path.exists(file_path) or os.stat(file_path).st_size == 0:
+            with open(file_path, 'w') as f:
+                json.dump(default_data, f, indent=4)
+
+# Call the function to check and create missing files
+ensure_json_files()
+
+# File paths
+EMAILS_FILE = os.path.join(JSON_FOLDER, "10_price_de.json")
+STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_price_10_de.json")
+USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut_price_10_de.json")
 
 # Email template
 html_template = """
@@ -48,6 +62,8 @@ html_template = """
 # Function to send stock notifications
 def send_stock_notifications():
     try:
+        ensure_json_files()  # Ensure files exist before reading
+
         # Load JSON data
         with open(EMAILS_FILE, 'r') as f:
             email_data = json.load(f)
@@ -125,8 +141,6 @@ def reset_used_tickers():
         time.sleep(60)  # Check every minute
 
 # Start background threads
-import threading
-
 reset_thread = threading.Thread(target=reset_used_tickers, daemon=True)
 reset_thread.start()
 
