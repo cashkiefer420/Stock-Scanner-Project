@@ -22,15 +22,16 @@ JSON_FILE = os.path.join(JSON_FOLDER, '10_price_de.json')
 if not os.path.exists(JSON_FOLDER):
     os.makedirs(JSON_FOLDER)
 
-# Ensure JSON file exists with correct structure
+# Ensure JSON file exists with the correct structure
 def ensure_json_file(filepath, default_data):
     if not os.path.exists(filepath):
         with open(filepath, 'w') as f:
             json.dump(default_data, f, indent=4)
 
+# Ensuring that the "emails" key is in the right format when file is created
 ensure_json_file(JSON_FILE, {"emails": []})
 
-# Email validation function
+# Email validation function using regex
 def is_valid_email(email):
     regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
     return re.match(regex, email)
@@ -39,23 +40,29 @@ def is_valid_email(email):
 def subscribe_email():
     try:
         data = request.get_json()
+        
+        # Check if the request contains an email field
         if not data or "email" not in data:
             return jsonify({"message": "Invalid request format"}), 400
 
         email = data["email"]
+        
+        # Validate email format
         if not is_valid_email(email):
             return jsonify({"message": "Invalid email format"}), 400
 
-        # Load email data
+        # Load the existing email data
         with open(JSON_FILE, 'r') as file:
             email_data = json.load(file)
 
-        # Prevent duplicate emails
+        # Prevent duplicate subscriptions
         if email in email_data["emails"]:
             return jsonify({"message": "Email already subscribed"}), 400
 
-        # Add email and save
+        # Add the new email to the list
         email_data["emails"].append(email)
+
+        # Save the updated email data back to the file
         with open(JSON_FILE, 'w') as file:
             json.dump(email_data, file, indent=4)
 
