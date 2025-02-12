@@ -112,7 +112,7 @@ def send_stock_notifications():
 
             print(f"Sent email for {ticker}")
 
-        # Update used tickers file
+        # Update used tickers file with correct format
         with open(USED_TICKERS_FILE, 'w') as f:
             json.dump({"used_tickers": list(used_tickers)}, f, indent=4)
 
@@ -135,12 +135,13 @@ def reset_used_tickers():
     while True:
         now = datetime.now()
         if now.hour == 0 and now.minute == 0:
+            # Reset used tickers list at midnight
             with open(USED_TICKERS_FILE, 'w') as f:
                 json.dump({"used_tickers": []}, f, indent=4)
             print("Reset used tickers at midnight.")
         time.sleep(60)  # Check every minute
 
-# Start background threads
+# Start background threads for periodic checks and resetting used tickers
 reset_thread = threading.Thread(target=reset_used_tickers, daemon=True)
 reset_thread.start()
 
