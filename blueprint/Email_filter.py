@@ -51,44 +51,47 @@ def reset_filtered_files():
     """Wipes all filtered JSON files at midnight New York time."""
     current_time = datetime.now(new_york_tz)
     if current_time.hour == 0 and current_time.minute == 0:
-        print("It's midnight in New York. Wiping filtered files...")
+        print("\n[INFO] Midnight in New York detected. Resetting filtered files...")
         for filter_item in filters:
             file_path = os.path.join(output_directory, filter_item["name"])
             with open(file_path, 'w') as file:
                 json.dump({}, file)
-        print("Filtered files wiped.")
+            print(f"  - {filter_item['name']} has been reset.")
+        print("[INFO] Reset complete.\n")
 
 def filter_data():
     """Processes stock data and filters it based on predefined conditions."""
     try:
         with open(Stock_data_export, 'r') as file:
             data = json.load(file)
-    except (FileNotFoundError, json.JSONDecodeError):
-        print("Error: Could not load stock data.")
+    except FileNotFoundError:
+        print("[ERROR] Stock data file not found. Skipping filtering.")
+        return
+    except json.JSONDecodeError:
+        print("[ERROR] Stock data file is not valid JSON. Skipping filtering.")
         return
 
-    print("Filtering data...")
+    print("\n[INFO] Starting data filtering...")
 
     for filter_item in filters:
         filtered_data = {
             item["Ticker"]: item
-            for item in data
-            if filter_item["condition"](item.get(filter_item["key"], 0))
+            for item in data if filter_item["condition"](item.get(filter_item["key"], 0))
         }
 
-        # Save filtered results
         file_path = os.path.join(output_directory, filter_item["name"])
         with open(file_path, 'w') as outfile:
             json.dump(filtered_data, outfile, indent=4)
 
-    print("Filtering complete.")
+        print(f"  - {filter_item['name']} updated with {len(filtered_data)} stocks.")
 
+    print("[INFO] Filtering complete.\n")
 def main():
     """Main loop that resets and filters data every 5 minutes."""
     while True:
         reset_filtered_files()
         filter_data()
-        print("Sleeping for 5 minutes...")
+        print("[INFO] Sleeping for 5 minutes...\n")
         time.sleep(300)  # Sleep for 5 minutes
 
 if __name__ == "__main__":
