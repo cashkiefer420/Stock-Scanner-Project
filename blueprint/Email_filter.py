@@ -75,18 +75,37 @@ def filter_data():
 
     for filter_item in filters:
         filtered_data = {
-            item["Ticker"]: item
-            for item in data if filter_item["condition"](item.get(filter_item["key"], 0))
+            "stocks": [
+                {
+                    "Ticker": item["Ticker"],
+                    "Price Change Today": item.get("Price Change Today", 0),
+                    "Current Price": item.get("Current Price", 0),
+                    "Volume Today": item.get("Volume Today", 0),
+                    "Company Name": item.get("Company Name", ""),
+                    "P/E Ratio": item.get("P/E Ratio", 0),
+                    "Shares Available": item.get("Shares Available", 0),
+                    "Market Cap": item.get("Market Cap", 0),
+                    "Market Cap Change (3 Mon)": item.get("Market Cap Change (3 Mon)", 0),
+                    "Dividend Yield": item.get("Dividend Yield", 0),
+                    "One Year Target": item.get("One Year Target", 0),
+                    "DVAV (Day Volume Over Average Volume)": item.get("DVAV (Day Volume Over Average Volume)", 0),
+                    "Days Range": item.get("Days Range", ""),
+                    "Bid Ask Spread": item.get("Bid Ask Spread", ""),
+                    "P/E Change (3 Mon)": item.get("P/E Change (3 Mon)", 0),
+                    "DVSA (Volume Today Over Shares Available)": item.get("DVSA (Volume Today Over Shares Available)", 0)
+                }
+                for item in data if filter_item["condition"](item.get(filter_item["key"], 0))
+            ]
         }
 
         file_path = os.path.join(output_directory, filter_item["name"])
         with open(file_path, 'w') as outfile:
             json.dump(filtered_data, outfile, indent=4)
 
-        print(f"  - {filter_item['name']} updated with {len(filtered_data)} stocks.")
+        print(f"  - {filter_item['name']} updated with {len(filtered_data['stocks'])} stocks.")
 
     print("[INFO] Filtering complete.\n")
-    
+
 def main():
     """Main loop that resets and filters data every 5 minutes."""
     while True:
