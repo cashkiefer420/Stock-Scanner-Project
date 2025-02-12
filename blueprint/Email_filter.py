@@ -86,6 +86,7 @@ def filter_data():
         print(f"  - {filter_item['name']} updated with {len(filtered_data)} stocks.")
 
     print("[INFO] Filtering complete.\n")
+    
 def main():
     """Main loop that resets and filters data every 5 minutes."""
     while True:
