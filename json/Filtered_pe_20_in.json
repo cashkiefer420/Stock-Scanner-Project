@@ -1,3 +1,26 @@
 {
-    "stocks": []
+    "stocks": [
+        {
+            "Ticker": "TSLA",
+            "Company Name": "Tesla, Inc.",
+            "Current Price": 336.51,
+            "Price Change Today": 2.44,
+            "Price Change Week": -4.05,
+            "Price Change Month": 1.9,
+            "Price Change Year": -11.28,
+            "Bid Ask Spread": "330.0 - 348.0",
+            "Days Range": "329.12 - 346.4",
+            "Volume Today": "104520600",
+            "Avg Volume (3 mon)": 83135928,
+            "DVAV (Day Volume Over Average Volume)": 1.2572,
+            "P/E Ratio": 164.15123,
+            "P/E Change (3 Mon)": 52.54,
+            "Shares Available": 3216519936,
+            "Market Cap": 1082391134208,
+            "Market Cap Change (3 Mon)": -0.0,
+            "Dividend Yield": "N/A",
+            "One Year Target": 343.57977,
+            "DVSA (Volume Today Over Shares Available)": 0.0325
+        }
+    ]
 }
