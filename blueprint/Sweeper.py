@@ -2,7 +2,7 @@ import json
 import os
 
 # Define the target directory
-json_folder = "json"
+json_folder = r"/home/ec2-user/Stock-Scanner-Project/json/"
 
 # Ensure the directory exists
 if not os.path.exists(json_folder):
