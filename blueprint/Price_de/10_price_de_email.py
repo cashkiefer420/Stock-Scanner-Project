@@ -12,7 +12,7 @@ import threading
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
 SENDER_EMAIL = 'noreply.retailtradescanner@gmail.com'
-SENDER_PASSWORD = 'sufvpztttmjjivprp'
+SENDER_PASSWORD = 'mzqmvhsjqeqrjmjv'
 
 # Paths to JSON files
 BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
