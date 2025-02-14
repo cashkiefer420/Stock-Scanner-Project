@@ -12,7 +12,7 @@ import threading
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
 SENDER_EMAIL = 'noreply.retailtradescanner@gmail.com'
-APP_PASSWORD = 'mzqmvhsjqeqrjmjv'
+APP_PASSWORD = 'mzqmvhsjqeqrjmjv'  # Use App Password for security
 
 # Paths to JSON files
 BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
@@ -44,17 +44,71 @@ EMAILS_FILE = os.path.join(JSON_FOLDER, "10_price_de.json")
 STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_price_10_de.json")
 USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut_price_10_de.json")
 
-# Email template
+# Improved HTML Email Template
 html_template = """
 <html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .email-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: #004085;
+        color: #ffffff;
+        text-align: center;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      .content {
+        padding: 20px;
+        font-size: 16px;
+        color: #333333;
+      }
+      .highlight {
+        font-weight: bold;
+        color: #d9534f;
+      }
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+    </style>
+  </head>
   <body>
-    <h1>Stock <strong>{{ stock_symbol }}</strong> Down Ten Percent Notification</h1>
-    <p>Dear Investor,</p>
-    <p>The stock <strong>{{ stock_symbol }}</strong> has dropped significantly.</p>
-    <p><strong>Current Price:</strong> ${{ current_price }}</p>
-    <p><strong>Percentage Change:</strong> {{ percentage_change }}%</p>
-    <p><strong>Volume Today:</strong> {{ volume_today }}</p>
-    <p>Best Regards,<br>Retail Trade Scanner</p>
+    <div class="email-container">
+      <div class="header">
+        Stock Alert: {{ stock_symbol }} Down 10%
+      </div>
+      <div class="content">
+        <p>Dear Investor,</p>
+        <p>The stock <strong>{{ stock_symbol }}</strong> has dropped significantly today.</p>
+        <p>
+          <strong>Current Price:</strong> <span class="highlight">${{ current_price }}</span><br>
+          <strong>Percentage Change:</strong> <span class="highlight">{{ percentage_change }}%</span><br>
+          <strong>Volume Today:</strong> {{ volume_today }}
+        </p>
+        <p>Stay informed and make strategic decisions.</p>
+      </div>
+      <div class="footer">
+        &copy; 2025 Retail Trade Scanner | This is an automated notification.
+      </div>
+    </div>
   </body>
 </html>
 """
