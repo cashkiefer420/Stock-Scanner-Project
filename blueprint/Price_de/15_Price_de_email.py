@@ -40,9 +40,9 @@ def ensure_json_files():
 ensure_json_files()
 
 # File paths
-EMAILS_FILE = os.path.join(JSON_FOLDER, "10_price_de.json")
-STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_price_10_de.json")
-USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut_price_10_de.json")
+EMAILS_FILE = os.path.join(JSON_FOLDER, "15_price_de.json")
+STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_price_15_de.json")
+USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut_15_price_de.json")
 
 # Improved HTML Email Template
 html_template = """
