@@ -36,7 +36,7 @@ def is_valid_email(email):
     regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
     return re.match(regex, email)
 
-@app.route('/subscribe-price-10-de', methods=['POST'])
+@app.route('/subscribe-price-20-in', methods=['POST'])
 def subscribe_email():
     try:
         data = request.get_json()
