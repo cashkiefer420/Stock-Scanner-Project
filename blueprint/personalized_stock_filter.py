@@ -105,13 +105,15 @@ def download():
         if filtered_df.empty:
             return jsonify({"message": "No stocks match the filters."}), 200
 
+        # Drop "Bid Ask Spread" & "Days Range" before exporting
+        filtered_df = filtered_df.drop(columns=["Bid Ask Spread", "Days Range"], errors="ignore")
+
         file_path = os.path.join(base_dir, 'filtered_stocks.csv')
         filtered_df.to_csv(file_path, index=False)
         return send_file(file_path, as_attachment=True)
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 @app.route('/table', methods=['GET'])
 def table():
     if df.empty:
