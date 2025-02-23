@@ -11,36 +11,49 @@ def favicon():
 
 @app.route('/')
 def index():
-    return render_template("Personalized_Stock_filter.html")  # Use just the filename
+    return render_template("Personalized_Stock_filter.html")
 
+# Set base directory
 base_dir = r"C:\Users\Carte\Documents\Stock-Scanner-Project-Windows"
 FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
 
-# Load your JSON data
-with open(FILE_PATH, 'r') as f:
-    stock_data = json.load(f)
-
-# Normalize the data and handle N/A values
-df = pd.DataFrame(stock_data)
-df.replace("N/A", None, inplace=True)
-
-# Convert numeric columns safely
-for col in df.columns:
+# Function to safely convert values to float
+def safe_float(value):
     try:
-        df[col] = pd.to_numeric(df[col])
+        return float(value)
     except (ValueError, TypeError):
-        pass  # Ignore conversion errors and keep the original value
+        return None
+
+# Load JSON data into a DataFrame
+try:
+    with open(FILE_PATH, 'r') as f:
+        stock_data = json.load(f)
+    df = pd.DataFrame(stock_data)
+    df.replace("N/A", None, inplace=True)
+    df = df.apply(pd.to_numeric, errors='coerce')  # Convert numeric columns
+except Exception as e:
+    print(f"Error loading data: {e}")
+    df = pd.DataFrame()  # Empty DataFrame if loading fails
 
 @app.route('/filter', methods=['POST'])
 def filter_data():
-    filters = request.json
-    filtered_df = df.copy()
+    if df.empty:
+        return jsonify({"error": "Stock data not available"}), 500
 
-    # Apply filters from the request
-    for key, condition in filters.items():
-        if key in filtered_df:
-            value = condition['value']
-            if value != 0:  # Ignore 0 values
+    try:
+        filters = request.json
+        if not filters:
+            return jsonify({"error": "No filters provided"}), 400
+
+        filtered_df = df.copy()
+
+        # Apply filters
+        for key, condition in filters.items():
+            if key in filtered_df:
+                value = safe_float(condition.get('value', 0))
+                if value is None:
+                    continue  # Skip invalid values
+
                 if condition['type'] == 'greater_than':
                     filtered_df = filtered_df[filtered_df[key] > value]
                 elif condition['type'] == 'less_than':
@@ -48,20 +61,30 @@ def filter_data():
                 elif condition['type'] == 'equal_to':
                     filtered_df = filtered_df[filtered_df[key] == value]
 
-    # Return filtered data
-    filtered_data = filtered_df.to_dict(orient='records')
-    return jsonify(filtered_data)
+        if filtered_df.empty:
+            return jsonify({"message": "No stocks match the filters."}), 200
+
+        return jsonify(filtered_df.to_dict(orient='records'))
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/download', methods=['POST'])
 def download():
-    filters = request.json
-    filtered_df = df.copy()
+    if df.empty:
+        return jsonify({"error": "Stock data not available"}), 500
 
-    # Apply filters from the request
-    for key, condition in filters.items():
-        if key in filtered_df:
-            value = condition['value']
-            if value != 0:  # Ignore 0 values
+    try:
+        filters = request.json
+        filtered_df = df.copy()
+
+        # Apply filters
+        for key, condition in filters.items():
+            if key in filtered_df:
+                value = safe_float(condition.get('value', 0))
+                if value is None:
+                    continue
+
                 if condition['type'] == 'greater_than':
                     filtered_df = filtered_df[filtered_df[key] > value]
                 elif condition['type'] == 'less_than':
@@ -69,20 +92,29 @@ def download():
                 elif condition['type'] == 'equal_to':
                     filtered_df = filtered_df[filtered_df[key] == value]
 
-    # Save filtered data to CSV
-    file_path = 'filtered_stocks.csv'
-    filtered_df.to_csv(file_path, index=False)
-    return send_file(file_path, as_attachment=True)
+        if filtered_df.empty:
+            return jsonify({"message": "No stocks match the filters."}), 200
+
+        file_path = os.path.join(base_dir, 'filtered_stocks.csv')
+        filtered_df.to_csv(file_path, index=False)
+        return send_file(file_path, as_attachment=True)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/table', methods=['GET'])
 def table():
+    if df.empty:
+        return jsonify({"error": "Stock data not available"}), 500
+
     sorted_column = request.args.get('sort_by', 'Current Price')
     ascending = request.args.get('order', 'asc') == 'asc'
 
-    # Sort the DataFrame
+    if sorted_column not in df.columns:
+        return jsonify({"error": f"Invalid column: {sorted_column}"}), 400
+
     sorted_df = df.sort_values(by=sorted_column, ascending=ascending)
 
-    # Return sorted data
     return jsonify(sorted_df.to_dict(orient='records'))
 
 if __name__ == '__main__':
