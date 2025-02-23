@@ -41,6 +41,20 @@ except Exception as e:
     print(f"Error loading data: {e}")
     df = pd.DataFrame()  # Empty DataFrame if loading fails
 
+@app.route('/load_csv', methods=['GET'])
+def load_csv():
+    file_path = os.path.join(base_dir, 'filtered_stocks.csv')
+    
+    if not os.path.exists(file_path):
+        return jsonify({"error": "No filtered data available"}), 404
+
+    try:
+        df_csv = pd.read_csv(file_path)
+        return jsonify(df_csv.to_dict(orient="records"))
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route('/filter', methods=['POST'])
 def filter_data():
     if df.empty:
@@ -63,9 +77,9 @@ def filter_data():
                     continue  
 
                 if condition['type'] == 'greater_than':
-                    filtered_df = filtered_df[filtered_df[key] > value]
+                    filtered_df = filtered_df[filtered_df[key] >= value]
                 elif condition['type'] == 'less_than':
-                    filtered_df = filtered_df[filtered_df[key] < value]
+                    filtered_df = filtered_df[filtered_df[key] <= value]
                 elif condition['type'] == 'equal_to':
                     filtered_df = filtered_df[filtered_df[key] == value]
 
