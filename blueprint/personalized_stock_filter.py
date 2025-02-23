@@ -28,9 +28,15 @@ def safe_float(value):
 try:
     with open(FILE_PATH, 'r') as f:
         stock_data = json.load(f)
+    
     df = pd.DataFrame(stock_data)
     df.replace("N/A", None, inplace=True)
-    df = df.apply(pd.to_numeric, errors='coerce')  # Convert numeric columns
+
+    # Convert only numeric columns to numbers, keeping Ticker & Company Name as is
+    for col in df.columns:
+        if col not in ["Ticker", "Company Name"]:  # Preserve these columns
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+
 except Exception as e:
     print(f"Error loading data: {e}")
     df = pd.DataFrame()  # Empty DataFrame if loading fails
