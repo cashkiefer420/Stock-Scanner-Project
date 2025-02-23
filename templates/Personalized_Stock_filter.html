@@ -94,10 +94,8 @@
                     <th>DVAV</th>
                     <th>Market Cap</th>
                     <th>Market Cap Change</th>
-                    <th>Beta</th>
                     <th>P/E Ratio</th>
                     <th>P/E Change</th>
-                    <th>Earnings Per Share</th>
                     <th>Dividend Yield</th>
                 </tr>
             </thead>
@@ -111,8 +109,7 @@
         const fields = [
             "Current Price", "Price Change Today", "Days Range", "Shares Available",
             "Day Volume", "Average Volume", "DVAV", "Market Cap", 
-            "Market Cap Change", "Beta", "P/E Ratio", "P/E Change",
-            "Earnings Per Share", "Dividend Yield"
+            "Market Cap Change", "P/E Ratio", "P/E Change", "Dividend Yield"
         ];
 
         // Dynamically create filter inputs
@@ -165,10 +162,8 @@
                         <td>${row.DVAV}</td>
                         <td>${row['Market Cap']}</td>
                         <td>${row['Market Cap Change']}</td>
-                        <td>${row.Beta}</td>
                         <td>${row['P/E Ratio']}</td>
                         <td>${row['P/E Change']}</td>
-                        <td>${row['Earnings Per Share']}</td>
                         <td>${row['Dividend Yield']}</td>
                     `;
                     tableBody.appendChild(tr);
