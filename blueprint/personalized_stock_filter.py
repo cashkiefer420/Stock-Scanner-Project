@@ -51,8 +51,10 @@ def filter_data():
         for key, condition in filters.items():
             if key in filtered_df:
                 value = safe_float(condition.get('value', 0))
-                if value is None:
-                    continue  # Skip invalid values
+
+                # Ignore this filter if value is 0 (user wants to include all)
+                if value is None or value == 0:
+                    continue  
 
                 if condition['type'] == 'greater_than':
                     filtered_df = filtered_df[filtered_df[key] > value]
@@ -82,8 +84,10 @@ def download():
         for key, condition in filters.items():
             if key in filtered_df:
                 value = safe_float(condition.get('value', 0))
-                if value is None:
-                    continue
+
+                # Ignore this filter if value is 0 (user wants to include all)
+                if value is None or value == 0:
+                    continue  
 
                 if condition['type'] == 'greater_than':
                     filtered_df = filtered_df[filtered_df[key] > value]
