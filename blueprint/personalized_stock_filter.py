@@ -24,40 +24,45 @@ def safe_float(value):
     except (ValueError, TypeError):
         return None
 
-# Load JSON data into a DataFrame
-try:
-    with open(FILE_PATH, 'r') as f:
-        stock_data = json.load(f)
-    
-    df = pd.DataFrame(stock_data)
-    df.replace("N/A", None, inplace=True)
+# Function to load CSV, convert it to JSON, and save
+def convert_csv_to_json():
+    csv_file = os.path.join(base_dir, 'filtered_stocks.csv')
 
-    # Convert only numeric columns to numbers, keeping Ticker & Company Name as is
-    for col in df.columns:
-        if col not in ["Ticker", "Company Name"]:  # Preserve these columns
-            df[col] = pd.to_numeric(df[col], errors='coerce')
+    if not os.path.exists(csv_file):
+        return None
 
-except Exception as e:
-    print(f"Error loading data: {e}")
-    df = pd.DataFrame()  # Empty DataFrame if loading fails
+    try:
+        df = pd.read_csv(csv_file)
+        df.replace("N/A", None, inplace=True)
+
+        # Convert numeric columns
+        for col in df.columns:
+            if col not in ["Ticker", "Company Name"]:  # Preserve these columns
+                df[col] = pd.to_numeric(df[col], errors='coerce')
+
+        # Save as JSON
+        df.to_json(FILE_PATH, orient="records", indent=4)
+        return df.to_dict(orient="records")
+
+    except Exception as e:
+        print(f"Error converting CSV to JSON: {e}")
+        return None
+
+# Initial JSON conversion
+stock_data = convert_csv_to_json() if os.path.exists(FILE_PATH) else []
 
 @app.route('/load_csv', methods=['GET'])
 def load_csv():
-    file_path = os.path.join(base_dir, 'filtered_stocks.csv')
+    data = convert_csv_to_json()
     
-    if not os.path.exists(file_path):
+    if data is None:
         return jsonify({"error": "No filtered data available"}), 404
-
-    try:
-        df_csv = pd.read_csv(file_path)
-        return jsonify(df_csv.to_dict(orient="records"))
     
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+    return jsonify(data)
 
 @app.route('/filter', methods=['POST'])
 def filter_data():
-    if df.empty:
+    if not stock_data:
         return jsonify({"error": "Stock data not available"}), 500
 
     try:
@@ -65,14 +70,14 @@ def filter_data():
         if not filters:
             return jsonify({"error": "No filters provided"}), 400
 
-        filtered_df = df.copy()
+        filtered_df = pd.DataFrame(stock_data)
 
         # Apply filters
         for key, condition in filters.items():
             if key in filtered_df:
                 value = safe_float(condition.get('value', 0))
 
-                # Ignore this filter if value is 0 (user wants to include all)
+                # Ignore filter if value is 0 (include all)
                 if value is None or value == 0:
                     continue  
 
@@ -93,12 +98,12 @@ def filter_data():
 
 @app.route('/download', methods=['POST'])
 def download():
-    if df.empty:
+    if not stock_data:
         return jsonify({"error": "Stock data not available"}), 500
 
     try:
         filters = request.json
-        filtered_df = df.copy()
+        filtered_df = pd.DataFrame(stock_data)
 
         # Apply filters
         for key, condition in filters.items():
@@ -128,13 +133,16 @@ def download():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 @app.route('/table', methods=['GET'])
 def table():
-    if df.empty:
+    if not stock_data:
         return jsonify({"error": "Stock data not available"}), 500
 
     sorted_column = request.args.get('sort_by', 'Current Price')
     ascending = request.args.get('order', 'asc') == 'asc'
+
+    df = pd.DataFrame(stock_data)
 
     if sorted_column not in df.columns:
         return jsonify({"error": f"Invalid column: {sorted_column}"}), 400
