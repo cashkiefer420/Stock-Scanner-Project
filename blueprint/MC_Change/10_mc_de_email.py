@@ -100,8 +100,8 @@ html_template = """
         <p>The stock <strong>{{ stock_symbol }}</strong> has had a Market Cap change today.</p>
         <p>
           <strong>Current Price:</strong> <span class="highlight">${{ current_price }}</span><br>
-          <strong>P/E Percentage Change:</strong> <span class="highlight">{{ pe_change }}%</span><br>
-          <strong>P/E Ratio:</strong> {{ pe_ratio }}
+          <strong>Market Cap Percentage Change:</strong> <span class="highlight">{{ mc_change }}%</span><br>
+          <strong>Market Cap:</strong> {{ mc }}
         </p>
         <p>Stay informed and make strategic decisions.</p>
       </div>
@@ -148,8 +148,8 @@ def send_stock_notifications():
             filled_html = template.render(
                 stock_symbol=ticker,
                 current_price=ticker_info.get("Current Price", "N/A"),
-                pe_ratio=ticker_info.get("P/E Ratio", "N/A"),
-                pe_change=ticker_info.get("P/E Change (3 Mon)", "N/A"),
+                mc=ticker_info.get("Market Cap", "N/A"),
+                mc_change=ticker_info.get("Market Cap Change (3 Mon)", "N/A"),
             )
 
             for recipient in email_data["emails"]:
