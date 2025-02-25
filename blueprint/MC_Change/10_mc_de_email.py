@@ -23,8 +23,8 @@ os.makedirs(JSON_FOLDER, exist_ok=True)
 
 # Files and their expected default structures
 JSON_FILES = {
-    "10_de_mc_subs.json": {"emails": []},
-    "Filtered_pe_10_mc.json": {"stocks": []},
+    "10_mc_de.json": {"emails": []},
+    "Filtered_market_cap_10_de.json": {"stocks": []},
     "ut_10_mc_de.json": {"used_tickers": []}
 }
 
@@ -40,7 +40,7 @@ def ensure_json_files():
 ensure_json_files()
 
 # File paths
-EMAILS_FILE = os.path.join(JSON_FOLDER, "10_de_mc_subs.json")
+EMAILS_FILE = os.path.join(JSON_FOLDER, "10_mc_de.json")
 STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_mc_10_de.json")
 USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut_10_mc_de.json")
 
