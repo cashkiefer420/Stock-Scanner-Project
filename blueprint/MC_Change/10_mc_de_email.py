@@ -41,7 +41,7 @@ ensure_json_files()
 
 # File paths
 EMAILS_FILE = os.path.join(JSON_FOLDER, "10_mc_de.json")
-STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_mc_10_de.json")
+STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_market_cap_10_de.json")
 USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut_10_mc_de.json")
 
 # Improved HTML Email Template
