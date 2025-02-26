@@ -23,9 +23,9 @@ os.makedirs(JSON_FOLDER, exist_ok=True)
 
 # Files and their expected default structures
 JSON_FILES = {
-    "10_mc_de.json": {"emails": []},
-    "Filtered_market_cap_10_de.json": {"stocks": []},
-    "ut_10_mc_de.json": {"used_tickers": []}
+    "20_mc_in.json": {"emails": []},
+    "Filtered_market_cap_20_in.json": {"stocks": []},
+    "ut_20_mc_in.json": {"used_tickers": []}
 }
 
 # Function to ensure files exist with the correct format
@@ -40,9 +40,9 @@ def ensure_json_files():
 ensure_json_files()
 
 # File paths
-EMAILS_FILE = os.path.join(JSON_FOLDER, "20_mc_de.json")
-STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_market_cap_20_de.json")
-USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut_20_mc_de.json")
+EMAILS_FILE = os.path.join(JSON_FOLDER, "20_mc_in.json")
+STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_market_cap_20_in.json")
+USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut_20_mc_in.json")
 
 # Improved HTML Email Template
 html_template = """
