@@ -93,7 +93,7 @@ html_template = """
   <body>
     <div class="email-container">
       <div class="header">
-        Stock Alert: {{ stock_symbol }} Down 10%
+        Stock Alert: {{ stock_symbol }} Price Increase 75%
       </div>
       <div class="content">
         <p>Dear Investor,</p>
