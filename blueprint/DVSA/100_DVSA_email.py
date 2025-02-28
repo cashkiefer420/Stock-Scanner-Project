@@ -1,3 +1,4 @@
+
 import os
 import json
 import smtplib
@@ -23,9 +24,9 @@ os.makedirs(JSON_FOLDER, exist_ok=True)
 
 # Files and their expected default structures
 JSON_FILES = {
-    "100_dvsa.json": {"emails": []},
-    "Filtered_10_de.json": {"stocks": []},
-    "ut_10_mc_de.json": {"used_tickers": []}
+    "100_DVSA.json": {"emails": []},
+    "Filtered_DVSA_100.json": {"stocks": []},
+    "ut_100_DVSA.json": {"used_tickers": []}
 }
 
 # Function to ensure files exist with the correct format
@@ -40,9 +41,9 @@ def ensure_json_files():
 ensure_json_files()
 
 # File paths
-EMAILS_FILE = os.path.join(JSON_FOLDER, "10_mc_de.json")
-STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_market_cap_10_de.json")
-USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut_10_mc_de.json")
+EMAILS_FILE = os.path.join(JSON_FOLDER, "100_DVSA.json")
+STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_DVSA_100.json.json")
+USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut_100_DVSA.json")
 
 # Improved HTML Email Template
 html_template = """
@@ -97,7 +98,7 @@ html_template = """
       </div>
       <div class="content">
         <p>Dear Investor,</p>
-        <p>The stock <strong>{{ stock_symbol }}</strong> has had a Market Cap change today.</p>
+        <p>The stock <strong>{{ stock_symbol }}</strong> has had a high volume today.</p>
         <p>
           <strong>Current Price:</strong> <span class="highlight">${{ PRICE }}</span><br>
           <strong>Volume Today:</strong> <span class="highlight">{{ VOLUME }}%</span><br>
@@ -204,4 +205,4 @@ check_thread = threading.Thread(target=periodic_check, daemon=True)
 check_thread.start()
 
 if __name__ == '__main__':
-    send_stock_notifications()  # Run once at startup
+    send_stock_notifications()  # Run once at startupF
