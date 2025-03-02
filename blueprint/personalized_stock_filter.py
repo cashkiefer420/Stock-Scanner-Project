@@ -58,26 +58,37 @@ def filter_data():
     """Applies filters based on user selection and returns the filtered data."""
     data = load_json_data()
     if not data:
-        return jsonify([])
+        return jsonify({"error": "No stock data available"}), 404
 
     filters = request.json
+    if not filters:
+        return jsonify({"error": "No filters provided"}), 400
+
     df = pd.DataFrame(data)
 
     for field, condition in filters.items():
         if field not in df.columns:
             continue  # Skip fields not in the dataset
 
-        value = condition["value"]
-        condition_type = condition["type"]
+        value = condition.get("value")
+        condition_type = condition.get("type")
+
+        if value is None or condition_type is None:
+            continue  # Skip if filter is incomplete
 
         if condition_type == "greater_than":
-            df = df[df[field] > value]
+            try:
+                df = df[df[field].astype(float) > float(value)]
+            except ValueError:
+                continue  # Skip if conversion fails
         elif condition_type == "less_than":
-            df = df[df[field] < value]
+            try:
+                df = df[df[field].astype(float) < float(value)]
+            except ValueError:
+                continue  # Skip if conversion fails
         elif condition_type == "equal_to":
             df = df[df[field] == value]
 
     return jsonify(df.to_dict(orient="records"))
-
 if __name__ == '__main__':
     app.run(debug=True)
