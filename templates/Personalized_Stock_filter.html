@@ -51,7 +51,6 @@
         }
     </style>
 
-    <!-- jQuery and DataTables -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 </head>
@@ -66,6 +65,7 @@
             <div class="mt-4 text-center">
                 <button type="button" class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
                 <button type="button" class="btn btn-success" onclick="downloadFiltered()">Download CSV</button>
+                <button type="button" class="btn btn-info" onclick="loadCsv()">Load CSV</button>
             </div>
         </form>
 
@@ -94,14 +94,12 @@
     </div>
 
     <script>
-        // List of fields available for filtering
         const fields = [
             "Current Price", "Price Change Today", "Shares Available",
             "Day Volume", "Average Volume", "DVAV", "Market Cap", 
             "Market Cap Change", "P/E Ratio", "P/E Change", "Dividend Yield"
         ];
 
-        // Generate filter fields dynamically
         const filterContainer = document.getElementById('filterContainer');
         fields.forEach(field => {
             const div = document.createElement('div');
@@ -120,20 +118,6 @@
             filterContainer.appendChild(div);
         });
 
-        // Load stock data on page load
-        function loadStockData() {
-            fetch('/load_data')
-            .then(response => response.json())
-            .then(data => {
-                if (data.length === 0) {
-                    alert("No stock data available.");
-                    return;
-                }
-                updateTable(data);
-            });
-        }
-
-        // Apply filters to stock data
         function applyFilters() {
             const filters = {};
 
@@ -152,12 +136,44 @@
             .then(data => updateTable(data));
         }
 
-        // Download filtered data as CSV
         function downloadFiltered() {
-            window.location.href = "/download_csv";
+            const filters = {};
+
+            fields.forEach(field => {
+                const condition = document.getElementById(`${field}Condition`).value;
+                const value = parseFloat(document.getElementById(`${field}Value`).value) || 0;
+                filters[field] = { type: condition, value: value };
+            });
+
+            fetch('/download', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(filters)
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'filtered_stocks.csv';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            });
         }
 
-        // Update the table with new data
+        function loadCsv() {
+            fetch('/load_csv')
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+                updateTable(data);
+            });
+        }
+
         function updateTable(data) {
             const tableBody = document.querySelector('#stockTable tbody');
             tableBody.innerHTML = '';
@@ -182,13 +198,9 @@
                 tableBody.appendChild(tr);
             });
 
-            // Reinitialize DataTable
             $('#stockTable').DataTable().destroy();
             $('#stockTable').DataTable();
         }
-
-        // Load data on page load
-        window.onload = loadStockData;
     </script>
 </body>
 </html>
