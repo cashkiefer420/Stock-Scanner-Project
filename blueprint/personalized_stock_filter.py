@@ -14,10 +14,10 @@ def load_json_data():
     if not os.path.exists(FILE_PATH):
         return []
     try:
-        with open(FILE_PATH, 'r') as file:
+        with open(FILE_PATH, 'r', encoding="utf-8") as file:
             data = json.load(file)
-            if isinstance(data, list):  # Ensure it's a list of dictionaries
-                return data
+            if isinstance(data, list):
+                return data  # Ensure it's a list of dictionaries
             else:
                 print("Error: JSON data is not a list")
                 return []
@@ -29,7 +29,7 @@ def load_json_data():
 def index():
     return render_template("Personalized_stock_filter.html")
 
-@app.route('/load _data', methods=['GET'])
+@app.route('/load_data', methods=['GET'])
 def load_data():
     """Loads the stock data and returns it as JSON."""
     data = load_json_data()
@@ -68,27 +68,36 @@ def filter_data():
 
     for field, condition in filters.items():
         if field not in df.columns:
+            print(f"Skipping unknown field: {field}")
             continue  # Skip fields not in the dataset
 
         value = condition.get("value")
         condition_type = condition.get("type")
 
         if value is None or condition_type is None:
+            print(f"Skipping invalid filter for field: {field}")
             continue  # Skip if filter is incomplete
 
-        if condition_type == "greater_than":
+        # Apply numeric filters
+        if condition_type in ["greater_than", "less_than"]:
             try:
-                df = df[df[field].astype(float) > float(value)]
+                value = float(value)  # Ensure value is numeric
+                df[field] = pd.to_numeric(df[field], errors="coerce")  # Convert column to numeric
+                if condition_type == "greater_than":
+                    df = df[df[field] > value]
+                elif condition_type == "less_than":
+                    df = df[df[field] < value]
             except ValueError:
+                print(f"Skipping field {field}: Cannot convert to float")
                 continue  # Skip if conversion fails
-        elif condition_type == "less_than":
-            try:
-                df = df[df[field].astype(float) < float(value)]
-            except ValueError:
-                continue  # Skip if conversion fails
+
+        # Apply string-based filters
         elif condition_type == "equal_to":
-            df = df[df[field] == value]
+            df = df[df[field].astype(str) == str(value)]
+        elif condition_type == "contains":
+            df = df[df[field].astype(str).str.contains(str(value), case=False, na=False)]
 
     return jsonify(df.to_dict(orient="records"))
+
 if __name__ == '__main__':
     app.run(debug=True)
