@@ -17,11 +17,7 @@ def load_json_data():
     try:
         with open(FILE_PATH, 'r', encoding="utf-8") as file:
             data = json.load(file)
-            if isinstance(data, list):
-                return data  # Ensure it's a list of dictionaries
-            else:
-                print("Error: JSON data is not a list")
-                return []
+            return data if isinstance(data, list) else []
     except Exception as e:
         print(f"Error loading JSON: {e}")
         return []
@@ -36,26 +32,17 @@ def index():
 
 @app.route('/load_data', methods=['GET'])
 def load_data():
-    """Loads the stock data and returns it as JSON."""
     data = load_json_data()
     return jsonify(data)
 
 @app.route('/download_csv', methods=['GET'])
 def download_csv():
-    """Downloads the full stock dataset as CSV."""
     data = load_json_data()
-    
     if not data:
         return jsonify({"error": "No stock data available"}), 404
-    
     df = pd.DataFrame(data)
-    
-    # Convert DataFrame to CSV
-    csv_data = df.to_csv(index=False)
-
-    response = Response(csv_data, content_type="text/csv")
+    response = Response(df.to_csv(index=False), content_type="text/csv")
     response.headers["Content-Disposition"] = "attachment; filename=stock_data.csv"
-    
     return response
 
 @app.route('/filter', methods=['POST'])
@@ -71,41 +58,31 @@ def filter_data():
 
     df = pd.DataFrame(data)
 
-    # Normalize column names in the DataFrame
-    df.columns = [normalize_field_name(col) for col in df.columns]
-
     for field, condition in filters.items():
-        normalized_field = normalize_field_name(field)
+        # Normalize column names
+        normalized_field = field.replace(" ", "_").lower()
 
         if normalized_field not in df.columns:
-            print(f"Skipping unknown field: {normalized_field}")
-            continue  # Skip fields not in the dataset
+            continue  # Skip fields not in dataset
 
         value = condition.get("value")
         condition_type = condition.get("type")
 
         if value is None or condition_type is None:
-            print(f"Skipping invalid filter for field: {field}")
-            continue  # Skip if filter is incomplete
+            continue  # Skip incomplete filters
 
-        # Apply numeric filters
-        if condition_type in ["greater_than", "less_than"]:
-            try:
-                value = float(value)  # Ensure value is numeric
-                df[normalized_field] = pd.to_numeric(df[normalized_field], errors="coerce")  # Convert column to numeric
-                if condition_type == "greater_than":
-                    df = df[df[normalized_field] > value]
-                elif condition_type == "less_than":
-                    df = df[df[normalized_field] < value]
-            except ValueError:
-                print(f"Skipping field {field}: Cannot convert to float")
-                continue  # Skip if conversion fails
+        try:
+            # Ensure value is a float for comparison
+            value = float(value)
 
-        # Apply string-based filters
-        elif condition_type == "equal_to":
-            df = df[df[normalized_field].astype(str) == str(value)]
-        elif condition_type == "contains":
-            df = df[df[normalized_field].astype(str).str.contains(str(value), case=False, na=False)]
+            if condition_type == "greater_than":
+                df = df[df[normalized_field].astype(float) > value]
+            elif condition_type == "less_than":
+                df = df[df[normalized_field].astype(float) < value]
+            elif condition_type == "equal_to":
+                df = df[df[normalized_field].astype(float) == value]
+        except (ValueError, KeyError):
+            continue  # Skip if conversion fails or key doesn't exist
 
     return jsonify(df.to_dict(orient="records"))
 
