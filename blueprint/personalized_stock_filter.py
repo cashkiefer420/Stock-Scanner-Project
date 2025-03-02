@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template, Response
 import pandas as pd
 import json
 import os
+import re
 
 app = Flask(__name__)
 
@@ -24,6 +25,10 @@ def load_json_data():
     except Exception as e:
         print(f"Error loading JSON: {e}")
         return []
+
+# Normalize field names to match HTML input
+def normalize_field_name(field_name):
+    return re.sub(r'[^a-zA-Z0-9]', '_', field_name).lower()
 
 @app.route('/')
 def index():
@@ -66,9 +71,14 @@ def filter_data():
 
     df = pd.DataFrame(data)
 
+    # Normalize column names in the DataFrame
+    df.columns = [normalize_field_name(col) for col in df.columns]
+
     for field, condition in filters.items():
-        if field not in df.columns:
-            print(f"Skipping unknown field: {field}")
+        normalized_field = normalize_field_name(field)
+
+        if normalized_field not in df.columns:
+            print(f"Skipping unknown field: {normalized_field}")
             continue  # Skip fields not in the dataset
 
         value = condition.get("value")
@@ -82,20 +92,20 @@ def filter_data():
         if condition_type in ["greater_than", "less_than"]:
             try:
                 value = float(value)  # Ensure value is numeric
-                df[field] = pd.to_numeric(df[field], errors="coerce")  # Convert column to numeric
+                df[normalized_field] = pd.to_numeric(df[normalized_field], errors="coerce")  # Convert column to numeric
                 if condition_type == "greater_than":
-                    df = df[df[field] > value]
+                    df = df[df[normalized_field] > value]
                 elif condition_type == "less_than":
-                    df = df[df[field] < value]
+                    df = df[df[normalized_field] < value]
             except ValueError:
                 print(f"Skipping field {field}: Cannot convert to float")
                 continue  # Skip if conversion fails
 
         # Apply string-based filters
         elif condition_type == "equal_to":
-            df = df[df[field].astype(str) == str(value)]
+            df = df[df[normalized_field].astype(str) == str(value)]
         elif condition_type == "contains":
-            df = df[df[field].astype(str).str.contains(str(value), case=False, na=False)]
+            df = df[df[normalized_field].astype(str).str.contains(str(value), case=False, na=False)]
 
     return jsonify(df.to_dict(orient="records"))
 
