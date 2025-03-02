@@ -27,15 +27,35 @@ def load_json_data():
 
 @app.route('/')
 def index():
-    return render_template("Personalized_stock_filter.html")
+    return render_template("index.html")
 
 @app.route('/load_data', methods=['GET'])
 def load_data():
+    """Loads the stock data and returns it as JSON."""
     data = load_json_data()
     return jsonify(data)
 
+@app.route('/download_csv', methods=['GET'])
+def download_csv():
+    """Downloads the full stock dataset as CSV."""
+    data = load_json_data()
+    
+    if not data:
+        return jsonify({"error": "No stock data available"}), 404
+    
+    df = pd.DataFrame(data)
+    
+    # Convert DataFrame to CSV
+    csv_data = df.to_csv(index=False)
+
+    response = Response(csv_data, content_type="text/csv")
+    response.headers["Content-Disposition"] = "attachment; filename=stock_data.csv"
+    
+    return response
+
 @app.route('/filter', methods=['POST'])
 def filter_data():
+    """Applies filters based on user selection and returns the filtered data."""
     data = load_json_data()
     if not data:
         return jsonify([])
@@ -58,38 +78,6 @@ def filter_data():
             df = df[df[field] == value]
 
     return jsonify(df.to_dict(orient="records"))
-
-@app.route('/download_csv', methods=['POST'])
-def download_csv():
-    data = load_json_data()
-    
-    if not data:
-        return jsonify({"error": "No stock data available"}), 404
-
-    filters = request.json
-    df = pd.DataFrame(data)
-
-    for field, condition in filters.items():
-        if field not in df.columns:
-            continue
-
-        value = condition["value"]
-        condition_type = condition["type"]
-
-        if condition_type == "greater_than":
-            df = df[df[field] > value]
-        elif condition_type == "less_than":
-            df = df[df[field] < value]
-        elif condition_type == "equal_to":
-            df = df[df[field] == value]
-
-    # Convert DataFrame to CSV
-    csv_data = df.to_csv(index=False)
-
-    response = Response(csv_data, content_type="text/csv")
-    response.headers["Content-Disposition"] = "attachment; filename=filtered_stock_data.csv"
-    
-    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
