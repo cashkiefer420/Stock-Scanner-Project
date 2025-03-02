@@ -121,29 +121,27 @@
             filterContainer.appendChild(div);
         });
 
-        // Load initial stock data
-        function loadStockData() {
-            fetch('/load_data')
-            .then(response => response.json())
-            .then(data => {
-                if (data.length === 0) {
-                    alert("No stock data available.");
-                    return;
-                }
-                updateTable(data);
-            });
-        }
-
-        // Apply filters to stock data
         function applyFilters() {
             const filters = {};
 
             fields.forEach(field => {
-                const normalizedField = normalizeField(field);
+                const normalizedField = field.replace(/\s+/g, "_"); // Normalize field name
                 const condition = document.getElementById(`${normalizedField}Condition`).value;
-                const value = parseFloat(document.getElementById(`${normalizedField}Value`).value) || 0;
-                filters[field] = { type: condition, value: value };
+                let value = document.getElementById(`${normalizedField}Value`).value.trim();
+
+                if (value === "") return; // Ignore empty inputs
+
+                value = parseFloat(value); // Convert input to a number
+
+                if (!isNaN(value)) {
+                    // Ignore "greater than 0" filters
+                    if (!(condition === "greater_than" && value === 0)) {
+                        filters[field] = { type: condition, value: value };
+                    }
+                }
             });
+
+            console.log("Filters to send:", filters); // Debugging output
 
             fetch('/filter', {
                 method: 'POST',
@@ -151,7 +149,13 @@
                 body: JSON.stringify(filters)
             })
             .then(response => response.json())
-            .then(data => updateTable(data));
+            .then(data => {
+                console.log("Filtered data:", data); // Debugging output
+                updateTable(data);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
         }
 
         // Update table with filtered data
