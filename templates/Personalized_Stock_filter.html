@@ -80,7 +80,6 @@
                     <th>Price Change Today</th>
                     <th>Market Cap</th>
                     <th>Dividend Yield</th>
-                    <!-- Add other relevant columns here -->
                 </tr>
             </thead>
             <tbody></tbody>
@@ -88,22 +87,18 @@
     </div>
 
     <script>
-        // List of fields available for filtering (normalized to match Flask backend)
         const fields = [
-            "Ticker", "Company Name", "Current Price", "Price Change Today",
-            "Price Change Week", "Price Change Month", "Price Change Year",
-            "Bid Ask Spread", "Days Range", "Volume Today", "Avg Volume (3 mon)",
+            "Current Price", "Price Change Today",
+            "Price Change Week", "Price Change Month", "Price Change Year", "Volume Today", "Avg Volume (3 mon)",
             "DVAV (Day Volume Over Average Volume)", "P/E Ratio", "P/E Change (3 Mon)",
             "Shares Available", "Market Cap", "Market Cap Change (3 Mon)", 
-            "Dividend Yield", "One Year Target", "DVSA (Volume Today Over Shares Available)"
+            "Dividend Yield", "DVSA (Volume Today Over Shares Available)"
         ];
 
-        // Normalize field names for backend
         function normalizeField(field) {
             return field.replace(/[^a-zA-Z0-9]/g, "_").toLowerCase();
         }
 
-        // Generate filter fields dynamically
         const filterContainer = document.getElementById('filterContainer');
         fields.forEach(field => {
             const div = document.createElement('div');
@@ -116,13 +111,12 @@
                         <option value="less_than">Less Than</option>
                         <option value="equal_to">Equal To</option>
                     </select>
-                    <input type="number" id="${normalizeField(field)}Value" class="form-control" value="0" step="0.01">
+                    <input type="number" id="${normalizeField(field)}Value" class="form-control" value="0" step="0.01" min="-9999999">
                 </div>
             `;
             filterContainer.appendChild(div);
         });
 
-        // Load initial stock data
         function loadStockData() {
             fetch('/load_data')
             .then(response => response.json())
@@ -135,16 +129,25 @@
             });
         }
 
-        // Apply filters to stock data
         function applyFilters() {
             const filters = {};
 
             fields.forEach(field => {
-                const normalizedField = normalizeField(field);
+                const normalizedField = field.replace(/\s+/g, "_").toLowerCase(); // Normalize field name
                 const condition = document.getElementById(`${normalizedField}Condition`).value;
-                const value = parseFloat(document.getElementById(`${normalizedField}Value`).value) || 0;
-                filters[field] = { type: condition, value: value };
+                let value = document.getElementById(`${normalizedField}Value`).value.trim();
+
+                if (value === "") return;  // Skip empty values
+
+                value = parseFloat(value); // Ensure the value is a number
+
+                // Only add valid filters
+                if (!isNaN(value)) {
+            filters[field] = { type: condition, value: value };
+                }
             });
+
+            console.log("Filters to send:", filters); // Debugging line
 
             fetch('/filter', {
                 method: 'POST',
@@ -152,17 +155,23 @@
                 body: JSON.stringify(filters)
             })
             .then(response => response.json())
-            .then(data => updateTable(data));
+            .then(data => {
+              console.log("Filtered data:", data); // Debugging line
+              updateTable(data);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
         }
 
-        // Update table with filtered data
+
         function updateTable(data) {
             const tbody = document.querySelector("#stockTable tbody");
-            tbody.innerHTML = ""; // Clear table
+            tbody.innerHTML = "";
 
             data.forEach(stock => {
                 const row = document.createElement("tr");
-                row.innerHTML = `
+                row.innerHTML = ` 
                     <td>${stock.ticker || ""}</td>
                     <td>${stock.company_name || ""}</td>
                     <td>${stock.current_price || ""}</td>
@@ -174,12 +183,10 @@
             });
         }
 
-        // Download filtered data as CSV
         function downloadFiltered() {
             window.location.href = "/download_csv";
         }
 
-        // Load stock data on page load
         loadStockData();
     </script>
 </body>
