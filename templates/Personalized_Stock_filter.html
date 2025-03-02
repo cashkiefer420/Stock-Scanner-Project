@@ -35,7 +35,6 @@
             background-color: #ffffff;
             border: 1px solid #dee2e6;
             border-radius: 5px;
-            width: 100%;
         }
 
         thead {
@@ -52,8 +51,8 @@
         }
     </style>
 
-    <!-- jQuery and DataTables -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -66,19 +65,27 @@
             <div class="mt-4 text-center">
                 <button type="button" class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
                 <button type="button" class="btn btn-success" onclick="downloadFiltered()">Download CSV</button>
+                <button type="button" class="btn btn-info" onclick="loadCsv()">Load CSV</button>
             </div>
         </form>
 
         <!-- Filtered Results Table -->
-        <h2 class="text-center">Filtered Results</h2>
-        <table id="stockTable" class="table table-striped">
+        <h2>Filtered Results</h2>
+        <table id="stockTable" class="display table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Ticker</th>
                     <th>Company Name</th>
                     <th>Current Price</th>
                     <th>Price Change Today</th>
+                    <th>Shares Available</th>
+                    <th>Day Volume</th>
+                    <th>Average Volume</th>
+                    <th>DVAV</th>
                     <th>Market Cap</th>
+                    <th>Market Cap Change</th>
+                    <th>P/E Ratio</th>
+                    <th>P/E Change</th>
                     <th>Dividend Yield</th>
                 </tr>
             </thead>
@@ -88,16 +95,10 @@
 
     <script>
         const fields = [
-            "Current Price", "Price Change Today",
-            "Price Change Week", "Price Change Month", "Price Change Year", "Volume Today", "Avg Volume (3 mon)",
-            "DVAV (Day Volume Over Average Volume)", "P/E Ratio", "P/E Change (3 Mon)",
-            "Shares Available", "Market Cap", "Market Cap Change (3 Mon)", 
-            "Dividend Yield", "DVSA (Volume Today Over Shares Available)"
+            "Current Price", "Price Change Today", "Shares Available",
+            "Day Volume", "Average Volume", "DVAV", "Market Cap", 
+            "Market Cap Change", "P/E Ratio", "P/E Change", "Dividend Yield"
         ];
-
-        function normalizeField(field) {
-            return field.replace(/[^a-zA-Z0-9]/g, "_").toLowerCase();
-        }
 
         const filterContainer = document.getElementById('filterContainer');
         fields.forEach(field => {
@@ -106,48 +107,25 @@
             div.innerHTML = `
                 <label for="${field}">${field}:</label>
                 <div class="input-group">
-                    <select id="${normalizeField(field)}Condition" class="form-select">
+                    <select id="${field}Condition" class="form-select">
                         <option value="greater_than">Greater Than</option>
                         <option value="less_than">Less Than</option>
                         <option value="equal_to">Equal To</option>
                     </select>
-                    <input type="number" id="${normalizeField(field)}Value" class="form-control" value="0" step="0.01" min="-9999999">
+                    <input type="number" id="${field}Value" class="form-control" value="0" step="0.01">
                 </div>
             `;
             filterContainer.appendChild(div);
         });
 
-        function loadStockData() {
-            fetch('/load_data')
-            .then(response => response.json())
-            .then(data => {
-                if (data.length === 0) {
-                    alert("No stock data available.");
-                    return;
-                }
-                updateTable(data);
-            });
-        }
-
         function applyFilters() {
             const filters = {};
 
             fields.forEach(field => {
-                const normalizedField = field.replace(/\s+/g, "_").toLowerCase(); // Normalize field name
-                const condition = document.getElementById(`${normalizedField}Condition`).value;
-                let value = document.getElementById(`${normalizedField}Value`).value.trim();
-
-                if (value === "") return;  // Skip empty values
-
-                value = parseFloat(value); // Ensure the value is a number
-
-                // Only add valid filters
-                if (!isNaN(value)) {
-            filters[field] = { type: condition, value: value };
-                }
+                const condition = document.getElementById(`${field}Condition`).value;
+                const value = parseFloat(document.getElementById(`${field}Value`).value) || 0;
+                filters[field] = { type: condition, value: value };
             });
-
-            console.log("Filters to send:", filters); // Debugging line
 
             fetch('/filter', {
                 method: 'POST',
@@ -155,39 +133,74 @@
                 body: JSON.stringify(filters)
             })
             .then(response => response.json())
-            .then(data => {
-              console.log("Filtered data:", data); // Debugging line
-              updateTable(data);
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
-        }
-
-
-        function updateTable(data) {
-            const tbody = document.querySelector("#stockTable tbody");
-            tbody.innerHTML = "";
-
-            data.forEach(stock => {
-                const row = document.createElement("tr");
-                row.innerHTML = ` 
-                    <td>${stock.ticker || ""}</td>
-                    <td>${stock.company_name || ""}</td>
-                    <td>${stock.current_price || ""}</td>
-                    <td>${stock.price_change_today || ""}</td>
-                    <td>${stock.market_cap || ""}</td>
-                    <td>${stock.dividend_yield || ""}</td>
-                `;
-                tbody.appendChild(row);
-            });
+            .then(data => updateTable(data));
         }
 
         function downloadFiltered() {
-            window.location.href = "/download_csv";
+            const filters = {};
+
+            fields.forEach(field => {
+                const condition = document.getElementById(`${field}Condition`).value;
+                const value = parseFloat(document.getElementById(`${field}Value`).value) || 0;
+                filters[field] = { type: condition, value: value };
+            });
+
+            fetch('/download', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(filters)
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'filtered_stocks.csv';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            });
         }
 
-        loadStockData();
+        function loadCsv() {
+            fetch('/load_csv')
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+                updateTable(data);
+            });
+        }
+
+        function updateTable(data) {
+            const tableBody = document.querySelector('#stockTable tbody');
+            tableBody.innerHTML = '';
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.Ticker || "N/A"}</td>
+                    <td>${row["Company Name"] || "N/A"}</td>
+                    <td>${row["Current Price"] || "N/A"}</td>
+                    <td>${row["Price Change Today"] || "N/A"}</td>
+                    <td>${row["Shares Available"] || "N/A"}</td>
+                    <td>${row["Day Volume"] || "N/A"}</td>
+                    <td>${row["Average Volume"] || "N/A"}</td>
+                    <td>${row.DVAV || "N/A"}</td>
+                    <td>${row["Market Cap"] || "N/A"}</td>
+                    <td>${row["Market Cap Change"] || "N/A"}</td>
+                    <td>${row["P/E Ratio"] || "N/A"}</td>
+                    <td>${row["P/E Change"] || "N/A"}</td>
+                    <td>${row["Dividend Yield"] || "N/A"}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+
+            $('#stockTable').DataTable().destroy();
+            $('#stockTable').DataTable();
+        }
     </script>
 </body>
 </html>
