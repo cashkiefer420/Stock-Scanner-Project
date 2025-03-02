@@ -30,15 +30,6 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        #filterForm div {
-            margin-bottom: 15px;
-        }
-
-        label {
-            font-weight: bold;
-            color: #495057;
-        }
-
         table {
             margin-top: 20px;
             background-color: #ffffff;
@@ -60,8 +51,8 @@
         }
     </style>
 
+    <!-- jQuery and DataTables -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -73,42 +64,23 @@
             <div id="filterContainer" class="row"></div>
             <div class="mt-4 text-center">
                 <button type="button" class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
-                <button type="button" class="btn btn-success" onclick="downloadFiltered()">Download CSV</button>
-                <button type="button" class="btn btn-info" onclick="loadCsv()">Load CSV</button>
+                <button type="button" class="btn btn-success" onclick="downloadFiltered()">Download CSV</button>r
             </div>
         </form>
 
         <!-- Filtered Results Table -->
-        <h2>Filtered Results</h2>
-        <table id="stockTable" class="display table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>Ticker</th>
-                    <th>Company Name</th>
-                    <th>Current Price</th>
-                    <th>Price Change Today</th>
-                    <th>Shares Available</th>
-                    <th>Day Volume</th>
-                    <th>Average Volume</th>
-                    <th>DVAV</th>
-                    <th>Market Cap</th>
-                    <th>Market Cap Change</th>
-                    <th>P/E Ratio</th>
-                    <th>P/E Change</th>
-                    <th>Dividend Yield</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <h2 class="text-center">Viewing Table Coming Soon</h2>
     </div>
 
     <script>
+        // List of fields available for filtering
         const fields = [
             "Current Price", "Price Change Today", "Shares Available",
             "Day Volume", "Average Volume", "DVAV", "Market Cap", 
             "Market Cap Change", "P/E Ratio", "P/E Change", "Dividend Yield"
         ];
 
+        // Generate filter fields dynamically
         const filterContainer = document.getElementById('filterContainer');
         fields.forEach(field => {
             const div = document.createElement('div');
@@ -127,6 +99,20 @@
             filterContainer.appendChild(div);
         });
 
+        // Load initial stock data
+        function loadStockData() {
+            fetch('/load_data')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length === 0) {
+                    alert("No stock data available.");
+                    return;
+                }
+                updateTable(data);
+            });
+        }
+
+        // Apply filters to stock data
         function applyFilters() {
             const filters = {};
 
@@ -145,69 +131,9 @@
             .then(data => updateTable(data));
         }
 
+        // Download filtered data as CSV
         function downloadFiltered() {
-            const filters = {};
-
-            fields.forEach(field => {
-                const condition = document.getElementById(`${field}Condition`).value;
-                const value = parseFloat(document.getElementById(`${field}Value`).value) || 0;
-                filters[field] = { type: condition, value: value };
-            });
-
-            fetch('/download', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(filters)
-            })
-            .then(response => response.blob())
-            .then(blob => {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'filtered_stocks.csv';
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-            });
-        }
-
-        function loadCsv() {
-            fetch('/load_csv')
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    alert(data.error);
-                    return;
-                }
-                updateTable(data);
-            });
-        }
-
-        function updateTable(data) {
-            const tableBody = document.querySelector('#stockTable tbody');
-            tableBody.innerHTML = '';
-
-            data.forEach(row => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${row.Ticker || "N/A"}</td>
-                    <td>${row["Company Name"] || "N/A"}</td>
-                    <td>${row["Current Price"] || "N/A"}</td>
-                    <td>${row["Price Change Today"] || "N/A"}</td>
-                    <td>${row["Shares Available"] || "N/A"}</td>
-                    <td>${row["Day Volume"] || "N/A"}</td>
-                    <td>${row["Average Volume"] || "N/A"}</td>
-                    <td>${row.DVAV || "N/A"}</td>
-                    <td>${row["Market Cap"] || "N/A"}</td>
-                    <td>${row["Market Cap Change"] || "N/A"}</td>
-                    <td>${row["P/E Ratio"] || "N/A"}</td>
-                    <td>${row["P/E Change"] || "N/A"}</td>
-                    <td>${row["Dividend Yield"] || "N/A"}</td>
-                `;
-                tableBody.appendChild(tr);
-            });
-
-            $('#stockTable').DataTable();
+            window.location.href = "/download_csv";
         }
     </script>
 </body>
