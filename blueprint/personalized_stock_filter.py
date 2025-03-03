@@ -40,24 +40,6 @@ def load_data():
     data = load_json_data()
     return jsonify(data)
 
-@app.route('/download_csv', methods=['GET'])
-def download_csv():
-    """Downloads the full stock dataset as CSV."""
-    data = load_json_data()
-    
-    if not data:
-        return jsonify({"error": "No stock data available"}), 404
-    
-    df = pd.DataFrame(data)
-    
-    # Convert DataFrame to CSV
-    csv_data = df.to_csv(index=False)
-
-    response = Response(csv_data, content_type="text/csv")
-    response.headers["Content-Disposition"] = "attachment; filename=stock_data.csv"
-    
-    return response
-
 @app.route('/filter', methods=['POST'])
 def filter_data():
     """Applies filters based on user selection and returns the filtered data."""
@@ -92,22 +74,78 @@ def filter_data():
         if condition_type in ["greater_than", "less_than"]:
             try:
                 value = float(value)  # Ensure value is numeric
-                df[normalized_field] = pd.to_numeric(df[normalized_field], errors="coerce").fillna(0)  # Convert column to numeric
+                df[normalized_field] = pd.to_numeric(df[normalized_field], errors="coerce")
+
                 if condition_type == "greater_than":
-                    df = df[df[normalized_field] > value]
+                    df = df[df[normalized_field].notna() & (df[normalized_field] > value)]
                 elif condition_type == "less_than":
-                    df = df[df[normalized_field] < value]
+                    df = df[df[normalized_field].notna() & (df[normalized_field] < value)]
+
             except ValueError:
                 print(f"Skipping field {field}: Cannot convert to float")
                 continue  # Skip if conversion fails
 
         # Apply string-based filters
         elif condition_type == "equal_to":
-            df = df[df[normalized_field].aswype(str) == str(value)]
+            df = df[df[normalized_field].astype(str) == str(value)]
         elif condition_type == "contains":
-            df = df[df[normalized_field].aswype(str).str.contains(str(value), case=False, na=False)]
+            df = df[df[normalized_field].astype(str).str.contains(str(value), case=False, na=False)]
 
     return jsonify(df.to_dict(orient="records"))
+
+@app.route('/download_csv', methods=['POST'])
+def download_filtered_csv():
+    """Downloads the filtered stock dataset as CSV based on user-applied filters."""
+    data = load_json_data()
+    
+    if not data:
+        return jsonify({"error": "No stock data available"}), 404
+
+    filters = request.json
+    if not filters:
+        return jsonify({"error": "No filters provided"}), 400
+
+    df = pd.DataFrame(data)
+    df.columns = [normalize_field_name(col) for col in df.columns]  # Normalize column names
+
+    for field, condition in filters.items():
+        normalized_field = normalize_field_name(field)
+
+        if normalized_field not in df.columns:
+            continue
+
+        value = condition.get("value")
+        condition_type = condition.get("type")
+
+        if value is None or condition_type is None:
+            continue
+
+        # Apply filters
+        if condition_type in ["greater_than", "less_than"]:
+            try:
+                value = float(value)
+                df[normalized_field] = pd.to_numeric(df[normalized_field], errors="coerce")
+
+                if condition_type == "greater_than":
+                    df = df[df[normalized_field].notna() & (df[normalized_field] > value)]
+                elif condition_type == "less_than":
+                    df = df[df[normalized_field].notna() & (df[normalized_field] < value)]
+
+            except ValueError:
+                continue  # Skip invalid values
+
+        elif condition_type == "equal_to":
+            df = df[df[normalized_field].astype(str) == str(value)]
+        elif condition_type == "contains":
+            df = df[df[normalized_field].astype(str).str.contains(str(value), case=False, na=False)]
+
+    # Convert DataFrame to CSV
+    csv_data = df.to_csv(index=False)
+
+    response = Response(csv_data, content_type="text/csv")
+    response.headers["Content-Disposition"] = "attachment; filename=filtered_stock_data.csv"
+    
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
