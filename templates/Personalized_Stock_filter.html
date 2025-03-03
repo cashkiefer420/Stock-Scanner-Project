@@ -121,27 +121,46 @@
             filterContainer.appendChild(div);
         });
 
+        // Load initial stock data
+        function loadStockData() {
+            fetch('/load_data')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length === 0) {
+                    alert("No stock data available.");
+                    return;
+                }
+                updateTable(data);
+            });
+        }
+
+        // Apply filters to stock data
         function applyFilters() {
             const filters = {};
 
             fields.forEach(field => {
-                const normalizedField = field.replace(/\s+/g, "_"); // Normalize field name
-                const condition = document.getElementById(`${normalizedField}Condition`).value;
-                let value = document.getElementById(`${normalizedField}Value`).value.trim();
+                const normalizedField = normalizeField(field);
+                const conditionElement = document.getElementById(`${normalizedField}Condition`);
+                const valueElement = document.getElementById(`${normalizedField}Value`);
 
-                if (value === "") return; // Ignore empty inputs
+                if (!conditionElement || !valueElement) {
+                    console.error(`Missing elements for field: ${field}`);
+                    return;
+                }
 
-                value = parseFloat(value); // Convert input to a number
+                const condition = conditionElement.value;
+                let value = valueElement.value.trim();
+
+                if (value === "") return;
+                value = parseFloat(value);
 
                 if (!isNaN(value)) {
-                    // Ignore "greater than 0" filters
-                    if (!(condition === "greater_than" && value === 0)) {
-                        filters[field] = { type: condition, value: value };
-                    }
+                    // Ensuring "greater_than" is not ignored incorrectly
+                    filters[field] = { type: condition, value: value };
                 }
             });
 
-            console.log("Filters to send:", filters); // Debugging output
+            console.log("Filters to send:", filters);
 
             fetch('/filter', {
                 method: 'POST',
@@ -150,7 +169,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log("Filtered data:", data); // Debugging output
+                console.log("Filtered data:", data);
                 updateTable(data);
             })
             .catch(error => {
