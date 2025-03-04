@@ -23,9 +23,9 @@ os.makedirs(JSON_FOLDER, exist_ok=True)
 
 # Files and their expected default structures
 JSON_FILES = {
-    "1.25_volume.json": {"emails": []},
-    "Filtered_volume_1.25x.json": {"stocks": []},
-    "ut-1.125-volume.json": {"used_tickers": []}
+    "1.5_volume.json": {"emails": []},
+    "Filtered_volume_1.5x.json": {"stocks": []},
+    "ut-1.5-volume.json": {"used_tickers": []}
 }
 
 # Function to ensure files exist with the correct format
