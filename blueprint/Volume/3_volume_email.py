@@ -25,7 +25,7 @@ os.makedirs(JSON_FOLDER, exist_ok=True)
 JSON_FILES = {
     "3x_volume.json": {"emails": []},
     "Filtered_volume_3x.json": {"stocks": []},
-    "ut-3-volume.json": {"used_tickers": []}
+    "ut-3x-volume.json": {"used_tickers": []}
 }
 
 # Function to ensure files exist with the correct format
@@ -42,7 +42,7 @@ ensure_json_files()
 # File paths
 EMAILS_FILE = os.path.join(JSON_FOLDER, "3x_volume.json")
 STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_volume_3x.json")
-USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut-3-volume.json")
+USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut-3x-volume.json")
 
 # Improved HTML Email Template
 html_template = """
