@@ -25,7 +25,7 @@ os.makedirs(JSON_FOLDER, exist_ok=True)
 JSON_FILES = {
     "2x_volume.json": {"emails": []},
     "Filtered_volume_2x.json": {"stocks": []},
-    "ut-2-volume.json": {"used_tickers": []}
+    "ut-2x-volume.json": {"used_tickers": []}
 }
 
 # Function to ensure files exist with the correct format
@@ -40,9 +40,9 @@ def ensure_json_files():
 ensure_json_files()
 
 # File paths
-EMAILS_FILE = os.path.join(JSON_FOLDER, "1.25_volume.json")
-STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_volume_1.25x.json")
-USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut-1.125-volume.json")
+EMAILS_FILE = os.path.join(JSON_FOLDER, "2x_volume.json")
+STOCKS_FILE = os.path.join(JSON_FOLDER, "Filtered_volume_2x.json")
+USED_TICKERS_FILE = os.path.join(JSON_FOLDER, "ut-2x-volume.json")
 
 # Improved HTML Email Template
 html_template = """
@@ -93,7 +93,7 @@ html_template = """
   <body>
     <div class="email-container">
       <div class="header">
-        Stock Alert: {{ stock_symbol }} 2 Average Volume Today
+        Stock Alert: {{ stock_symbol }} 2 Times Average Volume Today
       </div>
       <div class="content">
         <p>Dear Investor,</p>
