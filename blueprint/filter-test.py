@@ -51,7 +51,7 @@ filter_abbrevs = {
 def parse_filters(args):
     filters = {}
     for arg in args:
-        match = re.match(r"([a-zA-Z0-9]+)([+-])\s*(-?\d+(\.\d+)?)", arg)
+        match = re.match(r"([a-zA-Z0-9]+)\s*([+-])\s*(-?\d+(\.\d+)?)", arg)
         if not match:
             continue
         abbrev, condition, value = match.groups()[:3]
