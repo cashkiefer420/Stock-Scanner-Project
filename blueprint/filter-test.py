@@ -5,7 +5,7 @@ import re
 import argparse
 
 # Set base directory
-base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
+base_dir = r"C:\Users\Carte\Documents\Stock-Scanner-Project-Windows"
 FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
 
 # Function to load JSON data
@@ -51,12 +51,11 @@ filter_abbrevs = {
 def parse_filters(args):
     filters = {}
     for arg in args:
-        if len(arg) < 3:
+        match = re.match(r"([a-zA-Z0-9]+)([+-])\s*(-?\d+(\.\d+)?)", arg)
+        if not match:
             continue
-        abbrev = arg[:-2]
-        condition = arg[-2]
-        value = arg[-1]
-        if abbrev in filter_abbrevs and condition in ['+', '-']:
+        abbrev, condition, value = match.groups()[:3]
+        if abbrev in filter_abbrevs:
             field = filter_abbrevs[abbrev]
             if condition == '+':
                 filters[field] = {"type": "greater_than", "value": value}
