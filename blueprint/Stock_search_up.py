@@ -5,8 +5,8 @@ import yfinance as yf  # Import Yahoo Finance for additional data
 
 app = Flask(__name__, template_folder='templates')
 
-base_dir = r"C:\Users\Carter\Downloads\Stock-Scanner-Project-main\Stock-Scanner-Project-main"
-filepath = os.path.join(base_dir, "json", "processed_tickers.json")
+base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
+filepath = os.path.join(base_dir, "json", "stock_data_export.json")
 
 # Ensure required directories and files exist
 os.makedirs(os.path.dirname(filepath), exist_ok=True)
@@ -17,6 +17,10 @@ if not os.path.exists(filepath):
 def load_stocks(filepath):
     with open(filepath, "r") as file:
         return json.load(file)
+
+@app.route('/')
+def index():
+    return render_template("look_up.html")
 
 # Function to fetch stock metrics by ticker or company name
 def get_stock_metrics(search_query, filepath):
