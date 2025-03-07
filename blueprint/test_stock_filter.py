@@ -1,6 +1,11 @@
 import unittest
 import json
 from flask import Flask
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from blueprint.Stock_search_up import app, load_stocks, get_stock_metrics
 
 class StockSearchTestCase(unittest.TestCase):
