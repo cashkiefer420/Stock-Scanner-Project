@@ -18,6 +18,8 @@ def load_json_data():
         with open(FILE_PATH, 'r', encoding="utf-8") as file:
             data = json.load(file)
             if isinstance(data, list):
+                # Debug: Print the loaded data to check for negative numbers
+                print("Loaded JSON data:", data)
                 return data  # Ensure it's a list of dictionaries
             else:
                 print("Error: JSON data is not a list")
@@ -56,6 +58,9 @@ def filter_data():
     # Normalize column names in the DataFrame
     df.columns = [normalize_field_name(col) for col in df.columns]
 
+    print("Initial Data:")
+    print(df)
+
     for field, condition in filters.items():
         normalized_field = normalize_field_name(field)
 
@@ -70,6 +75,8 @@ def filter_data():
             print(f"Skipping invalid filter for field: {field}")
             continue  # Skip if filter is incomplete
 
+        print(f"Applying filter: {field} ({condition_type}) {value}")
+
         # Apply numeric filters
         if condition_type in ["greater_than", "less_than"]:
             try:
@@ -77,8 +84,10 @@ def filter_data():
                 df[normalized_field] = pd.to_numeric(df[normalized_field], errors="coerce")
 
                 if condition_type == "greater_than":
+                    print(f"Filtering {normalized_field} > {value}")
                     df = df[df[normalized_field].notna() & (df[normalized_field] > value)]
                 elif condition_type == "less_than":
+                    print(f"Filtering {normalized_field} < {value}")
                     df = df[df[normalized_field].notna() & (df[normalized_field] < value)]
 
             except ValueError:
@@ -90,6 +99,9 @@ def filter_data():
             df = df[df[normalized_field].astype(str) == str(value)]
         elif condition_type == "contains":
             df = df[df[normalized_field].astype(str).str.contains(str(value), case=False, na=False)]
+
+        print(f"Data after applying filter {field}:")
+        print(df)
 
     return jsonify(df.to_dict(orient="records"))
 
