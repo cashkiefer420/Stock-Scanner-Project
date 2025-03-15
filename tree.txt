@@ -1,0 +1,255 @@
+.
+├── Stock-Scanner-Project
+│   ├── app
+│   │   └── Init.py
+│   ├── blueprint
+│   │   ├── Clean_News.py
+│   │   ├── DVSA
+│   │   │   ├── 100_DVSA_email.py
+│   │   │   ├── 100_DVSA_flask.py
+│   │   │   ├── 150_DVSA_email.py
+│   │   │   ├── 150_DVSA_flask.py
+│   │   │   ├── 50_DVSA_email.py
+│   │   │   ├── 50_DVSA_flask.py
+│   │   │   └── templates
+│   │   │       ├── Index-DVSA-100.html
+│   │   │       ├── Index-DVSA-150.html
+│   │   │       └── Index-DVSA-50.html
+│   │   ├── Email_filter.py
+│   │   ├── MC_Change
+│   │   │   ├── 10_mc_de_email.py
+│   │   │   ├── 10_mc_de_flask.py
+│   │   │   ├── 10_mc_in_email.py
+│   │   │   ├── 10_mc_in_flask.py
+│   │   │   ├── 20_mc_de_email.py
+│   │   │   ├── 20_mc_de_flask.py
+│   │   │   ├── 20_mc_in_email.py
+│   │   │   ├── 20_mc_in_flask.py
+│   │   │   ├── 30_mc_de_email.py
+│   │   │   ├── 30_mc_de_flask.py
+│   │   │   ├── 30_mc_in_email.py
+│   │   │   ├── 30_mc_in_flask.py
+│   │   │   └── templates
+│   │   │       ├── Index-mc-de-10.html
+│   │   │       ├── Index-mc-de-20.html
+│   │   │       ├── Index-mc-de-30.html
+│   │   │       ├── Index-mc-in-10.html
+│   │   │       ├── Index-mc-in-20.html
+│   │   │       └── Index-mc-in-30.html
+│   │   ├── News_display.py
+│   │   ├── PE_Change
+│   │   │   ├── 10_pe_de_email.py
+│   │   │   ├── 10_pe_de_flask.py
+│   │   │   ├── 10_pe_in_email.py
+│   │   │   ├── 10_pe_in_flask.py
+│   │   │   ├── 20_pe_de_email.py
+│   │   │   ├── 20_pe_de_flask.py
+│   │   │   ├── 20_pe_in_email.py
+│   │   │   ├── 20_pe_in_flask.py
+│   │   │   ├── 30_pe_de_email.py
+│   │   │   ├── 30_pe_de_flask.py
+│   │   │   ├── 30_pe_in_email.py
+│   │   │   ├── 30_pe_in_flask.py
+│   │   │   └── templates
+│   │   │       ├── Index-Pe-de-10.html
+│   │   │       ├── Index-Pe-de-20.html
+│   │   │       ├── Index-Pe-de-30.html
+│   │   │       ├── Index-Pe-in-10.html
+│   │   │       ├── Index-Pe-in-20.html
+│   │   │       └── Index-Pe-in-30.html
+│   │   ├── Price_de
+│   │   │   ├── 10_price_de_email.py
+│   │   │   ├── 10_price_de_flask.py
+│   │   │   ├── 15_Price_de_email.py
+│   │   │   ├── 15_Price_de_flask.py
+│   │   │   ├── 20_price_de_email.py
+│   │   │   ├── 20_price_de_flask.py
+│   │   │   └── templates
+│   │   │       ├── Index-Price-Decrease-10.html
+│   │   │       ├── Index-Price-Decrease-15.html
+│   │   │       └── Index-Price-Decrease-20.html
+│   │   ├── Price_in
+│   │   │   ├── 20_price_in_email.py
+│   │   │   ├── 20_price_in_flask.py
+│   │   │   ├── 50_price_in_email.py
+│   │   │   ├── 50_price_in_flask.py
+│   │   │   ├── 75_price_in_email.py
+│   │   │   ├── 75_price_in_flask.py
+│   │   │   └── templates
+│   │   │       ├── Index-Price-increase-75.html
+│   │   │       ├── index-price-increase-20.html
+│   │   │       └── index-price-increase-50.html
+│   │   ├── Stock_search_up.py
+│   │   ├── Volume
+│   │   │   ├── 1.125_volume_email.py
+│   │   │   ├── 1.125_volume_flask.py
+│   │   │   ├── 1.25_volume_email.py
+│   │   │   ├── 1.25_volume_flask.py
+│   │   │   ├── 1.5_volume_email.py
+│   │   │   ├── 1.5_volume_flask.py
+│   │   │   ├── 1.75_volume_email.py
+│   │   │   ├── 1.75_volume_flask.py
+│   │   │   ├── 2.5_volume_email.py
+│   │   │   ├── 2.5_volume_flask.py
+│   │   │   ├── 2_volume_email.py
+│   │   │   ├── 2_volume_flask.py
+│   │   │   ├── 3_volume_email.py
+│   │   │   ├── 3_volume_flask.py
+│   │   │   ├── 5_volume_email.py
+│   │   │   ├── 5x_volume_flask.py
+│   │   │   └── templates
+│   │   │       ├── Index-Volume-1.125.html
+│   │   │       ├── Index-Volume-1.25.html
+│   │   │       ├── Index-Volume-1.5.html
+│   │   │       ├── Index-Volume-1.75.html
+│   │   │       ├── Index-Volume-2.5.html
+│   │   │       ├── Index-Volume-2x.html
+│   │   │       ├── Index-Volume-3x.html
+│   │   │       └── Index-Volume-5x.html
+│   │   ├── filter-test.py
+│   │   ├── news.py
+│   │   ├── personalized_stock_filter.py
+│   │   ├── retrieve_data.py
+│   │   └── templates
+│   │       ├── Look.html
+│   │       ├── News_display.html
+│   │       └── Personalized_Stock_filter.html
+│   ├── json
+│   │   ├── 1.125_volume.json
+│   │   ├── 1.25_volume.json
+│   │   ├── 1.5_volume.json
+│   │   ├── 1.75_volume.json
+│   │   ├── 10_de_pe_subs.json
+│   │   ├── 10_in_pe_subs.json
+│   │   ├── 10_mc_de.json
+│   │   ├── 10_mc_in.json
+│   │   ├── 10_price_de.json
+│   │   ├── 15_price_de.json
+│   │   ├── 2.5_volume.json
+│   │   ├── 20_de_pe_subs.json
+│   │   ├── 20_in_pe_subs.json
+│   │   ├── 20_mc_de.json
+│   │   ├── 20_mc_in.json
+│   │   ├── 20_price_de.json
+│   │   ├── 20_price_in.json
+│   │   ├── 2x_volume.json
+│   │   ├── 30_de_pe_subs.json
+│   │   ├── 30_in_pe_subs.json
+│   │   ├── 30_mc_de.json
+│   │   ├── 30_mc_in.json
+│   │   ├── 3x_volume.json
+│   │   ├── 50_price_in.json
+│   │   ├── 5x_volume.json
+│   │   ├── Filtered_DVSA_100.json
+│   │   ├── Filtered_DVSA_150.json
+│   │   ├── Filtered_DVSA_50.json
+│   │   ├── Filtered_market_cap_10_de.json
+│   │   ├── Filtered_market_cap_10_in.json
+│   │   ├── Filtered_market_cap_20_de.json
+│   │   ├── Filtered_market_cap_20_in.json
+│   │   ├── Filtered_market_cap_30_de.json
+│   │   ├── Filtered_market_cap_30_in.json
+│   │   ├── Filtered_pe_10_de.json
+│   │   ├── Filtered_pe_10_in.json
+│   │   ├── Filtered_pe_20_de.json
+│   │   ├── Filtered_pe_20_in.json
+│   │   ├── Filtered_pe_30_de.json
+│   │   ├── Filtered_pe_30_in.json
+│   │   ├── Filtered_price_10_de.json
+│   │   ├── Filtered_price_15_de.json
+│   │   ├── Filtered_price_20_de.json
+│   │   ├── Filtered_price_20_in.json
+│   │   ├── Filtered_price_50_in.json
+│   │   ├── Filtered_price_75_in.json
+│   │   ├── Filtered_volume_1.125x.json
+│   │   ├── Filtered_volume_1.25x.json
+│   │   ├── Filtered_volume_1.5x.json
+│   │   ├── Filtered_volume_1.75x.json
+│   │   ├── Filtered_volume_2.5x.json
+│   │   ├── Filtered_volume_2x.json
+│   │   ├── Filtered_volume_3x.json
+│   │   ├── Filtered_volume_5x.json
+│   │   ├── MC_num.json
+│   │   ├── PE_num.json
+│   │   ├── Sample_tickers.json
+│   │   ├── company_tickers.json
+│   │   ├── formatted_tickers.json
+│   │   ├── level_1_news.json
+│   │   ├── level_5_news.json
+│   │   ├── nasdaq-listed.csv
+│   │   ├── nasdaq_tickers.json
+│   │   ├── news.json
+│   │   ├── processed_tickers.json
+│   │   ├── stock_data_export.json
+│   │   ├── ut-1.125-volume.json
+│   │   ├── ut-1.25-volume.json
+│   │   ├── ut-1.5-volume.json
+│   │   ├── ut-1.75-volume.json
+│   │   ├── ut-10-mc-de.json
+│   │   ├── ut-10-mc-in.json
+│   │   ├── ut-10-pe-de.json
+│   │   ├── ut-10-pe-in.json
+│   │   ├── ut-10-price-de.json
+│   │   ├── ut-100-dvsa.json
+│   │   ├── ut-15-price-de.json
+│   │   ├── ut-150-dvsa.json
+│   │   ├── ut-2.5-volume.json
+│   │   ├── ut-20-mc-de.json
+│   │   ├── ut-20-mc-in.json
+│   │   ├── ut-20-pe-de.json
+│   │   ├── ut-20-pe-in.json
+│   │   ├── ut-20-price-de.json
+│   │   ├── ut-20-price-in.json
+│   │   ├── ut-2x-volume.json
+│   │   ├── ut-30-mc-de.json
+│   │   ├── ut-30-mc-in.json
+│   │   ├── ut-30-pe-de.json
+│   │   ├── ut-30-pe-in.json
+│   │   ├── ut-3x-volume.json
+│   │   ├── ut-50-dvsa.json
+│   │   ├── ut-50-price-in.json
+│   │   ├── ut-5x-volume.json
+│   │   ├── ut-75-price-in.json
+│   │   └── ut_price_10_de.json
+│   ├── static
+│   │   └── index_sub.css
+│   └── templates
+│       ├── Index-DVSA-100.html
+│       ├── Index-DVSA-150.html
+│       ├── Index-DVSA-50.html
+│       ├── Index-Pe-de-10.html
+│       ├── Index-Pe-de-20.html
+│       ├── Index-Pe-de-30.html
+│       ├── Index-Pe-in-10.html
+│       ├── Index-Pe-in-20.html
+│       ├── Index-Pe-in-30.html
+│       ├── Index-Price-Decrease-10.html
+│       ├── Index-Price-Decrease-15.html
+│       ├── Index-Price-Decrease-20.html
+│       ├── Index-Price-increase-75.html
+│       ├── Index-Volume-1.125.html
+│       ├── Index-Volume-1.25.html
+│       ├── Index-Volume-1.5.html
+│       ├── Index-Volume-1.75.html
+│       ├── Index-Volume-2.5.html
+│       ├── Index-Volume-2x.html
+│       ├── Index-Volume-3x.html
+│       ├── Index-Volume-5x.html
+│       ├── Index-mc-de-10.html
+│       ├── Index-mc-de-20.html
+│       ├── Index-mc-de-30.html
+│       ├── Index-mc-in-10.html
+│       ├── Index-mc-in-20.html
+│       ├── Index-mc-in-30.html
+│       ├── Look.html.html
+│       ├── Personalized_Stock_filter.html
+│       ├── index-news-1*.html
+│       ├── index-news-5*.html
+│       ├── index-price-increase-20.html
+│       ├── index-price-increase-50.html
+│       └── tem.html
+├── get-pip.py
+├── nltk_data
+│   └── sentiment
+│       └── vader_lexicon.zip
+└── stock_data.log
