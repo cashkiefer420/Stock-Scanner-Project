@@ -7,15 +7,17 @@ from concurrent.futures import ThreadPoolExecutor
 from threading import Event
 from datetime import datetime, timedelta
 import requests_cache
-
+import boto3
 
 
 # Base directory setup
-base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
+base_dir = r"C:\Users\Carte\Documents\Stock-Scanner-Project-Windows"
 TICKER_FILE_PATH = os.path.join(base_dir, "json", "processed_tickers.json")
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
 PE_FILE_PATH = os.path.join(base_dir, "json", "PE_num.json")
 MarketCap_FILE_PATH = os.path.join(base_dir, "json", "MC_num.json")
+S3_BUCKET_NAME = "exportbucket--use2-az1--x-s3"
+S3_EXPORT_FILE_KEY = "stock_data_export.json"
 
 # Logging setup for both file and console
 log_format = '%(asctime)s - %(levelname)s - %(message)s'
@@ -271,6 +273,13 @@ def export_all_stock_data():
         logging.info(f"Stock data exported to {EXPORT_FILE_PATH}")
     except Exception as e:
         logging.exception("Error exporting stock data:")
+    
+    try:
+        s3_client = boto3.client('s3')
+        s3_client.upload_file(EXPORT_FILE_PATH, S3_BUCKET_NAME, S3_EXPORT_FILE_KEY)
+        logging.info(f"Stock data exported to S3 bucket {S3_BUCKET_NAME} with key {S3_EXPORT_FILE_KEY}")
+    except Exception as e:
+        logging.exception("Error exporting stock data to S3:")
 
 if __name__ == '__main__':
     try:
