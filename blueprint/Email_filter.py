@@ -6,7 +6,7 @@ from datetime import datetime
 import boto3
 
 # Base directory for the project
-base_dir = r"C:\Users\Carte\Documents\Stock-Scanner-Project-Windows"
+base_dir = r"/home/ec2-user/Stock-Scanner-Project"
 output_directory = os.path.join(base_dir, "json")
 Stock_data_export = os.path.join(output_directory, "stock_data_export.json")
 S3_BUCKET_NAME = "exportbucket--use2-az1--x-s3"
