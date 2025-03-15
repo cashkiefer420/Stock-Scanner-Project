@@ -3,12 +3,14 @@ import os
 import time
 import pytz
 from datetime import datetime
+import boto3
 
 # Base directory for the project
-base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
+base_dir = r"C:\Users\Carte\Documents\Stock-Scanner-Project-Windows"
 output_directory = os.path.join(base_dir, "json")
 Stock_data_export = os.path.join(output_directory, "stock_data_export.json")
-
+S3_BUCKET_NAME = "exportbucket--use2-az1--x-s3"
+S3_EXPORT_FILE_KEY = "stock_data_export.json"
 # Create the /json directory if it doesn't exist
 os.makedirs(output_directory, exist_ok=True)
 
@@ -24,12 +26,12 @@ def safe_float(value):
 
 # Define the filters
 filters = [
-    {"name": "Filtered_pe_10_in.json", "key": "P/E Change (3 Mon)", "condition": lambda x: safe_float(x) > 10},
-    {"name": "Filtered_pe_20_in.json", "key": "P/E Change (3 Mon)", "condition": lambda x: safe_float(x) > 20},
-    {"name": "Filtered_pe_30_in.json", "key": "P/E Change (3 Mon)", "condition": lambda x: safe_float(x) > 30},
-    {"name": "Filtered_pe_10_de.json", "key": "P/E Change (3 Mon)", "condition": lambda x: safe_float(x) < -10},
-    {"name": "Filtered_pe_20_de.json", "key": "P/E Change (3 Mon)", "condition": lambda x: safe_float(x) < -20},
-    {"name": "Filtered_pe_30_de.json", "key": "P/E Change (3 Mon)", "condition": lambda x: safe_float(x) < -30},
+    {"name": "Filtered_pe_10_in.json", "key": "P/E Change (3mo)", "condition": lambda x: safe_float(x) > 10},
+    {"name": "Filtered_pe_20_in.json", "key": "P/E Change (3mo)", "condition": lambda x: safe_float(x) > 20},
+    {"name": "Filtered_pe_30_in.json", "key": "P/E Change (3mo)", "condition": lambda x: safe_float(x) > 30},
+    {"name": "Filtered_pe_10_de.json", "key": "P/E Change (3mo)", "condition": lambda x: safe_float(x) < -10},
+    {"name": "Filtered_pe_20_de.json", "key": "P/E Change (3mo)", "condition": lambda x: safe_float(x) < -20},
+    {"name": "Filtered_pe_30_de.json", "key": "P/E Change (3mo)", "condition": lambda x: safe_float(x) < -30},
     {"name": "Filtered_market_cap_10_in.json", "key": "Market Cap Change (3 Mon)", "condition": lambda x: safe_float(x) > 10},
     {"name": "Filtered_market_cap_20_in.json", "key": "Market Cap Change (3 Mon)", "condition": lambda x: safe_float(x) > 20},
     {"name": "Filtered_market_cap_30_in.json", "key": "Market Cap Change (3 Mon)", "condition": lambda x: safe_float(x) > 30},
@@ -51,47 +53,53 @@ def reset_filtered_files():
     """Wipes all filtered JSON files at midnight New York time."""
     current_time = datetime.now(new_york_tz)
     if current_time.hour == 0 and current_time.minute == 0:
-        print("\n[INFO] Midnight in New York detected. Resetting filtered files...")
+        print("It's midnight in New York. Wiping filtered files...")
         for filter_item in filters:
             file_path = os.path.join(output_directory, filter_item["name"])
             with open(file_path, 'w') as file:
-                json.dump({"stocks": []}, file, indent=4)  # Ensuring correct format
-            print(f"  - {filter_item['name']} has been reset.")
-        print("[INFO] Reset complete.\n")
+                json.dump({}, file)
+        print("Filtered files wiped.")
 
 def filter_data():
     """Processes stock data and filters it based on predefined conditions."""
     try:
         with open(Stock_data_export, 'r') as file:
             data = json.load(file)
-    except FileNotFoundError:
-        print("[ERROR] Stock data file not found. Skipping filtering.")
-        return
-    except json.JSONDecodeError:
-        print("[ERROR] Stock data file is not valid JSON. Skipping filtering.")
+    except (FileNotFoundError, json.JSONDecodeError):
+        print("Error: Could not load stock data.")
         return
 
-    print("\n[INFO] Starting data filtering...")
+    print("Filtering data...")
 
     for filter_item in filters:
-        filtered_stocks = [
-            item for item in data if filter_item["condition"](item.get(filter_item["key"], 0))
-        ]
+        filtered_data = {
+            item["Ticker"]: item
+            for item in data
+            if filter_item["condition"](item.get(filter_item["key"], 0))
+        }
 
+        # Save filtered results
         file_path = os.path.join(output_directory, filter_item["name"])
         with open(file_path, 'w') as outfile:
-            json.dump({"stocks": filtered_stocks}, outfile, indent=4)  # Ensuring correct format
+            json.dump(filtered_data, outfile, indent=4)
 
-        print(f"  - {filter_item['name']} updated with {len(filtered_stocks)} stocks.")
+    print("Filtering complete.")
 
-    print("[INFO] Filtering complete.\n")
-    
+def download_from_s3():
+    """Downloads the stock data export file from S3."""
+    try:
+        s3_client = boto3.client('s3')
+        s3_client.download_file(S3_BUCKET_NAME, S3_EXPORT_FILE_KEY, Stock_data_export)
+        print(f"[INFO] {S3_EXPORT_FILE_KEY} downloaded from S3 bucket {S3_BUCKET_NAME}")
+    except Exception as e:
+        print(f"[ERROR] Error downloading {S3_EXPORT_FILE_KEY} from S3: {e}")
+
 def main():
     """Main loop that resets and filters data every 5 minutes."""
     while True:
         reset_filtered_files()
         filter_data()
-        print("[INFO] Sleeping for 5 minutes...\n")
+        print("Sleeping for 5 minutes...")
         time.sleep(300)  # Sleep for 5 minutes
 
 if __name__ == "__main__":
