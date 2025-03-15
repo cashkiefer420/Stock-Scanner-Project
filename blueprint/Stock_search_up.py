@@ -5,7 +5,7 @@ from flask import Flask, request, render_template, jsonify
 app = Flask(__name__)
 
 # Define the path to the JSON file
-base_dir = r"C:\Users\Carter\Downloads\Stock-Scanner-Project-main"
+base_dir = r"/home/ec2-user/Stock-Scanner-Project"
 json_filepath = os.path.join(base_dir, "json", "stock_data_export.json")
 
 # Function to load JSON data
