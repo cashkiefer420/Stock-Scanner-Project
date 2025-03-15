@@ -22,7 +22,7 @@ def load_json_data():
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('Look.html')
 
 @app.route('/search', methods=['POST'])
 def search():
