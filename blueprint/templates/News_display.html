@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+        .articles {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            margin: 20px;
+        }
+        .article {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .headline {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+        .first_paragraph {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #555;
+        }
+        .grade {
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <h1>News Articles</h1>
+    <div class="articles">
+        {% for article in articles %}
+        <div class="article">
+            <div class="headline">{{ article.headline }}</div>
+            <div class="grade">Grade: {{ article.grade }} | Score: {{ article.score }}</div>
+            <div class="first_paragraph">{{ article.first_paragraph }}</div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const paragraphs = document.querySelectorAll('.first_paragraph');
+            paragraphs.forEach(paragraph => {
+                if (!paragraph.textContent.endsWith('.')) {
+                    const words = paragraph.textContent.split(' ');
+                    words[words.length - 1] = '...';
+                    paragraph.textContent = words.join(' ');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
