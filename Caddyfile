@@ -1,7 +1,14 @@
 
 {
-    # Global settings
     email carter.kiefer2010@outlook.com
+    acme_dns ionos
+}
+
+*.retailtradescanner.com {
+    reverse_proxy localhost:{port}
+    tls {
+        dns ionos
+    }
 }
 
 # Flask apps (modify/add as needed)
