@@ -1,1 +1,64 @@
 
+{
+    # Global settings
+    email your-email@example.com
+}
+
+# Main website
+retailtradescanner.com {
+    reverse_proxy localhost:5001
+}
+
+# Flask apps (modify/add as needed)
+dvsa.retailtradescanner.com {
+    reverse_proxy localhost:5001
+}
+
+mcchange.retailtradescanner.com {
+    reverse_proxy localhost:5004
+}
+
+pechange.retailtradescanner.com {
+    reverse_proxy localhost:5010
+}
+
+price.retailtradescanner.com {
+    reverse_proxy localhost:5016
+}
+
+volume.retailtradescanner.com {
+    reverse_proxy localhost:5022
+}
+
+# Email-related scripts (only active between 8 AM - 5 AM New York time)
+email.dvsa.retailtradescanner.com {
+    reverse_proxy localhost:5101
+}
+
+email.mcchange.retailtradescanner.com {
+    reverse_proxy localhost:5104
+}
+
+email.pechange.retailtradescanner.com {
+    reverse_proxy localhost:5110
+}
+
+email.price.retailtradescanner.com {
+    reverse_proxy localhost:5116
+}
+
+email.volume.retailtradescanner.com {
+    reverse_proxy localhost:5122
+}
+
+# Email filter script
+email.filter.retailtradescanner.com {
+    reverse_proxy localhost:5130
+}
+
+# Automatic HTTPS and TLS settings
+*.retailtradescanner.com {
+    tls {
+        protocols tls1.2 tls1.3
+    }
+}
