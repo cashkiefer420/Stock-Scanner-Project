@@ -1,20 +1,4 @@
 
-{
-    email carter.kiefer2010@outlook.com
-    acme_dns ionos {
-        api_key vfTiRKwIB6IMhoSZ43IS_m5xOZp78vROsHt_tTa_J4V33HNcHXqeJzxdqR6J3fhc3kb9MszX8uSZyWRxF0jejw
-    }
-}
-
-*.retailtradescanner.com {
-    reverse_proxy localhost:{port}
-    tls {
-        dns ionos {
-            api_key vfTiRKwIB6IMhoSZ43IS_m5xOZp78vROsHt_tTa_J4V33HNcHXqeJzxdqR6J3fhc3kb9MszX8uSZyWRxF0jejw
-        }
-    }
-}
-
 # Flask apps (modify/add as needed)
 dvsa5.retailtradescanner.com {
     reverse_proxy localhost:5001
