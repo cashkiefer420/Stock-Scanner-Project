@@ -75,11 +75,12 @@ declare -A email_apps=(
     ["Email_filter.py"]=5130
 )
 
-# Start all non-email Flask apps
+# Start all non-email Flask apps using gunicorn
 for script in "${!apps[@]}"; do
     port="${apps[$script]}"
     script_name=$(basename "$script")
-    nohup python3 "blueprint/${script}" --port "$port" > "$LOG_DIR/${script_name}.log" 2>&1 &
+    app_name="${script_name%.py}"
+    nohup gunicorn --chdir "blueprint" "$app_name:app" --bind "0.0.0.0:$port" > "$LOG_DIR/${script_name}.log" 2>&1 &
     echo "Started $script on port $port"
 done
 
@@ -96,9 +97,10 @@ manage_email_scripts() {
         for script in "${!email_apps[@]}"; do
             port="${email_apps[$script]}"
             script_name=$(basename "$script")
+            app_name="${script_name%.py}"
             # Check if already running; if not, start it.
             if ! pgrep -f "$script" > /dev/null; then
-                nohup python3 "blueprint/${script}" --port "$port" > "$LOG_DIR/${script_name}.log" 2>&1 &
+                nohup gunicorn --chdir "blueprint" "$app_name:app" --bind "0.0.0.0:$port" > "$LOG_DIR/${script_name}.log" 2>&1 &
                 echo "Started $script on port $port (email group)"
             fi
         done
