@@ -78,7 +78,8 @@ declare -A email_apps=(
 # Start all non-email Flask apps
 for script in "${!apps[@]}"; do
     port="${apps[$script]}"
-    nohup python3 "blueprint/${script}" --port "$port" > "$LOG_DIR/${script}.log" 2>&1 &
+    script_name=$(basename "$script")
+    nohup python3 "blueprint/${script}" --port "$port" > "$LOG_DIR/${script_name}.log" 2>&1 &
     echo "Started $script on port $port"
 done
 
@@ -94,9 +95,10 @@ manage_email_scripts() {
         # Start or ensure email scripts are running
         for script in "${!email_apps[@]}"; do
             port="${email_apps[$script]}"
+            script_name=$(basename "$script")
             # Check if already running; if not, start it.
             if ! pgrep -f "$script" > /dev/null; then
-                nohup python3 "blueprint/${script}" --port "$port" > "$LOG_DIR/${script}.log" 2>&1 &
+                nohup python3 "blueprint/${script}" --port "$port" > "$LOG_DIR/${script_name}.log" 2>&1 &
                 echo "Started $script on port $port (email group)"
             fi
         done
