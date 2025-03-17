@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/home/ec2-user/Stock-Scanner-Project/blueprint/Email_filter.py", line 6, in <module>
-    import boto3
-ModuleNotFoundError: No module named 'boto3'

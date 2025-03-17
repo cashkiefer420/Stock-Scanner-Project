@@ -1,1 +1,4 @@
-python3: can't open file '/home/ec2-user/Stock-Scanner-Project/blueprint/20_pe_in_flask.py': [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/home/ec2-user/Stock-Scanner-Project/blueprint/PE_Change/20_pe_in_flask.py", line 1, in <module>
+    from flask import Flask, request, jsonify, render_template
+ModuleNotFoundError: No module named 'flask'

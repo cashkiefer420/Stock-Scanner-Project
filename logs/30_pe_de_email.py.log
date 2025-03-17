@@ -1,1 +1,2 @@
-python3: can't open file '/home/ec2-user/Stock-Scanner-Project/blueprint/30_pe_de_email.py': [Errno 2] No such file or directory
+Error sending notifications: 'stocks'
+Error sending notifications: 'stocks'
