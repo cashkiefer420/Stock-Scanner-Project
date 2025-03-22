@@ -1,8 +1,8 @@
-[2025-03-18 16:59:55 +0000] [86685] [INFO] Starting gunicorn 23.0.0
-[2025-03-18 16:59:55 +0000] [86685] [INFO] Listening at: http://0.0.0.0:5004 (86685)
-[2025-03-18 16:59:55 +0000] [86685] [INFO] Using worker: sync
-[2025-03-18 16:59:55 +0000] [86759] [INFO] Booting worker with pid: 86759
-[2025-03-18 16:59:55 +0000] [86759] [ERROR] Exception in worker process
+[2025-03-22 20:29:46 +0000] [276011] [INFO] Starting gunicorn 23.0.0
+[2025-03-22 20:29:47 +0000] [276011] [INFO] Listening at: http://0.0.0.0:5004 (276011)
+[2025-03-22 20:29:47 +0000] [276011] [INFO] Using worker: sync
+[2025-03-22 20:29:47 +0000] [276097] [INFO] Booting worker with pid: 276097
+[2025-03-22 20:29:47 +0000] [276097] [ERROR] Exception in worker process
 Traceback (most recent call last):
   File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
     worker.init_process()
@@ -24,7 +24,7 @@ Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
   File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
 ModuleNotFoundError: No module named '10_mc_de_flask'
-[2025-03-18 16:59:55 +0000] [86759] [INFO] Worker exiting (pid: 86759)
-[2025-03-18 16:59:56 +0000] [86685] [ERROR] Worker (pid:86759) exited with code 3
-[2025-03-18 16:59:56 +0000] [86685] [ERROR] Shutting down: Master
-[2025-03-18 16:59:56 +0000] [86685] [ERROR] Reason: Worker failed to boot.
+[2025-03-22 20:29:47 +0000] [276097] [INFO] Worker exiting (pid: 276097)
+[2025-03-22 20:29:47 +0000] [276011] [ERROR] Worker (pid:276097) exited with code 3
+[2025-03-22 20:29:47 +0000] [276011] [ERROR] Shutting down: Master
+[2025-03-22 20:29:47 +0000] [276011] [ERROR] Reason: Worker failed to boot.

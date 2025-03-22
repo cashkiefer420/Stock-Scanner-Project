@@ -1,8 +1,8 @@
-[2025-03-18 16:59:55 +0000] [86683] [INFO] Starting gunicorn 23.0.0
-[2025-03-18 16:59:55 +0000] [86683] [INFO] Listening at: http://0.0.0.0:5017 (86683)
-[2025-03-18 16:59:55 +0000] [86683] [INFO] Using worker: sync
-[2025-03-18 16:59:55 +0000] [86755] [INFO] Booting worker with pid: 86755
-[2025-03-18 16:59:55 +0000] [86755] [ERROR] Exception in worker process
+[2025-03-22 20:29:46 +0000] [276009] [INFO] Starting gunicorn 23.0.0
+[2025-03-22 20:29:46 +0000] [276009] [INFO] Listening at: http://0.0.0.0:5017 (276009)
+[2025-03-22 20:29:46 +0000] [276009] [INFO] Using worker: sync
+[2025-03-22 20:29:46 +0000] [276084] [INFO] Booting worker with pid: 276084
+[2025-03-22 20:29:46 +0000] [276084] [ERROR] Exception in worker process
 Traceback (most recent call last):
   File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
     worker.init_process()
@@ -24,7 +24,7 @@ Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
   File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
 ModuleNotFoundError: No module named '15_Price_de_flask'
-[2025-03-18 16:59:55 +0000] [86755] [INFO] Worker exiting (pid: 86755)
-[2025-03-18 16:59:56 +0000] [86683] [ERROR] Worker (pid:86755) exited with code 3
-[2025-03-18 16:59:56 +0000] [86683] [ERROR] Shutting down: Master
-[2025-03-18 16:59:56 +0000] [86683] [ERROR] Reason: Worker failed to boot.
+[2025-03-22 20:29:46 +0000] [276084] [INFO] Worker exiting (pid: 276084)
+[2025-03-22 20:29:47 +0000] [276009] [ERROR] Worker (pid:276084) exited with code 3
+[2025-03-22 20:29:47 +0000] [276009] [ERROR] Shutting down: Master
+[2025-03-22 20:29:47 +0000] [276009] [ERROR] Reason: Worker failed to boot.

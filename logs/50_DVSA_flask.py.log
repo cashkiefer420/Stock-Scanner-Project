@@ -1,8 +1,8 @@
-[2025-03-18 16:59:57 +0000] [86723] [INFO] Starting gunicorn 23.0.0
-[2025-03-18 16:59:57 +0000] [86723] [INFO] Listening at: http://0.0.0.0:5001 (86723)
-[2025-03-18 16:59:57 +0000] [86723] [INFO] Using worker: sync
-[2025-03-18 16:59:57 +0000] [86810] [INFO] Booting worker with pid: 86810
-[2025-03-18 16:59:57 +0000] [86810] [ERROR] Exception in worker process
+[2025-03-22 20:29:48 +0000] [276049] [INFO] Starting gunicorn 23.0.0
+[2025-03-22 20:29:48 +0000] [276049] [INFO] Listening at: http://0.0.0.0:5001 (276049)
+[2025-03-22 20:29:48 +0000] [276049] [INFO] Using worker: sync
+[2025-03-22 20:29:48 +0000] [276145] [INFO] Booting worker with pid: 276145
+[2025-03-22 20:29:48 +0000] [276145] [ERROR] Exception in worker process
 Traceback (most recent call last):
   File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
     worker.init_process()
@@ -24,7 +24,7 @@ Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
   File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
 ModuleNotFoundError: No module named '50_DVSA_flask'
-[2025-03-18 16:59:57 +0000] [86810] [INFO] Worker exiting (pid: 86810)
-[2025-03-18 16:59:58 +0000] [86723] [ERROR] Worker (pid:86810) exited with code 3
-[2025-03-18 16:59:58 +0000] [86723] [ERROR] Shutting down: Master
-[2025-03-18 16:59:58 +0000] [86723] [ERROR] Reason: Worker failed to boot.
+[2025-03-22 20:29:48 +0000] [276145] [INFO] Worker exiting (pid: 276145)
+[2025-03-22 20:29:49 +0000] [276049] [ERROR] Worker (pid:276145) exited with code 3
+[2025-03-22 20:29:49 +0000] [276049] [ERROR] Shutting down: Master
+[2025-03-22 20:29:49 +0000] [276049] [ERROR] Reason: Worker failed to boot.
