@@ -1,0 +1,8 @@
+[2025-03-23 16:27:09 +0000] [314614] [INFO] Starting gunicorn 23.0.0
+[2025-03-23 16:27:09 +0000] [314614] [INFO] Listening at: http://0.0.0.0:5003 (314614)
+[2025-03-23 16:27:09 +0000] [314614] [INFO] Using worker: sync
+[2025-03-23 16:27:09 +0000] [314711] [INFO] Booting worker with pid: 314711
+[2025-03-23 16:27:17 +0000] [314614] [INFO] Handling signal: int
+[2025-03-23 16:27:17 +0000] [314711] [INFO] Worker exiting (pid: 314711)
+[2025-03-23 16:27:50 +0000] [314614] [ERROR] Worker (pid:314711) was sent SIGKILL! Perhaps out of memory?
+[2025-03-23 16:27:50 +0000] [314614] [INFO] Shutting down: Master
