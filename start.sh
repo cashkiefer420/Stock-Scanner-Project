@@ -33,14 +33,14 @@ declare -A apps=(
     ["Price_in.20_price_in_flask"]=5019
     ["Price_in.50_price_in_flask"]=5020
     ["Price_in.75_price_in_flask"]=5021
-    ["Volume.1.125_volume_flask"]=5022
-    ["Volume.1.25_volume_flask"]=5023
-    ["Volume.1.5_volume_flask"]=5024
-    ["Volume.1.75_volume_flask"]=5025
+    ["Volume.1_125_volume_flask"]=5022
+    ["Volume.1_25_volume_flask"]=5023
+    ["Volume.1_5_volume_flask"]=5024
+    ["Volume.1_75_volume_flask"]=5025
     ["Volume.2_volume_flask"]=5026
-    ["Volume.2.5_volume_flask"]=5027
+    ["Volume.2_5_volume_flask"]=5027
     ["Volume.3_volume_flask"]=5028
-    ["Volume.5_volume_flask"]=5029
+    ["Volume.5x_volume_flask"]=5029
 )
 
 # Start all Flask apps using Gunicorn
