@@ -1,4 +1,4 @@
-.RA-38NBEVT63NUVPH9E
+.
 ├── Stock-Scanner-Project
 │   ├── app
 │   │   └── Init.py
