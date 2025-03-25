@@ -6,8 +6,8 @@ import re
 app = Flask(__name__, static_folder=r"/home/ec2-user/Stock-Scanner-Project/static")
 
 @app.route('/favicon.ico')
- favicon():
-  def  return '', 204
+def favicon():
+    return '', 204  # Fixed function definition indentation and syntax
 
 @app.route('/')
 def index():
