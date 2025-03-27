@@ -11,6 +11,8 @@ LOG_DIR = os.path.join(PROJECT_DIR, "logs")
 # Ensure logs directory exists
 os.makedirs(LOG_DIR, exist_ok=True)
 
+MAIN_LOG_FILE = os.path.join(LOG_DIR, "email_script_manager.log")
+
 # List of email scripts (including the Email filter)
 EMAIL_SCRIPTS = [
     "DVSA.50_DVSA_email",
@@ -49,6 +51,17 @@ EMAIL_SCRIPTS = [
 NY_TZ = pytz.timezone("America/New_York")
 
 
+def log_message(message):
+    """Logs a message to the main log file with a timestamp"""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    log_entry = f"[{timestamp}] {message}\n"
+
+    with open(MAIN_LOG_FILE, "a") as log:
+        log.write(log_entry)
+
+    print(log_entry.strip())  # Also print to console
+
+
 def is_within_allowed_time():
     """Returns True if the current time in New York is between 8 AM - 5 AM"""
     ny_time = datetime.now(NY_TZ)
@@ -61,15 +74,19 @@ def start_email_scripts():
     for script in EMAIL_SCRIPTS:
         log_file = os.path.join(LOG_DIR, f"{script}.log")
 
-        # Check if the script is already running
         if not is_script_running(script):
             script_path = os.path.join(PROJECT_DIR, script.replace(".", "/") + ".py")
             if os.path.exists(script_path):
                 with open(log_file, "a") as log:
-                    subprocess.Popen(["python", script_path], stdout=log, stderr=log)
-                print(f"Started {script_path}")
+                    subprocess.Popen(
+                        ["python", script_path],
+                        stdout=log,
+                        stderr=log,
+                        env={**os.environ, "LOG_FILE": log_file}
+                    )
+                log_message(f"Started {script_path}")
             else:
-                print(f"Error: {script_path} not found!")
+                log_message(f"Error: {script_path} not found!")
 
 
 def stop_email_scripts():
@@ -77,7 +94,7 @@ def stop_email_scripts():
     for script in EMAIL_SCRIPTS:
         script_name = script.replace(".", "/") + ".py"
         os.system(f"pkill -f {script_name}")
-        print(f"Stopped {script_name}")
+        log_message(f"Stopped {script_name}")
 
 
 def is_script_running(script):
@@ -101,4 +118,5 @@ def manage_email_scripts():
 
 
 if __name__ == "__main__":
+    log_message("Email script manager started.")
     manage_email_scripts()
