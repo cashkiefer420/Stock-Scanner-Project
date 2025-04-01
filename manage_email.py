@@ -15,36 +15,36 @@ MAIN_LOG_FILE = os.path.join(LOG_DIR, "email_script_manager.log")
 
 # List of email scripts (including the Email filter)
 EMAIL_SCRIPTS = [
-    "DVSA.50_DVSA_email",
-    "DVSA.100_DVSA_email",
-    "DVSA.150_DVSA_email",
-    "MC_Change.10_mc_de_email",
-    "MC_Change.10_mc_in_email",
-    "MC_Change.20_mc_de_email",
-    "MC_Change.20_mc_in_email",
-    "MC_Change.30_mc_de_email",
-    "MC_Change.30_mc_in_email",
-    "PE_Change.10_pe_de_email",
-    "PE_Change.10_pe_in_email",
-    "PE_Change.20_pe_de_email",
-    "PE_Change.20_pe_in_email",
-    "PE_Change.30_pe_de_email",
-    "PE_Change.30_pe_in_email",
-    "Price_de.10_price_de_email",
-    "Price_de.15_Price_de_email",
-    "Price_de.20_price_de_email",
-    "Price_in.20_price_in_email",
-    "Price_in.50_price_in_email",
-    "Price_in.75_price_in_email",
-    "Volume.1.125_volume_email",
-    "Volume.1.25_volume_email",
-    "Volume.1.5_volume_email",
-    "Volume.1.75_volume_email",
-    "Volume.2_volume_email",
-    "Volume.2.5_volume_email",
-    "Volume.3_volume_email",
-    "Volume.5_volume_email",
-    "Email_filter"
+    "blueprint.DVSA.50_DVSA_email",
+    "blueprint.DVSA.100_DVSA_email",
+    "blueprint.DVSA.150_DVSA_email",
+    "blueprint.MC_Change.10_mc_de_email",
+    "blueprint.MC_Change.10_mc_in_email",
+    "blueprint.MC_Change.20_mc_de_email",
+    "blueprint.MC_Change.20_mc_in_email",
+    "blueprint.MC_Change.30_mc_de_email",
+    "blueprint.MC_Change.30_mc_in_email",
+    "blueprint.PE_Change.10_pe_de_email",
+    "blueprint.PE_Change.10_pe_in_email",
+    "blueprint.PE_Change.20_pe_de_email",
+    "blueprint.PE_Change.20_pe_in_email",
+    "blueprint.PE_Change.30_pe_de_email",
+    "blueprint.PE_Change.30_pe_in_email",
+    "blueprint.Price_de.10_price_de_email",
+    "blueprint.Price_de.15_Price_de_email",
+    "blueprint.Price_de.20_price_de_email",
+    "blueprint.Price_in.20_price_in_email",
+    "blueprint.Price_in.50_price_in_email",
+    "blueprint.Price_in.75_price_in_email",
+    "blueprint.Volume.1.125_volume_email",
+    "blueprint.Volume.1.25_volume_email",
+    "blueprint.Volume.1.5_volume_email",
+    "blueprint.Volume.1.75_volume_email",
+    "blueprint.Volume.2_volume_email",
+    "blueprint.Volume.2.5_volume_email",
+    "blueprint.Volume.3_volume_email",
+    "blueprint.Volume.5_volume_email",
+    "blueprint.Email_filter"
 ]
 
 # Get New York timezone
@@ -84,7 +84,7 @@ def start_email_scripts():
                         stderr=log,
                         env={**os.environ, "LOG_FILE": log_file}
                     )
-                log_message(f"Started {script} with log file {log_file}")
+                log_message(f"Started {script_path}")
             else:
                 log_message(f"Error: {script_path} not found!")
 
