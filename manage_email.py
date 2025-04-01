@@ -72,10 +72,11 @@ def is_within_allowed_time():
 def start_email_scripts():
     """Start email scripts that are not running"""
     for script in EMAIL_SCRIPTS:
-        log_file = os.path.join(LOG_DIR, f"{script}.log")
+        script_name = script.replace(".", "/") + ".py"
+        log_file = os.path.join(LOG_DIR, f"{script_name}.log")
 
         if not is_script_running(script):
-            script_path = os.path.join(PROJECT_DIR, script.replace(".", "/") + ".py")
+            script_path = os.path.join(PROJECT_DIR, script_name)
             if os.path.exists(script_path):
                 with open(log_file, "a") as log:
                     subprocess.Popen(
