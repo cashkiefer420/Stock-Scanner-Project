@@ -14,7 +14,7 @@ def get_user_processes():
 
 def kill_processes():
     """Kill all background processes except essential ones"""
-    essential_keywords = ["bash", "sshd", "python", "systemd"]  # Exclude essential processes
+    essential_keywords = ["bash", "sshd", "systemd"]  # Exclude essential processes, but allow Flask processes
     processes = get_user_processes()
 
     if not processes:
@@ -37,3 +37,4 @@ def kill_processes():
 
 if __name__ == "__main__":
     kill_processes()
+    
