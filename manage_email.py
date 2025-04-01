@@ -56,6 +56,9 @@ def log_message(message):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     log_entry = f"[{timestamp}] {message}\n"
 
+    # Ensure the main log file exists
+    open(MAIN_LOG_FILE, "a").close()
+
     with open(MAIN_LOG_FILE, "a") as log:
         log.write(log_entry)
 
