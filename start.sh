@@ -59,8 +59,19 @@ for script in "${!apps[@]}"; do
     sleep 2  # Avoid overloading system
 done
 
-# Start email script manager
-echo "Starting email script manager..."
-nohup python "$PROJECT_DIR/manage_email.py" > "$LOG_DIR/manage_email.log" 2>&1 &
+# Declare email scripts
+declare -A email_scripts=(
+    ["manage_email.py"]="manage_email.log"
+    ["send_notifications.py"]="send_notifications.log"
+    ["process_inbox.py"]="process_inbox.log"
+)
+
+# Start email scripts
+echo "Starting email scripts..."
+for script in "${!email_scripts[@]}"; do
+    log_file="$LOG_DIR/${email_scripts[$script]}"
+    nohup python "$PROJECT_DIR/$script" > "$log_file" 2>&1 &
+    echo "Started $script with log $log_file"
+done
 
 echo "All scripts started successfully."
