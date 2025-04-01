@@ -84,7 +84,7 @@ def start_email_scripts():
                         stderr=log,
                         env={**os.environ, "LOG_FILE": log_file}
                     )
-                log_message(f"Started {script_path}")
+                log_message(f"Started {script} with log file {log_file}")
             else:
                 log_message(f"Error: {script_path} not found!")
 
