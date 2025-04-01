@@ -1,8 +1,4 @@
-[2025-04-01 13:43:30 +0000] [5374] [INFO] Starting gunicorn 23.0.0
-[2025-04-01 13:43:30 +0000] [5374] [INFO] Listening at: http://0.0.0.0:5015 (5374)
-[2025-04-01 13:43:30 +0000] [5374] [INFO] Using worker: sync
-[2025-04-01 13:43:30 +0000] [5376] [INFO] Booting worker with pid: 5376
-[2025-04-01 16:52:12 +0000] [5374] [CRITICAL] WORKER TIMEOUT (pid:5376)
-[2025-04-01 16:52:12 +0000] [5376] [INFO] Worker exiting (pid: 5376)
-[2025-04-01 16:52:49 +0000] [5374] [ERROR] Worker (pid:5376) was sent SIGKILL! Perhaps out of memory?
-[2025-04-01 16:52:49 +0000] [18134] [INFO] Booting worker with pid: 18134
+[2025-04-01 17:15:30 +0000] [20693] [INFO] Starting gunicorn 23.0.0
+[2025-04-01 17:15:30 +0000] [20693] [INFO] Listening at: http://0.0.0.0:5015 (20693)
+[2025-04-01 17:15:30 +0000] [20693] [INFO] Using worker: sync
+[2025-04-01 17:15:30 +0000] [20695] [INFO] Booting worker with pid: 20695
