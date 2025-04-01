@@ -75,6 +75,9 @@ def start_email_scripts():
         script_name = script.replace(".", "/") + ".py"
         log_file = os.path.join(LOG_DIR, f"{script_name}.log")
 
+        # Ensure the log file exists
+        open(log_file, "a").close()
+
         if not is_script_running(script):
             script_path = os.path.join(PROJECT_DIR, script_name)
             if os.path.exists(script_path):
