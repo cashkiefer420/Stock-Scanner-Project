@@ -62,8 +62,6 @@ done
 # Declare email scripts
 declare -A email_scripts=(
     ["manage_email.py"]="manage_email.log"
-    ["send_notifications.py"]="send_notifications.log"
-    ["process_inbox.py"]="process_inbox.log"
 )
 
 # Start email scripts
