@@ -2,3 +2,7 @@
 [2025-04-01 13:42:54 +0000] [5242] [INFO] Listening at: http://0.0.0.0:5004 (5242)
 [2025-04-01 13:42:54 +0000] [5242] [INFO] Using worker: sync
 [2025-04-01 13:42:54 +0000] [5244] [INFO] Booting worker with pid: 5244
+[2025-04-01 16:52:12 +0000] [5242] [CRITICAL] WORKER TIMEOUT (pid:5244)
+[2025-04-01 16:52:12 +0000] [5244] [INFO] Worker exiting (pid: 5244)
+[2025-04-01 16:52:49 +0000] [5242] [ERROR] Worker (pid:5244) was sent SIGKILL! Perhaps out of memory?
+[2025-04-01 16:52:49 +0000] [18140] [INFO] Booting worker with pid: 18140

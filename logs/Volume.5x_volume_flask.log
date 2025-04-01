@@ -2,3 +2,7 @@
 [2025-04-01 13:43:42 +0000] [5398] [INFO] Listening at: http://0.0.0.0:5029 (5398)
 [2025-04-01 13:43:42 +0000] [5398] [INFO] Using worker: sync
 [2025-04-01 13:43:42 +0000] [5400] [INFO] Booting worker with pid: 5400
+[2025-04-01 16:52:12 +0000] [5398] [CRITICAL] WORKER TIMEOUT (pid:5400)
+[2025-04-01 16:52:12 +0000] [5400] [INFO] Worker exiting (pid: 5400)
+[2025-04-01 16:52:49 +0000] [5398] [ERROR] Worker (pid:5400) was sent SIGKILL! Perhaps out of memory?
+[2025-04-01 16:52:49 +0000] [18143] [INFO] Booting worker with pid: 18143
