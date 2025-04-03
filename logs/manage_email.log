@@ -1,4 +1,4 @@
-[2025-04-03 13:03:09] Email script manager started.
+[2025-04-03 13:53:26] Email script manager started.
 Traceback (most recent call last):
   File "/home/ec2-user/Stock-Scanner-Project/manage_email.py", line 129, in <module>
     manage_email_scripts()
