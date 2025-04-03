@@ -1,0 +1,9 @@
+[2025-04-03 13:03:09] Email script manager started.
+Traceback (most recent call last):
+  File "/home/ec2-user/Stock-Scanner-Project/manage_email.py", line 129, in <module>
+    manage_email_scripts()
+  File "/home/ec2-user/Stock-Scanner-Project/manage_email.py", line 121, in manage_email_scripts
+    start_email_scripts()
+  File "/home/ec2-user/Stock-Scanner-Project/manage_email.py", line 82, in start_email_scripts
+    open(log_file, "a").close()
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ec2-user/Stock-Scanner-Project/logs/blueprint/DVSA/50_DVSA_email.py.log'
