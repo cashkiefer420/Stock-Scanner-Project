@@ -15,36 +15,36 @@ MAIN_LOG_FILE = os.path.join(LOG_DIR, "email_script_manager.log")
 
 # List of email scripts (including the Email filter)
 EMAIL_SCRIPTS = [
-    "50_DVSA_email",
-    "100_DVSA_email",
-    "150_DVSA_email",
-    "10_mc_de_email",
-    "10_mc_in_email",
-    "20_mc_de_email",
-    "20_mc_in_email",
-    "30_mc_de_email",
-    "30_mc_in_email",
-    "10_pe_de_email",
-    "10_pe_in_email",
-    "20_pe_de_email",
-    "20_pe_in_email",
-    "30_pe_de_email",
-    "30_pe_in_email",
-    "10_price_de_email",
-    "15_Price_de_email",
-    "20_price_de_email",
-    "20_price_in_email",
-    "50_price_in_email",
-    "75_price_in_email",
-    "125_volume_email",
-    "25_volume_email",
-    "5_volume_email",
-    "75_volume_email",
-    "2_volume_email",
-    "25_volume_email",
-    "3_volume_email",
-    "5_volume_email",
-    "Email_filter"
+    "blueprint.DVSA.50_DVSA_email",
+    "blueprint.DVSA.100_DVSA_email",
+    "blueprint.DVSA.150_DVSA_email",
+    "blueprint.MC_Change.10_mc_de_email",
+    "blueprint.MC_Change.10_mc_in_email",
+    "blueprint.MC_Change.20_mc_de_email",
+    "blueprint.MC_Change.20_mc_in_email",
+    "blueprint.MC_Change.30_mc_de_email",
+    "blueprint.MC_Change.30_mc_in_email",
+    "blueprint.PE_Change.10_pe_de_email",
+    "blueprint.PE_Change.10_pe_in_email",
+    "blueprint.PE_Change.20_pe_de_email",
+    "blueprint.PE_Change.20_pe_in_email",
+    "blueprint.PE_Change.30_pe_de_email",
+    "blueprint.PE_Change.30_pe_in_email",
+    "blueprint.Price_de.10_price_de_email",
+    "blueprint.Price_de.15_Price_de_email",
+    "blueprint.Price_de.20_price_de_email",
+    "blueprint.Price_in.20_price_in_email",
+    "blueprint.Price_in.50_price_in_email",
+    "blueprint.Price_in.75_price_in_email",
+    "blueprint.Volume.1.125_volume_email",
+    "blueprint.Volume.1.25_volume_email",
+    "blueprint.Volume.1.5_volume_email",
+    "blueprint.Volume.1.75_volume_email",
+    "blueprint.Volume.2_volume_email",
+    "blueprint.Volume.2.5_volume_email",
+    "blueprint.Volume.3_volume_email",
+    "blueprint.Volume.5_volume_email",
+    "blueprint.Email_filter"
 ]
 
 # Get New York timezone
@@ -75,8 +75,8 @@ def is_within_allowed_time():
 def start_email_scripts():
     """Start email scripts that are not running"""
     for script in EMAIL_SCRIPTS:
-        script_name = script + ".py"
-        log_file = os.path.join(LOG_DIR, f"{script_name}.log")
+        script_name = script.replace(".", "/") + ".py"
+        log_file = os.path.join(LOG_DIR, f"{script.split('.')[-1]}.log")  # Log file without nested folders
 
         # Ensure the log file exists
         open(log_file, "a").close()
@@ -99,7 +99,7 @@ def start_email_scripts():
 def stop_email_scripts():
     """Stop all running email scripts"""
     for script in EMAIL_SCRIPTS:
-        script_name = script + ".py"
+        script_name = script.replace(".", "/") + ".py"
         os.system(f"pkill -f {script_name}")
         log_message(f"Stopped {script_name}")
 
