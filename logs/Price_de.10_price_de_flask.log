@@ -1,4 +1,70 @@
-[2025-04-03 13:52:42 +0000] [49142] [INFO] Starting gunicorn 23.0.0
-[2025-04-03 13:52:42 +0000] [49142] [INFO] Listening at: http://0.0.0.0:5016 (49142)
-[2025-04-03 13:52:42 +0000] [49142] [INFO] Using worker: sync
-[2025-04-03 13:52:42 +0000] [49144] [INFO] Booting worker with pid: 49144
+[2025-04-03 14:56:38 +0000] [51315] [INFO] Starting gunicorn 23.0.0
+[2025-04-03 14:56:38 +0000] [51315] [INFO] Listening at: http://0.0.0.0:5016 (51315)
+[2025-04-03 14:56:38 +0000] [51315] [INFO] Using worker: sync
+[2025-04-03 14:56:38 +0000] [51317] [INFO] Booting worker with pid: 51317
+[2025-04-03 15:09:23 +0000] [51315] [CRITICAL] WORKER TIMEOUT (pid:51317)
+[2025-04-03 15:09:23 +0000] [51317] [INFO] Worker exiting (pid: 51317)
+[2025-04-03 15:09:27 +0000] [51315] [INFO] Handling signal: hup
+[2025-04-03 15:09:27 +0000] [51315] [INFO] Hang up: Master
+[2025-04-03 15:09:28 +0000] [51315] [INFO] Handling signal: term
+[2025-04-03 15:09:28 +0000] [51512] [INFO] Booting worker with pid: 51512
+[2025-04-03 15:09:28 +0000] [51315] [ERROR] Worker (pid:51317) was sent SIGTERM!
+[2025-04-03 15:09:58 +0000] [51315] [INFO] Shutting down: Master
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/arbiter.py", line 223, in run
+    handler()
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/arbiter.py", line 256, in handle_term
+    raise StopIteration
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/logging/__init__.py", line 1086, in emit
+    stream.write(msg + self.terminator)
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stderr>'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/logging/__init__.py", line 1086, in emit
+    stream.write(msg + self.terminator)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+  File "/usr/lib64/python3.9/logging/__init__.py", line 1475, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib64/python3.9/logging/__init__.py", line 1589, in _log
+    self.handle(record)
+  File "/usr/lib64/python3.9/logging/__init__.py", line 1599, in handle
+    self.callHandlers(record)
+  File "/usr/lib64/python3.9/logging/__init__.py", line 1661, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib64/python3.9/logging/__init__.py", line 952, in handle
+    self.emit(record)
+  File "/usr/lib64/python3.9/logging/__init__.py", line 1091, in emit
+    self.handleError(record)
+  File "/usr/lib64/python3.9/logging/__init__.py", line 1004, in handleError
+    sys.stderr.write('--- Logging error ---\n')
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stderr>'>
+Call stack:
+  File "/home/ec2-user/.local/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/app/base.py", line 235, in run
+    super().run()
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/arbiter.py", line 226, in run
+    self.halt()
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/arbiter.py", line 344, in halt
+    log_func("Shutting down: %s", self.master_name)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/glogging.py", line 277, in info
+    self.error_log.info(msg, *args, **kwargs)
+Message: 'Shutting down: %s'
+Arguments: ('Master',)
