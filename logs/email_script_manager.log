@@ -173791,3 +173791,11 @@
 [2025-04-03 14:57:23] Started /home/ec2-user/Stock-Scanner-Project/blueprint/MC_Change/20_mc_de_email.py
 [2025-04-03 14:57:23] Started /home/ec2-user/Stock-Scanner-Project/blueprint/MC_Change/20_mc_in_email.py
 [2025-04-03 14:57:23] Started /home/ec2-user/Stock-Scanner-Project/blueprint/MC_Change/30_mc_de_email.py
+[2025-04-03 18:00:01] Email script manager started.
+[2025-04-03 18:00:01] Started /home/ec2-user/Stock-Scanner-Project/blueprint/DVSA/50_DVSA_email.py
+[2025-04-03 18:00:01] Started /home/ec2-user/Stock-Scanner-Project/blueprint/DVSA/100_DVSA_email.py
+[2025-04-03 18:00:01] Started /home/ec2-user/Stock-Scanner-Project/blueprint/DVSA/150_DVSA_email.py
+[2025-04-03 18:00:01] Started /home/ec2-user/Stock-Scanner-Project/blueprint/MC_Change/10_mc_de_email.py
+[2025-04-03 18:00:01] Started /home/ec2-user/Stock-Scanner-Project/blueprint/MC_Change/10_mc_in_email.py
+[2025-04-03 18:00:02] Started /home/ec2-user/Stock-Scanner-Project/blueprint/MC_Change/20_mc_de_email.py
+[2025-04-03 18:00:02] Started /home/ec2-user/Stock-Scanner-Project/blueprint/MC_Change/20_mc_in_email.py
