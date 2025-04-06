@@ -1,4 +1,0 @@
-[2025-04-03 17:59:41 +0000] [5828] [INFO] Starting gunicorn 23.0.0
-[2025-04-03 17:59:41 +0000] [5828] [INFO] Listening at: http://0.0.0.0:5001 (5828)
-[2025-04-03 17:59:41 +0000] [5828] [INFO] Using worker: sync
-[2025-04-03 17:59:41 +0000] [5830] [INFO] Booting worker with pid: 5830
