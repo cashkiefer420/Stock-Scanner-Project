@@ -1,11 +1,11 @@
-news.retailtradescanner.com {
+filter.retailtradescanner.com {
     reverse_proxy 127.0.0.1:5001
 }
 
-personalized_stock_filter.retailtradescanner.com {
+news.retailtradescanner.com {
     reverse_proxy 127.0.0.1:5002
 }
 
-news_display.retailtradescanner.com {
+news.retailtradescanner.com {
     reverse_proxy 127.0.0.1:5003
 }
