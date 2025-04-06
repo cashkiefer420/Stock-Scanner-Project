@@ -1,6 +1,6 @@
 attrs==24.3.0
 Automat==24.8.1
-aws-cfn-bootstrap==2.0
+aws-cfn-bootstrap==1.4.post31
 awscli==2.17.18
 awscrt==0.19.19
 Babel==2.9.1
