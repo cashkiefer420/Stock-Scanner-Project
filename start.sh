@@ -50,8 +50,8 @@ for script in "${!apps[@]}"; do
     log_file="$LOG_DIR/${script}.log"
 
     # Start Gunicorn if the script is not already running
-    if ! pgrep -f "gunicorn -w 1 -b 0.0.0.0:$port blueprint.$script:app" > /dev/null; then
-        nohup gunicorn -w 1 -b 0.0.0.0:$port blueprint.$script:app > "$log_file" 2>&1 &
+    if ! pgrep -f "gunicorn -w 1 -b 127.0.0.1:$port blueprint.$script:app" > /dev/null; then
+        nohup gunicorn -w 1 -b 127.0.0.1:$port blueprint.$script:app > "$log_file" 2>&1 &
         echo "Started blueprint.$script on port $port"
     else
         echo "Already running: blueprint.$script on port $port"
