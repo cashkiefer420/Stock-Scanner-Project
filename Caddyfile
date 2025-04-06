@@ -6,6 +6,6 @@ news.retailtradescanner.com {
     reverse_proxy 127.0.0.1:5002
 }
 
-news.retailtradescanner.com {
+search.retailtradescanner.com {
     reverse_proxy 127.0.0.1:5003
 }
