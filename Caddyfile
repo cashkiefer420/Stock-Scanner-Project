@@ -1,12 +1,12 @@
-dvsa50.retailtradescanner.com {
+dvsa5.retailtradescanner.com {
 	reverse_proxy 127.0.0.1:5001
 }
 
-dvsa100.retailtradescanner.com {
+dvsa10.retailtradescanner.com {
 	reverse_proxy 127.0.0.1:5002
 }
 
-dvsa150.retailtradescanner.com {
+dvsa15.retailtradescanner.com {
 	reverse_proxy 127.0.0.1:5003
 }
 
