@@ -1,115 +1,115 @@
 dvsa50.retailtradescanner.com {
-	reverse_proxy localhost:5001
+	reverse_proxy 127.0.0.1:5001
 }
 
 dvsa100.retailtradescanner.com {
-	reverse_proxy localhost:5002
+	reverse_proxy 127.0.0.1:5002
 }
 
 dvsa150.retailtradescanner.com {
-	reverse_proxy localhost:5003
+	reverse_proxy 127.0.0.1:5003
 }
 
 mcde10.retailtradescanner.com {
-	reverse_proxy localhost:5004
+	reverse_proxy 127.0.0.1:5004
 }
 
 mcde20.retailtradescanner.com {
-	reverse_proxy localhost:5006
+	reverse_proxy 127.0.0.1:5006
 }
 
 mcde30.retailtradescanner.com {
-	reverse_proxy localhost:5008
+	reverse_proxy 127.0.0.1:5008
 }
 
 mcin10.retailtradescanner.com {
-	reverse_proxy localhost:5005
+	reverse_proxy 127.0.0.1:5005
 }
 
 mcin20.retailtradescanner.com {
-	reverse_proxy localhost:5007
+	reverse_proxy 127.0.0.1:5007
 }
 
 mcin30.retailtradescanner.com {
-	reverse_proxy localhost:5009
+	reverse_proxy 127.0.0.1:5009
 }
 
 pede10.retailtradescanner.com {
-	reverse_proxy localhost:5010
+	reverse_proxy 127.0.0.1:5010
 }
 
 pede20.retailtradescanner.com {
-	reverse_proxy localhost:5012
+	reverse_proxy 127.0.0.1:5012
 }
 
 pede30.retailtradescanner.com {
-	reverse_proxy localhost:5014
+	reverse_proxy 127.0.0.1:5014
 }
 
 pein10.retailtradescanner.com {
-	reverse_proxy localhost:5011
+	reverse_proxy 127.0.0.1:5011
 }
 
 pein20.retailtradescanner.com {
-	reverse_proxy localhost:5013
+	reverse_proxy 127.0.0.1:5013
 }
 
 pein30.retailtradescanner.com {
-	reverse_proxy localhost:5015
+	reverse_proxy 127.0.0.1:5015
 }
 
 pde10.retailtradescanner.com {
-	reverse_proxy localhost:5016
+	reverse_proxy 127.0.0.1:5016
 }
 
 pde15.retailtradescanner.com {
-	reverse_proxy localhost:5017
+	reverse_proxy 127.0.0.1:5017
 }
 
 pde20.retailtradescanner.com {
-	reverse_proxy localhost:5018
+	reverse_proxy 127.0.0.1:5018
 }
 
 pin20.retailtradescanner.com {
-	reverse_proxy localhost:5019
+	reverse_proxy 127.0.0.1:5019
 }
 
 pin50.retailtradescanner.com {
-	reverse_proxy localhost:5020
+	reverse_proxy 127.0.0.1:5020
 }
 
 pin75.retailtradescanner.com {
-	reverse_proxy localhost:5021
+	reverse_proxy 127.0.0.1:5021
 }
 
 v1125.retailtradescanner.com {
-	reverse_proxy localhost:5022
+	reverse_proxy 127.0.0.1:5022
 }
 
 v125.retailtradescanner.com {
-	reverse_proxy localhost:5023
+	reverse_proxy 127.0.0.1:5023
 }
 
 v150.retailtradescanner.com {
-	reverse_proxy localhost:5024
+	reverse_proxy 127.0.0.1:5024
 }
 
 v175.retailtradescanner.com {
-	reverse_proxy localhost:5025
+	reverse_proxy 127.0.0.1:5025
 }
 
 v2.retailtradescanner.com {
-	reverse_proxy localhost:5026
+	reverse_proxy 127.0.0.1:5026
 }
 
 v25.retailtradescanner.com {
-	reverse_proxy localhost:5027
+	reverse_proxy 127.0.0.1:5027
 }
 
 v3.retailtradescanner.com {
-	reverse_proxy localhost:5028
+	reverse_proxy 127.0.0.1:5028
 }
 
 v5x.retailtradescanner.com {
-	reverse_proxy localhost:5029
+	reverse_proxy 127.0.0.1:5029
 }
