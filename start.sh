@@ -12,7 +12,7 @@ mkdir -p "$LOG_DIR"
 
 # Declare Flask apps with ports
 declare -A apps=(
-    ["news"]=5001
+    ["Stock_search_up"]=5001
     ["personalized_stock_filter"]=5002
     ["News_display"]=5003
 )
