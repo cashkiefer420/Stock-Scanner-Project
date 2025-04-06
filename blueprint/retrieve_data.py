@@ -134,3 +134,4 @@ def fetch_price(ticker):
         try:
             with open(PE_FILE_PATH, 'r') as pe_file:
                 pe_data = json.load(pe_file)
+                * ▋
