@@ -1,1 +1,4 @@
-nohup: failed to run command 'gunicorn': No such file or directory
+[2025-04-07 17:24:39 +0000] [2230] [INFO] Starting gunicorn 23.0.0
+[2025-04-07 17:24:39 +0000] [2230] [INFO] Listening at: http://127.0.0.1:5032 (2230)
+[2025-04-07 17:24:39 +0000] [2230] [INFO] Using worker: sync
+[2025-04-07 17:24:39 +0000] [2232] [INFO] Booting worker with pid: 2232
