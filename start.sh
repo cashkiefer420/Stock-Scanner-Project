@@ -42,8 +42,8 @@ declare -A apps=(
     ["Volume.3_volume_flask"]=5028
     ["Volume.5x_volume_flask"]=5029
     ["Stock_search_up"]=5030
-    ["personalized_stock_filter"]=5031
-    ["News_display"]=5032
+    ["personalized_stock_filter"]=5032
+    ["News_display"]=5031
 )
 
 # Start all Flask apps using Gunicorn
