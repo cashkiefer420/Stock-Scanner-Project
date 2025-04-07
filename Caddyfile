@@ -90,7 +90,7 @@ v125.retailtradescanner.com {
 	reverse_proxy 127.0.0.1:5023
 }
 
-v150.retailtradescanner.com {
+v1.5.retailtradescanner.com {
 	reverse_proxy 127.0.0.1:5024
 }
 
@@ -102,7 +102,7 @@ v2.retailtradescanner.com {
 	reverse_proxy 127.0.0.1:5026
 }
 
-v25.retailtradescanner.com {
+v2.5.retailtradescanner.com {
 	reverse_proxy 127.0.0.1:5027
 }
 
