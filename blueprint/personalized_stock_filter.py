@@ -34,7 +34,7 @@ def normalize_field_name(field_name):
 
 @app.route('/')
 def index():
-    return render_template("Personalized_stock_filter.html")
+    return render_template("Personalized_Stock_filter.html")
 
 @app.route('/load_data', methods=['GET'])
 def load_data():
