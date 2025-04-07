@@ -1,8 +1,8 @@
-[2025-04-07 17:24:51 +0000] [2254] [INFO] Starting gunicorn 23.0.0
-[2025-04-07 17:24:51 +0000] [2254] [INFO] Listening at: http://127.0.0.1:5031 (2254)
-[2025-04-07 17:24:51 +0000] [2254] [INFO] Using worker: sync
-[2025-04-07 17:24:51 +0000] [2256] [INFO] Booting worker with pid: 2256
-[2025-04-07 17:24:51 +0000] [2256] [ERROR] Exception in worker process
+[2025-04-07 19:10:46 +0000] [2201] [INFO] Starting gunicorn 23.0.0
+[2025-04-07 19:10:46 +0000] [2201] [INFO] Listening at: http://127.0.0.1:5031 (2201)
+[2025-04-07 19:10:46 +0000] [2201] [INFO] Using worker: sync
+[2025-04-07 19:10:46 +0000] [2203] [INFO] Booting worker with pid: 2203
+[2025-04-07 19:10:46 +0000] [2203] [ERROR] Exception in worker process
 Traceback (most recent call last):
   File "/home/ec2-user/.local/lib/python3.9/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
     worker.init_process()
@@ -29,7 +29,7 @@ Traceback (most recent call last):
   File "/home/ec2-user/Stock-Scanner-Project/blueprint/personalized_stock_filter.py", line 2, in <module>
     import pandas as pd
 ModuleNotFoundError: No module named 'pandas'
-[2025-04-07 17:24:51 +0000] [2256] [INFO] Worker exiting (pid: 2256)
-[2025-04-07 17:24:51 +0000] [2254] [ERROR] Worker (pid:2256) exited with code 3
-[2025-04-07 17:24:51 +0000] [2254] [ERROR] Shutting down: Master
-[2025-04-07 17:24:51 +0000] [2254] [ERROR] Reason: Worker failed to boot.
+[2025-04-07 19:10:46 +0000] [2203] [INFO] Worker exiting (pid: 2203)
+[2025-04-07 19:10:46 +0000] [2201] [ERROR] Worker (pid:2203) exited with code 3
+[2025-04-07 19:10:46 +0000] [2201] [ERROR] Shutting down: Master
+[2025-04-07 19:10:46 +0000] [2201] [ERROR] Reason: Worker failed to boot.
