@@ -48,6 +48,7 @@ declare -A apps=(
 
 # Start all Flask apps using Gunicorn
 echo "Starting Flask apps..."
+nohup python3 "$PROJECT_DIR/Download_S3.py" > "$LOG_DIR/Download_S3.log" 2>&1 &
 for script in "${!apps[@]}"; do
     port=${apps[$script]}
     log_file="$LOG_DIR/${script}.log"
