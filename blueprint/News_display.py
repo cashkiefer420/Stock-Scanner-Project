@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    news_file_path = r'/home/ec2-user/Stock-Scanner-Project'
+    news_file_path = r'/home/ec2-user/Stock-Scanner-Project/json/news.json'
     with open(news_file_path, 'r') as file:
         articles = json.load(file)
     return render_template('News_display.html', articles=articles)
