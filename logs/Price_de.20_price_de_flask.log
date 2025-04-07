@@ -1,4 +1,0 @@
-[2025-04-07 21:53:10 +0000] [2295] [INFO] Starting gunicorn 23.0.0
-[2025-04-07 21:53:10 +0000] [2295] [INFO] Listening at: http://127.0.0.1:5018 (2295)
-[2025-04-07 21:53:10 +0000] [2295] [INFO] Using worker: sync
-[2025-04-07 21:53:10 +0000] [2297] [INFO] Booting worker with pid: 2297

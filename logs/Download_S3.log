@@ -1,6 +1,0 @@
-Failed to download news.json: Unable to locate credentials
-Failed to download stock_data_export.json: Unable to locate credentials
-Traceback (most recent call last):
-  File "/home/ec2-user/Stock-Scanner-Project/Download_S3.py", line 80, in <module>
-    schedule.every(2).minutes.do(download_files_to_s3)
-NameError: name 'download_files_to_s3' is not defined
