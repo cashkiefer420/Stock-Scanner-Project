@@ -114,7 +114,7 @@ v5x.retailtradescanner.com {
 	reverse_proxy 127.0.0.1:5029
 }
 
-filter.retailtradescanner.com {
+search.retailtradescanner.com {
     	reverse_proxy 127.0.0.1:5030
 }
 
@@ -122,6 +122,6 @@ news.retailtradescanner.com {
    	 reverse_proxy 127.0.0.1:5031
 }
 
-search.retailtradescanner.com {
+filter.retailtradescanner.com {
    	 reverse_proxy 127.0.0.1:5032
 }
