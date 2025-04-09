@@ -11,7 +11,7 @@ def favicon():
 
 @app.route('/')
 def index():
-    return render_template('Index-pe-de-10.html')
+    return render_template('Index-Pe-de-10.html')
 
 # Paths to JSON files
 BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
