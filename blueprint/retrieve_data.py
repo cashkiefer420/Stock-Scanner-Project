@@ -31,9 +31,17 @@ def write_json_file(file_path, data):
     """Writes JSON data to a local file."""
     try:
         with open(file_path, "w") as file:
-            json.dump(data, file, indent=4)
+            json.dump(data, file, indent=4, default=convert_to_serializable)
     except Exception as e:
         logger.error(f"Error writing to {file_path}: {e}")
+
+def convert_to_serializable(obj):
+    """Converts non-serializable objects to serializable ones."""
+    if isinstance(obj, (np.int64, np.float64)):
+        return obj.item()  # Convert numpy types to Python int/float
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()  # Convert numpy arrays to lists
+    raise TypeError(f"Type {type(obj)} not serializable")
 
 def calculate_percent_change(new, old):
     """Calculates the percentage change between two values."""
