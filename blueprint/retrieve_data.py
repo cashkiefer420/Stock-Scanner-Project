@@ -148,17 +148,27 @@ def main():
     mc_data = read_json_file(MarketCap_FILE_PATH)
 
     results = []
+    processed_count = 0  # Counter to track processed tickers
+
     for ticker in tickers:
         data = fetch_price(ticker, pe_data, mc_data, export_data, today)
         if data:
             results.append(data)
+        
+        processed_count += 1
 
-    # Write updated data back to local JSON files
+        # Log progress and update JSON files every 100 tickers
+        if processed_count % 100 == 0:
+            logger.info(f"Processed {processed_count} tickers so far. Writing intermediate results to JSON files.")
+            write_json_file(EXPORT_FILE_PATH, results)
+            write_json_file(PE_FILE_PATH, pe_data)
+            write_json_file(MarketCap_FILE_PATH, mc_data)
+
+    # Write final results after processing all tickers
+    logger.info(f"Processing completed. Total tickers processed: {processed_count}. Writing final results to JSON files.")
     write_json_file(EXPORT_FILE_PATH, results)
     write_json_file(PE_FILE_PATH, pe_data)
     write_json_file(MarketCap_FILE_PATH, mc_data)
-
-    logger.info(f"Updated {len(results)} tickers.")
 
 if __name__ == "__main__":
     main()
