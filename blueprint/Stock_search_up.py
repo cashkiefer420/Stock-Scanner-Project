@@ -12,7 +12,7 @@ base_dir = r"/home/ec2-user/Stock-Scanner-Project"
 PE_FILE_PATH = os.path.join(base_dir, "json", "PE_num.json")
 MarketCap_FILE_PATH = os.path.join(base_dir, "json", "MC_num.json")
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
-CSV_FILE_PATH = os.path.join(base_dir, "tickers.csv")  # Path to the CSV file
+CSV_FILE_PATH = os.path.join(base_dir, "nasdaq-listed-symbols.csv")  # Path to the CSV file
 
 # Logging setup
 log_format = '%(asctime)s - %(levelname)s - %(message)s'
