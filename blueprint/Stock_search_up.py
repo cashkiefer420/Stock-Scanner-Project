@@ -3,15 +3,16 @@ import json
 import logging
 import os
 import time
+import csv
 from datetime import datetime
 from threading import Event
 
 # Base directory setup
 base_dir = r"/home/ec2-user/Stock-Scanner-Project"
-TICKER_FILE_PATH = os.path.join(base_dir, "json", "formatted_tickers.json")
 PE_FILE_PATH = os.path.join(base_dir, "json", "PE_num.json")
 MarketCap_FILE_PATH = os.path.join(base_dir, "json", "MC_num.json")
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
+CSV_FILE_PATH = os.path.join(base_dir, "tickers.csv")  # Path to the CSV file
 
 # Logging setup
 log_format = '%(asctime)s - %(levelname)s - %(message)s'
@@ -56,12 +57,16 @@ def update_json_file(file_path, ticker, key, value):
     except Exception:
         logging.exception(f"Error updating {file_path} for {ticker}.")
 
-def fetch_pe_mc_and_name(ticker):
+def fetch_pe_mc_and_name(ticker, is_etf):
     try:
         stock = yf.Ticker(ticker)
         info = stock.info
 
         company_name = info.get("longName", "N/A")
+        if is_etf:
+            # Skip fetching Market Cap and PE for ETFs
+            return {"Ticker": ticker, "Company Name": company_name, "Is ETF": True}
+
         pe = info.get("trailingPE", "N/A")
         mc = info.get("marketCap", "N/A")
 
@@ -71,27 +76,50 @@ def fetch_pe_mc_and_name(ticker):
         if mc != 'N/A':
             update_json_file(MarketCap_FILE_PATH, ticker, "Market Cap", mc)
 
-        return {"Ticker": ticker, "Company Name": company_name}
+        return {"Ticker": ticker, "Company Name": company_name, "Is ETF": False}
     except Exception:
         logging.exception(f"Error fetching data for {ticker}")
-        return {"Ticker": ticker, "Company Name": "N/A"}
+        return {"Ticker": ticker, "Company Name": "N/A", "Is ETF": is_etf}
 
-def load_tickers():
+def process_company_name(name):
+    """
+    Processes the company name:
+    - Removes the second '-' and anything after it.
+    """
+    if '-' in name:
+        first_dash_index = name.find('-')
+        second_dash_index = name.find('-', first_dash_index + 1)
+        if second_dash_index != -1:
+            return name[:second_dash_index].strip()
+    return name.strip()
+
+def load_tickers_from_csv():
     try:
-        with open(TICKER_FILE_PATH, 'r') as file:
-            data = json.load(file)
-            return data.get("tickers", [])
+        tickers = []
+        with open(CSV_FILE_PATH, 'r') as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                security_name = row["Security Name"]
+                # Exclude unwanted entries
+                if "- Warrant" in security_name or "- Depositary Shares" in security_name:
+                    continue
+                processed_name = process_company_name(security_name)
+                is_etf = "ETF" in security_name  # Check if it is an ETF
+                tickers.append({"Ticker": row["Symbol"], "Company Name": processed_name, "Is ETF": is_etf})
+        return tickers
     except Exception:
-        logging.exception("Error loading tickers:")
+        logging.exception("Error loading tickers from CSV:")
         return []
 
-def process_in_batches(ticker_list, batch_size=1000, sleep_time=30):
+def process_in_batches(ticker_list, batch_size=500, sleep_time=10):
     all_export_data = []
     for i in range(0, len(ticker_list), batch_size):
         batch = ticker_list[i:i+batch_size]
         logging.info(f"Processing batch {i//batch_size + 1}: {len(batch)} tickers.")
-        for ticker in batch:
-            result = fetch_pe_mc_and_name(ticker)
+        for ticker_info in batch:
+            ticker = ticker_info["Ticker"]
+            is_etf = ticker_info["Is ETF"]
+            result = fetch_pe_mc_and_name(ticker, is_etf)
             all_export_data.append(result)
         if i + batch_size < len(ticker_list):
             logging.info(f"Sleeping for {sleep_time} seconds before next batch...")
@@ -108,12 +136,12 @@ def process_in_batches(ticker_list, batch_size=1000, sleep_time=30):
 
 if __name__ == '__main__':
     try:
-        tickers = load_tickers()
-        if not tickers:
+        ticker_data = load_tickers_from_csv()
+        if not ticker_data:
             logging.error("No tickers found.")
         else:
-            logging.info(f"Starting batch processing for {len(tickers)} tickers.")
-            process_in_batches(tickers)
+            logging.info(f"Starting batch processing for {len(ticker_data)} tickers.")
+            process_in_batches(ticker_data)
     except KeyboardInterrupt:
         logging.info("Shutdown requested.")
         shutdown_event.set()
