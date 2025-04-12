@@ -88,14 +88,10 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
 
         # Preserve existing values for specific fields
         shares = export_entry.get('Shares Available', 'N/A')
-        dividend_yield = export_entry.get('Dividend Yield', 'N/A')
-        one_year_target = export_entry.get('One Year Target', 'N/A')
 
         # Update only if the last update is not today
         if today != last_update:
             shares = stock.info.get('sharesOutstanding', 'N/A')
-            dividend_yield = stock.info.get('dividendYield', 'N/A')
-            one_year_target = stock.info.get('targetMeanPrice', 'N/A')
 
         company_name = export_entry.get('Company Name', 'N/A')  # Preserve the existing company name
 
@@ -112,8 +108,7 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         week_data = stock.history(start=datetime.today() - timedelta(days=7))
         week_change = calculate_percent_change(current_price, week_data['Close'].iloc[0]) if not week_data.empty else 'N/A'
 
-        year_data = stock.history(start=datetime(datetime.now().year, 1, 1))
-        year_change = calculate_percent_change(current_price, year_data['Close'].iloc[0]) if not year_data.empty else 'N/A'
+        
 
         return {
             'Ticker': ticker,
@@ -122,19 +117,14 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
             'Price Change Today': calculate_percent_change(current_price, prev_price),
             'Price Change Week': week_change,
             'Price Change Month': calculate_percent_change(current_price, hist_data['Close'].iloc[0]),
-            'Price Change Year': year_change,
-            'Bid Ask Spread': bid_ask,
-            'Days Range': day_range,
             'Volume Today': volume_today,
             'Avg Volume (3 mon)': avg_volume,
             'DVAV (Day Volume Over Average Volume)': dvav,
             'P/E Ratio': pe,
             'P/E Change (3 Mon)': pe_change,
-            'Shares Available': shares,  # Updated once a day
+            'Shares Available': shares,
             'Market Cap': mc,
             'Market Cap Change (3 Mon)': mc_change,
-            'Dividend Yield': dividend_yield,  # Updated once a day
-            'One Year Target': one_year_target,  # Updated once a day
             'DVSA (Volume Today Over Shares Available)': dvsa,
             'Last Update': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
