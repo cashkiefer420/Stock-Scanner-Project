@@ -11,7 +11,7 @@ logger.setLevel(logging.INFO)
 
 # S3 setup
 s3 = boto3.client("s3")
-BUCKET_NAME = "your-bucket-name"
+BUCKET_NAME = "exportbucket--use2-az1--x-s3"
 TICKER_FILE_KEY = "formatted_tickers.json"
 EXPORT_FILE_KEY = "stock_data_export.json"
 PE_FILE_KEY = "PE_num.json"
