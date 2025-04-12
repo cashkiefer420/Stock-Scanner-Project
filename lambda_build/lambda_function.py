@@ -2,7 +2,6 @@ import yfinance as yf
 import json
 import logging
 import boto3
-import os
 from datetime import datetime, timedelta
 
 # Logging setup
@@ -12,36 +11,41 @@ logger.setLevel(logging.INFO)
 # S3 setup
 s3 = boto3.client("s3")
 BUCKET_NAME = "exportbucket--use2-az1--x-s3"
-TICKER_FILE_KEY = "formatted_tickers.json"
 EXPORT_FILE_KEY = "stock_data_export.json"
 PE_FILE_KEY = "PE_num.json"
 MC_FILE_KEY = "MC_num.json"
 
 def read_s3_json(key):
+    """Reads JSON data from an S3 bucket."""
     try:
         response = s3.get_object(Bucket=BUCKET_NAME, Key=key)
         return json.loads(response['Body'].read().decode('utf-8'))
     except s3.exceptions.NoSuchKey:
+        logger.error(f"File {key} not found in S3 bucket.")
         return {}
     except Exception as e:
         logger.error(f"Error reading {key} from S3: {e}")
         return {}
 
 def write_s3_json(key, data):
+    """Writes JSON data to an S3 bucket."""
     try:
         s3.put_object(Bucket=BUCKET_NAME, Key=key, Body=json.dumps(data, indent=4).encode('utf-8'))
     except Exception as e:
         logger.error(f"Error writing {key} to S3: {e}")
 
 def calculate_percent_change(new, old):
+    """Calculates the percentage change between two values."""
     try:
         if old == 0 or old == 'N/A':
             return 'N/A'
         return round(((new - old) / old) * 100, 2)
-    except:
+    except Exception as e:
+        logger.error(f"Error calculating percent change: {e}")
         return 'N/A'
 
 def update_daily_value(data, ticker, value, today):
+    """Updates daily value for a ticker in the data."""
     if ticker not in data or today not in data[ticker]:
         if ticker not in data:
             data[ticker] = {}
@@ -49,10 +53,12 @@ def update_daily_value(data, ticker, value, today):
     return data[ticker][today]
 
 def get_historical_value(data, ticker, days_ago):
+    """Gets the historical value of a ticker from a specified number of days ago."""
     target_date = (datetime.now() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
     return data.get(ticker, {}).get(target_date, 'N/A')
 
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
+    """Fetches the latest price and other information for a given ticker."""
     try:
         stock = yf.Ticker(ticker)
         hist_data = stock.history(period="3mo")
@@ -68,12 +74,18 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         export_entry = next((item for item in export_data if item['Ticker'] == ticker), {})
         last_update = export_entry.get("Last Update", "")[:10]
 
-        shares = export_entry.get('Shares Available')
-        company_name = export_entry.get('Company Name')
+        # Preserve existing values for specific fields
+        shares = export_entry.get('Shares Available', 'N/A')
+        dividend_yield = export_entry.get('Dividend Yield', 'N/A')
+        one_year_target = export_entry.get('One Year Target', 'N/A')
 
+        # Update only if the last update is not today
         if today != last_update:
             shares = info.get('sharesOutstanding', 'N/A')
-            company_name = company_name or info.get('longName', 'N/A')
+            dividend_yield = info.get('dividendYield', 'N/A')
+            one_year_target = info.get('targetMeanPrice', 'N/A')
+
+        company_name = export_entry.get('Company Name', 'N/A')  # Preserve the existing company name
 
         pe = update_daily_value(pe_data, ticker, info.get('trailingPE', 'N/A'), today)
         mc = update_daily_value(mc_data, ticker, info.get('marketCap', 'N/A'), today)
@@ -93,7 +105,7 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
 
         return {
             'Ticker': ticker,
-            'Company Name': company_name,
+            'Company Name': company_name,  # Preserve the existing company name
             'Current Price': round(current_price, 2),
             'Price Change Today': calculate_percent_change(current_price, prev_price),
             'Price Change Week': week_change,
@@ -106,11 +118,11 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
             'DVAV (Day Volume Over Average Volume)': dvav,
             'P/E Ratio': pe,
             'P/E Change (3 Mon)': pe_change,
-            'Shares Available': shares,
+            'Shares Available': shares,  # Updated once a day
             'Market Cap': mc,
             'Market Cap Change (3 Mon)': mc_change,
-            'Dividend Yield': info.get('dividendYield', 'N/A'),
-            'One Year Target': info.get('targetMeanPrice', 'N/A'),
+            'Dividend Yield': dividend_yield,  # Updated once a day
+            'One Year Target': one_year_target,  # Updated once a day
             'DVSA (Volume Today Over Shares Available)': dvsa,
             'Last Update': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
@@ -120,12 +132,14 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         return None
 
 def lambda_handler(event, context):
+    """AWS Lambda entry point."""
     today = datetime.now().strftime("%Y-%m-%d")
 
-    tickers_data = read_s3_json(TICKER_FILE_KEY)
-    tickers = tickers_data.get("tickers", [])
-
+    # Read data from the stock_data_export.json file in S3
     export_data = read_s3_json(EXPORT_FILE_KEY)
+    tickers = [entry['Ticker'] for entry in export_data if 'Ticker' in entry]  # Extract tickers from export data
+
+    # Read additional data files
     pe_data = read_s3_json(PE_FILE_KEY)
     mc_data = read_s3_json(MC_FILE_KEY)
 
@@ -135,6 +149,7 @@ def lambda_handler(event, context):
         if data:
             results.append(data)
 
+    # Write updated data back to S3
     write_s3_json(EXPORT_FILE_KEY, results)
     write_s3_json(PE_FILE_KEY, pe_data)
     write_s3_json(MC_FILE_KEY, mc_data)
