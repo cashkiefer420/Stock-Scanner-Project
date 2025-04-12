@@ -6,7 +6,6 @@ import time
 import csv
 from datetime import datetime
 from threading import Event
-import yfinance.shared as yf_shared
 
 # Base directory setup
 base_dir = r"/home/ec2-user/Stock-Scanner-Project"
@@ -68,7 +67,7 @@ def fetch_pe_mc_and_name(ticker, is_etf):
             try:
                 info = stock.info
                 break  # Exit loop on success
-            except yf_shared.exceptions.YFRateLimitError:
+            except yf.exceptions.YFRateLimitError:
                 logging.warning(f"Rate limit reached for {ticker}. Pausing for 30 seconds.")
                 time.sleep(30)
         
@@ -90,7 +89,7 @@ def fetch_pe_mc_and_name(ticker, is_etf):
             update_json_file(MarketCap_FILE_PATH, ticker, "Market Cap", mc)
 
         return {"Ticker": ticker, "Company Name": company_name, "Is ETF": False}
-    except yf_shared.exceptions.YFRateLimitError:
+    except yf.exceptions.YFRateLimitError:
         logging.error(f"Rate limit error for {ticker} even after retries.")
         return {"Ticker": ticker, "Company Name": "N/A", "Is ETF": is_etf}
     except Exception:
