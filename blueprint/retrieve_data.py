@@ -63,14 +63,17 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
         stock = yf.Ticker(ticker)
         hist_data = stock.history(period="3mo")
-        if hist_data.empty:
+        
+        # Check if the DataFrame is empty or doesn't contain the required columns
+        if hist_data.empty or 'Close' not in hist_data.columns or hist_data.shape[0] < 2:
+            logger.warning(f"Not enough data for ticker {ticker}. Skipping.")
             return None
 
-        info = stock.info
+        # Safely retrieve the required data
         current_price = hist_data['Close'].iloc[-1]
         prev_price = hist_data['Close'].iloc[-2]
-        volume_today = hist_data['Volume'].iloc[-1]
-        avg_volume = info.get('averageVolume', 'N/A')
+        volume_today = hist_data['Volume'].iloc[-1] if 'Volume' in hist_data.columns else 'N/A'
+        avg_volume = stock.info.get('averageVolume', 'N/A')
 
         export_entry = next((item for item in export_data if item['Ticker'] == ticker), {})
         last_update = export_entry.get("Last Update", "")[:10]
@@ -82,17 +85,17 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
 
         # Update only if the last update is not today
         if today != last_update:
-            shares = info.get('sharesOutstanding', 'N/A')
-            dividend_yield = info.get('dividendYield', 'N/A')
-            one_year_target = info.get('targetMeanPrice', 'N/A')
+            shares = stock.info.get('sharesOutstanding', 'N/A')
+            dividend_yield = stock.info.get('dividendYield', 'N/A')
+            one_year_target = stock.info.get('targetMeanPrice', 'N/A')
 
         company_name = export_entry.get('Company Name', 'N/A')  # Preserve the existing company name
 
-        pe = update_daily_value(pe_data, ticker, info.get('trailingPE', 'N/A'), today)
-        mc = update_daily_value(mc_data, ticker, info.get('marketCap', 'N/A'), today)
+        pe = update_daily_value(pe_data, ticker, stock.info.get('trailingPE', 'N/A'), today)
+        mc = update_daily_value(mc_data, ticker, stock.info.get('marketCap', 'N/A'), today)
 
-        bid_ask = f"{info.get('bid', 'N/A')} - {info.get('ask', 'N/A')}"
-        day_range = f"{info.get('dayLow', 'N/A')} - {info.get('dayHigh', 'N/A')}"
+        bid_ask = f"{stock.info.get('bid', 'N/A')} - {stock.info.get('ask', 'N/A')}"
+        day_range = f"{stock.info.get('dayLow', 'N/A')} - {stock.info.get('dayHigh', 'N/A')}"
         dvav = round(volume_today / avg_volume, 4) if avg_volume not in [0, 'N/A'] else 'N/A'
         dvsa = round(volume_today / shares, 4) if shares not in [0, 'N/A'] else 'N/A'
         pe_change = calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90))
