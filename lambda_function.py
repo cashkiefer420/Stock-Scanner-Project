@@ -2,7 +2,6 @@ import yfinance as yf
 import json
 import logging
 import boto3
-import os
 from datetime import datetime, timedelta
 
 # Logging setup
@@ -75,15 +74,28 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
             shares = info.get('sharesOutstanding', 'N/A')
             company_name = company_name or info.get('longName', 'N/A')
 
-        pe = update_daily_value(pe_data, ticker, info.get('trailingPE', 'N/A'), today)
-        mc = update_daily_value(mc_data, ticker, info.get('marketCap', 'N/A'), today)
+        # Handle P/E Ratio
+        trailing_pe = info.get('trailingPE')
+        pe = None
+        if trailing_pe not in [None, 'N/A']:
+            pe = update_daily_value(pe_data, ticker, trailing_pe, today)
+
+        # Handle Market Cap
+        market_cap = info.get('marketCap')
+        mc = None
+        if market_cap not in [None, 'N/A']:
+            mc = update_daily_value(mc_data, ticker, market_cap, today)
+
+        # Handle Shares Available
+        if shares in [None, 'N/A']:
+            shares = None
 
         bid_ask = f"{info.get('bid', 'N/A')} - {info.get('ask', 'N/A')}"
         day_range = f"{info.get('dayLow', 'N/A')} - {info.get('dayHigh', 'N/A')}"
         dvav = round(volume_today / avg_volume, 4) if avg_volume not in [0, 'N/A'] else 'N/A'
         dvsa = round(volume_today / shares, 4) if shares not in [0, 'N/A'] else 'N/A'
-        pe_change = calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90))
-        mc_change = calculate_percent_change(mc, current_price * shares if current_price != 'N/A' and shares != 'N/A' else 'N/A')
+        pe_change = calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90)) if pe else 'N/A'
+        mc_change = calculate_percent_change(mc, current_price * shares if current_price not in [None, 'N/A'] and shares not in [None, 'N/A'] else 'N/A') if mc else 'N/A'
 
         week_data = stock.history(start=datetime.today() - timedelta(days=7))
         week_change = calculate_percent_change(current_price, week_data['Close'].iloc[0]) if not week_data.empty else 'N/A'
@@ -91,7 +103,8 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         year_data = stock.history(start=datetime(datetime.now().year, 1, 1))
         year_change = calculate_percent_change(current_price, year_data['Close'].iloc[0]) if not year_data.empty else 'N/A'
 
-        return {
+        # Build the result dictionary, skipping invalid fields
+        result = {
             'Ticker': ticker,
             'Company Name': company_name,
             'Current Price': round(current_price, 2),
@@ -104,16 +117,25 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
             'Volume Today': volume_today,
             'Avg Volume (3 mon)': avg_volume,
             'DVAV (Day Volume Over Average Volume)': dvav,
-            'P/E Ratio': pe,
-            'P/E Change (3 Mon)': pe_change,
-            'Shares Available': shares,
-            'Market Cap': mc,
-            'Market Cap Change (3 Mon)': mc_change,
-            'Dividend Yield': info.get('dividendYield', 'N/A'),
-            'One Year Target': info.get('targetMeanPrice', 'N/A'),
             'DVSA (Volume Today Over Shares Available)': dvsa,
             'Last Update': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
+
+        # Conditionally add optional fields
+        if pe is not None:
+            result['P/E Ratio'] = pe
+            result['P/E Change (3 Mon)'] = pe_change
+        if mc is not None:
+            result['Market Cap'] = mc
+            result['Market Cap Change (3 Mon)'] = mc_change
+        if shares is not None:
+            result['Shares Available'] = shares
+        if info.get('dividendYield') is not None:
+            result['Dividend Yield'] = info.get('dividendYield')
+        if info.get('targetMeanPrice') is not None:
+            result['One Year Target'] = info.get('targetMeanPrice')
+
+        return result
 
     except Exception as e:
         logger.exception(f"Error processing {ticker}")
@@ -135,6 +157,13 @@ def lambda_handler(event, context):
         if data:
             results.append(data)
 
+    # Clean up today's invalid entries in pe_data and mc_data
+    for data_dict in [pe_data, mc_data]:
+        for ticker, dates in list(data_dict.items()):
+            if today in dates and dates[today] in [None, 'N/A']:
+                del dates[today]  # Remove today's invalid entry
+
+    # Write the filtered data back to S3
     write_s3_json(EXPORT_FILE_KEY, results)
     write_s3_json(PE_FILE_KEY, pe_data)
     write_s3_json(MC_FILE_KEY, mc_data)
