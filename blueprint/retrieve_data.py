@@ -2,9 +2,11 @@ import yfinance as yf
 import json
 import logging
 import os
+import random
+import time
 from datetime import datetime, timedelta
 import numpy as np
-import time
+from yfinance import shared
 
 # Logging setup
 logger = logging.getLogger()
@@ -16,6 +18,22 @@ FORMATTED_TICKERS_FILE_PATH = os.path.join(base_dir, "json", "formatted_tickers.
 PE_FILE_PATH = os.path.join(base_dir, "json", "PE_num.json")
 MarketCap_FILE_PATH = os.path.join(base_dir, "json", "MC_num.json")
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
+
+# Random User-Agent list
+USER_AGENTS = [
+    # Chrome
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+    # Firefox
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.7; rv:135.0) Gecko/20100101 Firefox/135.0",
+    "Mozilla/5.0 (X11; Linux i686; rv:135.0) Gecko/20100101 Firefox/135.0",
+    # Safari
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15",
+    # Edge
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/131.0.2903.86"
+]
 
 def read_json_file(file_path):
     try:
@@ -63,8 +81,11 @@ def get_historical_value(data, ticker, days_ago):
     target_date = (datetime.now() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
     return data.get(ticker, {}).get(target_date, 'N/A')
 
-def fetch_price(ticker, pe_data, mc_data, export_lookup, today):
+def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
+        user_agent = random.choice(USER_AGENTS)
+        shared._requests_session.headers.update({"User-Agent": user_agent})
+
         stock = yf.Ticker(ticker)
         hist_data = stock.history(period="3mo")
 
@@ -72,21 +93,21 @@ def fetch_price(ticker, pe_data, mc_data, export_lookup, today):
             logger.warning(f"Not enough data for ticker {ticker}. Skipping.")
             return None
 
-        export_entry = export_lookup.get(ticker)
-        if not export_entry:
-            logger.warning(f"{ticker} not found in export data. Skipping.")
-            return None
-
         current_price = hist_data['Close'].iloc[-1]
         prev_price = hist_data['Close'].iloc[-2]
         volume_today = hist_data['Volume'].iloc[-1] if 'Volume' in hist_data.columns else 'N/A'
         avg_volume = stock.info.get('averageVolume', 'N/A')
+
+        export_entry = next((item for item in export_data if item['Ticker'] == ticker), {})
         last_update = export_entry.get("Last Update", "")[:10]
 
         result = {
-            'Ticker': export_entry['Ticker'],
-            'Company Name': export_entry['Company Name'],
-            'Is ETF': export_entry['Is ETF'],
+            'Ticker': export_entry.get('Ticker'),
+            'Company Name': export_entry.get('Company Name'),
+            'Is ETF': export_entry.get('Is ETF', False)
+        }
+
+        result.update({
             'Current Price': round(current_price, 2),
             'Price Change Today': calculate_percent_change(current_price, prev_price),
             'Price Change Week': calculate_percent_change(current_price, hist_data['Close'].iloc[-6]) if hist_data.shape[0] >= 7 else 'N/A',
@@ -94,9 +115,10 @@ def fetch_price(ticker, pe_data, mc_data, export_lookup, today):
             'Volume Today': volume_today,
             'Avg Volume (3 mon)': avg_volume,
             'DVAV (Day Volume Over Average Volume)': round(volume_today / avg_volume, 4) if isinstance(volume_today, (int, float)) and isinstance(avg_volume, (int, float)) and avg_volume != 0 else 'N/A'
-        }
+        })
 
-        if not export_entry.get('Is ETF', False):
+        is_etf = result['Is ETF']
+        if not is_etf:
             shares = export_entry.get('Shares Available', 'N/A')
             if today != last_update:
                 shares = stock.info.get('sharesOutstanding', 'N/A')
@@ -134,12 +156,11 @@ def main():
     mc_data = read_json_file(MarketCap_FILE_PATH)
     export_data = read_json_file(EXPORT_FILE_PATH)
 
-    export_lookup = {entry['Ticker']: entry for entry in export_data}
     results = []
     processed_count = 0
 
     for ticker in tickers:
-        data = fetch_price(ticker, pe_data, mc_data, export_lookup, today)
+        data = fetch_price(ticker, pe_data, mc_data, export_data, today)
         if data:
             results.append(data)
 
@@ -150,12 +171,13 @@ def main():
             write_json_file(PE_FILE_PATH, pe_data)
             write_json_file(MarketCap_FILE_PATH, mc_data)
 
+    logger.info(f"Processing complete. Total tickers: {processed_count}")
     write_json_file(EXPORT_FILE_PATH, results)
     write_json_file(PE_FILE_PATH, pe_data)
     write_json_file(MarketCap_FILE_PATH, mc_data)
 
-    elapsed = time.time() - start_time
-    logger.info(f"Processing complete. Total tickers: {processed_count}. Time taken: {round(elapsed, 2)} seconds.")
+    elapsed_time = round(time.time() - start_time, 2)
+    logger.info(f"Execution time: {elapsed_time} seconds")
 
 if __name__ == "__main__":
     main()
