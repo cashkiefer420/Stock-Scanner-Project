@@ -89,45 +89,51 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         last_update = export_entry.get("Last Update", "")[:10]
 
         # Preserve existing values for specific fields
-        shares = export_entry.get('Shares Available', 'N/A')
+        is_etf = export_entry.get('Is ETF', False)  # Default to False if not specified
 
-        # Update only if the last update is not today
-        if today != last_update:
-            shares = stock.info.get('sharesOutstanding', 'N/A')
+        # Initialize the result dictionary
+        result = {
+            'Ticker': ticker,
+            'Company Name': export_entry.get('Company Name', 'N/A'),  # Preserve the existing company name
+            'Current Price': round(current_price, 2),
+            'Price Change Today': calculate_percent_change(current_price, prev_price),
+            'Volume Today': volume_today,
+            'Avg Volume (3 mon)': avg_volume,
+            'Last Update': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        }
 
-        company_name = export_entry.get('Company Name', 'N/A')  # Preserve the existing company name
+        # Additional fields for non-ETFs
+        if not is_etf:
+            shares = export_entry.get('Shares Available', 'N/A')
+            if today != last_update:
+                shares = stock.info.get('sharesOutstanding', 'N/A')
 
-        pe = update_daily_value(pe_data, ticker, stock.info.get('trailingPE', 'N/A'), today)
-        mc = update_daily_value(mc_data, ticker, stock.info.get('marketCap', 'N/A'), today)
+            pe = update_daily_value(pe_data, ticker, stock.info.get('trailingPE', 'N/A'), today)
+            mc = update_daily_value(mc_data, ticker, stock.info.get('marketCap', 'N/A'), today)
 
-        bid_ask = f"{stock.info.get('bid', 'N/A')} - {stock.info.get('ask', 'N/A')}"
-        day_range = f"{stock.info.get('dayLow', 'N/A')} - {stock.info.get('dayHigh', 'N/A')}"
-        dvav = round(volume_today / avg_volume, 4) if avg_volume not in [0, 'N/A'] else 'N/A'
-        dvsa = round(volume_today / shares, 4) if shares not in [0, 'N/A'] else 'N/A'
-        pe_change = calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90))
-        mc_change = calculate_percent_change(mc, current_price * shares if current_price != 'N/A' and shares != 'N/A' else 'N/A')
+            pe_change = calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90))
+            mc_change = calculate_percent_change(mc, current_price * shares if current_price != 'N/A' and shares != 'N/A' else 'N/A')
 
+            # Add non-ETF-specific fields to the result
+            result.update({
+                'P/E Ratio': pe,
+                'P/E Change (3 Mon)': pe_change,
+                'Shares Available': shares,
+                'Market Cap': mc,
+                'Market Cap Change (3 Mon)': mc_change,
+            })
+
+        # Additional calculations
         week_data = stock.history(start=datetime.today() - timedelta(days=7))
         week_change = calculate_percent_change(current_price, week_data['Close'].iloc[0]) if not week_data.empty else 'N/A'
 
-        return {
-            'Ticker': ticker,
-            'Company Name': company_name,  # Preserve the existing company name
-            'Current Price': round(current_price, 2),
-            'Price Change Today': calculate_percent_change(current_price, prev_price),
+        # Add other shared fields
+        result.update({
             'Price Change Week': week_change,
             'Price Change Month': calculate_percent_change(current_price, hist_data['Close'].iloc[0]),
-            'Volume Today': volume_today,
-            'Avg Volume (3 mon)': avg_volume,
-            'DVAV (Day Volume Over Average Volume)': dvav,
-            'P/E Ratio': pe,
-            'P/E Change (3 Mon)': pe_change,
-            'Shares Available': shares,
-            'Market Cap': mc,
-            'Market Cap Change (3 Mon)': mc_change,
-            'DVSA (Volume Today Over Shares Available)': dvsa,
-            'Last Update': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        }
+        })
+
+        return result
 
     except Exception as e:
         logger.exception(f"Error processing {ticker}")
