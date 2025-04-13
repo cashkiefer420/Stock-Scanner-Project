@@ -1,32 +1,36 @@
 import json
+import os
 
 # File paths
-stock_data_export_path = "json/stock_data_export.json"
-formatted_tickers_path = "json/formatted_tickers.json"
+base_dir = r"/home/ec2-user/Stock-Scanner-Project"
+TICKERS_FILE_PATH = os.path.join(base_dir, "json", "formatted_tickers.json")
+EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
 
-def reformat_tickers():
-    try:
-        # Read the stock_data_export.json file
-        with open(stock_data_export_path, "r") as stock_data_file:
-            stock_data = json.load(stock_data_file)
+def read_json(file_path):
+    with open(file_path, "r") as f:
+        return json.load(f)
 
-        # Extract the tickers into a list
-        tickers = [stock["Ticker"] for stock in stock_data if "Ticker" in stock]
+def write_json(file_path, data):
+    with open(file_path, "w") as f:
+        json.dump(data, f, indent=4)
 
-        # Create the single-line JSON structure
-        formatted_tickers = {"tickers": tickers}
+def remove_etfs():
+    # Load data
+    tickers_data = read_json(TICKERS_FILE_PATH)
+    export_data = read_json(EXPORT_FILE_PATH)
 
-        # Write the output to formatted_tickers.json in a single line
-        with open(formatted_tickers_path, "w") as formatted_tickers_file:
-            json.dump(formatted_tickers, formatted_tickers_file, separators=(",", ":"), ensure_ascii=False)
+    # Find all non-ETF tickers
+    non_etf_export = [entry for entry in export_data if not entry.get("Is ETF", False)]
+    non_etf_tickers = [entry["Ticker"] for entry in non_etf_export]
 
-        print(f"Formatted tickers saved to {formatted_tickers_path}")
-    except FileNotFoundError as e:
-        print(f"Error: File not found - {e}")
-    except json.JSONDecodeError as e:
-        print(f"Error: Failed to parse JSON - {e}")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+    # Filter the ticker list to only include non-ETFs
+    filtered_ticker_list = [ticker for ticker in tickers_data.get("tickers", []) if ticker in non_etf_tickers]
+
+    # Write the cleaned data back
+    write_json(EXPORT_FILE_PATH, non_etf_export)
+    write_json(TICKERS_FILE_PATH, {"tickers": filtered_ticker_list})
+
+    print(f"Removed {len(export_data) - len(non_etf_export)} ETFs from both files.")
 
 if __name__ == "__main__":
-    reformat_tickers()
+    remove_etfs()
