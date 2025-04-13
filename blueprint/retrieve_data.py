@@ -10,6 +10,7 @@ logger.setLevel(logging.INFO)
 
 # Base directory and file paths
 base_dir = r"/home/ec2-user/Stock-Scanner-Project"
+FORMATTED_TICKERS_FILE_PATH = os.path.join(base_dir, "json", "formatted_tickers.json")
 PE_FILE_PATH = os.path.join(base_dir, "json", "PE_num.json")
 MarketCap_FILE_PATH = os.path.join(base_dir, "json", "MC_num.json")
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
@@ -108,8 +109,6 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         week_data = stock.history(start=datetime.today() - timedelta(days=7))
         week_change = calculate_percent_change(current_price, week_data['Close'].iloc[0]) if not week_data.empty else 'N/A'
 
-        
-
         return {
             'Ticker': ticker,
             'Company Name': company_name,  # Preserve the existing company name
@@ -137,13 +136,14 @@ def main():
     """Main function to process tickers locally."""
     today = datetime.now().strftime("%Y-%m-%d")
 
-    # Read data from local JSON files
-    export_data = read_json_file(EXPORT_FILE_PATH)
-    tickers = [entry['Ticker'] for entry in export_data if 'Ticker' in entry]  # Extract tickers from export data
+    # Read tickers from formatted_tickers.json
+    formatted_tickers_data = read_json_file(FORMATTED_TICKERS_FILE_PATH)
+    tickers = formatted_tickers_data.get("tickers", [])  # Safely extract tickers list
 
     # Read additional data files
     pe_data = read_json_file(PE_FILE_PATH)
     mc_data = read_json_file(MarketCap_FILE_PATH)
+    export_data = read_json_file(EXPORT_FILE_PATH)
 
     results = []
     processed_count = 0  # Counter to track processed tickers
