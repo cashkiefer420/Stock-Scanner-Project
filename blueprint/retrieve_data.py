@@ -4,6 +4,7 @@ import logging
 import os
 from datetime import datetime, timedelta
 import numpy as np
+import time
 
 # Logging setup
 logger = logging.getLogger()
@@ -22,7 +23,7 @@ def read_json_file(file_path):
             with open(file_path, "r") as file:
                 return json.load(file)
         else:
-            logger.warning(f"File {file_path} not found. Returning empty.")
+            logger.warning(f"File {file_path} not found. Returning empty dictionary.")
             return {}
     except Exception as e:
         logger.error(f"Error reading {file_path}: {e}")
@@ -62,105 +63,99 @@ def get_historical_value(data, ticker, days_ago):
     target_date = (datetime.now() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
     return data.get(ticker, {}).get(target_date, 'N/A')
 
-def fetch_price(ticker, pe_data, mc_data, export_data, today):
+def fetch_price(ticker, pe_data, mc_data, export_lookup, today):
     try:
         stock = yf.Ticker(ticker)
         hist_data = stock.history(period="3mo")
 
         if hist_data.empty or 'Close' not in hist_data.columns or hist_data.shape[0] < 2:
-            logger.warning(f"{ticker} skipped due to not enough data.")
-            return "SKIPPED"
+            logger.warning(f"Not enough data for ticker {ticker}. Skipping.")
+            return None
+
+        export_entry = export_lookup.get(ticker)
+        if not export_entry:
+            logger.warning(f"{ticker} not found in export data. Skipping.")
+            return None
 
         current_price = hist_data['Close'].iloc[-1]
         prev_price = hist_data['Close'].iloc[-2]
         volume_today = hist_data['Volume'].iloc[-1] if 'Volume' in hist_data.columns else 'N/A'
         avg_volume = stock.info.get('averageVolume', 'N/A')
-
-        export_entry = next((item for item in export_data if item['Ticker'] == ticker), {})
         last_update = export_entry.get("Last Update", "")[:10]
-        is_etf = export_entry.get('Is ETF', False)
 
         result = {
-            'Ticker': ticker,
-            'Company Name': export_entry.get('Company Name', 'N/A'),
-            'Is ETF': is_etf,
+            'Ticker': export_entry['Ticker'],
+            'Company Name': export_entry['Company Name'],
+            'Is ETF': export_entry['Is ETF'],
             'Current Price': round(current_price, 2),
             'Price Change Today': calculate_percent_change(current_price, prev_price),
-            'Price Change Week': calculate_percent_change(current_price, hist_data['Close'].iloc[-6]),
+            'Price Change Week': calculate_percent_change(current_price, hist_data['Close'].iloc[-6]) if hist_data.shape[0] >= 7 else 'N/A',
             'Price Change Month': calculate_percent_change(current_price, hist_data['Close'].iloc[0]),
             'Volume Today': volume_today,
             'Avg Volume (3 mon)': avg_volume,
-            'DVAV (Day Volume Over Average Volume)': round(volume_today / avg_volume, 4) if avg_volume not in ['N/A', 0] else 'N/A',
-            'DVSA (Volume Today Over Shares Available)': 'N/A',  # to be updated later
-            'Last Update': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            'DVAV (Day Volume Over Average Volume)': round(volume_today / avg_volume, 4) if isinstance(volume_today, (int, float)) and isinstance(avg_volume, (int, float)) and avg_volume != 0 else 'N/A'
         }
 
-        if not is_etf:
+        if not export_entry.get('Is ETF', False):
             shares = export_entry.get('Shares Available', 'N/A')
             if today != last_update:
                 shares = stock.info.get('sharesOutstanding', 'N/A')
+
             pe = update_daily_value(pe_data, ticker, stock.info.get('trailingPE', 'N/A'), today)
             mc = update_daily_value(mc_data, ticker, stock.info.get('marketCap', 'N/A'), today)
+
             pe_change = calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90))
             mc_change = calculate_percent_change(mc, current_price * shares if current_price != 'N/A' and shares != 'N/A' else 'N/A')
 
             result.update({
+                'Shares Available': shares,
+                'DVSA (Volume Today Over Shares Available)': round(volume_today / shares, 4) if isinstance(volume_today, (int, float)) and isinstance(shares, (int, float)) and shares != 0 else 'N/A',
                 'P/E Ratio': pe,
                 'P/E Change (3 Mon)': pe_change,
-                'Shares Available': shares,
                 'Market Cap': mc,
-                'Market Cap Change (3 Mon)': mc_change,
-                'DVSA (Volume Today Over Shares Available)': round(volume_today / shares, 4) if shares not in ['N/A', 0] else 'N/A'
+                'Market Cap Change (3 Mon)': mc_change
             })
 
+        result['Last Update'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         return result
 
     except Exception as e:
-        logger.warning(f"{ticker} may be delisted or errored: {e}")
-        return "DELISTED"
+        logger.exception(f"Error processing {ticker}")
+        return None
 
 def main():
+    start_time = time.time()
     today = datetime.now().strftime("%Y-%m-%d")
 
-    formatted_data = read_json_file(FORMATTED_TICKERS_FILE_PATH)
+    formatted_tickers_data = read_json_file(FORMATTED_TICKERS_FILE_PATH)
+    tickers = formatted_tickers_data.get("tickers", [])
+
     pe_data = read_json_file(PE_FILE_PATH)
     mc_data = read_json_file(MarketCap_FILE_PATH)
     export_data = read_json_file(EXPORT_FILE_PATH)
 
-    tickers = formatted_data.get("tickers", [])
-    new_tickers = []
-    new_export_data = []
+    export_lookup = {entry['Ticker']: entry for entry in export_data}
+    results = []
     processed_count = 0
 
     for ticker in tickers:
-        data = fetch_price(ticker, pe_data, mc_data, export_data, today)
-
-        if data == "DELISTED":
-            logger.info(f"{ticker} removed from list due to delisting.")
-            continue
-        elif data == "SKIPPED":
-            new_tickers.append(ticker)
-            existing = next((item for item in export_data if item['Ticker'] == ticker), None)
-            if existing:
-                new_export_data.append(existing)
-            continue
-
-        new_tickers.append(ticker)
-        new_export_data.append(data)
+        data = fetch_price(ticker, pe_data, mc_data, export_lookup, today)
+        if data:
+            results.append(data)
 
         processed_count += 1
         if processed_count % 100 == 0:
-            logger.info(f"Processed {processed_count} tickers so far.")
-            write_json_file(EXPORT_FILE_PATH, new_export_data)
-            write_json_file(FORMATTED_TICKERS_FILE_PATH, {"tickers": new_tickers})
+            logger.info(f"Processed {processed_count} tickers. Saving intermediate results.")
+            write_json_file(EXPORT_FILE_PATH, results)
             write_json_file(PE_FILE_PATH, pe_data)
             write_json_file(MarketCap_FILE_PATH, mc_data)
 
-    logger.info(f"All tickers processed. Finalizing...")
-    write_json_file(EXPORT_FILE_PATH, new_export_data)
-    write_json_file(FORMATTED_TICKERS_FILE_PATH, {"tickers": new_tickers})
+    write_json_file(EXPORT_FILE_PATH, results)
     write_json_file(PE_FILE_PATH, pe_data)
     write_json_file(MarketCap_FILE_PATH, mc_data)
+
+    elapsed = time.time() - start_time
+    logger.info(f"Processing complete. Total tickers: {processed_count}. Time taken: {round(elapsed, 2)} seconds.")
 
 if __name__ == "__main__":
     main()
