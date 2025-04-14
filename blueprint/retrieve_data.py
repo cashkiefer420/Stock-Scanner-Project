@@ -22,7 +22,11 @@ TICKERS_NAMES_PATH = os.path.join(base_dir, "json", "Tickers&Names.json")
 
 # Random User-Agent list
 USER_AGENTS = [
-    # (same list as before)
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+    "Mozilla/5.0 (X11; Linux x86_64)",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)",
+    "Mozilla/5.0 (iPad; CPU OS 14_0 like Mac OS X)"
 ]
 
 def is_number(val):
@@ -80,11 +84,17 @@ def sync_tickers_and_names():
 
     names_dict = {item["Ticker"]: item["Company Name"] for item in tickers_names}
 
+    tickers_list = formatted_tickers.get("tickers", [])
     updated_tickers = []
-    for ticker in formatted_tickers.get("tickers", []):
-        company_name = names_dict.get(ticker, "")
+
+    for ticker in tickers_list:
+        if isinstance(ticker, dict):
+            ticker_symbol = ticker.get("Ticker", "")
+        else:
+            ticker_symbol = ticker
+        company_name = names_dict.get(ticker_symbol, "")
         updated_tickers.append({
-            "Ticker": ticker,
+            "Ticker": ticker_symbol,
             "Company Name": company_name,
             "Is ETF": False
         })
@@ -92,7 +102,7 @@ def sync_tickers_and_names():
     updated_data = {"tickers": updated_tickers}
     write_json_file(FORMATTED_TICKERS_FILE_PATH, updated_data)
     logger.info("Formatted tickers updated with company names.")
-    
+
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
         user_agent = random.choice(USER_AGENTS)
@@ -110,11 +120,11 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         volume_today = hist_data['Volume'].iloc[-1] if 'Volume' in hist_data.columns else 'N/A'
         avg_volume = stock.info.get('averageVolume', 'N/A')
 
-        export_entry = next((item for item in export_data if item['Ticker'] == ticker), {})
+        export_entry = next((item for item in export_data if item.get('Ticker') == ticker), {})
         last_update = export_entry.get("Last Update", "")[:10]
 
         result = {
-            'Ticker': export_entry.get('Ticker', ticker),
+            'Ticker': ticker,
             'Company Name': export_entry.get('Company Name', stock.info.get('shortName', 'N/A')),
             'Is ETF': export_entry.get('Is ETF', False)
         }
@@ -126,7 +136,8 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
             'Price Change Month': calculate_percent_change(current_price, hist_data['Close'].iloc[0]),
             'Volume Today': volume_today,
             'Avg Volume (3 mon)': avg_volume,
-            'DVAV (Day Volume Over Average Volume)': round(volume_today / avg_volume, 4) if is_number(volume_today) and is_number(avg_volume) and avg_volume != 0 else 'N/A'
+            'DVAV (Day Volume Over Average Volume)': round(volume_today / avg_volume, 4)
+                if is_number(volume_today) and is_number(avg_volume) and avg_volume != 0 else 'N/A'
         })
 
         if not result['Is ETF']:
@@ -138,11 +149,13 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
             mc = update_daily_value(mc_data, ticker, stock.info.get('marketCap', 'N/A'), today)
 
             pe_change = calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90))
-            mc_change = calculate_percent_change(mc, current_price * shares if is_number(current_price) and is_number(shares) else 'N/A')
+            mc_change = calculate_percent_change(mc, current_price * shares
+                                                 if is_number(current_price) and is_number(shares) else 'N/A')
 
             result.update({
                 'Shares Available': shares,
-                'DVSA (Volume Today Over Shares Available)': round(volume_today / shares, 4) if is_number(volume_today) and is_number(shares) and shares != 0 else 'N/A',
+                'DVSA (Volume Today Over Shares Available)': round(volume_today / shares, 4)
+                    if is_number(volume_today) and is_number(shares) and shares != 0 else 'N/A',
                 'P/E Ratio': pe,
                 'P/E Change (3 Mon)': pe_change,
                 'Market Cap': mc,
@@ -169,10 +182,11 @@ def main():
     mc_data = read_json_file(MarketCap_FILE_PATH)
     export_data = read_json_file(EXPORT_FILE_PATH)
 
-    existing_data_map = {item['Ticker']: item for item in export_data}
+    existing_data_map = {item['Ticker']: item for item in export_data if isinstance(item, dict)}
     processed_count = 0
 
-    for ticker in tickers:
+    for entry in tickers:
+        ticker = entry["Ticker"] if isinstance(entry, dict) else entry
         data = fetch_price(ticker, pe_data, mc_data, export_data, today)
         if data:
             existing_data_map[ticker] = data
