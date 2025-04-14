@@ -6,7 +6,7 @@ import random
 import time
 from datetime import datetime, timedelta
 import numpy as np
-from yfinance import shared
+import requests
 
 # Logging setup
 logger = logging.getLogger()
@@ -84,7 +84,10 @@ def get_historical_value(data, ticker, days_ago):
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
         user_agent = random.choice(USER_AGENTS)
-        shared._requests_session.headers.update({"User-Agent": user_agent})
+        
+        # Use requests.Session to manage headers
+        session = requests.Session()
+        session.headers.update({"User-Agent": user_agent})
 
         stock = yf.Ticker(ticker)
         hist_data = stock.history(period="3mo")
