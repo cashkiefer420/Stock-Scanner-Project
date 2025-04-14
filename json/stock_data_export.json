@@ -35,11 +35,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AAPG",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "AAPL",
         "Company Name": "Apple Inc.",
         "Is ETF": false
@@ -2875,11 +2870,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CAMP",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "CAMT",
         "Company Name": "Camtek Ltd.",
         "Is ETF": false
@@ -2992,11 +2982,6 @@
     {
         "Ticker": "CBFV",
         "Company Name": "CB Financial Services, Inc.",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "CBLL",
-        "Company Name": "N/A",
         "Is ETF": false
     },
     {
@@ -4695,11 +4680,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DHCNI",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "DHCNL",
         "Company Name": "Diversified Healthcare Trust",
         "Is ETF": false
@@ -5772,11 +5752,6 @@
     {
         "Ticker": "FAB",
         "Company Name": "First Trust Multi Cap Value AlphaDEX Fund",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "FACT",
-        "Company Name": "N/A",
         "Is ETF": false
     },
     {
@@ -6872,11 +6847,6 @@
     {
         "Ticker": "GECC",
         "Company Name": "Great Elm Capital Corp.",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "GECCH",
-        "Company Name": "N/A",
         "Is ETF": false
     },
     {
@@ -8070,11 +8040,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "HWCPZ",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "HWH",
         "Company Name": "HWH International Inc.",
         "Is ETF": false
@@ -8447,11 +8412,6 @@
     {
         "Ticker": "INBK",
         "Company Name": "First Internet Bancorp",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "INBKZ",
-        "Company Name": "N/A",
         "Is ETF": false
     },
     {
@@ -9840,11 +9800,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "LNKS",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "LNSR",
         "Company Name": "LENSAR, Inc.",
         "Is ETF": false
@@ -10995,11 +10950,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MSPR",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "MSS",
         "Company Name": "Maison Solutions Inc.",
         "Is ETF": false
@@ -11232,11 +11182,6 @@
     {
         "Ticker": "NBBK",
         "Company Name": "NB Bancorp, Inc.",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "NBIS",
-        "Company Name": "N/A",
         "Is ETF": false
     },
     {
@@ -12590,11 +12535,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "OXSQZ",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "OZK",
         "Company Name": "Bank OZK",
         "Is ETF": false
@@ -12982,11 +12922,6 @@
     {
         "Ticker": "PHIO",
         "Company Name": "Phio Pharmaceuticals Corp.",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "PHLT",
-        "Company Name": "N/A",
         "Is ETF": false
     },
     {
@@ -14250,11 +14185,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "RILYN",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "RILYT",
         "Company Name": "B. Riley Financial, Inc. 6.00% Senior Notes Due 2028",
         "Is ETF": false
@@ -14537,11 +14467,6 @@
     {
         "Ticker": "RWAY",
         "Company Name": "Runway Growth Finance Corp.",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "RWAYL",
-        "Company Name": "N/A",
         "Is ETF": false
     },
     {
@@ -15177,11 +15102,6 @@
     {
         "Ticker": "SKYE",
         "Company Name": "Skye Bioscience, Inc.",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "SKYQ",
-        "Company Name": "N/A",
         "Is ETF": false
     },
     {
@@ -18320,11 +18240,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "XYLO",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "YAAS",
         "Company Name": "Youxin Technology Ltd",
         "Is ETF": false
@@ -18445,11 +18360,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ZAZZT",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "ZBAI",
         "Company Name": "ATIF Holdings Limited",
         "Is ETF": false
@@ -18470,11 +18380,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ZBZZT",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "ZCAR",
         "Company Name": "Zoomcar Holdings, Inc.",
         "Is ETF": false
@@ -18485,18 +18390,8 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ZCZZT",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "ZD",
         "Company Name": "Ziff Davis, Inc.",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "ZENA",
-        "Company Name": "N/A",
         "Is ETF": false
     },
     {
@@ -18542,11 +18437,6 @@
     {
         "Ticker": "ZJYL",
         "Company Name": "Jin Medical International Ltd.",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "ZJZZT",
-        "Company Name": "N/A",
         "Is ETF": false
     },
     {
@@ -18610,26 +18500,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ZVZZT",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "ZWZZT",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "ZXYZ.A",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "ZXZZT",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
         "Ticker": "ZYBT",
         "Company Name": "Zhengye Biotechnology Holding Limited",
         "Is ETF": false
@@ -18644,14 +18514,4 @@
         "Company Name": "Zynex, Inc.",
         "Is ETF": false
     },
-    {
-        "Ticker": "File Creation Time: 0331202518:01",
-        "Company Name": "N/A",
-        "Is ETF": false
-    },
-    {
-        "Ticker": "",
-        "Company Name": "N/A",
-        "Is ETF": false
-    }
 ]
