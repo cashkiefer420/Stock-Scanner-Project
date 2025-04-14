@@ -168,9 +168,6 @@ def main():
         processed_count += 1
         if processed_count % 100 == 0:
             logger.info(f"Processed {processed_count} tickers. Saving intermediate results.")
-            write_json_file(EXPORT_FILE_PATH, results)
-            write_json_file(PE_FILE_PATH, pe_data)
-            write_json_file(MarketCap_FILE_PATH, mc_data)
 
     logger.info(f"Processing complete. Total tickers: {processed_count}")
     write_json_file(EXPORT_FILE_PATH, results)
