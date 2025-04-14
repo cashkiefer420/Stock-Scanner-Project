@@ -96,10 +96,7 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         stock = yf.Ticker(ticker)
         hist_data = stock.history(period="3mo")
 
-        if hist_data.empty or 'Close' not in hist_data.columns or hist_data.shape[0] < 2:
-            logger.warning(f"Not enough data for ticker {ticker}. Skipping.")
-            return None
-
+        # Process data
         current_price = hist_data['Close'].iloc[-1]
         prev_price = hist_data['Close'].iloc[-2]
         volume_today = hist_data['Volume'].iloc[-1] if 'Volume' in hist_data.columns else 'N/A'
@@ -111,7 +108,6 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         result = {
             'Ticker': export_entry.get('Ticker'),
             'Company Name': export_entry.get('Company Name'),
-            'Is ETF': export_entry.get('Is ETF', False)
         }
 
         result.update({
@@ -124,26 +120,24 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
             'DVAV (Day Volume Over Average Volume)': round(volume_today / avg_volume, 4) if isinstance(volume_today, (int, float)) and isinstance(avg_volume, (int, float)) and avg_volume != 0 else 'N/A'
         })
 
-        is_etf = result['Is ETF']
-        if not is_etf:
-            shares = export_entry.get('Shares Available', 'N/A')
-            if today != last_update:
-                shares = stock.info.get('sharesOutstanding', 'N/A')
+        shares = export_entry.get('Shares Available', 'N/A')
+        if today != last_update:
+            shares = stock.info.get('sharesOutstanding', 'N/A')
 
-            pe = update_daily_value(pe_data, ticker, stock.info.get('trailingPE', 'N/A'), today)
-            mc = update_daily_value(mc_data, ticker, stock.info.get('marketCap', 'N/A'), today)
+        pe = update_daily_value(pe_data, ticker, stock.info.get('trailingPE', 'N/A'), today)
+        mc = update_daily_value(mc_data, ticker, stock.info.get('marketCap', 'N/A'), today)
 
-            pe_change = calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90))
-            mc_change = calculate_percent_change(mc, current_price * shares if current_price != 'N/A' and shares != 'N/A' else 'N/A')
+        pe_change = calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90))
+        mc_change = calculate_percent_change(mc, current_price * shares if current_price != 'N/A' and shares != 'N/A' else 'N/A')
 
-            result.update({
-                'Shares Available': shares,
-                'DVSA (Volume Today Over Shares Available)': round(volume_today / shares, 4) if isinstance(volume_today, (int, float)) and isinstance(shares, (int, float)) and shares != 0 else 'N/A',
-                'P/E Ratio': pe,
-                'P/E Change (3 Mon)': pe_change,
-                'Market Cap': mc,
-                'Market Cap Change (3 Mon)': mc_change
-            })
+        result.update({
+            'Shares Available': shares,
+            'DVSA (Volume Today Over Shares Available)': round(volume_today / shares, 4) if isinstance(volume_today, (int, float)) and isinstance(shares, (int, float)) and shares != 0 else 'N/A',
+            'P/E Ratio': pe,
+            'P/E Change (3 Mon)': pe_change,
+            'Market Cap': mc,
+            'Market Cap Change (3 Mon)': mc_change
+        })
 
         result['Last Update'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         return result
