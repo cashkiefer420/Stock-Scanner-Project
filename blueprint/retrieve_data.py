@@ -6,7 +6,7 @@ import random
 import time
 from datetime import datetime, timedelta
 import numpy as np
-from yfinance import shared
+import requests  # Added requests import
 
 # Logging setup
 logger = logging.getLogger()
@@ -106,7 +106,9 @@ def sync_tickers_and_names():
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
         user_agent = random.choice(USER_AGENTS)
-        shared._requests_session.headers.update({"User-Agent": user_agent})
+        # Use requests to set up a session with custom headers
+        session = requests.Session()
+        session.headers.update({"User-Agent": user_agent})
 
         stock = yf.Ticker(ticker)
         hist_data = stock.history(period="3mo")
