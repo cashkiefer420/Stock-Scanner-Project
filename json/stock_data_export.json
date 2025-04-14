@@ -10,11 +10,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AADR",
-        "Company Name": "AdvisorShares Dorsey Wright ADR ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "AAL",
         "Company Name": "American Airlines Group Inc.",
         "Is ETF": false
@@ -33,11 +28,6 @@
         "Ticker": "AAON",
         "Company Name": "AAON, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "AAPB",
-        "Company Name": "GraniteShares 2x Long AAPL Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "AAPD",
@@ -65,16 +55,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AAVM",
-        "Company Name": "Alpha Architect Global Factor Equity ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "AAXJ",
-        "Company Name": "iShares MSCI All Country Asia ex Japan ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ABAT",
         "Company Name": "American Battery Technology Company",
         "Is ETF": false
@@ -83,11 +63,6 @@
         "Ticker": "ABCL",
         "Company Name": "AbCellera Biologics Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ABCS",
-        "Company Name": "Alpha Blue Capital US Small-Mid Cap Dynamic ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ABEO",
@@ -270,16 +245,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ACWI",
-        "Company Name": "iShares MSCI ACWI ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "ACWX",
-        "Company Name": "iShares MSCI ACWI ex U.S. ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ACXP",
         "Company Name": "Acurx Pharmaceuticals, Inc.",
         "Is ETF": false
@@ -298,11 +263,6 @@
         "Ticker": "ADBE",
         "Company Name": "Adobe Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ADBG",
-        "Company Name": "Leverage Shares 2X Long ADBE Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ADD",
@@ -495,11 +455,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AFSC",
-        "Company Name": "abrdn Focused U.S. Small Cap Active ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "AFYA",
         "Company Name": "Afya Limited",
         "Is ETF": false
@@ -508,11 +463,6 @@
         "Ticker": "AGAE",
         "Company Name": "Allied Gaming & Entertainment Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "AGEM",
-        "Company Name": "abrdn Emerging Markets Dividend Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "AGEN",
@@ -535,29 +485,14 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AGIX",
-        "Company Name": "KraneShares Artificial Intelligence and Technology ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "AGMH",
         "Company Name": "AGM Group Holdings Inc.",
         "Is ETF": false
     },
     {
-        "Ticker": "AGMI",
-        "Company Name": "Themes Silver Miners ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "AGNC",
         "Company Name": "AGNC Investment Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "AGNG",
-        "Company Name": "Global X Aging Population ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "AGRI",
@@ -583,11 +518,6 @@
         "Ticker": "AHG",
         "Company Name": "Akso Health Group",
         "Is ETF": false
-    },
-    {
-        "Ticker": "AIA",
-        "Company Name": "iShares Asia 50 ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "AIEV",
@@ -655,16 +585,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AIPI",
-        "Company Name": "REX AI Equity Premium Income ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "AIQ",
-        "Company Name": "Global X Artificial Intelligence & Technology ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "AIRE",
         "Company Name": "reAlpha Tech Corp.",
         "Is ETF": false
@@ -678,16 +598,6 @@
         "Ticker": "AIRJ",
         "Company Name": "AirJoule Technologies Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "AIRL",
-        "Company Name": "Themes Airlines ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "AIRR",
-        "Company Name": "First Trust RBA American Industrial RenaissanceTM ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "AIRS",
@@ -875,11 +785,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ALLW",
-        "Company Name": "SPDR Bridgewater All Weather ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ALMS",
         "Company Name": "Alumis Inc.",
         "Is ETF": false
@@ -935,11 +840,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ALTY",
-        "Company Name": "Global X Alternative Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ALVO",
         "Company Name": "Alvotech",
         "Is ETF": false
@@ -990,21 +890,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AMDG",
-        "Company Name": "Themes ETF Trust - Leverage Shares 2X Long AMD Daily ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "AMDL",
-        "Company Name": "GraniteShares 2x Long AMD Daily ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "AMDS",
-        "Company Name": "Graniteshares 1x Short AMD Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "AMED",
         "Company Name": "Amedisys, Inc.",
         "Is ETF": false
@@ -1013,11 +898,6 @@
         "Ticker": "AMGN",
         "Company Name": "Amgen Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "AMID",
-        "Company Name": "Argent Mid Cap ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "AMIX",
@@ -1115,11 +995,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AMZZ",
-        "Company Name": "GraniteShares 2x Long AMZN Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ANAB",
         "Company Name": "AnaptysBio, Inc.",
         "Is ETF": false
@@ -1148,11 +1023,6 @@
         "Ticker": "ANGIV",
         "Company Name": "Angi Inc. Class A Common Stock When Issued",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ANGL",
-        "Company Name": "VanEck Fallen Angel High Yield Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ANGO",
@@ -1220,19 +1090,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AOHY",
-        "Company Name": "Angel Oak High Yield Opportunities ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "AOSL",
         "Company Name": "Alpha and Omega Semiconductor Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "AOTG",
-        "Company Name": "AOT Growth and Innovation ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "AOUT",
@@ -1253,11 +1113,6 @@
         "Ticker": "APDN",
         "Company Name": "Applied DNA Sciences, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "APED",
-        "Company Name": "STKd 100% MSTR & 100% COIN ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "APEI",
@@ -1365,11 +1220,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AQWA",
-        "Company Name": "Global X Clean Water ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ARAY",
         "Company Name": "Accuray Incorporated",
         "Is ETF": false
@@ -1460,11 +1310,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ARMG",
-        "Company Name": "Themes ETF Trust - Leverage Shares 2X Long ARM Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "AROW",
         "Company Name": "Arrow Financial Corporation",
         "Is ETF": false
@@ -1515,11 +1360,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ARVR",
-        "Company Name": "First Trust Indxx Metaverse ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ARWR",
         "Company Name": "Arrowhead Pharmaceuticals, Inc.",
         "Is ETF": false
@@ -1543,11 +1383,6 @@
         "Ticker": "ASMB",
         "Company Name": "Assembly Biosciences, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ASMG",
-        "Company Name": "Themes ETF Trust - Leverage Shares 2X Long ASML Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ASML",
@@ -1840,11 +1675,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AUMI",
-        "Company Name": "Themes Gold Miners ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "AUPH",
         "Company Name": "Aurinia Pharmaceuticals Inc.",
         "Is ETF": false
@@ -1900,11 +1730,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "AVGX",
-        "Company Name": "Defiance Daily Target 2X Long AVGO ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "AVIR",
         "Company Name": "Atea Pharmaceuticals, Inc.",
         "Is ETF": false
@@ -1953,16 +1778,6 @@
         "Ticker": "AVTX",
         "Company Name": "Avalo Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "AVUQ",
-        "Company Name": "Avantis U.S. Quality ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "AVXC",
-        "Company Name": "Avantis Emerging Markets Ex-China Equity ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "AVXL",
@@ -2035,11 +1850,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BABX",
-        "Company Name": "GraniteShares 2x Long BABA Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BACQ",
         "Company Name": "Bleichroeder Acquisition Corp. I",
         "Is ETF": false
@@ -2058,11 +1868,6 @@
         "Ticker": "BAER",
         "Company Name": "Bridger Aerospace Group Holdings, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BAFE",
-        "Company Name": "Brown Advisory Flexible Equity ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BAFN",
@@ -2145,11 +1950,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BBH",
-        "Company Name": "VanEck Biotech ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BBIO",
         "Company Name": "BridgeBio Pharma, Inc.",
         "Is ETF": false
@@ -2210,11 +2010,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BCLO",
-        "Company Name": "iShares BBB-B CLO Active ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BCML",
         "Company Name": "BayCom Corp",
         "Is ETF": false
@@ -2238,11 +2033,6 @@
         "Ticker": "BCYC",
         "Company Name": "Bicycle Therapeutics plc",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BDGS",
-        "Company Name": "Bridges Capital Tactical ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BDMD",
@@ -2300,16 +2090,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BEEX",
-        "Company Name": "The BeeHive ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BEEZ",
-        "Company Name": "Honeytree U.S. Equity ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BELFA",
         "Company Name": "Bel Fuse Inc.",
         "Is ETF": false
@@ -2318,11 +2098,6 @@
         "Ticker": "BELFB",
         "Company Name": "Bel Fuse Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BELT",
-        "Company Name": "iShares Long-Term U.S. Equity Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BENF",
@@ -2378,16 +2153,6 @@
         "Ticker": "BGM",
         "Company Name": "BGM Group Ltd.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BGRN",
-        "Company Name": "iShares USD Green Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BGRO",
-        "Company Name": "iShares Large Cap Growth Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BHAT",
@@ -2480,11 +2245,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BITS",
-        "Company Name": "Global X Blockchain & Bitcoin Strategy ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BIVI",
         "Company Name": "BioVie Inc.",
         "Is ETF": false
@@ -2500,19 +2260,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BJK",
-        "Company Name": "VanEck Gaming ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BJRI",
         "Company Name": "BJ's Restaurants, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BKCH",
-        "Company Name": "Global X Blockchain ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BKHA",
@@ -2530,11 +2280,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BKIV",
-        "Company Name": "BNY Mellon Innovators ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BKNG",
         "Company Name": "Booking Holdings Inc.",
         "Is ETF": false
@@ -2543,11 +2288,6 @@
         "Ticker": "BKR",
         "Company Name": "Baker Hughes Company",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BKWO",
-        "Company Name": "BNY Mellon Women's Opportunities ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BKYI",
@@ -2568,16 +2308,6 @@
         "Ticker": "BLBX",
         "Company Name": "Blackboxstocks Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BLCN",
-        "Company Name": "Siren Nasdaq NexGen Economy ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BLCR",
-        "Company Name": "iShares Large Cap Core Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BLDE",
@@ -2650,19 +2380,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BMAX",
-        "Company Name": "REX Bitcoin Corporate Treasury Convertible Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BMBL",
         "Company Name": "Bumble Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BMDL",
-        "Company Name": "VictoryShares WestEnd Economic Cycle Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BMEA",
@@ -2698,21 +2418,6 @@
         "Ticker": "BNAI",
         "Company Name": "Brand Engagement Network, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BND",
-        "Company Name": "Vanguard Total Bond Market Index Fund",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BNDW",
-        "Company Name": "Vanguard Total World Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BNDX",
-        "Company Name": "Vanguard Total International Bond Index Fund",
-        "Is ETF": true
     },
     {
         "Ticker": "BNGO",
@@ -2783,16 +2488,6 @@
         "Ticker": "BOTJ",
         "Company Name": "Bank of the James Financial Group, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BOTT",
-        "Company Name": "Themes Robotics & Automation ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BOTZ",
-        "Company Name": "Global X Robotics & Artificial Intelligence ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BOWN",
@@ -2870,11 +2565,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BRHY",
-        "Company Name": "iShares High Yield Active ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BRID",
         "Company Name": "Bridgford Foods Corporation",
         "Is ETF": false
@@ -2915,11 +2605,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BRNY",
-        "Company Name": "Burney U.S. Factor Rotation ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BROG",
         "Company Name": "Brooge Energy Limited",
         "Is ETF": false
@@ -2928,11 +2613,6 @@
         "Ticker": "BRRR",
         "Company Name": "CoinShares Bitcoin ETF",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BRTR",
-        "Company Name": "iShares Total Return Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BRTX",
@@ -2955,56 +2635,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BSCP",
-        "Company Name": "Invesco BulletShares 2025 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSCQ",
-        "Company Name": "Invesco BulletShares 2026 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSCR",
-        "Company Name": "Invesco BulletShares 2027 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSCS",
-        "Company Name": "Invesco BulletShares 2028 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSCT",
-        "Company Name": "Invesco BulletShares 2029 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSCU",
-        "Company Name": "Invesco BulletShares 2030 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSCV",
-        "Company Name": "Invesco BulletShares 2031 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSCW",
-        "Company Name": "Invesco Bulletshares 2032 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSCX",
-        "Company Name": "Invesco Bulletshares 2033 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSCY",
-        "Company Name": "Invesco BulletShares 2034 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BSET",
         "Company Name": "Bassett Furniture Industries, Incorporated",
         "Is ETF": false
@@ -3025,94 +2655,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BSJP",
-        "Company Name": "Invesco BulletShares 2025 High Yield Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSJQ",
-        "Company Name": "Invesco BulletShares 2026 High Yield Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSJR",
-        "Company Name": "Invesco BulletShares 2027 High Yield Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSJS",
-        "Company Name": "Invesco BulletShares 2028 High Yield Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSJT",
-        "Company Name": "Invesco BulletShares 2029 High Yield Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSJU",
-        "Company Name": "Invesco Bulletshares 2030 High Yield Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSJV",
-        "Company Name": "Invesco BulletShares 2031 High Yield Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSJW",
-        "Company Name": "Invesco BulletShares 2032 High Yield Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BSLK",
         "Company Name": "Bolt Projects Holdings, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BSMP",
-        "Company Name": "Invesco BulletShares (R) 2025 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSMQ",
-        "Company Name": "Invesco BulletShares (R) 2026 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSMR",
-        "Company Name": "Invesco BulletShares (R) 2027 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSMS",
-        "Company Name": "Invesco BulletShares (R) 2028 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSMT",
-        "Company Name": "Invesco BulletShares 2029 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSMU",
-        "Company Name": "Invesco BulletShares 2030 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSMV",
-        "Company Name": "Invesco BulletShares 2031 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSMW",
-        "Company Name": "Invesco Bulletshares 2032 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BSMY",
-        "Company Name": "Invesco Bulletshares 2034 Municipal Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BSRR",
@@ -3120,19 +2665,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BSSX",
-        "Company Name": "Invesco Bulletshares 2033 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BSVN",
         "Company Name": "Bank7 Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BSVO",
-        "Company Name": "EA Bridgeway Omni Small-Cap Value ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BSY",
@@ -3170,21 +2705,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BTF",
-        "Company Name": "CoinShares Bitcoin and Ether Strategy ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BTFX",
-        "Company Name": "CoinShares Bitcoin Futures Leveraged Strategy ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BTGD",
-        "Company Name": "STKd 100% Bitcoin & 100% Gold ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BTM",
         "Company Name": "Bitcoin Depot Inc.",
         "Is ETF": false
@@ -3215,26 +2735,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "BUFC",
-        "Company Name": "AB Conservative Buffer ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BUFI",
-        "Company Name": "AB International Buffer ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BUFM",
-        "Company Name": "AB Moderate Buffer ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "BUG",
-        "Company Name": "Global X Cybersecurity ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "BUJA",
         "Company Name": "Bukit Jalil Global Acquisition 1 Ltd",
         "Is ETF": false
@@ -3248,11 +2748,6 @@
         "Ticker": "BUJAU",
         "Company Name": "Bukit Jalil Global Acquisition 1 Ltd",
         "Is ETF": false
-    },
-    {
-        "Ticker": "BULD",
-        "Company Name": "Pacer BlueStar Engineering the Future ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "BUSE",
@@ -3340,11 +2835,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CA",
-        "Company Name": "Xtrackers California Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CAAS",
         "Company Name": "China Automotive Systems, Inc.",
         "Is ETF": false
@@ -3370,11 +2860,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CAFG",
-        "Company Name": "Pacer US Small Cap Cash Cows Growth Leaders ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CAKE",
         "Company Name": "The Cheesecake Factory Incorporated",
         "Is ETF": false
@@ -3383,11 +2868,6 @@
         "Ticker": "CALC",
         "Company Name": "CalciMedica, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CALI",
-        "Company Name": "BlackRock ETF Trust II - iShares Short-Term California Muni Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CALM",
@@ -3408,16 +2888,6 @@
         "Ticker": "CAN",
         "Company Name": "Canaan Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CANC",
-        "Company Name": "Tema Oncology ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "CANQ",
-        "Company Name": "Calamos Alternative Nasdaq & Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CAPN",
@@ -3485,16 +2955,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CARY",
-        "Company Name": "Angel Oak Income ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "CARZ",
-        "Company Name": "First Trust S-Network Future Vehicles & Technology ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CASH",
         "Company Name": "Pathward Financial, Inc.",
         "Is ETF": false
@@ -3518,11 +2978,6 @@
         "Ticker": "CASY",
         "Company Name": "Casey's General Stores, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CATH",
-        "Company Name": "Global X S&P 500 Catholic Values ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CATY",
@@ -3650,11 +3105,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CCNR",
-        "Company Name": "ALPS/CoreCommodity Natural Resources ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CCOI",
         "Company Name": "Cogent Communications Holdings, Inc.",
         "Is ETF": false
@@ -3665,19 +3115,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CCSB",
-        "Company Name": "Carbon Collective Short Duration Green Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CCSI",
         "Company Name": "Consensus Cloud Solutions, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CCSO",
-        "Company Name": "Carbon Collective Climate Solutions U.S. Equity ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CCTG",
@@ -3685,19 +3125,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CDC",
-        "Company Name": "VictoryShares US EQ Income Enhanced Volatility Wtd ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CDIO",
         "Company Name": "Cardio Diagnostics Holdings, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CDL",
-        "Company Name": "VictoryShares US Large Cap High Div Volatility Wtd ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CDLX",
@@ -3760,11 +3190,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CEFA",
-        "Company Name": "Global X S&P Catholic Values Developed ex-U.S. ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CEG",
         "Company Name": "Constellation Energy Corporation",
         "Is ETF": false
@@ -3815,11 +3240,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CEPI",
-        "Company Name": "REX Crypto Equity Premium Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CEPO",
         "Company Name": "Cantor Equity Partners I, Inc.",
         "Is ETF": false
@@ -3855,11 +3275,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CFA",
-        "Company Name": "VictoryShares US 500 Volatility Wtd ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CFBK",
         "Company Name": "CF Bankshares Inc.",
         "Is ETF": false
@@ -3878,11 +3293,6 @@
         "Ticker": "CFLT",
         "Company Name": "Confluent, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CFO",
-        "Company Name": "VictoryShares US 500 Enhanced Volatility Wtd ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CFSB",
@@ -4020,11 +3430,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CHPS",
-        "Company Name": "Xtrackers Semiconductor Select Equity ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CHR",
         "Company Name": "Cheer Holding, Inc.",
         "Is ETF": false
@@ -4095,11 +3500,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CIBR",
-        "Company Name": "First Trust NASDAQ Cybersecurity ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CIFR",
         "Company Name": "Cipher Mining Inc.",
         "Is ETF": false
@@ -4108,11 +3508,6 @@
         "Ticker": "CIGI",
         "Company Name": "Colliers International Group Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CIL",
-        "Company Name": "VictoryShares International Volatility Wtd ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CINF",
@@ -4225,21 +3620,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CLOA",
-        "Company Name": "iShares AAA CLO Active ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "CLOD",
-        "Company Name": "Themes Cloud Computing ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "CLOU",
-        "Company Name": "Global X Cloud Computing ETF Global X Cloud Computing ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CLOV",
         "Company Name": "Clover Health Investments, Corp.",
         "Is ETF": false
@@ -4288,11 +3668,6 @@
         "Ticker": "CLSK",
         "Company Name": "CleanSpark, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CLSM",
-        "Company Name": "Cabana Target Leading Sector Moderate ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CLST",
@@ -4383,11 +3758,6 @@
         "Ticker": "CNCK",
         "Company Name": "Coincheck Group N.V.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CNCR",
-        "Company Name": "Range Cancer Therapeutics Index ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CNDT",
@@ -4510,11 +3880,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "COIG",
-        "Company Name": "Leverage Shares 2X Long COIN Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "COIN",
         "Company Name": "Coinbase Global, Inc.",
         "Is ETF": false
@@ -4560,21 +3925,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "COMT",
-        "Company Name": "iShares GSCI Commodity Dynamic Roll Strategy ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "CONI",
-        "Company Name": "GraniteShares 1x Short COIN Daily ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "CONL",
-        "Company Name": "GraniteShares 2x Long COIN Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "COO",
         "Company Name": "The Cooper Companies, Inc.",
         "Is ETF": false
@@ -4588,21 +3938,6 @@
         "Ticker": "COOT",
         "Company Name": "Australian Oilseeds Holdings Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "COPJ",
-        "Company Name": "Sprott Junior Copper Miners ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "COPP",
-        "Company Name": "Sprott Copper Miners ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "CORO",
-        "Company Name": "iShares International Country Rotation Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CORT",
@@ -4635,16 +3970,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "COWG",
-        "Company Name": "Pacer US Large Cap Cash Cows Growth Leaders ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "COWS",
-        "Company Name": "Amplify Cash Flow Dividend Leaders ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "COYA",
         "Company Name": "Coya Therapeutics, Inc.",
         "Is ETF": false
@@ -4668,11 +3993,6 @@
         "Ticker": "CPIX",
         "Company Name": "Cumberland Pharmaceuticals Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CPLS",
-        "Company Name": "AB Core Plus Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CPOP",
@@ -4855,11 +4175,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CRWL",
-        "Company Name": "GraniteShares 2x Long CRWD Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CRWS",
         "Company Name": "Crown Crafts, Inc.",
         "Is ETF": false
@@ -4870,19 +4185,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CSA",
-        "Company Name": "VictoryShares US Small Cap Volatility Wtd ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CSAI",
         "Company Name": "Cloudastructure Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CSB",
-        "Company Name": "VictoryShares US Small Cap High Div Volatility Wtd ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CSBR",
@@ -4898,11 +4203,6 @@
         "Ticker": "CSCO",
         "Company Name": "Cisco Systems, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CSF",
-        "Company Name": "VictoryShares US Discovery Enhanced Volatility Wtd ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CSGP",
@@ -4973,11 +4273,6 @@
         "Ticker": "CTBI",
         "Company Name": "Community Trust Bancorp, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "CTEC",
-        "Company Name": "Global X CleanTech ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "CTHR",
@@ -5190,11 +4485,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "CZAR",
-        "Company Name": "Themes Natural Monopoly ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "CZFS",
         "Company Name": "Citizens Financial Services, Inc.",
         "Is ETF": false
@@ -5230,19 +4520,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DALI",
-        "Company Name": "First Trust Dorsey Wright DALI 1 ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DALN",
         "Company Name": "DallasNews Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "DAPP",
-        "Company Name": "VanEck Digital Transformation ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "DARE",
@@ -5275,11 +4555,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DAX",
-        "Company Name": "Global X DAX Germany ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DBVT",
         "Company Name": "DBV Technologies S.A.",
         "Is ETF": false
@@ -5288,11 +4563,6 @@
         "Ticker": "DBX",
         "Company Name": "Dropbox, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "DCAP",
-        "Company Name": "Unity Wealth Partners Dynamic Capital Appreciation & Options ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "DCBO",
@@ -5330,11 +4600,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DDIV",
-        "Company Name": "First Trust Dorsey Wright Momentum & Dividend ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DDOG",
         "Company Name": "Datadog, Inc.",
         "Is ETF": false
@@ -5348,16 +4613,6 @@
         "Ticker": "DECAU",
         "Company Name": "Denali Capital Acquisition Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "DECO",
-        "Company Name": "SPDR Galaxy Digital Asset Ecosystem ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "DEMZ",
-        "Company Name": "Democratic Large Cap Core ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "DENN",
@@ -5375,24 +4630,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DFGP",
-        "Company Name": "Dimensional Global Core Plus Fixed Income ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "DFGX",
-        "Company Name": "Dimensional Global Ex US Core Fixed Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DFLI",
         "Company Name": "Dragonfly Energy Holdings Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "DGCB",
-        "Company Name": "Dimensional Global Credit ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "DGICA",
@@ -5490,11 +4730,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DIVD",
-        "Company Name": "Altrius Global Dividend ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DJCO",
         "Company Name": "Daily Journal Corporation",
         "Is ETF": false
@@ -5513,11 +4748,6 @@
         "Ticker": "DLHC",
         "Company Name": "DLH Holdings Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "DLLL",
-        "Company Name": "GraniteShares 2x Long DELL Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "DLO",
@@ -5560,11 +4790,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DMAT",
-        "Company Name": "Global X Disruptive Materials ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DMLP",
         "Company Name": "Dorchester Minerals, L.P.",
         "Is ETF": false
@@ -5578,11 +4803,6 @@
         "Ticker": "DMRC",
         "Company Name": "Digimarc Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "DMXF",
-        "Company Name": "iShares ESG Advanced MSCI EAFE Index ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "DNLI",
@@ -5670,11 +4890,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DRIV",
-        "Company Name": "Global X Autonomous & Electric Vehicles ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DRMA",
         "Company Name": "Dermata Therapeutics, Inc.",
         "Is ETF": false
@@ -5740,11 +4955,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DTCR",
-        "Company Name": "Global X Data Center & Digital Infrastructure ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DTI",
         "Company Name": "Drilling Tools International Corporation",
         "Is ETF": false
@@ -5780,16 +4990,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DUKH",
-        "Company Name": "Ocean Park High Income ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "DUKX",
-        "Company Name": "Ocean Park International ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DUO",
         "Company Name": "Fangdd Network Group Ltd.",
         "Is ETF": false
@@ -5805,11 +5005,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DVAL",
-        "Company Name": "BrandywineGLOBAL Dynamic U.S. Large Cap Value ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DVAX",
         "Company Name": "Dynavax Technologies Corporation",
         "Is ETF": false
@@ -5820,46 +5015,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DVLU",
-        "Company Name": "First Trust Dorsey Wright Momentum & Value ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "DVOL",
-        "Company Name": "First Trust Dorsey Wright Momentum & Low Volatility ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "DVQQ",
-        "Company Name": "WEBs Defined Volatility QQQ ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "DVSP",
-        "Company Name": "WEBs Defined Volatility SPY ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "DVY",
-        "Company Name": "iShares Select Dividend ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "DWAS",
-        "Company Name": "Invesco DWA SmallCap Momentum ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "DWAW",
-        "Company Name": "AdvisorShares Dorsey Wright FSM All Cap World ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "DWSH",
-        "Company Name": "AdvisorShares Dorsey Wright Short ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DWSN",
         "Company Name": "Dawson Geophysical Company",
         "Is ETF": false
@@ -5868,11 +5023,6 @@
         "Ticker": "DWTX",
         "Company Name": "Dogwood Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "DWUS",
-        "Company Name": "AdvisorShares Dorsey Wright FSM US Core ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "DXCM",
@@ -5925,19 +5075,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "DYFI",
-        "Company Name": "IDX Dynamic Fixed Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "DYN",
         "Company Name": "Dyne Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "DYNI",
-        "Company Name": "IDX Dynamic Innovation ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "DYNX",
@@ -5948,11 +5088,6 @@
         "Ticker": "DYNXU",
         "Company Name": "Dynamix Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "DYTA",
-        "Company Name": "SGI Dynamic Tactical ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "EA",
@@ -5968,16 +5103,6 @@
         "Ticker": "EBC",
         "Company Name": "Eastern Bankshares, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "EBI",
-        "Company Name": "Longview Advantage ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "EBIZ",
-        "Company Name": "Global X E-commerce ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "EBMT",
@@ -6010,11 +5135,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ECOW",
-        "Company Name": "Pacer Emerging Markets Cash Cows 100 ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ECPG",
         "Company Name": "Encore Capital Group, Inc.",
         "Is ETF": false
@@ -6038,11 +5158,6 @@
         "Ticker": "EDIT",
         "Company Name": "Editas Medicine, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "EDOC",
-        "Company Name": "Global X HealthTech ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "EDRY",
@@ -6075,24 +5190,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "EEMA",
-        "Company Name": "iShares MSCI Emerging Markets Asia ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "EFAS",
-        "Company Name": "Global X MSCI SuperDividend EAFE ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "EFOI",
         "Company Name": "Energy Focus, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "EFRA",
-        "Company Name": "iShares Environmental Infrastructure and Industrials ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "EFSC",
@@ -6115,11 +5215,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "EGGQ",
-        "Company Name": "NestYield Visionary ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "EGHT",
         "Company Name": "8x8, Inc.",
         "Is ETF": false
@@ -6140,11 +5235,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "EHLS",
-        "Company Name": "Even Herd Long Short ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "EHTH",
         "Company Name": "eHealth, Inc.",
         "Is ETF": false
@@ -6153,11 +5243,6 @@
         "Ticker": "EJH",
         "Company Name": "E-Home Household Service Holdings Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "EKG",
-        "Company Name": "First Trust Nasdaq Lux Digital Health Solutions ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "EKSO",
@@ -6240,11 +5325,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "EMB",
-        "Company Name": "iShares J.P. Morgan USD Emerging Markets Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "EMBC",
         "Company Name": "Embecta Corp.",
         "Is ETF": false
@@ -6270,29 +5350,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "EMEQ",
-        "Company Name": "Macquarie Focused Emerging Markets Equity ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "EMIF",
-        "Company Name": "iShares Emerging Markets Infrastructure ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "EML",
         "Company Name": "The Eastern Company",
         "Is ETF": false
-    },
-    {
-        "Ticker": "EMXC",
-        "Company Name": "iShares MSCI Emerging Markets ex China ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "EMXF",
-        "Company Name": "iShares ESG Advanced MSCI EM ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ENGN",
@@ -6355,11 +5415,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ENZL",
-        "Company Name": "iShares MSCI New Zealand ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "EOLS",
         "Company Name": "Evolus, Inc.",
         "Is ETF": false
@@ -6410,19 +5465,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "EQRR",
-        "Company Name": "ProShares Equities for Rising Rates ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ERAS",
         "Company Name": "Erasca, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ERET",
-        "Company Name": "Ishares Environmentally Aware Real Estate ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ERIC",
@@ -6445,11 +5490,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ERNZ",
-        "Company Name": "TrueShares Active Yield ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ESCA",
         "Company Name": "Escalade, Incorporated",
         "Is ETF": false
@@ -6458,16 +5498,6 @@
         "Ticker": "ESEA",
         "Company Name": "Euroseas Ltd.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ESGD",
-        "Company Name": "iShares ESG Aware MSCI EAFE ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "ESGE",
-        "Company Name": "iShares ESG Aware MSCI EM ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ESGL",
@@ -6483,11 +5513,6 @@
         "Ticker": "ESGRO",
         "Company Name": "Enstar Group Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ESGU",
-        "Company Name": "iShares ESG Aware MSCI USA ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ESHA",
@@ -6510,24 +5535,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ESMV",
-        "Company Name": "iShares ESG MSCI USA Min Vol Factor ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "ESN",
-        "Company Name": "Essential 40 Stock ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ESOA",
         "Company Name": "Energy Services of America Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ESPO",
-        "Company Name": "VanEck Video Gaming and eSports ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ESPR",
@@ -6548,16 +5558,6 @@
         "Ticker": "ESTA",
         "Company Name": "Establishment Labs Holdings Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ETEC",
-        "Company Name": "iShares Breakthrough Environmental Solutions ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "ETHA",
-        "Company Name": "iShares Ethereum Trust ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ETNB",
@@ -6583,11 +5583,6 @@
         "Ticker": "EUDA",
         "Company Name": "EUDA Health Holdings Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "EUFN",
-        "Company Name": "iShares MSCI Europe Financials ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "EURK",
@@ -6635,11 +5630,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "EVMT",
-        "Company Name": "Invesco Electric Vehicle Metals Commodity Strategy No K-1 ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "EVO",
         "Company Name": "Evotec SE",
         "Is ETF": false
@@ -6655,19 +5645,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "EVSD",
-        "Company Name": "Eaton Vance Short Duration Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "EVTV",
         "Company Name": "Envirotech Vehicles, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "EVYM",
-        "Company Name": "Eaton Vance High Income Municipal ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "EWBC",
@@ -6680,19 +5660,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "EWJV",
-        "Company Name": "iShares MSCI Japan Value ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "EWTX",
         "Company Name": "Edgewise Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "EWZS",
-        "Company Name": "iShares MSCI Brazil Small-Cap ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "EXAS",
@@ -6770,11 +5740,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "EYEG",
-        "Company Name": "AB Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "EYEN",
         "Company Name": "Eyenovia, Inc.",
         "Is ETF": false
@@ -6800,11 +5765,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FAAR",
-        "Company Name": "First Trust Alternative Absolute Return Strategy ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FAAS",
         "Company Name": "DigiAsia Corp.",
         "Is ETF": false
@@ -6828,11 +5788,6 @@
         "Ticker": "FAD",
         "Company Name": "First Trust Multi Cap Growth AlphaDEX Fund",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FALN",
-        "Company Name": "iShares Fallen Angels USD Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FAMI",
@@ -6900,11 +5855,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FBL",
-        "Company Name": "GraniteShares 2x Long META Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FBLA",
         "Company Name": "FB Bancorp, Inc.",
         "Is ETF": false
@@ -6918,11 +5868,6 @@
         "Ticker": "FBNC",
         "Company Name": "First Bancorp",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FBOT",
-        "Company Name": "Fidelity Disruptive Automation ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FBRX",
@@ -6945,11 +5890,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FCAL",
-        "Company Name": "First Trust California Municipal High Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FCAP",
         "Company Name": "First Capital, Inc.",
         "Is ETF": false
@@ -6963,11 +5903,6 @@
         "Ticker": "FCCO",
         "Company Name": "First Community Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FCEF",
-        "Company Name": "First Trust Income Opportunity ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FCEL",
@@ -6990,19 +5925,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FCTE",
-        "Company Name": "SMI 3Fourteen Full-Cycle Trend ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FCUV",
         "Company Name": "Focus Universal Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FCVT",
-        "Company Name": "First Trust SSI Strategic Convertible Securities ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FDBC",
@@ -7010,39 +5935,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FDCF",
-        "Company Name": "Fidelity Disruptive Communications ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FDFF",
-        "Company Name": "Fidelity Disruptive Finance ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FDIF",
-        "Company Name": "Fidelity Disruptors ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FDIG",
-        "Company Name": "Fidelity Crypto Industry and Digital Payments ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FDIV",
-        "Company Name": "MarketDesk Focused U.S. Dividend ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FDMT",
         "Company Name": "4D Molecular Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FDNI",
-        "Company Name": "First Trust Dow Jones International Internet ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FDSB",
@@ -7060,11 +5955,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FDTX",
-        "Company Name": "Fidelity Disruptive Technology ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FDUS",
         "Company Name": "Fidus Investment Corporation",
         "Is ETF": false
@@ -7073,11 +5963,6 @@
         "Ticker": "FEAM",
         "Company Name": "5E Advanced Materials, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FEAT",
-        "Company Name": "YieldMax Dorsey Wright Featured 5 Income ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FEBO",
@@ -7100,11 +5985,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FEMB",
-        "Company Name": "First Trust Emerging Markets Local Currency Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FEMS",
         "Company Name": "First Trust Emerging Markets Small Cap AlphaDEX Fund",
         "Is ETF": false
@@ -7125,11 +6005,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FEPI",
-        "Company Name": "REX FANG & Innovation Equity Premium Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FER",
         "Company Name": "Ferrovial SE",
         "Is ETF": false
@@ -7138,11 +6013,6 @@
         "Ticker": "FERAU",
         "Company Name": "Fifth Era Acquisition Corp I Units",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FEUZ",
-        "Company Name": "First Trust Eurozone AlphaDEX ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FEX",
@@ -7255,29 +6125,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FICS",
-        "Company Name": "First Trust International Developed Cap Strength ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FID",
-        "Company Name": "First Trust S&P International Dividend Aristocrats ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FINE",
-        "Company Name": "Themes European Luxury ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FINW",
         "Company Name": "FinWise Bancorp",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FINX",
-        "Company Name": "Global X FinTech ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FIP",
@@ -7310,16 +6160,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FIVY",
-        "Company Name": "YieldMax Dorsey Wright Hybrid 5 Income ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FIXD",
-        "Company Name": "First Trust TCW Opportunistic Fixed Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FIZZ",
         "Company Name": "National Beverage Corp.",
         "Is ETF": false
@@ -7343,11 +6183,6 @@
         "Ticker": "FLD",
         "Company Name": "Fold Holdings, Inc. Class A Common Stock",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FLDB",
-        "Company Name": "Fidelity Low Duration Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FLEX",
@@ -7425,29 +6260,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FMB",
-        "Company Name": "First Trust Managed Municipal ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FMBH",
         "Company Name": "First Mid Bancshares, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FMED",
-        "Company Name": "Fidelity Disruptive Medicine ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FMET",
-        "Company Name": "Fidelity Metaverse ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FMHI",
-        "Company Name": "First Trust Municipal High Income ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FMNB",
@@ -7458,11 +6273,6 @@
         "Ticker": "FMST",
         "Company Name": "Foremost Clean Energy Ltd.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FMTM",
-        "Company Name": "MarketDesk Focused U.S. Momentum ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FMTO",
@@ -7595,16 +6405,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FPXE",
-        "Company Name": "First Trust IPOX Europe Equity Opportunities ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FPXI",
-        "Company Name": "First Trust International Equity Opportunities ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FRAF",
         "Company Name": "Franklin Financial Services Corporation",
         "Is ETF": false
@@ -7675,11 +6475,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FSCS",
-        "Company Name": "First Trust SMID Capital Strength ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FSEA",
         "Company Name": "First Seacoast Bancorp, Inc.",
         "Is ETF": false
@@ -7688,11 +6483,6 @@
         "Ticker": "FSFG",
         "Company Name": "First Savings Financial Group, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FSGS",
-        "Company Name": "First Trust SMID Growth Strength ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FSHP",
@@ -7740,11 +6530,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FTAG",
-        "Company Name": "First Trust Indxx Global Agriculture ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FTAI",
         "Company Name": "FTAI Aviation Ltd.",
         "Is ETF": false
@@ -7770,19 +6555,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FTCS",
-        "Company Name": "First Trust Capital Strength ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FTDR",
         "Company Name": "Frontdoor, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FTDS",
-        "Company Name": "First Trust Dividend Strength ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FTEK",
@@ -7805,16 +6580,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FTGS",
-        "Company Name": "First Trust Growth Strength ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FTHI",
-        "Company Name": "First Trust BuyWrite Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FTHM",
         "Company Name": "Fathom Holdings Inc.",
         "Is ETF": false
@@ -7830,59 +6595,14 @@
         "Is ETF": false
     },
     {
-        "Ticker": "FTQI",
-        "Company Name": "First Trust Nasdaq BuyWrite Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FTRE",
         "Company Name": "Fortrea Holdings Inc.",
         "Is ETF": false
     },
     {
-        "Ticker": "FTRI",
-        "Company Name": "First Trust Indxx Global Natural Resources Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "FTSL",
         "Company Name": "First Trust Senior Loan Fund",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FTSM",
-        "Company Name": "First Trust Enhanced Short Maturity ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FTXG",
-        "Company Name": "First Trust Nasdaq Food & Beverage ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FTXH",
-        "Company Name": "First Trust Nasdaq Pharmaceuticals ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FTXL",
-        "Company Name": "First Trust Nasdaq Semiconductor ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FTXN",
-        "Company Name": "First Trust Nasdaq Oil & Gas ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FTXO",
-        "Company Name": "First Trust Nasdaq Bank ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FTXR",
-        "Company Name": "First Trust Nasdaq Transportation ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FUFU",
@@ -7918,16 +6638,6 @@
         "Ticker": "FUTU",
         "Company Name": "Futu Holdings Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "FV",
-        "Company Name": "First Trust Dorsey Wright Focus 5 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "FVC",
-        "Company Name": "First Trust Dorsey Wright Dynamic Focus 5 ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "FVCB",
@@ -8095,11 +6805,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "GBUG",
-        "Company Name": "Sprott Active Gold & Silver Miners ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "GCBC",
         "Company Name": "Greene County Bancorp, Inc.",
         "Is ETF": false
@@ -8210,11 +6915,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "GEME",
-        "Company Name": "Pacific NoS Global EM Equity Active ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "GEN",
         "Company Name": "Gen Digital Inc.",
         "Is ETF": false
@@ -8243,16 +6943,6 @@
         "Ticker": "GFAI",
         "Company Name": "Guardforce AI Co., Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "GFGF",
-        "Company Name": "Guru Favorite Stocks ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "GFLW",
-        "Company Name": "VictoryShares Free Cash Flow Growth ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "GFS",
@@ -8330,11 +7020,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "GINX",
-        "Company Name": "SGI Enhanced Global Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "GIPR",
         "Company Name": "Generation Income Properties, Inc.",
         "Is ETF": false
@@ -8385,11 +7070,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "GLCR",
-        "Company Name": "GlacierShares Nasdaq Iceland ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "GLDD",
         "Company Name": "Great Lakes Dredge & Dock Corporation",
         "Is ETF": false
@@ -8413,11 +7093,6 @@
         "Ticker": "GLNG",
         "Company Name": "Golar LNG Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "GLOW",
-        "Company Name": "VictoryShares WestEnd Global Equity ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "GLPG",
@@ -8495,16 +7170,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "GNMA",
-        "Company Name": "iShares GNMA Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "GNOM",
-        "Company Name": "Global X Genomics & Biotechnology ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "GNPX",
         "Company Name": "Genprex, Inc.",
         "Is ETF": false
@@ -8580,11 +7245,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "GOVI",
-        "Company Name": "Invesco Equal Weight 0-30 Years Treasury ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "GOVX",
         "Company Name": "GeoVax Labs, Inc.",
         "Is ETF": false
@@ -8610,34 +7270,14 @@
         "Is ETF": false
     },
     {
-        "Ticker": "GPIQ",
-        "Company Name": "Goldman Sachs Nasdaq-100 Core Premium Income ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "GPIX",
-        "Company Name": "Goldman Sachs S&P 500 Core Premium Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "GPRE",
         "Company Name": "Green Plains Inc.",
         "Is ETF": false
     },
     {
-        "Ticker": "GPRF",
-        "Company Name": "Goldman Sachs Access U.S. Preferred Stock and Hybrid Securities ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "GPRO",
         "Company Name": "GoPro, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "GQQQ",
-        "Company Name": "Astoria US Quality Growth Kings ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "GRAB",
@@ -8733,11 +7373,6 @@
         "Ticker": "GSHRU",
         "Company Name": "Gesher Acquisition Corp. II Units",
         "Is ETF": false
-    },
-    {
-        "Ticker": "GSIB",
-        "Company Name": "Themes Global Systemically Important Banks ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "GSIT",
@@ -8850,11 +7485,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "GXTG",
-        "Company Name": "Global X Dorsey Wright Thematic ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "GYRE",
         "Company Name": "Gyre Therapeutics, Inc.",
         "Is ETF": false
@@ -8935,11 +7565,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "HCOW",
-        "Company Name": "Amplify COWS Covered Call ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "HCSG",
         "Company Name": "Healthcare Services Group, Inc.",
         "Is ETF": false
@@ -8975,19 +7600,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "HECO",
-        "Company Name": "SPDR Galaxy Hedged Digital Asset Ecosystem ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "HEES",
         "Company Name": "H&E Equipment Services, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "HEJD",
-        "Company Name": "VictoryShares Hedged Equity Income ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "HELE",
@@ -9005,21 +7620,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "HEQQ",
-        "Company Name": "JPMorgan Nasdaq Hedged Equity Laddered Overlay ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "HERD",
-        "Company Name": "Pacer Cash Cows Fund of Funds ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "HERO",
-        "Company Name": "Global X Video Games & Esports ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "HFBL",
         "Company Name": "Home Federal Bancorp, Inc. of Louisiana",
         "Is ETF": false
@@ -9028,11 +7628,6 @@
         "Ticker": "HFFG",
         "Company Name": "HF Foods Group Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "HFSP",
-        "Company Name": "TradersAI Large Cap Equity & Cash ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "HFWA",
@@ -9050,11 +7645,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "HIDE",
-        "Company Name": "Alpha Architect High Inflation And Deflation ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "HIFS",
         "Company Name": "Hingham Institution for Savings",
         "Is ETF": false
@@ -9068,16 +7658,6 @@
         "Ticker": "HIMX",
         "Company Name": "Himax Technologies, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "HIMZ",
-        "Company Name": "Defiance Daily Target 2X Long HIMS ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "HISF",
-        "Company Name": "First Trust High Income Strategic Focus ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "HIT",
@@ -9103,11 +7683,6 @@
         "Ticker": "HKPD",
         "Company Name": "Hong Kong Pharma Digital Technology Holdings Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "HLAL",
-        "Company Name": "Wahed FTSE USA Shariah ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "HLIT",
@@ -9148,11 +7723,6 @@
         "Ticker": "HMST",
         "Company Name": "HomeStreet, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "HNDL",
-        "Company Name": "Strategy Shares Nasdaq 7 Handl Index ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "HNNA",
@@ -9225,19 +7795,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "HOOG",
-        "Company Name": "Leverage Shares 2X Long HOOD Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "HOOK",
         "Company Name": "HOOKIPA Pharma Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "HOOX",
-        "Company Name": "Defiance Daily Target 2X Long HOOD ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "HOPE",
@@ -9285,11 +7845,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "HQGO",
-        "Company Name": "Hartford US Quality Growth ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "HQI",
         "Company Name": "HireQuest, Inc.",
         "Is ETF": false
@@ -9318,11 +7873,6 @@
         "Ticker": "HROWM",
         "Company Name": "Harrow Health, Inc. 11.875% Senior Notes due 2027",
         "Is ETF": false
-    },
-    {
-        "Ticker": "HRTS",
-        "Company Name": "Tema Obesity & Cardiometabolic ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "HRTX",
@@ -9510,11 +8060,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "HWAY",
-        "Company Name": "Themes US Infrastructure ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "HWBK",
         "Company Name": "Hawthorn Bancshares, Inc.",
         "Is ETF": false
@@ -9545,24 +8090,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "HYBI",
-        "Company Name": "Neos ETF Trust - Neos Enhanced Income Credit Select ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "HYDR",
-        "Company Name": "Global X Hydrogen ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "HYFM",
         "Company Name": "Hydrofarm Holdings Group, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "HYLS",
-        "Company Name": "First Trust Tactical High Yield ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "HYMC",
@@ -9573,11 +8103,6 @@
         "Ticker": "HYPR",
         "Company Name": "Hyperfine, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "HYXF",
-        "Company Name": "iShares ESG Advanced High Yield Corporate Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "HYZD",
@@ -9615,21 +8140,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IBAT",
-        "Company Name": "iShares Energy Storage & Materials ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBB",
-        "Company Name": "iShares Biotechnology ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBBQ",
-        "Company Name": "Invesco Nasdaq Biotechnology ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IBCP",
         "Company Name": "Independent Bank Corporation",
         "Is ETF": false
@@ -9645,34 +8155,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IBGA",
-        "Company Name": "iShares iBonds Dec 2044 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBGB",
-        "Company Name": "iShares iBonds Dec 2045 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBGK",
-        "Company Name": "iShares iBonds Dec 2054 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBGL",
-        "Company Name": "iShares iBonds Dec 2055 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IBIO",
         "Company Name": "iBio, Inc. Common Stock",
         "Is ETF": false
-    },
-    {
-        "Ticker": "IBIT",
-        "Company Name": "iShares Bitcoin Trust ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "IBKR",
@@ -9685,69 +8170,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IBOT",
-        "Company Name": "Vaneck Robotics ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IBRX",
         "Company Name": "ImmunityBio, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "IBTF",
-        "Company Name": "iShares iBonds Dec 2025 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBTG",
-        "Company Name": "iShares iBonds Dec 2026 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBTH",
-        "Company Name": "iShares iBonds Dec 2027 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBTI",
-        "Company Name": "iShares iBonds Dec 2028 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBTJ",
-        "Company Name": "iShares iBonds Dec 2029 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBTK",
-        "Company Name": "iShares iBonds Dec 2030 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBTL",
-        "Company Name": "iShares iBonds Dec 2031 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBTM",
-        "Company Name": "iShares iBonds Dec 2032 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBTO",
-        "Company Name": "Ishares Ibonds Dec 2033 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBTP",
-        "Company Name": "iShares iBonds Dec 2034 Term Treasury ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IBTQ",
-        "Company Name": "iShares iBonds Dec 2035 Term Treasury ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ICAD",
@@ -9785,11 +8210,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ICLN",
-        "Company Name": "iShares Global Clean Energy ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ICLR",
         "Company Name": "ICON Public Limited Company",
         "Is ETF": false
@@ -9803,11 +8223,6 @@
         "Ticker": "ICON",
         "Company Name": "Icon Energy Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ICOP",
-        "Company Name": "Ishares Copper And Metals Mining ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ICU",
@@ -9845,16 +8260,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IEF",
-        "Company Name": "iShares 7-10 Year Treasury Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IEI",
-        "Company Name": "iShares 3-7 Year Treasury Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IEP",
         "Company Name": "Icahn Enterprises L.P.",
         "Is ETF": false
@@ -9865,39 +8270,14 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IEUS",
-        "Company Name": "iShares MSCI Europe Small-Cap ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IFBD",
         "Company Name": "Infobird Co., Ltd",
         "Is ETF": false
     },
     {
-        "Ticker": "IFGL",
-        "Company Name": "iShares International Developed Real Estate ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IFRX",
         "Company Name": "InflaRx N.V.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "IFV",
-        "Company Name": "First Trust Dorsey Wright International Focus 5 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IGF",
-        "Company Name": "iShares Global Infrastructure ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IGIB",
-        "Company Name": "iShares 5-10 Year Investment Grade Corporate Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "IGIC",
@@ -9910,24 +8290,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IGOV",
-        "Company Name": "iShares International Treasury Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IGSB",
-        "Company Name": "iShares 1-5 Year Investment Grade Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IHRT",
         "Company Name": "iHeartMedia, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "IHYF",
-        "Company Name": "Invesco High Yield Bond Factor ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "III",
@@ -9945,11 +8310,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IJT",
-        "Company Name": "iShares S&P Small-Cap 600 Growth ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IKNA",
         "Company Name": "Ikena Oncology, Inc.",
         "Is ETF": false
@@ -9963,11 +8323,6 @@
         "Ticker": "ILAG",
         "Company Name": "Intelligent Living Application Group Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ILIT",
-        "Company Name": "Ishares Lithium Miners And Producers ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ILLR",
@@ -9998,11 +8353,6 @@
         "Ticker": "IMCR",
         "Company Name": "Immunocore Holdings plc",
         "Is ETF": false
-    },
-    {
-        "Ticker": "IMCV",
-        "Company Name": "iShares Morningstar Mid-Cap Value ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "IMG",
@@ -10038,11 +8388,6 @@
         "Ticker": "IMNN",
         "Company Name": "Imunon, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "IMOM",
-        "Company Name": "Alpha Architect International Quantitative Momentum ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "IMOS",
@@ -10155,16 +8500,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "INDY",
-        "Company Name": "iShares India 50 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "INFR",
-        "Company Name": "ClearBridge Sustainable Infrastructure ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "INGN",
         "Company Name": "Inogen, Inc.",
         "Is ETF": false
@@ -10213,11 +8548,6 @@
         "Ticker": "INOD",
         "Company Name": "Innodata Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "INRO",
-        "Company Name": "iShares U.S. Industry Rotation Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "INSE",
@@ -10270,11 +8600,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "INTW",
-        "Company Name": "GraniteShares 2x Long INTC Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "INTZ",
         "Company Name": "Intrusion Inc.",
         "Is ETF": false
@@ -10310,11 +8635,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IONL",
-        "Company Name": "GraniteShares 2x Long IONQ Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IONR",
         "Company Name": "ioneer Ltd",
         "Is ETF": false
@@ -10323,11 +8643,6 @@
         "Ticker": "IONS",
         "Company Name": "Ionis Pharmaceuticals, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "IONX",
-        "Company Name": "Defiance Daily Target 2X Long IONQ ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "IOSP",
@@ -10365,11 +8680,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IPKW",
-        "Company Name": "Invesco International BuyBack Achievers ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IPM",
         "Company Name": "Intelligent Protection Management Corp.",
         "Is ETF": false
@@ -10398,11 +8708,6 @@
         "Ticker": "IQ",
         "Company Name": "iQIYI, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "IQQQ",
-        "Company Name": "ProShares Nasdaq-100 High Income ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "IRBT",
@@ -10470,16 +8775,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ISHG",
-        "Company Name": "iShares 1-3 Year International Treasury Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "ISHP",
-        "Company Name": "First Trust S-Network Global E-Commerce ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ISPC",
         "Company Name": "iSpecimen Inc.",
         "Is ETF": false
@@ -10513,11 +8808,6 @@
         "Ticker": "ISSC",
         "Company Name": "Innovative Solutions and Support, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ISTB",
-        "Company Name": "iShares Core 1-5 Year USD Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ISTR",
@@ -10555,26 +8845,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IUS",
-        "Company Name": "Invesco RAFI Strategic US ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IUSB",
-        "Company Name": "iShares Core Total USD Bond Market ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IUSG",
-        "Company Name": "iShares Core S&P U.S. Growth ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "IUSV",
-        "Company Name": "iShares Core S&P U.S. Value ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IVA",
         "Company Name": "Inventiva S.A.",
         "Is ETF": false
@@ -10583,11 +8853,6 @@
         "Ticker": "IVAC",
         "Company Name": "Intevac, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "IVAL",
-        "Company Name": "Alpha Architect International Quantitative Value ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "IVCA",
@@ -10605,11 +8870,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IVEG",
-        "Company Name": "iShares Emergent Food and AgTech Multisector ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IVP",
         "Company Name": "Inspire Veterinary Partners, Inc.",
         "Is ETF": false
@@ -10620,19 +8880,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "IWTR",
-        "Company Name": "iShares MSCI Water Management Multisector ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "IXHL",
         "Company Name": "Incannex Healthcare Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "IXUS",
-        "Company Name": "iShares Core MSCI Total International Stock ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "IZEA",
@@ -10710,19 +8960,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "JDOC",
-        "Company Name": "Jpmorgan Healthcare Leaders ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "JDZG",
         "Company Name": "JIADE Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "JEPQ",
-        "Company Name": "JPMorgan Nasdaq Equity Premium Income ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "JFB",
@@ -10750,16 +8990,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "JGLO",
-        "Company Name": "Jpmorgan Global Select Equity ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "JIVE",
-        "Company Name": "Jpmorgan International Value ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "JJSF",
         "Company Name": "J&J Snack Foods Corp.",
         "Is ETF": false
@@ -10773,11 +9003,6 @@
         "Ticker": "JL",
         "Company Name": "J-Long Group Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "JMID",
-        "Company Name": "Janus Henderson Mid Cap Growth Alpha ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "JMSB",
@@ -10800,11 +9025,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "JPEF",
-        "Company Name": "JPMorgan Equity Focus ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "JRSH",
         "Company Name": "Jerash Holdings (US), Inc.",
         "Is ETF": false
@@ -10820,16 +9040,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "JSMD",
-        "Company Name": "Janus Henderson Small/Mid Cap Growth Alpha ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "JSML",
-        "Company Name": "Janus Henderson Small Cap Growth Alpha ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "JSPR",
         "Company Name": "Jasper Therapeutics, Inc.",
         "Is ETF": false
@@ -10838,11 +9048,6 @@
         "Ticker": "JTAI",
         "Company Name": "Jet.AI Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "JTEK",
-        "Company Name": "JPMorgan U.S. Tech Leaders ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "JUNE",
@@ -10930,39 +9135,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "KBAB",
-        "Company Name": "KraneShares 2x Long BABA Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "KBSX",
         "Company Name": "FST Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "KBWB",
-        "Company Name": "Invesco KBW Bank ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "KBWD",
-        "Company Name": "Invesco KBW High Dividend Yield Financial ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "KBWP",
-        "Company Name": "Invesco KBW Property & Casualty Insurance ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "KBWR",
-        "Company Name": "Invesco KBW Regional Banking ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "KBWY",
-        "Company Name": "Invesco KBW Premium Yield Equity REIT ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "KC",
@@ -10983,11 +9158,6 @@
         "Ticker": "KE",
         "Company Name": "Kimball Electronics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "KEAT",
-        "Company Name": "Keating Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "KELYA",
@@ -11100,11 +9270,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "KNGZ",
-        "Company Name": "First Trust S&P 500 Diversified Dividend Aristocrats ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "KNSA",
         "Company Name": "Kiniksa Pharmaceuticals International, plc",
         "Is ETF": false
@@ -11125,11 +9290,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "KPDD",
-        "Company Name": "KraneShares 2x Long PDD Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "KPLT",
         "Company Name": "Katapult Holdings, Inc.",
         "Is ETF": false
@@ -11145,19 +9305,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "KQQQ",
-        "Company Name": "Kurv Technology Titans Select ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "KRKR",
         "Company Name": "36Kr Holdings Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "KRMA",
-        "Company Name": "Global X Conscious Companies ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "KRMD",
@@ -11178,11 +9328,6 @@
         "Ticker": "KRON",
         "Company Name": "Kronos Bio, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "KROP",
-        "Company Name": "Global X AgTech & Food Innovation ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "KROS",
@@ -11355,11 +9500,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "LAYS",
-        "Company Name": "STKd 100% NVDA & 100% AMD ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "LAZR",
         "Company Name": "Luminar Technologies, Inc.",
         "Is ETF": false
@@ -11400,11 +9540,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "LCDS",
-        "Company Name": "JPMorgan Fundamental Data Science Large Core ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "LCFY",
         "Company Name": "Locafy Limited",
         "Is ETF": false
@@ -11423,16 +9558,6 @@
         "Ticker": "LCUT",
         "Company Name": "Lifetime Brands, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "LDEM",
-        "Company Name": "iShares ESG MSCI EM Leaders ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "LDSF",
-        "Company Name": "First Trust Low Duration Strategic Focus ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "LDTC",
@@ -11475,11 +9600,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "LEGR",
-        "Company Name": "First Trust Indxx Innovative Transaction & Process ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "LENZ",
         "Company Name": "LENZ Therapeutics, Inc.",
         "Is ETF": false
@@ -11488,11 +9608,6 @@
         "Ticker": "LESL",
         "Company Name": "Leslie's, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "LEXI",
-        "Company Name": "Alexis Practical Tactical ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "LEXX",
@@ -11513,11 +9628,6 @@
         "Ticker": "LFMDP",
         "Company Name": "LifeMD, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "LFSC",
-        "Company Name": "F/m Emerald Life Sciences Innovation ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "LFST",
@@ -11543,11 +9653,6 @@
         "Ticker": "LGCB",
         "Company Name": "Linkage Global Inc",
         "Is ETF": false
-    },
-    {
-        "Ticker": "LGCF",
-        "Company Name": "Themes US Cash Flow Champions ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "LGCL",
@@ -11578,11 +9683,6 @@
         "Ticker": "LGO",
         "Company Name": "Largo Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "LGRO",
-        "Company Name": "Level Four Large Cap Growth Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "LGTY",
@@ -11680,11 +9780,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "LITP",
-        "Company Name": "Sprott Lithium Miners ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "LIVE",
         "Company Name": "Live Ventures Incorporated",
         "Is ETF": false
@@ -11693,11 +9788,6 @@
         "Ticker": "LIVN",
         "Company Name": "LivaNova PLC",
         "Is ETF": false
-    },
-    {
-        "Ticker": "LIVR",
-        "Company Name": "Intelligent Livermore ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "LIXT",
@@ -11733,11 +9823,6 @@
         "Ticker": "LMB",
         "Company Name": "Limbach Holdings, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "LMBS",
-        "Company Name": "First Trust Low Duration Opportunities ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "LMFA",
@@ -11910,11 +9995,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "LRGE",
-        "Company Name": "ClearBridge Large Cap Growth ESG ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "LRHC",
         "Company Name": "La Rosa Holdings Corp.",
         "Is ETF": false
@@ -11923,11 +10003,6 @@
         "Ticker": "LRMR",
         "Company Name": "Larimar Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "LRND",
-        "Company Name": "NYLI U.S. Large Cap R&D Leaders ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "LSAK",
@@ -12018,11 +10093,6 @@
         "Ticker": "LUNR",
         "Company Name": "Intuitive Machines, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "LVHD",
-        "Company Name": "Franklin U.S. Low Volatility High Dividend Index ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "LVLU",
@@ -12180,11 +10250,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MAXI",
-        "Company Name": "Simplify Bitcoin Strategy PLUS Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MAXN",
         "Company Name": "Maxeon Solar Technologies, Ltd.",
         "Is ETF": false
@@ -12225,11 +10290,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MBB",
-        "Company Name": "iShares MBS ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MBCN",
         "Company Name": "Middlefield Banc Corp.",
         "Is ETF": false
@@ -12265,11 +10325,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MBS",
-        "Company Name": "Angel Oak Mortgage-Backed Securities ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MBUU",
         "Company Name": "Malibu Boats, Inc.",
         "Is ETF": false
@@ -12290,29 +10345,14 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MCDS",
-        "Company Name": "JPMorgan Fundamental Data Science Mid Core ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MCFT",
         "Company Name": "MasterCraft Boat Holdings, Inc.",
         "Is ETF": false
     },
     {
-        "Ticker": "MCHI",
-        "Company Name": "iShares MSCI China ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MCHP",
         "Company Name": "Microchip Technology Incorporated",
         "Is ETF": false
-    },
-    {
-        "Ticker": "MCHS",
-        "Company Name": "Matthews China Discovery Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "MCHX",
@@ -12328,11 +10368,6 @@
         "Ticker": "MCRI",
         "Company Name": "Monarch Casino & Resort, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "MCSE",
-        "Company Name": "Martin Currie Sustainable International Equity ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "MCTR",
@@ -12363,11 +10398,6 @@
         "Ticker": "MDBH",
         "Company Name": "MDB Capital Holdings, LLC",
         "Is ETF": false
-    },
-    {
-        "Ticker": "MDCP",
-        "Company Name": "VictoryShares THB Mid Cap ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "MDCX",
@@ -12420,11 +10450,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MEDX",
-        "Company Name": "Horizon Kinetics Medical ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MEGL",
         "Company Name": "Magic Empire Global Limited",
         "Is ETF": false
@@ -12438,11 +10463,6 @@
         "Ticker": "MELI",
         "Company Name": "MercadoLibre, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "MEMS",
-        "Company Name": "Matthews Emerging Markets Discovery Active ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "MEOH",
@@ -12525,11 +10545,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MFLX",
-        "Company Name": "First Trust Flexible Municipal High Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MGEE",
         "Company Name": "MGE Energy, Inc.",
         "Is ETF": false
@@ -12610,11 +10625,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MILN",
-        "Company Name": "Global X Millennials Consumer ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MIMI",
         "Company Name": "Mint Incorporation Limited",
         "Is ETF": false
@@ -12643,11 +10653,6 @@
         "Ticker": "MITK",
         "Company Name": "Mitek Systems, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "MKAM",
-        "Company Name": "MKAM ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "MKDW",
@@ -12795,11 +10800,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MNTL",
-        "Company Name": "Tema Neuroscience And Mental Health ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MNTS",
         "Company Name": "Momentus Inc.",
         "Is ETF": false
@@ -12825,11 +10825,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MODL",
-        "Company Name": "Victoryshares Westend U.S. Sector ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MODV",
         "Company Name": "ModivCare Inc.",
         "Is ETF": false
@@ -12853,11 +10848,6 @@
         "Ticker": "MOMO",
         "Company Name": "Hello Group Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "MOOD",
-        "Company Name": "Relative Sentiment Tactical Allocation ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "MORN",
@@ -12888,16 +10878,6 @@
         "Ticker": "MQ",
         "Company Name": "Marqeta, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "MQQQ",
-        "Company Name": "Tradr 2X Long Triple Q Monthly ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MRAL",
-        "Company Name": "GraniteShares 2x Long MARA Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "MRAM",
@@ -13000,11 +10980,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MSFL",
-        "Company Name": "GraniteShares 2x Long MSFT Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MSFT",
         "Company Name": "Microsoft Corporation",
         "Is ETF": false
@@ -13048,11 +11023,6 @@
         "Ticker": "MSTR",
         "Company Name": "Strategy Incorporated",
         "Is ETF": false
-    },
-    {
-        "Ticker": "MSTX",
-        "Company Name": "Defiance Daily Target 2X Long MSTR ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "MSW",
@@ -13120,11 +11090,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MULL",
-        "Company Name": "GraniteShares 2x Long MU Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MULN",
         "Company Name": "Mullen Automotive, Inc.",
         "Is ETF": false
@@ -13150,11 +11115,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MVLL",
-        "Company Name": "GraniteShares 2x Long MRVL Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MVST",
         "Company Name": "Microvast Holdings, Inc.",
         "Is ETF": false
@@ -13175,51 +11135,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "MYCF",
-        "Company Name": "SPDR SSGA My2026 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYCG",
-        "Company Name": "SPDR SSGA My2027 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYCH",
-        "Company Name": "SPDR SSGA My2028 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYCI",
-        "Company Name": "SPDR SSGA My2029 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYCJ",
-        "Company Name": "SPDR SSGA My2030 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYCK",
-        "Company Name": "SPDR SSGA My2031 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYCL",
-        "Company Name": "SPDR SSGA My2032 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYCM",
-        "Company Name": "SPDR SSGA My2033 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYCN",
-        "Company Name": "SPDR SSGA My2034 Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "MYFW",
         "Company Name": "First Western Financial, Inc.",
         "Is ETF": false
@@ -13228,31 +11143,6 @@
         "Ticker": "MYGN",
         "Company Name": "Myriad Genetics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "MYMF",
-        "Company Name": "SPDR SSGA My2026 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYMG",
-        "Company Name": "SPDR SSGA My2027 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYMH",
-        "Company Name": "SPDR SSGA My2028 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYMI",
-        "Company Name": "SPDR SSGA My2029 Municipal Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "MYMJ",
-        "Company Name": "SPDR SSGA My2030 Municipal Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "MYNZ",
@@ -13313,11 +11203,6 @@
         "Ticker": "NATH",
         "Company Name": "Nathan's Famous, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "NATO",
-        "Company Name": "Themes Transatlantic Defense ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "NATR",
@@ -13385,11 +11270,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "NCIQ",
-        "Company Name": "Hashdex Nasdaq Crypto Index US ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "NCMI",
         "Company Name": "National CineMedia, Inc.",
         "Is ETF": false
@@ -13403,11 +11283,6 @@
         "Ticker": "NCNO",
         "Company Name": "nCino, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "NCPB",
-        "Company Name": "Nuveen Core Plus Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "NCPL",
@@ -13438,11 +11313,6 @@
         "Ticker": "NCTY",
         "Company Name": "The9 Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "NDAA",
-        "Company Name": "Ned Davis Research 360 Dynamic Allocation ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "NDAQ",
@@ -13505,11 +11375,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "NERD",
-        "Company Name": "Roundhill Video Games ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "NERV",
         "Company Name": "Minerva Neurosciences, Inc.",
         "Is ETF": false
@@ -13560,11 +11425,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "NEWZ",
-        "Company Name": "Stocksnips AI-Powered Sentiment US ALL Cap ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "NEXN",
         "Company Name": "Nexxen International Ltd.",
         "Is ETF": false
@@ -13588,11 +11448,6 @@
         "Ticker": "NFLX",
         "Company Name": "Netflix, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "NFTY",
-        "Company Name": "First Trust India NIFTY 50 Equal Weight ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "NFXL",
@@ -13635,11 +11490,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "NIKL",
-        "Company Name": "Sprott Nickel Miners ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "NIPG",
         "Company Name": "NIP Group Inc.",
         "Is ETF": false
@@ -13663,11 +11513,6 @@
         "Ticker": "NIVF",
         "Company Name": "NewGenIvf Group Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "NIXT",
-        "Company Name": "Research Affiliates Deletions ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "NIXX",
@@ -13790,11 +11635,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "NPFI",
-        "Company Name": "Nuveen Preferred And Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "NRC",
         "Company Name": "National Research Corporation",
         "Is ETF": false
@@ -13803,11 +11643,6 @@
         "Ticker": "NRDS",
         "Company Name": "NerdWallet, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "NRES",
-        "Company Name": "Xtrackers RREEF Global Natural Resources ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "NRIM",
@@ -13828,16 +11663,6 @@
         "Ticker": "NRXP",
         "Company Name": "NRx Pharmaceuticals, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "NSCR",
-        "Company Name": "Nuveen Sustainable Core ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "NSI",
-        "Company Name": "National Security Emerging Markets Index ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "NSIT",
@@ -13955,11 +11780,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "NUSB",
-        "Company Name": "Nuveen Ultra Short Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "NUTX",
         "Company Name": "Nutex Health Inc.",
         "Is ETF": false
@@ -13995,11 +11815,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "NVD",
-        "Company Name": "Graniteshares 2x Short NVDA Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "NVDA",
         "Company Name": "NVIDIA Corporation",
         "Is ETF": false
@@ -14008,21 +11823,6 @@
         "Ticker": "NVDD",
         "Company Name": "Direxion Daily NVDA Bear 1X Shares",
         "Is ETF": false
-    },
-    {
-        "Ticker": "NVDG",
-        "Company Name": "Leverage Shares 2X Long NVDA Daily ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "NVDL",
-        "Company Name": "GraniteShares 2x Long NVDA Daily ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "NVDS",
-        "Company Name": "Tradr 1.5X Short NVDA Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "NVDU",
@@ -14160,11 +11960,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "NXTG",
-        "Company Name": "First Trust IndXX NextG ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "NXTT",
         "Company Name": "Next Technology Holding Inc.",
         "Is ETF": false
@@ -14225,16 +12020,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "NZAC",
-        "Company Name": "SPDR MSCI ACWI Climate Paris Aligned ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "NZUS",
-        "Company Name": "SPDR MSCI USA Climate Paris Aligned ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "OABI",
         "Company Name": "OmniAb, Inc.",
         "Is ETF": false
@@ -14268,11 +12053,6 @@
         "Ticker": "OB",
         "Company Name": "Outbrain Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "OBIL",
-        "Company Name": "US Treasury 12 Month Bill ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "OBIO",
@@ -14363,11 +12143,6 @@
         "Ticker": "ODD",
         "Company Name": "Oddity Tech Ltd.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ODDS",
-        "Company Name": "Pacer BlueStar Digital Entertainment ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ODFL",
@@ -14525,11 +12300,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ONEQ",
-        "Company Name": "Fidelity Nasdaq Composite Index ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ONEW",
         "Company Name": "OneWater Marine Inc.",
         "Is ETF": false
@@ -14548,16 +12318,6 @@
         "Ticker": "ONVO",
         "Company Name": "Organovo Holdings, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "OOQB",
-        "Company Name": "One One Nasdaq-100 and Bitcoin ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "OOSB",
-        "Company Name": "One One S&P 500 and Bitcoin ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "OP",
@@ -14635,19 +12395,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "OPTZ",
-        "Company Name": "Optimize Strategy Index ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "OPXS",
         "Company Name": "Optex Systems Holdings, Inc",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ORCX",
-        "Company Name": "Defiance Daily Target 2X Long ORCL ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ORGN",
@@ -14688,11 +12438,6 @@
         "Ticker": "ORMP",
         "Company Name": "Oramed Pharmaceuticals Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ORR",
-        "Company Name": "Militia Long/Short Equity ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ORRF",
@@ -14850,11 +12595,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "OZEM",
-        "Company Name": "Roundhill Glp-1 & Weight Loss ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "OZK",
         "Company Name": "Bank OZK",
         "Is ETF": false
@@ -14868,16 +12608,6 @@
         "Ticker": "PAA",
         "Company Name": "Plains All American Pipeline, L.P.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PABD",
-        "Company Name": "iShares Paris-Aligned Climate MSCI World Ex USA ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PABU",
-        "Company Name": "iShares Paris-Aligned Climate MSCI USA ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PACB",
@@ -14920,11 +12650,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PANG",
-        "Company Name": "Leverage Shares 2X Long PANW Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PANL",
         "Company Name": "Pangaea Logistics Solutions, Ltd.",
         "Is ETF": false
@@ -14953,11 +12678,6 @@
         "Ticker": "PATK",
         "Company Name": "Patrick Industries, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PATN",
-        "Company Name": "Pacer Nasdaq International Patent Leaders ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PAVM",
@@ -15020,11 +12740,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PBQQ",
-        "Company Name": "PGIM Laddered Nasdaq-100 Buffer 12 ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PBYI",
         "Company Name": "Puma Biotechnology, Inc.",
         "Is ETF": false
@@ -15053,11 +12768,6 @@
         "Ticker": "PCLA",
         "Company Name": "PicoCELA Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PCMM",
-        "Company Name": "BondBloxx Private Credit CLO ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PCRX",
@@ -15100,16 +12810,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PDBA",
-        "Company Name": "Invesco Agriculture Commodity Strategy No K-1 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PDBC",
-        "Company Name": "Invesco Optimum Yield Diversified Commodity Strategy No K-1 ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PDCO",
         "Company Name": "Patterson Companies, Inc.",
         "Is ETF": false
@@ -15133,11 +12833,6 @@
         "Ticker": "PDLB",
         "Company Name": "Ponce Financial Group, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PDP",
-        "Company Name": "Invesco Dorsey Wright Momentum ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PDSB",
@@ -15190,11 +12885,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PEPS",
-        "Company Name": "Parametric Equity Plus ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PERI",
         "Company Name": "Perion Network Ltd.",
         "Is ETF": false
@@ -15225,24 +12915,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PEY",
-        "Company Name": "Invesco High Yield Equity Dividend Achievers ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PEZ",
-        "Company Name": "Invesco Dorsey Wright Consumer Cyclicals Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PFBC",
         "Company Name": "Preferred Bank",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PFF",
-        "Company Name": "iShares Preferred and Income Securities ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PFG",
@@ -15250,19 +12925,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PFI",
-        "Company Name": "Invesco Dorsey Wright Financial Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PFIS",
         "Company Name": "Peoples Financial Services Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PFM",
-        "Company Name": "Invesco Dividend Achievers ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PFX",
@@ -15288,11 +12953,6 @@
         "Ticker": "PGHL",
         "Company Name": "Primega Group Holdings Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PGJ",
-        "Company Name": "Invesco Golden Dragon China ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PGNY",
@@ -15330,11 +12990,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PHO",
-        "Company Name": "Invesco Water Resources ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PHUN",
         "Company Name": "Phunware, Inc.",
         "Is ETF": false
@@ -15350,16 +13005,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PID",
-        "Company Name": "Invesco International Dividend Achievers ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PIE",
-        "Company Name": "Invesco Dorsey Wright Emerging Markets Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PIII",
         "Company Name": "P3 Health Partners Inc.",
         "Is ETF": false
@@ -15370,19 +13015,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PIO",
-        "Company Name": "Invesco Global Water ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PITA",
         "Company Name": "Heramba Electric plc",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PIZ",
-        "Company Name": "Invesco Dorsey Wright Developed Markets Momentum ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PKBK",
@@ -15393,11 +13028,6 @@
         "Ticker": "PKOH",
         "Company Name": "Park-Ohio Holdings Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PKW",
-        "Company Name": "Invesco BuyBack Achievers ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PLAB",
@@ -15570,11 +13200,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PNQI",
-        "Company Name": "Invesco NASDAQ Internet ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PNRG",
         "Company Name": "PrimeEnergy Resources Corporation",
         "Is ETF": false
@@ -15670,16 +13295,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PPH",
-        "Company Name": "VanEck Pharmaceutical ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PPI",
-        "Company Name": "Astoria Real Asset ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PPIH",
         "Company Name": "Perma-Pipe International Holdings, Inc.",
         "Is ETF": false
@@ -15693,26 +13308,6 @@
         "Ticker": "PPTA",
         "Company Name": "Perpetua Resources Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PQAP",
-        "Company Name": "PGIM Nasdaq-100 Buffer 12 ETF - April",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PQJA",
-        "Company Name": "PGIM Nasdaq-100 Buffer 12 ETF - January",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PQJL",
-        "Company Name": "PGIM Nasdaq-100 Buffer 12 ETF - July",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PQOC",
-        "Company Name": "PGIM Nasdaq-100 Buffer 12 ETF - October",
-        "Is ETF": true
     },
     {
         "Ticker": "PRAA",
@@ -15750,11 +13345,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PRFZ",
-        "Company Name": "Invesco RAFI US 1500 Small-Mid ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PRGS",
         "Company Name": "Progress Software Corporation",
         "Is ETF": false
@@ -15768,11 +13358,6 @@
         "Ticker": "PRME",
         "Company Name": "Prime Medicine, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PRN",
-        "Company Name": "Invesco Dorsey Wright Industrials Momentum ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PROF",
@@ -15855,64 +13440,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PSC",
-        "Company Name": "Principal U.S. Small-Cap ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PSCC",
-        "Company Name": "Invesco S&P SmallCap Consumer Staples ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PSCD",
-        "Company Name": "Invesco S&P SmallCap Consumer Discretionary ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PSCE",
-        "Company Name": "Invesco S&P SmallCap Energy ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PSCF",
-        "Company Name": "Invesco S&P SmallCap Financials ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PSCH",
-        "Company Name": "Invesco S&P SmallCap Health Care ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PSCI",
-        "Company Name": "Invesco S&P SmallCap Industrials ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PSCM",
-        "Company Name": "Invesco S&P SmallCap Materials ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PSCT",
-        "Company Name": "Invesco S&P SmallCap Information Technology ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "PSCU",
-        "Company Name": "Invesco S&P SmallCap Utilities & Communication Services ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PSEC",
         "Company Name": "Prospect Capital Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PSET",
-        "Company Name": "Principal Quality ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PSHG",
@@ -15928,11 +13458,6 @@
         "Ticker": "PSIX",
         "Company Name": "Power Solutions International, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PSL",
-        "Company Name": "Invesco Dorsey Wright Consumer Staples Momentum ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PSMT",
@@ -15955,19 +13480,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PSTR",
-        "Company Name": "PeakShares Sector Rotation ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PSTV",
         "Company Name": "Plus Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PSWD",
-        "Company Name": "Xtrackers Cybersecurity Select Equity ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PT",
@@ -15985,19 +13500,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PTEC",
-        "Company Name": "Global X PropTech ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PTEN",
         "Company Name": "Patterson-UTI Energy, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PTF",
-        "Company Name": "Invesco Dorsey Wright Technology Momentum ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PTGX",
@@ -16005,19 +13510,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PTH",
-        "Company Name": "Invesco Dorsey Wright Healthcare Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PTHL",
         "Company Name": "Pheton Holdings Ltd",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PTIR",
-        "Company Name": "GraniteShares 2x Long PLTR Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PTIX",
@@ -16040,11 +13535,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PTNQ",
-        "Company Name": "Pacer Trendpilot 100 ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PTON",
         "Company Name": "Peloton Interactive, Inc.",
         "Is ETF": false
@@ -16063,11 +13553,6 @@
         "Ticker": "PUBM",
         "Company Name": "PubMatic, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PUI",
-        "Company Name": "Invesco Dorsey Wright Utilities Momentum ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PULM",
@@ -16100,11 +13585,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PXI",
-        "Company Name": "Invesco DWA Energy Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PXLW",
         "Company Name": "Pixelworks, Inc.",
         "Is ETF": false
@@ -16113,11 +13593,6 @@
         "Ticker": "PXS",
         "Company Name": "Pyxis Tankers Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "PY",
-        "Company Name": "Principal Value ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "PYCR",
@@ -16140,11 +13615,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "PYZ",
-        "Company Name": "Invesco DWA Basic Materials Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "PZZA",
         "Company Name": "Papa John's International, Inc.",
         "Is ETF": false
@@ -16155,34 +13625,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "QAT",
-        "Company Name": "iShares MSCI Qatar ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QBIG",
-        "Company Name": "Invesco Top QQQ ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QBUF",
-        "Company Name": "Innovator Nasdaq-100 10 Buffer ETF - Quarterly",
-        "Is ETF": true
-    },
-    {
         "Ticker": "QCLN",
         "Company Name": "First Trust NASDAQ Clean Edge Green Energy Index Fund",
         "Is ETF": false
-    },
-    {
-        "Ticker": "QCLR",
-        "Company Name": "Global X NASDAQ 100 Collar 95-110 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QCML",
-        "Company Name": "GraniteShares 2x Long QCOM Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "QCOM",
@@ -16198,11 +13643,6 @@
         "Ticker": "QDEL",
         "Company Name": "QuidelOrtho Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "QDTY",
-        "Company Name": "YieldMax Nasdaq 100 0DTE Covered Call Strategy ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "QETA",
@@ -16228,11 +13668,6 @@
         "Ticker": "QH",
         "Company Name": "Quhuo Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "QHDG",
-        "Company Name": "Innovator Hedged Nasdaq-100 ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "QIPT",
@@ -16265,11 +13700,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "QMOM",
-        "Company Name": "Alpha Architect U.S. Quantitative Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "QNCX",
         "Company Name": "Quince Therapeutics, Inc.",
         "Is ETF": false
@@ -16290,39 +13720,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "QNXT",
-        "Company Name": "iShares Nasdaq-100 ex Top 30 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QOWZ",
-        "Company Name": "Invesco Nasdaq Free Cash Flow Achievers ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QQA",
-        "Company Name": "Invesco QQQ Income Advantage ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "QQEW",
         "Company Name": "First Trust NASDAQ-100 Equal Weighted Index Fund",
         "Is ETF": false
-    },
-    {
-        "Ticker": "QQJG",
-        "Company Name": "Invesco ESG NASDAQ Next Gen 100 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QQLV",
-        "Company Name": "Invesco QQQ Low Volatility ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QQMG",
-        "Company Name": "Invesco ESG NASDAQ 100 ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "QQQ",
@@ -16330,64 +13730,14 @@
         "Is ETF": false
     },
     {
-        "Ticker": "QQQA",
-        "Company Name": "ProShares Nasdaq-100 Dorsey Wright Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "QQQE",
         "Company Name": "Direxion NASDAQ-100 Equal Weighted Index Shares",
         "Is ETF": false
     },
     {
-        "Ticker": "QQQG",
-        "Company Name": "Pacer Nasdaq 100 Top 50 Cash Cows Growth Leaders ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QQQH",
-        "Company Name": "NEOS Nasdaq-100 Hedged Equity Income ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QQQI",
-        "Company Name": "NEOS NASDAQ-100(R) High Income ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QQQJ",
-        "Company Name": "Invesco NASDAQ Next Gen 100 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QQQM",
-        "Company Name": "Invesco NASDAQ 100 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QQQP",
-        "Company Name": "Tradr 2X Long Triple Q Quarterly ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QQQS",
-        "Company Name": "Invesco NASDAQ Future Gen 200 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QQQT",
-        "Company Name": "Defiance Nasdaq 100 Income Target ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "QQQX",
         "Company Name": "Nuveen Nasdaq 100 Dynamic Overwrite Fund",
         "Is ETF": false
-    },
-    {
-        "Ticker": "QQQY",
-        "Company Name": "Defiance Nasdaq 100 Enhanced Options & 0DTE Income ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "QQXT",
@@ -16398,11 +13748,6 @@
         "Ticker": "QRHC",
         "Company Name": "Quest Resource Holding Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "QRMI",
-        "Company Name": "Global X NASDAQ 100 Risk Managed Income ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "QRVO",
@@ -16425,11 +13770,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "QSIX",
-        "Company Name": "Pacer Metarus Nasdaq 100 Dividend Multiplier 600 ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "QSML",
         "Company Name": "Wisdomtree U.S. Smallcap Quality Growth Fund",
         "Is ETF": false
@@ -16440,16 +13780,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "QTOP",
-        "Company Name": "iShares Nasdaq Top 30 Stocks ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QTR",
-        "Company Name": "Global X NASDAQ 100 Tail Risk ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "QTRX",
         "Company Name": "Quanterix Corporation",
         "Is ETF": false
@@ -16458,11 +13788,6 @@
         "Ticker": "QTTB",
         "Company Name": "Q32 Bio Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "QTUM",
-        "Company Name": "Defiance Quantum ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "QUBT",
@@ -16480,11 +13805,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "QVAL",
-        "Company Name": "Alpha Architect U.S. Quantitative Value ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "QVCGA",
         "Company Name": "QVC Group Inc.",
         "Is ETF": false
@@ -16498,26 +13818,6 @@
         "Ticker": "QVCGP",
         "Company Name": "QVC Group Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "QXQ",
-        "Company Name": "SGI Enhanced Nasdaq-100 ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QYLD",
-        "Company Name": "Global X NASDAQ 100 Covered Call ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "QYLG",
-        "Company Name": "Global X Nasdaq 100 Covered Call & Growth ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "RAA",
-        "Company Name": "SMI 3Fourteen REAL Asset Allocation ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "RADX",
@@ -16590,11 +13890,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "RAYS",
-        "Company Name": "Global X Solar ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "RBB",
         "Company Name": "RBB Bancorp",
         "Is ETF": false
@@ -16610,11 +13905,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "RBIL",
-        "Company Name": "F/m Ultrashort Treasury Inflation-Protected Security (TIPS) ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "RBKB",
         "Company Name": "Rhinebeck Bancorp, Inc.",
         "Is ETF": false
@@ -16628,11 +13918,6 @@
         "Ticker": "RCEL",
         "Company Name": "AVITA Medical, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "RCGE",
-        "Company Name": "RockCreek Global Equality ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "RCKT",
@@ -16710,16 +13995,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "RDTL",
-        "Company Name": "GraniteShares 2x Long RDDT Daily ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "RDTY",
-        "Company Name": "YieldMax R2000 0DTE Covered Strategy ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "RDUS",
         "Company Name": "Radius Recycling, Inc.",
         "Is ETF": false
@@ -16730,11 +14005,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "RDVY",
-        "Company Name": "First Trust Rising Dividend Achievers ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "RDWR",
         "Company Name": "Radware Ltd.",
         "Is ETF": false
@@ -16743,11 +14013,6 @@
         "Ticker": "RDZN",
         "Company Name": "Roadzen, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "REAI",
-        "Company Name": "Intelligent Real Estate ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "REAL",
@@ -16803,11 +14068,6 @@
         "Ticker": "REGN",
         "Company Name": "Regeneron Pharmaceuticals, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "REIT",
-        "Company Name": "ALPS Active REIT ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "REKR",
@@ -16888,21 +14148,6 @@
         "Ticker": "RFAIU",
         "Company Name": "RF Acquisition Corp II",
         "Is ETF": false
-    },
-    {
-        "Ticker": "RFDI",
-        "Company Name": "First Trust RiverFront Dynamic Developed International ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "RFEM",
-        "Company Name": "First Trust RiverFront Dynamic Emerging Markets ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "RFEU",
-        "Company Name": "First Trust RiverFront Dynamic Europe ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "RFIL",
@@ -17025,11 +14270,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "RING",
-        "Company Name": "iShares MSCI Global Gold Miners ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "RIOT",
         "Company Name": "Riot Platforms, Inc.",
         "Is ETF": false
@@ -17053,11 +14293,6 @@
         "Ticker": "RKLB",
         "Company Name": "Rocket Lab USA, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "RKLX",
-        "Company Name": "Defiance Daily Target 2X Long RKLB ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "RLAY",
@@ -17135,21 +14370,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "RNEM",
-        "Company Name": "First Trust Emerging Markets Equity Select ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "RNEW",
-        "Company Name": "VanEck Green Infrastructure ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "RNRG",
-        "Company Name": "Global X Renewable Energy Producers ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "RNTX",
         "Company Name": "Rein Therapeutics Inc.",
         "Is ETF": false
@@ -17170,19 +14390,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ROBT",
-        "Company Name": "First Trust Nasdaq Artificial Intelligence and Robotics ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ROCK",
         "Company Name": "Gibraltar Industries, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ROE",
-        "Company Name": "Astoria US Equal Weight Quality Kings ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ROIV",
@@ -17280,11 +14490,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "RTH",
-        "Company Name": "VanEck Retail ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "RUM",
         "Company Name": "Rumble Inc.",
         "Is ETF": false
@@ -17293,11 +14498,6 @@
         "Ticker": "RUN",
         "Company Name": "Sunrun Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "RUNN",
-        "Company Name": "Running Oak Efficient Growth ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "RUSHA",
@@ -17460,11 +14660,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SARK",
-        "Company Name": "Tradr 1X Short Innovation Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SASR",
         "Company Name": "Sandy Spring Bancorp, Inc.",
         "Is ETF": false
@@ -17540,11 +14735,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SCDS",
-        "Company Name": "JPMorgan Fundamental Data Science Small Core ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SCHL",
         "Company Name": "Scholastic Corporation",
         "Is ETF": false
@@ -17600,19 +14790,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SCZ",
-        "Company Name": "iShares MSCI EAFE Small-Cap ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SDA",
         "Company Name": "SunCar Technology Group Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SDG",
-        "Company Name": "iShares MSCI Global Sustainable Development Goals ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SDGR",
@@ -17625,24 +14805,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SDSI",
-        "Company Name": "American Century Short Duration Strategic Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SDST",
         "Company Name": "Stardust Power Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SDTY",
-        "Company Name": "YieldMax S&P 500 0DTE Covered Call Strategy ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SDVY",
-        "Company Name": "First Trust SMID Cap Rising Dividend Achievers ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SEAT",
@@ -17660,11 +14825,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SEEM",
-        "Company Name": "SEI Select Emerging Markets Equity ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SEER",
         "Company Name": "Seer, Inc.",
         "Is ETF": false
@@ -17673,16 +14833,6 @@
         "Ticker": "SEIC",
         "Company Name": "SEI Investments Company",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SEIE",
-        "Company Name": "SEI Select International Equity ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SEIS",
-        "Company Name": "SEI Select Small Cap ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SELF",
@@ -17720,11 +14870,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SETM",
-        "Company Name": "Sprott Critical Materials ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SEVN",
         "Company Name": "Seven Hills Realty Trust",
         "Is ETF": false
@@ -17753,11 +14898,6 @@
         "Ticker": "SFIX",
         "Company Name": "Stitch Fix, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SFLO",
-        "Company Name": "Victoryshares Small Cap Free Cash Flow ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SFM",
@@ -17905,21 +15045,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SHRY",
-        "Company Name": "First Trust Bloomberg Shareholder Yield ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SHV",
-        "Company Name": "iShares Short Treasury Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SHY",
-        "Company Name": "iShares 1-3 Year Treasury Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SHYF",
         "Company Name": "The Shyft Group, Inc.",
         "Is ETF": false
@@ -18005,24 +15130,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SIXG",
-        "Company Name": "Defiance Connective Technologies ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SJ",
         "Company Name": "Scienjoy Holding Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SJCP",
-        "Company Name": "SanJac Alpha Core Plus Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SJLD",
-        "Company Name": "SanJac Alpha Low Duration ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SJW",
@@ -18060,11 +15170,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SKRE",
-        "Company Name": "Tuttle Capital Daily 2X Inverse Regional Banks ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SKWD",
         "Company Name": "Skyward Specialty Insurance Group, Inc.",
         "Is ETF": false
@@ -18098,11 +15203,6 @@
         "Ticker": "SKYX",
         "Company Name": "SKYX Platforms Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SKYY",
-        "Company Name": "First Trust Cloud Computing ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SLAB",
@@ -18170,11 +15270,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SLQD",
-        "Company Name": "iShares 0-5 Year Investment Grade Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SLRC",
         "Company Name": "SLR Investment Corp.",
         "Is ETF": false
@@ -18200,11 +15295,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SLVR",
-        "Company Name": "Sprott Silver Miners & Physical Silver ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SLXN",
         "Company Name": "Silexion Therapeutics Corp",
         "Is ETF": false
@@ -18215,39 +15305,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SMCF",
-        "Company Name": "Themes US Small Cap Cash Flow Champions ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SMCI",
         "Company Name": "Super Micro Computer, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SMCL",
-        "Company Name": "GraniteShares 2x Long SMCI Daily ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SMCO",
-        "Company Name": "Hilton Small-Midcap Opportunity ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SMCX",
-        "Company Name": "Defiance Daily Target 2X Long SMCI ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SMH",
-        "Company Name": "VanEck Semiconductor ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SMHX",
-        "Company Name": "VanEck Fabless Semiconductor ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SMID",
@@ -18270,19 +15330,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SMRI",
-        "Company Name": "Bushido Capital US Equity ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SMSI",
         "Company Name": "Smith Micro Software, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SMST",
-        "Company Name": "Defiance Daily Target 2X Short MSTR ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SMTC",
@@ -18400,11 +15450,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SNSR",
-        "Company Name": "Global X Internet of Things ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SNT",
         "Company Name": "Senstar Technologies Corporation",
         "Is ETF": false
@@ -18440,19 +15485,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SOCL",
-        "Company Name": "Global X Social Media ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SOFI",
         "Company Name": "SoFi Technologies, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SOFX",
-        "Company Name": "Defiance Daily Target 2X Long SOFI ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SOGP",
@@ -18483,16 +15518,6 @@
         "Ticker": "SOHU",
         "Company Name": "Sohu.com Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SOLT",
-        "Company Name": "2x Solana ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SOLZ",
-        "Company Name": "Solana ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SOND",
@@ -18540,54 +15565,14 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SOXQ",
-        "Company Name": "Invesco PHLX Semiconductor ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SOXX",
-        "Company Name": "iShares Semiconductor ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SPAI",
         "Company Name": "Safe Pro Group Inc.",
         "Is ETF": false
     },
     {
-        "Ticker": "SPAM",
-        "Company Name": "Themes Cybersecurity ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SPAQ",
-        "Company Name": "Horizon Kinetics SPAC Active ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SPBC",
-        "Company Name": "Simplify US Equity PLUS Bitcoin Strategy ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SPC",
-        "Company Name": "CrossingBridge Pre-Merger SPAC ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SPCB",
         "Company Name": "SuperCom Ltd.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SPCX",
-        "Company Name": "SPAC and New Issue ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SPCY",
-        "Company Name": "STKd 100% SMCI & 100% NVDA ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SPFI",
@@ -18640,11 +15625,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SPRX",
-        "Company Name": "Spear Alpha ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SPRY",
         "Company Name": "ARS Pharmaceuticals, Inc.",
         "Is ETF": false
@@ -18670,11 +15650,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "SPYQ",
-        "Company Name": "Tradr 2X Long SPY Quarterly ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "SQFT",
         "Company Name": "Presidio Property Trust, Inc.",
         "Is ETF": false
@@ -18688,11 +15663,6 @@
         "Ticker": "SQFTW",
         "Company Name": "Presidio Property Trust, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SQLV",
-        "Company Name": "Royce Quant Small-Cap Quality Value ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SQQQ",
@@ -18718,11 +15688,6 @@
         "Ticker": "SRDX",
         "Company Name": "Surmodics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SRET",
-        "Company Name": "Global X SuperDividend REIT ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SRM",
@@ -18880,11 +15845,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "STNC",
-        "Company Name": "Hennessy Stance ESG ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "STNE",
         "Company Name": "StoneCo Ltd.",
         "Is ETF": false
@@ -18945,11 +15905,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "STSB",
-        "Company Name": "Stance Sustainable Beta ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "STSS",
         "Company Name": "Sharps Technology, Inc.",
         "Is ETF": false
@@ -18988,21 +15943,6 @@
         "Ticker": "SURG",
         "Company Name": "SurgePays, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SUSB",
-        "Company Name": "iShares ESG 1-5 Year USD Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SUSC",
-        "Company Name": "iShares ESG USD Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "SUSL",
-        "Company Name": "iShares ESG MSCI USA Leaders ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SUUN",
@@ -19093,11 +16033,6 @@
         "Ticker": "SWKS",
         "Company Name": "Skyworks Solutions, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "SWP",
-        "Company Name": "SWP Growth & Income ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "SWTX",
@@ -19200,11 +16135,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TARK",
-        "Company Name": "Tradr 2X Long Innovation ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TARS",
         "Company Name": "Tarsus Pharmaceuticals, Inc.",
         "Is ETF": false
@@ -19235,16 +16165,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TAX",
-        "Company Name": "Cambria Tax Aware ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "TAXE",
-        "Company Name": "T. Rowe Price Intermediate Municipal Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TAYD",
         "Company Name": "Taylor Devices, Inc.",
         "Is ETF": false
@@ -19263,11 +16183,6 @@
         "Ticker": "TBH",
         "Company Name": "Brag House Holdings, Inc. Common Stock",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TBIL",
-        "Company Name": "US Treasury 3 Month Bill ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TBLA",
@@ -19330,11 +16245,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TCHI",
-        "Company Name": "iShares MSCI China Multisector Tech ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TCMD",
         "Company Name": "Tactile Systems Technology, Inc.",
         "Is ETF": false
@@ -19380,24 +16290,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TDI",
-        "Company Name": "Touchstone Dynamic International ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TDIV",
         "Company Name": "First Trust NASDAQ Technology Dividend Index Fund",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TDSB",
-        "Company Name": "Cabana Target Beta ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "TDSC",
-        "Company Name": "Cabana Target Drawdown 10 ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TDTH",
@@ -19428,11 +16323,6 @@
         "Ticker": "TECX",
         "Company Name": "Tectonic Therapeutic, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TEKX",
-        "Company Name": "SPDR Galaxy Transformative Tech Accelerators ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TELA",
@@ -19615,19 +16505,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TLT",
-        "Company Name": "iShares 20+ Year Treasury Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TLX",
         "Company Name": "Telix Pharmaceuticals Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TMB",
-        "Company Name": "Thornburg Multi Sector Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TMC",
@@ -19643,11 +16523,6 @@
         "Ticker": "TMDX",
         "Company Name": "TransMedics Group, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TMET",
-        "Company Name": "iShares Transition-Enabling Metals ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TMUS",
@@ -19745,11 +16620,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TPLS",
-        "Company Name": "Thornburg Core Plus Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TPST",
         "Company Name": "Tempest Therapeutics, Inc.",
         "Is ETF": false
@@ -19758,11 +16628,6 @@
         "Ticker": "TQQQ",
         "Company Name": "ProShares UltraPro QQQ",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TQQY",
-        "Company Name": "GraniteShares YieldBOOST QQQ ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TRAW",
@@ -19910,16 +16775,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TSDD",
-        "Company Name": "Graniteshares 2x Short TSLA Daily ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "TSEL",
-        "Company Name": "Touchstone Sands Capital US Select Growth ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TSEM",
         "Company Name": "Tower Semiconductor Ltd.",
         "Is ETF": false
@@ -19930,19 +16785,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TSL",
-        "Company Name": "GraniteShares 1.25x Long Tsla Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TSLA",
         "Company Name": "Tesla, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TSLG",
-        "Company Name": "Leverage Shares 2X Long TSLA Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TSLL",
@@ -19950,29 +16795,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TSLQ",
-        "Company Name": "Tradr 2X Short TSLA Daily ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "TSLR",
-        "Company Name": "Graniteshares 2x Long TSLA Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TSLS",
         "Company Name": "Direxion Daily TSLA Bear 1X Shares",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TSMG",
-        "Company Name": "Themes ETF Trust - Leverage Shares 2X Long TSM Daily ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "TSMU",
-        "Company Name": "GraniteShares 2x Long TSM Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TSMX",
@@ -19985,11 +16810,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TSPY",
-        "Company Name": "TappAlpha SPY Growth & Daily Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TSSI",
         "Company Name": "TSS, Inc.",
         "Is ETF": false
@@ -19998,11 +16818,6 @@
         "Ticker": "TSVT",
         "Company Name": "2seventy bio, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TSYY",
-        "Company Name": "GraniteShares YieldBOOST TSLA ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TTAN",
@@ -20023,11 +16838,6 @@
         "Ticker": "TTEK",
         "Company Name": "Tetra Tech, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TTEQ",
-        "Company Name": "T. Rowe Price Technology ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TTGT",
@@ -20053,21 +16863,6 @@
         "Ticker": "TTWO",
         "Company Name": "Take-Two Interactive Software, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "TUG",
-        "Company Name": "STF Tactical Growth ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "TUGN",
-        "Company Name": "STF Tactical Growth & Income ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "TUR",
-        "Company Name": "iShares MSCI Turkey ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "TURB",
@@ -20145,21 +16940,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "TXSS",
-        "Company Name": "Texas Capital Texas Small Cap Equity Index ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "TXUE",
-        "Company Name": "Thornburg International Equity ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "TXUG",
-        "Company Name": "Thornburg International Growth ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "TYGO",
         "Company Name": "Tigo Energy, Inc.",
         "Is ETF": false
@@ -20180,11 +16960,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "UAE",
-        "Company Name": "iShares MSCI UAE ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "UAL",
         "Company Name": "United Airlines Holdings, Inc.",
         "Is ETF": false
@@ -20198,16 +16973,6 @@
         "Ticker": "UBFO",
         "Company Name": "United Security Bancshares",
         "Is ETF": false
-    },
-    {
-        "Ticker": "UBND",
-        "Company Name": "VictoryShares Core Plus Intermediate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "UBRL",
-        "Company Name": "GraniteShares 2x Long UBER Daily ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "UBSI",
@@ -20235,11 +17000,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "UCRD",
-        "Company Name": "VictoryShares ESG Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "UCTT",
         "Company Name": "Ultra Clean Holdings, Inc.",
         "Is ETF": false
@@ -20260,11 +17020,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "UEVM",
-        "Company Name": "VictoryShares Emerging Markets Value Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "UFCS",
         "Company Name": "United Fire Group, Inc.",
         "Is ETF": false
@@ -20273,16 +17028,6 @@
         "Ticker": "UFG",
         "Company Name": "Uni-Fuels Holdings Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "UFIV",
-        "Company Name": "The RBB Fund, Inc.- US Treasury 5 Year Note ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "UFO",
-        "Company Name": "Procure Space ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "UFPI",
@@ -20310,16 +17055,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "UITB",
-        "Company Name": "VictoryShares Core Intermediate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "UIVM",
-        "Company Name": "VictoryShares International Value Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "UK",
         "Company Name": "Ucommune International Ltd",
         "Is ETF": false
@@ -20345,11 +17080,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ULVM",
-        "Company Name": "VictoryShares US Value Momentum ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ULY",
         "Company Name": "Urgent.ly Inc.",
         "Is ETF": false
@@ -20358,11 +17088,6 @@
         "Ticker": "UMBF",
         "Company Name": "UMB Financial Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "UMMA",
-        "Company Name": "Wahed Dow Jones Islamic World ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "UNB",
@@ -20420,11 +17145,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "UPGR",
-        "Company Name": "Xtrackers US Green Infrastructure Select Equity ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "UPLD",
         "Company Name": "Upland Software, Inc.",
         "Is ETF": false
@@ -20455,11 +17175,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "URNJ",
-        "Company Name": "Sprott Junior Uranium Miners ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "UROY",
         "Company Name": "Uranium Royalty Corp.",
         "Is ETF": false
@@ -20485,16 +17200,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "USCL",
-        "Company Name": "Ishares Climate Conscious & Transition MSCI USA ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "USDX",
-        "Company Name": "SGI Enhanced Core ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "USEA",
         "Company Name": "United Maritime Corporation",
         "Is ETF": false
@@ -20505,19 +17210,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "USFI",
-        "Company Name": "Brandywineglobal-U.S. Fixed Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "USGO",
         "Company Name": "U.S. GoldMining Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "USIG",
-        "Company Name": "iShares Broad USD Investment Grade Corporate Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "USIN",
@@ -20535,24 +17230,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "USMC",
-        "Company Name": "Principal U.S. Mega-Cap ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "USOI",
         "Company Name": "UBS ETRACS Crude Oil Shares Covered Call ETN",
         "Is ETF": false
-    },
-    {
-        "Ticker": "USOY",
-        "Company Name": "Defiance Oil Enhanced Options Income ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "USRD",
-        "Company Name": "Themes US R&D Champions ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "USSH",
@@ -20560,39 +17240,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "USTB",
-        "Company Name": "VictoryShares Short-Term Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "USVM",
-        "Company Name": "VictoryShares US Small Mid Cap Value Momentum ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "USVN",
-        "Company Name": "US Treasury 7 Year Note ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "USXF",
-        "Company Name": "iShares ESG Advanced MSCI USA ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "UTEN",
-        "Company Name": "US Treasury 10 Year Note ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "UTHR",
         "Company Name": "United Therapeutics Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "UTHY",
-        "Company Name": "US Treasury 30 Year Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "UTMD",
@@ -20600,24 +17250,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "UTRE",
-        "Company Name": "US Treasury 3 Year Note ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "UTSI",
         "Company Name": "UTStarcom Holdings Corp.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "UTWO",
-        "Company Name": "US Treasury 2 Year Note ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "UTWY",
-        "Company Name": "US Treasury 20 Year Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "UVSP",
@@ -20628,11 +17263,6 @@
         "Ticker": "UXIN",
         "Company Name": "Uxin Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "UYLD",
-        "Company Name": "Angel Oak Ultrashort Income ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "UYSCU",
@@ -20675,11 +17305,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "VBIL",
-        "Company Name": "Vanguard 0-3 Month Treasury Bill ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "VBNK",
         "Company Name": "VersaBank",
         "Is ETF": false
@@ -20715,29 +17340,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "VCIT",
-        "Company Name": "Vanguard Intermediate-Term Corporate Bond Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VCLT",
-        "Company Name": "Vanguard Long-Term Corporate Bond Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VCRB",
-        "Company Name": "Vanguard Core Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "VCSA",
         "Company Name": "Vacasa, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "VCSH",
-        "Company Name": "Vanguard Short-Term Corporate Bond Index Fund ETF Shares",
-        "Is ETF": true
     },
     {
         "Ticker": "VCTR",
@@ -20810,11 +17415,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "VFLO",
-        "Company Name": "Victoryshares Free Cash Flow ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "VFS",
         "Company Name": "VinFast Auto Ltd.",
         "Is ETF": false
@@ -20823,31 +17423,6 @@
         "Ticker": "VGAS",
         "Company Name": "Verde Clean Fuels, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "VGIT",
-        "Company Name": "Vanguard Intermediate-Term Treasury Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VGLT",
-        "Company Name": "Vanguard Long-Term Treasury Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VGSH",
-        "Company Name": "Vanguard Short-Term Treasury Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VGSR",
-        "Company Name": "Vert Global Sustainable Real Estate ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VGUS",
-        "Company Name": "Vanguard Ultra-Short Treasury ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "VIASP",
@@ -20863,11 +17438,6 @@
         "Ticker": "VICR",
         "Company Name": "Vicor Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "VIGI",
-        "Company Name": "Vanguard International Dividend Appreciation Index Fund ETF Shares",
-        "Is ETF": true
     },
     {
         "Ticker": "VIGL",
@@ -20955,11 +17525,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "VMBS",
-        "Company Name": "Vanguard Mortgage-Backed Securities Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
         "Ticker": "VMD",
         "Company Name": "Viemed Healthcare, Inc.",
         "Is ETF": false
@@ -20985,34 +17550,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "VNQI",
-        "Company Name": "Vanguard Global ex-U.S. Real Estate Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
         "Ticker": "VOD",
         "Company Name": "Vodafone Group Public Limited Company",
         "Is ETF": false
-    },
-    {
-        "Ticker": "VOLT",
-        "Company Name": "Tema Electrification ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VONE",
-        "Company Name": "Vanguard Russell 1000 Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VONG",
-        "Company Name": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VONV",
-        "Company Name": "Vanguard Russell 1000 Value Index Fund ETF Shares",
-        "Is ETF": true
     },
     {
         "Ticker": "VOR",
@@ -21028,11 +17568,6 @@
         "Ticker": "VOXX",
         "Company Name": "VOXX International Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "VPLS",
-        "Company Name": "Vanguard Core-Plus Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "VRA",
@@ -21063,11 +17598,6 @@
         "Ticker": "VREX",
         "Company Name": "Varex Imaging Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "VRIG",
-        "Company Name": "Invesco Variable Rate Investment Grade ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "VRM",
@@ -21115,11 +17645,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "VRTL",
-        "Company Name": "GraniteShares 2x Long VRT Daily ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "VRTX",
         "Company Name": "Vertex Pharmaceuticals Incorporated",
         "Is ETF": false
@@ -21135,11 +17660,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "VSDA",
-        "Company Name": "VictoryShares Dividend Accelerator ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "VSEC",
         "Company Name": "VSE Corporation",
         "Is ETF": false
@@ -21153,11 +17673,6 @@
         "Ticker": "VSME",
         "Company Name": "VS MEDIA Holdings Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "VSMV",
-        "Company Name": "VictoryShares US Multi-Factor Minimum Volatility ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "VSSYW",
@@ -21180,24 +17695,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "VTC",
-        "Company Name": "Vanguard Total Corporate Bond ETF ETF Shares",
-        "Is ETF": true
-    },
-    {
         "Ticker": "VTGN",
         "Company Name": "Vistagen Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "VTHR",
-        "Company Name": "Vanguard Russell 3000 Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VTIP",
-        "Company Name": "Vanguard Short-Term Inflation-Protected Securities Index Fund ETF Shares",
-        "Is ETF": true
     },
     {
         "Ticker": "VTRS",
@@ -21213,21 +17713,6 @@
         "Ticker": "VTVT",
         "Company Name": "vTv Therapeutics Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "VTWG",
-        "Company Name": "Vanguard Russell 2000 Growth Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VTWO",
-        "Company Name": "Vanguard Russell 2000 Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "VTWV",
-        "Company Name": "Vanguard Russell 2000 Value Index Fund ETF Shares",
-        "Is ETF": true
     },
     {
         "Ticker": "VTYX",
@@ -21250,29 +17735,14 @@
         "Is ETF": false
     },
     {
-        "Ticker": "VWOB",
-        "Company Name": "Vanguard Emerging Markets Government Bond Index Fund",
-        "Is ETF": true
-    },
-    {
         "Ticker": "VXRT",
         "Company Name": "Vaxart, Inc.",
         "Is ETF": false
     },
     {
-        "Ticker": "VXUS",
-        "Company Name": "Vanguard Total International Stock Index Fund ETF Shares",
-        "Is ETF": true
-    },
-    {
         "Ticker": "VYGR",
         "Company Name": "Voyager Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "VYMI",
-        "Company Name": "Vanguard International High Dividend Yield Index Fund ETF Shares",
-        "Is ETF": true
     },
     {
         "Ticker": "VYNE",
@@ -21283,11 +17753,6 @@
         "Ticker": "WABC",
         "Company Name": "Westamerica Bancorporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "WABF",
-        "Company Name": "Western Asset Bond ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "WAFD",
@@ -21345,11 +17810,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "WBND",
-        "Company Name": "Western Asset Total Return ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "WBTN",
         "Company Name": "WEBTOON Entertainment Inc.",
         "Is ETF": false
@@ -21383,11 +17843,6 @@
         "Ticker": "WDFC",
         "Company Name": "WD-40 Company",
         "Is ETF": false
-    },
-    {
-        "Ticker": "WEEI",
-        "Company Name": "Westwood Salient Enhanced Energy Income ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "WEN",
@@ -21433,11 +17888,6 @@
         "Ticker": "WFRD",
         "Company Name": "Weatherford International plc",
         "Is ETF": false
-    },
-    {
-        "Ticker": "WGMI",
-        "Company Name": "CoinShares Bitcoin Miners ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "WGRX",
@@ -21500,11 +17950,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "WINC",
-        "Company Name": "Western Asset Short Duration Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "WING",
         "Company Name": "Wingstop Inc.",
         "Is ETF": false
@@ -21513,11 +17958,6 @@
         "Ticker": "WINT",
         "Company Name": "Windtree Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "WISE",
-        "Company Name": "Themes Generative Artificial Intelligence ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "WIX",
@@ -21580,11 +18020,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "WNDY",
-        "Company Name": "Global X Wind Energy ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "WNEB",
         "Company Name": "Western New England Bancorp, Inc.",
         "Is ETF": false
@@ -21598,11 +18033,6 @@
         "Ticker": "WOK",
         "Company Name": "WORK Medical Technology Group LTD",
         "Is ETF": false
-    },
-    {
-        "Ticker": "WOOD",
-        "Company Name": "iShares Global Timber & Forestry ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "WOOF",
@@ -21633,11 +18063,6 @@
         "Ticker": "WRLD",
         "Company Name": "World Acceptance Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "WRND",
-        "Company Name": "NYLI Global Equity R&D Leaders ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "WSBC",
@@ -21740,16 +18165,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "XAIX",
-        "Company Name": "Xtrackers Artificial Intelligence and Big Data ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "XBIL",
-        "Company Name": "US Treasury 6 Month Bill ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "XBIO",
         "Company Name": "Xenetic Biosciences, Inc.",
         "Is ETF": false
@@ -21768,11 +18183,6 @@
         "Ticker": "XCH",
         "Company Name": "XCHG Limited",
         "Is ETF": false
-    },
-    {
-        "Ticker": "XCNY",
-        "Company Name": "SPDR S&P Emerging Markets ex-China ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "XCUR",
@@ -21800,11 +18210,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "XFIX",
-        "Company Name": "F/m Opportunistic Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "XFOR",
         "Company Name": "X4 Pharmaceuticals, Inc.",
         "Is ETF": false
@@ -21828,11 +18233,6 @@
         "Ticker": "XLO",
         "Company Name": "Xilio Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "XMAG",
-        "Company Name": "Defiance Large Cap ex-Mag 7 ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "XMTR",
@@ -21865,11 +18265,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "XOVR",
-        "Company Name": "ERShares Private-Public Crossover ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "XP",
         "Company Name": "XP Inc.",
         "Is ETF": false
@@ -21898,11 +18293,6 @@
         "Ticker": "XRX",
         "Company Name": "Xerox Holdings Corporation",
         "Is ETF": false
-    },
-    {
-        "Ticker": "XT",
-        "Company Name": "iShares Exponential Technologies ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "XTIA",
@@ -21985,19 +18375,9 @@
         "Is ETF": false
     },
     {
-        "Ticker": "YLDE",
-        "Company Name": "Franklin ClearBridge Enhanced Income ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "YMAB",
         "Company Name": "Y-mAbs Therapeutics, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "YOKE",
-        "Company Name": "YOKE Core ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "YORW",
@@ -22030,16 +18410,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "YQQQ",
-        "Company Name": "YieldMax Short N100 Option Income Strategy ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "YSPY",
-        "Company Name": "GraniteShares YieldBOOST SPY ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "YSXT",
         "Company Name": "YSX Tech. Co., Ltd",
         "Is ETF": false
@@ -22068,11 +18438,6 @@
         "Ticker": "Z",
         "Company Name": "Zillow Group, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ZAP",
-        "Company Name": "Global X U.S. Electrification ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "ZAPP",
@@ -22170,11 +18535,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ZIPP",
-        "Company Name": "STKd 100% UBER & 100% TSLA ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ZJK",
         "Company Name": "ZJK Industrial Co., Ltd.",
         "Is ETF": false
@@ -22230,21 +18590,6 @@
         "Is ETF": false
     },
     {
-        "Ticker": "ZTEN",
-        "Company Name": "F/M 10-Year Investment Grade Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "ZTRE",
-        "Company Name": "F/M 3-Year Investment Grade Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
-        "Ticker": "ZTWO",
-        "Company Name": "F/M 2-Year Investment Grade Corporate Bond ETF",
-        "Is ETF": true
-    },
-    {
         "Ticker": "ZUMZ",
         "Company Name": "Zumiez Inc.",
         "Is ETF": false
@@ -22298,11 +18643,6 @@
         "Ticker": "ZYXI",
         "Company Name": "Zynex, Inc.",
         "Is ETF": false
-    },
-    {
-        "Ticker": "ZZZ",
-        "Company Name": "CYBER HORNET S&P 500 and Bitcoin 75/25 Strategy ETF",
-        "Is ETF": true
     },
     {
         "Ticker": "File Creation Time: 0331202518:01",
