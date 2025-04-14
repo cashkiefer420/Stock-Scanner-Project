@@ -78,19 +78,21 @@ def sync_tickers_and_names():
     tickers_names = read_json_file(TICKERS_NAMES_PATH)
     formatted_tickers = read_json_file(FORMATTED_TICKERS_FILE_PATH)
 
-    # Assume tickers_names is a list of dicts
     names_dict = {item["Ticker"]: item["Company Name"] for item in tickers_names}
 
-    updated = False
-    for entry in formatted_tickers.get("tickers", []):
-        ticker = entry.get("Ticker")
-        if ticker in names_dict and entry.get("Company Name") != names_dict[ticker]:
-            entry["Company Name"] = names_dict[ticker]
-            updated = True
+    updated_tickers = []
+    for ticker in formatted_tickers.get("tickers", []):
+        company_name = names_dict.get(ticker, "")
+        updated_tickers.append({
+            "Ticker": ticker,
+            "Company Name": company_name,
+            "Is ETF": False
+        })
 
-    if updated:
-        write_json_file(FORMATTED_TICKERS_FILE_PATH, formatted_tickers)
-        logger.info("Formatted tickers updated with company names.")
+    updated_data = {"tickers": updated_tickers}
+    write_json_file(FORMATTED_TICKERS_FILE_PATH, updated_data)
+    logger.info("Formatted tickers updated with company names.")
+    
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
         user_agent = random.choice(USER_AGENTS)
