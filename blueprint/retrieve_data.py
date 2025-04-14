@@ -77,7 +77,9 @@ def get_historical_value(data, ticker, days_ago):
 def sync_tickers_and_names():
     tickers_names = read_json_file(TICKERS_NAMES_PATH)
     formatted_tickers = read_json_file(FORMATTED_TICKERS_FILE_PATH)
-    names_dict = {item["Ticker"]: item["Company Name"] for item in tickers_names.get("data", [])}
+
+    # Assume tickers_names is a list of dicts
+    names_dict = {item["Ticker"]: item["Company Name"] for item in tickers_names}
 
     updated = False
     for entry in formatted_tickers.get("tickers", []):
@@ -89,7 +91,6 @@ def sync_tickers_and_names():
     if updated:
         write_json_file(FORMATTED_TICKERS_FILE_PATH, formatted_tickers)
         logger.info("Formatted tickers updated with company names.")
-
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
         user_agent = random.choice(USER_AGENTS)
