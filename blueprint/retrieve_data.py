@@ -197,7 +197,8 @@ def main():
 
     existing_data_map = {item['Ticker']: item for item in export_data if isinstance(item, dict)}
 
-    with ThreadPoolExecutor(max_workers=10) as a:
+    # Corrected ThreadPoolExecutor block
+    with ThreadPoolExecutor(max_workers=10) as executor:
         results = list(executor.map(lambda entry: fetch_price(
             entry["Ticker"] if isinstance(entry, dict) else entry, pe_data, mc_data, export_data, today), tickers))
 
