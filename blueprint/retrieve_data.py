@@ -172,7 +172,9 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
 
 ### Main Function ###
 def main():
+    # Start the timer
     start_time = datetime.now()
+    logger.info(f"Script started at: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
 
     today = datetime.now().strftime("%Y-%m-%d")
     sync_tickers_and_names()
@@ -196,9 +198,11 @@ def main():
     write_json_file(PE_FILE_PATH, pe_data)
     write_json_file(MARKETCAP_FILE_PATH, mc_data)
 
-    elapsed_time = datetime.now() - start_time
-    logger.info(f"Processing complete. Execution time: {elapsed_time}")
-
+    # End the timer
+    end_time = datetime.now()
+    elapsed_time = end_time - start_time
+    logger.info(f"Processing complete. Script finished at: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.info(f"Total execution time: {elapsed_time}")
 
 if __name__ == "__main__":
     main()
