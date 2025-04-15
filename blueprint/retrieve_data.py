@@ -8,6 +8,7 @@ import numpy as np
 import requests
 from concurrent.futures import ThreadPoolExecutor
 import orjson
+from tenacity import retry, wait_exponential, stop_after_attempt
 
 # Logging setup
 logger = logging.getLogger()
@@ -51,12 +52,8 @@ def read_json_file(file_path):
 
 def write_json_file(file_path, data):
     try:
-        # Convert all non-serializable types in the data
-        serializable_data = json.loads(
-            orjson.dumps(data, default=convert_to_serializable)
-        )
         with open(file_path, "wb") as file:
-            file.write(orjson.dumps(serializable_data, option=orjson.OPT_INDENT_2))
+            file.write(orjson.dumps(data, option=orjson.OPT_INDENT_2))
     except Exception as e:
         logger.error(f"Error writing to {file_path}: {e}")
 
@@ -111,14 +108,23 @@ def sync_tickers_and_names():
     logger.info("Formatted tickers updated with company names.")
 
 
+@retry(wait=wait_exponential(multiplier=1, min=4, max=10), stop=stop_after_attempt(5))
+def fetch_stock_data(ticker):
+    """
+    Fetch historical stock data for the given ticker using yfinance.
+    Retries automatically on failure with exponential backoff.
+    """
+    logger.info(f"Fetching historical data for ticker: {ticker}")
+    return yf.Ticker(ticker).history(period="3mo")
+
+
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
         user_agent = random.choice(USER_AGENTS)
         session = requests.Session()
         session.headers.update({"User-Agent": user_agent})
 
-        stock = yf.Ticker(ticker)
-        hist_data = stock.history(period="3mo")
+        hist_data = fetch_stock_data(ticker)
 
         if hist_data.empty or 'Close' not in hist_data.columns or hist_data.shape[0] < 2:
             logger.warning(f"Not enough data for ticker {ticker}. Skipping.")
@@ -127,14 +133,14 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         current_price = hist_data['Close'].iloc[-1]
         prev_price = hist_data['Close'].iloc[-2]
         volume_today = hist_data['Volume'].iloc[-1] if 'Volume' in hist_data.columns else 'N/A'
-        avg_volume = stock.info.get('averageVolume', 'N/A')
+        avg_volume = yf.Ticker(ticker).info.get('averageVolume', 'N/A')
 
         export_entry = next((item for item in export_data if item.get('Ticker') == ticker), {})
         last_update = export_entry.get("Last Update", "")[:10]
 
         result = {
             'Ticker': ticker,
-            'Company Name': export_entry.get('Company Name', stock.info.get('shortName', 'N/A')),
+            'Company Name': export_entry.get('Company Name', yf.Ticker(ticker).info.get('shortName', 'N/A')),
             'Is ETF': export_entry.get('Is ETF', False),
             'Current Price': round(current_price, 2),
             'Price Change Today': calculate_percent_change(current_price, prev_price),
@@ -150,10 +156,10 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         if not result['Is ETF']:
             shares = export_entry.get('Shares Available', 'N/A')
             if today != last_update:
-                shares = stock.info.get('sharesOutstanding', 'N/A')
+                shares = yf.Ticker(ticker).info.get('sharesOutstanding', 'N/A')
 
-            pe = update_daily_value(pe_data, ticker, stock.info.get('trailingPE', 'N/A'), today)
-            mc = update_daily_value(mc_data, ticker, stock.info.get('marketCap', 'N/A'), today)
+            pe = update_daily_value(pe_data, ticker, yf.Ticker(ticker).info.get('trailingPE', 'N/A'), today)
+            mc = update_daily_value(mc_data, ticker, yf.Ticker(ticker).info.get('marketCap', 'N/A'), today)
 
             result.update({
                 'Shares Available': shares,
@@ -191,7 +197,7 @@ def main():
 
     existing_data_map = {item['Ticker']: item for item in export_data if isinstance(item, dict)}
 
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ThreadPoolExecutor(max_workers=10) as a:
         results = list(executor.map(lambda entry: fetch_price(
             entry["Ticker"] if isinstance(entry, dict) else entry, pe_data, mc_data, export_data, today), tickers))
 
