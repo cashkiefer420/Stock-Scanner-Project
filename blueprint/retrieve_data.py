@@ -51,8 +51,12 @@ def read_json_file(file_path):
 
 def write_json_file(file_path, data):
     try:
+        # Convert all non-serializable types in the data
+        serializable_data = json.loads(
+            orjson.dumps(data, default=convert_to_serializable)
+        )
         with open(file_path, "wb") as file:
-            file.write(orjson.dumps(data, option=orjson.OPT_INDENT_2))
+            file.write(orjson.dumps(serializable_data, option=orjson.OPT_INDENT_2))
     except Exception as e:
         logger.error(f"Error writing to {file_path}: {e}")
 
