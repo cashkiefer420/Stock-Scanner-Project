@@ -1,6 +1,11 @@
 {
     "tickers": [
         {
+            "Ticker": null,
+            "Company Name": "",
+            "Is ETF": false
+        },
+        {
             "Ticker": "AACBU",
             "Company Name": "Artius II Acquisition Inc. Units",
             "Is ETF": false
@@ -406,11 +411,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "AEVAW",
-            "Company Name": "Aeva Technologies, Inc. Warrants",
-            "Is ETF": false
-        },
-        {
             "Ticker": "AEYE",
             "Company Name": "AudioEye, Inc.",
             "Is ETF": false
@@ -427,11 +427,6 @@
         },
         {
             "Ticker": "AFJK",
-            "Company Name": "Aimei Health Technology Co., Ltd",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "AFJKR",
             "Company Name": "Aimei Health Technology Co., Ltd",
             "Is ETF": false
         },
@@ -531,11 +526,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "AIFER",
-            "Company Name": "Aifeex Nexus Acquisition Corporation",
-            "Is ETF": false
-        },
-        {
             "Ticker": "AIFEU",
             "Company Name": "Aifeex Nexus Acquisition Corporation",
             "Is ETF": false
@@ -567,11 +557,6 @@
         },
         {
             "Ticker": "AIMD",
-            "Company Name": "Ainos, Inc.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "AIMDW",
             "Company Name": "Ainos, Inc.",
             "Is ETF": false
         },
@@ -622,11 +607,6 @@
         },
         {
             "Ticker": "AITR",
-            "Company Name": "AI Transportation Acquisition Corp",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "AITRR",
             "Company Name": "AI Transportation Acquisition Corp",
             "Is ETF": false
         },
@@ -1271,11 +1251,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "AREBW",
-            "Company Name": "American Rebel Holdings, Inc.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "AREC",
             "Company Name": "American Resources Corporation",
             "Is ETF": false
@@ -1407,11 +1382,6 @@
         },
         {
             "Ticker": "ASPC",
-            "Company Name": "A SPAC III Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "ASPCR",
             "Company Name": "A SPAC III Acquisition Corp.",
             "Is ETF": false
         },
@@ -1576,22 +1546,12 @@
             "Is ETF": false
         },
         {
-            "Ticker": "ATMCR",
-            "Company Name": "AlphaTime Acquisition Corp",
-            "Is ETF": false
-        },
-        {
             "Ticker": "ATMCU",
             "Company Name": "AlphaTime Acquisition Corp",
             "Is ETF": false
         },
         {
             "Ticker": "ATMV",
-            "Company Name": "AlphaVest Acquisition Corp",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "ATMVR",
             "Company Name": "AlphaVest Acquisition Corp",
             "Is ETF": false
         },
@@ -1856,11 +1816,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "BACQR",
-            "Company Name": "Bleichroeder Acquisition Corp. I",
-            "Is ETF": false
-        },
-        {
             "Ticker": "BACQU",
             "Company Name": "Bleichroeder Acquisition Corp. I",
             "Is ETF": false
@@ -1927,11 +1882,6 @@
         },
         {
             "Ticker": "BAYA",
-            "Company Name": "Bayview Acquisition Corp",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "BAYAR",
             "Company Name": "Bayview Acquisition Corp",
             "Is ETF": false
         },
@@ -2057,11 +2007,6 @@
         },
         {
             "Ticker": "BEAG",
-            "Company Name": "Bold Eagle Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "BEAGR",
             "Company Name": "Bold Eagle Acquisition Corp.",
             "Is ETF": false
         },
@@ -2267,11 +2212,6 @@
         },
         {
             "Ticker": "BKHA",
-            "Company Name": "Black Hawk Acquisition Corporation",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "BKHAR",
             "Company Name": "Black Hawk Acquisition Corporation",
             "Is ETF": false
         },
@@ -2492,11 +2432,6 @@
         },
         {
             "Ticker": "BOWN",
-            "Company Name": "Bowen Acquisition Corp",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "BOWNR",
             "Company Name": "Bowen Acquisition Corp",
             "Is ETF": false
         },
@@ -2741,11 +2676,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "BUJAR",
-            "Company Name": "Bukit Jalil Global Acquisition 1 Ltd",
-            "Is ETF": false
-        },
-        {
             "Ticker": "BUJAU",
             "Company Name": "Bukit Jalil Global Acquisition 1 Ltd",
             "Is ETF": false
@@ -2892,11 +2822,6 @@
         },
         {
             "Ticker": "CAPN",
-            "Company Name": "Cayson Acquisition Corp",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "CAPNR",
             "Company Name": "Cayson Acquisition Corp",
             "Is ETF": false
         },
@@ -3376,11 +3301,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "CHARR",
-            "Company Name": "Charlton Aria Acquisition Corporation",
-            "Is ETF": false
-        },
-        {
             "Ticker": "CHARU",
             "Company Name": "Charlton Aria Acquisition Corporation",
             "Is ETF": false
@@ -3646,11 +3566,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "CLRCR",
-            "Company Name": "ClimateRock",
-            "Is ETF": false
-        },
-        {
             "Ticker": "CLRCU",
             "Company Name": "ClimateRock",
             "Is ETF": false
@@ -3896,11 +3811,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "COLAR",
-            "Company Name": "Columbus Acquisition Corp Rights",
-            "Is ETF": false
-        },
-        {
             "Ticker": "COLAU",
             "Company Name": "Columbus Acquisition Corp",
             "Is ETF": false
@@ -3947,16 +3857,6 @@
         },
         {
             "Ticker": "CORZ",
-            "Company Name": "Core Scientific, Inc.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "CORZW",
-            "Company Name": "Core Scientific, Inc.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "CORZZ",
             "Company Name": "Core Scientific, Inc.",
             "Is ETF": false
         },
@@ -4701,11 +4601,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "DHCNL",
-            "Company Name": "Diversified Healthcare Trust",
-            "Is ETF": false
-        },
-        {
             "Ticker": "DHIL",
             "Company Name": "Diamond Hill Investment Group, Inc.",
             "Is ETF": false
@@ -4722,11 +4617,6 @@
         },
         {
             "Ticker": "DIST",
-            "Company Name": "Distoken Acquisition Corporation",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "DISTR",
             "Company Name": "Distoken Acquisition Corporation",
             "Is ETF": false
         },
@@ -4773,11 +4663,6 @@
         {
             "Ticker": "DMAA",
             "Company Name": "Drugs Made In America Acquisition Corp. Ordinary Shares",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "DMAAR",
-            "Company Name": "Drugs Made In America Acquisition Corp. Rights",
             "Is ETF": false
         },
         {
@@ -4971,11 +4856,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "DTSQR",
-            "Company Name": "DT Cloud Star Acquisition Corporation",
-            "Is ETF": false
-        },
-        {
             "Ticker": "DTSQU",
             "Company Name": "DT Cloud Star Acquisition Corporation",
             "Is ETF": false
@@ -5062,11 +4942,6 @@
         },
         {
             "Ticker": "DYCQ",
-            "Company Name": "DT Cloud Acquisition Corporation",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "DYCQR",
             "Company Name": "DT Cloud Acquisition Corporation",
             "Is ETF": false
         },
@@ -5341,11 +5216,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "EMCGR",
-            "Company Name": "Embrace Change Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "EMCGU",
             "Company Name": "Embrace Change Acquisition Corp.",
             "Is ETF": false
@@ -5521,11 +5391,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "ESHAR",
-            "Company Name": "ESH Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "ESLA",
             "Company Name": "Estrella Immunopharma, Inc.",
             "Is ETF": false
@@ -5587,11 +5452,6 @@
         },
         {
             "Ticker": "EURK",
-            "Company Name": "Eureka Acquisition Corp",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "EURKR",
             "Company Name": "Eureka Acquisition Corp",
             "Is ETF": false
         },
@@ -6081,11 +5941,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "FGIWW",
-            "Company Name": "FGI Industries Ltd.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "FGL",
             "Company Name": "Founder Group Limited",
             "Is ETF": false
@@ -6098,11 +5953,6 @@
         {
             "Ticker": "FGMC",
             "Company Name": "FG Merger II Corp. Common stock",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "FGMCR",
-            "Company Name": "FG Merger II Corp. Rights",
             "Is ETF": false
         },
         {
@@ -6491,11 +6341,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "FSHPR",
-            "Company Name": "Flag Ship Acquisition Corporation",
-            "Is ETF": false
-        },
-        {
             "Ticker": "FSHPU",
             "Company Name": "Flag Ship Acquisition Corporation",
             "Is ETF": false
@@ -6791,11 +6636,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "GBBKR",
-            "Company Name": "Global Blockchain Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "GBDC",
             "Company Name": "Golub Capital BDC, Inc.",
             "Is ETF": false
@@ -6888,11 +6728,6 @@
         {
             "Ticker": "GECCO",
             "Company Name": "Great Elm Capital Corp. 5.875% Notes due 2026",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "GECCZ",
-            "Company Name": "Great Elm Capital Corp. 8.75% Notes due 2028",
             "Is ETF": false
         },
         {
@@ -7032,11 +6867,6 @@
         },
         {
             "Ticker": "GLAC",
-            "Company Name": "Global Lights Acquisition Corp",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "GLACR",
             "Company Name": "Global Lights Acquisition Corp",
             "Is ETF": false
         },
@@ -7921,22 +7751,12 @@
             "Is ETF": false
         },
         {
-            "Ticker": "HSPOR",
-            "Company Name": "Horizon Space Acquisition I Corp.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "HSPOU",
             "Company Name": "Horizon Space Acquisition I Corp.",
             "Is ETF": false
         },
         {
             "Ticker": "HSPT",
-            "Company Name": "Horizon Space Acquisition II Corp.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "HSPTR",
             "Company Name": "Horizon Space Acquisition II Corp.",
             "Is ETF": false
         },
@@ -8051,11 +7871,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "HVIIR",
-            "Company Name": "Hennessy Capital Investment Corp. VII",
-            "Is ETF": false
-        },
-        {
             "Ticker": "HVIIU",
             "Company Name": "Hennessy Capital Investment Corp. VII",
             "Is ETF": false
@@ -8116,11 +7931,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "IACVV",
-            "Company Name": "IAC Inc. Common Stock Ex-distribution When-Issued",
-            "Is ETF": false
-        },
-        {
             "Ticker": "IART",
             "Company Name": "Integra LifeSciences Holdings Corporation",
             "Is ETF": false
@@ -8132,11 +7942,6 @@
         },
         {
             "Ticker": "IBAC",
-            "Company Name": "IB Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "IBACR",
             "Company Name": "IB Acquisition Corp.",
             "Is ETF": false
         },
@@ -8746,11 +8551,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "IROHR",
-            "Company Name": "Iron Horse Acquisitions Corp.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "IROHU",
             "Company Name": "Iron Horse Acquisitions Corp.",
             "Is ETF": false
@@ -9071,11 +8871,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "JVSAR",
-            "Company Name": "JVSPAC Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "JVSAU",
             "Company Name": "JVSPAC Acquisition Corp.",
             "Is ETF": false
@@ -9183,11 +8978,6 @@
         {
             "Ticker": "KFII",
             "Company Name": "K&F Growth Acquisition Corp. II Class A Ordinary shares",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "KFIIR",
-            "Company Name": "K&F Growth Acquisition Corp. II Rights",
             "Is ETF": false
         },
         {
@@ -9402,11 +9192,6 @@
         },
         {
             "Ticker": "KWE",
-            "Company Name": "KWESST Micro Systems Inc.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "KWESW",
             "Company Name": "KWESST Micro Systems Inc.",
             "Is ETF": false
         },
@@ -10261,11 +10046,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "MAYAR",
-            "Company Name": "Maywood Acquisition Corp. Right",
-            "Is ETF": false
-        },
-        {
             "Ticker": "MAYAU",
             "Company Name": "Maywood Acquisition Corp. Unit",
             "Is ETF": false
@@ -10691,11 +10471,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "MLACR",
-            "Company Name": "Mountain Lake Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "MLACU",
             "Company Name": "Mountain Lake Acquisition Corp.",
             "Is ETF": false
@@ -11011,11 +10786,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "MSSAR",
-            "Company Name": "Metal Sky Star Acquisition Corporation",
-            "Is ETF": false
-        },
-        {
             "Ticker": "MSSAU",
             "Company Name": "Metal Sky Star Acquisition Corporation",
             "Is ETF": false
@@ -11287,11 +11057,6 @@
         },
         {
             "Ticker": "NCPL",
-            "Company Name": "Netcapital Inc.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "NCPLW",
             "Company Name": "Netcapital Inc.",
             "Is ETF": false
         },
@@ -11607,11 +11372,6 @@
         },
         {
             "Ticker": "NOEM",
-            "Company Name": "CO2 Energy Transition Corp.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "NOEMR",
             "Company Name": "CO2 Energy Transition Corp.",
             "Is ETF": false
         },
@@ -12686,11 +12446,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "PAVMZ",
-            "Company Name": "PAVmed Inc.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "PAVS",
             "Company Name": "Paranovus Entertainment Technology Ltd.",
             "Is ETF": false
@@ -13651,11 +13406,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "QETAR",
-            "Company Name": "Quetta Acquisition Corporation",
-            "Is ETF": false
-        },
-        {
             "Ticker": "QETAU",
             "Company Name": "Quetta Acquisition Corporation",
             "Is ETF": false
@@ -13846,11 +13596,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "RANGR",
-            "Company Name": "Range Capital Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "RANGU",
             "Company Name": "Range Capital Acquisition Corp.",
             "Is ETF": false
@@ -13947,11 +13692,6 @@
         },
         {
             "Ticker": "RDAC",
-            "Company Name": "Rising Dragon Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "RDACR",
             "Company Name": "Rising Dragon Acquisition Corp.",
             "Is ETF": false
         },
@@ -14081,11 +13821,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "RELIW",
-            "Company Name": "Reliance Global Group, Inc.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "RELL",
             "Company Name": "Richardson Electronics, Ltd.",
             "Is ETF": false
@@ -14137,11 +13872,6 @@
         },
         {
             "Ticker": "RFAI",
-            "Company Name": "RF Acquisition Corp II",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "RFAIR",
             "Company Name": "RF Acquisition Corp II",
             "Is ETF": false
         },
@@ -14201,11 +13931,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "RGTIW",
-            "Company Name": "Rigetti Computing, Inc.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "RHLD",
             "Company Name": "Resolute Holdings Management, Inc.",
             "Is ETF": false
@@ -14213,11 +13938,6 @@
         {
             "Ticker": "RIBB",
             "Company Name": "Ribbon Acquisition Corp Class A Ordinary Shares",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "RIBBR",
-            "Company Name": "Ribbon Acquisition Corp Rights",
             "Is ETF": false
         },
         {
@@ -15661,11 +15381,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "SQFTW",
-            "Company Name": "Presidio Property Trust, Inc.",
-            "Is ETF": false
-        },
-        {
             "Ticker": "SQQQ",
             "Company Name": "ProShares UltraPro Short QQQ",
             "Is ETF": false
@@ -15981,11 +15696,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "SVIIR",
-            "Company Name": "Spring Valley Acquisition Corp. II",
-            "Is ETF": false
-        },
-        {
             "Ticker": "SVIIU",
             "Company Name": "Spring Valley Acquisition Corp. II",
             "Is ETF": false
@@ -16152,11 +15862,6 @@
         },
         {
             "Ticker": "TAVI",
-            "Company Name": "Tavia Acquisition Corp.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "TAVIR",
             "Company Name": "Tavia Acquisition Corp.",
             "Is ETF": false
         },
@@ -18351,11 +18056,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "YHNAR",
-            "Company Name": "YHN Acquisition I Limited",
-            "Is ETF": false
-        },
-        {
             "Ticker": "YHNAU",
             "Company Name": "YHN Acquisition I Limited",
             "Is ETF": false
@@ -18392,11 +18092,6 @@
         },
         {
             "Ticker": "YOTA",
-            "Company Name": "Yotta Acquisition Corporation",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "YOTAR",
             "Company Name": "Yotta Acquisition Corporation",
             "Is ETF": false
         },
@@ -18446,11 +18141,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "ZAZZT",
-            "Company Name": "N/A",
-            "Is ETF": false
-        },
-        {
             "Ticker": "ZBAI",
             "Company Name": "ATIF Holdings Limited",
             "Is ETF": false
@@ -18471,11 +18161,6 @@
             "Is ETF": false
         },
         {
-            "Ticker": "ZBZZT",
-            "Company Name": "N/A",
-            "Is ETF": false
-        },
-        {
             "Ticker": "ZCAR",
             "Company Name": "Zoomcar Holdings, Inc.",
             "Is ETF": false
@@ -18483,11 +18168,6 @@
         {
             "Ticker": "ZCMD",
             "Company Name": "Zhongchao Inc.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "ZCZZT",
-            "Company Name": "N/A",
             "Is ETF": false
         },
         {
@@ -18543,11 +18223,6 @@
         {
             "Ticker": "ZJYL",
             "Company Name": "Jin Medical International Ltd.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "ZJZZT",
-            "Company Name": "N/A",
             "Is ETF": false
         },
         {
@@ -18608,26 +18283,6 @@
         {
             "Ticker": "ZVSA",
             "Company Name": "ZyVersa Therapeutics, Inc.",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "ZVZZT",
-            "Company Name": "N/A",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "ZWZZT",
-            "Company Name": "N/A",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "ZXYZ.A",
-            "Company Name": "N/A",
-            "Is ETF": false
-        },
-        {
-            "Ticker": "ZXZZT",
-            "Company Name": "N/A",
             "Is ETF": false
         },
         {
