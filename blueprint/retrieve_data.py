@@ -3,22 +3,23 @@ import json
 import logging
 import os
 import random
-import time
 from datetime import datetime, timedelta
 import numpy as np
 import requests
+from concurrent.futures import ThreadPoolExecutor
+import orjson
 
 # Logging setup
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 # Base directory and file paths
-base_dir = r"/home/ec2-user/Stock-Scanner-Project"
-FORMATTED_TICKERS_FILE_PATH = os.path.join(base_dir, "json", "formatted_tickers.json")
-PE_FILE_PATH = os.path.join(base_dir, "json", "PE_num.json")
-MarketCap_FILE_PATH = os.path.join(base_dir, "json", "MC_num.json")
-EXPORT_FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
-TICKERS_NAMES_PATH = os.path.join(base_dir, "json", "Tickers&Names.json")
+BASE_DIR = os.getenv("BASE_DIR", "/home/ec2-user/Stock-Scanner-Project")
+FORMATTED_TICKERS_FILE_PATH = os.path.join(BASE_DIR, "json", "formatted_tickers.json")
+PE_FILE_PATH = os.path.join(BASE_DIR, "json", "PE_num.json")
+MARKETCAP_FILE_PATH = os.path.join(BASE_DIR, "json", "MC_num.json")
+EXPORT_FILE_PATH = os.path.join(BASE_DIR, "json", "stock_data_export.json")
+TICKERS_NAMES_PATH = os.path.join(BASE_DIR, "json", "Tickers&Names.json")
 
 # Random User-Agent list
 USER_AGENTS = [
@@ -29,14 +30,17 @@ USER_AGENTS = [
     "Mozilla/5.0 (iPad; CPU OS 14_0 like Mac OS X)"
 ]
 
+
+### Utility Functions ###
 def is_number(val):
     return isinstance(val, (int, float, np.integer, np.floating))
+
 
 def read_json_file(file_path):
     try:
         if os.path.exists(file_path):
-            with open(file_path, "r") as file:
-                return json.load(file)
+            with open(file_path, "rb") as file:
+                return orjson.loads(file.read())
         else:
             logger.warning(f"File {file_path} not found. Returning empty dictionary.")
             return {}
@@ -44,19 +48,14 @@ def read_json_file(file_path):
         logger.error(f"Error reading {file_path}: {e}")
         return {}
 
+
 def write_json_file(file_path, data):
     try:
-        with open(file_path, "w") as file:
-            json.dump(data, file, indent=4, default=convert_to_serializable)
+        with open(file_path, "wb") as file:
+            file.write(orjson.dumps(data, option=orjson.OPT_INDENT_2))
     except Exception as e:
         logger.error(f"Error writing to {file_path}: {e}")
 
-def convert_to_serializable(obj):
-    if isinstance(obj, (np.int64, np.float64)):
-        return obj.item()
-    if isinstance(obj, np.ndarray):
-        return obj.tolist()
-    raise TypeError(f"Type {type(obj)} not serializable")
 
 def calculate_percent_change(new, old):
     try:
@@ -67,46 +66,50 @@ def calculate_percent_change(new, old):
         logger.error(f"Error calculating percent change: {e}")
         return 'N/A'
 
+
 def update_daily_value(data, ticker, value, today):
     if ticker not in data or today not in data[ticker]:
-        if ticker not in data:
-            data[ticker] = {}
-        data[ticker][today] = value
+        data.setdefault(ticker, {})[today] = value
     return data[ticker][today]
+
 
 def get_historical_value(data, ticker, days_ago):
     target_date = (datetime.now() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
     return data.get(ticker, {}).get(target_date, 'N/A')
 
+
+def convert_to_serializable(obj):
+    if isinstance(obj, (np.int64, np.float64)):
+        return obj.item()
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    raise TypeError(f"Type {type(obj)} not serializable")
+
+
+### Core Functions ###
 def sync_tickers_and_names():
     tickers_names = read_json_file(TICKERS_NAMES_PATH)
     formatted_tickers = read_json_file(FORMATTED_TICKERS_FILE_PATH)
 
     names_dict = {item["Ticker"]: item["Company Name"] for item in tickers_names}
-
     tickers_list = formatted_tickers.get("tickers", [])
-    updated_tickers = []
-
-    for ticker in tickers_list:
-        if isinstance(ticker, dict):
-            ticker_symbol = ticker.get("Ticker", "")
-        else:
-            ticker_symbol = ticker
-        company_name = names_dict.get(ticker_symbol, "")
-        updated_tickers.append({
-            "Ticker": ticker_symbol,
-            "Company Name": company_name,
+    updated_tickers = [
+        {
+            "Ticker": (ticker.get("Ticker") if isinstance(ticker, dict) else ticker),
+            "Company Name": names_dict.get((ticker.get("Ticker") if isinstance(ticker, dict) else ticker), ""),
             "Is ETF": False
-        })
+        }
+        for ticker in tickers_list
+    ]
 
     updated_data = {"tickers": updated_tickers}
     write_json_file(FORMATTED_TICKERS_FILE_PATH, updated_data)
     logger.info("Formatted tickers updated with company names.")
 
+
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
         user_agent = random.choice(USER_AGENTS)
-        # Use requests to set up a session with custom headers
         session = requests.Session()
         session.headers.update({"User-Agent": user_agent})
 
@@ -128,19 +131,17 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         result = {
             'Ticker': ticker,
             'Company Name': export_entry.get('Company Name', stock.info.get('shortName', 'N/A')),
-            'Is ETF': export_entry.get('Is ETF', False)
-        }
-
-        result.update({
+            'Is ETF': export_entry.get('Is ETF', False),
             'Current Price': round(current_price, 2),
             'Price Change Today': calculate_percent_change(current_price, prev_price),
-            'Price Change Week': calculate_percent_change(current_price, hist_data['Close'].iloc[-6]) if hist_data.shape[0] >= 7 else 'N/A',
+            'Price Change Week': calculate_percent_change(
+                current_price, hist_data['Close'].iloc[-6]) if hist_data.shape[0] >= 7 else 'N/A',
             'Price Change Month': calculate_percent_change(current_price, hist_data['Close'].iloc[0]),
             'Volume Today': volume_today,
             'Avg Volume (3 mon)': avg_volume,
             'DVAV (Day Volume Over Average Volume)': round(volume_today / avg_volume, 4)
                 if is_number(volume_today) and is_number(avg_volume) and avg_volume != 0 else 'N/A'
-        })
+        }
 
         if not result['Is ETF']:
             shares = export_entry.get('Shares Available', 'N/A')
@@ -150,18 +151,15 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
             pe = update_daily_value(pe_data, ticker, stock.info.get('trailingPE', 'N/A'), today)
             mc = update_daily_value(mc_data, ticker, stock.info.get('marketCap', 'N/A'), today)
 
-            pe_change = calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90))
-            mc_change = calculate_percent_change(mc, current_price * shares
-                                                 if is_number(current_price) and is_number(shares) else 'N/A')
-
             result.update({
                 'Shares Available': shares,
                 'DVSA (Volume Today Over Shares Available)': round(volume_today / shares, 4)
                     if is_number(volume_today) and is_number(shares) and shares != 0 else 'N/A',
                 'P/E Ratio': pe,
-                'P/E Change (3 Mon)': pe_change,
+                'P/E Change (3 Mon)': calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90)),
                 'Market Cap': mc,
-                'Market Cap Change (3 Mon)': mc_change
+                'Market Cap Change (3 Mon)': calculate_percent_change(mc, current_price * shares
+                    if is_number(current_price) and is_number(shares) else 'N/A')
             })
 
         result['Last Update'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -171,43 +169,36 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         logger.exception(f"Error processing {ticker}")
         return None
 
+
+### Main Function ###
 def main():
-    start_time = time.time()  # Start timer
+    start_time = datetime.now()
 
     today = datetime.now().strftime("%Y-%m-%d")
-
     sync_tickers_and_names()
 
     formatted_tickers_data = read_json_file(FORMATTED_TICKERS_FILE_PATH)
     tickers = formatted_tickers_data.get("tickers", [])
-
     pe_data = read_json_file(PE_FILE_PATH)
-    mc_data = read_json_file(MarketCap_FILE_PATH)
+    mc_data = read_json_file(MARKETCAP_FILE_PATH)
     export_data = read_json_file(EXPORT_FILE_PATH)
 
     existing_data_map = {item['Ticker']: item for item in export_data if isinstance(item, dict)}
-    processed_count = 0
 
-    for entry in tickers:
-        ticker = entry["Ticker"] if isinstance(entry, dict) else entry
-        data = fetch_price(ticker, pe_data, mc_data, export_data, today)
-        if data:
-            existing_data_map[ticker] = data
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        results = list(executor.map(lambda entry: fetch_price(
+            entry["Ticker"] if isinstance(entry, dict) else entry, pe_data, mc_data, export_data, today), tickers))
 
-        processed_count += 1
-        if processed_count % 100 == 0:
-            logger.info(f"Processed {processed_count} tickers. Saving intermediate results.")
-            write_json_file(EXPORT_FILE_PATH, list(existing_data_map.values()))
-            write_json_file(PE_FILE_PATH, pe_data)
-            write_json_file(MarketCap_FILE_PATH, mc_data)
+    for data in filter(None, results):
+        existing_data_map[data['Ticker']] = data
 
-    logger.info(f"Processing complete. Total tickers: {processed_count}")
     write_json_file(EXPORT_FILE_PATH, list(existing_data_map.values()))
     write_json_file(PE_FILE_PATH, pe_data)
-    write_json_file(MarketCap_FILE_PATH, mc_data)
+    write_json_file(MARKETCAP_FILE_PATH, mc_data)
 
-    elapsed_time = round(time.time() - start_time, 2)  # End timer and calculate elapsed time
-    logger.info(f"Execution time: {elapsed_time} seconds")  # Log total time spent
+    elapsed_time = datetime.now() - start_time
+    logger.info(f"Processing complete. Execution time: {elapsed_time}")
+
 
 if __name__ == "__main__":
     main()
