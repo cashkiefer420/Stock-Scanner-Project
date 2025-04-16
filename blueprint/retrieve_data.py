@@ -22,6 +22,8 @@ PE_FILE_PATH = os.path.join(BASE_DIR, "json", "PE_num.json")
 MARKETCAP_FILE_PATH = os.path.join(BASE_DIR, "json", "MC_num.json")
 EXPORT_FILE_PATH = os.path.join(BASE_DIR, "json", "stock_data_export.json")
 TICKERS_NAMES_PATH = os.path.join(BASE_DIR, "json", "Tickers&Names.json")
+PROXIES_FILE_PATH = os.path.join(BASE_DIR, "proxies.txt")
+
 
 # Random User-Agent list
 USER_AGENTS = [
