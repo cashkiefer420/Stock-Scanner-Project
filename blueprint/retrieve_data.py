@@ -123,7 +123,7 @@ def sync_tickers_and_names():
     logger.info("Formatted tickers updated with company names.")
 
 
-@retry(wait=wait_exponential(multiplier=1, min=4, max=10), stop=stop_after_attempt(5))
+@retry(wait=wait_exponential(multiplier=1.5, min=10, max=20), stop=stop_after_attempt(100))
 def fetch_stock_data(ticker):
     """
     Fetch historical stock data for the given ticker using yfinance.
