@@ -9,6 +9,7 @@ import requests
 from concurrent.futures import ThreadPoolExecutor
 import orjson
 from tenacity import retry, wait_exponential, stop_after_attempt
+import random
 
 # Logging setup
 logger = logging.getLogger()
@@ -51,6 +52,22 @@ USER_AGENTS = [
 def is_number(val):
     return isinstance(val, (int, float, np.integer, np.floating))
 
+def read_proxies(file_path):
+    """
+    Reads proxies from a file and returns a list of valid proxies.
+    """
+    try:
+        if os.path.exists(file_path):
+            with open(file_path, "r") as file:
+                proxies = [line.strip() for line in file if line.strip()]
+                logger.info(f"Loaded {len(proxies)} proxies from {file_path}")
+                return proxies
+        else:
+            logger.warning(f"Proxies file {file_path} not found. No proxies will be used.")
+            return []
+    except Exception as e:
+        logger.error(f"Error reading proxies from {file_path}: {e}")
+        return []
 
 def read_json_file(file_path):
     try:
@@ -132,19 +149,21 @@ def fetch_stock_data(ticker):
     logger.info(f"Fetching historical data for ticker: {ticker}")
     return yf.Ticker(ticker).history(period="3mo")
 
-def user_agent_generator():
-    while True:
-        for user_agent in USER_AGENTS:
-            yield user_agent
-
-# Create a generator instance
-user_agent_cycle = user_agent_generator()
+proxies_list = read_proxies(PROXIES_FILE_PATH)
 
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
+        # Randomly select a proxy and User-Agent
+        proxy = random.choice(proxies_list) if proxies_list else None
         user_agent = next(user_agent_cycle)
+
         session = requests.Session()
         session.headers.update({"User-Agent": user_agent})
+        if proxy:
+            session.proxies.update({
+                "http": proxy,
+                "https": proxy
+            })
 
 
         hist_data = fetch_stock_data(ticker)
