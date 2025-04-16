@@ -132,12 +132,20 @@ def fetch_stock_data(ticker):
     logger.info(f"Fetching historical data for ticker: {ticker}")
     return yf.Ticker(ticker).history(period="3mo")
 
+def user_agent_generator():
+    while True:
+        for user_agent in USER_AGENTS:
+            yield user_agent
+
+# Create a generator instance
+user_agent_cycle = user_agent_generator()
 
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
-        user_agent = random.choice(USER_AGENTS)
+        user_agent = next(user_agent_cycle)
         session = requests.Session()
         session.headers.update({"User-Agent": user_agent})
+
 
         hist_data = fetch_stock_data(ticker)
 
