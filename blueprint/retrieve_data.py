@@ -10,6 +10,8 @@ from concurrent.futures import ThreadPoolExecutor
 import orjson
 from tenacity import retry, wait_exponential, stop_after_attempt
 import random
+from itertools import cycle
+
 
 # Logging setup
 logger = logging.getLogger()
@@ -152,6 +154,8 @@ def fetch_stock_data(ticker):
     return yf.Ticker(ticker).history(period="3mo")
 
 proxies_list = read_proxies(PROXIES_FILE_PATH)
+user_agent_cycle = cycle(USER_AGENTS)
+
 
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
