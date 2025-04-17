@@ -23,8 +23,26 @@ FORMATTED_TICKERS_FILE_PATH = os.path.join(BASE_DIR, "json", "formatted_tickers.
 PE_FILE_PATH = os.path.join(BASE_DIR, "json", "PE_num.json")
 MARKETCAP_FILE_PATH = os.path.join(BASE_DIR, "json", "MC_num.json")
 EXPORT_FILE_PATH = os.path.join(BASE_DIR, "json", "stock_data_export.json")
-TICKERS_NAMES_PATH = os.path.join(BASE_DIR, "json", "Tickers&Names.json")
 PROXIES_FILE_PATH = os.path.join(BASE_DIR, "json", "proxies.txt")
+
+proxies_list = ["http://50.175.212.74:80",
+                "http://172.67.145.85:80",
+                "http://172.67.181.28:80",
+                "http://172.67.253.69:80",
+                "http://172.67.182.52:80",
+                "http://172.67.182.79:80",
+                "http://63.141.128.73:80",
+                "http://172.67.254.136:80",
+                "http://172.67.3.102:80",
+                "http://172.67.223.232:80",
+                "http://172.67.43.224:80",
+                "http://172.67.185.192:80",
+                "http://172.67.181.231:80",
+                "http://103.21.244.140:80",
+                "http://172.67.50.191:80",
+                "http://159.112.235.243:80",
+                "http://66.235.200.232:80",
+                "http://172.67.105.234:80"]
 
 
 # Random User-Agent list
@@ -56,22 +74,6 @@ USER_AGENTS = [
 def is_number(val):
     return isinstance(val, (int, float, np.integer, np.floating))
 
-def read_proxies(file_path):
-    """
-    Reads proxies from a file and returns a list of valid proxies.
-    """
-    try:
-        if os.path.exists(file_path):
-            with open(file_path, "r") as file:
-                proxies = [line.strip() for line in file if line.strip()]
-                logger.info(f"Loaded {len(proxies)} proxies from {file_path}")
-                return proxies
-        else:
-            logger.warning(f"Proxies file {file_path} not found. No proxies will be used.")
-            return []
-    except Exception as e:
-        logger.error(f"Error reading proxies from {file_path}: {e}")
-        return []
 
 def read_json_file(file_path):
     try:
@@ -130,18 +132,6 @@ def sync_tickers_and_names():
 
     names_dict = {item["Ticker"]: item["Company Name"] for item in tickers_names}
     tickers_list = formatted_tickers.get("tickers", [])
-    updated_tickers = [
-        {
-            "Ticker": (ticker.get("Ticker") if isinstance(ticker, dict) else ticker),
-            "Company Name": names_dict.get((ticker.get("Ticker") if isinstance(ticker, dict) else ticker), ""),
-            "Is ETF": False
-        }
-        for ticker in tickers_list
-    ]
-
-    updated_data = {"tickers": updated_tickers}
-    write_json_file(FORMATTED_TICKERS_FILE_PATH, updated_data)
-    logger.info("Formatted tickers updated with company names.")
 
 
 @retry(wait=wait_exponential(multiplier=1.5, min=10, max=20), stop=stop_after_attempt(100))
@@ -153,25 +143,13 @@ def fetch_stock_data(ticker):
     logger.info(f"Fetching historical data for ticker: {ticker}")
     return yf.Ticker(ticker).history(period="3mo")
 
-proxies_list = read_proxies(PROXIES_FILE_PATH)
-user_agent_cycle = cycle(USER_AGENTS)
 
 
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
         # Randomly select a proxy and User-Agent
         proxy = random.choice(proxies_list) if proxies_list else None
-        user_agent = next(user_agent_cycle)
-
-        session = requests.Session()
-        session.headers.update({"User-Agent": user_agent})
-        if proxy:
-            session.proxies.update({
-                "http": proxy,
-                "https": proxy
-            })
-
-
+        user_agent = random.choice(USER_AGENTS) if proxies_list else None
         hist_data = fetch_stock_data(ticker)
 
         if hist_data.empty or 'Close' not in hist_data.columns or hist_data.shape[0] < 2:
