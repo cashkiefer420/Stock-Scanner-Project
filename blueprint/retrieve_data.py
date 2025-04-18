@@ -23,7 +23,6 @@ FORMATTED_TICKERS_FILE_PATH = os.path.join(BASE_DIR, "json", "formatted_tickers.
 PE_FILE_PATH = os.path.join(BASE_DIR, "json", "PE_num.json")
 MARKETCAP_FILE_PATH = os.path.join(BASE_DIR, "json", "MC_num.json")
 EXPORT_FILE_PATH = os.path.join(BASE_DIR, "json", "stock_data_export.json")
-PROXIES_FILE_PATH = os.path.join(BASE_DIR, "json", "proxies.txt")
 
 proxies_list = ["http://50.175.212.74:80",
                 "http://172.67.145.85:80",
