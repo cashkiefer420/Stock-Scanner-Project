@@ -9,7 +9,6 @@ import requests
 from concurrent.futures import ThreadPoolExecutor
 import orjson
 from tenacity import retry, wait_exponential, stop_after_attempt
-from itertools import cycle
 
 # Logging setup
 logger = logging.getLogger()
@@ -32,8 +31,7 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36",
     "Mozilla/5.0 (Linux; Android 10; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.105 Mobile Safari/537.36",
-    "Mozilla/5.0 (Linux; U; Android 11; en-us; Pixel 5 Build/RQ3A.210705.001) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
-    "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1",
+    "Mozilla/5.0 (Linux; Android 8.0.0; SM-G950F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36",
 ]
 
 ### Utility Functions ###
@@ -77,22 +75,6 @@ def get_historical_value(data, ticker, days_ago):
     target_date = (datetime.now() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
     return data.get(ticker, {}).get(target_date, 'N/A')
 
-def sync_tickers_and_names(export_data_path, formatted_tickers_path):
-    export_data = read_json_file(export_data_path)
-    export_tickers_and_names = {
-        item["Ticker"]: item.get("Company Name", "Unknown")
-        for item in export_data if isinstance(item.get("Ticker"), str)
-    }
-    formatted_tickers = read_json_file(formatted_tickers_path)
-    formatted_tickers_list = formatted_tickers.get("tickers", [])
-    tickers_and_names = {}
-    for ticker in formatted_tickers_list:
-        if ticker in export_tickers_and_names:
-            tickers_and_names[ticker] = export_tickers_and_names[ticker]
-        else:
-            tickers_and_names[ticker] = "Unknown"
-    return tickers_and_names
-    
 @retry(wait=wait_exponential(multiplier=1.5, min=10, max=20), stop=stop_after_attempt(100))
 def fetch_stock_data(ticker, session):
     logger.info(f"Fetching historical data for ticker: {ticker}")
@@ -101,6 +83,7 @@ def fetch_stock_data(ticker, session):
 def fetch_price(ticker, pe_data, mc_data, export_data, today, company_name, session):
     try:
         hist_data = fetch_stock_data(ticker, session)
+
         if hist_data.empty or 'Close' not in hist_data.columns or hist_data.shape[0] < 2:
             logger.warning(f"Not enough data for ticker {ticker}. Skipping.")
             return None
@@ -112,43 +95,36 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today, company_name, sess
 
         export_entry = next((item for item in export_data if item.get('Ticker') == ticker), {})
         last_update = export_entry.get("Last Update", "")[:10]
-        is_etf = export_entry.get('Is ETF', False)
+
+        shares = export_entry.get('Shares Available', 'N/A')
+        if today != last_update:
+            shares = yf.Ticker(ticker, session=session).info.get('sharesOutstanding', 'N/A')
+
+        pe = update_daily_value(pe_data, ticker, yf.Ticker(ticker, session=session).info.get('trailingPE', 'N/A'), today)
+        mc = update_daily_value(mc_data, ticker, yf.Ticker(ticker, session=session).info.get('marketCap', 'N/A'), today)
 
         result = {
             'Ticker': ticker,
             'Company Name': company_name,
-            'Is ETF': is_etf,
             'Current Price': round(current_price, 2),
             'Price Change Today': calculate_percent_change(current_price, prev_price),
-            'Price Change Week': calculate_percent_change(
-                current_price, hist_data['Close'].iloc[-6]) if hist_data.shape[0] >= 7 else 'N/A',
+            'Price Change Week': calculate_percent_change(current_price, hist_data['Close'].iloc[-6]) if hist_data.shape[0] >= 7 else 'N/A',
             'Price Change Month': calculate_percent_change(current_price, hist_data['Close'].iloc[0]),
             'Volume Today': volume_today,
             'Avg Volume (3 mon)': avg_volume,
-            'DVAV (Day Volume Over Average Volume)': round(volume_today / avg_volume, 4)
-                if is_number(volume_today) and is_number(avg_volume) and avg_volume != 0 else 'N/A'
+            'DVAV (Day Volume Over Avg Volume)': round(volume_today / avg_volume, 4)
+                if is_number(volume_today) and is_number(avg_volume) and avg_volume != 0 else 'N/A',
+            'Shares Available': shares,
+            'DVSA (Volume / Shares Available)': round(volume_today / shares, 4)
+                if is_number(volume_today) and is_number(shares) and shares != 0 else 'N/A',
+            'P/E Ratio': pe,
+            'P/E Change (3 Mon)': calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90)),
+            'Market Cap': mc,
+            'Market Cap Change (3 Mon)': calculate_percent_change(mc, current_price * shares
+                if is_number(current_price) and is_number(shares) else 'N/A'),
+            'Last Update': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
 
-        if not is_etf:
-            shares = export_entry.get('Shares Available', 'N/A')
-            if today != last_update:
-                shares = yf.Ticker(ticker, session=session).info.get('sharesOutstanding', 'N/A')
-
-            pe = update_daily_value(pe_data, ticker, yf.Ticker(ticker, session=session).info.get('trailingPE', 'N/A'), today)
-            mc = update_daily_value(mc_data, ticker, yf.Ticker(ticker, session=session).info.get('marketCap', 'N/A'), today)
-
-            result.update({
-                'Shares Available': shares,
-                'DVSA (Volume Today Over Shares Available)': round(volume_today / shares, 4)
-                    if is_number(volume_today) and is_number(shares) and shares != 0 else 'N/A',
-                'P/E Ratio': pe,
-                'P/E Change (3 Mon)': calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90)),
-                'Market Cap': mc,
-                'Market Cap Change (3 Mon)': calculate_percent_change(mc, current_price * shares
-                    if is_number(current_price) and is_number(shares) else 'N/A')
-            })
-
-        result['Last Update'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         return result
 
     except Exception as e:
@@ -161,24 +137,19 @@ def main():
     logger.info(f"Script started at: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
 
     today = datetime.now().strftime("%Y-%m-%d")
-
-    # Load all data
     formatted_tickers_data = read_json_file(FORMATTED_TICKERS_FILE_PATH)
     tickers = formatted_tickers_data.get("tickers", [])
     pe_data = read_json_file(PE_FILE_PATH)
     mc_data = read_json_file(MARKETCAP_FILE_PATH)
     export_data = read_json_file(EXPORT_FILE_PATH)
-
-    tickers_and_names = sync_tickers_and_names(EXPORT_FILE_PATH, FORMATTED_TICKERS_FILE_PATH)
     existing_data_map = {item['Ticker']: item for item in export_data if isinstance(item, dict)}
 
-    # Thread-safe fetch with headers
     def process(ticker):
         try:
-            company_name = tickers_and_names.get(ticker, "Unknown")
             user_agent = random.choice(USER_AGENTS)
             session = requests.Session()
             session.headers.update({"User-Agent": user_agent})
+            company_name = yf.Ticker(ticker, session=session).info.get("shortName", "Unknown")
             return fetch_price(ticker, pe_data, mc_data, export_data, today, company_name, session)
         except Exception as e:
             logger.error(f"Failed to process ticker {ticker}: {e}")
@@ -195,8 +166,9 @@ def main():
     write_json_file(MARKETCAP_FILE_PATH, mc_data)
 
     end_time = datetime.now()
-    logger.info(f"Processing complete. Script finished at: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
-    logger.info(f"Total execution time: {end_time - start_time}")
+    elapsed_time = end_time - start_time
+    logger.info(f"Script finished at: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.info(f"Total execution time: {elapsed_time}")
 
 if __name__ == "__main__":
     main()
