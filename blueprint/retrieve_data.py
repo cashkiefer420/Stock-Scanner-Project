@@ -103,13 +103,37 @@ def convert_to_serializable(obj):
     raise TypeError(f"Type {type(obj)} not serializable")
 
 
-### Core Functions ###
-def sync_tickers_and_names():
-    tickers_names = read_json_file(TICKERS_NAMES_PATH)
-    formatted_tickers = read_json_file(FORMATTED_TICKERS_FILE_PATH)
+def sync_tickers_and_names(export_data_path, formatted_tickers_path):
+    """
+    Synchronizes tickers and company names from the export file and formatted tickers file.
+    """
+    # Read export data
+    export_data = read_json_file(export_data_path)
 
-    names_dict = {item["Ticker"]: item["Company Name"] for item in tickers_names}
-    tickers_list = formatted_tickers.get("tickers", [])
+    # Extract tickers and company names from export data
+    export_tickers_and_names = {
+        item["Ticker"]: item.get("Company Name", "Unknown")
+        for item in export_data if "Ticker" in item
+    }
+
+    # Read formatted tickers data
+    formatted_tickers = read_json_file(formatted_tickers_path)
+
+    # Extract tickers from formatted tickers file
+    formatted_tickers_list = formatted_tickers.get("tickers", [])
+
+    # Merge the tickers and company names
+    tickers_and_names = {}
+    for ticker in formatted_tickers_list:
+        if ticker in export_tickers_and_names:
+            # Use company name from export data if available
+            tickers_and_names[ticker] = export_tickers_and_names[ticker]
+        else:
+            # Fallback to formatted tickers data without a company name
+            tickers_and_names[ticker] = "Unknown"
+
+    # Return synchronized tickers and company names
+    return tickers_and_names
 
 
 @retry(wait=wait_exponential(multiplier=1.5, min=10, max=20), stop=stop_after_attempt(100))
