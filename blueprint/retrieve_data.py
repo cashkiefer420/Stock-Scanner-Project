@@ -81,7 +81,7 @@ def sync_tickers_and_names(export_data_path, formatted_tickers_path):
     export_data = read_json_file(export_data_path)
     export_tickers_and_names = {
         item["Ticker"]: item.get("Company Name", "Unknown")
-        for item in export_data if "Ticker" in item
+        for item in export_data if isinstance(item.get("Ticker"), str)
     }
     formatted_tickers = read_json_file(formatted_tickers_path)
     formatted_tickers_list = formatted_tickers.get("tickers", [])
@@ -92,7 +92,7 @@ def sync_tickers_and_names(export_data_path, formatted_tickers_path):
         else:
             tickers_and_names[ticker] = "Unknown"
     return tickers_and_names
-
+    
 @retry(wait=wait_exponential(multiplier=1.5, min=10, max=20), stop=stop_after_attempt(100))
 def fetch_stock_data(ticker, session):
     logger.info(f"Fetching historical data for ticker: {ticker}")
