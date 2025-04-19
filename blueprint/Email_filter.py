@@ -95,16 +95,12 @@ def download_from_s3():
         print(f"[ERROR] Error downloading {S3_EXPORT_FILE_KEY} from S3: {e}")
 
 def main():
-    """Main loop that resets and filters data every 3 minutes."""
+    """Main loop that resets and filters data every 5 minutes."""
     while True:
-        try:
-            reset_filtered_files()
-            download_from_s3()
-            filter_data()
-        except Exception as e:
-            print(f"[ERROR] Exception occurred: {e}")
-        print("Sleeping for 3 minutes...")
-        time.sleep(180)  # Sleep for 3 minutes
+        reset_filtered_files()
+        filter_data()
+        print("Sleeping for 5 minutes...")
+        time.sleep(300)  # Sleep for 5 minutes
 
 if __name__ == "__main__":
     main()
