@@ -1,3 +1,4 @@
+import os
 import orjson
 import yfinance as yf
 import numpy as np
@@ -12,9 +13,9 @@ from botocore.exceptions import ClientError
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# S3 setup
-S3_BUCKET = "exportbucket--use2-az1--x-s3"
-REGION = "us-east-2"
+# Read environment variables for S3 configuration
+S3_BUCKET = os.getenv("S3_BUCKET", "default-bucket-name")
+REGION = os.getenv("REGION", "us-east-1")
 s3_client = boto3.client("s3", region_name=REGION)
 
 # S3 keys (root level, no 'json/' prefix)
@@ -140,7 +141,7 @@ def sync_tickers_and_names():
 
     write_json_file_s3(FORMATTED_TICKERS_KEY, {"tickers": updated_tickers})
 
-def main():
+def lambda_handler(event, context):
     sync_tickers_and_names()
 
     tickers = read_json_file_s3(FORMATTED_TICKERS_KEY).get("tickers", [])
@@ -153,7 +154,7 @@ def main():
     existing_data_map = {entry["Ticker"]: entry for entry in export_data}
 
     updated_data = []
-    with ThreadPoolExecutor(max_workers=12) as executor:
+    with ThreadPoolExecutor(max_workers=4) as executor:  # Reduced to 4 threads for Lambda
         futures = {executor.submit(update_stock_data, ticker, pe_data, mc_data, existing_data_map): ticker for ticker in tickers}
         for future in as_completed(futures):
             result = future.result()
@@ -167,5 +168,7 @@ def main():
     write_json_file_s3(PE_KEY, pe_data)
     write_json_file_s3(MARKETCAP_KEY, mc_data)
 
-if __name__ == "__main__":
-    main()
+    return {
+        "statusCode": 200,
+        "body": "Data synchronization complete"
+    }
