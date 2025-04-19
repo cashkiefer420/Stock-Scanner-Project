@@ -1,4 +1,4 @@
-import yfinance 
+import yfinance as yf
 import requests_cache
 import json
 import logging
