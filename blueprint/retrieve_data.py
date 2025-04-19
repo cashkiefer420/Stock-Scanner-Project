@@ -1,4 +1,4 @@
-lily import yfinance as yf
+import yfinance as yf
 import json
 import logging
 import os
