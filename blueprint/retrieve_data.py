@@ -66,8 +66,18 @@ def read_json_file(file_path):
 
 def write_json_file(file_path, data):
     try:
+        # Convert numpy types to native Python types
+        def convert_numpy(obj):
+            if isinstance(obj, (np.integer, int)):
+                return int(obj)
+            elif isinstance(obj, (np.floating, float)):
+                return float(obj)
+            elif isinstance(obj, np.ndarray):
+                return obj.tolist()  # Convert numpy arrays to lists
+            raise TypeError(f"Type {type(obj)} not serializable")
+        
         with open(file_path, "wb") as file:
-            file.write(orjson.dumps(data, option=orjson.OPT_INDENT_2))
+            file.write(orjson.dumps(data, default=convert_numpy, option=orjson.OPT_INDENT_2))
     except Exception as e:
         logger.error(f"Error writing to {file_path}: {e}")
 
