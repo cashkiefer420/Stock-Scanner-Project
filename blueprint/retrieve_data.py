@@ -76,13 +76,14 @@ def get_historical_value(data, ticker, days_ago):
     return data.get(ticker, {}).get(target_date, 'N/A')
 
 @retry(wait=wait_exponential(multiplier=1.5, min=10, max=20), stop=stop_after_attempt(100))
-def fetch_stock_data(ticker, session):
+def fetch_stock_data(ticker):
     logger.info(f"Fetching historical data for ticker: {ticker}")
-    return yf.Ticker(ticker, session=session).history(period="3mo")
+    return yf.Ticker(ticker).history(period="3mo")
 
-def fetch_price(ticker, pe_data, mc_data, export_data, today, company_name, session):
+def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
-        hist_data = fetch_stock_data(ticker, session)
+        t = yf.Ticker(ticker)
+        hist_data = t.history(period="3mo")
 
         if hist_data.empty or 'Close' not in hist_data.columns or hist_data.shape[0] < 2:
             logger.warning(f"Not enough data for ticker {ticker}. Skipping.")
@@ -91,17 +92,18 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today, company_name, sess
         current_price = hist_data['Close'].iloc[-1]
         prev_price = hist_data['Close'].iloc[-2]
         volume_today = hist_data['Volume'].iloc[-1] if 'Volume' in hist_data.columns else 'N/A'
-        avg_volume = yf.Ticker(ticker, session=session).info.get('averageVolume', 'N/A')
+        avg_volume = t.info.get('averageVolume', 'N/A')
+        shares = t.info.get('sharesOutstanding', 'N/A')
+        company_name = t.info.get('shortName', 'Unknown')
 
         export_entry = next((item for item in export_data if item.get('Ticker') == ticker), {})
         last_update = export_entry.get("Last Update", "")[:10]
 
-        shares = export_entry.get('Shares Available', 'N/A')
-        if today != last_update:
-            shares = yf.Ticker(ticker, session=session).info.get('sharesOutstanding', 'N/A')
+        if today == last_update:
+            shares = export_entry.get('Shares Available', shares)
 
-        pe = update_daily_value(pe_data, ticker, yf.Ticker(ticker, session=session).info.get('trailingPE', 'N/A'), today)
-        mc = update_daily_value(mc_data, ticker, yf.Ticker(ticker, session=session).info.get('marketCap', 'N/A'), today)
+        pe = update_daily_value(pe_data, ticker, t.info.get('trailingPE', 'N/A'), today)
+        mc = update_daily_value(mc_data, ticker, t.info.get('marketCap', 'N/A'), today)
 
         result = {
             'Ticker': ticker,
@@ -149,8 +151,8 @@ def main():
             user_agent = random.choice(USER_AGENTS)
             session = requests.Session()
             session.headers.update({"User-Agent": user_agent})
-            company_name = yf.Ticker(ticker, session=session).info.get("shortName", "Unknown")
-            return fetch_price(ticker, pe_data, mc_data, export_data, today, company_name, session)
+            yf.shared._requests_session = session
+            return fetch_price(ticker, pe_data, mc_data, export_data, today)
         except Exception as e:
             logger.error(f"Failed to process ticker {ticker}: {e}")
             return None
