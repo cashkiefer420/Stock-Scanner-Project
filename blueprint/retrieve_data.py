@@ -116,7 +116,7 @@ def fetch_stock_data(ticker):
 
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
-        delay = 0.01  # ~40ms delay to avoid rate limiting with 10 threads
+        delay = 0.015  # ~40ms delay to avoid rate limiting with 10 threads
         time.sleep(delay)
 
         user_agent = random.choice(USER_AGENTS)
