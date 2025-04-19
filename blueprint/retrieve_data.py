@@ -24,11 +24,23 @@ TICKERS_NAMES_PATH = os.path.join(BASE_DIR, "json", "Tickers&Names.json")
 
 # Random User-Agent list
 USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
-    "Mozilla/5.0 (X11; Linux x86_64)",
-    "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)",
-    "Mozilla/5.0 (iPad; CPU OS 14_0 like Mac OS X)"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edge/91.0.864.67",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_2 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/537.36",
+    "Mozilla/5.0 (iPad; CPU OS 14_4_2 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0.3 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101 Firefox/60.0",
+    "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edge/91.0.864.59",
+    "Mozilla/5.0 (Linux; Android 11; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.120 Mobile Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36",
+    "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0",
+    "Mozilla/5.0 (Linux; U; Android 10; en-US; Pixel 3a Build/QP1A.190711.020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Mobile Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.1; rv:46.0) Gecko/20100101 Firefox/46.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.3; rv:40.0) Gecko/20100101 Firefox/40.0",
+    "Mozilla/5.0 (Linux; Android 10; SM-A505FN) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Mobile Safari/537.36"
 ]
 
 
@@ -98,7 +110,6 @@ def sync_tickers_and_names():
         {
             "Ticker": (ticker.get("Ticker") if isinstance(ticker, dict) else ticker),
             "Company Name": names_dict.get((ticker.get("Ticker") if isinstance(ticker, dict) else ticker), ""),
-            "Is ETF": False
         }
         for ticker in tickers_list
     ]
@@ -121,9 +132,11 @@ def fetch_stock_data(ticker):
 def fetch_price(ticker, pe_data, mc_data, export_data, today):
     try:
         user_agent = random.choice(USER_AGENTS)
+        headers = {"User-Agent": user_agent}
         session = requests.Session()
-        session.headers.update({"User-Agent": user_agent})
+        session.headers.update(headers)
 
+        # Fetch the historical stock data using yfinance
         hist_data = fetch_stock_data(ticker)
 
         if hist_data.empty or 'Close' not in hist_data.columns or hist_data.shape[0] < 2:
@@ -141,7 +154,6 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
         result = {
             'Ticker': ticker,
             'Company Name': export_entry.get('Company Name', yf.Ticker(ticker).info.get('shortName', 'N/A')),
-            'Is ETF': export_entry.get('Is ETF', False),
             'Current Price': round(current_price, 2),
             'Price Change Today': calculate_percent_change(current_price, prev_price),
             'Price Change Week': calculate_percent_change(
@@ -153,24 +165,23 @@ def fetch_price(ticker, pe_data, mc_data, export_data, today):
                 if is_number(volume_today) and is_number(avg_volume) and avg_volume != 0 else 'N/A'
         }
 
-        if not result['Is ETF']:
-            shares = export_entry.get('Shares Available', 'N/A')
-            if today != last_update:
-                shares = yf.Ticker(ticker).info.get('sharesOutstanding', 'N/A')
+        shares = export_entry.get('Shares Available', 'N/A')
+        if today != last_update:
+            shares = yf.Ticker(ticker).info.get('sharesOutstanding', 'N/A')
 
-            pe = update_daily_value(pe_data, ticker, yf.Ticker(ticker).info.get('trailingPE', 'N/A'), today)
-            mc = update_daily_value(mc_data, ticker, yf.Ticker(ticker).info.get('marketCap', 'N/A'), today)
+        pe = update_daily_value(pe_data, ticker, yf.Ticker(ticker).info.get('trailingPE', 'N/A'), today)
+        mc = update_daily_value(mc_data, ticker, yf.Ticker(ticker).info.get('marketCap', 'N/A'), today)
 
-            result.update({
-                'Shares Available': shares,
-                'DVSA (Volume Today Over Shares Available)': round(volume_today / shares, 4)
-                    if is_number(volume_today) and is_number(shares) and shares != 0 else 'N/A',
-                'P/E Ratio': pe,
-                'P/E Change (3 Mon)': calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90)),
-                'Market Cap': mc,
-                'Market Cap Change (3 Mon)': calculate_percent_change(mc, current_price * shares
-                    if is_number(current_price) and is_number(shares) else 'N/A')
-            })
+        result.update({
+            'Shares Available': shares,
+            'DVSA (Volume Today Over Shares Available)': round(volume_today / shares, 4)
+                if is_number(volume_today) and is_number(shares) and shares != 0 else 'N/A',
+            'P/E Ratio': pe,
+            'P/E Change (3 Mon)': calculate_percent_change(pe, get_historical_value(pe_data, ticker, 90)),
+            'Market Cap': mc,
+            'Market Cap Change (3 Mon)': calculate_percent_change(mc, current_price * shares
+                if is_number(current_price) and is_number(shares) else 'N/A')
+        })
 
         result['Last Update'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         return result
