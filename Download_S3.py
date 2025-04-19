@@ -1,34 +1,45 @@
+import os
 import boto3
-from botocore.exceptions import NoCredentialsError
+import json
 
-# Initialize the S3 client
-s3 = boto3.client('s3')
+# Environment Variables
+S3_BUCKET = os.getenv("S3_BUCKET", "default-bucket-name")
+REGION = os.getenv("REGION", "us-east-1")
+EXPORT_KEY = "stock_data_export.json"
+LOCAL_FILE_PATH = "stock_data_export.json"
 
-# List of files to be uploaded
-files = [
-    "1.125_volume.json", "1.25_volume.json", "1.5_volume.json", "1.75_volume.json",
-    "10_de_pe_subs.json", "10_in_pe_subs.json", "10_mc_de.json", "10_mc_in.json",
-    "10_pe_de.json", "10_pe_in.json", "10_price_de.json", "100_DVSA.json",
-    "15_price_de.json", "150_DVSA.json", "15w_price_de.json", "2.5_volume.json",
-    "20_de_pe_subs.json", "20_in_pe_subs.json", "20_mc_de.json", "20_mc_in.json",
-    "20_pe_de.json", "20_pe_in.json", "20_price_de.json", "20_price_in.json",
-    "2x_volume.json", "30_de_pe_subs.json", "30_in_pe_subs.json", "30_mc_de.json",
-    "30_mc_in.json", "30_pe_de.json", "30_pe_in.json", "3x_volume.json",
-    "50_DVSA.json", "50_price_in.json", "5x_volume.json", "75_price_in.json"
-]
+# Initialize S3 Client
+s3_client = boto3.client("s3", region_name=REGION)
 
-# S3 bucket name
-bucket_name = 'exportbucket--use2-az1--x-s3'
-
-def upload_to_s3(file_name, bucket):
+def download_from_s3(bucket, key, local_path):
+    """Download a file from S3."""
     try:
-        s3.upload_file(file_name, bucket, file_name)
-        print(f"Upload Successful: {file_name}")
-    except FileNotFoundError:
-        print(f"The file was not found: {file_name}")
-    except NoCredentialsError:
-        print("Credentials not available")
+        print(f"Downloading {key} from S3 bucket {bucket}...")
+        s3_client.download_file(bucket, key, local_path)
+        print(f"Downloaded {key} to {local_path}")
+    except Exception as e:
+        print(f"Error downloading {key} from S3: {e}")
 
-# Iterate through the list of files and upload each one
-for file in files:
-    upload_to_s3(file, bucket_name)
+def update_local_file(local_path):
+    """Update the local file."""
+    try:
+        if os.path.exists(local_path):
+            print(f"Updating local file: {local_path}")
+            with open(local_path, "r") as file:
+                data = json.load(file)
+            # Perform your update logic here
+            data["updated"] = True
+            with open(local_path, "w") as file:
+                json.dump(data, file, indent=4)
+            print(f"File {local_path} updated successfully.")
+        else:
+            print(f"Local file {local_path} does not exist. Skipping update.")
+    except Exception as e:
+        print(f"Error updating local file: {e}")
+
+if __name__ == "__main__":
+    # Download from S3
+    download_from_s3(S3_BUCKET, EXPORT_KEY, LOCAL_FILE_PATH)
+    
+    # Update the local file
+    update_local_file(LOCAL_FILE_PATH)
