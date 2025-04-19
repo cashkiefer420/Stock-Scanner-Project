@@ -1,4 +1,4 @@
-import yfinance as yf
+lily import yfinance as yf
 import json
 import logging
 import os
@@ -176,7 +176,7 @@ def main():
     export_data = read_json_file(EXPORT_FILE_PATH)
     existing_data_map = {item['Ticker']: item for item in export_data if isinstance(item, dict)}
 
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor(max_workers=10) as executor:
         results = list(executor.map(lambda t: fetch_price(t, pe_data, mc_data, export_data, today), tickers))
 
     for result in filter(None, results):
