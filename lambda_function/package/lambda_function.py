@@ -1,5 +1,5 @@
 import os
-import orjson
+import json  # Replaced orjson with json
 import yfinance as yf
 import numpy as np
 import boto3
@@ -29,7 +29,7 @@ TICKERS_NAMES_KEY = "Tickers&Names.json"
 def read_json_file_s3(key):
     try:
         response = s3_client.get_object(Bucket=S3_BUCKET, Key=key)
-        return orjson.loads(response["Body"].read())
+        return json.loads(response["Body"].read())  # Using json.loads instead of orjson.loads
     except ClientError as e:
         logger.error(f"S3 read error for {key}: {e}")
         return {}
@@ -42,7 +42,7 @@ def write_json_file_s3(key, data):
             elif isinstance(obj, np.ndarray): return obj.tolist()
             raise TypeError(f"Type {type(obj)} not serializable")
 
-        content = orjson.dumps(data, default=convert_numpy, option=orjson.OPT_INDENT_2)
+        content = json.dumps(data, default=convert_numpy, indent=2)  # Using json.dumps instead of orjson.dumps
         s3_client.put_object(Bucket=S3_BUCKET, Key=key, Body=content)
     except Exception as e:
         logger.error(f"S3 write error for {key}: {e}")
@@ -171,4 +171,4 @@ def lambda_handler(event, context):
     return {
         "statusCode": 200,
         "body": "Data synchronization complete"
-    }
+    }    
