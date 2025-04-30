@@ -1,36 +1,4 @@
-The file was not found: 1.125_volume.json
-The file was not found: 1.25_volume.json
-The file was not found: 1.5_volume.json
-The file was not found: 1.75_volume.json
-The file was not found: 10_de_pe_subs.json
-The file was not found: 10_in_pe_subs.json
-The file was not found: 10_mc_de.json
-The file was not found: 10_mc_in.json
-The file was not found: 10_pe_de.json
-The file was not found: 10_pe_in.json
-The file was not found: 10_price_de.json
-The file was not found: 100_DVSA.json
-The file was not found: 15_price_de.json
-The file was not found: 150_DVSA.json
-The file was not found: 15w_price_de.json
-The file was not found: 2.5_volume.json
-The file was not found: 20_de_pe_subs.json
-The file was not found: 20_in_pe_subs.json
-The file was not found: 20_mc_de.json
-The file was not found: 20_mc_in.json
-The file was not found: 20_pe_de.json
-The file was not found: 20_pe_in.json
-The file was not found: 20_price_de.json
-The file was not found: 20_price_in.json
-The file was not found: 2x_volume.json
-The file was not found: 30_de_pe_subs.json
-The file was not found: 30_in_pe_subs.json
-The file was not found: 30_mc_de.json
-The file was not found: 30_mc_in.json
-The file was not found: 30_pe_de.json
-The file was not found: 30_pe_in.json
-The file was not found: 3x_volume.json
-The file was not found: 50_DVSA.json
-The file was not found: 50_price_in.json
-The file was not found: 5x_volume.json
-The file was not found: 75_price_in.json
+Traceback (most recent call last):
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/Download_S3.py", line 2, in <module>
+    import boto3
+ModuleNotFoundError: No module named 'boto3'

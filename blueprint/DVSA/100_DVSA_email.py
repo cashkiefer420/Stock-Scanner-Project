@@ -16,8 +16,8 @@ SENDER_EMAIL = 'noreply.retailtradescanner@gmail.com'
 APP_PASSWORD = 'mzqmvhsjqeqrjmjv'  # Use App Password for security
 
 # Paths to JSON files
-BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
-JSON_FOLDER = os.path.join(BASE_DIR, 'json')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+JSON_FOLDER = os.path.join(BASE_DIR, "..", "..", "json")
 
 # Ensure the JSON directory exists
 os.makedirs(JSON_FOLDER, exist_ok=True)

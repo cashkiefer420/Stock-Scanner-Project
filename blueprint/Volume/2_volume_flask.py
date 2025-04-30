@@ -1,9 +1,14 @@
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_FOLDER = os.path.join(BASE_DIR, "..", "..", "static")
+JSON_FOLDER = os.path.join(BASE_DIR, "..", "..", "json")
+os.makedirs(JSON_FOLDER, exist_ok=True)
+
 from flask import Flask, request, jsonify, render_template
 import os
 import json
 import re
 
-app = Flask(__name__, static_folder=r"/home/ec2-user/Stock-Scanner-Project/static")
 
 @app.route('/favicon.ico')
 def favicon():
@@ -14,7 +19,6 @@ def index():
     return render_template('Index-Volume-2x.html')
 
 # Paths to JSON files
-BASE_DIR = r"/home/ec2-user/Stock-Scanner-Project/"
 JSON_FOLDER = os.path.join(BASE_DIR, 'json')
 JSON_FILE = os.path.join(JSON_FOLDER, '2x_volume.json')
 

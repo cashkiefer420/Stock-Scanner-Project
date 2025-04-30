@@ -1,3 +1,9 @@
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_FOLDER = os.path.join(BASE_DIR, "..", "..", "static")
+JSON_FOLDER = os.path.join(BASE_DIR, "..", "..", "json")
+os.makedirs(JSON_FOLDER, exist_ok=True)
+
 from flask import Flask, request, jsonify, render_template, Response
 import pandas as pd
 import json
@@ -7,7 +13,6 @@ import re
 app = Flask(__name__)
 
 # Set base directory
-base_dir = r"/home/ec2-user/Stock-Scanner-Project"
 FILE_PATH = os.path.join(base_dir, "json", "stock_data_export.json")
 
 # Function to load JSON data

@@ -1,3 +1,9 @@
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_FOLDER = os.path.join(BASE_DIR, "..", "..", "static")
+JSON_FOLDER = os.path.join(BASE_DIR, "..", "..", "json")
+os.makedirs(JSON_FOLDER, exist_ok=True)
+
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
@@ -98,7 +104,6 @@ def extract_articles():
     return all_articles  # ✅ Corrected return statement
 
 # 🔹 Define export file path
-base_dir = r"/home/ec2-user/Stock-Scanner-Project/"
 EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":

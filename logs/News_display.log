@@ -1,4 +1,22 @@
-[2025-04-09 17:42:32 +0000] [88602] [INFO] Starting gunicorn 23.0.0
-[2025-04-09 17:42:32 +0000] [88602] [INFO] Listening at: http://127.0.0.1:5031 (88602)
-[2025-04-09 17:42:32 +0000] [88602] [INFO] Using worker: sync
-[2025-04-09 17:42:32 +0000] [88604] [INFO] Booting worker with pid: 88604
+[2025-04-29 15:51:32 -0500] [40923] [INFO] Starting gunicorn 23.0.0
+[2025-04-29 15:51:32 -0500] [40923] [INFO] Listening at: http://127.0.0.1:5031 (40923)
+[2025-04-29 15:51:32 -0500] [40923] [INFO] Using worker: sync
+[2025-04-29 15:51:32 -0500] [40925] [INFO] Booting worker with pid: 40925
+[2025-04-29 15:51:42,871] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/blueprint/News_display.py", line 10, in index
+    with open(news_file_path, 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ec2-user/Stock-Scanner-Project/json/news.json'

@@ -1,4 +1,61 @@
-[2025-04-09 17:42:44 +0000] [88626] [INFO] Starting gunicorn 23.0.0
-[2025-04-09 17:42:44 +0000] [88626] [INFO] Listening at: http://127.0.0.1:5032 (88626)
-[2025-04-09 17:42:44 +0000] [88626] [INFO] Using worker: sync
-[2025-04-09 17:42:44 +0000] [88628] [INFO] Booting worker with pid: 88628
+[2025-04-29 16:02:59 -0500] [46949] [INFO] Starting gunicorn 23.0.0
+[2025-04-29 16:02:59 -0500] [46949] [INFO] Listening at: http://127.0.0.1:5032 (46949)
+[2025-04-29 16:02:59 -0500] [46949] [INFO] Using worker: sync
+[2025-04-29 16:02:59 -0500] [46951] [INFO] Booting worker with pid: 46951
+[2025-04-29 16:03:00 -0500] [46951] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/blueprint/personalized_stock_filter.py", line 8, in <module>
+    import pandas as pd
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/pandas/core/api.py", line 1, in <module>
+    from pandas._libs import (
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/pandas/_libs/__init__.py", line 18, in <module>
+    from pandas._libs.interval import Interval
+  File "interval.pyx", line 1, in init pandas._libs.interval
+  File "hashtable.pyx", line 1, in init pandas._libs.hashtable
+  File "missing.pyx", line 1, in init pandas._libs.missing
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/pandas/_libs/tslibs/__init__.py", line 40, in <module>
+    from pandas._libs.tslibs.conversion import localize_pydatetime
+  File "conversion.pyx", line 1, in init pandas._libs.tslibs.conversion
+  File "offsets.pyx", line 1, in init pandas._libs.tslibs.offsets
+  File "timestamps.pyx", line 1, in init pandas._libs.tslibs.timestamps
+  File "timedeltas.pyx", line 1, in init pandas._libs.tslibs.timedeltas
+  File "timezones.pyx", line 24, in init pandas._libs.tslibs.timezones
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/dateutil/tz/__init__.py", line 2, in <module>
+    from .tz import *
+  File "/Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/.venv/lib/python3.12/site-packages/dateutil/tz/tz.py", line 21, in <module>
+    from six.moves import _thread
+ModuleNotFoundError: No module named 'six.moves'
+[2025-04-29 16:03:00 -0500] [46951] [INFO] Worker exiting (pid: 46951)
+[2025-04-29 16:03:00 -0500] [46949] [ERROR] Worker (pid:46951) exited with code 3
+[2025-04-29 16:03:00 -0500] [46949] [ERROR] Shutting down: Master
+[2025-04-29 16:03:00 -0500] [46949] [ERROR] Reason: Worker failed to boot.

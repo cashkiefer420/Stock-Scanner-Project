@@ -1,3 +1,9 @@
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_FOLDER = os.path.join(BASE_DIR, "..", "..", "static")
+JSON_FOLDER = os.path.join(BASE_DIR, "..", "..", "json")
+os.makedirs(JSON_FOLDER, exist_ok=True)
+
 import yfinance as yf
 import json
 import logging
@@ -16,7 +22,6 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 # Paths
-BASE_DIR = os.getenv("BASE_DIR", "/home/ec2-user/Stock-Scanner-Project")
 FORMATTED_TICKERS_FILE_PATH = os.path.join(BASE_DIR, "Json", "formatted_tickers.json")
 PE_FILE_PATH = os.path.join(BASE_DIR, "Json", "PE_num.json")
 MARKETCAP_FILE_PATH = os.path.join(BASE_DIR, "Json", "MC_num.json")
