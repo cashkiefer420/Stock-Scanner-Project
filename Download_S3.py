@@ -22,7 +22,7 @@ def fetch_file_from_s3(bucket_name, key, download_path):
             print(f"An error occurred: {e}")
 
 # Specify the local path to save the downloaded file
-local_file_path = "stock_data_export.json"
+local_file_path = "./json/stock_data_export.json"
 
 # Fetch the file
 fetch_file_from_s3(S3_BUCKET, EXPORT_KEY, local_file_path)
