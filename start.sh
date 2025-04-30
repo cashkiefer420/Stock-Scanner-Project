@@ -58,10 +58,58 @@ declare -A apps=(
     ["News_display"]=5031
 )
 
-# Start all Flask apps using Gunicorn
-echo "Starting Flask apps..."
-nohup python3 "$PROJECT_DIR/Download_S3.py" > "$LOG_DIR/Download_S3.log" 2>&1 &
-    echo "Started Download S3"
+email_scripts=(
+    "DVSA.50_DVSA_email"
+    "DVSA.100_DVSA_email"
+    "DVSA.150_DVSA_email"
+    "MC_Change.10_mc_de_email"
+    "MC_Change.10_mc_in_email"
+    "MC_Change.20_mc_de_email"
+    "MC_Change.20_mc_in_email"
+    "MC_Change.30_mc_de_email"
+    "MC_Change.30_mc_in_email"
+    "PE_Change.10_pe_de_email"
+    "PE_Change.10_pe_in_email"
+    "PE_Change.20_pe_de_email"
+    "PE_Change.20_pe_in_email"
+    "PE_Change.30_pe_de_email"
+    "PE_Change.30_pe_in_email"
+    "Price_de.10_price_de_email"
+    "Price_de.15_Price_de_email"
+    "Price_de.20_price_de_email"
+    "Price_in.20_price_in_email"
+    "Price_in.50_price_in_email"
+    "Price_in.75_price_in_email"
+    "Volume.1_125_volume_email"
+    "Volume.1_25_volume_email"
+    "Volume.1_5_volume_email"
+    "Volume.1_75_volume_email"
+    "Volume.2_volume_email"
+    "Volume.2_5_volume_email"
+    "Volume.3_volume_email"
+    "Volume.5x_volume_email"
+    "Download_S3"
+    "Email_filter"
+    "Clean_News"
+    "News"
+)
+
+echo "Starting email Flask apps..."
+
+for script in "${email_scripts[@]}"; do
+    log_file="$LOG_DIR/${script}.log"
+
+    if ! pgrep -f "python3 $PROJECT_DIR/blueprint/$script" > /dev/null; then
+        nohup python3 "$PROJECT_DIR/blueprint/$script" > "$log_file" 2>&1 &
+        echo "Started email script: $script"
+    else
+        echo "Already running: $script"
+    fi
+
+    sleep 2   # Avoid overloading system
+done
+    
+echo "Starting flask apps..."
 for script in "${!apps[@]}"; do
     port=${apps[$script]}
     log_file="$LOG_DIR/${script}.log"
