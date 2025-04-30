@@ -1,11 +1,23 @@
 #!/bin/bash
 
-# Activate virtual environment
-source /home/ec2-user/venv/bin/activate
-
-# Define project and logs directory
-PROJECT_DIR="/home/ec2-user/Stock-Scanner-Project"
+# Dynamically set the project directory
+PROJECT_DIR="$(pwd)"
 LOG_DIR="$PROJECT_DIR/logs"
+
+# Activate virtual environment
+if [ -f "$PROJECT_DIR/.venv/bin/activate" ]; then
+    source "$PROJECT_DIR/.venv/bin/activate"
+else
+    echo "Virtual environment not found at $PROJECT_DIR/.venv/"
+    exit 1
+fi
+
+# Ensure gunicorn is installed in the venv
+if ! command -v gunicorn &> /dev/null; then
+    echo "⚠️ gunicorn not found in virtualenv. Installing it now..."
+    pip install gunicorn
+fi
+
 
 # Ensure logs directory exists
 mkdir -p "$LOG_DIR"
