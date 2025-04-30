@@ -1,0 +1,97 @@
+/opt/anaconda3/lib/python3.12/site-packages/django/db/backends/utils.py:98: RuntimeWarning: Accessing the database during app initialization is discouraged. To fix this warning, avoid executing queries in AppConfig.ready() or when your app modules are imported.
+  warnings.warn(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)
+[nltk_data] Downloading package vader_lexicon to
+[nltk_data]     /Users/ckiefer/nltk_data...
+[nltk_data]   Package vader_lexicon is already up-to-date!
+ 
+ -------------- celery@Cashs-Nuclear-Launch-Codes.local v5.5.2 (immunity)
+--- ***** ----- 
+-- ******* ---- macOS-15.4.1-arm64-arm-64bit 2025-04-30 20:44:22
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         stockscanner_django:0x104b6e540
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 8 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+
+
+[2025-04-30 20:44:22,943: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2025-04-30 20:44:22,945: INFO/MainProcess] mingle: searching for neighbors
+[2025-04-30 20:44:23,955: INFO/MainProcess] mingle: all alone
+[2025-04-30 20:44:23,985: INFO/MainProcess] celery@Cashs-Nuclear-Launch-Codes.local ready.
+[2025-04-30 20:45:00,011: ERROR/MainProcess] Received unregistered task of type 'emails.tasks.send_dvsa_100_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'emails.tasks.send_dvsa_100_email', 'id': '0baa4729-197e-4788-b760-d006b72c7185', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '0baa4729-197e-4788-b760-d006b72c7185', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen92780@Cashs-Nuclear-Launch-Codes.local', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'periodic_task_name': 'Send DVSA 100% Alert'}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 662, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'emails.tasks.send_dvsa_100_email'
+[2025-04-30 20:45:00,066: ERROR/MainProcess] Received unregistered task of type 'emails.tasks.send_dvsa_150_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'emails.tasks.send_dvsa_150_email', 'id': '58730f2e-0b54-49b1-a67e-939a2cd866fb', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '58730f2e-0b54-49b1-a67e-939a2cd866fb', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen95996@Cashs-Nuclear-Launch-Codes.local', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'periodic_task_name': 'Send DVSA 150% Alert'}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 662, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'emails.tasks.send_dvsa_150_email'
+[2025-04-30 20:45:00,069: ERROR/MainProcess] Received unregistered task of type 'emails.tasks.send_dvsa_50_email'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'emails.tasks.send_dvsa_50_email', 'id': 'f10c0d9c-ae6a-4c13-900b-1d5646eb71a5', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'f10c0d9c-ae6a-4c13-900b-1d5646eb71a5', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen95996@Cashs-Nuclear-Launch-Codes.local', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'periodic_task_name': 'Send DVSA 50% Alert'}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 662, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'emails.tasks.send_dvsa_50_email'

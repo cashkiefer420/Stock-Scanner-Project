@@ -1,0 +1,9 @@
+/opt/anaconda3/lib/python3.12/site-packages/django/db/backends/utils.py:98: RuntimeWarning: Accessing the database during app initialization is discouraged. To fix this warning, avoid executing queries in AppConfig.ready() or when your app modules are imported.
+  warnings.warn(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)
+[nltk_data] Downloading package vader_lexicon to
+[nltk_data]     /Users/ckiefer/nltk_data...
+[nltk_data]   Package vader_lexicon is already up-to-date!
+[2025-04-30 20:44:22,181: INFO/MainProcess] beat: Starting...
+[2025-04-30 20:45:00,007: INFO/MainProcess] Scheduler: Sending due task Send DVSA 150% Alert (emails.tasks.send_dvsa_150_email)
+[2025-04-30 20:45:00,066: INFO/MainProcess] Scheduler: Sending due task Send DVSA 100% Alert (emails.tasks.send_dvsa_100_email)
+[2025-04-30 20:45:00,068: INFO/MainProcess] Scheduler: Sending due task Send DVSA 50% Alert (emails.tasks.send_dvsa_50_email)

@@ -1,0 +1,28 @@
+retailtradescanner.com {
+
+    # Reverse proxy everything to Gunicorn
+    reverse_proxy 127.0.0.1:8000
+
+    # Gzip compression
+    encode gzip
+
+    # Secure headers
+    header {
+        Strict-Transport-Security "max-age=31536000;"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        X-XSS-Protection "1; mode=block"
+    }
+
+    # Serve static files from your Django static directory
+    handle_path /static/* {
+        root * {$STATIC_PATH}
+        file_server
+    }
+
+    # Serve media files (user uploads, etc.)
+    handle_path /media/* {
+        root * {$MEDIA_PATH}
+        file_server
+    }
+}
