@@ -6,10 +6,10 @@
  
  -------------- celery@Cashs-Nuclear-Launch-Codes.local v5.5.2 (immunity)
 --- ***** ----- 
--- ******* ---- macOS-15.4.1-arm64-arm-64bit 2025-05-01 12:02:42
+-- ******* ---- macOS-15.4.1-arm64-arm-64bit 2025-05-01 18:50:10
 - *** --- * --- 
 - ** ---------- [config]
-- ** ---------- .> app:         stockscanner_django:0x103b2c1a0
+- ** ---------- .> app:         stockscanner_django:0x104c60aa0
 - ** ---------- .> transport:   redis://localhost:6379/0
 - ** ---------- .> results:     disabled://
 - *** --- * --- .> concurrency: 8 (prefork)
@@ -38,12 +38,11 @@
   . emails.tasks.send_price_10_de_email
   . emails.tasks.send_price_15_de_email
   . emails.tasks.send_price_20_de_email
+  . news.tasks.update_news_feed
 
-[2025-05-01 12:02:43,481: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2025-05-01 12:02:43,485: INFO/MainProcess] mingle: searching for neighbors
-[2025-05-01 12:02:44,493: INFO/MainProcess] mingle: all alone
-[2025-05-01 12:02:44,511: INFO/MainProcess] celery@Cashs-Nuclear-Launch-Codes.local ready.
-[2025-05-01 12:03:39,851: INFO/MainProcess] Task emails.tasks.send_dvsa_50_email[d22ca75c-b314-4602-857d-d7a43bbacbe6] received
-[2025-05-01 12:03:39,858: INFO/ForkPoolWorker-7] Task emails.tasks.send_dvsa_50_email[d22ca75c-b314-4602-857d-d7a43bbacbe6] succeeded in 0.006570790981641039s: None
+[2025-05-01 18:50:11,318: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2025-05-01 18:50:11,323: INFO/MainProcess] mingle: searching for neighbors
+[2025-05-01 18:50:12,332: INFO/MainProcess] mingle: all alone
+[2025-05-01 18:50:12,343: INFO/MainProcess] celery@Cashs-Nuclear-Launch-Codes.local ready.
 
 worker: Warm shutdown (MainProcess)

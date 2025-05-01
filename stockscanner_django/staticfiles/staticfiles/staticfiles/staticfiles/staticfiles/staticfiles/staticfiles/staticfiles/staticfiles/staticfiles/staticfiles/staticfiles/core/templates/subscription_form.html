@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Subscription</title>
+    <link rel="stylesheet" href="{% static 'index_sub.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ heading }}</h1>
+        <form id="subscription-form">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="response-message" style="color: green; display: none;"></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('subscription-form');
+        const responseMessage = document.getElementById('response-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+
+            try {
+                const response = await fetch("{{ endpoint }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email }),
+                });
+
+                const result = await response.json();
+                responseMessage.style.display = 'block';
+                responseMessage.textContent = result.message;
+                responseMessage.style.color = response.ok ? 'green' : 'red';
+            } catch (error) {
+                responseMessage.style.display = 'block';
+                responseMessage.style.color = 'red';
+                responseMessage.textContent = 'An error occurred. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>
