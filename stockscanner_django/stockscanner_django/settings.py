@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "core",
-    "email",
+    "emails",
     'django_celery_beat',
 ]
 
@@ -139,8 +139,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # or your provider
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your@email.com'
-EMAIL_HOST_PASSWORD = 'your-email-password-or-app-password'
+EMAIL_HOST_USER = 'noreply.retailtradescanner@gmail.com'
+EMAIL_HOST_PASSWORD = 'mzqmvhsjqeqrjmjv'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 import os

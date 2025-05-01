@@ -14,6 +14,7 @@ def send_dvsa_50_email():
         message,
         settings.DEFAULT_FROM_EMAIL,
         list(recipients),
+        print("FROM EMAIL:", settings.DEFAULT_FROM_EMAIL)
         fail_silently=False,
     )
 

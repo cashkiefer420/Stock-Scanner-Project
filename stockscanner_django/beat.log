@@ -3,7 +3,14 @@
 [nltk_data] Downloading package vader_lexicon to
 [nltk_data]     /Users/ckiefer/nltk_data...
 [nltk_data]   Package vader_lexicon is already up-to-date!
-[2025-04-30 20:44:22,181: INFO/MainProcess] beat: Starting...
-[2025-04-30 20:45:00,007: INFO/MainProcess] Scheduler: Sending due task Send DVSA 150% Alert (emails.tasks.send_dvsa_150_email)
-[2025-04-30 20:45:00,066: INFO/MainProcess] Scheduler: Sending due task Send DVSA 100% Alert (emails.tasks.send_dvsa_100_email)
-[2025-04-30 20:45:00,068: INFO/MainProcess] Scheduler: Sending due task Send DVSA 50% Alert (emails.tasks.send_dvsa_50_email)
+[2025-05-01 12:02:42,910: INFO/MainProcess] beat: Starting...
+celery beat v5.5.2 (immunity) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-01 12:02:42
+Configuration ->
+    . broker -> redis://localhost:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)

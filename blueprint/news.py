@@ -1,7 +1,7 @@
 import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_FOLDER = os.path.join(BASE_DIR, "..", "..", "static")
-JSON_FOLDER = os.path.join(BASE_DIR, "..", "..", "json")
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
+JSON_FOLDER = os.path.join(base_dir, "..", "json")
 os.makedirs(JSON_FOLDER, exist_ok=True)
 
 import requests
@@ -86,7 +86,7 @@ def extract_articles():
         
 
         headline = headline_tag.text.strip() if headline_tag else None
-        link = f"https://finance.yahoo.com{link_tag['href']}" if link_tag and 'href' in link_tag.attrs else None
+        link = f"{link_tag['href']}" if link_tag and 'href' in link_tag.attrs else None
         first_paragraph = paragraph_tag.text.strip() if paragraph_tag else None
         
 
@@ -103,8 +103,10 @@ def extract_articles():
     
     return all_articles  # ✅ Corrected return statement
 
-# 🔹 Define export file path
-EXPORT_FILE_PATH = os.path.join(base_dir, "json", "news.json")
+
+if not os.path.exists(EXPORT_FILE_PATH):
+    print(f"Warning: {EXPORT_FILE_PATH} not found.")
+
 # 🔹 Run the scraper and save results
 if __name__ == "__main__":
     extracted_articles = extract_articles()
