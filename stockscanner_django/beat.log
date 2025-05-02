@@ -3,14 +3,5 @@
 [nltk_data] Downloading package vader_lexicon to
 [nltk_data]     /Users/ckiefer/nltk_data...
 [nltk_data]   Package vader_lexicon is already up-to-date!
-[2025-05-01 18:50:10,442: INFO/MainProcess] beat: Starting...
-celery beat v5.5.2 (immunity) is starting.
-__    -    ... __   -        _
-LocalTime -> 2025-05-01 18:50:10
-Configuration ->
-    . broker -> redis://localhost:6379/0
-    . loader -> celery.loaders.app.AppLoader
-    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
-
-    . logfile -> [stderr]@%INFO
-    . maxinterval -> 5.00 seconds (5s)
+[2025-05-02 22:15:56,276: INFO/MainProcess] beat: Starting...
+[2025-05-02 22:16:51,418: INFO/MainProcess] DatabaseScheduler: Schedule changed.

@@ -13,8 +13,7 @@ import news
 import News_display
 import Stock_search_up
 import personalized_stock_filter
-#import retrieve_data
-import Email_filter
+from emails.email_filter import EmailFilter
 from .models import Subscription
 
 
@@ -231,11 +230,13 @@ def download_csv_view(request):
   #  return JsonResponse({"status": "Data updated successfully."})
 
 # Optional: Email-based filter download
+
+
 def email_filter_view(request):
     if request.method == 'POST':
-        Email_filter.main()
-        return JsonResponse({"status": "Email filter process complete."})
-    return HttpResponse("Email Filter Trigger Page")
+        filter = EmailFilter()
+        category = filter.filter_email("dvsa volume 50")
+        return JsonResponse({"status": f"Matched category: {category}"})
 
 @csrf_exempt
 def generic_subscribe(request, route_name):

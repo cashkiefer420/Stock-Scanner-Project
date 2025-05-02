@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-3o(csaf*^k*d41wf+k#tt$jcu13wo*o^*41*h&)18b1r-^7krg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.6.200.155']
 
 
 # Application definition
@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core",
     "emails",
-    'django_celery_beat',
+    "django_celery_beat",
+    "news",
+    "stocks",
 ]
 
 MIDDLEWARE = [

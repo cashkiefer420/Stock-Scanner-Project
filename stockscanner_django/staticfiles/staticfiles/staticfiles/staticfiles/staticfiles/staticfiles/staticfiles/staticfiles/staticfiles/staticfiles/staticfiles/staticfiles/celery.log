@@ -6,10 +6,10 @@
  
  -------------- celery@Cashs-Nuclear-Launch-Codes.local v5.5.2 (immunity)
 --- ***** ----- 
--- ******* ---- macOS-15.4.1-arm64-arm-64bit 2025-05-01 18:41:27
+-- ******* ---- macOS-15.4.1-arm64-arm-64bit 2025-05-02 21:26:26
 - *** --- * --- 
 - ** ---------- [config]
-- ** ---------- .> app:         stockscanner_django:0x1038b51f0
+- ** ---------- .> app:         stockscanner_django:0x105950aa0
 - ** ---------- .> transport:   redis://localhost:6379/0
 - ** ---------- .> results:     disabled://
 - *** --- * --- .> concurrency: 8 (prefork)
@@ -20,44 +20,94 @@
                 
 
 [tasks]
-  . emails.tasks.send_dvsa_100_email
-  . emails.tasks.send_dvsa_150_email
-  . emails.tasks.send_dvsa_50_email
-  . emails.tasks.send_mc_10_de_email
-  . emails.tasks.send_mc_10_in_email
-  . emails.tasks.send_mc_20_de_email
-  . emails.tasks.send_mc_20_in_email
-  . emails.tasks.send_mc_30_de_email
-  . emails.tasks.send_mc_30_in_email
-  . emails.tasks.send_pe_10_de_email
-  . emails.tasks.send_pe_10_in_email
-  . emails.tasks.send_pe_20_de_email
-  . emails.tasks.send_pe_20_in_email
-  . emails.tasks.send_pe_30_de_email
-  . emails.tasks.send_pe_30_in_email
-  . emails.tasks.send_price_10_de_email
-  . emails.tasks.send_price_15_de_email
-  . emails.tasks.send_price_20_de_email
+  . emails.tasks.send_personalized_email
   . news.tasks.update_news_feed
 
-[2025-05-01 18:41:28,720: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2025-05-01 18:41:28,728: INFO/MainProcess] mingle: searching for neighbors
-[2025-05-01 18:41:29,738: INFO/MainProcess] mingle: all alone
-[2025-05-01 18:41:29,748: INFO/MainProcess] celery@Cashs-Nuclear-Launch-Codes.local ready.
-[2025-05-01 18:41:34,677: INFO/MainProcess] Task news.tasks.update_news_feed[7846c3e5-cf51-40ac-a014-bb195d5fbf17] received
-[2025-05-01 18:41:34,679: WARNING/ForkPoolWorker-7] 📡 Running hourly news scrape...
-[2025-05-01 18:41:35,479: WARNING/ForkPoolWorker-7] 🔍 63 articles fetched from https://finance.yahoo.com/topic/stock-market-news/
-[2025-05-01 18:41:36,205: WARNING/ForkPoolWorker-7] 🔍 49 articles fetched from https://finance.yahoo.com/topic/latest-news/
-[2025-05-01 18:41:36,923: WARNING/ForkPoolWorker-7] 🔍 49 articles fetched from https://finance.yahoo.com/topic/earnings/
-[2025-05-01 18:41:37,829: WARNING/ForkPoolWorker-7] 🔍 49 articles fetched from https://finance.yahoo.com/topic/morning-brief/
-[2025-05-01 18:41:39,214: WARNING/ForkPoolWorker-7] ✅ Saved 210 articles to /Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/stockscanner_django/../json/news.json
-[2025-05-01 18:41:39,215: WARNING/ForkPoolWorker-7] ✅ News feed updated.
-[2025-05-01 18:41:39,215: INFO/ForkPoolWorker-7] Task news.tasks.update_news_feed[7846c3e5-cf51-40ac-a014-bb195d5fbf17] succeeded in 4.536823667003773s: None
-[2025-05-01 18:45:00,113: INFO/MainProcess] Task emails.tasks.send_dvsa_150_email[12cbfcea-6622-4305-aec2-d26977e245b8] received
-[2025-05-01 18:45:00,116: INFO/MainProcess] Task emails.tasks.send_dvsa_100_email[c5b60b97-cc60-4792-9229-28c6a0340d7e] received
-[2025-05-01 18:45:00,118: INFO/MainProcess] Task emails.tasks.send_dvsa_50_email[e944b8a7-8095-4c39-a8e8-3a7f564d6a34] received
-[2025-05-01 18:45:01,491: INFO/ForkPoolWorker-7] Task emails.tasks.send_dvsa_150_email[12cbfcea-6622-4305-aec2-d26977e245b8] succeeded in 1.375923084007809s: None
-[2025-05-01 18:45:01,620: INFO/ForkPoolWorker-1] Task emails.tasks.send_dvsa_50_email[e944b8a7-8095-4c39-a8e8-3a7f564d6a34] succeeded in 1.5004694590170402s: None
-[2025-05-01 18:45:01,782: INFO/ForkPoolWorker-8] Task emails.tasks.send_dvsa_100_email[c5b60b97-cc60-4792-9229-28c6a0340d7e] succeeded in 1.6644468750164378s: None
+[2025-05-02 21:26:27,214: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2025-05-02 21:26:27,219: INFO/MainProcess] mingle: searching for neighbors
+[2025-05-02 21:26:28,227: INFO/MainProcess] mingle: all alone
+[2025-05-02 21:26:28,244: INFO/MainProcess] celery@Cashs-Nuclear-Launch-Codes.local ready.
+[2025-05-02 21:26:28,248: ERROR/MainProcess] Received unregistered task of type 'emails.tasks.run_stock_notifications'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'emails.tasks.run_stock_notifications', 'id': '4e0c2377-8bf2-48c4-84ec-d0bcb1ae21cf', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '4e0c2377-8bf2-48c4-84ec-d0bcb1ae21cf', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen1968@Cashs-Nuclear-Launch-Codes.local', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'periodic_task_name': 'Send Personalized Email'}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 662, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'emails.tasks.run_stock_notifications'
+[2025-05-02 21:27:26,230: ERROR/MainProcess] Received unregistered task of type 'emails.tasks.run_stock_notifications'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'emails.tasks.run_stock_notifications', 'id': '6f594cb3-5aa6-4e56-9896-bb559d4d5363', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '6f594cb3-5aa6-4e56-9896-bb559d4d5363', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen1968@Cashs-Nuclear-Launch-Codes.local', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'periodic_task_name': 'Send Personalized Email'}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 662, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'emails.tasks.run_stock_notifications'
+[2025-05-02 21:28:00,576: INFO/MainProcess] Task emails.tasks.send_personalized_email[2acaa37c-4f96-4914-b461-22b0c9d0c0c4] received
+[2025-05-02 21:28:00,580: INFO/MainProcess] Task emails.tasks.send_personalized_email[5dd82480-6f90-4a07-a0c3-1136f04ad5b0] received
+[2025-05-02 21:28:00,582: INFO/MainProcess] Task emails.tasks.send_personalized_email[35e0a430-8509-44bf-b13d-a975c239e9f9] received
+[2025-05-02 21:28:00,584: INFO/MainProcess] Task emails.tasks.send_personalized_email[aeef05a0-bfba-40ba-b6a6-221473b4741b] received
+[2025-05-02 21:28:00,587: INFO/MainProcess] Task emails.tasks.send_personalized_email[6420688b-fa3c-49d3-85ec-4663e62fd2b1] received
+[2025-05-02 21:28:00,590: INFO/MainProcess] Task emails.tasks.send_personalized_email[9cc81a16-f308-4335-a443-cdf4dd70bb5e] received
+[2025-05-02 21:28:00,597: INFO/MainProcess] Task emails.tasks.send_personalized_email[35ff1f73-f0f7-47b3-8e9e-d6b46f4c2f5a] received
+[2025-05-02 21:28:00,602: INFO/MainProcess] Task emails.tasks.send_personalized_email[873759d2-ffa8-403f-b116-d3ac361dfa61] received
+[2025-05-02 21:28:00,607: INFO/MainProcess] Task emails.tasks.send_personalized_email[ea35684e-5578-4a65-8a0d-af630fba694a] received
+[2025-05-02 21:28:01,249: WARNING/ForkPoolWorker-2] [DEBUG] Sending summary email to: cash.kiefer2008@gmail.com, category: PE 20 IN, count: 216
+[2025-05-02 21:28:01,253: WARNING/ForkPoolWorker-1] [DEBUG] Sending summary email to: cash.kiefer2008@gmail.com, category: PE 30 IN, count: 444
+[2025-05-02 21:28:01,259: WARNING/ForkPoolWorker-4] [DEBUG] Sending summary email to: cash.kiefer2008@gmail.com, category: DVSA 100, count: 21
+[2025-05-02 21:28:01,267: WARNING/ForkPoolWorker-8] [DEBUG] Sending summary email to: cash.kiefer2008@gmail.com, category: PE 10 DE, count: 337
+[2025-05-02 21:28:01,281: WARNING/ForkPoolWorker-3] [DEBUG] Sending summary email to: cash.kiefer2008@gmail.com, category: PE 10 IN, count: 464
+[2025-05-02 21:28:01,288: WARNING/ForkPoolWorker-7] [DEBUG] Sending summary email to: cash.kiefer2008@gmail.com, category: DVSA 50, count: 2196
+[2025-05-02 21:28:01,307: WARNING/ForkPoolWorker-6] [DEBUG] Sending summary email to: cash.kiefer2008@gmail.com, category: PRICE 10 DE, count: 23
+[2025-05-02 21:28:01,318: WARNING/ForkPoolWorker-5] [DEBUG] Sending summary email to: cash.kiefer2008@gmail.com, category: PRICE 20 DE, count: 8
+[2025-05-02 21:28:02,012: INFO/ForkPoolWorker-1] Task emails.tasks.send_personalized_email[35e0a430-8509-44bf-b13d-a975c239e9f9] succeeded in 1.4237267500138842s: None
+[2025-05-02 21:28:02,586: WARNING/ForkPoolWorker-1] [DEBUG] Sending summary email to: cash.kiefer2008@gmail.com, category: PRICE 15 DE, count: 16
+[2025-05-02 21:28:03,298: INFO/ForkPoolWorker-2] Task emails.tasks.send_personalized_email[aeef05a0-bfba-40ba-b6a6-221473b4741b] succeeded in 2.7103249589854386s: None
+[2025-05-02 21:28:03,553: INFO/ForkPoolWorker-3] Task emails.tasks.send_personalized_email[6420688b-fa3c-49d3-85ec-4663e62fd2b1] succeeded in 2.9558801669918466s: None
+[2025-05-02 21:28:05,711: INFO/ForkPoolWorker-7] Task emails.tasks.send_personalized_email[2acaa37c-4f96-4914-b461-22b0c9d0c0c4] succeeded in 5.11353537501418s: None
+[2025-05-02 21:28:05,944: INFO/ForkPoolWorker-4] Task emails.tasks.send_personalized_email[9cc81a16-f308-4335-a443-cdf4dd70bb5e] succeeded in 5.348994957981631s: None
+[2025-05-02 21:28:06,068: INFO/ForkPoolWorker-8] Task emails.tasks.send_personalized_email[5dd82480-6f90-4a07-a0c3-1136f04ad5b0] succeeded in 5.483679958997527s: None
+[2025-05-02 21:28:06,268: INFO/ForkPoolWorker-5] Task emails.tasks.send_personalized_email[35ff1f73-f0f7-47b3-8e9e-d6b46f4c2f5a] succeeded in 5.666219207982067s: None
+[2025-05-02 21:28:08,872: INFO/ForkPoolWorker-1] Task emails.tasks.send_personalized_email[ea35684e-5578-4a65-8a0d-af630fba694a] succeeded in 6.859168332972331s: None
+[2025-05-02 21:28:09,124: INFO/ForkPoolWorker-6] Task emails.tasks.send_personalized_email[873759d2-ffa8-403f-b116-d3ac361dfa61] succeeded in 8.516751750023104s: None
+[2025-05-02 22:13:02,867: INFO/MainProcess] Task news.tasks.update_news_feed[d17984d2-d00c-4008-91d6-778dc35d7537] received
+[2025-05-02 22:13:02,872: WARNING/ForkPoolWorker-7] 📡 Running hourly news scrape...
+[2025-05-02 22:13:05,805: WARNING/ForkPoolWorker-7] 🔍 63 articles fetched from https://finance.yahoo.com/topic/stock-market-news/
+[2025-05-02 22:13:09,171: WARNING/ForkPoolWorker-7] 🔍 49 articles fetched from https://finance.yahoo.com/topic/latest-news/
+[2025-05-02 22:13:12,145: WARNING/ForkPoolWorker-7] 🔍 49 articles fetched from https://finance.yahoo.com/topic/earnings/
+[2025-05-02 22:13:15,008: WARNING/ForkPoolWorker-7] 🔍 49 articles fetched from https://finance.yahoo.com/topic/morning-brief/
+[2025-05-02 22:13:15,820: WARNING/ForkPoolWorker-7] ✅ Saved 210 articles to /Users/ckiefer/projects/StockScanner/Stock-Scanner-Project/stockscanner_django/../json/news.json
+[2025-05-02 22:13:15,820: WARNING/ForkPoolWorker-7] ✅ News feed updated.
+[2025-05-02 22:13:15,821: INFO/ForkPoolWorker-7] Task news.tasks.update_news_feed[d17984d2-d00c-4008-91d6-778dc35d7537] succeeded in 12.94986283298931s: None
 
 worker: Warm shutdown (MainProcess)

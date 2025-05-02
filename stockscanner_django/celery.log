@@ -6,10 +6,10 @@
  
  -------------- celery@Cashs-Nuclear-Launch-Codes.local v5.5.2 (immunity)
 --- ***** ----- 
--- ******* ---- macOS-15.4.1-arm64-arm-64bit 2025-05-01 18:50:10
+-- ******* ---- macOS-15.4.1-arm64-arm-64bit 2025-05-02 22:15:56
 - *** --- * --- 
 - ** ---------- [config]
-- ** ---------- .> app:         stockscanner_django:0x104c60aa0
+- ** ---------- .> app:         stockscanner_django:0x1067a8aa0
 - ** ---------- .> transport:   redis://localhost:6379/0
 - ** ---------- .> results:     disabled://
 - *** --- * --- .> concurrency: 8 (prefork)
@@ -20,29 +20,2017 @@
                 
 
 [tasks]
-  . emails.tasks.send_dvsa_100_email
-  . emails.tasks.send_dvsa_150_email
-  . emails.tasks.send_dvsa_50_email
-  . emails.tasks.send_mc_10_de_email
-  . emails.tasks.send_mc_10_in_email
-  . emails.tasks.send_mc_20_de_email
-  . emails.tasks.send_mc_20_in_email
-  . emails.tasks.send_mc_30_de_email
-  . emails.tasks.send_mc_30_in_email
-  . emails.tasks.send_pe_10_de_email
-  . emails.tasks.send_pe_10_in_email
-  . emails.tasks.send_pe_20_de_email
-  . emails.tasks.send_pe_20_in_email
-  . emails.tasks.send_pe_30_de_email
-  . emails.tasks.send_pe_30_in_email
-  . emails.tasks.send_price_10_de_email
-  . emails.tasks.send_price_15_de_email
-  . emails.tasks.send_price_20_de_email
+  . emails.tasks.send_personalized_email
   . news.tasks.update_news_feed
+  . stocks.tasks.run_stock_import
 
-[2025-05-01 18:50:11,318: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2025-05-01 18:50:11,323: INFO/MainProcess] mingle: searching for neighbors
-[2025-05-01 18:50:12,332: INFO/MainProcess] mingle: all alone
-[2025-05-01 18:50:12,343: INFO/MainProcess] celery@Cashs-Nuclear-Launch-Codes.local ready.
+[2025-05-02 22:15:57,592: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2025-05-02 22:15:57,596: INFO/MainProcess] mingle: searching for neighbors
+[2025-05-02 22:15:58,607: INFO/MainProcess] mingle: all alone
+[2025-05-02 22:15:58,619: INFO/MainProcess] celery@Cashs-Nuclear-Launch-Codes.local ready.
+[2025-05-02 22:16:55,170: INFO/MainProcess] Task stocks.tasks.run_stock_import[03a58081-4c74-408b-b076-cfb65da36368] received
+[2025-05-02 22:16:55,248: WARNING/ForkPoolWorker-7] 🔍 Processing 3731 tickers...
+[2025-05-02 22:16:58,849: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:16:58.844509) while time zone support is active.
+  warnings.warn(
 
-worker: Warm shutdown (MainProcess)
+[2025-05-02 22:16:58,850: WARNING/ForkPoolWorker-7] ✅ Saved AACBU
+[2025-05-02 22:17:00,445: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:00.444661) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:00,447: WARNING/ForkPoolWorker-7] ✅ Saved AACG
+[2025-05-02 22:17:02,048: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:02.047480) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:02,049: WARNING/ForkPoolWorker-7] ✅ Saved AAL
+[2025-05-02 22:17:03,690: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:03.688884) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:03,692: WARNING/ForkPoolWorker-7] ✅ Saved AAME
+[2025-05-02 22:17:05,315: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:05.314411) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:05,317: WARNING/ForkPoolWorker-7] ✅ Saved AAOI
+[2025-05-02 22:17:06,929: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:06.928153) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:06,930: WARNING/ForkPoolWorker-7] ✅ Saved AAON
+[2025-05-02 22:17:09,057: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:09.056539) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:09,059: WARNING/ForkPoolWorker-7] ✅ Saved AAPD
+[2025-05-02 22:17:10,645: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:10.643925) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:10,647: WARNING/ForkPoolWorker-7] ✅ Saved AAPG
+[2025-05-02 22:17:12,335: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:12.334426) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:12,337: WARNING/ForkPoolWorker-7] ✅ Saved AAPL
+[2025-05-02 22:17:14,506: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:14.504856) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:14,508: WARNING/ForkPoolWorker-7] ✅ Saved AAPU
+[2025-05-02 22:17:16,354: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:16.353873) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:16,356: WARNING/ForkPoolWorker-7] ✅ Saved AARD
+[2025-05-02 22:17:18,049: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:18.047894) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:18,050: WARNING/ForkPoolWorker-7] ✅ Saved ABAT
+[2025-05-02 22:17:20,039: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:20.038202) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:20,040: WARNING/ForkPoolWorker-7] ✅ Saved ABCL
+[2025-05-02 22:17:22,137: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:22.136107) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:22,138: WARNING/ForkPoolWorker-7] ✅ Saved ABEO
+[2025-05-02 22:17:23,817: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:23.816394) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:23,818: WARNING/ForkPoolWorker-7] ✅ Saved ABL
+[2025-05-02 22:17:25,972: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:25.969643) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:25,973: WARNING/ForkPoolWorker-7] ✅ Saved ABLLL
+[2025-05-02 22:17:27,749: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:27.748239) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:27,751: WARNING/ForkPoolWorker-7] ✅ Saved ABLV
+[2025-05-02 22:17:29,302: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:29.301372) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:29,303: WARNING/ForkPoolWorker-7] ✅ Saved ABNB
+[2025-05-02 22:17:31,009: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:31.007729) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:31,010: WARNING/ForkPoolWorker-7] ✅ Saved ABOS
+[2025-05-02 22:17:32,789: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:32.787584) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:32,790: WARNING/ForkPoolWorker-7] ✅ Saved ABP
+[2025-05-02 22:17:34,462: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:34.461199) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:34,463: WARNING/ForkPoolWorker-7] ✅ Saved ABSI
+[2025-05-02 22:17:36,148: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:36.147101) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:36,149: WARNING/ForkPoolWorker-7] ✅ Saved ABTS
+[2025-05-02 22:17:37,780: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:37.778619) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:37,782: WARNING/ForkPoolWorker-7] ✅ Saved ABUS
+[2025-05-02 22:17:39,345: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:39.343930) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:39,346: WARNING/ForkPoolWorker-7] ✅ Saved ABVC
+[2025-05-02 22:17:41,102: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:41.101350) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:41,103: WARNING/ForkPoolWorker-7] ✅ Saved ABVE
+[2025-05-02 22:17:42,865: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:42.864605) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:42,867: WARNING/ForkPoolWorker-7] ✅ Saved ABVX
+[2025-05-02 22:17:44,558: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:44.556922) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:44,560: WARNING/ForkPoolWorker-7] ✅ Saved ACAD
+[2025-05-02 22:17:46,208: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:46.206615) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:46,209: WARNING/ForkPoolWorker-7] ✅ Saved ACB
+[2025-05-02 22:17:47,782: ERROR/ForkPoolWorker-7] $ACCD: possibly delisted; no price data found  (period=5d)
+[2025-05-02 22:17:47,797: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:47.795699) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:47,799: WARNING/ForkPoolWorker-7] ✅ Saved ACCD
+[2025-05-02 22:17:49,396: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:49.395214) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:49,397: WARNING/ForkPoolWorker-7] ✅ Saved ACDC
+[2025-05-02 22:17:51,077: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:51.076279) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:51,078: WARNING/ForkPoolWorker-7] ✅ Saved ACET
+[2025-05-02 22:17:52,745: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:52.744392) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:52,746: WARNING/ForkPoolWorker-7] ✅ Saved ACGL
+[2025-05-02 22:17:54,321: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:54.320294) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:54,322: WARNING/ForkPoolWorker-7] ✅ Saved ACHC
+[2025-05-02 22:17:55,900: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:55.899780) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:55,902: WARNING/ForkPoolWorker-7] ✅ Saved ACHV
+[2025-05-02 22:17:57,756: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:57.755020) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:57,757: WARNING/ForkPoolWorker-7] ✅ Saved ACIC
+[2025-05-02 22:17:59,527: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:17:59.526380) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:17:59,529: WARNING/ForkPoolWorker-7] ✅ Saved ACIU
+[2025-05-02 22:18:01,485: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:01.484731) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:01,486: WARNING/ForkPoolWorker-7] ✅ Saved ACIW
+[2025-05-02 22:18:03,201: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:03.190042) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:03,220: WARNING/ForkPoolWorker-7] ✅ Saved ACLS
+[2025-05-02 22:18:05,315: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:05.314622) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:05,317: WARNING/ForkPoolWorker-7] ✅ Saved ACLX
+[2025-05-02 22:18:06,972: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:06.970897) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:06,973: WARNING/ForkPoolWorker-7] ✅ Saved ACMR
+[2025-05-02 22:18:08,762: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:08.761482) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:08,764: WARNING/ForkPoolWorker-7] ✅ Saved ACNB
+[2025-05-02 22:18:10,489: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:10.488092) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:10,490: WARNING/ForkPoolWorker-7] ✅ Saved ACNT
+[2025-05-02 22:18:12,505: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:12.504165) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:12,506: WARNING/ForkPoolWorker-7] ✅ Saved ACOG
+[2025-05-02 22:18:14,188: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:14.187129) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:14,189: WARNING/ForkPoolWorker-7] ✅ Saved ACON
+[2025-05-02 22:18:15,763: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:15.762233) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:15,764: WARNING/ForkPoolWorker-7] ✅ Saved ACRS
+[2025-05-02 22:18:17,399: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:17.398752) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:17,401: WARNING/ForkPoolWorker-7] ✅ Saved ACRV
+[2025-05-02 22:18:18,993: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:18.992275) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:18,994: WARNING/ForkPoolWorker-7] ✅ Saved ACT
+[2025-05-02 22:18:20,665: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:20.664379) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:20,666: WARNING/ForkPoolWorker-7] ✅ Saved ACTG
+[2025-05-02 22:18:22,641: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:22.639953) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:22,642: WARNING/ForkPoolWorker-7] ✅ Saved ACTU
+[2025-05-02 22:18:24,502: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:24.501612) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:24,503: WARNING/ForkPoolWorker-7] ✅ Saved ACXP
+[2025-05-02 22:18:26,165: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:26.164097) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:26,167: WARNING/ForkPoolWorker-7] ✅ Saved ADAG
+[2025-05-02 22:18:27,761: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:27.759484) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:27,763: WARNING/ForkPoolWorker-7] ✅ Saved ADAP
+[2025-05-02 22:18:29,583: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:29.582062) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:29,584: WARNING/ForkPoolWorker-7] ✅ Saved ADBE
+[2025-05-02 22:18:31,339: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:31.338292) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:31,340: WARNING/ForkPoolWorker-7] ✅ Saved ADD
+[2025-05-02 22:18:33,307: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:33.305870) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:33,309: WARNING/ForkPoolWorker-7] ✅ Saved ADEA
+[2025-05-02 22:18:35,139: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:35.138260) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:35,141: WARNING/ForkPoolWorker-7] ✅ Saved ADGM
+[2025-05-02 22:18:36,827: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:36.825606) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:36,829: WARNING/ForkPoolWorker-7] ✅ Saved ADI
+[2025-05-02 22:18:39,142: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:39.141187) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:39,144: WARNING/ForkPoolWorker-7] ✅ Saved ADIL
+[2025-05-02 22:18:40,891: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:40.889386) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:40,893: WARNING/ForkPoolWorker-7] ✅ Saved ADMA
+[2025-05-02 22:18:42,630: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:42.629664) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:42,631: WARNING/ForkPoolWorker-7] ✅ Saved ADN
+[2025-05-02 22:18:44,362: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:44.361226) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:44,364: WARNING/ForkPoolWorker-7] ✅ Saved ADP
+[2025-05-02 22:18:45,935: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:45.933819) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:45,937: WARNING/ForkPoolWorker-7] ✅ Saved ADPT
+[2025-05-02 22:18:47,510: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:47.509307) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:47,511: WARNING/ForkPoolWorker-7] ✅ Saved ADSE
+[2025-05-02 22:18:49,137: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:49.136915) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:49,139: WARNING/ForkPoolWorker-7] ✅ Saved ADSK
+[2025-05-02 22:18:50,801: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:50.800731) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:50,803: WARNING/ForkPoolWorker-7] ✅ Saved ADTN
+[2025-05-02 22:18:52,391: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:52.390302) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:52,393: WARNING/ForkPoolWorker-7] ✅ Saved ADTX
+[2025-05-02 22:18:54,051: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:54.050140) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:54,053: WARNING/ForkPoolWorker-7] ✅ Saved ADUR
+[2025-05-02 22:18:55,617: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:55.616135) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:55,618: WARNING/ForkPoolWorker-7] ✅ Saved ADUS
+[2025-05-02 22:18:57,184: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:57.182718) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:57,185: WARNING/ForkPoolWorker-7] ✅ Saved ADV
+[2025-05-02 22:18:58,934: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:18:58.933042) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:18:58,936: WARNING/ForkPoolWorker-7] ✅ Saved ADVB
+[2025-05-02 22:19:00,926: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:00.925082) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:00,927: WARNING/ForkPoolWorker-7] ✅ Saved ADVM
+[2025-05-02 22:19:02,635: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:02.634550) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:02,636: WARNING/ForkPoolWorker-7] ✅ Saved ADXN
+[2025-05-02 22:19:04,234: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:04.232418) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:04,236: WARNING/ForkPoolWorker-7] ✅ Saved AEHL
+[2025-05-02 22:19:05,807: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:05.806352) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:05,808: WARNING/ForkPoolWorker-7] ✅ Saved AEHR
+[2025-05-02 22:19:07,491: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:07.490491) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:07,492: WARNING/ForkPoolWorker-7] ✅ Saved AEI
+[2025-05-02 22:19:09,060: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:09.059414) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:09,061: WARNING/ForkPoolWorker-7] ✅ Saved AEIS
+[2025-05-02 22:19:10,675: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:10.674136) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:10,676: WARNING/ForkPoolWorker-7] ✅ Saved AEMD
+[2025-05-02 22:19:12,242: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:12.240621) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:12,244: WARNING/ForkPoolWorker-7] ✅ Saved AENT
+[2025-05-02 22:19:14,173: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:14.172209) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:14,175: WARNING/ForkPoolWorker-7] ✅ Saved AEP
+[2025-05-02 22:19:15,972: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:15.971341) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:15,974: WARNING/ForkPoolWorker-7] ✅ Saved AERT
+[2025-05-02 22:19:17,615: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:17.614247) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:17,616: WARNING/ForkPoolWorker-7] ✅ Saved AEVA
+[2025-05-02 22:19:20,532: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:20.531637) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:20,534: WARNING/ForkPoolWorker-7] ✅ Saved AEVAW
+[2025-05-02 22:19:22,464: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:22.461363) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:22,466: WARNING/ForkPoolWorker-7] ✅ Saved AEYE
+[2025-05-02 22:19:24,290: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:24.288970) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:24,292: WARNING/ForkPoolWorker-7] ✅ Saved AFBI
+[2025-05-02 22:19:26,126: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:26.124863) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:26,128: WARNING/ForkPoolWorker-7] ✅ Saved AFCG
+[2025-05-02 22:19:28,391: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:28.389574) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:28,393: WARNING/ForkPoolWorker-7] ✅ Saved AFJK
+[2025-05-02 22:19:30,333: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:30.331868) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:30,334: WARNING/ForkPoolWorker-7] ✅ Saved AFJKR
+[2025-05-02 22:19:32,618: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:32.617396) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:32,620: WARNING/ForkPoolWorker-7] ✅ Saved AFJKU
+[2025-05-02 22:19:34,303: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:34.302561) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:34,305: WARNING/ForkPoolWorker-7] ✅ Saved AFMD
+[2025-05-02 22:19:36,104: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:36.102996) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:36,105: WARNING/ForkPoolWorker-7] ✅ Saved AFRI
+[2025-05-02 22:19:37,831: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:37.829982) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:37,832: WARNING/ForkPoolWorker-7] ✅ Saved AFRM
+[2025-05-02 22:19:39,665: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:39.664535) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:39,666: WARNING/ForkPoolWorker-7] ✅ Saved AFYA
+[2025-05-02 22:19:41,464: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:41.463186) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:41,465: WARNING/ForkPoolWorker-7] ✅ Saved AGAE
+[2025-05-02 22:19:43,030: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:43.029398) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:43,032: WARNING/ForkPoolWorker-7] ✅ Saved AGEN
+[2025-05-02 22:19:44,617: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:44.615982) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:44,618: WARNING/ForkPoolWorker-7] ✅ Saved AGFY
+[2025-05-02 22:19:46,268: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:46.267497) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:46,270: WARNING/ForkPoolWorker-7] ✅ Saved AGH
+[2025-05-02 22:19:47,845: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:47.844617) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:47,846: WARNING/ForkPoolWorker-7] ✅ Saved AGIO
+[2025-05-02 22:19:49,513: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:49.512144) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:49,515: WARNING/ForkPoolWorker-7] ✅ Saved AGMH
+[2025-05-02 22:19:51,236: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:51.235364) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:51,237: WARNING/ForkPoolWorker-7] ✅ Saved AGNC
+[2025-05-02 22:19:52,826: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:52.825773) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:52,827: WARNING/ForkPoolWorker-7] ✅ Saved AGRI
+[2025-05-02 22:19:54,483: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:54.481835) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:54,485: WARNING/ForkPoolWorker-7] ✅ Saved AGYS
+[2025-05-02 22:19:56,619: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:56.618458) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:56,620: WARNING/ForkPoolWorker-7] ✅ Saved AGZD
+[2025-05-02 22:19:58,190: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:58.188577) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:58,192: WARNING/ForkPoolWorker-7] ✅ Saved AHCO
+[2025-05-02 22:19:59,750: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:19:59.749133) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:19:59,751: WARNING/ForkPoolWorker-7] ✅ Saved AHG
+[2025-05-02 22:20:01,583: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:01.581640) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:01,585: WARNING/ForkPoolWorker-7] ✅ Saved AIEV
+[2025-05-02 22:20:03,409: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:03.407625) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:03,410: WARNING/ForkPoolWorker-7] ✅ Saved AIFE
+[2025-05-02 22:20:05,702: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:05.701654) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:05,703: WARNING/ForkPoolWorker-7] ✅ Saved AIFER
+[2025-05-02 22:20:08,048: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:08.047460) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:08,049: WARNING/ForkPoolWorker-7] ✅ Saved AIFEU
+[2025-05-02 22:20:09,807: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:09.806208) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:09,808: WARNING/ForkPoolWorker-7] ✅ Saved AIFF
+[2025-05-02 22:20:11,502: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:11.500939) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:11,504: WARNING/ForkPoolWorker-7] ✅ Saved AIFU
+[2025-05-02 22:20:13,083: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:13.082685) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:13,084: WARNING/ForkPoolWorker-7] ✅ Saved AIHS
+[2025-05-02 22:20:15,305: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:15.303957) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:15,306: WARNING/ForkPoolWorker-7] ✅ Saved AIMAU
+[2025-05-02 22:20:17,369: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:17.366826) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:17,372: WARNING/ForkPoolWorker-7] ✅ Saved AIMBU
+[2025-05-02 22:20:19,129: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:19.128159) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:19,130: WARNING/ForkPoolWorker-7] ✅ Saved AIMD
+[2025-05-02 22:20:21,269: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:21.267046) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:21,272: WARNING/ForkPoolWorker-7] ✅ Saved AIMDW
+[2025-05-02 22:20:23,185: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:23.184443) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:23,187: WARNING/ForkPoolWorker-7] ✅ Saved AIOT
+[2025-05-02 22:20:24,923: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:24.922583) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:24,924: WARNING/ForkPoolWorker-7] ✅ Saved AIP
+[2025-05-02 22:20:26,813: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:26.811957) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:26,815: WARNING/ForkPoolWorker-7] ✅ Saved AIRE
+[2025-05-02 22:20:28,478: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:28.476293) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:28,480: WARNING/ForkPoolWorker-7] ✅ Saved AIRG
+[2025-05-02 22:20:30,298: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:30.297485) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:30,299: WARNING/ForkPoolWorker-7] ✅ Saved AIRJ
+[2025-05-02 22:20:32,059: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:32.058188) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:32,060: WARNING/ForkPoolWorker-7] ✅ Saved AIRS
+[2025-05-02 22:20:34,220: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:34.219157) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:34,221: WARNING/ForkPoolWorker-7] ✅ Saved AIRT
+[2025-05-02 22:20:36,224: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:36.222458) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:36,225: WARNING/ForkPoolWorker-7] ✅ Saved AIRTP
+[2025-05-02 22:20:38,027: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:38.026292) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:38,028: WARNING/ForkPoolWorker-7] ✅ Saved AISP
+[2025-05-02 22:20:39,918: ERROR/ForkPoolWorker-7] $AITR: possibly delisted; no price data found  (period=5d)
+[2025-05-02 22:20:39,926: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:39.924956) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:39,927: WARNING/ForkPoolWorker-7] ✅ Saved AITR
+[2025-05-02 22:20:42,113: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:42.112156) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:42,114: WARNING/ForkPoolWorker-7] ✅ Saved AITRR
+[2025-05-02 22:20:44,249: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:44.248349) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:44,250: WARNING/ForkPoolWorker-7] ✅ Saved AITRU
+[2025-05-02 22:20:45,903: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:45.902266) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:45,904: WARNING/ForkPoolWorker-7] ✅ Saved AIXI
+[2025-05-02 22:20:47,656: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:47.655171) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:47,658: WARNING/ForkPoolWorker-7] ✅ Saved AKAM
+[2025-05-02 22:20:49,499: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:49.497843) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:49,501: WARNING/ForkPoolWorker-7] ✅ Saved AKAN
+[2025-05-02 22:20:51,320: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:51.319313) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:51,321: WARNING/ForkPoolWorker-7] ✅ Saved AKBA
+[2025-05-02 22:20:52,968: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:52.967470) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:52,969: WARNING/ForkPoolWorker-7] ✅ Saved AKRO
+[2025-05-02 22:20:54,829: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:54.827901) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:54,831: WARNING/ForkPoolWorker-7] ✅ Saved AKTX
+[2025-05-02 22:20:56,586: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:56.584680) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:56,588: WARNING/ForkPoolWorker-7] ✅ Saved AKYA
+[2025-05-02 22:20:58,360: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:20:58.358703) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:20:58,361: WARNING/ForkPoolWorker-7] ✅ Saved ALAB
+[2025-05-02 22:21:00,098: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:00.097701) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:00,099: WARNING/ForkPoolWorker-7] ✅ Saved ALAR
+[2025-05-02 22:21:01,862: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:01.861065) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:01,864: WARNING/ForkPoolWorker-7] ✅ Saved ALBT
+[2025-05-02 22:21:03,948: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:03.946329) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:03,949: WARNING/ForkPoolWorker-7] ✅ Saved ALCO
+[2025-05-02 22:21:05,609: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:05.607557) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:05,611: WARNING/ForkPoolWorker-7] ✅ Saved ALCY
+[2025-05-02 22:21:07,654: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:07.653453) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:07,655: WARNING/ForkPoolWorker-7] ✅ Saved ALCYU
+[2025-05-02 22:21:09,387: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:09.386092) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:09,389: WARNING/ForkPoolWorker-7] ✅ Saved ALDF
+[2025-05-02 22:21:11,455: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:11.453708) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:11,457: WARNING/ForkPoolWorker-7] ✅ Saved ALDFU
+[2025-05-02 22:21:13,290: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:13.289847) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:13,291: WARNING/ForkPoolWorker-7] ✅ Saved ALDX
+[2025-05-02 22:21:15,122: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:15.121104) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:15,123: WARNING/ForkPoolWorker-7] ✅ Saved ALEC
+[2025-05-02 22:21:16,905: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:16.903260) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:16,907: WARNING/ForkPoolWorker-7] ✅ Saved ALF
+[2025-05-02 22:21:19,048: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:19.047364) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:19,049: WARNING/ForkPoolWorker-7] ✅ Saved ALFUU
+[2025-05-02 22:21:20,830: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:20.828391) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:20,832: WARNING/ForkPoolWorker-7] ✅ Saved ALGM
+[2025-05-02 22:21:22,518: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:22.516682) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:22,520: WARNING/ForkPoolWorker-7] ✅ Saved ALGN
+[2025-05-02 22:21:24,115: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:24.114090) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:24,116: WARNING/ForkPoolWorker-7] ✅ Saved ALGS
+[2025-05-02 22:21:25,831: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:25.830241) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:25,833: WARNING/ForkPoolWorker-7] ✅ Saved ALGT
+[2025-05-02 22:21:27,415: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:27.414644) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:27,417: WARNING/ForkPoolWorker-7] ✅ Saved ALHC
+[2025-05-02 22:21:28,983: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:28.982727) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:28,985: WARNING/ForkPoolWorker-7] ✅ Saved ALKS
+[2025-05-02 22:21:30,821: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:30.819694) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:30,823: WARNING/ForkPoolWorker-7] ✅ Saved ALKT
+[2025-05-02 22:21:32,573: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:32.571706) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:32,575: WARNING/ForkPoolWorker-7] ✅ Saved ALLK
+[2025-05-02 22:21:34,410: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:34.409067) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:34,411: WARNING/ForkPoolWorker-7] ✅ Saved ALLO
+[2025-05-02 22:21:35,990: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:35.988973) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:35,992: WARNING/ForkPoolWorker-7] ✅ Saved ALLR
+[2025-05-02 22:21:37,588: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:37.587081) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:37,590: WARNING/ForkPoolWorker-7] ✅ Saved ALLT
+[2025-05-02 22:21:39,165: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:39.163670) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:39,166: WARNING/ForkPoolWorker-7] ✅ Saved ALMS
+[2025-05-02 22:21:40,761: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:40.760084) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:40,763: WARNING/ForkPoolWorker-7] ✅ Saved ALMU
+[2025-05-02 22:21:42,671: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:42.669366) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:42,672: WARNING/ForkPoolWorker-7] ✅ Saved ALNT
+[2025-05-02 22:21:44,256: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:44.255323) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:44,257: WARNING/ForkPoolWorker-7] ✅ Saved ALNY
+[2025-05-02 22:21:45,945: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:45.943637) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:45,947: WARNING/ForkPoolWorker-7] ✅ Saved ALOT
+[2025-05-02 22:21:47,779: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:47.777558) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:47,780: WARNING/ForkPoolWorker-7] ✅ Saved ALRM
+[2025-05-02 22:21:49,422: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:49.421626) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:49,423: WARNING/ForkPoolWorker-7] ✅ Saved ALRS
+[2025-05-02 22:21:51,093: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:51.092478) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:51,094: WARNING/ForkPoolWorker-7] ✅ Saved ALT
+[2025-05-02 22:21:52,743: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:52.741679) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:52,745: WARNING/ForkPoolWorker-7] ✅ Saved ALTI
+[2025-05-02 22:21:54,581: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:54.580025) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:54,582: WARNING/ForkPoolWorker-7] ✅ Saved ALTO
+[2025-05-02 22:21:56,310: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:56.309223) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:56,311: WARNING/ForkPoolWorker-7] ✅ Saved ALTS
+[2025-05-02 22:21:57,899: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:57.897704) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:57,901: WARNING/ForkPoolWorker-7] ✅ Saved ALVO
+[2025-05-02 22:21:59,450: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:21:59.449008) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:21:59,451: WARNING/ForkPoolWorker-7] ✅ Saved ALXO
+[2025-05-02 22:22:01,102: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:01.101817) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:01,104: WARNING/ForkPoolWorker-7] ✅ Saved ALZN
+[2025-05-02 22:22:02,752: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:02.750482) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:02,753: WARNING/ForkPoolWorker-7] ✅ Saved AMAL
+[2025-05-02 22:22:04,413: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:04.412000) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:04,414: WARNING/ForkPoolWorker-7] ✅ Saved AMAT
+[2025-05-02 22:22:05,985: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:05.983714) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:05,987: WARNING/ForkPoolWorker-7] ✅ Saved AMBA
+[2025-05-02 22:22:07,613: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:07.612201) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:07,614: WARNING/ForkPoolWorker-7] ✅ Saved AMBR
+[2025-05-02 22:22:09,214: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:09.213602) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:09,216: WARNING/ForkPoolWorker-7] ✅ Saved AMCX
+[2025-05-02 22:22:10,846: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:10.844917) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:10,848: WARNING/ForkPoolWorker-7] ✅ Saved AMD
+[2025-05-02 22:22:12,803: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:12.800014) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:12,805: WARNING/ForkPoolWorker-7] ✅ Saved AMDD
+[2025-05-02 22:22:14,382: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:14.381581) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:14,383: WARNING/ForkPoolWorker-7] ✅ Saved AMED
+[2025-05-02 22:22:16,040: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:16.038812) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:16,041: WARNING/ForkPoolWorker-7] ✅ Saved AMGN
+[2025-05-02 22:22:17,658: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:17.656982) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:17,659: WARNING/ForkPoolWorker-7] ✅ Saved AMIX
+[2025-05-02 22:22:19,262: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:19.261092) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:19,264: WARNING/ForkPoolWorker-7] ✅ Saved AMKR
+[2025-05-02 22:22:20,833: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:20.832572) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:20,835: WARNING/ForkPoolWorker-7] ✅ Saved AMLX
+[2025-05-02 22:22:22,444: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:22.443539) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:22,446: WARNING/ForkPoolWorker-7] ✅ Saved AMOD
+[2025-05-02 22:22:24,012: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:24.010484) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:24,014: WARNING/ForkPoolWorker-7] ✅ Saved AMPG
+[2025-05-02 22:22:25,742: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:25.741385) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:25,743: WARNING/ForkPoolWorker-7] ✅ Saved AMPH
+[2025-05-02 22:22:27,375: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:27.374038) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:27,377: WARNING/ForkPoolWorker-7] ✅ Saved AMPL
+[2025-05-02 22:22:29,831: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:29.829988) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:29,832: WARNING/ForkPoolWorker-7] ✅ Saved AMRK
+[2025-05-02 22:22:31,869: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:31.867542) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:31,871: WARNING/ForkPoolWorker-7] ✅ Saved AMRN
+[2025-05-02 22:22:33,677: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:33.676795) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:33,679: WARNING/ForkPoolWorker-7] ✅ Saved AMRX
+[2025-05-02 22:22:35,369: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:35.367618) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:35,371: WARNING/ForkPoolWorker-7] ✅ Saved AMSC
+[2025-05-02 22:22:37,225: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:37.223489) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:37,227: WARNING/ForkPoolWorker-7] ✅ Saved AMSF
+[2025-05-02 22:22:38,802: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:38.801015) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:38,803: WARNING/ForkPoolWorker-7] ✅ Saved AMST
+[2025-05-02 22:22:40,384: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:40.383023) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:40,386: WARNING/ForkPoolWorker-7] ✅ Saved AMTX
+[2025-05-02 22:22:42,637: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:42.635810) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:42,638: WARNING/ForkPoolWorker-7] ✅ Saved AMUU
+[2025-05-02 22:22:44,292: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:44.290672) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:44,294: WARNING/ForkPoolWorker-7] ✅ Saved AMWD
+[2025-05-02 22:22:46,333: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:46.330098) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:46,335: WARNING/ForkPoolWorker-7] ✅ Saved AMZD
+[2025-05-02 22:22:48,163: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:48.161856) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:48,165: WARNING/ForkPoolWorker-7] ✅ Saved AMZN
+[2025-05-02 22:22:50,100: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:50.097890) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:50,102: WARNING/ForkPoolWorker-7] ✅ Saved AMZU
+[2025-05-02 22:22:52,293: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:52.291618) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:52,295: WARNING/ForkPoolWorker-7] ✅ Saved ANAB
+[2025-05-02 22:22:53,976: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:53.975050) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:53,977: WARNING/ForkPoolWorker-7] ✅ Saved ANDE
+[2025-05-02 22:22:55,558: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:55.557172) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:55,559: WARNING/ForkPoolWorker-7] ✅ Saved ANEB
+[2025-05-02 22:22:57,296: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:57.294992) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:57,297: WARNING/ForkPoolWorker-7] ✅ Saved ANGH
+[2025-05-02 22:22:58,900: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:22:58.899303) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:22:58,901: WARNING/ForkPoolWorker-7] ✅ Saved ANGI
+[2025-05-02 22:23:00,444: ERROR/ForkPoolWorker-7] $ANGIV: possibly delisted; no price data found  (period=5d)
+[2025-05-02 22:23:00,455: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:00.454499) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:00,456: WARNING/ForkPoolWorker-7] ✅ Saved ANGIV
+[2025-05-02 22:23:02,044: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:02.042982) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:02,045: WARNING/ForkPoolWorker-7] ✅ Saved ANGO
+[2025-05-02 22:23:03,722: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:03.721130) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:03,723: WARNING/ForkPoolWorker-7] ✅ Saved ANIK
+[2025-05-02 22:23:05,463: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:05.461425) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:05,464: WARNING/ForkPoolWorker-7] ✅ Saved ANIP
+[2025-05-02 22:23:07,276: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:07.275226) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:07,278: WARNING/ForkPoolWorker-7] ✅ Saved ANIX
+[2025-05-02 22:23:09,026: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:09.024546) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:09,027: WARNING/ForkPoolWorker-7] ✅ Saved ANL
+[2025-05-02 22:23:10,943: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:10.942781) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:10,944: WARNING/ForkPoolWorker-7] ✅ Saved ANNA
+[2025-05-02 22:23:12,624: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:12.623511) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:12,628: WARNING/ForkPoolWorker-7] ✅ Saved ANNX
+[2025-05-02 22:23:14,307: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:14.305625) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:14,309: WARNING/ForkPoolWorker-7] ✅ Saved ANSC
+[2025-05-02 22:23:16,309: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:16.307187) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:16,311: WARNING/ForkPoolWorker-7] ✅ Saved ANSCU
+[2025-05-02 22:23:18,072: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:18.070772) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:18,073: WARNING/ForkPoolWorker-7] ✅ Saved ANSS
+[2025-05-02 22:23:19,797: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:19.795945) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:19,798: WARNING/ForkPoolWorker-7] ✅ Saved ANTE
+[2025-05-02 22:23:21,462: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:21.460483) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:21,464: WARNING/ForkPoolWorker-7] ✅ Saved ANTX
+[2025-05-02 22:23:23,107: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:23.106223) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:23,109: WARNING/ForkPoolWorker-7] ✅ Saved ANY
+[2025-05-02 22:23:24,915: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:24.914001) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:24,916: WARNING/ForkPoolWorker-7] ✅ Saved AOSL
+[2025-05-02 22:23:26,707: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:26.706253) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:26,709: WARNING/ForkPoolWorker-7] ✅ Saved AOUT
+[2025-05-02 22:23:28,811: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:28.809823) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:28,812: WARNING/ForkPoolWorker-7] ✅ Saved APA
+[2025-05-02 22:23:30,546: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:30.544770) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:30,548: WARNING/ForkPoolWorker-7] ✅ Saved APCX
+[2025-05-02 22:23:32,126: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:32.125414) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:32,127: WARNING/ForkPoolWorker-7] ✅ Saved APDN
+[2025-05-02 22:23:33,750: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:33.748862) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:33,752: WARNING/ForkPoolWorker-7] ✅ Saved APEI
+[2025-05-02 22:23:35,474: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:35.473404) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:35,476: WARNING/ForkPoolWorker-7] ✅ Saved APGE
+[2025-05-02 22:23:37,130: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:37.129206) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:37,131: WARNING/ForkPoolWorker-7] ✅ Saved API
+[2025-05-02 22:23:38,726: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:38.724759) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:38,728: WARNING/ForkPoolWorker-7] ✅ Saved APLD
+[2025-05-02 22:23:40,491: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:40.489683) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:40,493: WARNING/ForkPoolWorker-7] ✅ Saved APLM
+[2025-05-02 22:23:42,061: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:42.060726) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:42,063: WARNING/ForkPoolWorker-7] ✅ Saved APLS
+[2025-05-02 22:23:43,646: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:43.645110) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:43,648: WARNING/ForkPoolWorker-7] ✅ Saved APLT
+[2025-05-02 22:23:45,299: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:45.298486) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:45,301: WARNING/ForkPoolWorker-7] ✅ Saved APM
+[2025-05-02 22:23:47,316: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:47.314902) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:47,318: WARNING/ForkPoolWorker-7] ✅ Saved APOG
+[2025-05-02 22:23:48,978: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:48.977224) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:48,979: WARNING/ForkPoolWorker-7] ✅ Saved APP
+[2025-05-02 22:23:50,660: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:50.659175) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:50,662: WARNING/ForkPoolWorker-7] ✅ Saved APPF
+[2025-05-02 22:23:52,350: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:52.348905) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:52,352: WARNING/ForkPoolWorker-7] ✅ Saved APPN
+[2025-05-02 22:23:53,953: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:53.952819) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:53,955: WARNING/ForkPoolWorker-7] ✅ Saved APPS
+[2025-05-02 22:23:55,795: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:55.793668) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:55,797: WARNING/ForkPoolWorker-7] ✅ Saved APRE
+[2025-05-02 22:23:57,445: ERROR/ForkPoolWorker-7] $APTO: possibly delisted; no price data found  (period=5d)
+[2025-05-02 22:23:57,461: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:57.459198) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:57,462: WARNING/ForkPoolWorker-7] ✅ Saved APTO
+[2025-05-02 22:23:59,119: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:23:59.117963) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:23:59,120: WARNING/ForkPoolWorker-7] ✅ Saved APVO
+[2025-05-02 22:24:00,888: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:00.886432) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:00,889: WARNING/ForkPoolWorker-7] ✅ Saved APWC
+[2025-05-02 22:24:02,756: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:02.754373) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:02,757: WARNING/ForkPoolWorker-7] ✅ Saved APYX
+[2025-05-02 22:24:04,328: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:04.327254) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:04,330: WARNING/ForkPoolWorker-7] ✅ Saved AQB
+[2025-05-02 22:24:05,985: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:05.983976) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:05,986: WARNING/ForkPoolWorker-7] ✅ Saved AQMS
+[2025-05-02 22:24:07,583: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:07.581524) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:07,585: WARNING/ForkPoolWorker-7] ✅ Saved AQST
+[2025-05-02 22:24:09,369: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:09.367750) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:09,370: WARNING/ForkPoolWorker-7] ✅ Saved ARAY
+[2025-05-02 22:24:10,948: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:10.947372) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:10,949: WARNING/ForkPoolWorker-7] ✅ Saved ARBB
+[2025-05-02 22:24:12,684: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:12.682841) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:12,686: WARNING/ForkPoolWorker-7] ✅ Saved ARBE
+[2025-05-02 22:24:14,453: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:14.451802) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:14,455: WARNING/ForkPoolWorker-7] ✅ Saved ARBK
+[2025-05-02 22:24:16,707: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:16.705835) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:16,710: WARNING/ForkPoolWorker-7] ✅ Saved ARBKL
+[2025-05-02 22:24:18,622: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:18.620908) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:18,624: WARNING/ForkPoolWorker-7] ✅ Saved ARCB
+[2025-05-02 22:24:20,345: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:20.344661) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:20,346: WARNING/ForkPoolWorker-7] ✅ Saved ARCC
+[2025-05-02 22:24:22,004: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:22.003139) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:22,005: WARNING/ForkPoolWorker-7] ✅ Saved ARCT
+[2025-05-02 22:24:23,813: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:23.811512) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:23,814: WARNING/ForkPoolWorker-7] ✅ Saved ARDX
+[2025-05-02 22:24:25,420: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:25.418465) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:25,421: WARNING/ForkPoolWorker-7] ✅ Saved AREB
+[2025-05-02 22:24:27,859: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:27.854536) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:27,860: WARNING/ForkPoolWorker-7] ✅ Saved AREBW
+[2025-05-02 22:24:29,814: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:29.813278) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:29,816: WARNING/ForkPoolWorker-7] ✅ Saved AREC
+[2025-05-02 22:24:31,720: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:31.718994) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:31,722: WARNING/ForkPoolWorker-7] ✅ Saved ARGX
+[2025-05-02 22:24:33,289: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:33.288242) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:33,290: WARNING/ForkPoolWorker-7] ✅ Saved ARHS
+[2025-05-02 22:24:34,877: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:34.876079) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:34,879: WARNING/ForkPoolWorker-7] ✅ Saved ARKO
+[2025-05-02 22:24:36,599: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:36.597462) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:36,600: WARNING/ForkPoolWorker-7] ✅ Saved ARKR
+[2025-05-02 22:24:38,400: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:38.399304) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:38,401: WARNING/ForkPoolWorker-7] ✅ Saved ARLP
+[2025-05-02 22:24:39,992: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:39.990754) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:39,994: WARNING/ForkPoolWorker-7] ✅ Saved ARM
+[2025-05-02 22:24:41,983: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:41.981626) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:41,985: WARNING/ForkPoolWorker-7] ✅ Saved AROW
+[2025-05-02 22:24:43,555: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:43.553900) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:43,557: WARNING/ForkPoolWorker-7] ✅ Saved ARQ
+[2025-05-02 22:24:45,164: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:45.163656) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:45,165: WARNING/ForkPoolWorker-7] ✅ Saved ARQQ
+[2025-05-02 22:24:46,756: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:46.755169) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:46,758: WARNING/ForkPoolWorker-7] ✅ Saved ARQT
+[2025-05-02 22:24:48,318: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:48.317655) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:48,319: WARNING/ForkPoolWorker-7] ✅ Saved ARRY
+[2025-05-02 22:24:49,900: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:49.898357) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:49,902: WARNING/ForkPoolWorker-7] ✅ Saved ARTL
+[2025-05-02 22:24:51,552: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:51.550652) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:51,554: WARNING/ForkPoolWorker-7] ✅ Saved ARTNA
+[2025-05-02 22:24:53,145: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:53.144336) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:53,146: WARNING/ForkPoolWorker-7] ✅ Saved ARTV
+[2025-05-02 22:24:54,815: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:54.814115) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:54,817: WARNING/ForkPoolWorker-7] ✅ Saved ARTW
+[2025-05-02 22:24:56,399: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:56.398864) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:56,401: WARNING/ForkPoolWorker-7] ✅ Saved ARVN
+[2025-05-02 22:24:58,148: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:58.147207) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:58,150: WARNING/ForkPoolWorker-7] ✅ Saved ARWR
+[2025-05-02 22:24:59,718: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:24:59.717562) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:24:59,719: WARNING/ForkPoolWorker-7] ✅ Saved ASBP
+[2025-05-02 22:25:01,832: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:01.829251) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:01,835: WARNING/ForkPoolWorker-7] ✅ Saved ASET
+[2025-05-02 22:25:03,406: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:03.405379) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:03,407: WARNING/ForkPoolWorker-7] ✅ Saved ASLE
+[2025-05-02 22:25:05,008: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:05.007224) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:05,010: WARNING/ForkPoolWorker-7] ✅ Saved ASMB
+[2025-05-02 22:25:06,691: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:06.689626) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:06,693: WARNING/ForkPoolWorker-7] ✅ Saved ASML
+[2025-05-02 22:25:08,290: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:08.289585) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:08,291: WARNING/ForkPoolWorker-7] ✅ Saved ASND
+[2025-05-02 22:25:09,885: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:09.883612) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:09,887: WARNING/ForkPoolWorker-7] ✅ Saved ASNS
+[2025-05-02 22:25:11,493: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:11.492328) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:11,494: WARNING/ForkPoolWorker-7] ✅ Saved ASO
+[2025-05-02 22:25:13,075: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:13.073342) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:13,077: WARNING/ForkPoolWorker-7] ✅ Saved ASPC
+[2025-05-02 22:25:15,092: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:15.088446) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:15,094: WARNING/ForkPoolWorker-7] ✅ Saved ASPCR
+[2025-05-02 22:25:17,031: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:17.027499) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:17,033: WARNING/ForkPoolWorker-7] ✅ Saved ASPCU
+[2025-05-02 22:25:18,610: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:18.608920) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:18,611: WARNING/ForkPoolWorker-7] ✅ Saved ASPI
+[2025-05-02 22:25:20,208: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:20.206395) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:20,209: WARNING/ForkPoolWorker-7] ✅ Saved ASPS
+[2025-05-02 22:25:21,796: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:21.794833) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:21,798: WARNING/ForkPoolWorker-7] ✅ Saved ASRT
+[2025-05-02 22:25:23,507: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:23.506739) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:23,509: WARNING/ForkPoolWorker-7] ✅ Saved ASRV
+[2025-05-02 22:25:25,104: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:25.103410) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:25,106: WARNING/ForkPoolWorker-7] ✅ Saved ASST
+[2025-05-02 22:25:26,697: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:26.695781) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:26,698: WARNING/ForkPoolWorker-7] ✅ Saved ASTC
+[2025-05-02 22:25:28,344: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:28.343126) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:28,345: WARNING/ForkPoolWorker-7] ✅ Saved ASTE
+[2025-05-02 22:25:29,925: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:29.923628) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:29,926: WARNING/ForkPoolWorker-7] ✅ Saved ASTH
+[2025-05-02 22:25:31,524: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:31.523716) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:31,526: WARNING/ForkPoolWorker-7] ✅ Saved ASTI
+[2025-05-02 22:25:33,110: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:33.109104) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:33,112: WARNING/ForkPoolWorker-7] ✅ Saved ASTL
+[2025-05-02 22:25:34,682: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:34.681249) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:34,683: WARNING/ForkPoolWorker-7] ✅ Saved ASTS
+[2025-05-02 22:25:36,279: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:36.278386) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:36,280: WARNING/ForkPoolWorker-7] ✅ Saved ASUR
+[2025-05-02 22:25:37,846: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:37.845754) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:37,847: WARNING/ForkPoolWorker-7] ✅ Saved ASYS
+[2025-05-02 22:25:39,432: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:39.431294) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:39,433: WARNING/ForkPoolWorker-7] ✅ Saved ATAI
+[2025-05-02 22:25:41,003: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:41.002256) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:41,004: WARNING/ForkPoolWorker-7] ✅ Saved ATAT
+[2025-05-02 22:25:42,947: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:42.945357) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:42,949: WARNING/ForkPoolWorker-7] ✅ Saved ATCOL
+[2025-05-02 22:25:44,569: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:44.568145) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:44,570: WARNING/ForkPoolWorker-7] ✅ Saved ATEC
+[2025-05-02 22:25:46,130: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:46.129766) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:46,132: WARNING/ForkPoolWorker-7] ✅ Saved ATER
+[2025-05-02 22:25:47,706: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:47.705308) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:47,707: WARNING/ForkPoolWorker-7] ✅ Saved ATEX
+[2025-05-02 22:25:49,303: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:49.301799) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:49,305: WARNING/ForkPoolWorker-7] ✅ Saved ATGL
+[2025-05-02 22:25:50,900: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:50.898280) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:50,901: WARNING/ForkPoolWorker-7] ✅ Saved ATHA
+[2025-05-02 22:25:52,470: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:52.469517) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:52,471: WARNING/ForkPoolWorker-7] ✅ Saved ATHE
+[2025-05-02 22:25:54,515: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:54.514148) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:54,516: WARNING/ForkPoolWorker-7] ✅ Saved ATIIU
+[2025-05-02 22:25:56,391: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:56.389610) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:56,393: WARNING/ForkPoolWorker-7] ✅ Saved ATLC
+[2025-05-02 22:25:58,397: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:25:58.393826) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:25:58,399: WARNING/ForkPoolWorker-7] ✅ Saved ATLCL
+[2025-05-02 22:26:00,361: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:00.358352) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:00,364: WARNING/ForkPoolWorker-7] ✅ Saved ATLCP
+[2025-05-02 22:26:02,304: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:02.301385) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:02,307: WARNING/ForkPoolWorker-7] ✅ Saved ATLCZ
+[2025-05-02 22:26:03,861: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:03.860650) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:03,863: WARNING/ForkPoolWorker-7] ✅ Saved ATLN
+[2025-05-02 22:26:05,497: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:05.496072) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:05,498: WARNING/ForkPoolWorker-7] ✅ Saved ATLO
+[2025-05-02 22:26:07,313: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:07.312030) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:07,314: WARNING/ForkPoolWorker-7] ✅ Saved ATLX
+[2025-05-02 22:26:08,867: ERROR/ForkPoolWorker-7] $ATMC: possibly delisted; no price data found  (period=5d)
+[2025-05-02 22:26:08,874: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:08.873151) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:08,875: WARNING/ForkPoolWorker-7] ✅ Saved ATMC
+[2025-05-02 22:26:10,821: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:10.820861) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:10,823: WARNING/ForkPoolWorker-7] ✅ Saved ATMCR
+[2025-05-02 22:26:12,769: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:12.768399) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:12,770: WARNING/ForkPoolWorker-7] ✅ Saved ATMCU
+[2025-05-02 22:26:14,361: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:14.360039) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:14,363: WARNING/ForkPoolWorker-7] ✅ Saved ATMV
+[2025-05-02 22:26:16,312: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:16.309735) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:16,315: WARNING/ForkPoolWorker-7] ✅ Saved ATMVR
+[2025-05-02 22:26:18,288: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:18.284467) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:18,291: WARNING/ForkPoolWorker-7] ✅ Saved ATMVU
+[2025-05-02 22:26:19,849: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:19.848546) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:19,851: WARNING/ForkPoolWorker-7] ✅ Saved ATNF
+[2025-05-02 22:26:21,574: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:21.573568) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:21,576: WARNING/ForkPoolWorker-7] ✅ Saved ATNI
+[2025-05-02 22:26:23,168: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:23.167105) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:23,169: WARNING/ForkPoolWorker-7] ✅ Saved ATOM
+[2025-05-02 22:26:24,733: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:24.732610) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:24,735: WARNING/ForkPoolWorker-7] ✅ Saved ATOS
+[2025-05-02 22:26:26,317: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:26.315309) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:26,319: WARNING/ForkPoolWorker-7] ✅ Saved ATPC
+[2025-05-02 22:26:27,900: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:27.899469) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:27,901: WARNING/ForkPoolWorker-7] ✅ Saved ATRA
+[2025-05-02 22:26:29,484: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:29.482250) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:29,486: WARNING/ForkPoolWorker-7] ✅ Saved ATRC
+[2025-05-02 22:26:31,157: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:31.155782) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:31,159: WARNING/ForkPoolWorker-7] ✅ Saved ATRO
+[2025-05-02 22:26:32,737: ERROR/ForkPoolWorker-7] $ATSG: possibly delisted; no price data found  (period=5d)
+[2025-05-02 22:26:32,746: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:32.745205) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:32,747: WARNING/ForkPoolWorker-7] ✅ Saved ATSG
+[2025-05-02 22:26:34,541: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:34.539569) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:34,542: WARNING/ForkPoolWorker-7] ✅ Saved ATXG
+[2025-05-02 22:26:36,125: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:36.124170) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:36,127: WARNING/ForkPoolWorker-7] ✅ Saved ATXS
+[2025-05-02 22:26:37,839: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:37.838739) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:37,841: WARNING/ForkPoolWorker-7] ✅ Saved ATYR
+[2025-05-02 22:26:39,510: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:39.508669) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:39,512: WARNING/ForkPoolWorker-7] ✅ Saved AUBN
+[2025-05-02 22:26:41,403: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:41.401801) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:41,405: WARNING/ForkPoolWorker-7] ✅ Saved AUDC
+[2025-05-02 22:26:42,971: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:42.970468) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:42,973: WARNING/ForkPoolWorker-7] ✅ Saved AUID
+[2025-05-02 22:26:44,564: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:44.562889) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:44,566: WARNING/ForkPoolWorker-7] ✅ Saved AUPH
+[2025-05-02 22:26:46,239: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:46.237448) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:46,240: WARNING/ForkPoolWorker-7] ✅ Saved AUR
+[2025-05-02 22:26:47,824: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:47.823812) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:47,825: WARNING/ForkPoolWorker-7] ✅ Saved AURA
+[2025-05-02 22:26:49,425: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:49.424216) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:49,427: WARNING/ForkPoolWorker-7] ✅ Saved AUTL
+[2025-05-02 22:26:51,130: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:51.129234) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:51,133: WARNING/ForkPoolWorker-7] ✅ Saved AUUD
+[2025-05-02 22:26:52,727: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:52.726050) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:52,728: WARNING/ForkPoolWorker-7] ✅ Saved AVAH
+[2025-05-02 22:26:54,765: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:54.764673) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:54,767: WARNING/ForkPoolWorker-7] ✅ Saved AVAV
+[2025-05-02 22:26:56,337: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:56.335916) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:56,339: WARNING/ForkPoolWorker-7] ✅ Saved AVBP
+[2025-05-02 22:26:57,942: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:57.941472) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:57,943: WARNING/ForkPoolWorker-7] ✅ Saved AVDL
+[2025-05-02 22:26:59,509: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:26:59.507419) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:26:59,511: WARNING/ForkPoolWorker-7] ✅ Saved AVDX
+[2025-05-02 22:27:01,672: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:01.671442) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:01,673: WARNING/ForkPoolWorker-7] ✅ Saved AVGO
+[2025-05-02 22:27:03,659: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:03.658604) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:03,660: WARNING/ForkPoolWorker-7] ✅ Saved AVIR
+[2025-05-02 22:27:05,668: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:05.666071) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:05,669: WARNING/ForkPoolWorker-7] ✅ Saved AVL
+[2025-05-02 22:27:07,304: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:07.303418) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:07,305: WARNING/ForkPoolWorker-7] ✅ Saved AVNW
+[2025-05-02 22:27:08,909: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:08.908016) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:08,910: WARNING/ForkPoolWorker-7] ✅ Saved AVO
+[2025-05-02 22:27:10,809: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:10.808019) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:10,810: WARNING/ForkPoolWorker-7] ✅ Saved AVPT
+[2025-05-02 22:27:12,622: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:12.620900) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:12,623: WARNING/ForkPoolWorker-7] ✅ Saved AVR
+[2025-05-02 22:27:14,772: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:14.770343) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:14,774: WARNING/ForkPoolWorker-7] ✅ Saved AVS
+[2025-05-02 22:27:16,757: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:16.756737) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:16,759: WARNING/ForkPoolWorker-7] ✅ Saved AVT
+[2025-05-02 22:27:18,577: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:18.575727) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:18,578: WARNING/ForkPoolWorker-7] ❌ Error processing AVTE: NOT NULL constraint failed: stocks_stockalert.current_price
+[2025-05-02 22:27:20,335: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:20.333643) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:20,336: WARNING/ForkPoolWorker-7] ✅ Saved AVTX
+[2025-05-02 22:27:22,100: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:22.099236) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:22,101: WARNING/ForkPoolWorker-7] ✅ Saved AVXL
+[2025-05-02 22:27:23,634: ERROR/ForkPoolWorker-7] $AWH: possibly delisted; no price data found  (period=5d)
+[2025-05-02 22:27:23,649: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:23.648168) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:23,651: WARNING/ForkPoolWorker-7] ✅ Saved AWH
+[2025-05-02 22:27:25,231: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:25.229830) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:25,232: WARNING/ForkPoolWorker-7] ✅ Saved AWRE
+[2025-05-02 22:27:26,818: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:26.817152) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:26,820: WARNING/ForkPoolWorker-7] ✅ Saved AXDX
+[2025-05-02 22:27:28,417: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:28.416023) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:28,418: WARNING/ForkPoolWorker-7] ✅ Saved AXGN
+[2025-05-02 22:27:30,063: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:30.062762) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:30,065: WARNING/ForkPoolWorker-7] ✅ Saved AXON
+[2025-05-02 22:27:31,831: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:31.830051) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:31,833: WARNING/ForkPoolWorker-7] ✅ Saved AXSM
+[2025-05-02 22:27:33,680: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:33.678917) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:33,682: WARNING/ForkPoolWorker-7] ✅ Saved AXTI
+[2025-05-02 22:27:35,291: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:35.289923) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:35,292: WARNING/ForkPoolWorker-7] ✅ Saved AYRO
+[2025-05-02 22:27:36,951: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:36.950786) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:36,953: WARNING/ForkPoolWorker-7] ✅ Saved AYTU
+[2025-05-02 22:27:38,535: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:38.533627) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:38,537: WARNING/ForkPoolWorker-7] ✅ Saved AZ
+[2025-05-02 22:27:40,228: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:40.227871) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:40,230: WARNING/ForkPoolWorker-7] ✅ Saved AZI
+[2025-05-02 22:27:41,910: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:41.909041) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:41,912: WARNING/ForkPoolWorker-7] ✅ Saved AZN
+[2025-05-02 22:27:43,524: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:43.523351) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:43,526: WARNING/ForkPoolWorker-7] ✅ Saved AZTA
+[2025-05-02 22:27:45,095: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:45.094227) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:45,096: WARNING/ForkPoolWorker-7] ✅ Saved BACQ
+[2025-05-02 22:27:47,212: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:47.211020) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:47,213: WARNING/ForkPoolWorker-7] ✅ Saved BACQR
+[2025-05-02 22:27:49,495: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:49.493510) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:49,497: WARNING/ForkPoolWorker-7] ✅ Saved BACQU
+[2025-05-02 22:27:51,074: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:51.073285) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:51,075: WARNING/ForkPoolWorker-7] ✅ Saved BAER
+[2025-05-02 22:27:52,715: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:52.713541) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:52,717: WARNING/ForkPoolWorker-7] ✅ Saved BAFN
+[2025-05-02 22:27:54,292: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:54.291169) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:54,293: WARNING/ForkPoolWorker-7] ✅ Saved BAND
+[2025-05-02 22:27:55,958: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:55.956960) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:55,960: WARNING/ForkPoolWorker-7] ✅ Saved BANF
+[2025-05-02 22:27:58,016: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:58.014449) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:58,018: WARNING/ForkPoolWorker-7] ✅ Saved BANFP
+[2025-05-02 22:27:59,695: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:27:59.693965) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:27:59,697: WARNING/ForkPoolWorker-7] ✅ Saved BANL
+[2025-05-02 22:28:01,364: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:01.363142) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:01,365: WARNING/ForkPoolWorker-7] ✅ Saved BANR
+[2025-05-02 22:28:03,002: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:03.001294) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:03,004: WARNING/ForkPoolWorker-7] ✅ Saved BANX
+[2025-05-02 22:28:04,567: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:04.566224) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:04,569: WARNING/ForkPoolWorker-7] ✅ Saved BAOS
+[2025-05-02 22:28:06,140: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:06.139863) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:06,142: WARNING/ForkPoolWorker-7] ✅ Saved BASE
+[2025-05-02 22:28:07,721: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:07.720711) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:07,722: WARNING/ForkPoolWorker-7] ✅ Saved BATRA
+[2025-05-02 22:28:09,288: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:09.287129) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:09,289: WARNING/ForkPoolWorker-7] ✅ Saved BATRK
+[2025-05-02 22:28:10,938: ERROR/ForkPoolWorker-7] $BAYA: possibly delisted; no price data found  (period=5d)
+[2025-05-02 22:28:10,950: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:10.949198) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:10,951: WARNING/ForkPoolWorker-7] ✅ Saved BAYA
+[2025-05-02 22:28:12,906: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:12.904536) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:12,908: WARNING/ForkPoolWorker-7] ✅ Saved BAYAR
+[2025-05-02 22:28:14,868: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:14.865831) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:14,869: WARNING/ForkPoolWorker-7] ✅ Saved BAYAU
+[2025-05-02 22:28:16,450: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:16.449450) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:16,451: WARNING/ForkPoolWorker-7] ✅ Saved BBCP
+[2025-05-02 22:28:18,165: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:18.164307) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:18,166: WARNING/ForkPoolWorker-7] ✅ Saved BBGI
+[2025-05-02 22:28:19,766: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:19.765216) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:19,767: WARNING/ForkPoolWorker-7] ✅ Saved BBIO
+[2025-05-02 22:28:21,332: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:21.331599) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:21,333: WARNING/ForkPoolWorker-7] ✅ Saved BBLG
+[2025-05-02 22:28:23,313: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:23.312713) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:23,314: WARNING/ForkPoolWorker-7] ✅ Saved BBLGW
+[2025-05-02 22:28:24,883: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:24.882372) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:24,884: WARNING/ForkPoolWorker-7] ✅ Saved BBNX
+[2025-05-02 22:28:26,483: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:26.482746) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:26,484: WARNING/ForkPoolWorker-7] ✅ Saved BBSI
+[2025-05-02 22:28:28,047: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:28.046738) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:28,048: WARNING/ForkPoolWorker-7] ✅ Saved BCAB
+[2025-05-02 22:28:29,615: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:29.614496) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:29,616: WARNING/ForkPoolWorker-7] ✅ Saved BCAL
+[2025-05-02 22:28:31,174: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:31.173707) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:31,176: WARNING/ForkPoolWorker-7] ✅ Saved BCAX
+[2025-05-02 22:28:32,787: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:32.786331) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:32,788: WARNING/ForkPoolWorker-7] ✅ Saved BCBP
+[2025-05-02 22:28:34,451: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:34.450945) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:34,453: WARNING/ForkPoolWorker-7] ✅ Saved BCDA
+[2025-05-02 22:28:36,004: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:36.002980) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:36,005: WARNING/ForkPoolWorker-7] ✅ Saved BCG
+[2025-05-02 22:28:37,576: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:37.575328) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:37,577: WARNING/ForkPoolWorker-7] ✅ Saved BCLI
+[2025-05-02 22:28:39,589: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:39.588012) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:39,590: WARNING/ForkPoolWorker-7] ✅ Saved BCML
+[2025-05-02 22:28:41,245: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:41.244475) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:41,246: WARNING/ForkPoolWorker-7] ✅ Saved BCPC
+[2025-05-02 22:28:42,889: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:42.887435) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:42,890: WARNING/ForkPoolWorker-7] ✅ Saved BCRX
+[2025-05-02 22:28:44,456: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:44.455849) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:44,458: WARNING/ForkPoolWorker-7] ✅ Saved BCTX
+[2025-05-02 22:28:46,471: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:46.470354) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:46,472: WARNING/ForkPoolWorker-7] ✅ Saved BCYC
+[2025-05-02 22:28:48,234: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:48.232452) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:48,236: WARNING/ForkPoolWorker-7] ✅ Saved BDMD
+[2025-05-02 22:28:49,827: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:49.825949) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:49,829: WARNING/ForkPoolWorker-7] ✅ Saved BDRX
+[2025-05-02 22:28:51,503: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:51.502053) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:51,504: WARNING/ForkPoolWorker-7] ✅ Saved BDSX
+[2025-05-02 22:28:53,154: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:53.152756) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:53,156: WARNING/ForkPoolWorker-7] ✅ Saved BDTX
+[2025-05-02 22:28:54,912: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:54.910963) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:54,914: WARNING/ForkPoolWorker-7] ✅ Saved BEAG
+[2025-05-02 22:28:56,976: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:56.973570) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:56,979: WARNING/ForkPoolWorker-7] ✅ Saved BEAGR
+[2025-05-02 22:28:58,976: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:28:58.972933) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:28:58,978: WARNING/ForkPoolWorker-7] ✅ Saved BEAGU
+[2025-05-02 22:29:00,565: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:00.564663) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:00,566: WARNING/ForkPoolWorker-7] ✅ Saved BEAM
+[2025-05-02 22:29:02,137: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:02.136047) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:02,139: WARNING/ForkPoolWorker-7] ✅ Saved BEAT
+[2025-05-02 22:29:03,706: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:03.705296) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:03,708: WARNING/ForkPoolWorker-7] ✅ Saved BECN
+[2025-05-02 22:29:05,314: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:05.312614) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:05,316: WARNING/ForkPoolWorker-7] ✅ Saved BEEM
+[2025-05-02 22:29:06,977: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:06.975842) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:06,978: WARNING/ForkPoolWorker-7] ✅ Saved BELFA
+[2025-05-02 22:29:08,601: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:08.600218) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:08,602: WARNING/ForkPoolWorker-7] ✅ Saved BELFB
+[2025-05-02 22:29:10,423: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:10.422698) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:10,424: WARNING/ForkPoolWorker-7] ✅ Saved BENF
+[2025-05-02 22:29:12,032: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:12.030824) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:12,034: WARNING/ForkPoolWorker-7] ✅ Saved BETR
+[2025-05-02 22:29:13,718: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:13.716870) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:13,720: WARNING/ForkPoolWorker-7] ✅ Saved BFC
+[2025-05-02 22:29:15,594: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:15.593924) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:15,596: WARNING/ForkPoolWorker-7] ✅ Saved BFIN
+[2025-05-02 22:29:17,196: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:17.195069) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:17,198: WARNING/ForkPoolWorker-7] ✅ Saved BFRG
+[2025-05-02 22:29:19,042: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:19.041108) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:19,044: WARNING/ForkPoolWorker-7] ✅ Saved BFRI
+[2025-05-02 22:29:20,866: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:20.864844) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:20,868: WARNING/ForkPoolWorker-7] ✅ Saved BFST
+[2025-05-02 22:29:22,726: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:22.725526) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:22,727: WARNING/ForkPoolWorker-7] ✅ Saved BGC
+[2025-05-02 22:29:24,452: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:24.451412) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:24,453: WARNING/ForkPoolWorker-7] ✅ Saved BGFV
+[2025-05-02 22:29:26,082: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:26.080589) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:26,083: WARNING/ForkPoolWorker-7] ✅ Saved BGLC
+[2025-05-02 22:29:27,896: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:27.894968) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:27,898: WARNING/ForkPoolWorker-7] ✅ Saved BGM
+[2025-05-02 22:29:29,561: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:29.560405) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:29,562: WARNING/ForkPoolWorker-7] ✅ Saved BHAT
+[2025-05-02 22:29:31,330: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:31.328771) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:31,332: WARNING/ForkPoolWorker-7] ✅ Saved BHF
+[2025-05-02 22:29:33,290: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:33.287755) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:33,293: WARNING/ForkPoolWorker-7] ✅ Saved BHFAL
+[2025-05-02 22:29:35,258: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:35.255154) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:35,260: WARNING/ForkPoolWorker-7] ✅ Saved BHFAM
+[2025-05-02 22:29:37,441: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:37.438048) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:37,443: WARNING/ForkPoolWorker-7] ✅ Saved BHFAN
+[2025-05-02 22:29:39,083: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:39.081368) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:39,084: WARNING/ForkPoolWorker-7] ✅ Saved BHRB
+[2025-05-02 22:29:40,831: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:40.830031) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:40,832: WARNING/ForkPoolWorker-7] ✅ Saved BHST
+[2025-05-02 22:29:42,467: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:42.466270) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:42,469: WARNING/ForkPoolWorker-7] ✅ Saved BIAF
+[2025-05-02 22:29:44,446: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:44.443172) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:44,448: WARNING/ForkPoolWorker-7] ✅ Saved BIB
+[2025-05-02 22:29:46,044: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:46.043380) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:46,046: WARNING/ForkPoolWorker-7] ✅ Saved BIDU
+[2025-05-02 22:29:47,639: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:47.638266) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:47,640: WARNING/ForkPoolWorker-7] ✅ Saved BIGC
+[2025-05-02 22:29:49,323: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:49.321790) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:49,325: WARNING/ForkPoolWorker-7] ✅ Saved BIIB
+[2025-05-02 22:29:51,061: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:51.059332) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:51,062: WARNING/ForkPoolWorker-7] ✅ Saved BILI
+[2025-05-02 22:29:52,671: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:52.670186) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:52,672: WARNING/ForkPoolWorker-7] ✅ Saved BIOA
+[2025-05-02 22:29:54,478: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:54.477386) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:54,480: WARNING/ForkPoolWorker-7] ✅ Saved BIOX
+[2025-05-02 22:29:56,038: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:56.036549) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:56,039: WARNING/ForkPoolWorker-7] ✅ Saved BIRD
+[2025-05-02 22:29:58,363: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:58.359484) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:58,365: WARNING/ForkPoolWorker-7] ✅ Saved BIS
+[2025-05-02 22:29:59,924: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:29:59.923178) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:29:59,925: WARNING/ForkPoolWorker-7] ✅ Saved BITF
+[2025-05-02 22:30:01,575: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:01.573966) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:01,577: WARNING/ForkPoolWorker-7] ✅ Saved BIVI
+[2025-05-02 22:30:03,158: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:03.156840) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:03,160: WARNING/ForkPoolWorker-7] ✅ Saved BIYA
+[2025-05-02 22:30:05,004: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:05.003886) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:05,006: WARNING/ForkPoolWorker-7] ✅ Saved BJDX
+[2025-05-02 22:30:06,768: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:06.767316) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:06,769: WARNING/ForkPoolWorker-7] ✅ Saved BJRI
+[2025-05-02 22:30:08,475: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:08.474072) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:08,477: WARNING/ForkPoolWorker-7] ✅ Saved BKHA
+[2025-05-02 22:30:10,033: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:10.032592) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:10,035: WARNING/ForkPoolWorker-7] ✅ Saved BKHAR
+[2025-05-02 22:30:12,190: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:12.188278) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:12,193: WARNING/ForkPoolWorker-7] ✅ Saved BKHAU
+[2025-05-02 22:30:13,885: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:13.884097) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:13,886: WARNING/ForkPoolWorker-7] ✅ Saved BKNG
+[2025-05-02 22:30:15,624: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:15.623205) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:15,626: WARNING/ForkPoolWorker-7] ✅ Saved BKR
+[2025-05-02 22:30:17,309: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:17.307776) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:17,311: WARNING/ForkPoolWorker-7] ✅ Saved BKYI
+[2025-05-02 22:30:18,967: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:18.966768) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:18,968: WARNING/ForkPoolWorker-7] ✅ Saved BL
+[2025-05-02 22:30:20,738: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:20.736596) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:20,739: WARNING/ForkPoolWorker-7] ✅ Saved BLBD
+[2025-05-02 22:30:22,480: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:22.478985) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:22,482: WARNING/ForkPoolWorker-7] ✅ Saved BLBX
+[2025-05-02 22:30:24,033: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:24.032559) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:24,034: WARNING/ForkPoolWorker-7] ✅ Saved BLDE
+[2025-05-02 22:30:25,635: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:25.633773) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:25,637: WARNING/ForkPoolWorker-7] ✅ Saved BLDP
+[2025-05-02 22:30:27,426: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:27.424995) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:27,428: WARNING/ForkPoolWorker-7] ✅ Saved BLFS
+[2025-05-02 22:30:28,990: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:28.988959) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:28,991: WARNING/ForkPoolWorker-7] ✅ Saved BLFY
+[2025-05-02 22:30:30,622: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:30.620258) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:30,623: WARNING/ForkPoolWorker-7] ✅ Saved BLIN
+[2025-05-02 22:30:32,251: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:32.249399) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:32,252: WARNING/ForkPoolWorker-7] ✅ Saved BLKB
+[2025-05-02 22:30:34,432: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:34.431026) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:34,434: WARNING/ForkPoolWorker-7] ✅ Saved BLMN
+[2025-05-02 22:30:36,006: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:36.004990) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:36,007: WARNING/ForkPoolWorker-7] ✅ Saved BLMZ
+[2025-05-02 22:30:37,712: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:37.710866) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:37,713: WARNING/ForkPoolWorker-7] ✅ Saved BLNE
+[2025-05-02 22:30:39,530: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:39.529414) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:39,532: WARNING/ForkPoolWorker-7] ✅ Saved BLNK
+[2025-05-02 22:30:41,106: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:41.105041) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:41,107: WARNING/ForkPoolWorker-7] ✅ Saved BLRX
+[2025-05-02 22:30:42,903: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:42.902401) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:42,904: WARNING/ForkPoolWorker-7] ✅ Saved BLTE
+[2025-05-02 22:30:44,566: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:44.564763) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:44,568: WARNING/ForkPoolWorker-7] ✅ Saved BLUE
+[2025-05-02 22:30:46,260: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:46.258836) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:46,261: WARNING/ForkPoolWorker-7] ✅ Saved BLZE
+[2025-05-02 22:30:47,935: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:47.934414) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:47,936: WARNING/ForkPoolWorker-7] ✅ Saved BMBL
+[2025-05-02 22:30:49,861: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:49.859391) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:49,862: WARNING/ForkPoolWorker-7] ✅ Saved BMEA
+[2025-05-02 22:30:51,510: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:51.509299) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:51,512: WARNING/ForkPoolWorker-7] ✅ Saved BMGL
+[2025-05-02 22:30:53,086: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:53.085323) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:53,087: WARNING/ForkPoolWorker-7] ✅ Saved BMR
+[2025-05-02 22:30:54,793: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:54.791916) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:54,795: WARNING/ForkPoolWorker-7] ✅ Saved BMRA
+[2025-05-02 22:30:56,527: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:56.525380) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:56,528: WARNING/ForkPoolWorker-7] ✅ Saved BMRC
+[2025-05-02 22:30:58,179: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:58.178373) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:58,180: WARNING/ForkPoolWorker-7] ✅ Saved BMRN
+[2025-05-02 22:30:59,952: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:30:59.951065) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:30:59,953: WARNING/ForkPoolWorker-7] ✅ Saved BNAI
+[2025-05-02 22:31:01,800: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:01.798635) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:01,802: WARNING/ForkPoolWorker-7] ✅ Saved BNGO
+[2025-05-02 22:31:03,381: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:03.379747) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:03,383: WARNING/ForkPoolWorker-7] ✅ Saved BNR
+[2025-05-02 22:31:05,207: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:05.206078) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:05,208: WARNING/ForkPoolWorker-7] ✅ Saved BNRG
+[2025-05-02 22:31:06,947: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:06.945459) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:06,948: WARNING/ForkPoolWorker-7] ✅ Saved BNTC
+[2025-05-02 22:31:08,544: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:08.542985) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:08,546: WARNING/ForkPoolWorker-7] ✅ Saved BNTX
+[2025-05-02 22:31:10,250: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:10.248971) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:10,251: WARNING/ForkPoolWorker-7] ✅ Saved BNZI
+[2025-05-02 22:31:12,053: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:12.052291) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:12,054: WARNING/ForkPoolWorker-7] ✅ Saved BOF
+[2025-05-02 22:31:13,958: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:13.956889) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:13,960: WARNING/ForkPoolWorker-7] ✅ Saved BOKF
+[2025-05-02 22:31:15,609: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:15.608481) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:15,610: WARNING/ForkPoolWorker-7] ✅ Saved BOLD
+[2025-05-02 22:31:17,319: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:17.318480) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:17,320: WARNING/ForkPoolWorker-7] ✅ Saved BOLT
+[2025-05-02 22:31:18,895: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:18.893936) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:18,896: WARNING/ForkPoolWorker-7] ✅ Saved BON
+[2025-05-02 22:31:20,760: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:20.758412) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:20,762: WARNING/ForkPoolWorker-7] ✅ Saved BOOM
+[2025-05-02 22:31:22,430: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:22.429431) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:22,432: WARNING/ForkPoolWorker-7] ✅ Saved BOSC
+[2025-05-02 22:31:24,030: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:24.029037) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:24,031: WARNING/ForkPoolWorker-7] ✅ Saved BOTJ
+[2025-05-02 22:31:25,722: WARNING/ForkPoolWorker-7] /opt/anaconda3/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665: RuntimeWarning: DateTimeField StockAlert.last_update received a naive datetime (2025-05-02 22:31:25.720992) while time zone support is active.
+  warnings.warn(
+
+[2025-05-02 22:31:25,724: WARNING/ForkPoolWorker-7] ✅ Saved BOWN

@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core",
     "emails",
-    'django_celery_beat',
+    "django_celery_beat",
+    "news",
+    "stocks",
 ]
 
 MIDDLEWARE = [

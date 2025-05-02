@@ -1,6 +1,6 @@
 import os
 base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-EXPORT_FILE_PATH = os.path.join(base_dir, ".." "json", "news.json")
+EXPORT_FILE_PATH = os.path.join(base_dir, "..", "json", "news.json")
 JSON_FOLDER = os.path.join(base_dir, "..", "..", "..", "json")
 os.makedirs(JSON_FOLDER, exist_ok=True)
 

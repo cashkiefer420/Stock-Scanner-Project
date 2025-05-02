@@ -1,8 +1,8 @@
 from celery import shared_task
-from blueprint import news  # assuming `news.py` is in /blueprint
+from . import scraper  # assuming `news.py` is in /blueprint
 
 @shared_task
 def update_news_feed():
     print("📡 Running hourly news scrape...")
-    news.main()
+    scraper.main()
     print("✅ News feed updated.")

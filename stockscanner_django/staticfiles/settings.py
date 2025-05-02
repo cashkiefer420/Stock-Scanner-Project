@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "emails",
     "django_celery_beat",
     "news",
+    "stocks",
 ]
 
 MIDDLEWARE = [

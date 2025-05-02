@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .email-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: #004085;
+        color: #ffffff;
+        text-align: center;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      .content {
+        padding: 20px;
+        font-size: 16px;
+        color: #333333;
+      }
+      .highlight {
+        font-weight: bold;
+        color: #d9534f;
+      }
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="header">
+        P/E Ratio Alert: +10% Increase
+      </div>
+      <div class="content">
+        <p>Dear Investor,</p>
+        <p><strong>{{ stock_symbol }}</strong> has experienced a 10% increase in its P/E ratio, indicating higher investor confidence.</p>
+        <p>
+          <strong>Current Price:</strong> <span class="highlight">${{ PRICE }}</span><br>
+          <strong>Volume Today:</strong> <span class="highlight">{{ VOLUME }}%</span><br>
+          <strong>DVAV:</strong> <span class="highlight">${{ DVAV }}</span><br>
+          <strong>DVSA:</strong> <span class="highlight">${{ DVSA }}</span><br>
+        </p>
+        <p>Stay informed and make strategic decisions.</p>
+      </div>
+      <div class="footer">
+        &copy; 2025 Retail Trade Scanner | This is an automated notification.
+      </div>
+    </div>
+  </body>
+</html>

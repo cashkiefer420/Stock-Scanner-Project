@@ -1,258 +1,54 @@
 from celery import shared_task
-from django.core.mail import send_mail
-import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "stockscanner_django.settings")
+from django.core.mail import EmailMultiAlternatives, get_connection
+from django.template.loader import render_to_string
 from django.conf import settings
-from core.models import Subscription
+from emails.email_filter import EmailFilter
 
-
-@shared_task
-def send_dvsa_50_email():
-    subject = "DVSA 50%"
-    message = "This is your alert for: DVSA 50%"
-    recipients = Subscription.objects.filter(category="DVSA-50").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_dvsa_100_email():
-    subject = "DVSA 100% Alert"
-    message = "This is your alert for: DVSA 100% Alert"
-    recipients = Subscription.objects.filter(category="DVSA-100").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
+CATEGORY_TEMPLATE_MAP = {
+    "DVSA 50": "emails/dvsa_50.html",
+    "DVSA 100": "emails/dvsa_100.html",
+    "DVSA 150": "emails/dvsa_150.html",
+    "MC 10 IN": "emails/mc_10_in.html",
+    "MC 20 IN": "emails/mc_20_in.html",
+    "MC 30 IN": "emails/mc_30_in.html",
+    "MC 10 DE": "emails/mc_10_de.html",
+    "MC 20 DE": "emails/mc_20_de.html",
+    "MC 30 DE": "emails/mc_30_de.html",
+    "PE 10 IN": "emails/pe_10_in.html",
+    "PE 20 IN": "emails/pe_20_in.html",
+    "PE 30 IN": "emails/pe_30_in.html",
+    "PE 10 DE": "emails/pe_10_de.html",
+    "PE 20 DE": "emails/pe_20_de.html",
+    "PE 30 DE": "emails/pe_30_de.html",
+    "PRICE 10 DE": "emails/price_10_de.html",
+    "PRICE 15 DE": "emails/price_15_de.html",
+    "PRICE 20 DE": "emails/price_20_de.html",
+}
 
 @shared_task
-def send_dvsa_150_email():
-    subject = "DVSA 150% Alert"
-    message = "This is your alert for: DVSA 150% Alert"
-    recipients = Subscription.objects.filter(category="DVSA-150").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
+def send_personalized_email(user_email, user_name, category, stock_list):
+    if category not in CATEGORY_TEMPLATE_MAP:
+        print(f"[INFO] Skipping email: No template for category '{category}'")
+        return
 
+    template_path = CATEGORY_TEMPLATE_MAP[category]
+    subject = f"Stock Alerts for {category} ({len(stock_list)} stocks)"
+    from_email = settings.DEFAULT_FROM_EMAIL
+    to = [user_email]
 
-@shared_task
-def send_mc_10_in_email():
-    subject = "Market Cap +10%"
-    message = "This is your alert for: Market Cap +10%"
-    recipients = Subscription.objects.filter(category="mc-10-in").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
+    html_content = render_to_string(template_path, {
+        "user_name": user_name,
+        "category": category,
+        "stocks": stock_list,
+    })
 
-
-@shared_task
-def send_mc_20_in_email():
-    subject = "Market Cap +20%"
-    message = "This is your alert for: Market Cap +20%"
-    recipients = Subscription.objects.filter(category="mc-20-in").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_mc_30_in_email():
-    subject = "Market Cap +30%"
-    message = "This is your alert for: Market Cap +30%"
-    recipients = Subscription.objects.filter(category="mc-30-in").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_mc_10_de_email():
-    subject = "Market Cap -10%"
-    message = "This is your alert for: Market Cap -10%"
-    recipients = Subscription.objects.filter(category="mc-10-de").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_mc_20_de_email():
-    subject = "Market Cap -20%"
-    message = "This is your alert for: Market Cap -20%"
-    recipients = Subscription.objects.filter(category="mc-20-de").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_mc_30_de_email():
-    subject = "Market Cap -30%"
-    message = "This is your alert for: Market Cap -30%"
-    recipients = Subscription.objects.filter(category="mc-30-de").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_pe_10_in_email():
-    subject = "P/E +10%"
-    message = "This is your alert for: P/E +10%"
-    recipients = Subscription.objects.filter(category="pe-10-in").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_pe_20_in_email():
-    subject = "P/E +20%"
-    message = "This is your alert for: P/E +20%"
-    recipients = Subscription.objects.filter(category="pe-20-in").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_pe_30_in_email():
-    subject = "P/E +30%"
-    message = "This is your alert for: P/E +30%"
-    recipients = Subscription.objects.filter(category="pe-30-in").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_pe_10_de_email():
-    subject = "P/E -10%"
-    message = "This is your alert for: P/E -10%"
-    recipients = Subscription.objects.filter(category="pe-10-de").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_pe_20_de_email():
-    subject = "P/E -20%"
-    message = "This is your alert for: P/E -20%"
-    recipients = Subscription.objects.filter(category="pe-20-de").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_pe_30_de_email():
-    subject = "P/E -30%"
-    message = "This is your alert for: P/E -30%"
-    recipients = Subscription.objects.filter(category="pe-30-de").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_price_10_de_email():
-    subject = "Price Drop -10%"
-    message = "This is your alert for: Price Drop -10%"
-    recipients = Subscription.objects.filter(category="price-10-de").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_price_15_de_email():
-    subject = "Price Drop -15%"
-    message = "This is your alert for: Price Drop -15%"
-    recipients = Subscription.objects.filter(category="price-15-de").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
-
-
-@shared_task
-def send_price_20_de_email():
-    subject = "Price Drop -20%"
-    message = "This is your alert for: Price Drop -20%"
-    recipients = Subscription.objects.filter(category="price-20-de").values_list('email', flat=True)
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        list(recipients),
-        fail_silently=False,
-    )
+    try:
+        with get_connection() as connection:
+            email = EmailMultiAlternatives(
+                subject, "", from_email, to, connection=connection
+            )
+            email.attach_alternative(html_content, "text/html")
+            print(f"[DEBUG] Sending summary email to: {user_email}, category: {category}, count: {len(stock_list)}")
+            email.send()
+    except Exception as e:
+        print(f"[ERROR] Failed to send email to {user_email}: {e}")
