@@ -2,6 +2,7 @@ from django.db import models
 
 class StockAlert(models.Model):
     ticker = models.CharField(max_length=10)
+    company_name = models.CharField(max_length=255, blank=True)  # <- New field
     current_price = models.FloatField()
     volume_today = models.BigIntegerField()
     avg_volume = models.BigIntegerField(null=True, blank=True)
@@ -11,7 +12,6 @@ class StockAlert(models.Model):
     market_cap = models.BigIntegerField(null=True, blank=True)
     note = models.TextField(blank=True)
     last_update = models.DateTimeField()
-
     sent = models.BooleanField(default=False)
 
     def __str__(self):
