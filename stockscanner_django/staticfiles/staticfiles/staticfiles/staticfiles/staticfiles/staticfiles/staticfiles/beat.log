@@ -3,15 +3,10 @@
 [nltk_data] Downloading package vader_lexicon to
 [nltk_data]     /Users/ckiefer/nltk_data...
 [nltk_data]   Package vader_lexicon is already up-to-date!
-[2025-05-02 21:26:26,181: INFO/MainProcess] beat: Starting...
-[2025-05-02 21:26:26,226: INFO/MainProcess] Scheduler: Sending due task Send Personalized Email (emails.tasks.run_stock_notifications)
-[2025-05-02 21:27:26,226: INFO/MainProcess] Scheduler: Sending due task Send Personalized Email (emails.tasks.run_stock_notifications)
-[2025-05-02 21:27:36,246: INFO/MainProcess] DatabaseScheduler: Schedule changed.
-[2025-05-02 21:27:41,264: INFO/MainProcess] DatabaseScheduler: Schedule changed.
-[2025-05-02 22:13:02,861: INFO/MainProcess] Scheduler: Sending due task News Scraper (news.tasks.update_news_feed)
+[2025-05-03 00:31:00,321: INFO/MainProcess] beat: Starting...
 celery beat v5.5.2 (immunity) is starting.
 __    -    ... __   -        _
-LocalTime -> 2025-05-02 21:26:26
+LocalTime -> 2025-05-03 00:31:00
 Configuration ->
     . broker -> redis://localhost:6379/0
     . loader -> celery.loaders.app.AppLoader

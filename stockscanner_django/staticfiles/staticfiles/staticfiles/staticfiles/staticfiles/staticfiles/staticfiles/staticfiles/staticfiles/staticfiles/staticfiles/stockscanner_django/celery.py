@@ -6,6 +6,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "stockscanner_django.settings")
 
 app = Celery("stockscanner_django")
 app.config_from_object("django.conf:settings", namespace="CELERY")
-app.autodiscover_tasks()
+app.autodiscover_tasks(['emails', 'news',])
 app.conf.beat_scheduler = 'django_celery_beat.schedulers.DatabaseScheduler'
 
