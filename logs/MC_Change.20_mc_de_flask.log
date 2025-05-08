@@ -1,4 +1,0 @@
-[2025-04-09 17:43:09 +0000] [88675] [INFO] Starting gunicorn 23.0.0
-[2025-04-09 17:43:09 +0000] [88675] [INFO] Listening at: http://127.0.0.1:5006 (88675)
-[2025-04-09 17:43:09 +0000] [88675] [INFO] Using worker: sync
-[2025-04-09 17:43:09 +0000] [88677] [INFO] Booting worker with pid: 88677
